@@ -11,9 +11,9 @@ layout: home
 <link rel="stylesheet" href="/assets/css/style.css">
 
 
-<div class="appealing-box">
+<div >
     <div class="appealing-box-title">Your Big Title Here</div>
-    Your appealing text content here.
+    <p class="appealing-box">Your appealing text content here.</p>
 </div>
 
 ## Welcome to My Site
