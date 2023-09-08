@@ -4,7 +4,7 @@
 
 layout: home
 ---
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap" rel="stylesheet">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@ layout: home
     border-radius: 12px;
     padding: 20px;
     font-family: 'Merriweather', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
