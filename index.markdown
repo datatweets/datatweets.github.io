@@ -4,7 +4,8 @@
 
 layout: home
 ---
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@500&display=swap" rel="stylesheet">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
@@ -14,8 +15,8 @@ layout: home
     background-color: lightblue;
     border-radius: 12px;
     padding: 20px;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: 400;
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 500;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -29,8 +30,8 @@ layout: home
 </style>
 
 <div class="appealing-box">
-    <div class="appealing-box-title">Your Big Title Here</div>
-    Your appealing text content here.
+    <div class="appealing-box-title">Learn Data Science</div>
+    Are you ready to unlock the power of data? Join me on an inspiring journey through the world of data science and engineering with my carefully crafted courses. As an industry expert and passionate educator, I bring a unique blend of expertise and practical knowledge to help you excel in this exciting field.
 </div>
 
 ## Welcome to My Site
