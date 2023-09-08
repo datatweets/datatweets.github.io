@@ -8,12 +8,29 @@ layout: home
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
 
+<style>
+    .appealing-box {
+    background-color: lightblue;
+    border-radius: 12px;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-<div >
+.appealing-box-title {
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+</style>
+
+<div class="appealing-box">
     <div class="appealing-box-title">Your Big Title Here</div>
-    <p class="appealing-box">Your appealing text content here.</p>
+    Your appealing text content here.
 </div>
 
 ## Welcome to My Site
