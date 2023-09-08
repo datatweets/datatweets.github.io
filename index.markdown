@@ -14,7 +14,7 @@ layout: home
     background-color: lightblue;
     border-radius: 12px;
     padding: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 400;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
