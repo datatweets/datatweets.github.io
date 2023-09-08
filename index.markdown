@@ -34,5 +34,7 @@ layout: home
     Are you ready to unlock the power of data? Join me on an inspiring journey through the world of data science and engineering with my carefully crafted courses. As an industry expert and passionate educator, I bring a unique blend of expertise and practical knowledge to help you excel in this exciting field.
 </div>
 <br>
+
 ## YouTube Tutorials
 Explore the accompanying Jupyter Notebooks for my [YouTube tutorials](https://www.youtube.com/@lotfinejad) right here.
+___
