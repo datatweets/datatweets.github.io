@@ -37,4 +37,5 @@ layout: home
 
 ## YouTube Tutorials
 Explore the accompanying Jupyter Notebooks for my [YouTube tutorials](https://www.youtube.com/@lotfinejad) right here.
+
 ___
