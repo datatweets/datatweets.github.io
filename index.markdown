@@ -8,11 +8,6 @@ layout: home
 <link rel="stylesheet" href="/assets/css/style.css">
 
 
-<div style="background-color: lightblue;
-    border-radius: 12px; 
-    padding: 20px; 
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+<div class="appealing-box">
     Your appealing content here.
 </div>
