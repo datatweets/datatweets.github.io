@@ -34,11 +34,5 @@ layout: home
     Are you ready to unlock the power of data? Join me on an inspiring journey through the world of data science and engineering with my carefully crafted courses. As an industry expert and passionate educator, I bring a unique blend of expertise and practical knowledge to help you excel in this exciting field.
 </div>
 <br>
-<p><strong>What You'll Gain:</strong></p>
-    <ul>
-        <li>Real-world applications of data science techniques</li>
-        <li>Hands-on experience through Jupyter notebooks</li>
-        <li>Video tutorials that make complex topics easy to understand</li>
-    </ul>
-    <p>Stay tuned for continuously updated resources and let's harness the transformative power of data together!</p>
-    <p><em>You can find these tutorials in video format on my YouTube channel as well.</em></p>
+## YouTube Tutorials
+Explore the accompanying Jupyter Notebooks for our YouTube tutorials right here.
