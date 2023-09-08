@@ -4,10 +4,13 @@
 
 layout: home
 ---
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
 
 
 <div class="appealing-box">
-    Your appealing content here.
+    <div class="appealing-box-title">Your Big Title Here</div>
+    Your appealing text content here.
 </div>
+
+## Welcome to My Site
