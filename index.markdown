@@ -4,3 +4,7 @@
 
 layout: home
 ---
+<!-- Add this wherever you want your div to appear -->
+<div style="background-color: lightblue;">
+    Hello
+</div>
