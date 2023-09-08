@@ -1,0 +1,8 @@
+.appealing-box {
+    background-color: lightblue;
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    font-family: 'Roboto', sans-serif; /* Google Font */
+    font-weight: 400;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Simple box shadow */
+}
