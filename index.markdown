@@ -39,3 +39,4 @@ layout: home
 Explore the accompanying Jupyter Notebooks for my [YouTube tutorials](https://www.youtube.com/@lotfinejad) right here.
 
 ___
+{% include footer.html %}
