@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Install PostgreSQL 14.7 on Windows 10"
-date:   2024-07-03 19:54:02 +0430
+date:   2024-07-02 19:54:02 +0430
 categories: jekyll update
 ---
 # Install PostgreSQL 14.7 on Windows 10
