@@ -40,39 +40,39 @@ Each choice affects your system's operation, file storage, available tools, and 
 
 1. In the PostgreSQL Setup Wizard, click **Next** to begin the installation process.
 
-![Step 1](https://i.imgur.com/0dunKkV.png)
+![Step 1](https://ibb.co/mH04QVX)
 
 2. Accept the default installation directory or choose a different directory by clicking **Browse**. Click **Next** to continue.
 
-![Step 2](https://imgur.com/gFK4jXR)
+![Step 2](https://ibb.co/XX3J09q)
 
 3. Choose the components you want to install (e.g., PostgreSQL Server, pgAdmin 4 (optional), Stack Builder (optional), Command Line Tools),no characters will appear on the screen as you type your password and click **Next**.
 
-![Step 3](https://imgur.com/9Z6Q5Of)
+![Step 3](https://ibb.co/XLHp78G)
 
 4. Select the data directory for storing your databases and click **Next**.
 
-![Step 4](https://imgur.com/LeasMIn)
+![Step 4](https://ibb.co/q7mrsGf)
 
 5. Set a password for the PostgreSQL “postgres” user and click **Next**.
 
-![Step 5](https://imgur.com/R0Ynrip)
+![Step 5](https://ibb.co/vDxgZSz)
 
 - There will be some points where you're asked to enter a password in the command prompt. It's important to note that for security reasons, as you type your password, no characters will appear on the screen. This standard security feature is designed to prevent anyone from looking over your shoulder and seeing your password. So, when you're prompted for your password, don't be alarmed if you don't see any response on the screen as you type. Enter your password and press 'Enter'. Most systems will allow you to re-enter the password if you make a mistake.
 - **Remember, it's crucial to remember the password you set during the installation, as you'll need it to connect to your PostgreSQL databases in the future.**
 
 6. Choose the default port number (5432) or specify a different port, then click **Next**.
 
-![Step 6](https://imgur.com/HQARu01)
+![Step 6](https://ibb.co/vQvt8Kg)
 
 7. Select the locale to be used by the new database cluster and click **Next**.
 
-![Step 7](https://imgur.com/RiHdzPZ)
+![Step 7](https://ibb.co/R7G7124)
 
 8. Review the installation settings and click **Next** to start the installation process. The installation may take a few minutes.
 
-![Step 8](https://imgur.com/w74YrbN)
-![Step 9](https://imgur.com/pBwdBaR)
+![Step 8](https://ibb.co/MgZrB0z)
+![Step 9](https://ibb.co/TcRsMjq)
 
 9. Once the installation is complete, click **Finish** to close the Setup Wizard.
 
@@ -88,12 +88,12 @@ Now, let's get started with the steps to configure your environment variables on
 2. Click on **Advanced system settings** in the left pane.
 3. In the **System Properties** dialog, click on the **Environment Variables** button.
 
-![Environment Variables](https://imgur.com/O2pEmcA)
+![Environment Variables](https://ibb.co/1J4RxG0)
 
 4. Under the **System Variables** section, scroll down and find the **Path** variable. Click on it to select it, then click the **Edit** button.
 5. In the **Edit environment variable** dialog, click the **New** button and add the path to the PostgreSQL **bin** folder, typically `C:\Program Files\PostgreSQL\14\bin`.
 
-![Edit Environment Variables](https://imgur.com/XQnWfCU)
+![Edit Environment Variables](https://ibb.co/stmRFLj)
 
 6. Click **OK** to close the **"Edit environment variable"** dialog, then click **OK** again to close the **"Environment Variables"** dialog, and finally click **OK** to close the **"System Properties"** dialog.
 
