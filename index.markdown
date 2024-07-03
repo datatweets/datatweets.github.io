@@ -31,7 +31,8 @@ layout: home
 
 <div class="appealing-box">
     <div class="appealing-box-title">Learn Data Science</div>
-    Are you ready to unlock the power of data? Join me on an inspiring journey through the world of data science and engineering with my carefully crafted courses. As an industry expert and passionate educator, I bring a unique blend of expertise and practical knowledge to help you excel in this exciting field.
+    <h2>Datatweets</h2>
+    A Data Science and Data Engineering Blog!
 </div>
 <br>
 
