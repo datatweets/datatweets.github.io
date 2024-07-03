@@ -30,8 +30,8 @@ layout: home
 </style>
 
 <div class="appealing-box">
-    <div class="appealing-box-title">Learn Data Science</div>
-    <h2>Datatweets</h2>
+    <div class="appealing-box-title">Datatweets</div>
+    
     A Data Science and Data Engineering Blog!
 </div>
 <br>
