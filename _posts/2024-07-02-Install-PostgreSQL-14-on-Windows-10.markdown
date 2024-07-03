@@ -40,7 +40,7 @@ Each choice affects your system's operation, file storage, available tools, and 
 
 1. In the PostgreSQL Setup Wizard, click **Next** to begin the installation process.
 
-![Step 1](https://imgur.com/0dunKkV)
+![Step 1](https://i.imgur.com/0dunKkV.png)
 
 2. Accept the default installation directory or choose a different directory by clicking **Browse**. Click **Next** to continue.
 
