@@ -317,6 +317,7 @@ Output:
 This method worked reasonably but not spectacularly well on this dataset. We discovered that the headlines and other columns have some predictive value. We could improve this approach by using different predictive algorithms, like a random forest or a neural network. We could also use n-grams, such as bigrams and trigrams, when generating our bag of words matrix.
 
 Be careful when adding additional features to ensure they only consider information that existed before the sublesson you're predicting for was made. All of these additions will take longer to run but will reduce error. Hopefully, you'll have some time to try them out! 
+
 ---
 
 This blog post provides a comprehensive tutorial on natural language processing with Python, demonstrating how to clean and process text data to make predictions using machine learning algorithms.
