@@ -3,18 +3,22 @@ name: Jekyll site CI
 on:
   push:
     branches:
-      - main  # Adjust to your main branch name
+      - main  # Adjust to your main branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3  # Updated to use the latest version
+    - uses: actions/checkout@v3  # Latest version
+    - name: Set up Node.js 20
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # Set Node.js 20 explicitly
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.1.3  # Adjust this to your Ruby version
+        ruby-version: 3.1.3  # Your current Ruby version
     - name: Install dependencies
       run: |
         gem install bundler
