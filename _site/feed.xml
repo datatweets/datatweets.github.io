@@ -1,17 +1,1032 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-08T19:57:55+03:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2023/09/08/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2023-09-08T19:54:02+03:30</published><updated>2023-09-08T19:54:02+03:30</updated><id>http://localhost:4000/jekyll/update/2023/09/08/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2023/09/08/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-08T15:10:05+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Datatweets</title><subtitle>Whether you are a beginner eager to embark on your data science adventure or an experienced professional seeking to enhance your skills, I am here to guide you every step of the way. Together, we’ll shape your career and open doors to endless possibilities in the world of data science and engineering.</subtitle><entry><title type="html">Natural Language Processing with Python</title><link href="http://localhost:4000/jekyll/update/2024/07/03/Natural-Language-Processing-with-Python.html" rel="alternate" type="text/html" title="Natural Language Processing with Python" /><published>2024-07-03T05:24:02+08:00</published><updated>2024-07-03T05:24:02+08:00</updated><id>http://localhost:4000/jekyll/update/2024/07/03/Natural-Language-Processing-with-Python</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/07/03/Natural-Language-Processing-with-Python.html"><![CDATA[<p>Python has some powerful tools that enable you to perform <a href="https://en.wikipedia.org/wiki/Natural_language_processing">natural language processing</a> (NLP). In this tutorial, we’ll explore how to do some basic NLP in Python.</p>
 
-<p>Jekyll requires blog post files to be named according to the following format:</p>
+<h2 id="looking-at-the-data">Looking at the Data</h2>
 
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+<p>We’ll be examining a dataset of submissions to <a href="https://news.ycombinator.com">Hacker News</a> from 2006 to 2015. The data was sourced from <a href="https://github.com/arnauddri/hn">this repository</a>. Arnaud Drizard used the Hacker News API to scrape the data. We’ve randomly sampled <code class="language-plaintext highlighter-rouge">10000</code> rows and removed all extraneous columns, leaving us with four columns:</p>
 
-<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">sublesson_time</code> – when the story was submitted.</li>
+  <li><code class="language-plaintext highlighter-rouge">url</code> – the base URL of the submission.</li>
+  <li><code class="language-plaintext highlighter-rouge">upvotes</code> – number of upvotes the submission received.</li>
+  <li><code class="language-plaintext highlighter-rouge">headline</code> – the headline of the submission.</li>
+</ul>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>We’ll use the headlines to predict the number of upvotes. The data is stored in the <code class="language-plaintext highlighter-rouge">sublessons</code> variable.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<h2 id="natural-language-processing--first-steps">Natural Language Processing — First Steps</h2>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry></feed>
+<p>Our goal is to train a machine learning algorithm to predict the number of upvotes a headline might receive. However, machine learning algorithms only understand numbers, not words. So, how do we convert our headlines into something an algorithm can understand?</p>
+
+<p>The first step is to create a bag of words matrix, which provides a numerical representation of which words appear in which headlines. To build this matrix, we first identify the unique words across all headlines. We then create a matrix where each row represents a headline and each column represents one of the unique words. The cells are filled with the number of times each word occurs in the corresponding headline. This matrix will have many zeros unless the vocabulary is mostly shared between the headlines.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="n">pandas</span>
+
+<span class="n">headlines</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sh">"</span><span class="s">PretzelBros, airbnb for people who like pretzels, raises $2 million</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">Top 10 reasons why Go is better than whatever language you use.</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">Why working at apple stole my soul (I still love it though)</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">80 things I think you should do immediately if you use python.</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">Show HN: carjack.me -- Uber meets GTA</span><span class="sh">"</span>
+<span class="p">]</span>
+
+<span class="c1"># Find all the unique words in the headlines.
+</span><span class="n">unique_words</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">headlines</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)))</span>
+
+<span class="k">def</span> <span class="nf">make_matrix</span><span class="p">(</span><span class="n">headlines</span><span class="p">,</span> <span class="n">vocab</span><span class="p">):</span>
+    <span class="n">matrix</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">headline</span> <span class="ow">in</span> <span class="n">headlines</span><span class="p">:</span>
+        <span class="c1"># Count each word in the headline, and make a dictionary.
+</span>        <span class="n">counter</span> <span class="o">=</span> <span class="nc">Counter</span><span class="p">(</span><span class="n">headline</span><span class="p">)</span>
+        <span class="c1"># Turn the dictionary into a matrix row using the vocab.
+</span>        <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">counter</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">vocab</span><span class="p">]</span>
+        <span class="n">matrix</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">unique_words</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">make_matrix</span><span class="p">(</span><span class="n">headlines</span><span class="p">,</span> <span class="n">unique_words</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   why  HN:  for  people  immediately  like  I  Go  80  meets  ...   my  who  
+0    0    0    0       0            0     0  0   0   0      0  ...    0    0   
+1    0    0    0       0            0     0  0   0   0      0  ...    0    0   
+2    0    0    0       0            0     0  1   0   0      0  ...    0    0   
+3    0    0    0       0            0     0  1   0   0      0  ...    0    0   
+4    0    0    0       0            0     0  0   0   0      0  ...    0    0   
+
+   PretzelBros,  whatever  language  do  $2  still  than  soul  
+0             0         0         0   0   0      0     0     0  
+1             0         0         0   0   0      0     0     0  
+2             0         0         0   0   0      0     0     0  
+3             0         0         0   0   0      0     0     0  
+4             0         0         0   0   0      0     0     0  
+
+[5 rows x 51 columns]
+</code></pre></div></div>
+
+<h2 id="removing-punctuation">Removing Punctuation</h2>
+
+<p>The matrix we’ve made is very sparse, meaning many of the values are zero because the headlines don’t share much vocabulary. We can improve this by lowercasing every word and removing punctuation. This helps the parser recognize that words like <code class="language-plaintext highlighter-rouge">Why</code> and <code class="language-plaintext highlighter-rouge">why</code> or <code class="language-plaintext highlighter-rouge">use</code> and <code class="language-plaintext highlighter-rouge">use.</code> are the same.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">re</span>
+
+<span class="c1"># Lowercase, then replace any non-letter, space, or digit character in the headlines.
+</span><span class="n">new_headlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">[^wsd]</span><span class="sh">'</span><span class="p">,</span> <span class="sh">''</span><span class="p">,</span> <span class="n">h</span><span class="p">.</span><span class="nf">lower</span><span class="p">())</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">headlines</span><span class="p">]</span>
+<span class="c1"># Replace sequences of whitespace with a space character.
+</span><span class="n">new_headlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sh">"</span><span class="s">s+</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">new_headlines</span><span class="p">]</span>
+
+<span class="n">unique_words</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">new_headlines</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">make_matrix</span><span class="p">(</span><span class="n">new_headlines</span><span class="p">,</span> <span class="n">unique_words</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   2  why  top  hn  for  people  immediately  like  python  80  ...   should  
+0  1    0    0   0    0       0            0     0       0   0  ...        0   
+1  0    0    0   0    0       0            0     0       0   0  ...        0   
+2  0    0    0   0    0       0            0     0       0   0  ...        0   
+3  0    0    0   0    0       0            0     0       0   0  ...        0   
+4  0    0    0   0    0       0            0     0       0   0  ...        0   
+
+   my  who  go  whatever  language  do  still  than  soul  
+0   0    0   0         0         0   0      0     0     0  
+1   0    0   0         0         0   0      0     0     0  
+2   0    0   0         0         0   0      0     0     0  
+3   0    0   0         0         0   0      0     0     0  
+4   0    0   0         0         0   0      0     0     0  
+
+[5 rows x 47 columns]
+</code></pre></div></div>
+
+<h2 id="removing-stopwords">Removing Stopwords</h2>
+
+<p>Certain words don’t help distinguish between good and bad headlines. Words like <code class="language-plaintext highlighter-rouge">the</code>, <code class="language-plaintext highlighter-rouge">a</code>, and <code class="language-plaintext highlighter-rouge">also</code> appear commonly in all contexts and don’t tell us much about whether something is good or not. By removing these stopwords, we can reduce the size of the matrix and make training faster.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Read in and split the stopwords file.
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">stop_words.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">stopwords</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">n</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Do the same punctuation replacement that we did for the headlines, 
+# so we're comparing the right things.
+</span><span class="n">stopwords</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">[^wsd]</span><span class="sh">'</span><span class="p">,</span> <span class="sh">''</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="nf">lower</span><span class="p">())</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="p">]</span>
+
+<span class="n">unique_words</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">new_headlines</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)))</span>
+
+<span class="c1"># Remove stopwords from the vocabulary.
+</span><span class="n">unique_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">unique_words</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="p">]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">make_matrix</span><span class="p">(</span><span class="n">new_headlines</span><span class="p">,</span> <span class="n">unique_words</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   2  top  hn  people  immediately  like  python  80  meets  pretzels  ...  
+0  1    0   0       0            0     0       0   0      0         0  ...  
+1  0    0   0       0            0     0       0   0      0         0  ...  
+2  0    0   0       0            0     0       0   0      0         0  ...  
+3  0    0   0       0            0     0       0   0      0         0  ...  
+4  0    0   0       0            0     0       0   0      0         0  ...  
+
+   gta  10  uber  raises  pretzelbros  go  whatever  language  still  soul  
+0    0   0     0       0            0   0         0         0      0     0  
+1    0   0     0       0            0   0         0         0      0    
+
+ 0  
+2    0   0     0       0            0   0         0         0      0     0  
+3    0   0     0       0            0   0         0         0      0     0  
+4    0   0     0       0            0   0         0         0      0     0  
+
+[5 rows x 34 columns]
+</code></pre></div></div>
+
+<h2 id="generating-a-matrix-for-all-headlines">Generating a Matrix for All Headlines</h2>
+
+<p>Now that we understand the basics, we can create a bag of words matrix for the entire set of headlines. We’ll use a class from <a href="https://scikit-learn.org/stable/">scikit-learn</a> to automate the process, making it much easier and faster.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+
+<span class="c1"># Construct a bag of words matrix.
+# This will lowercase everything, and ignore all punctuation by default.
+# It will also remove stop words.
+</span><span class="n">vectorizer</span> <span class="o">=</span> <span class="nc">CountVectorizer</span><span class="p">(</span><span class="n">lowercase</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="sh">"</span><span class="s">english</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="p">.</span><span class="nf">fit_transform</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">.</span><span class="nf">todense</span><span class="p">())</span>
+
+<span class="c1"># Apply the same method to all the headlines in all 100000 sublessons.
+# We'll also add the URL of the sublesson to the end of the headline so we can take it into account.
+</span><span class="n">sublessons</span><span class="p">[</span><span class="sh">'</span><span class="s">full_text</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">sublessons</span><span class="p">[</span><span class="sh">"</span><span class="s">headline</span><span class="sh">"</span><span class="p">]</span> <span class="o">+</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span> <span class="o">+</span> <span class="n">sublessons</span><span class="p">[</span><span class="sh">"</span><span class="s">url</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">full_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="p">.</span><span class="nf">fit_transform</span><span class="p">(</span><span class="n">sublessons</span><span class="p">[</span><span class="sh">"</span><span class="s">headline</span><span class="sh">"</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">full_matrix</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0 0 1 0 0 0 0 0 0 0 1 0 0 1 1 1 1 0 1 0 0 0 0 0 0 0 0]
+ [1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0]
+ [0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 1]
+ [0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 1 0]
+ [0 0 0 0 0 1 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0]]
+(9356, 13631)
+</code></pre></div></div>
+
+<h2 id="reducing-dimensionality">Reducing Dimensionality</h2>
+
+<p>We’ve created a matrix, but it has <code class="language-plaintext highlighter-rouge">13631</code> unique words (or columns), which will take a long time to make predictions with. To speed things up, we’ll reduce the number of columns by selecting the most informative ones using a <a href="https://en.wikipedia.org/wiki/Chi-squared_test">chi-squared</a> test. A chi-squared test finds the words that most differentiate between highly upvoted posts and posts without upvotes.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span>
+<span class="kn">from</span> <span class="n">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">chi2</span>
+
+<span class="c1"># Convert the upvotes variable to binary so it works with a chi-squared test.
+</span><span class="n">col</span> <span class="o">=</span> <span class="n">sublessons</span><span class="p">[</span><span class="sh">"</span><span class="s">upvotes</span><span class="sh">"</span><span class="p">].</span><span class="nf">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">col_mean</span> <span class="o">=</span> <span class="n">col</span><span class="p">.</span><span class="nf">mean</span><span class="p">()</span>
+<span class="n">col</span><span class="p">[</span><span class="n">col</span> <span class="o">&lt;</span> <span class="n">col_mean</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">col</span><span class="p">[(</span><span class="n">col</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">col</span> <span class="o">&gt;</span> <span class="n">col_mean</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Find the 1000 most informative columns.
+</span><span class="n">selector</span> <span class="o">=</span> <span class="nc">SelectKBest</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">selector</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">full_matrix</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+<span class="n">top_words</span> <span class="o">=</span> <span class="n">selector</span><span class="p">.</span><span class="nf">get_support</span><span class="p">().</span><span class="nf">nonzero</span><span class="p">()</span>
+
+<span class="c1"># Pick only the most informative columns in the data.
+</span><span class="n">chi_matrix</span> <span class="o">=</span> <span class="n">full_matrix</span><span class="p">[:,</span> <span class="n">top_words</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<h2 id="adding-meta-features">Adding Meta Features</h2>
+
+<p>Ignoring the “meta” features of the headlines means missing out on valuable information. These features include length, punctuation count, average word length, and other sentence-specific features. Adding these can significantly improve prediction accuracy. To incorporate them, we’ll loop over our headlines and apply a function to each one.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Our list of functions to apply.
+</span><span class="n">transform_functions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nf">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">),</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="sh">"</span><span class="s">.</span><span class="sh">"</span><span class="p">),</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="sh">"</span><span class="s">!</span><span class="sh">"</span><span class="p">),</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="sh">"</span><span class="s">?</span><span class="sh">"</span><span class="p">),</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nf">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="sh">"</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nf">len</span><span class="p">(</span><span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="sh">"</span><span class="s">d</span><span class="sh">"</span><span class="p">,</span> <span class="n">x</span><span class="p">)),</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nf">len</span><span class="p">(</span><span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="sh">"</span><span class="s">[A-Z]</span><span class="sh">"</span><span class="p">,</span> <span class="n">x</span><span class="p">)),</span>
+<span class="p">]</span>
+
+<span class="c1"># Apply each function and put the results into a list.
+</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">transform_functions</span><span class="p">:</span>
+    <span class="n">columns</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">sublessons</span><span class="p">[</span><span class="sh">"</span><span class="s">headline</span><span class="sh">"</span><span class="p">].</span><span class="nf">apply</span><span class="p">(</span><span class="n">func</span><span class="p">))</span>
+    <span class="c1"># Convert the meta features to a numpy array.
+</span><span class="n">meta</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="nf">asarray</span><span class="p">(</span><span class="n">columns</span><span class="p">).</span><span class="n">T</span>
+</code></pre></div></div>
+
+<h2 id="adding-more-features">Adding More Features</h2>
+
+<p>We have more features available than just text features. The <code class="language-plaintext highlighter-rouge">sublesson_time</code> column, which indicates when a story was submitted, can provide additional insights. Often in NLP, adding external features can significantly improve predictions. Some machine learning algorithms can determine how these features interact with your textual features.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">columns</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Convert the sublesson dates column to datetime.
+</span><span class="n">sublesson_dates</span> <span class="o">=</span> <span class="n">pandas</span><span class="p">.</span><span class="nf">to_datetime</span><span class="p">(</span><span class="n">sublessons</span><span class="p">[</span><span class="sh">"</span><span class="s">sublesson_time</span><span class="sh">"</span><span class="p">])</span>
+
+<span class="c1"># Transform functions for the datetime column.
+</span><span class="n">transform_functions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">year</span><span class="p">,</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">month</span><span class="p">,</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">day</span><span class="p">,</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">hour</span><span class="p">,</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">minute</span>
+<span class="p">]</span>
+
+<span class="c1"># Apply all functions to the datetime column.
+</span><span class="k">for</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">transform_functions</span><span class="p">:</span>
+    <span class="n">columns</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">sublesson_dates</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="n">func</span><span class="p">))</span>
+
+<span class="c1"># Convert the meta features to a numpy array.
+</span><span class="n">non_nlp</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="nf">asarray</span><span class="p">(</span><span class="n">columns</span><span class="p">).</span><span class="n">T</span>
+
+<span class="c1"># Concatenate the features together.
+</span><span class="n">features</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="nf">hstack</span><span class="p">([</span><span class="n">non_nlp</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">chi_matrix</span><span class="p">.</span><span class="nf">todense</span><span class="p">()])</span>
+</code></pre></div></div>
+
+<h2 id="making-predictions">Making Predictions</h2>
+
+<p>Now that we can convert words to numbers, we can make predictions using an algorithm. We’ll randomly select <code class="language-plaintext highlighter-rouge">7500</code> headlines as a training set and evaluate the algorithm’s performance on the test set of <code class="language-plaintext highlighter-rouge">2500</code> headlines. Predicting results on the same set we train on would result in <a href="https://en.wikipedia.org/wiki/Overfitting">overfitting</a>, where the algorithm is overly optimized to the training set.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
+<span class="kn">import</span> <span class="n">random</span>
+
+<span class="n">train_rows</span> <span class="o">=</span> <span class="mi">7500</span>
+<span class="c1"># Set a seed to get the same "random" shuffle every time.
+</span><span class="n">random</span><span class="p">.</span><span class="nf">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Shuffle the indices for the matrix.
+</span><span class="n">indices</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="n">features</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">random</span><span class="p">.</span><span class="nf">shuffle</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
+
+<span class="c1"># Create train and test sets.
+</span><span class="n">train</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="n">indices</span><span class="p">[:</span><span class="n">train_rows</span><span class="p">],</span> <span class="p">:]</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="n">indices</span><span class="p">[</span><span class="n">train_rows</span><span class="p">:],</span> <span class="p">:]</span>
+<span class="n">train_upvotes</span> <span class="o">=</span> <span class="n">sublessons</span><span class="p">[</span><span class="sh">"</span><span class="s">upvotes</span><span class="sh">"</span><span class="p">].</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">[:</span><span class="n">train_rows</span><span class="p">]]</span>
+<span class="n">test_upvotes</span> <span class="o">=</span> <span class="n">sublessons</span><span class="p">[</span><span class="sh">"</span><span class="s">upvotes</span><span class="sh">"</span><span class="p">].</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">[</span><span class="n">train_rows</span><span class="p">:]]</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="nf">nan_to_num</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+
+<span class="c1"># Run the regression and generate predictions for the test set.
+</span><span class="n">reg</span> <span class="o">=</span> <span class="nc">Ridge</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="p">.</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">reg</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">train_upvotes</span><span class="p">)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">reg</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="evaluating-error">Evaluating Error</h2>
+
+<p>We have predictions, but how do we determine their accuracy? One way is to calculate the error rate between the predictions and the actual upvote counts for the test set. We can use a simple method to make baseline estimates and compare the error rate of our predictions to the baseline estimates.</p>
+
+<p>A straightforward baseline is to take the average number of upvotes per sublesson in the training set and use that as a prediction for every sublesson. We’ll use <a href="https://en.wikipedia.org/wiki/Mean_absolute_error">mean absolute error</a> as our error metric. It’s simple: subtract the actual value from the prediction, take the absolute value of the difference, then find the mean of all differences.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># We're going to use mean absolute error as an error metric.
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">predictions</span> <span class="o">-</span> <span class="n">test_upvotes</span><span class="p">))</span> <span class="o">/</span> <span class="nf">len</span><span class="p">(</span><span class="n">predictions</span><span class="p">))</span>
+
+<span class="c1"># As a baseline, we'll use the average number of upvotes across all sublessons.
+</span><span class="n">average_upvotes</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">test_upvotes</span><span class="p">)</span> <span class="o">/</span> <span class="nf">len</span><span class="p">(</span><span class="n">test_upvotes</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">average_upvotes</span> <span class="o">-</span> <span class="n">test_upvotes</span><span class="p">))</span> <span class="o">/</span> <span class="nf">len</span><span class="p">(</span><span class="n">predictions</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>13.6606593988
+17.2759421912
+</code></pre></div></div>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>This method worked reasonably but not spectacularly well on this dataset. We discovered that the headlines and other columns have some predictive value. We could improve this approach by using different predictive algorithms, like a random forest or a neural network. We could also use n-grams, such as bigrams and trigrams, when generating our bag of words matrix.</p>
+
+<p>Be careful when adding additional features to ensure they only consider information that existed before the sublesson you’re predicting for was made. All of these additions will take longer to run but will reduce error. Hopefully, you’ll have some time to try them out!</p>
+
+<hr />
+
+<p>This blog post provides a comprehensive tutorial on natural language processing with Python, demonstrating how to clean and process text data to make predictions using machine learning algorithms.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Python has some powerful tools that enable you to perform natural language processing (NLP). In this tutorial, we’ll explore how to do some basic NLP in Python.]]></summary></entry><entry><title type="html">Install PostgreSQL 14.7 for macOS</title><link href="http://localhost:4000/jekyll/update/2024/07/03/Install-PostgreSQL-14-on-MacOS.html" rel="alternate" type="text/html" title="Install PostgreSQL 14.7 for macOS" /><published>2024-07-03T00:24:02+08:00</published><updated>2024-07-03T00:24:02+08:00</updated><id>http://localhost:4000/jekyll/update/2024/07/03/Install-PostgreSQL-14-on-MacOS</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/07/03/Install-PostgreSQL-14-on-MacOS.html"><![CDATA[<p>In this guide, you will learn how to set up PostgreSQL 14.7 on your MacBook using Homebrew, a widely-used package manager for macOS. The steps are straightforward and include:</p>
+
+<ol>
+  <li>Install Homebrew</li>
+  <li>Install PostgreSQL</li>
+  <li>Download the Northwind PostgreSQL SQL file</li>
+  <li>Create a New PostgreSQL Database</li>
+  <li>Import the Northwind SQL file</li>
+  <li>Verify the Northwind database installation</li>
+  <li>Connect to the Database Using Jupyter Notebook</li>
+</ol>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Ensure you have a MacBook or iMac running macOS 10.13 or later.</p>
+
+<p><strong>Install Xcode Command Line Tools</strong><br />
+To start, you need to install the Xcode Command Line Tools, which are essential for software development on your Mac.</p>
+
+<ol>
+  <li>Open the Terminal app (located in Applications &gt; Utilities) and enter the command:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select <span class="nt">--install</span>
+</code></pre></div>    </div>
+    <p>A pop-up window will prompt you to install the Command Line Tools. Click “Install” to proceed. After installation is complete, move on to the next step.</p>
+  </li>
+</ol>
+
+<h2 id="step-1-install-homebrew">Step 1: Install Homebrew</h2>
+
+<p>With the Xcode Command Line Tools installed, you can now install Homebrew. Homebrew is a package manager for macOS that simplifies the installation of software packages like PostgreSQL.</p>
+
+<p>After installing Homebrew, it’s important to add it to your system’s PATH. This tells the system where to find the Homebrew executables, allowing you to run Homebrew commands from any location in your Terminal.</p>
+
+<p><strong>1. Install Homebrew</strong><br />
+Copy and paste the following command into the Terminal app. The script will automatically download and install Homebrew on your Mac. You might be asked to enter your admin password during the installation process.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   /bin/bash <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="si">)</span><span class="s2">"</span>
+</code></pre></div></div>
+<p>After the installation, you will see a message saying, “Installation successful!”</p>
+
+<p><strong>2. Add Homebrew to Your PATH</strong><br />
+To complete the installation, add Homebrew to your PATH:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">(</span><span class="nb">echo</span><span class="p">;</span> <span class="nb">echo</span> <span class="s1">'eval "$(/opt/homebrew/bin/brew shellenv)"'</span><span class="o">)</span> <span class="o">&gt;&gt;</span> /Users/your_username/.zprofile
+</code></pre></div></div>
+<p>Replace <code class="language-plaintext highlighter-rouge">/Users/your_username</code> with your actual user directory.</p>
+
+<p><strong>3. Load Homebrew Environment Variables</strong><br />
+Run the following command to load the Homebrew environment variables into your current Terminal session:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">eval</span> <span class="s2">"</span><span class="si">$(</span>/opt/homebrew/bin/brew shellenv<span class="si">)</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p><strong>4. Verify the Installation</strong><br />
+To confirm Homebrew is installed correctly, run:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   brew <span class="nt">--version</span>
+</code></pre></div></div>
+<p>This should display the Homebrew version number.</p>
+
+<h2 id="step-2-install-postgresql">Step 2: Install PostgreSQL</h2>
+
+<p>In this step, you will use Homebrew to install PostgreSQL on your macOS system.</p>
+
+<p><strong>1. Ensure Homebrew is Installed</strong><br />
+Make sure you have Homebrew installed. If not, refer to the previous section to install it.</p>
+
+<p><strong>2. Update Homebrew</strong><br />
+Update Homebrew to ensure you have the latest package information:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   brew update
+</code></pre></div></div>
+
+<p><strong>3. Install PostgreSQL 14</strong><br />
+Install PostgreSQL 14 using Homebrew:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   brew <span class="nb">install </span>postgresql@14
+</code></pre></div></div>
+
+<p><strong>4. Start PostgreSQL Service</strong><br />
+After installation, start the PostgreSQL service:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   brew services start postgresql@14
+</code></pre></div></div>
+<p>You should see a message indicating that PostgreSQL has started successfully.</p>
+
+<p><strong>5. Verify PostgreSQL Installation</strong><br />
+Check the PostgreSQL version to ensure it’s installed correctly:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   psql <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p><strong>6. Create a PostgreSQL User</strong><br />
+Create a new PostgreSQL user named <code class="language-plaintext highlighter-rouge">postgres</code> with superuser privileges:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   createuser <span class="nt">-s</span> postgres
+</code></pre></div></div>
+
+<p><strong>7. Set a Password for the <code class="language-plaintext highlighter-rouge">postgres</code> User</strong><br />
+Set a password for the <code class="language-plaintext highlighter-rouge">postgres</code> user:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   psql
+   <span class="se">\p</span>assword postgres
+</code></pre></div></div>
+
+<p><strong>8. Configure PostgreSQL Environment</strong><br />
+Add PostgreSQL to your PATH by adding the following line to your shell profile (<code class="language-plaintext highlighter-rouge">~/.zshrc</code> or <code class="language-plaintext highlighter-rouge">~/.bash_profile</code>):</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/postgresql@14/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+</code></pre></div></div>
+<p>Then, reload your profile:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">source</span> ~/.zshrc   <span class="c"># or source ~/.bash_profile</span>
+</code></pre></div></div>
+
+<p><strong>9. Troubleshooting Tips</strong><br />
+If the PostgreSQL service does not start, check the logs for errors:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">tail</span> <span class="nt">-f</span> /usr/local/var/log/postgres.log
+</code></pre></div></div>
+<p>Ensure your system has enough resources and dependencies for PostgreSQL.</p>
+
+<h2 id="step-3-download-the-northwind-postgresql-sql-file">Step 3: Download the Northwind PostgreSQL SQL File</h2>
+
+<p>The Northwind database is a sample database originally provided by Microsoft. It contains data on customers, orders, products, suppliers, and other aspects of a fictitious company named “Northwind Traders”. We will use a version of Northwind adapted for PostgreSQL.</p>
+
+<p><strong>1. Open Terminal</strong><br />
+<strong>2. Create a New Directory</strong><br />
+Create a new directory for the Northwind database and navigate to it:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">mkdir </span>northwind <span class="o">&amp;&amp;</span> <span class="nb">cd </span>northwind
+</code></pre></div></div>
+
+<p><strong>3. Download the SQL File</strong><br />
+Download the Northwind PostgreSQL SQL file using curl:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   curl <span class="nt">-O</span> https://raw.githubusercontent.com/pthom/northwind_psql/master/northwind.sql
+</code></pre></div></div>
+
+<h2 id="step-4-create-a-new-postgresql-database">Step 4: Create a New PostgreSQL Database</h2>
+
+<p>Now that you have downloaded the Northwind SQL file, it’s time to create a new database on your PostgreSQL server.</p>
+
+<p><strong>1. Connect to PostgreSQL Server</strong><br />
+Connect as the <code class="language-plaintext highlighter-rouge">postgres</code> user:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   psql <span class="nt">-U</span> postgres
+</code></pre></div></div>
+
+<p><strong>2. Create Database</strong><br />
+Create a new database called <code class="language-plaintext highlighter-rouge">northwind</code>:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">northwind</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><strong>3. Exit PostgreSQL Interface</strong><br />
+Exit the <code class="language-plaintext highlighter-rouge">psql</code> command-line interface:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="err">\</span><span class="n">q</span>
+</code></pre></div></div>
+
+<h2 id="step-5-import-the-northwind-sql-file">Step 5: Import the Northwind SQL File</h2>
+
+<p>Import the Northwind SQL file into the <code class="language-plaintext highlighter-rouge">northwind</code> database.</p>
+
+<p><strong>1. Ensure You’re in the Correct Directory</strong><br />
+Ensure you’re in the <code class="language-plaintext highlighter-rouge">northwind</code> directory where the <code class="language-plaintext highlighter-rouge">northwind.sql</code> file is located.</p>
+
+<p><strong>2. Import the SQL File</strong><br />
+Run the following command to import the Northwind SQL file into the <code class="language-plaintext highlighter-rouge">northwind</code> database:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   psql <span class="nt">-U</span> postgres <span class="nt">-d</span> northwind <span class="nt">-f</span> northwind.sql
+</code></pre></div></div>
+
+<h2 id="step-6-verify-the-northwind-database-installation">Step 6: Verify the Northwind Database Installation</h2>
+
+<p>Verify that the Northwind database has been installed correctly.</p>
+
+<p><strong>1. Connect to the <code class="language-plaintext highlighter-rouge">northwind</code> Database</strong><br />
+Connect using <code class="language-plaintext highlighter-rouge">psql</code>:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   psql <span class="nt">-U</span> postgres <span class="nt">-d</span> northwind
+</code></pre></div></div>
+
+<p><strong>2. List Tables</strong><br />
+List the tables in the Northwind database:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="err">\</span><span class="n">dt</span>
+</code></pre></div></div>
+<p>You should see a list of Northwind tables.</p>
+
+<p><strong>3. Run a Sample Query</strong><br />
+Query the <code class="language-plaintext highlighter-rouge">customers</code> table to ensure data has been imported correctly:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">customers</span> <span class="k">LIMIT</span> <span class="mi">5</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><strong>4. Exit the <code class="language-plaintext highlighter-rouge">psql</code> Interface</strong><br />
+Exit the command-line interface:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="err">\</span><span class="n">q</span>
+</code></pre></div></div>
+
+<p>Congratulations! You have successfully installed the Northwind database in PostgreSQL using an SQL file and <code class="language-plaintext highlighter-rouge">psql</code>.</p>
+
+<h2 id="step-7-connect-to-the-database-using-jupyter-notebook">Step 7: Connect to the Database Using Jupyter Notebook</h2>
+
+<p>Jupyter Notebook is a great tool for executing SQL queries and analyzing the Northwind database.</p>
+
+<p><strong>1. Install ipython-sql</strong><br />
+Install the <code class="language-plaintext highlighter-rouge">ipython-sql</code> package:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">!</span>pip <span class="nb">install </span>ipython-sql
+</code></pre></div></div>
+
+<p><strong>2. Load SQL Extension</strong><br />
+Load the SQL extension:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">%</span><span class="n">load_ext</span> <span class="n">sql</span>
+</code></pre></div></div>
+
+<p><strong>3. Connect to the Northwind Database</strong><br />
+Establish a connection:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">%</span><span class="n">sql</span> <span class="n">postgresql</span><span class="p">:</span><span class="o">//</span><span class="n">postgres</span><span class="nd">@localhost</span><span class="p">:</span><span class="mi">5432</span><span class="o">/</span><span class="n">northwind</span>
+</code></pre></div></div>
+
+<p>On Windows, you may need to include the password:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="o">%</span><span class="n">sql</span> <span class="n">postgresql</span><span class="p">:</span><span class="o">//</span><span class="n">postgres</span><span class="p">:{</span><span class="n">password</span><span class="p">}</span><span class="nd">@localhost</span><span class="p">:</span><span class="mi">5432</span><span class="o">/</span><span class="n">northwind</span>
+</code></pre></div></div>
+
+<p><strong>4. Run the Cell</strong><br />
+Run the cell by either clicking the “Run” button or using the keyboard shortcut <code class="language-plaintext highlighter-rouge">Shift + Enter</code> or <code class="language-plaintext highlighter-rouge">Ctrl + Enter</code>.</p>
+
+<p><strong>5. Verify Connection</strong><br />
+You should see an output confirming the connection:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   'Connected: postgres@northwind'
+</code></pre></div></div>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Based on what you’ve accomplished, here are some next steps to continue your learning journey:</p>
+
+<ol>
+  <li><strong>Deepen Your SQL Knowledge:</strong>
+    <ul>
+      <li>Formulate more complex queries on the Northwind database.</li>
+      <li>Understand the design of the Northwind database.</li>
+    </ul>
+  </li>
+  <li><strong>Experiment with Database Management:</strong>
+    <ul>
+      <li>Learn how to backup and restore databases in PostgreSQL.</li>
+      <li>Explore ways to optimize your PostgreSQL database performance.</li>
+    </ul>
+  </li>
+  <li><strong>Integration with Python:</strong>
+    <ul>
+      <li>Use <code class="language-plaintext highlighter-rouge">psycopg2</code>, a popular PostgreSQL adapter for Python.</li>
+      <li>Experiment with ORM libraries like <code class="language-plaintext highlighter-rouge">SQLAlchemy</code> to manage your database using Python.</li>
+    </ul>
+  </li>
+  <li><strong>Security and Best Practices:</strong>
+    <ul>
+      <li>Learn about database security principles and apply them to your PostgreSQL setup.</li>
+      <li>Understand best practices for storing sensitive information.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<p>This blog post provides a comprehensive guide to installing PostgreSQL 14.7 on macOS using Homebrew, importing the Northwind database, and connecting to it using Jupyter Notebook.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[In this guide, you will learn how to set up PostgreSQL 14.7 on your MacBook using Homebrew, a widely-used package manager for macOS. The steps are straightforward and include:]]></summary></entry><entry><title type="html">Install PostgreSQL 14.7 on Windows 10</title><link href="http://localhost:4000/jekyll/update/2024/07/02/Install-PostgreSQL-14-on-Windows-10.html" rel="alternate" type="text/html" title="Install PostgreSQL 14.7 on Windows 10" /><published>2024-07-02T23:24:02+08:00</published><updated>2024-07-02T23:24:02+08:00</updated><id>http://localhost:4000/jekyll/update/2024/07/02/Install-PostgreSQL-14-on-Windows-10</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/07/02/Install-PostgreSQL-14-on-Windows-10.html"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<p>In this tutorial, you’ll learn how to install PostgreSQL 14.7 on Windows 10.</p>
+
+<p>The process is straightforward and consists of the following steps:</p>
+
+<ol>
+  <li>Install PostgreSQL</li>
+  <li>Configure Environment Variables</li>
+  <li>Verify the Installation</li>
+  <li>Download the Northwind PostgreSQL SQL file</li>
+  <li>Create a New PostgreSQL Database</li>
+  <li>Import the Northwind SQL file</li>
+  <li>Verify the Northwind database installation</li>
+  <li>Connect to the Database Using Jupyter Notebook</li>
+</ol>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>A computer running Windows 10</li>
+  <li>Internet connection</li>
+</ul>
+
+<ol>
+  <li>Download the official PostgreSQL 14.7 at <a href="https://get.enterprisedb.com/postgresql/postgresql-14.7-2-windows-x64.exe">https://get.enterprisedb.com/postgresql/postgresql-14.7-2-windows-x64.exe</a></li>
+  <li>Save the installer executable to your computer and run the installer.</li>
+</ol>
+
+<p><em>Note: We recommend version 14.7 because it is commonly used. There are newer versions available, but their features vary substantially!</em></p>
+
+<h2 id="step-1-install-postgresql">Step 1: Install PostgreSQL</h2>
+
+<p>We’re about to initiate a vital part of this project - installing and configuring PostgreSQL.</p>
+
+<p>Throughout this process, you’ll define critical settings like the installation directory, components, data directory, and the initial ‘postgres’ user password. This password grants administrative access to your PostgreSQL system. Additionally, you’ll choose the default port for connections and the database cluster locale.</p>
+
+<p>Each choice affects your system’s operation, file storage, available tools, and security. We’re here to guide you through each decision to ensure optimal system functioning.</p>
+
+<ol>
+  <li>In the PostgreSQL Setup Wizard, click <strong>Next</strong> to begin the installation process.</li>
+</ol>
+
+<p><img src="https://i.ibb.co/p3QdCBR/01.png" alt="Step 1" /></p>
+
+<ol>
+  <li>Accept the default installation directory or choose a different directory by clicking <strong>Browse</strong>. Click <strong>Next</strong> to continue.</li>
+</ol>
+
+<p><img src="https://i.ibb.co/G7tPYXq/02.png" alt="Step 2" /></p>
+
+<ol>
+  <li>Choose the components you want to install (e.g., PostgreSQL Server, pgAdmin 4 (optional), Stack Builder (optional), Command Line Tools),no characters will appear on the screen as you type your password and click <strong>Next</strong>.</li>
+</ol>
+
+<p><img src="https://i.ibb.co/nmpf7CK/03.png" alt="Step 3" /></p>
+
+<ol>
+  <li>Select the data directory for storing your databases and click <strong>Next</strong>.</li>
+</ol>
+
+<p><img src="https://i.ibb.co/NtWyjhP/04.png" alt="Step 4" /></p>
+
+<ol>
+  <li>Set a password for the PostgreSQL “postgres” user and click <strong>Next</strong>.</li>
+</ol>
+
+<p><img src="https://i.ibb.co/R7pZzqH/05.png" alt="Step 5" /></p>
+
+<ul>
+  <li>There will be some points where you’re asked to enter a password in the command prompt. It’s important to note that for security reasons, as you type your password, no characters will appear on the screen. This standard security feature is designed to prevent anyone from looking over your shoulder and seeing your password. So, when you’re prompted for your password, don’t be alarmed if you don’t see any response on the screen as you type. Enter your password and press ‘Enter’. Most systems will allow you to re-enter the password if you make a mistake.</li>
+  <li><strong>Remember, it’s crucial to remember the password you set during the installation, as you’ll need it to connect to your PostgreSQL databases in the future.</strong></li>
+</ul>
+
+<ol>
+  <li>Choose the default port number (5432) or specify a different port, then click <strong>Next</strong>.</li>
+</ol>
+
+<p><img src="https://i.ibb.co/RB45WVZ/06.png" alt="Step 6" /></p>
+
+<ol>
+  <li>Select the locale to be used by the new database cluster and click <strong>Next</strong>.</li>
+</ol>
+
+<p><img src="https://i.ibb.co/TrDrZcq/07.png" alt="Step 7" /></p>
+
+<ol>
+  <li>Review the installation settings and click <strong>Next</strong> to start the installation process. The installation may take a few minutes.</li>
+</ol>
+
+<p><img src="https://i.ibb.co/S65bfCk/08.pngz" alt="Step 8" />
+<img src="https://i.ibb.co/R2PqTr4/09.png" alt="Step 9" /></p>
+
+<ol>
+  <li>Once the installation is complete, click <strong>Finish</strong> to close the Setup Wizard.</li>
+</ol>
+
+<h2 id="step-2-configure-environment-variables">Step 2: Configure Environment Variables</h2>
+
+<p>Next, we’re going to configure <strong>environment variables</strong> on your Windows system. Why are we doing this? Well, environment variables are a powerful feature of operating systems that allow us to specify values - like directory locations - that can be used by multiple applications. In our case, we need to ensure that our system can locate the PostgreSQL executable files stored in the “bin” folder of the PostgreSQL directory.</p>
+
+<p>By adding the PostgreSQL “bin” folder path to the system’s PATH environment variable, we’re telling our operating system where to find these executables. This means you’ll be able to run PostgreSQL commands directly from the command line, no matter what directory you’re in, because the system will know where to find the necessary files. This makes working with PostgreSQL more convenient and opens up the possibility of running scripts that interact with PostgreSQL.</p>
+
+<p>Now, let’s get started with the steps to configure your environment variables on Windows!</p>
+
+<ol>
+  <li>On the <strong>Windows taskbar</strong>, right-click the <strong>Windows</strong> icon and select <strong>System</strong>.</li>
+  <li>Click on <strong>Advanced system settings</strong> in the left pane.</li>
+  <li>In the <strong>System Properties</strong> dialog, click on the <strong>Environment Variables</strong> button.</li>
+</ol>
+
+<p><img src="https://i.ibb.co/YTVfGBN/10.png" alt="Environment Variables" /></p>
+
+<ol>
+  <li>Under the <strong>System Variables</strong> section, scroll down and find the <strong>Path</strong> variable. Click on it to select it, then click the <strong>Edit</strong> button.</li>
+  <li>In the <strong>Edit environment variable</strong> dialog, click the <strong>New</strong> button and add the path to the PostgreSQL <strong>bin</strong> folder, typically <code class="language-plaintext highlighter-rouge">C:\Program Files\PostgreSQL\14\bin</code>.</li>
+</ol>
+
+<p><img src="https://i.ibb.co/GFxpVg7/12.png" alt="Edit Environment Variables" /></p>
+
+<ol>
+  <li>Click <strong>OK</strong> to close the <strong>“Edit environment variable”</strong> dialog, then click <strong>OK</strong> again to close the <strong>“Environment Variables”</strong> dialog, and finally click <strong>OK</strong> to close the <strong>“System Properties”</strong> dialog.</li>
+</ol>
+
+<h2 id="step-3-verify-the-installation">Step 3: Verify the Installation</h2>
+
+<p>After going through the installation and configuration process, it’s essential to verify that PostgreSQL is correctly installed and accessible. This gives us the assurance that the software is properly set up and ready to use, which can save us from troubleshooting issues later when we start interacting with databases.</p>
+
+<p>If something went wrong during installation, this verification process will help you spot the problem early before creating or managing databases.</p>
+
+<p>Now, let’s go through the steps to verify your PostgreSQL installation.</p>
+
+<ol>
+  <li>Open the Command Prompt by pressing Win + R, typing <strong>cmd,</strong> and pressing <strong>Enter</strong>.</li>
+  <li>Type <code class="language-plaintext highlighter-rouge">psql --version</code> and press <strong>Enter</strong>. You should see the PostgreSQL version number you installed if the installation was successful.</li>
+  <li>To connect to the PostgreSQL server, type <code class="language-plaintext highlighter-rouge">psql -U postgres</code> and press <strong>Enter</strong>.</li>
+  <li>When prompted, enter the password you set for the <strong>postgres</strong> user during installation. You should now see the <code class="language-plaintext highlighter-rouge">postgres=#</code> prompt, indicating you are connected to the PostgreSQL server.</li>
+</ol>
+
+<h2 id="step-4-download-the-northwind-postgresql-sql-file">Step 4: Download the Northwind PostgreSQL SQL File</h2>
+
+<p>Now, we’re going to introduce you to the Northwind database and help you download it. The Northwind database is a sample database originally provided by Microsoft for its Access Database Management System. It’s based on a fictitious company named “Northwind Traders,” and it contains data on their customers, orders, products, suppliers, and other aspects of the business. In our case, we’ll be working with a version of Northwind that has been adapted for PostgreSQL.</p>
+
+<p>The following steps will guide you on how to download this PostgreSQL-compatible version of the Northwind database from GitHub to your local machine. Let’s get started:</p>
+
+<p>First, you need to download a version of the Northwind database that’s compatible with PostgreSQL. You can find <a href="https://github.com/pthom/northwind_psql/tree/master">an adapted version on GitHub</a>. To download the SQL file, follow these steps:</p>
+
+<ol>
+  <li>Open your Terminal application.</li>
+  <li>
+    <p>Create a new directory for the Northwind database and navigate to it:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>northwind <span class="o">&amp;&amp;</span> <span class="nb">cd </span>northwind
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Download the Northwind PostgreSQL SQL file using curl:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-O</span> https://raw.githubusercontent.com/pthom/northwind_psql/master/northwind.sql
+</code></pre></div>    </div>
+
+    <p>This will download the <code class="language-plaintext highlighter-rouge">northwind.sql</code> file to the <code class="language-plaintext highlighter-rouge">northwind</code> directory you created.</p>
+  </li>
+</ol>
+
+<h2 id="step-5-create-a-new-postgresql-database">Step 5: Create a New PostgreSQL Database</h2>
+
+<p>Now that we’ve downloaded the Northwind SQL file, it’s time to prepare our PostgreSQL server to host this data. The next steps will guide you in creating a new database on your PostgreSQL server, a crucial prerequisite before importing the Northwind SQL file.</p>
+<h2 id="step-5-create-a-new-postgresql-database-continued">Step 5: Create a New PostgreSQL Database (continued)</h2>
+
+<p>Creating a dedicated database for the Northwind data is good practice as it isolates these data from other databases in your PostgreSQL server, facilitating better organization and management of your data. These steps involve connecting to the PostgreSQL server as the <code class="language-plaintext highlighter-rouge">postgres</code> user, creating the <code class="language-plaintext highlighter-rouge">northwind</code> database, and then exiting the PostgreSQL command-line interface.</p>
+
+<p>Let’s proceed with creating your new database:</p>
+
+<ol>
+  <li>
+    <p>Connect to the PostgreSQL server as the <code class="language-plaintext highlighter-rouge">postgres</code> user:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql <span class="nt">-U</span> postgres
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a new database called <code class="language-plaintext highlighter-rouge">northwind</code>:</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">northwind</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Exit the <code class="language-plaintext highlighter-rouge">psql</code> command-line interface:</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">\</span><span class="n">q</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="step-6-import-the-northwind-sql-file">Step 6: Import the Northwind SQL File</h2>
+
+<p>We’re now ready to import the Northwind SQL file into our newly created <code class="language-plaintext highlighter-rouge">northwind</code> database. This step is crucial as it populates our database with the data from the Northwind SQL file, which we will use for our PostgreSQL learning journey.</p>
+
+<p>These instructions guide you through the process of ensuring you’re in the correct directory in your Terminal and executing the command to import the SQL file. This command will connect to the PostgreSQL server, target the <code class="language-plaintext highlighter-rouge">northwind</code> database, and run the SQL commands contained in the <code class="language-plaintext highlighter-rouge">northwind.sql</code> file.</p>
+
+<p>Let’s move ahead and breathe life into our <code class="language-plaintext highlighter-rouge">northwind</code> database with the data it needs!</p>
+
+<p>With the <code class="language-plaintext highlighter-rouge">northwind</code> database created, you can import the Northwind SQL file using <code class="language-plaintext highlighter-rouge">psql</code>. Follow these steps:</p>
+
+<ol>
+  <li>In your Terminal, ensure you’re in the <code class="language-plaintext highlighter-rouge">northwind</code> directory where you downloaded the <code class="language-plaintext highlighter-rouge">northwind.sql</code> file.</li>
+  <li>
+    <p>Run the following command to import the Northwind SQL file into the <code class="language-plaintext highlighter-rouge">northwind</code> database:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql <span class="nt">-U</span> postgres <span class="nt">-d</span> northwind <span class="nt">-f</span> northwind.sql
+</code></pre></div>    </div>
+
+    <p>This command connects to the PostgreSQL server as the <code class="language-plaintext highlighter-rouge">postgres</code> user, selects the <code class="language-plaintext highlighter-rouge">northwind</code> database, and executes the SQL commands in the <code class="language-plaintext highlighter-rouge">northwind.sql</code> file.</p>
+  </li>
+</ol>
+
+<h2 id="step-7-verify-the-northwind-database-installation">Step 7: Verify the Northwind Database Installation</h2>
+
+<p>You’ve successfully created your <code class="language-plaintext highlighter-rouge">northwind</code> database and imported the Northwind SQL file. Next, we must ensure everything was installed correctly, and our database is ready for use.</p>
+
+<p>These upcoming steps will guide you on connecting to your <code class="language-plaintext highlighter-rouge">northwind</code> database, listing its tables, running a sample query, and finally, exiting the command-line interface. Checking the tables and running a sample query will give you a sneak peek into the data you now have and verify that the data was imported correctly. This means we can ensure everything is in order before diving into more complex operations and analyses.</p>
+
+<p>To verify that the Northwind database has been installed correctly, follow these steps:</p>
+
+<ol>
+  <li>
+    <p>Connect to the <code class="language-plaintext highlighter-rouge">northwind</code> database using <code class="language-plaintext highlighter-rouge">psql</code>:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql <span class="nt">-U</span> postgres <span class="nt">-d</span> northwind
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>List the tables in the Northwind database:</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">\</span><span class="n">dt</span>
+</code></pre></div>    </div>
+
+    <p>You should see a list of Northwind tables: categories, customers, employees, orders, and more.</p>
+  </li>
+  <li>
+    <p>Run a sample query to ensure the data has been imported correctly. For example, you can query the <code class="language-plaintext highlighter-rouge">customers</code> table:</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">customers</span> <span class="k">LIMIT</span> <span class="mi">5</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>This should return the first five rows from the <code class="language-plaintext highlighter-rouge">customers</code> table.</p>
+  </li>
+  <li>
+    <p>Exit the <code class="language-plaintext highlighter-rouge">psql</code> command-line interface:</p>
+
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">\</span><span class="n">q</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Congratulations! You’ve successfully installed the Northwind database in PostgreSQL using an SQL file and <code class="language-plaintext highlighter-rouge">psql</code>.</p>
+
+<h2 id="step-8-connect-to-the-database-using-jupyter-notebook">Step 8: Connect to the Database Using Jupyter Notebook</h2>
+
+<p>As we wrap up our installation, we will now introduce Jupyter Notebook as one of the tools available for executing SQL queries and analyzing the Northwind database. Jupyter Notebook offers a convenient and interactive platform that simplifies the visualization and sharing of query results, but it’s important to note that it is an optional step. You can also access Postgres through other means. However, we highly recommend using Jupyter Notebook for its numerous benefits and enhanced user experience.</p>
+
+<p>To set up the necessary tools and establish a connection to the Northwind database, here is an overview of what each step will do:</p>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">!pip install ipython-sql</code>: This command installs the <code class="language-plaintext highlighter-rouge">ipython-sql</code> package. This package enables you to write SQL queries directly in your Jupyter Notebook, making it easier to execute and visualize the results of your queries within the notebook environment.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">%sql postgresql://postgres@localhost:5432/northwind</code>: This command establishes a connection to the Northwind database using the PostgreSQL database system. The connection string has the following format:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">postgresql</span><span class="p">:</span><span class="o">//</span><span class="n">username</span><span class="nd">@hostname</span><span class="p">:</span><span class="n">port</span><span class="o">/</span><span class="n">database_name</span>
+</code></pre></div>    </div>
+
+    <p>In this case, <code class="language-plaintext highlighter-rouge">username</code> is <code class="language-plaintext highlighter-rouge">postgres</code>, <code class="language-plaintext highlighter-rouge">hostname</code> is <code class="language-plaintext highlighter-rouge">localhost</code>, <code class="language-plaintext highlighter-rouge">port</code> is <code class="language-plaintext highlighter-rouge">5432</code>, and <code class="language-plaintext highlighter-rouge">database_name</code> is <code class="language-plaintext highlighter-rouge">northwind</code>. The <code class="language-plaintext highlighter-rouge">%sql</code> magic command allows you to run a single-line SQL query in the Jupyter Notebook.</p>
+  </li>
+  <li>
+    <p>Copy the following text into a code cell in the Jupyter Notebook:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">ipython</span><span class="o">-</span><span class="n">sql</span>
+<span class="o">%</span><span class="n">load_ext</span> <span class="n">sql</span>
+<span class="o">%</span><span class="n">sql</span> <span class="n">postgresql</span><span class="p">:</span><span class="o">//</span><span class="n">postgres</span><span class="nd">@localhost</span><span class="p">:</span><span class="mi">5432</span><span class="o">/</span><span class="n">northwind</span>
+</code></pre></div>    </div>
+
+    <p>On Windows you may need to try the following command because you need to provide the password you set for the “postgres” user during installation:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">sql</span> <span class="n">postgresql</span><span class="p">:</span><span class="o">//</span><span class="n">postgres</span><span class="p">:{</span><span class="n">password</span><span class="p">}</span><span class="nd">@localhost</span><span class="p">:</span><span class="mi">5432</span><span class="o">/</span><span class="n">northwind</span>
+</code></pre></div>    </div>
+
+    <p>Bear in mind that it’s considered best practice <strong>not to include sensitive information like passwords directly in files that could be shared or accidentally exposed</strong>. Instead, you can store your password securely using environment variables or a password management system (we’ll link to some resources at the end of this guide if you are interested in doing this).</p>
+  </li>
+  <li>Run the cell by either:
+    <ul>
+      <li>Clicking the “Run” button on the menu bar.</li>
+      <li>Using the keyboard shortcut: <code class="language-plaintext highlighter-rouge">Shift + Enter</code> or <code class="language-plaintext highlighter-rouge">Ctrl + Enter</code>.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Upon successful connection, you should see an output similar to the following:</p>
+
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'Connected: postgres@northwind'
+</code></pre></div>    </div>
+
+    <p>This output confirms that you are now connected to the Northwind database, and you can proceed with the guided project in your Jupyter Notebook environment.</p>
+  </li>
+</ol>
+
+<p>Once you execute these commands, you’ll be connected to the Northwind database, and you can start writing SQL queries in your Jupyter Notebook using the <code class="language-plaintext highlighter-rouge">%sql</code> or <code class="language-plaintext highlighter-rouge">%%sql</code> magic commands.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Based on what you’ve accomplished, here are some potential next steps to continue your learning journey:</p>
+
+<ol>
+  <li><strong>Deepen Your SQL Knowledge:</strong>
+    <ul>
+      <li>Try formulating more complex queries on the Northwind database to improve your SQL skills. These could include joins, subqueries, and aggregations.</li>
+      <li>Understand the design of the Northwind database: inspect the tables, their relationships, and how data is structured.</li>
+    </ul>
+  </li>
+  <li><strong>Experiment with Database Management:</strong>
+    <ul>
+      <li>Learn how to backup and restore databases in PostgreSQL. Try creating a backup of your Northwind database.</li>
+      <li>Explore different ways to optimize your PostgreSQL database performance like indexing and query optimization.</li>
+    </ul>
+  </li>
+  <li><strong>Integration with Python:</strong>
+    <ul>
+      <li>Learn how to use <code class="language-plaintext highlighter-rouge">psycopg2</code>, a popular PostgreSQL adapter for Python, to interact with your database programmatically.</li>
+      <li>Experiment with ORM (Object-Relational Mapping) libraries like <code class="language-plaintext highlighter-rouge">SQLAlchemy</code> to manage your database using Python.</li>
+    </ul>
+  </li>
+  <li><strong>Security and Best Practices:</strong>
+    <ul>
+      <li>Learn about database security principles and apply them to your PostgreSQL setup.</li>
+      <li>Understand best practices for storing sensitive information, like using <code class="language-plaintext highlighter-rouge">.env</code> files for environment variables.</li>
+      <li>For more guidance on securely storing passwords, you might find the following resources helpful:
+        <ul>
+          <li><a href="https://dev.to/aligoren/using-environment-variables-in-python-3ofm">Using Environment Variables in Python</a></li>
+          <li><a href="https://pypi.org/project/python-decouple/">Python Secret Module</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">10 Command-Line Utilities in PostgreSQL</title><link href="http://localhost:4000/jekyll/update/2023/09/09/10-Command-Line-Utilities-in-PostgreSQL.html" rel="alternate" type="text/html" title="10 Command-Line Utilities in PostgreSQL" /><published>2023-09-09T00:24:02+08:00</published><updated>2023-09-09T00:24:02+08:00</updated><id>http://localhost:4000/jekyll/update/2023/09/09/10-Command-Line-Utilities-in-PostgreSQL</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2023/09/09/10-Command-Line-Utilities-in-PostgreSQL.html"><![CDATA[<p>When you decided to work with PostgreSQL databases, you probably used graphical user interfaces such as PGAdmin, DBeaver, or even paid ones like DataGrip. These software applications provide user-friendly interfaces to work more effectively with databases and definitely make database management much easier for database administrators. But there’s a robust set of tools called PostgreSQL Client Applications that truly will leverage your efficiency while working with PostgreSQL databases. The good news is that these valuable tools are bundled and come with the PostgreSQL installation package for free.</p>
+
+<p>The PostgreSQL Client Applications bring a rapid and powerful set of command-line tools on the table to make interacting with the PostgreSQL servers across platforms, local or remote, more exciting.<br />
+In this tutorial, we are going to discover the PostgreSQL Client Applications and learn how to make the most of them by discussing ten of the most useful command-line tools.</p>
+
+<p>After you finish this tutorial, you’ll have a good understanding of</p>
+<ul>
+  <li>What PostgreSQL Client Applications are</li>
+</ul>
+
+<p>We assume you know the fundamentals of SQL, including the basics of working with database management systems. If you’re unfamiliar with these or eager to brush up on your SQL skill, you might like to try our  <a href="https://www.dataquest.io/path/sql-skills/">SQL Fundamentals Skill Path – Dataquest</a>.
+We also assume you have already installed PostgreSQL on your computer; if you still need to, please refer to the official PostgreSQL website to download and install it. <a href="https://www.postgresql.org/download/">PostgreSQL Downloads</a></p>
+
+<h2 id="postgresql-client-applications">PostgreSQL Client Applications</h2>
+
+<p>As mentioned, this bundle contains different tools that assist database administrations and data experts in getting the most out of PostgreSQL databases hosted on a local server, across networked servers, or in the cloud platforms. These command-line utilities, available for Windows, MacOS, and Linux operating systems, are designed to work with database objects and manage them. There are particular tool sets for creating and removing databases, roles, and users. There are some valuable tools for making and restoring backups of databases.</p>
+
+<p>However, among these utilities, the pick of the litter is the <code class="language-plaintext highlighter-rouge">psql</code> command-line tool that allows us to connect to databases, explore their contents, execute SQL queries, and output the result sets in various formats. This utility is really a game changer for leveraging the capabilities of PostgreSQL.</p>
+
+<h2 id="the-psql-client-application">The <code class="language-plaintext highlighter-rouge">psql</code> Client Application</h2>
+<p>Let’s start exploring the PostgreSQL Client Applications with the <code class="language-plaintext highlighter-rouge">psql</code> command-line utility and its different options.
+But before starting work with this utility, let’s check the PostgreSQL version installed on your local computer by running the following command:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% psql <span class="nt">--version</span>
+
+psql <span class="o">(</span>PostgreSQL<span class="o">)</span> 14.5 <span class="o">(</span>Homebrew<span class="o">)</span>
+</code></pre></div></div>
+<p>The PostgreSQL version installed on my MacBook is 14.5 which allows me to connect to any PostgreSQL server that’s running version 14.5 or earlier.</p>
+
+<h3 id="1-connect-to-a-database">1. Connect to a Database</h3>
+<p>The first step to getting into the <code class="language-plaintext highlighter-rouge">psql</code> command-line tool is to get connected to a local or remote PostgreSQL server.</p>
+
+<p>To connect to a PostgreSQL database, you can use the command template:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>psql <span class="nt">--host</span> HOSTNAME <span class="nt">--port</span> PORT <span class="nt">--user</span> USERNAME <span class="nt">--dbname</span> DATABASE_NAME
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">HOSTNAME</code> is a remote server name or its IP address. If the PostgreSQL server is running on your local machine, you must use <code class="language-plaintext highlighter-rouge">localhost</code> instead of a server’s IP address.</p>
+
+<p>You also need to identify the communication port with <code class="language-plaintext highlighter-rouge">--port</code>. The default communication port is 5432. You may omit the <code class="language-plaintext highlighter-rouge">--port PORT</code> argument if the port number is 5432.
+The <code class="language-plaintext highlighter-rouge">--dbname</code> and <code class="language-plaintext highlighter-rouge">--username</code> determine the database name to connect to and the username to connect with, respectively.</p>
+
+<p>The following <code class="language-plaintext highlighter-rouge">psql</code> command makes a connection to the <code class="language-plaintext highlighter-rouge">mydb</code> database with username <code class="language-plaintext highlighter-rouge">postgres</code> that resides on the same computer that you are working on, <code class="language-plaintext highlighter-rouge">localhost</code>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% psql <span class="nt">--host</span> localhost <span class="nt">--port</span> 5432 <span class="nt">--dbname</span> mydb <span class="nt">--username</span> postgres
+</code></pre></div></div>
+<p>Executing the command above opens up a connection to the PostgreSQL server running on your local computer, and the command prompt will be changed as follows:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">mydb</span><span class="o">=</span><span class="c"># </span>
+</code></pre></div></div>
+<p>Now, you are able to run <code class="language-plaintext highlighter-rouge">psql</code>’s meta-commands, which we will discuss soon. Meanwhile, let’s close the connection to the PostgreSQL server by typing <code class="language-plaintext highlighter-rouge">\q</code> and pressing Enter, which will return you to the operating system command prompt.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">mydb</span><span class="o">=</span><span class="c"># \q</span>
+</code></pre></div></div>
+
+<hr />
+<p><strong>Meta Commands</strong></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">psql</code> utility offers a great feature called meta or backslash commands. These commands or instructions are processed by the <code class="language-plaintext highlighter-rouge">psql</code> client application directly and not executed by the PostgreSQL server. The meta-commands provide a variety of options. We will learn more about them in the following sections.
+One of the meta-commands is <code class="language-plaintext highlighter-rouge">\q</code>, which we tried earlier to quit the <code class="language-plaintext highlighter-rouge">psql</code> environment.
+Also, to get a list of all available meta-commands, you can type <code class="language-plaintext highlighter-rouge">\?</code> and press Enter.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">mydb</span><span class="o">=</span><span class="c"># \?</span>
+</code></pre></div></div>
+<hr />
+
+<h3 id="2-the-l-meta-command">2. The <code class="language-plaintext highlighter-rouge">\l</code> Meta-Command</h3>
+<p>The <code class="language-plaintext highlighter-rouge">\l</code> meta-command allows you to list all the databases stored on the PostgreSQL server you are connected to. First, connect to the database server and then run the <code class="language-plaintext highlighter-rouge">\l</code> meta-command, as shown in the image below. The command lists all the available databases along with all the details.</p>
+
+<p><img src="https://i.imgur.com/ua6zHO1.png" alt="" /></p>
+
+<h3 id="3-the-dt-meta-command">3. The <code class="language-plaintext highlighter-rouge">\dt</code> Meta-Command</h3>
+<p>We’ve connected to the <code class="language-plaintext highlighter-rouge">mydb</code> database; now we’re interested in listing all the existing tables on this database. To do so, you can use the <code class="language-plaintext highlighter-rouge">\dt</code> meta-command as follows:
+<img src="https://i.imgur.com/fnKXVH8.png" alt="" /></p>
+
+<p>As shown in the image above, all the database’s relations (tables) are listed with useful details such as schema and the owner of tables.</p>
+
+<h3 id="4-the-c-meta-command">4. The <code class="language-plaintext highlighter-rouge">\c</code> Meta-Command</h3>
+<p>Sometimes we need to change the active database and switch to another one. The <code class="language-plaintext highlighter-rouge">\c</code> meta-command allows us to connect to a new database. Let’s try it.
+<img src="https://i.imgur.com/AEsd1po.png" alt="" /></p>
+
+<p>So, we’ve made <code class="language-plaintext highlighter-rouge">chinook</code> the active database. Now, we are able to write queries against the database. Let’s see how we can write a simple query against the <code class="language-plaintext highlighter-rouge">actor</code> table in the <code class="language-plaintext highlighter-rouge">chinook</code> database.</p>
+
+<p><img src="https://i.imgur.com/yAImiDE.png" alt="" /></p>
+
+<h3 id="5-the-d-meta-command">5. The <code class="language-plaintext highlighter-rouge">\d</code> Meta-Command</h3>
+<p>To reveal the details of each relation (table, view, etc.), we can use the <code class="language-plaintext highlighter-rouge">\d relation-name</code> meta-command. 
+For example, <code class="language-plaintext highlighter-rouge">\d employees</code> returns the table’s columns and their data types along with additional information for each column, as shown below:
+<img src="https://i.imgur.com/HypcCxC.png" alt="" /></p>
+
+<h3 id="6-the-dn-meta-command">6. The <code class="language-plaintext highlighter-rouge">\dn</code> Meta-Command</h3>
+<p>The <code class="language-plaintext highlighter-rouge">\dn</code> meta-command allows us to list all the schemas existing in a PostgreSQL database. To see the output of this meta-command, let’s connect to the <code class="language-plaintext highlighter-rouge">Adventureworks</code> database and list all the existing schemas using the <code class="language-plaintext highlighter-rouge">\dn</code> meta-command.</p>
+
+<p><img src="https://i.imgur.com/rmIsk0e.png" alt="" /></p>
+
+<h3 id="7-the-df-meta-command">7. The <code class="language-plaintext highlighter-rouge">\df</code> Meta-Command</h3>
+<p>The <code class="language-plaintext highlighter-rouge">\df</code> meta-command returns all the available functions of the current database. First, connect to the <code class="language-plaintext highlighter-rouge">Adventureworks</code> database, type <code class="language-plaintext highlighter-rouge">\df</code>, and press Enter to see how it works. It will show all the functions existing in the <code class="language-plaintext highlighter-rouge">Adventureworks</code> database.</p>
+
+<p><img src="https://i.imgur.com/tw9dN4J.jpg" alt="" /></p>
+
+<h3 id="8-the-dv-meta-command">8. The <code class="language-plaintext highlighter-rouge">\dv</code> Meta-Command</h3>
+<p>The <code class="language-plaintext highlighter-rouge">\dv</code> meta-command is another useful <code class="language-plaintext highlighter-rouge">psql</code>’s backslash-command that enables us to list all the views in the current database.
+For example, we can use this meta-command after connecting to the database to show the available views in the <code class="language-plaintext highlighter-rouge">chinook</code> database.</p>
+
+<p><img src="https://i.imgur.com/vDTvd0g.png" alt="" /></p>
+
+<hr />
+
+<p><strong>NOTE</strong></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">psql</code> client application has dozens of meta-commands, and discussing them is beyond this tutorial’s scope. If you’re interested in learning more about these meta-commands, please refer to the following link on PostgreSQl’s documentation portal.</p>
+
+<p>https://www.postgresql.org/docs/current/app-psql.html
+___</p>
+
+<h2 id="backup-and-restore-postgresql-databases">Backup and Restore PostgreSQL Databases</h2>
+<p>So far, we have focused on using the <code class="language-plaintext highlighter-rouge">psql</code> client application. But there are some additional utilities bundled with PostgreSQL that make life easier for database administrators and data engineers, especially for those data experts who work on database maintenance tasks.</p>
+
+<h3 id="9-the-pg_dump-client-application">9. The <code class="language-plaintext highlighter-rouge">pg_dump</code> Client Application</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">pg_dump</code> client application generates a file with SQL commands to make a backup of a database. If we run these SQL statements, exactly the same database with the same content will be recreated.</p>
+
+<p>The following statement makes a text file containing all the SQL statements required for recreating the <code class="language-plaintext highlighter-rouge">mydb</code> database.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% pg_dump mydb <span class="o">&gt;</span> dump_file.sql
+</code></pre></div></div>
+
+<h3 id="10-restoring-plain-text-backups">10. Restoring Plain-Text Backups</h3>
+<p>Restoring a database from a plain-text file generated by the <code class="language-plaintext highlighter-rouge">pg_dump</code> client application is simple. 
+Most of the database experts use the <code class="language-plaintext highlighter-rouge">psql</code> utility with the following options to recreate a database that we have a backup file of it in the plain-text format:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% createdb mydb_restored
+
+% psql <span class="nt">--host</span> localhost <span class="nt">--dbname</span> mydb_restored <span class="nt">--username</span> postgres <span class="nt">--file</span> /Users/mohammadmehdi/dump_file.sql
+
+% psql <span class="nt">--host</span> localhost <span class="nt">--port</span> 5432 <span class="nt">--dbname</span> mydb_restored <span class="nt">--username</span> postgres 
+</code></pre></div></div>
+<p>The three commands above will create a new database called <code class="language-plaintext highlighter-rouge">mydb_restored</code>, then the dump file will be restored into it, which will recreate all the database’s objects that we already made a backup of it using the <code class="language-plaintext highlighter-rouge">pg_dump</code> utility. 
+The last command connects to the <code class="language-plaintext highlighter-rouge">mydb_restored</code> database. So, we can list all the existing relations in this database to ensure it is exactly the exact copy of the <code class="language-plaintext highlighter-rouge">mydb</code> database.</p>
+
+<p><img src="https://i.imgur.com/ZEwHwUw.png" alt="" /></p>
+
+<h2 id="summary">Summary</h2>
+<p>This tutorial discussed the PostgreSQL client applications concisely by focusing on the <code class="language-plaintext highlighter-rouge">psql</code> utility and making a backup of a database in plain-text format and restoring it.</p>
+
+<p>I hope that you have learned something new today. Feel free to connect with me on <a href="https://www.linkedin.com/in/lotfinejad/">LinkedIn</a> or <a href="https://twitter.com/lotfinejad">Twitter</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[When you decided to work with PostgreSQL databases, you probably used graphical user interfaces such as PGAdmin, DBeaver, or even paid ones like DataGrip. These software applications provide user-friendly interfaces to work more effectively with databases and definitely make database management much easier for database administrators. But there’s a robust set of tools called PostgreSQL Client Applications that truly will leverage your efficiency while working with PostgreSQL databases. The good news is that these valuable tools are bundled and come with the PostgreSQL installation package for free.]]></summary></entry></feed>

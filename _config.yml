@@ -29,7 +29,7 @@ github_username:  datatweets
 linkedin_username: lotfinejad
 
 # Build settings
-theme: minima
+theme: just-the-docs
 plugins:
   - jekyll-feed
 
