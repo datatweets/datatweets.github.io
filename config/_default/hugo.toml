@@ -84,3 +84,6 @@ copyRight = "Copyright (c) 2024 Datatweets"
   hint = "photo"
   quality = 85
   resampleFilter = "Lanczos"
+[services]
+  [services.googleAnalytics]
+    ID = 'G-2645P0RG49'
