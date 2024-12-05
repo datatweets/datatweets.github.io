@@ -23,14 +23,14 @@
   url = "/guide/lorem/"
 
 [[tutorial]]
-  name = "Lorem"
+  name = "Tutorials"
   weight = 10
   identifier = "lorem"
-  url = "/tutorial/lorem/"
+  url = "/tutorials/"
 
 [[main]]
   name = "Lessons"
-  url = "/docs/guides/example-guide/"
+  url = "/docs/"
 # url = "/docs/1.0/prologue/introduction/"
   weight = 10
 
