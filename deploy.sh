@@ -1,5 +1,5 @@
 #!/bin/bash
-
+rm -rf public/*
 # Build the Hugo site
 hugo --minify
 

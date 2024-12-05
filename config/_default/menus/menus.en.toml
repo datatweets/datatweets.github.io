@@ -63,10 +63,10 @@
   post = "v0.1.0"
   weight = 30
 
-# [[sidebar_docs]]
-#   name = "Guides"
-#   pageRef = "/docs/guides"
-#   weight = 10
+[[sidebar_docs]]
+  name = "Python for Data Analytics"
+  pageRef = "/Modules/Python"
+  weight = 10
 #
 # [[sidebar_docs]]
 #   name = "Reference"
