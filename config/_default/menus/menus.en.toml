@@ -29,8 +29,8 @@
   url = "/tutorials/"
 
 [[main]]
-  name = "Lessons"
-  url = "/docs/"
+  name = "Modules"
+  url = "/Modules/"
 # url = "/docs/1.0/prologue/introduction/"
   weight = 10
 
