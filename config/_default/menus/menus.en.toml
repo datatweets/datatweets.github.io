@@ -63,7 +63,7 @@
   post = "v0.1.0"
   weight = 30
 
-[[sidebar_Modules]]
+[[sidebar_docs]]
   name = "Python for Data Analytics"
   pageRef = "/Modules/Python"
   weight = 10
