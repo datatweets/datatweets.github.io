@@ -16,6 +16,11 @@
 #   identifier = "lorem"
 #   url = "/docs/lorem/"
 
+[[sidebar_docs]]
+  name = "Python for Analytics"
+  url = "/Modules/Python/"
+  weight = 1
+
 [[guide]]
   name = "Lorem"
   weight = 10
