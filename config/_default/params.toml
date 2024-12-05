@@ -1,10 +1,10 @@
 # Hugo
-title = "My Docs"
+title = "Learn Data"
 description = "Congrats on setting up a new Doks project!"
 images = ["cover.png"]
 
 # mainSections
-mainSections = ["docs"]
+mainSections = ["Modules"]
 
 [social]
   twitter = "getdoks"
