@@ -16,10 +16,10 @@
 #   identifier = "lorem"
 #   url = "/docs/lorem/"
 
-[[sidebar_docs]]
-  name = "Python for Analytics"
-  pageRef = "/Modules/Python/"
-  weight = 20
+#[[sidebar_docs]]
+#  name = "Python for Analytics"
+#  pageRef = "/Modules/Python/"
+#  weight = 20
 
 [[guide]]
   name = "Lorem"
