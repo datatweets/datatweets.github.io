@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python for Data Analytics on Learn Data</title><link>/docs/python/</link><description>Recent content in Python for Data Analytics on Learn Data</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2024 Datatweets</copyright><lastBuildDate>Thu, 07 Sep 2023 16:04:48 +0200</lastBuildDate><atom:link href="/docs/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Python for Data Analytics Course</title><link>/docs/python/python-for-data-analytics-course/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>/docs/python/python-for-data-analytics-course/</guid><description>&lt;div class="callout callout-tip d-flex flex-row mt-4 mb-4 pt-4 pe-4 pb-2 ps-3">
+ &lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/rocket svg-inline callout-icon me-2 mb-3" id="svg-rocket" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+ &lt;path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+ &lt;path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+&lt;/svg>
+ &lt;div class="callout-content">
+ &lt;div class="callout-title">
+ &lt;p>Learn Python for Data Analytics and Transform Your Career!&lt;/p></description></item></channel></rss>
