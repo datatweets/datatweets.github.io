@@ -44,7 +44,7 @@ mainSections = ["Modules"]
   bootstrapJavascript = false # false (default) or true
 
   # Nav
-  sectionNav = ["Modules"] # ["docs"] (default) or list of sections (e.g. ["docs", "guides"])
+  sectionNav = ["Modules", "Tutorials"] # ["docs"] (default) or list of sections (e.g. ["docs", "guides"])
   toTopButton = false # false (default) or true
   breadcrumbTrail = false # false (default) or true
   headlineHash = true # true (default) or false
