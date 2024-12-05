@@ -16,6 +16,11 @@ fi
 git fetch main gh-pages
 git reset --soft main/gh-pages
 
+# Ensure the CNAME file exists (preserve your custom domain)
+if [ ! -f "CNAME" ]; then
+  echo "datatweets.com" > CNAME
+fi
+
 # Add and commit the new changes
 git add .
 git commit -m "Update site content"
