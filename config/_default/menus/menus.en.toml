@@ -18,8 +18,8 @@
 
 [[sidebar_docs]]
   name = "Python for Analytics"
-  url = "/Modules/Python/"
-  weight = 1
+  pageRef = "/Modules/Python/"
+  weight = 20
 
 [[guide]]
   name = "Lorem"
