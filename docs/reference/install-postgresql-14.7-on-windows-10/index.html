@@ -14,13 +14,13 @@
 
 <link rel="stylesheet" href="/main.1542a5884e04a94d737f95f75653bbae5d9d951aeefab7705a9db5f7a85e58fed8b1c2f686c1303120bb66c4ac2cbfbf1317d05cde7d463eccc899dbb8088787.css" integrity="sha512-FUKliE4EqU1zf5X3VlO7rl2dlRru&#43;rdwWp2196heWP7YscL2hsEwMSC7ZsSsLL&#43;/ExfQXN59Rj7MyJnbuAiHhw==" crossorigin="anonymous">
 
-<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/reference/install-postgresql-14.7-for-macos/">
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/reference/install-postgresql-14.7-on-windows-10/">
 
-  <link rel="canonical" href="http://localhost:1313/docs/reference/install-postgresql-14.7-for-macos/">
+  <link rel="canonical" href="http://localhost:1313/docs/reference/install-postgresql-14.7-on-windows-10/">
 
 
-<title>Install PostgreSQL 14.7 for macOS</title>
-<meta name="description" content="Install PostgreSQL 14.7 for macOS">
+<title>Install PostgreSQL 14.7 on Windows 10</title>
+<meta name="description" content="Install PostgreSQL 14.7 on Windows 10">
 
     
     <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -47,10 +47,10 @@
       >
 <link rel="manifest" href="/manifest.webmanifest">
 
-<meta property="og:url" content="http://localhost:1313/docs/reference/install-postgresql-14.7-for-macos/">
+<meta property="og:url" content="http://localhost:1313/docs/reference/install-postgresql-14.7-on-windows-10/">
   <meta property="og:site_name" content="Learn Data">
-  <meta property="og:title" content="Install PostgreSQL 14.7 for macOS">
-  <meta property="og:description" content="Install PostgreSQL 14.7 for macOS">
+  <meta property="og:title" content="Install PostgreSQL 14.7 on Windows 10">
+  <meta property="og:description" content="Install PostgreSQL 14.7 on Windows 10">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -60,8 +60,8 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/cover.png">
-  <meta name="twitter:title" content="Install PostgreSQL 14.7 for macOS">
-  <meta name="twitter:description" content="Install PostgreSQL 14.7 for macOS">
+  <meta name="twitter:title" content="Install PostgreSQL 14.7 on Windows 10">
+  <meta name="twitter:description" content="Install PostgreSQL 14.7 on Windows 10">
       <meta name="twitter:site" content="@lotfinejad">
 
     
@@ -91,7 +91,7 @@
      },
      {
        "@type": "ListItem",
-       "name": "Install Postgre SQL 14.7 for MAC Os",
+       "name": "Install Postgre SQL 14.7 on Windows 10",
        "position": 4
      }
    ]
@@ -210,12 +210,12 @@
       <a href="/docs/reference/installing-python-on-windows/">Installing Python on Windows</a>
   </li>
 
-  <li class="active" >
-      <a aria-current="page" href="/docs/reference/install-postgresql-14.7-for-macos/">Install PostgreSQL 14.7 for macOS</a>
+  <li>
+      <a href="/docs/reference/install-postgresql-14.7-for-macos/">Install PostgreSQL 14.7 for macOS</a>
   </li>
 
-  <li>
-      <a href="/docs/reference/install-postgresql-14.7-on-windows-10/">Install PostgreSQL 14.7 on Windows 10</a>
+  <li class="active" >
+      <a aria-current="page" href="/docs/reference/install-postgresql-14.7-on-windows-10/">Install PostgreSQL 14.7 on Windows 10</a>
   </li>
       </ul>
     </details>
@@ -422,12 +422,12 @@
       <a href="/docs/reference/installing-python-on-windows/">Installing Python on Windows</a>
   </li>
 
-  <li class="active" >
-      <a aria-current="page" href="/docs/reference/install-postgresql-14.7-for-macos/">Install PostgreSQL 14.7 for macOS</a>
+  <li>
+      <a href="/docs/reference/install-postgresql-14.7-for-macos/">Install PostgreSQL 14.7 for macOS</a>
   </li>
 
-  <li>
-      <a href="/docs/reference/install-postgresql-14.7-on-windows-10/">Install PostgreSQL 14.7 on Windows 10</a>
+  <li class="active" >
+      <a aria-current="page" href="/docs/reference/install-postgresql-14.7-on-windows-10/">Install PostgreSQL 14.7 on Windows 10</a>
   </li>
       </ul>
     </details>
@@ -443,14 +443,17 @@
   <h3>On this page</h3>
     <nav id="toc">
   <ul>
+    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#step-1-install-homebrew">Step 1: Install Homebrew</a></li>
-    <li><a href="#step-2-install-postgresql">Step 2: Install PostgreSQL</a></li>
-    <li><a href="#step-3-download-the-northwind-postgresql-sql-file">Step 3: Download the Northwind PostgreSQL SQL File</a></li>
-    <li><a href="#step-4-create-a-new-postgresql-database">Step 4: Create a New PostgreSQL Database</a></li>
-    <li><a href="#step-5-import-the-northwind-sql-file">Step 5: Import the Northwind SQL File</a></li>
-    <li><a href="#step-6-verify-the-northwind-database-installation">Step 6: Verify the Northwind Database Installation</a></li>
-    <li><a href="#step-7-connect-to-the-database-using-jupyter-notebook">Step 7: Connect to the Database Using Jupyter Notebook</a></li>
+    <li><a href="#step-1-install-postgresql">Step 1: Install PostgreSQL</a></li>
+    <li><a href="#step-2-configure-environment-variables">Step 2: Configure Environment Variables</a></li>
+    <li><a href="#step-3-verify-the-installation">Step 3: Verify the Installation</a></li>
+    <li><a href="#step-4-download-the-northwind-postgresql-sql-file">Step 4: Download the Northwind PostgreSQL SQL File</a></li>
+    <li><a href="#step-5-create-a-new-postgresql-database">Step 5: Create a New PostgreSQL Database</a></li>
+    <li><a href="#step-5-create-a-new-postgresql-database-continued">Step 5: Create a New PostgreSQL Database (continued)</a></li>
+    <li><a href="#step-6-import-the-northwind-sql-file">Step 6: Import the Northwind SQL File</a></li>
+    <li><a href="#step-7-verify-the-northwind-database-installation">Step 7: Verify the Northwind Database Installation</a></li>
+    <li><a href="#step-8-connect-to-the-database-using-jupyter-notebook">Step 8: Connect to the Database Using Jupyter Notebook</a></li>
     <li><a href="#next-steps">Next Steps</a></li>
   </ul>
 </nav>
@@ -459,7 +462,7 @@
 		</nav>
 		<main class="docs-content col-lg-11 col-xl-9">
 		
-			<h1>Install PostgreSQL 14.7 for macOS</h1>
+			<h1>Install PostgreSQL 14.7 on Windows 10</h1>
 			
 			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
 				<details>
@@ -467,14 +470,17 @@
     <div class="page-links">
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#introduction">Introduction</a></li>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#step-1-install-homebrew">Step 1: Install Homebrew</a></li>
-    <li><a href="#step-2-install-postgresql">Step 2: Install PostgreSQL</a></li>
-    <li><a href="#step-3-download-the-northwind-postgresql-sql-file">Step 3: Download the Northwind PostgreSQL SQL File</a></li>
-    <li><a href="#step-4-create-a-new-postgresql-database">Step 4: Create a New PostgreSQL Database</a></li>
-    <li><a href="#step-5-import-the-northwind-sql-file">Step 5: Import the Northwind SQL File</a></li>
-    <li><a href="#step-6-verify-the-northwind-database-installation">Step 6: Verify the Northwind Database Installation</a></li>
-    <li><a href="#step-7-connect-to-the-database-using-jupyter-notebook">Step 7: Connect to the Database Using Jupyter Notebook</a></li>
+    <li><a href="#step-1-install-postgresql">Step 1: Install PostgreSQL</a></li>
+    <li><a href="#step-2-configure-environment-variables">Step 2: Configure Environment Variables</a></li>
+    <li><a href="#step-3-verify-the-installation">Step 3: Verify the Installation</a></li>
+    <li><a href="#step-4-download-the-northwind-postgresql-sql-file">Step 4: Download the Northwind PostgreSQL SQL File</a></li>
+    <li><a href="#step-5-create-a-new-postgresql-database">Step 5: Create a New PostgreSQL Database</a></li>
+    <li><a href="#step-5-create-a-new-postgresql-database-continued">Step 5: Create a New PostgreSQL Database (continued)</a></li>
+    <li><a href="#step-6-import-the-northwind-sql-file">Step 6: Import the Northwind SQL File</a></li>
+    <li><a href="#step-7-verify-the-northwind-database-installation">Step 7: Verify the Northwind Database Installation</a></li>
+    <li><a href="#step-8-connect-to-the-database-using-jupyter-notebook">Step 8: Connect to the Database Using Jupyter Notebook</a></li>
     <li><a href="#next-steps">Next Steps</a></li>
   </ul>
 </nav>
@@ -482,10 +488,13 @@
   </details>
 
 			</nav>
-			<p>In this guide, you will learn how to set up PostgreSQL 14.7 on your MacBook using Homebrew, a widely-used package manager for macOS. The steps are straightforward and include:</p>
+			<h2 id="introduction">Introduction<a href="#introduction" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this tutorial, you&rsquo;ll learn how to install PostgreSQL 14.7 on Windows 10.</p>
+<p>The process is straightforward and consists of the following steps:</p>
 <ol>
-<li>Install Homebrew</li>
 <li>Install PostgreSQL</li>
+<li>Configure Environment Variables</li>
+<li>Verify the Installation</li>
 <li>Download the Northwind PostgreSQL SQL file</li>
 <li>Create a New PostgreSQL Database</li>
 <li>Import the Northwind SQL file</li>
@@ -493,29 +502,207 @@
 <li>Connect to the Database Using Jupyter Notebook</li>
 </ol>
 <h2 id="prerequisites">Prerequisites<a href="#prerequisites" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Ensure you have a MacBook or iMac running macOS 10.13 or later.</p>
-<p><strong>Install Xcode Command Line Tools</strong>
-To start, you need to install the Xcode Command Line Tools, which are essential for software development on your Mac.</p>
+<ul>
+<li>A computer running Windows 10</li>
+<li>Internet connection</li>
+</ul>
 <ol>
-<li>Open the Terminal app (located in Applications &gt; Utilities) and enter the command:
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">xcode-select --install</span></span></code></pre></div>
-  </figure>
-</div>
-A pop-up window will prompt you to install the Command Line Tools. Click &ldquo;Install&rdquo; to proceed. After installation is complete, move on to the next step.</li>
+<li>Download the official PostgreSQL 14.7 at <a href="https://get.enterprisedb.com/postgresql/postgresql-14.7-2-windows-x64.exe">https://get.enterprisedb.com/postgresql/postgresql-14.7-2-windows-x64.exe</a></li>
+<li>Save the installer executable to your computer and run the installer.</li>
 </ol>
-<h2 id="step-1-install-homebrew">Step 1: Install Homebrew<a href="#step-1-install-homebrew" class="anchor" aria-hidden="true">#</a> </h2>
-<p>With the Xcode Command Line Tools installed, you can now install Homebrew. Homebrew is a package manager for macOS that simplifies the installation of software packages like PostgreSQL.</p>
-<p>After installing Homebrew, it’s important to add it to your system’s PATH. This tells the system where to find the Homebrew executables, allowing you to run Homebrew commands from any location in your Terminal.</p>
-<p><strong>1. Install Homebrew</strong>
-Copy and paste the following command into the Terminal app. The script will automatically download and install Homebrew on your Mac. You might be asked to enter your admin password during the installation process.</p>
+<p><em>Note: We recommend version 14.7 because it is commonly used. There are newer versions available, but their features vary substantially!</em></p>
+<h2 id="step-1-install-postgresql">Step 1: Install PostgreSQL<a href="#step-1-install-postgresql" class="anchor" aria-hidden="true">#</a> </h2>
+<p>We&rsquo;re about to initiate a vital part of this project - installing and configuring PostgreSQL.</p>
+<p>Throughout this process, you&rsquo;ll define critical settings like the installation directory, components, data directory, and the initial &lsquo;postgres&rsquo; user password. This password grants administrative access to your PostgreSQL system. Additionally, you&rsquo;ll choose the default port for connections and the database cluster locale.</p>
+<p>Each choice affects your system&rsquo;s operation, file storage, available tools, and security. We&rsquo;re here to guide you through each decision to ensure optimal system functioning.</p>
+<ol>
+<li>In the PostgreSQL Setup Wizard, click <strong>Next</strong> to begin the installation process.</li>
+</ol>
+<p>
+
+<img
+  src="/01_3498803396506882844_hu11519293256722867651.webp"
+  width="825"
+  height="648"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Step 1"id="h-rh-i-0"
+/></p>
+<ol start="2">
+<li>Accept the default installation directory or choose a different directory by clicking <strong>Browse</strong>. Click <strong>Next</strong> to continue.</li>
+</ol>
+<p>
+
+<img
+  src="/02_13764160354339307938_hu17197858330021418532.webp"
+  width="824"
+  height="645"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Step 2"id="h-rh-i-1"
+/></p>
+<ol start="3">
+<li>Choose the components you want to install (e.g., PostgreSQL Server, pgAdmin 4 (optional), Stack Builder (optional), Command Line Tools),no characters will appear on the screen as you type your password and click <strong>Next</strong>.</li>
+</ol>
+<p>
+
+<img
+  src="/03_12736928226674753421_hu15738382777148184310.webp"
+  width="827"
+  height="647"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Step 3"id="h-rh-i-2"
+/></p>
+<ol start="4">
+<li>Select the data directory for storing your databases and click <strong>Next</strong>.</li>
+</ol>
+<p>
+
+<img
+  src="/04_2201642201939269938_hu12973296027570038238.webp"
+  width="825"
+  height="648"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Step 4"id="h-rh-i-3"
+/></p>
+<ol start="5">
+<li>Set a password for the PostgreSQL “postgres” user and click <strong>Next</strong>.</li>
+</ol>
+<p>
+
+<img
+  src="/05_4292724811780039052_hu7894635251584667883.webp"
+  width="823"
+  height="647"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Step 5"id="h-rh-i-4"
+/></p>
+<ul>
+<li>There will be some points where you&rsquo;re asked to enter a password in the command prompt. It&rsquo;s important to note that for security reasons, as you type your password, no characters will appear on the screen. This standard security feature is designed to prevent anyone from looking over your shoulder and seeing your password. So, when you&rsquo;re prompted for your password, don&rsquo;t be alarmed if you don&rsquo;t see any response on the screen as you type. Enter your password and press &lsquo;Enter&rsquo;. Most systems will allow you to re-enter the password if you make a mistake.</li>
+<li><strong>Remember, it&rsquo;s crucial to remember the password you set during the installation, as you&rsquo;ll need it to connect to your PostgreSQL databases in the future.</strong></li>
+</ul>
+<ol start="6">
+<li>Choose the default port number (5432) or specify a different port, then click <strong>Next</strong>.</li>
+</ol>
+<p>
+
+<img
+  src="/06_16072993883973668606_hu1034841881913968358.webp"
+  width="827"
+  height="647"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Step 6"id="h-rh-i-5"
+/></p>
+<ol start="7">
+<li>Select the locale to be used by the new database cluster and click <strong>Next</strong>.</li>
+</ol>
+<p>
+
+<img
+  src="/07_7857045664250029495_hu1992227790486153401.webp"
+  width="826"
+  height="648"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Step 7"id="h-rh-i-6"
+/></p>
+<ol start="8">
+<li>Review the installation settings and click <strong>Next</strong> to start the installation process. The installation may take a few minutes.</li>
+</ol>
+<p>
+
+<img
+  src="/08_3422351063967766867_hu6168168445832040598.webp"
+  width="829"
+  height="648"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Step 8"id="h-rh-i-7"
+/>
+
+
+<img
+  src="/09_14281282057802832846_hu7154936120766527087.webp"
+  width="826"
+  height="646"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Step 9"id="h-rh-i-8"
+/></p>
+<ol start="9">
+<li>Once the installation is complete, click <strong>Finish</strong> to close the Setup Wizard.</li>
+</ol>
+<h2 id="step-2-configure-environment-variables">Step 2: Configure Environment Variables<a href="#step-2-configure-environment-variables" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Next, we&rsquo;re going to configure <strong>environment variables</strong> on your Windows system. Why are we doing this? Well, environment variables are a powerful feature of operating systems that allow us to specify values - like directory locations - that can be used by multiple applications. In our case, we need to ensure that our system can locate the PostgreSQL executable files stored in the &ldquo;bin&rdquo; folder of the PostgreSQL directory.</p>
+<p>By adding the PostgreSQL &ldquo;bin&rdquo; folder path to the system&rsquo;s PATH environment variable, we&rsquo;re telling our operating system where to find these executables. This means you&rsquo;ll be able to run PostgreSQL commands directly from the command line, no matter what directory you&rsquo;re in, because the system will know where to find the necessary files. This makes working with PostgreSQL more convenient and opens up the possibility of running scripts that interact with PostgreSQL.</p>
+<p>Now, let&rsquo;s get started with the steps to configure your environment variables on Windows!</p>
+<ol>
+<li>On the <strong>Windows taskbar</strong>, right-click the <strong>Windows</strong> icon and select <strong>System</strong>.</li>
+<li>Click on <strong>Advanced system settings</strong> in the left pane.</li>
+<li>In the <strong>System Properties</strong> dialog, click on the <strong>Environment Variables</strong> button.</li>
+</ol>
+<p>
+
+<img
+  src="/10_11448374081446379325_hu4474597937729757168.webp"
+  width="612"
+  height="709"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Environment Variables"id="h-rh-i-9"
+/></p>
+<ol start="4">
+<li>Under the <strong>System Variables</strong> section, scroll down and find the <strong>Path</strong> variable. Click on it to select it, then click the <strong>Edit</strong> button.</li>
+<li>In the <strong>Edit environment variable</strong> dialog, click the <strong>New</strong> button and add the path to the PostgreSQL <strong>bin</strong> folder, typically <code>C:\Program Files\PostgreSQL\14\bin</code>.</li>
+</ol>
+<p>
+
+<img
+  src="/12_4267049204496798062_hu7822912783235226583.webp"
+  width="751"
+  height="828"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Edit Environment Variables"id="h-rh-i-10"
+/></p>
+<ol start="6">
+<li>Click <strong>OK</strong> to close the <strong>&ldquo;Edit environment variable&rdquo;</strong> dialog, then click <strong>OK</strong> again to close the <strong>&ldquo;Environment Variables&rdquo;</strong> dialog, and finally click <strong>OK</strong> to close the <strong>&ldquo;System Properties&rdquo;</strong> dialog.</li>
+</ol>
+<h2 id="step-3-verify-the-installation">Step 3: Verify the Installation<a href="#step-3-verify-the-installation" class="anchor" aria-hidden="true">#</a> </h2>
+<p>After going through the installation and configuration process, it&rsquo;s essential to verify that PostgreSQL is correctly installed and accessible. This gives us the assurance that the software is properly set up and ready to use, which can save us from troubleshooting issues later when we start interacting with databases.</p>
+<p>If something went wrong during installation, this verification process will help you spot the problem early before creating or managing databases.</p>
+<p>Now, let&rsquo;s go through the steps to verify your PostgreSQL installation.</p>
+<ol>
+<li>Open the Command Prompt by pressing Win + R, typing <strong>cmd,</strong> and pressing <strong>Enter</strong>.</li>
+<li>Type <code>psql --version</code> and press <strong>Enter</strong>. You should see the PostgreSQL version number you installed if the installation was successful.</li>
+<li>To connect to the PostgreSQL server, type <code>psql -U postgres</code> and press <strong>Enter</strong>.</li>
+<li>When prompted, enter the password you set for the <strong>postgres</strong> user during installation. You should now see the <code>postgres=#</code> prompt, indicating you are connected to the PostgreSQL server.</li>
+</ol>
+<h2 id="step-4-download-the-northwind-postgresql-sql-file">Step 4: Download the Northwind PostgreSQL SQL File<a href="#step-4-download-the-northwind-postgresql-sql-file" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Now, we&rsquo;re going to introduce you to the Northwind database and help you download it. The Northwind database is a sample database originally provided by Microsoft for its Access Database Management System. It&rsquo;s based on a fictitious company named &ldquo;Northwind Traders,&rdquo; and it contains data on their customers, orders, products, suppliers, and other aspects of the business. In our case, we&rsquo;ll be working with a version of Northwind that has been adapted for PostgreSQL.</p>
+<p>The following steps will guide you on how to download this PostgreSQL-compatible version of the Northwind database from GitHub to your local machine. Let&rsquo;s get started:</p>
+<p>First, you need to download a version of the Northwind database that&rsquo;s compatible with PostgreSQL. You can find <a href="https://github.com/pthom/northwind_psql/tree/master">an adapted version on GitHub</a>. To download the SQL file, follow these steps:</p>
+<ol>
+<li>
+<p>Open your Terminal application.</p>
+</li>
+<li>
+<p>Create a new directory for the Northwind database and navigate to it:</p>
 
 
 
@@ -524,12 +711,12 @@ Copy and paste the following command into the Terminal app. The script will auto
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/bin/bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&#34;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir northwind <span class="o">&amp;&amp;</span> <span class="nb">cd</span> northwind</span></span></code></pre></div>
   </figure>
 </div>
-<p>After the installation, you will see a message saying, &ldquo;Installation successful!&rdquo;</p>
-<p><strong>2. Add Homebrew to Your PATH</strong>
-To complete the installation, add Homebrew to your PATH:</p>
+</li>
+<li>
+<p>Download the Northwind PostgreSQL SQL file using curl:</p>
 
 
 
@@ -538,12 +725,20 @@ To complete the installation, add Homebrew to your PATH:</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="o">(</span>echo<span class="p">;</span> <span class="nb">echo</span> <span class="s1">&#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39;</span><span class="o">)</span> &gt;&gt; /Users/your_username/.zprofile</span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -O https://raw.githubusercontent.com/pthom/northwind_psql/master/northwind.sql</span></span></code></pre></div>
   </figure>
 </div>
-<p>Replace <code>/Users/your_username</code> with your actual user directory.</p>
-<p><strong>3. Load Homebrew Environment Variables</strong>
-Run the following command to load the Homebrew environment variables into your current Terminal session:</p>
+<p>This will download the <code>northwind.sql</code> file to the <code>northwind</code> directory you created.</p>
+</li>
+</ol>
+<h2 id="step-5-create-a-new-postgresql-database">Step 5: Create a New PostgreSQL Database<a href="#step-5-create-a-new-postgresql-database" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Now that we&rsquo;ve downloaded the Northwind SQL file, it&rsquo;s time to prepare our PostgreSQL server to host this data. The next steps will guide you in creating a new database on your PostgreSQL server, a crucial prerequisite before importing the Northwind SQL file.</p>
+<h2 id="step-5-create-a-new-postgresql-database-continued">Step 5: Create a New PostgreSQL Database (continued)<a href="#step-5-create-a-new-postgresql-database-continued" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Creating a dedicated database for the Northwind data is good practice as it isolates these data from other databases in your PostgreSQL server, facilitating better organization and management of your data. These steps involve connecting to the PostgreSQL server as the <code>postgres</code> user, creating the <code>northwind</code> database, and then exiting the PostgreSQL command-line interface.</p>
+<p>Let&rsquo;s proceed with creating your new database:</p>
+<ol>
+<li>
+<p>Connect to the PostgreSQL server as the <code>postgres</code> user:</p>
 
 
 
@@ -552,192 +747,12 @@ Run the following command to load the Homebrew environment variables into your c
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>/opt/homebrew/bin/brew shellenv<span class="k">)</span><span class="s2">&#34;</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">psql -U postgres</span></span></code></pre></div>
   </figure>
 </div>
-<p><strong>4. Verify the Installation</strong>
-To confirm Homebrew is installed correctly, run:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew --version</span></span></code></pre></div>
-  </figure>
-</div>
-<p>This should display the Homebrew version number.</p>
-<h2 id="step-2-install-postgresql">Step 2: Install PostgreSQL<a href="#step-2-install-postgresql" class="anchor" aria-hidden="true">#</a> </h2>
-<p>In this step, you will use Homebrew to install PostgreSQL on your macOS system.</p>
-<p><strong>1. Ensure Homebrew is Installed</strong>
-Make sure you have Homebrew installed. If not, refer to the previous section to install it.</p>
-<p><strong>2. Update Homebrew</strong>
-Update Homebrew to ensure you have the latest package information:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew update</span></span></code></pre></div>
-  </figure>
-</div>
-<p><strong>3. Install PostgreSQL 14</strong>
-Install PostgreSQL 14 using Homebrew:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install postgresql@14</span></span></code></pre></div>
-  </figure>
-</div>
-<p><strong>4. Start PostgreSQL Service</strong>
-After installation, start the PostgreSQL service:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew services start postgresql@14</span></span></code></pre></div>
-  </figure>
-</div>
-<p>You should see a message indicating that PostgreSQL has started successfully.</p>
-<p><strong>5. Verify PostgreSQL Installation</strong>
-Check the PostgreSQL version to ensure it’s installed correctly:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">psql --version</span></span></code></pre></div>
-  </figure>
-</div>
-<p><strong>6. Create a PostgreSQL User</strong>
-Create a new PostgreSQL user named <code>postgres</code> with superuser privileges:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">createuser -s postgres</span></span></code></pre></div>
-  </figure>
-</div>
-<p><strong>7. Set a Password for the <code>postgres</code> User</strong>
-Set a password for the <code>postgres</code> user:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">psql
-</span></span><span class="line"><span class="cl"><span class="se">\p</span>assword postgres</span></span></code></pre></div>
-  </figure>
-</div>
-<p><strong>8. Configure PostgreSQL Environment</strong>
-Add PostgreSQL to your PATH by adding the following line to your shell profile (<code>~/.zshrc</code> or <code>~/.bash_profile</code>):</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;/usr/local/opt/postgresql@14/bin:</span><span class="nv">$PATH</span><span class="s2">&#34;</span></span></span></code></pre></div>
-  </figure>
-</div>
-<p>Then, reload your profile:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc   <span class="c1"># or source ~/.bash_profile</span></span></span></code></pre></div>
-  </figure>
-</div>
-<p><strong>9. Troubleshooting Tips</strong>
-If the PostgreSQL service does not start, check the logs for errors:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">tail -f /usr/local/var/log/postgres.log</span></span></code></pre></div>
-  </figure>
-</div>
-<p>Ensure your system has enough resources and dependencies for PostgreSQL.</p>
-<h2 id="step-3-download-the-northwind-postgresql-sql-file">Step 3: Download the Northwind PostgreSQL SQL File<a href="#step-3-download-the-northwind-postgresql-sql-file" class="anchor" aria-hidden="true">#</a> </h2>
-<p>The Northwind database is a sample database originally provided by Microsoft. It contains data on customers, orders, products, suppliers, and other aspects of a fictitious company named &ldquo;Northwind Traders&rdquo;. We will use a version of Northwind adapted for PostgreSQL.</p>
-<p><strong>1. Open Terminal</strong>
-<strong>2. Create a New Directory</strong>
-Create a new directory for the Northwind database and navigate to it:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir northwind <span class="o">&amp;&amp;</span> <span class="nb">cd</span> northwind</span></span></code></pre></div>
-  </figure>
-</div>
-<p><strong>3. Download the SQL File</strong>
-Download the Northwind PostgreSQL SQL file using curl:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -O https://raw.githubusercontent.com/pthom/northwind_psql/master/northwind.sql</span></span></code></pre></div>
-  </figure>
-</div>
-<h2 id="step-4-create-a-new-postgresql-database">Step 4: Create a New PostgreSQL Database<a href="#step-4-create-a-new-postgresql-database" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Now that you have downloaded the Northwind SQL file, it’s time to create a new database on your PostgreSQL server.</p>
-<p><strong>1. Connect to PostgreSQL Server</strong>
-Connect as the <code>postgres</code> user:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">psql -U postgres</span></span></code></pre></div>
-  </figure>
-</div>
-<p><strong>2. Create Database</strong>
-Create a new database called <code>northwind</code>:</p>
+</li>
+<li>
+<p>Create a new database called <code>northwind</code>:</p>
 
 
 
@@ -749,8 +764,9 @@ Create a new database called <code>northwind</code>:</p>
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">northwind</span><span class="p">;</span></span></span></code></pre></div>
   </figure>
 </div>
-<p><strong>3. Exit PostgreSQL Interface</strong>
-Exit the <code>psql</code> command-line interface:</p>
+</li>
+<li>
+<p>Exit the <code>psql</code> command-line interface:</p>
 
 
 
@@ -762,12 +778,19 @@ Exit the <code>psql</code> command-line interface:</p>
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">q</span></span></span></code></pre></div>
   </figure>
 </div>
-<h2 id="step-5-import-the-northwind-sql-file">Step 5: Import the Northwind SQL File<a href="#step-5-import-the-northwind-sql-file" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Import the Northwind SQL file into the <code>northwind</code> database.</p>
-<p><strong>1. Ensure You’re in the Correct Directory</strong>
-Ensure you’re in the <code>northwind</code> directory where the <code>northwind.sql</code> file is located.</p>
-<p><strong>2. Import the SQL File</strong>
-Run the following command to import the Northwind SQL file into the <code>northwind</code> database:</p>
+</li>
+</ol>
+<h2 id="step-6-import-the-northwind-sql-file">Step 6: Import the Northwind SQL File<a href="#step-6-import-the-northwind-sql-file" class="anchor" aria-hidden="true">#</a> </h2>
+<p>We&rsquo;re now ready to import the Northwind SQL file into our newly created <code>northwind</code> database. This step is crucial as it populates our database with the data from the Northwind SQL file, which we will use for our PostgreSQL learning journey.</p>
+<p>These instructions guide you through the process of ensuring you&rsquo;re in the correct directory in your Terminal and executing the command to import the SQL file. This command will connect to the PostgreSQL server, target the <code>northwind</code> database, and run the SQL commands contained in the <code>northwind.sql</code> file.</p>
+<p>Let&rsquo;s move ahead and breathe life into our <code>northwind</code> database with the data it needs!</p>
+<p>With the <code>northwind</code> database created, you can import the Northwind SQL file using <code>psql</code>. Follow these steps:</p>
+<ol>
+<li>
+<p>In your Terminal, ensure you&rsquo;re in the <code>northwind</code> directory where you downloaded the <code>northwind.sql</code> file.</p>
+</li>
+<li>
+<p>Run the following command to import the Northwind SQL file into the <code>northwind</code> database:</p>
 
 
 
@@ -776,13 +799,19 @@ Run the following command to import the Northwind SQL file into the <code>northw
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">psql -U postgres -d northwind -f northwind.sql</span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">psql -U postgres -d northwind -f northwind.sql</span></span></code></pre></div>
   </figure>
 </div>
-<h2 id="step-6-verify-the-northwind-database-installation">Step 6: Verify the Northwind Database Installation<a href="#step-6-verify-the-northwind-database-installation" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Verify that the Northwind database has been installed correctly.</p>
-<p><strong>1. Connect to the <code>northwind</code> Database</strong>
-Connect using <code>psql</code>:</p>
+<p>This command connects to the PostgreSQL server as the <code>postgres</code> user, selects the <code>northwind</code> database, and executes the SQL commands in the <code>northwind.sql</code> file.</p>
+</li>
+</ol>
+<h2 id="step-7-verify-the-northwind-database-installation">Step 7: Verify the Northwind Database Installation<a href="#step-7-verify-the-northwind-database-installation" class="anchor" aria-hidden="true">#</a> </h2>
+<p>You&rsquo;ve successfully created your <code>northwind</code> database and imported the Northwind SQL file. Next, we must ensure everything was installed correctly, and our database is ready for use.</p>
+<p>These upcoming steps will guide you on connecting to your <code>northwind</code> database, listing its tables, running a sample query, and finally, exiting the command-line interface. Checking the tables and running a sample query will give you a sneak peek into the data you now have and verify that the data was imported correctly. This means we can ensure everything is in order before diving into more complex operations and analyses.</p>
+<p>To verify that the Northwind database has been installed correctly, follow these steps:</p>
+<ol>
+<li>
+<p>Connect to the <code>northwind</code> database using <code>psql</code>:</p>
 
 
 
@@ -791,11 +820,12 @@ Connect using <code>psql</code>:</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">psql -U postgres -d northwind</span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">psql -U postgres -d northwind</span></span></code></pre></div>
   </figure>
 </div>
-<p><strong>2. List Tables</strong>
-List the tables in the Northwind database:</p>
+</li>
+<li>
+<p>List the tables in the Northwind database:</p>
 
 
 
@@ -807,9 +837,10 @@ List the tables in the Northwind database:</p>
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">dt</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>You should see a list of Northwind tables.</p>
-<p><strong>3. Run a Sample Query</strong>
-Query the <code>customers</code> table to ensure data has been imported correctly:</p>
+<p>You should see a list of Northwind tables: categories, customers, employees, orders, and more.</p>
+</li>
+<li>
+<p>Run a sample query to ensure the data has been imported correctly. For example, you can query the <code>customers</code> table:</p>
 
 
 
@@ -821,8 +852,10 @@ Query the <code>customers</code> table to ensure data has been imported correctl
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span></span></span></code></pre></div>
   </figure>
 </div>
-<p><strong>4. Exit the <code>psql</code> Interface</strong>
-Exit the command-line interface:</p>
+<p>This should return the first five rows from the <code>customers</code> table.</p>
+</li>
+<li>
+<p>Exit the <code>psql</code> command-line interface:</p>
 
 
 
@@ -834,24 +867,18 @@ Exit the command-line interface:</p>
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">\</span><span class="n">q</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>Congratulations! You have successfully installed the Northwind database in PostgreSQL using an SQL file and <code>psql</code>.</p>
-<h2 id="step-7-connect-to-the-database-using-jupyter-notebook">Step 7: Connect to the Database Using Jupyter Notebook<a href="#step-7-connect-to-the-database-using-jupyter-notebook" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Jupyter Notebook is a great tool for executing SQL queries and analyzing the Northwind database.</p>
-<p><strong>1. Install ipython-sql</strong>
-Install the <code>ipython-sql</code> package:</p>
-
-
-
-<div class="expressive-code">
-  <figure class="frame is-terminal not-content">
-  <figcaption class="header">
-    <span class="title"></span>
-  </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">!pip install ipython-sql</span></span></code></pre></div>
-  </figure>
-</div>
-<p><strong>2. Load SQL Extension</strong>
-Load the SQL extension:</p>
+</li>
+</ol>
+<p>Congratulations! You&rsquo;ve successfully installed the Northwind database in PostgreSQL using an SQL file and <code>psql</code>.</p>
+<h2 id="step-8-connect-to-the-database-using-jupyter-notebook">Step 8: Connect to the Database Using Jupyter Notebook<a href="#step-8-connect-to-the-database-using-jupyter-notebook" class="anchor" aria-hidden="true">#</a> </h2>
+<p>As we wrap up our installation, we will now introduce Jupyter Notebook as one of the tools available for executing SQL queries and analyzing the Northwind database. Jupyter Notebook offers a convenient and interactive platform that simplifies the visualization and sharing of query results, but it&rsquo;s important to note that it is an optional step. You can also access Postgres through other means. However, we highly recommend using Jupyter Notebook for its numerous benefits and enhanced user experience.</p>
+<p>To set up the necessary tools and establish a connection to the Northwind database, here is an overview of what each step will do:</p>
+<ol>
+<li>
+<p><code>!pip install ipython-sql</code>: This command installs the <code>ipython-sql</code> package. This package enables you to write SQL queries directly in your Jupyter Notebook, making it easier to execute and visualize the results of your queries within the notebook environment.</p>
+</li>
+<li>
+<p><code>%sql postgresql://postgres@localhost:5432/northwind</code>: This command establishes a connection to the Northwind database using the PostgreSQL database system. The connection string has the following format:</p>
 
 
 
@@ -860,11 +887,13 @@ Load the SQL extension:</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%</span><span class="n">load_ext</span> <span class="n">sql</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">postgresql</span><span class="p">:</span><span class="o">//</span><span class="n">username</span><span class="nd">@hostname</span><span class="p">:</span><span class="n">port</span><span class="o">/</span><span class="n">database_name</span></span></span></code></pre></div>
   </figure>
 </div>
-<p><strong>3. Connect to the Northwind Database</strong>
-Establish a connection:</p>
+<p>In this case, <code>username</code> is <code>postgres</code>, <code>hostname</code> is <code>localhost</code>, <code>port</code> is <code>5432</code>, and <code>database_name</code> is <code>northwind</code>. The <code>%sql</code> magic command allows you to run a single-line SQL query in the Jupyter Notebook.</p>
+</li>
+<li>
+<p>Copy the following text into a code cell in the Jupyter Notebook:</p>
 
 
 
@@ -873,10 +902,12 @@ Establish a connection:</p>
   <figcaption class="header">
     <span class="title"></span>
   </figcaption>
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%</span><span class="n">sql</span> <span class="n">postgresql</span><span class="p">:</span><span class="o">//</span><span class="n">postgres</span><span class="nd">@localhost</span><span class="p">:</span><span class="mi">5432</span><span class="o">/</span><span class="n">northwind</span></span></span></code></pre></div>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">ipython</span><span class="o">-</span><span class="n">sql</span>
+</span></span><span class="line"><span class="cl"><span class="o">%</span><span class="n">load_ext</span> <span class="n">sql</span>
+</span></span><span class="line"><span class="cl"><span class="o">%</span><span class="n">sql</span> <span class="n">postgresql</span><span class="p">:</span><span class="o">//</span><span class="n">postgres</span><span class="nd">@localhost</span><span class="p">:</span><span class="mi">5432</span><span class="o">/</span><span class="n">northwind</span></span></span></code></pre></div>
   </figure>
 </div>
-<p>On Windows, you may need to include the password:</p>
+<p>On Windows you may need to try the following command because you need to provide the password you set for the “postgres” user during installation:</p>
 
 
 
@@ -888,10 +919,17 @@ Establish a connection:</p>
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%</span><span class="n">sql</span> <span class="n">postgresql</span><span class="p">:</span><span class="o">//</span><span class="n">postgres</span><span class="p">:{</span><span class="n">password</span><span class="p">}</span><span class="nd">@localhost</span><span class="p">:</span><span class="mi">5432</span><span class="o">/</span><span class="n">northwind</span></span></span></code></pre></div>
   </figure>
 </div>
-<p><strong>4. Run the Cell</strong>
-Run the cell by either clicking the &ldquo;Run&rdquo; button or using the keyboard shortcut <code>Shift + Enter</code> or <code>Ctrl + Enter</code>.</p>
-<p><strong>5. Verify Connection</strong>
-You should see an output confirming the connection:</p>
+<p>Bear in mind that it&rsquo;s considered best practice <strong>not to include sensitive information like passwords directly in files that could be shared or accidentally exposed</strong>. Instead, you can store your password securely using environment variables or a password management system (we&rsquo;ll link to some resources at the end of this guide if you are interested in doing this).</p>
+</li>
+<li>
+<p>Run the cell by either:</p>
+<ul>
+<li>Clicking the &ldquo;Run&rdquo; button on the menu bar.</li>
+<li>Using the keyboard shortcut: <code>Shift + Enter</code> or <code>Ctrl + Enter</code>.</li>
+</ul>
+</li>
+<li>
+<p>Upon successful connection, you should see an output similar to the following:</p>
 
 
 
@@ -903,40 +941,48 @@ You should see an output confirming the connection:</p>
   <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">&#39;Connected: postgres@northwind&#39;</span></span></code></pre></div>
   </figure>
 </div>
+<p>This output confirms that you are now connected to the Northwind database, and you can proceed with the guided project in your Jupyter Notebook environment.</p>
+</li>
+</ol>
+<p>Once you execute these commands, you&rsquo;ll be connected to the Northwind database, and you can start writing SQL queries in your Jupyter Notebook using the <code>%sql</code> or <code>%%sql</code> magic commands.</p>
 <h2 id="next-steps">Next Steps<a href="#next-steps" class="anchor" aria-hidden="true">#</a> </h2>
-<p>Based on what you’ve accomplished, here are some next steps to continue your learning journey:</p>
+<p>Based on what you&rsquo;ve accomplished, here are some potential next steps to continue your learning journey:</p>
 <ol>
 <li>
 <p><strong>Deepen Your SQL Knowledge:</strong></p>
 <ul>
-<li>Formulate more complex queries on the Northwind database.</li>
-<li>Understand the design of the Northwind database.</li>
+<li>Try formulating more complex queries on the Northwind database to improve your SQL skills. These could include joins, subqueries, and aggregations.</li>
+<li>Understand the design of the Northwind database: inspect the tables, their relationships, and how data is structured.</li>
 </ul>
 </li>
 <li>
 <p><strong>Experiment with Database Management:</strong></p>
 <ul>
-<li>Learn how to backup and restore databases in PostgreSQL.</li>
-<li>Explore ways to optimize your PostgreSQL database performance.</li>
+<li>Learn how to backup and restore databases in PostgreSQL. Try creating a backup of your Northwind database.</li>
+<li>Explore different ways to optimize your PostgreSQL database performance like indexing and query optimization.</li>
 </ul>
 </li>
 <li>
 <p><strong>Integration with Python:</strong></p>
 <ul>
-<li>Use <code>psycopg2</code>, a popular PostgreSQL adapter for Python.</li>
-<li>Experiment with ORM libraries like <code>SQLAlchemy</code> to manage your database using Python.</li>
+<li>Learn how to use <code>psycopg2</code>, a popular PostgreSQL adapter for Python, to interact with your database programmatically.</li>
+<li>Experiment with ORM (Object-Relational Mapping) libraries like <code>SQLAlchemy</code> to manage your database using Python.</li>
 </ul>
 </li>
 <li>
 <p><strong>Security and Best Practices:</strong></p>
 <ul>
 <li>Learn about database security principles and apply them to your PostgreSQL setup.</li>
-<li>Understand best practices for storing sensitive information.</li>
+<li>Understand best practices for storing sensitive information, like using <code>.env</code> files for environment variables.</li>
+<li>For more guidance on securely storing passwords, you might find the following resources helpful:
+<ul>
+<li><a href="https://dev.to/aligoren/using-environment-variables-in-python-3ofm">Using Environment Variables in Python</a></li>
+<li><a href="https://pypi.org/project/python-decouple/">Python Secret Module</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
-<hr>
-<p>This blog post provides a comprehensive guide to installing PostgreSQL 14.7 on macOS using Homebrew, importing the Northwind database, and connecting to it using Jupyter Notebook.</p>
 
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				</div>
@@ -954,7 +1000,7 @@ You should see an output confirming the connection:</p>
 				</div>
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Prev</div>
-					<a href="/docs/reference/installing-python-on-windows/" class="stretched-link text-reset text-decoration-none">Installing Python on Windows</a>
+					<a href="/docs/reference/install-postgresql-14.7-for-macos/" class="stretched-link text-reset text-decoration-none">Install PostgreSQL 14.7 for macOS</a>
 				</div>
 			</div>
 		</div>
@@ -963,7 +1009,7 @@ You should see an output confirming the connection:</p>
 			<div class="card-body d-flex justify-content-end">
 				<div class="d-flex flex-column">
 					<div class="text-body-secondary">Next</div>
-					<a href="/docs/reference/install-postgresql-14.7-on-windows-10/" class="stretched-link text-reset text-decoration-none">Install PostgreSQL 14.7 on Windows 10</a>
+					<a href="/docs/resources/" class="stretched-link text-reset text-decoration-none">Resources</a>
 				</div>
 				<div class="d-flex flex-column justify-content-center">
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

@@ -1,13 +1,908 @@
-<!doctype html><html lang=en data-bs-theme=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=preload href=/fonts/vendor/jost/jost-v4-latin-regular.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/vendor/jost/jost-v4-latin-500.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/vendor/jost/jost-v4-latin-700.woff2 as=font type=font/woff2 crossorigin><script src=/js/color-mode.86a91f050a481d0a3f0c72ac26543cb6228c770875981c58dcbc008fd3f875c8.js integrity="sha256-hqkfBQpIHQo/DHKsJlQ8tiKMdwh1mBxY3LwAj9P4dcg="></script><link rel=stylesheet href="/main.75c85c7bb081db3fb52ee594a062ad56eb88ceff0f55e34aaf8368352d42655c9bd9b8cf03d089f24a67be263511bf20452413acb8e7f11d231f100ee6ca31af.css" integrity="sha512-dchce7CB2z+1LuWUoGKtVuuIzv8PVeNKr4NoNS1CZVyb2bjPA9CJ8kpnviY1Eb8gRSQTrLjn8R0jHxAO5soxrw==" crossorigin=anonymous><noscript><style>img.lazyload{display:none}</style></noscript><base href=/docs/reference/installing-python-on-macos/><link rel=canonical href=/docs/reference/installing-python-on-macos/><title>Installing Python on MacOS</title>
-<meta name=description content="Congrats on setting up a new Doks project!"><link rel=icon href=/favicon.ico sizes=32x32><link rel=icon href=/favicon.svg type=image/svg+xml><link rel=apple-touch-icon href=/apple-touch-icon.png sizes=180x180 type=image/png><link rel=icon href=/favicon-192x192.png sizes=192x192 type=image/png><link rel=icon href=/favicon-512x512.png sizes=512x512 type=image/png><link rel=manifest href=/manifest.webmanifest><meta property="og:url" content="/docs/reference/installing-python-on-macos/"><meta property="og:site_name" content="Learn Data"><meta property="og:title" content="Installing Python on MacOS"><meta property="og:description" content="Python is one of the most powerful programming languages, widely used in data science, machine learning, and big data analytics. Installing Python is essential for all programmers. As a novice programmer, you may wonder how to install or update Python on your Mac properly. Here, we’ll walk through the different ways of installing and updating Python on macOS."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:published_time" content="2023-09-07T16:04:48+02:00"><meta property="article:modified_time" content="2023-09-07T16:04:48+02:00"><meta property="og:image" content="/cover.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/cover.png"><meta name=twitter:title content="Installing Python on MacOS"><meta name=twitter:description content="Python is one of the most powerful programming languages, widely used in data science, machine learning, and big data analytics. Installing Python is essential for all programmers. As a novice programmer, you may wonder how to install or update Python on your Mac properly. Here, we’ll walk through the different ways of installing and updating Python on macOS."><meta name=twitter:site content="@lotfinejad"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"/","name":"Welcome to Datatweets","position":1},{"@type":"ListItem","item":"/docs/","name":"Docs","position":2},{"@type":"ListItem","item":"/docs/reference/","name":"Reference","position":3},{"@type":"ListItem","name":"Installing Python on MAC Os","position":4}]}</script></head><body class="single section docs" data-bs-spy=scroll data-bs-target=#toc data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll=true tabindex=0><div class=sticky-top><header class="navbar navbar-expand-lg"><div class=container-lg><a class="navbar-brand me-auto me-lg-3" href=/>Learn Data</a>
-<button type=button id=searchToggleMobile class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
-<svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
-</button>
-<button class="btn btn-link d-lg-none" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasNavSection aria-controls=offcanvasNavSection aria-label="Open section navigation menu"><svg class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-1 0a1 1 0 102 0 1 1 0 10-2 0"/><path d="M12 19m-1 0a1 1 0 102 0 1 1 0 10-2 0"/><path d="M12 5m-1 0a1 1 0 102 0 1 1 0 10-2 0"/></svg></button><div class="offcanvas offcanvas-start d-lg-none" tabindex=-1 id=offcanvasNavSection aria-labelledby=offcanvasNavSectionLabel><div class=offcanvas-header><h5 class=offcanvas-title id=offcanvasNavSectionLabel>Docs</h5><button type=button class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss=offcanvas aria-label=Close><svg class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg></button></div><div class=offcanvas-body><aside class="doks-sidebar mt-n3"><nav id=doks-docs-nav aria-label="Tertiary navigation"><nav class="section-nav docs-links"><ul class=list-unstyled><li><details><summary>Python for Data Analytics</summary><ul class="list-unstyled list-nested"><li><a href=/docs/python/python-for-data-analytics-course/>Python for Data Analytics Course</a></li><li><details><summary>Python Basics</summary><ul class="list-unstyled list-nested"><li><a href=/docs/python/python-basics/overview-of-the-python-basics-module/>Overview of the Python Basics Module</a></li><li><a href=/docs/python/python-basics/lesson-1-programming-in-python/>Lesson 1 - Programming in Python</a></li><li><a href=/docs/python/python-basics/lesson-2-introduction-to-python/>Lesson 2 - Introduction to Python</a></li><li><a href=/docs/python/python-basics/lesson-3-introduction-to-python/>Lesson 3 - Introduction to Python</a></li><li><a href=/docs/python/python-basics/lesson-4-introduction-to-python/>Lesson 4 - Introduction to Python</a></li><li><a href=/docs/python/python-basics/lesson-5-introduction-to-python/>Lesson 5 - Introduction to Python</a></li></ul></details></li></ul></details></li><li><details open><summary>Reference</summary><ul class="list-unstyled list-nested"><li class=active><a aria-current=page href=/docs/reference/installing-python-on-macos/>Installing Python on MacOS</a></li><li><a href=/docs/reference/how-to-set-up-visual-studio-code/>How to Set Up Visual Studio Code</a></li><li><a href=/docs/reference/installing-python-on-windows/>Installing Python on Windows</a></li><li><a href=/docs/reference/install-postgresql-14.7-for-macos/>Install PostgreSQL 14.7 for macOS</a></li></ul></details></li></ul></nav></nav></aside></div></div><button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasNavMain aria-controls=offcanvasNavMain aria-label="Open main navigation menu"><svg class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg></button><div class="offcanvas offcanvas-end h-auto" tabindex=-1 id=offcanvasNavMain aria-labelledby=offcanvasNavMainLabel><div class=offcanvas-header><h5 class=offcanvas-title id=offcanvasNavMainLabel>Learn Data</h5><button type=button class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss=offcanvas aria-label=Close><svg class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg></button></div><div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between"><ul class="navbar-nav flex-grow-1"><li class=nav-item><a class=nav-link href=/docs/courses/>Courses</a></li><li class=nav-item><a class=nav-link href=/docs/guides/example-guide/>Tutorials</a></li><li class=nav-item><a class=nav-link href=/blog/>Blog</a></li></ul><button type=button id=searchToggleDesktop class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
-<svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
-</button>
-<button id=buttonColorMode class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type=button aria-label="Toggle theme"><svg data-bs-theme-value="dark" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132.0.263.0.393.0a7.5 7.5.0 007.92 12.446A9 9 0 1112 2.992z"/></svg><svg data-bs-theme-value="light" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 108 0 4 4 0 10-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7-.7.7m0 11.4.7.7m-12.1-.7-.7.7"/></svg></button><ul id=socialMenu class="nav mx-auto flex-row order-lg-4"><li class=nav-item><a class="nav-link social-link" href=https://twitter.com/lotfinejad><svg class="icon icon-tabler icon-tabler-brand-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16H20L8.267 4z"/><path d="M4 20l6.768-6.768m2.46-2.46L20 4"/></svg><small class="ms-2 visually-hidden">X</small></a></li><li class=nav-item><a class="nav-link social-link" href=https://github.com/datatweets><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><small class="ms-2 visually-hidden">GitHub</small></a></li></ul></div></div></div></header></div><div class=modal id=searchModal tabindex=-1 aria-labelledby=searchModalLabel aria-hidden=true><div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down"><div class=modal-content><div class=modal-header><h1 class="modal-title fs-5 visually-hidden" id=searchModalLabel>Search</h1><button type=button class="btn-close visually-hidden" data-bs-dismiss=modal aria-label=Close></button><div class="search-input flex-grow-1 d-none"><form id=search-form class=search-form action=# method=post accept-charset=UTF-8 role=search><label for=query class=visually-hidden>Search</label><div class=d-flex><input type=search id=query name=query class="search-text form-control form-control-lg" placeholder=Search aria-label=Search maxlength=128 autocomplete=off>
-<button type=button class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss=modal aria-label=Close>Cancel</button></div></form></div></div><div class=modal-body><p class="search-loading status message d-none mt-3 text-center">Loading search index…</p><p class="search-no-recent message d-none mt-3 text-center">No recent searches</p><p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class=query-no-results>Query here</span></strong>"</p><div id=searchResults class=search-results></div><template><article class="search-result list-view"><div class="card my-3"><div class=card-body><header><h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href=#>Title here</a></h2><div class="submitted d-none"><time class=created-date>Date here</time></div></header><div class=content>Summary here</div></div></div></article></template></div><div class=modal-footer><ul class="list-inline me-auto d-none d-md-block"><li class=list-inline-item><kbd class=me-2><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4m3 3-3-3 3-3"/></g></svg></kbd><span class=DocSearch-Label>to select</span></li><li class=list-inline-item><kbd class=me-2><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8m3-3-3 3-3-3"/></g></svg></kbd><kbd class=me-2><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8m3 3-3-3-3 3"/></g></svg></kbd><span class=DocSearch-Label>to navigate</span></li><li class=list-inline-item><kbd class=me-2><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993.0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016s1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5s-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864.0 1.6425 1.031 1.5443 2.2492h-2.956"/></g></svg></kbd><span class=DocSearch-Label>to close</span></li></ul><p class=d-md-none>Search by <a class=text-decoration-none href=https://github.com/nextapps-de/flexsearch>FlexSearch</a></p></div></div></div></div><div class="wrap container-lg" role=document><div class=content><div class="row flex-xl-nowrap"><div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block"><nav class="section-nav docs-links"><ul class=list-unstyled><li><details><summary>Python for Data Analytics</summary><ul class="list-unstyled list-nested"><li><a href=/docs/python/python-for-data-analytics-course/>Python for Data Analytics Course</a></li><li><details><summary>Python Basics</summary><ul class="list-unstyled list-nested"><li><a href=/docs/python/python-basics/overview-of-the-python-basics-module/>Overview of the Python Basics Module</a></li><li><a href=/docs/python/python-basics/lesson-1-programming-in-python/>Lesson 1 - Programming in Python</a></li><li><a href=/docs/python/python-basics/lesson-2-introduction-to-python/>Lesson 2 - Introduction to Python</a></li><li><a href=/docs/python/python-basics/lesson-3-introduction-to-python/>Lesson 3 - Introduction to Python</a></li><li><a href=/docs/python/python-basics/lesson-4-introduction-to-python/>Lesson 4 - Introduction to Python</a></li><li><a href=/docs/python/python-basics/lesson-5-introduction-to-python/>Lesson 5 - Introduction to Python</a></li></ul></details></li></ul></details></li><li><details open><summary>Reference</summary><ul class="list-unstyled list-nested"><li class=active><a aria-current=page href=/docs/reference/installing-python-on-macos/>Installing Python on MacOS</a></li><li><a href=/docs/reference/how-to-set-up-visual-studio-code/>How to Set Up Visual Studio Code</a></li><li><a href=/docs/reference/installing-python-on-windows/>Installing Python on Windows</a></li><li><a href=/docs/reference/install-postgresql-14.7-for-macos/>Install PostgreSQL 14.7 for macOS</a></li></ul></details></li></ul></nav></div><nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation"><div class=page-links><h3>On this page</h3><nav id=toc><ul><li><a href=#installing-and-updating-python-on-mac>Installing and Updating Python on Mac</a><ul><li><a href=#install-python-3-as-a-part-of-the-command-line-developer-tools>Install Python 3 as a Part of the Command Line Developer Tools</a></li><li><a href=#install-python-3-with-the-official-installer>Install Python 3 with the Official Installer</a></li></ul></li><li><a href=#installing-visual-studio-code-on-mac>Installing Visual Studio Code on Mac</a></li><li><a href=#running-our-first-python-script-on-mac>Running Our First Python Script on Mac</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-9"><h1>Installing Python on MacOS</h1><nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation"><details><summary>On this page</summary><div class=page-links><nav id=TableOfContents><ul><li><a href=#installing-and-updating-python-on-mac>Installing and Updating Python on Mac</a><ul><li><a href=#install-python-3-as-a-part-of-the-command-line-developer-tools>Install Python 3 as a Part of the Command Line Developer Tools</a></li><li><a href=#install-python-3-with-the-official-installer>Install Python 3 with the Official Installer</a></li></ul></li><li><a href=#installing-visual-studio-code-on-mac>Installing Visual Studio Code on Mac</a></li><li><a href=#running-our-first-python-script-on-mac>Running Our First Python Script on Mac</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></div></details></nav><p>Python is one of the most powerful programming languages, widely used in data science, machine learning, and big data analytics. Installing Python is essential for all programmers. As a novice programmer, you may wonder how to install or update Python on your Mac properly. Here, we’ll walk through the different ways of installing and updating Python on macOS.</p><p>Then, to write and run our Python code in an integrated development environment (IDE), we will learn how to install and configure Visual Studio Code on Mac. There are different methods for installing and updating Python on Mac, but let’s stick to the third principle of the <strong>Zen of Python</strong> that says: “<em>Simple is better than complex.</em>” Accordingly, we will try simple methods rather than complex ones. Before we jump into learning how to install or update Python on Mac, let’s review what we’re going to discuss in this tutorial:</p><ul><li><a href=#installing-python-mac>Installing and updating Python on Mac</a></li><li><a href=#installing-visual-studio-mac>Installing Visual Studio Code on Mac</a></li><li><a href=#running-python-script-mac>Running our first Python script on Mac</a></li></ul><hr><h2 id=installing-and-updating-python-on-mac>Installing and Updating Python on Mac<a href=#installing-and-updating-python-on-mac class=anchor aria-hidden=true>#</a></h2><p>I have two pieces of news for you: one is good, the other bad. The good news is that for the sake of compatibility with legacy systems, Python 2.7 is pre-installed on your Mac. The bad news is that Python 2.7 has been retired. Therefore, it isn&rsquo;t recommended for new developments. If you want to take advantage of the new Python version with its many features and improvements, you need to install the latest Python alongside the version that comes pre-installed on macOS.</p><p>Before we start installing the latest version of Python, let’s see why there are different versions of the same programming language. All programming languages evolve by adding new features over time. The programming language developers announce these changes and improvements by increasing the version number.</p><hr><h3 id=install-python-3-as-a-part-of-the-command-line-developer-tools>Install Python 3 as a Part of the Command Line Developer Tools<a href=#install-python-3-as-a-part-of-the-command-line-developer-tools class=anchor aria-hidden=true>#</a></h3><p>To check the current version of Python that is already installed, open the <strong>Terminal</strong> application by pressing <code>Command + Space</code>, typing <strong>Terminal</strong>, and hitting <code>Return</code>. Now, type the following command and hit <code>Return</code>:</p><div class=expressive-code><figure class="frame is-terminal not-content"><figcaption class=header><span class=title></span></figcaption><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>python --version</span></span></code></pre></div></figure></div><p>You’ll likely see:</p><div class=expressive-code><figure class="frame is-terminal not-content"><figcaption class=header><span class=title></span></figcaption><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Python 2.7.18</span></span></code></pre></div></figure></div><p>Next, try this command to check if Python 3 is installed on your Mac:</p><div class=expressive-code><figure class="frame is-terminal not-content"><figcaption class=header><span class=title></span></figcaption><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>python3 --version</span></span></code></pre></div></figure></div><p>If Python 3 isn’t installed, you may see this message:</p><div class=expressive-code><figure class="frame is-terminal not-content"><figcaption class=header><span class=title></span></figcaption><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>xcode-select: note: no developer tools were found at <span class=s1>&#39;/Applications/Xcode.app&#39;</span>, requesting install. Choose an option in the dialog to download the <span class=nb>command</span> line developer tools.</span></span></code></pre></div></figure></div><p>A dialog box will appear, stating that this command requires the <strong>Command Line Developer Tools</strong>. Let’s briefly explain: this package includes tools mostly used in development, such as <code>make</code>, <code>git</code>, <code>python3</code>, etc. Although there are other ways to install Python 3.x on Mac, I recommend installing the Command Line Developer Tools because it provides many additional tools for development.</p><p>To install the tools:</p><ol><li>Click the <strong>Install</strong> button in the dialog box.</li><li>Follow the steps to complete the installation process.</li></ol><p>After installation, rerun the command to confirm Python 3 installation:</p><div class=expressive-code><figure class="frame is-terminal not-content"><figcaption class=header><span class=title></span></figcaption><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>python3 --version</span></span></code></pre></div></figure></div><p>You should see something like:</p><div class=expressive-code><figure class="frame is-terminal not-content"><figcaption class=header><span class=title></span></figcaption><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Python 3.8.9</span></span></code></pre></div></figure></div><hr><h3 id=install-python-3-with-the-official-installer>Install Python 3 with the Official Installer<a href=#install-python-3-with-the-official-installer class=anchor aria-hidden=true>#</a></h3><p>Downloading the latest Python version from the official <a href=https://www.python.org/downloads/>Python website</a> is another method. Here’s how:</p><ol><li><p>Visit <a href=https://www.python.org/downloads/>python.org/downloads</a>. The website detects your operating system and displays a button to download the latest Python installer for macOS. If it doesn’t, click <strong>macOS</strong> and select the latest release.</p><p><img src=/installing-python-on-mac-screenshot-s-1024x578_7840667738995273390_hu6610052477940594864.webp width=1024 height=578 decoding=async fetchpriority=auto loading=lazy alt="Installing Python on Mac" id=h-rh-i-0></p></li><li><p>Double-click the downloaded package to start the installation process. Follow the wizard to complete the installation. Usually, the default settings work well. You may need to enter your Mac password to agree to the installation.</p><p><img src=/installing-python-on-mac-screenshot-r-1024x778_5863952096887083064_hu8031318906888215491.webp width=1024 height=778 decoding=async fetchpriority=auto loading=lazy alt="Installing Python on Mac" id=h-rh-i-1></p><blockquote><p><strong>Note</strong>: If you’re using an Apple M1 Mac, you need to install <strong>Rosetta</strong>. Rosetta enables Intel-based features to run on Apple silicon Macs.</p></blockquote></li><li><p>Once the installation completes, the Python folder will open automatically.</p><p><img src=/installing-python-on-mac-screenshot-q-1024x561_14817767394977563794_hu267635964459000605.webp width=1024 height=561 decoding=async fetchpriority=auto loading=lazy alt="Installing Python on Mac" id=h-rh-i-2></p></li><li><p>Verify the installation by double-clicking <strong>IDLE</strong> (Python’s built-in IDE). If everything works correctly, IDLE will show the Python shell:</p><p><img src=/installing-python-on-mac-screenshot-p-1024x728_1015486808532610287_hu14012955947814194281.webp width=1024 height=728 decoding=async fetchpriority=auto loading=lazy alt="Installing Python on Mac" id=h-rh-i-3></p></li><li><p>Write and run a simple Python program in IDLE. Type the following code:</p><div class=expressive-code><figure class="frame not-content"><figcaption class=header><span class=title></span></figcaption><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Hello, World!&#34;</span><span class=p>)</span></span></span></code></pre></div></figure></div></li></ol><hr><h2 id=installing-visual-studio-code-on-mac>Installing Visual Studio Code on Mac<a href=#installing-visual-studio-code-on-mac class=anchor aria-hidden=true>#</a></h2><p>Although we can use <strong>IDLE</strong> or the terminal for writing Python scripts, a powerful, extensible, and lightweight code editor like <strong>Visual Studio Code (VS Code)</strong> is preferred.</p><ol><li><p>Download VS Code for macOS from the <a href=https://code.visualstudio.com/>official website</a>.</p><p><img src=/installing-python-on-mac-screenshot-m-1024x574_12153269799198953731_hu9001908018233152968.webp width=1024 height=574 decoding=async fetchpriority=auto loading=lazy alt="Installing Visual Studio Code on Mac" id=h-rh-i-4></p></li><li><p>Double-click the downloaded file to extract its contents.</p><p><img src=/installing-python-on-mac-screenshot-l-1024x687_6705071859348530079_hu8750408999132085269.webp width=1024 height=687 decoding=async fetchpriority=auto loading=lazy alt="Installing Visual Studio Code on Mac" id=h-rh-i-5></p></li><li><p>Move the extracted <strong>Visual Studio Code</strong> application to the <strong>Applications</strong> folder.</p><p><img src=/installing-python-on-mac-screenshot-k-1024x687_792224275768887088_hu8867242828988553128.webp width=1024 height=687 decoding=async fetchpriority=auto loading=lazy alt="Installing Visual Studio Code on Mac" id=h-rh-i-6></p></li><li><p>Launch VS Code and open a folder where your Python scripts will reside. For example, create a new folder on your <strong>Desktop</strong>, name it <code>py_scripts</code>, and open it in VS Code.</p><p><img src=/installing-python-on-mac-screenshot-j_12619002770269037156_hu9011171259550545921.webp width=744 height=680 decoding=async fetchpriority=auto loading=lazy alt="Installing Visual Studio Code on Mac" id=h-rh-i-7></p></li><li><p>Create a new file with a <code>.py</code> extension (e.g., <code>prog_01.py</code>). VS Code will detect the <code>.py</code> extension and prompt you to install the Python extension.</p><p><img src=/installing-python-on-mac-screenshot-h-1024x710_8541044639730424711_hu3923235547980816880.webp width=1024 height=710 decoding=async fetchpriority=auto loading=lazy alt="Installing Visual Studio Code on Mac" id=h-rh-i-8></p></li><li><p>Install the Python extension by clicking the <strong>Install</strong> button.</p><p><img src=/installing-python-on-mac-screenshot-g-1024x710_15129424979758574269_hu10971908818102969668.webp width=1024 height=710 decoding=async fetchpriority=auto loading=lazy alt="Installing Visual Studio Code on Mac" id=h-rh-i-9></p></li><li><p>Select the Python interpreter by clicking on the <strong>Select Python Interpreter</strong> button.</p><p><img src=/installing-python-on-mac-screenshot-d-1024x710_2990325171219229551_hu10174281499666628538.webp width=1024 height=710 decoding=async fetchpriority=auto loading=lazy alt="Installing Visual Studio Code on Mac" id=h-rh-i-10></p></li></ol><hr><h2 id=running-our-first-python-script-on-mac>Running Our First Python Script on Mac<a href=#running-our-first-python-script-on-mac class=anchor aria-hidden=true>#</a></h2><p>Now that everything is set up, let’s write and run a Python script in VS Code.</p><ol><li><p>Write the following code in the <code>.py</code> file you created:</p><div class=expressive-code><figure class="frame not-content"><figcaption class=header><span class=title></span></figcaption><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Hello, World!&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=n>name</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&#34;What&#39;s your name? &#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Hello, </span><span class=si>{}</span><span class=s2>!</span><span class=se>\n</span><span class=s2>Welcome to Dataquest!&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>name</span><span class=p>))</span></span></span></code></pre></div></figure></div></li><li><p>Run the code by clicking the ▶️ button in the top-right corner of VS Code. The output will appear in the integrated terminal. First, it will display:</p><div class=expressive-code><figure class="frame is-terminal not-content"><figcaption class=header><span class=title></span></figcaption><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Hello, World!</span></span></code></pre></div></figure></div><p>Then it will ask for your name. Enter your name and hit <code>Return</code>. It will output:</p><div class=expressive-code><figure class="frame is-terminal not-content"><figcaption class=header><span class=title></span></figcaption><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Hello &lt;your name&gt;!
-</span></span><span class=line><span class=cl>Welcome to Dataquest!</span></span></code></pre></div></figure></div><p><img src=/installing-python-on-mac-screenshot-a-1024x729_29976987710740717_hu126563333065535561.webp width=1024 height=729 decoding=async fetchpriority=auto loading=lazy alt="Running Python on Mac" id=h-rh-i-11></p></li></ol><hr><h2 id=conclusion>Conclusion<a href=#conclusion class=anchor aria-hidden=true>#</a></h2><p>In this tutorial, we learned how to install and update Python on macOS, install and configure Visual Studio Code for Python development, and run our first Python script. In the next tutorial, we’ll explore Python virtual environments and how to use them. Congratulations, Pythonista!</p><div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between"></div><div class="page-nav d-flex flex-column flex-sm-row"><div class="card w-100"><div class="card-body d-flex"><div class="d-flex flex-column justify-content-center"><svg class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h14"/><path d="M5 12l6 6"/><path d="M5 12l6-6"/></svg></div><div class="d-flex flex-column"><div class=text-body-secondary>Prev</div><a href=/docs/python/python-basics/lesson-5-introduction-to-python/ class="stretched-link text-reset text-decoration-none">Lesson 5 - Introduction to Python</a></div></div></div><div class=m-2></div><div class="card text-end w-100"><div class="card-body d-flex justify-content-end"><div class="d-flex flex-column"><div class=text-body-secondary>Next</div><a href=/docs/reference/how-to-set-up-visual-studio-code/ class="stretched-link text-reset text-decoration-none">How to Set Up Visual Studio Code</a></div><div class="d-flex flex-column justify-content-center"><svg class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12h14"/><path d="M13 18l6-6"/><path d="M13 6l6 6"/></svg></div></div></div></div></main></div></div></div><footer class="footer text-muted"><div class=container-lg><div class=row><div class="col-lg-8 text-center text-lg-start"><ul class=list-inline><li class=list-inline-item><a class=text-muted href=/privacy/>Privacy Policy</a></li></ul></div><div class="col-lg-8 text-center text-lg-end"><ul class=list-inline><li class=list-inline-item>Brought to you by <a class=text-muted href=https://datatweets.com/>Datatweets</a></li></ul></div></div></div></footer><script async src=/js/app.c17553444ec7c62f781ddbaa011948f6d85a1bab49420047d68a2b89852a8b36.js integrity="sha256-wXVTRE7Hxi94HduqARlI9thaG6tJQgBH1ooriYUqizY="></script><script async src=/js/flexsearch.7b25ae2da7ab3cc745d4f8536e3f914f92ea8b1afad96ab9249c160c35e0648c.js integrity="sha256-eyWuLaerPMdF1PhTbj+RT5Lqixr62Wq5JJwWDDXgZIw="></script><script async src=/js/search-modal.0415aa45353ab123a509f6ddc6861549ece898b90872fcf757cd2663041dac96.js integrity="sha256-BBWqRTU6sSOlCfbdxoYVSezomLkIcvz3V80mYwQdrJY="></script></body></html>
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="http://localhost:1313/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<script 
+  src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
+  integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
+</script>
+
+
+<link rel="stylesheet" href="/main.1542a5884e04a94d737f95f75653bbae5d9d951aeefab7705a9db5f7a85e58fed8b1c2f686c1303120bb66c4ac2cbfbf1317d05cde7d463eccc899dbb8088787.css" integrity="sha512-FUKliE4EqU1zf5X3VlO7rl2dlRru&#43;rdwWp2196heWP7YscL2hsEwMSC7ZsSsLL&#43;/ExfQXN59Rj7MyJnbuAiHhw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript><base href="http://localhost:1313/docs/reference/installing-python-on-macos/">
+
+  <link rel="canonical" href="http://localhost:1313/docs/reference/installing-python-on-macos/">
+
+
+<title>Installing Python on MacOS</title>
+<meta name="description" content="Congrats on setting up a new Doks project!">
+
+    
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta property="og:url" content="http://localhost:1313/docs/reference/installing-python-on-macos/">
+  <meta property="og:site_name" content="Learn Data">
+  <meta property="og:title" content="Installing Python on MacOS">
+  <meta property="og:description" content="Python is one of the most powerful programming languages, widely used in data science, machine learning, and big data analytics. Installing Python is essential for all programmers. As a novice programmer, you may wonder how to install or update Python on your Mac properly. Here, we’ll walk through the different ways of installing and updating Python on macOS.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:published_time" content="2023-09-07T16:04:48+02:00">
+    <meta property="article:modified_time" content="2023-09-07T16:04:48+02:00">
+    <meta property="og:image" content="http://localhost:1313/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/cover.png">
+  <meta name="twitter:title" content="Installing Python on MacOS">
+  <meta name="twitter:description" content="Python is one of the most powerful programming languages, widely used in data science, machine learning, and big data analytics. Installing Python is essential for all programmers. As a novice programmer, you may wonder how to install or update Python on your Mac properly. Here, we’ll walk through the different ways of installing and updating Python on macOS.">
+      <meta name="twitter:site" content="@lotfinejad">
+
+    
+    
+    <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/",
+       "name": "Welcome to Datatweets",
+       "position": 1
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/",
+       "name": "Docs",
+       "position": 2
+     },
+     {
+       "@type": "ListItem",
+       "item": "http://localhost:1313/docs/reference/",
+       "name": "Reference",
+       "position": 3
+     },
+     {
+       "@type": "ListItem",
+       "name": "Installing Python on MAC Os",
+       "position": 4
+     }
+   ]
+ }
+</script>
+
+
+
+
+
+</head>
+
+  
+  <body class="single section docs" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="sticky-top">
+<header class="navbar navbar-expand-lg">
+  <div class="container-lg">
+  
+    <a class="navbar-brand me-auto me-lg-3" href="/">Learn Data</a>
+
+    
+    
+    <button type="button" id="searchToggleMobile" class="btn btn-link nav-link mx-2 d-lg-none" aria-label="Search website">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="10" cy="10" r="7"></circle>
+        <line x1="21" y1="21" x2="15" y2="15"></line>
+      </svg>
+    </button>
+    
+    <button class="btn btn-link d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavSection" aria-controls="offcanvasNavSection" aria-label="Open section navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+        <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Docs</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <aside class="doks-sidebar mt-n3">
+          <nav id="doks-docs-nav" aria-label="Tertiary navigation">
+            
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details>
+      <summary>Python for Data Analytics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/python-for-data-analytics-course/">Python for Data Analytics Course</a>
+  </li>
+
+  <li>
+    <details>
+      <summary>Python Basics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/python-basics/overview-of-the-python-basics-module/">Overview of the Python Basics Module</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-basics/lesson-1-programming-in-python/">Lesson 1 - Programming in Python</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-basics/lesson-2-introduction-to-python/">Lesson 2 - Introduction to Python</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-basics/lesson-3-introduction-to-python/">Lesson 3 - Introduction to Python</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-basics/lesson-4-introduction-to-python/">Lesson 4 - Introduction to Python</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-basics/lesson-5-introduction-to-python/">Lesson 5 - Introduction to Python</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Reference</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/reference/installing-python-on-macos/">Installing Python on MacOS</a>
+  </li>
+
+  <li>
+      <a href="/docs/reference/how-to-set-up-visual-studio-code/">How to Set Up Visual Studio Code</a>
+  </li>
+
+  <li>
+      <a href="/docs/reference/installing-python-on-windows/">Installing Python on Windows</a>
+  </li>
+
+  <li>
+      <a href="/docs/reference/install-postgresql-14.7-for-macos/">Install PostgreSQL 14.7 for macOS</a>
+  </li>
+
+  <li>
+      <a href="/docs/reference/install-postgresql-14.7-on-windows-10/">Install PostgreSQL 14.7 on Windows 10</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+
+          </nav>
+        </aside>
+      </div>
+    </div>
+    
+    <button class="btn btn-link nav-link mx-2 order-3 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavMain" aria-controls="offcanvasNavMain" aria-label="Open main navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="8" x2="20" y2="8"></line>
+        <line x1="4" y1="16" x2="20" y2="16"></line>
+      </svg>
+    </button>
+
+    
+    <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Learn Data</h5>
+        <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+         </svg>
+        </button>
+      </div>
+      
+      <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between">
+        <ul class="navbar-nav flex-grow-1"><li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/docs/courses/">Courses</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/docs/guides/example-guide/">Tutorials</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:1313/blog/">Blog</a>
+              </li>
+            </ul>
+
+        
+        
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line>
+          </svg>
+        </button>
+        
+        
+        
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+          <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+          </svg>
+          <svg data-bs-theme-value="light" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0m-5 0h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+          </svg>
+        </button>
+        
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://twitter.com/lotfinejad"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg><small class="ms-2 visually-hidden">X</small></a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link social-link" href="https://github.com/datatweets"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+            </li>
+          </ul>
+        
+        </div>
+    </div>
+
+    
+    </div>
+</header>
+</div>
+
+<div class="modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 visually-hidden" id="searchModalLabel">Search</h1>
+        <button type="button" class="btn-close visually-hidden" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="search-input flex-grow-1 d-none">
+          <form id="search-form" class="search-form" action="#" method="post" accept-charset="UTF-8" role="search">
+            <label for="query" class="visually-hidden">Search</label>
+            <div class="d-flex">
+              <input type="search" id="query" name="query" class="search-text form-control form-control-lg" placeholder="Search" aria-label="Search" maxlength="128" autocomplete="off">
+              <button type="button" class="btn btn-link text-decoration-none px-0 ms-3 d-md-none" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p class="search-loading status message d-none mt-3 text-center">Loading search index…</p>
+        <p class="search-no-recent message d-none mt-3 text-center">No recent searches</p>
+        <p class="search-no-results message d-none mt-3 text-center">No results for "<strong><span class="query-no-results">Query here</span></strong>"</p>
+        <div id="searchResults" class="search-results"></div>
+        <template>
+          <article class="search-result list-view">
+            <div class="card my-3">
+              <div class="card-body">
+                <header>
+                  <h2 class="h5 title title-submitted mb-0"><a class="stretched-link text-decoration-none text-reset" href="#">Title here</a></h2>
+                  <div class="submitted d-none"><time class="created-date">Date here</time></div>
+                </header>
+                <div class="content">Summary here</div>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+      <div class="modal-footer">
+        <ul class="list-inline me-auto d-none d-md-block">
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd><span class="DocSearch-Label">to select</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd><kbd class="me-2"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd><span class="DocSearch-Label">to navigate</span></li>
+          <li class="list-inline-item"><kbd class="me-2"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd><span class="DocSearch-Label">to close</span></li>
+        </ul>
+        <p class="d-md-none">Search by <a class="text-decoration-none" href="https://github.com/nextapps-de/flexsearch">FlexSearch</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="wrap container-lg" role="document">
+      <div class="content">
+      
+        
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar d-none d-lg-block">
+			
+    
+<nav class="section-nav docs-links">
+  <ul class="list-unstyled">
+
+  <li>
+    <details>
+      <summary>Python for Data Analytics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/python-for-data-analytics-course/">Python for Data Analytics Course</a>
+  </li>
+
+  <li>
+    <details>
+      <summary>Python Basics</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li>
+      <a href="/docs/python/python-basics/overview-of-the-python-basics-module/">Overview of the Python Basics Module</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-basics/lesson-1-programming-in-python/">Lesson 1 - Programming in Python</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-basics/lesson-2-introduction-to-python/">Lesson 2 - Introduction to Python</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-basics/lesson-3-introduction-to-python/">Lesson 3 - Introduction to Python</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-basics/lesson-4-introduction-to-python/">Lesson 4 - Introduction to Python</a>
+  </li>
+
+  <li>
+      <a href="/docs/python/python-basics/lesson-5-introduction-to-python/">Lesson 5 - Introduction to Python</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary>Reference</summary>
+      <ul class="list-unstyled list-nested">
+
+  <li class="active" >
+      <a aria-current="page" href="/docs/reference/installing-python-on-macos/">Installing Python on MacOS</a>
+  </li>
+
+  <li>
+      <a href="/docs/reference/how-to-set-up-visual-studio-code/">How to Set Up Visual Studio Code</a>
+  </li>
+
+  <li>
+      <a href="/docs/reference/installing-python-on-windows/">Installing Python on Windows</a>
+  </li>
+
+  <li>
+      <a href="/docs/reference/install-postgresql-14.7-for-macos/">Install PostgreSQL 14.7 for macOS</a>
+  </li>
+
+  <li>
+      <a href="/docs/reference/install-postgresql-14.7-on-windows-10/">Install PostgreSQL 14.7 on Windows 10</a>
+  </li>
+      </ul>
+    </details>
+  </li>
+  </ul>
+</nav>
+
+
+		</div>
+		
+		<nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+			<div class="page-links">
+  <h3>On this page</h3>
+    <nav id="toc">
+  <ul>
+    <li><a href="#installing-and-updating-python-on-mac">Installing and Updating Python on Mac</a>
+      <ul>
+        <li><a href="#install-python-3-as-a-part-of-the-command-line-developer-tools">Install Python 3 as a Part of the Command Line Developer Tools</a></li>
+        <li><a href="#install-python-3-with-the-official-installer">Install Python 3 with the Official Installer</a></li>
+      </ul>
+    </li>
+    <li><a href="#installing-visual-studio-code-on-mac">Installing Visual Studio Code on Mac</a></li>
+    <li><a href="#running-our-first-python-script-on-mac">Running Our First Python Script on Mac</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</div>
+
+		</nav>
+		<main class="docs-content col-lg-11 col-xl-9">
+		
+			<h1>Installing Python on MacOS</h1>
+			
+			<nav class="toc-mobile d-xl-none" aria-label="Quaternary navigation">
+				<details>
+    <summary>On this page</summary>
+    <div class="page-links">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#installing-and-updating-python-on-mac">Installing and Updating Python on Mac</a>
+      <ul>
+        <li><a href="#install-python-3-as-a-part-of-the-command-line-developer-tools">Install Python 3 as a Part of the Command Line Developer Tools</a></li>
+        <li><a href="#install-python-3-with-the-official-installer">Install Python 3 with the Official Installer</a></li>
+      </ul>
+    </li>
+    <li><a href="#installing-visual-studio-code-on-mac">Installing Visual Studio Code on Mac</a></li>
+    <li><a href="#running-our-first-python-script-on-mac">Running Our First Python Script on Mac</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+
+			</nav>
+			<p>Python is one of the most powerful programming languages, widely used in data science, machine learning, and big data analytics. Installing Python is essential for all programmers. As a novice programmer, you may wonder how to install or update Python on your Mac properly. Here, we’ll walk through the different ways of installing and updating Python on macOS.</p>
+<p>Then, to write and run our Python code in an integrated development environment (IDE), we will learn how to install and configure Visual Studio Code on Mac. There are different methods for installing and updating Python on Mac, but let’s stick to the third principle of the <strong>Zen of Python</strong> that says: “<em>Simple is better than complex.</em>” Accordingly, we will try simple methods rather than complex ones. Before we jump into learning how to install or update Python on Mac, let’s review what we’re going to discuss in this tutorial:</p>
+<ul>
+<li><a href="#installing-python-mac">Installing and updating Python on Mac</a></li>
+<li><a href="#installing-visual-studio-mac">Installing Visual Studio Code on Mac</a></li>
+<li><a href="#running-python-script-mac">Running our first Python script on Mac</a></li>
+</ul>
+<hr>
+<h2 id="installing-and-updating-python-on-mac">Installing and Updating Python on Mac<a href="#installing-and-updating-python-on-mac" class="anchor" aria-hidden="true">#</a> </h2>
+<p>I have two pieces of news for you: one is good, the other bad. The good news is that for the sake of compatibility with legacy systems, Python 2.7 is pre-installed on your Mac. The bad news is that Python 2.7 has been retired. Therefore, it isn&rsquo;t recommended for new developments. If you want to take advantage of the new Python version with its many features and improvements, you need to install the latest Python alongside the version that comes pre-installed on macOS.</p>
+<p>Before we start installing the latest version of Python, let’s see why there are different versions of the same programming language. All programming languages evolve by adding new features over time. The programming language developers announce these changes and improvements by increasing the version number.</p>
+<hr>
+<h3 id="install-python-3-as-a-part-of-the-command-line-developer-tools">Install Python 3 as a Part of the Command Line Developer Tools<a href="#install-python-3-as-a-part-of-the-command-line-developer-tools" class="anchor" aria-hidden="true">#</a> </h3>
+<p>To check the current version of Python that is already installed, open the <strong>Terminal</strong> application by pressing <code>Command + Space</code>, typing <strong>Terminal</strong>, and hitting <code>Return</code>. Now, type the following command and hit <code>Return</code>:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python --version</span></span></code></pre></div>
+  </figure>
+</div>
+<p>You’ll likely see:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Python 2.7.18</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Next, try this command to check if Python 3 is installed on your Mac:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3 --version</span></span></code></pre></div>
+  </figure>
+</div>
+<p>If Python 3 isn’t installed, you may see this message:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">xcode-select: note: no developer tools were found at <span class="s1">&#39;/Applications/Xcode.app&#39;</span>, requesting install. Choose an option in the dialog to download the <span class="nb">command</span> line developer tools.</span></span></code></pre></div>
+  </figure>
+</div>
+<p>A dialog box will appear, stating that this command requires the <strong>Command Line Developer Tools</strong>. Let’s briefly explain: this package includes tools mostly used in development, such as <code>make</code>, <code>git</code>, <code>python3</code>, etc. Although there are other ways to install Python 3.x on Mac, I recommend installing the Command Line Developer Tools because it provides many additional tools for development.</p>
+<p>To install the tools:</p>
+<ol>
+<li>Click the <strong>Install</strong> button in the dialog box.</li>
+<li>Follow the steps to complete the installation process.</li>
+</ol>
+<p>After installation, rerun the command to confirm Python 3 installation:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3 --version</span></span></code></pre></div>
+  </figure>
+</div>
+<p>You should see something like:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Python 3.8.9</span></span></code></pre></div>
+  </figure>
+</div>
+<hr>
+<h3 id="install-python-3-with-the-official-installer">Install Python 3 with the Official Installer<a href="#install-python-3-with-the-official-installer" class="anchor" aria-hidden="true">#</a> </h3>
+<p>Downloading the latest Python version from the official <a href="https://www.python.org/downloads/">Python website</a> is another method. Here’s how:</p>
+<ol>
+<li>
+<p>Visit <a href="https://www.python.org/downloads/">python.org/downloads</a>. The website detects your operating system and displays a button to download the latest Python installer for macOS. If it doesn’t, click <strong>macOS</strong> and select the latest release.</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-s-1024x578_7840667738995273390_hu6610052477940594864.webp"
+  width="1024"
+  height="578"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Python on Mac"id="h-rh-i-0"
+/></p>
+</li>
+<li>
+<p>Double-click the downloaded package to start the installation process. Follow the wizard to complete the installation. Usually, the default settings work well. You may need to enter your Mac password to agree to the installation.</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-r-1024x778_5863952096887083064_hu8031318906888215491.webp"
+  width="1024"
+  height="778"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Python on Mac"id="h-rh-i-1"
+/></p>
+<blockquote>
+<p><strong>Note</strong>: If you’re using an Apple M1 Mac, you need to install <strong>Rosetta</strong>. Rosetta enables Intel-based features to run on Apple silicon Macs.</p>
+</blockquote>
+</li>
+<li>
+<p>Once the installation completes, the Python folder will open automatically.</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-q-1024x561_14817767394977563794_hu267635964459000605.webp"
+  width="1024"
+  height="561"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Python on Mac"id="h-rh-i-2"
+/></p>
+</li>
+<li>
+<p>Verify the installation by double-clicking <strong>IDLE</strong> (Python’s built-in IDE). If everything works correctly, IDLE will show the Python shell:</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-p-1024x728_1015486808532610287_hu14012955947814194281.webp"
+  width="1024"
+  height="728"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Python on Mac"id="h-rh-i-3"
+/></p>
+</li>
+<li>
+<p>Write and run a simple Python program in IDLE. Type the following code:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hello, World!&#34;</span><span class="p">)</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+</ol>
+<hr>
+<h2 id="installing-visual-studio-code-on-mac">Installing Visual Studio Code on Mac<a href="#installing-visual-studio-code-on-mac" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Although we can use <strong>IDLE</strong> or the terminal for writing Python scripts, a powerful, extensible, and lightweight code editor like <strong>Visual Studio Code (VS Code)</strong> is preferred.</p>
+<ol>
+<li>
+<p>Download VS Code for macOS from the <a href="https://code.visualstudio.com/">official website</a>.</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-m-1024x574_12153269799198953731_hu9001908018233152968.webp"
+  width="1024"
+  height="574"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Visual Studio Code on Mac"id="h-rh-i-4"
+/></p>
+</li>
+<li>
+<p>Double-click the downloaded file to extract its contents.</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-l-1024x687_6705071859348530079_hu8750408999132085269.webp"
+  width="1024"
+  height="687"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Visual Studio Code on Mac"id="h-rh-i-5"
+/></p>
+</li>
+<li>
+<p>Move the extracted <strong>Visual Studio Code</strong> application to the <strong>Applications</strong> folder.</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-k-1024x687_792224275768887088_hu8867242828988553128.webp"
+  width="1024"
+  height="687"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Visual Studio Code on Mac"id="h-rh-i-6"
+/></p>
+</li>
+<li>
+<p>Launch VS Code and open a folder where your Python scripts will reside. For example, create a new folder on your <strong>Desktop</strong>, name it <code>py_scripts</code>, and open it in VS Code.</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-j_12619002770269037156_hu9011171259550545921.webp"
+  width="744"
+  height="680"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Visual Studio Code on Mac"id="h-rh-i-7"
+/></p>
+</li>
+<li>
+<p>Create a new file with a <code>.py</code> extension (e.g., <code>prog_01.py</code>). VS Code will detect the <code>.py</code> extension and prompt you to install the Python extension.</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-h-1024x710_8541044639730424711_hu3923235547980816880.webp"
+  width="1024"
+  height="710"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Visual Studio Code on Mac"id="h-rh-i-8"
+/></p>
+</li>
+<li>
+<p>Install the Python extension by clicking the <strong>Install</strong> button.</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-g-1024x710_15129424979758574269_hu10971908818102969668.webp"
+  width="1024"
+  height="710"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Visual Studio Code on Mac"id="h-rh-i-9"
+/></p>
+</li>
+<li>
+<p>Select the Python interpreter by clicking on the <strong>Select Python Interpreter</strong> button.</p>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-d-1024x710_2990325171219229551_hu10174281499666628538.webp"
+  width="1024"
+  height="710"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Installing Visual Studio Code on Mac"id="h-rh-i-10"
+/></p>
+</li>
+</ol>
+<hr>
+<h2 id="running-our-first-python-script-on-mac">Running Our First Python Script on Mac<a href="#running-our-first-python-script-on-mac" class="anchor" aria-hidden="true">#</a> </h2>
+<p>Now that everything is set up, let’s write and run a Python script in VS Code.</p>
+<ol>
+<li>
+<p>Write the following code in the <code>.py</code> file you created:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hello, World!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;What&#39;s your name? &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hello, </span><span class="si">{}</span><span class="s2">!</span><span class="se">\n</span><span class="s2">Welcome to Dataquest!&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span></span></span></code></pre></div>
+  </figure>
+</div>
+</li>
+<li>
+<p>Run the code by clicking the ▶️ button in the top-right corner of VS Code. The output will appear in the integrated terminal. First, it will display:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Hello, World!</span></span></code></pre></div>
+  </figure>
+</div>
+<p>Then it will ask for your name. Enter your name and hit <code>Return</code>. It will output:</p>
+
+
+
+<div class="expressive-code">
+  <figure class="frame is-terminal not-content">
+  <figcaption class="header">
+    <span class="title"></span>
+  </figcaption>
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Hello &lt;your name&gt;!
+</span></span><span class="line"><span class="cl">Welcome to Dataquest!</span></span></code></pre></div>
+  </figure>
+</div>
+<p>
+
+<img
+  src="/installing-python-on-mac-screenshot-a-1024x729_29976987710740717_hu126563333065535561.webp"
+  width="1024"
+  height="729"
+  decoding="async"
+  fetchpriority="auto"
+  loading="lazy"
+  alt="Running Python on Mac"id="h-rh-i-11"
+/></p>
+</li>
+</ol>
+<hr>
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="anchor" aria-hidden="true">#</a> </h2>
+<p>In this tutorial, we learned how to install and update Python on macOS, install and configure Visual Studio Code for Python development, and run our first Python script. In the next tutorial, we’ll explore Python virtual environments and how to use them. Congratulations, Pythonista!</p>
+
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				</div>
+			<div class="page-nav d-flex flex-column flex-sm-row">
+	
+	<div class="card w-100">
+			<div class="card-body d-flex">
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M5 12l6 6"></path>
+						<path d="M5 12l6 -6"></path>
+				 	</svg>
+				</div>
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Prev</div>
+					<a href="/docs/python/python-basics/lesson-5-introduction-to-python/" class="stretched-link text-reset text-decoration-none">Lesson 5 - Introduction to Python</a>
+				</div>
+			</div>
+		</div>
+	<div class="m-2"></div>
+	<div class="card text-end w-100">
+			<div class="card-body d-flex justify-content-end">
+				<div class="d-flex flex-column">
+					<div class="text-body-secondary">Next</div>
+					<a href="/docs/reference/how-to-set-up-visual-studio-code/" class="stretched-link text-reset text-decoration-none">How to Set Up Visual Studio Code</a>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M5 12l14 0"></path>
+						<path d="M13 18l6 -6"></path>
+						<path d="M13 6l6 6"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+			
+		</main>
+		
+	</div>
+
+      
+      </div>
+    </div>
+    
+    
+    <footer class="footer text-muted">
+  <div class="container-lg">
+    <div class="row">
+      <div class="col-lg-8 text-center text-lg-start">
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-muted" href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-8 text-center text-lg-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://datatweets.com/">Datatweets</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async
+  src="/js/app.fee05ccf6f49b0fa1e13aa25327cb7d4bac07eaa54fe595c613bdc2987568aae.js"
+  integrity="sha256-/uBcz29JsPoeE6olMny31LrAfqpU/llcYTvcKYdWiq4=">
+</script>
+
+
+
+
+
+<script async
+  src="/js/flexsearch.be33aab3067e96554f261851c25a593228b91154cd28ff5c7f8d52b2e7f306d2.js"
+  integrity="sha256-vjOqswZ&#43;llVPJhhRwlpZMii5EVTNKP9cf41SsufzBtI=">
+</script>
+<script async
+  src="/js/search-modal.97d606e77f08deeb37876860d99c8f6813ef29263e73b6435c252de6be98d55e.js"
+  integrity="sha256-l9YG538I3us3h2hg2ZyPaBPvKSY&#43;c7ZDXCUt5r6Y1V4=">
+</script>
+
+    
+  </body>
+</html>

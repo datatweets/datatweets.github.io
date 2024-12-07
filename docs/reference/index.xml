@@ -1,1 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on Learn Data</title><link>/docs/reference/</link><description>Recent content in Reference on Learn Data</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2024 Datatweets</copyright><lastBuildDate>Thu, 07 Sep 2023 16:04:48 +0200</lastBuildDate><atom:link href="/docs/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Installing Python on MacOS</title><link>/docs/reference/installing-python-on-macos/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>/docs/reference/installing-python-on-macos/</guid><description>&lt;p>Python is one of the most powerful programming languages, widely used in data science, machine learning, and big data analytics. Installing Python is essential for all programmers. As a novice programmer, you may wonder how to install or update Python on your Mac properly. Here, we’ll walk through the different ways of installing and updating Python on macOS.&lt;/p></description></item><item><title>How to Set Up Visual Studio Code</title><link>/docs/reference/how-to-set-up-visual-studio-code/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>/docs/reference/how-to-set-up-visual-studio-code/</guid><description>&lt;p>Visual Studio Code is a powerful, extensible, and lightweight code editor that has become one of the preferred code editors in the Python community.&lt;/p></description></item><item><title>Installing Python on Windows</title><link>/docs/reference/installing-python-on-windows/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>/docs/reference/installing-python-on-windows/</guid><description>&lt;p>Python is a popular open-source, high-level programming language. It&amp;rsquo;s intuitive and offers many helpful tools and libraries — Python is a powerful data science asset to have in your toolkit. To start working with Python, we first need to download it and install it on our operating system (in this case, Windows).&lt;/p></description></item><item><title>Install PostgreSQL 14.7 for macOS</title><link>/docs/reference/install-postgresql-14.7-for-macos/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>/docs/reference/install-postgresql-14.7-for-macos/</guid><description>&lt;p>In this guide, you will learn how to set up PostgreSQL 14.7 on your MacBook using Homebrew, a widely-used package manager for macOS. The steps are straightforward and include:&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reference on Learn Data</title>
+    <link>http://localhost:1313/docs/reference/</link>
+    <description>Recent content in Reference on Learn Data</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2024 Datatweets</copyright>
+    <lastBuildDate>Thu, 07 Sep 2023 16:04:48 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/reference/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing Python on MacOS</title>
+      <link>http://localhost:1313/docs/reference/installing-python-on-macos/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/reference/installing-python-on-macos/</guid>
+      <description>&lt;p&gt;Python is one of the most powerful programming languages, widely used in data science, machine learning, and big data analytics. Installing Python is essential for all programmers. As a novice programmer, you may wonder how to install or update Python on your Mac properly. Here, we’ll walk through the different ways of installing and updating Python on macOS.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to Set Up Visual Studio Code</title>
+      <link>http://localhost:1313/docs/reference/how-to-set-up-visual-studio-code/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/reference/how-to-set-up-visual-studio-code/</guid>
+      <description>&lt;p&gt;Visual Studio Code is a powerful, extensible, and lightweight code editor that has become one of the preferred code editors in the Python community.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Installing Python on Windows</title>
+      <link>http://localhost:1313/docs/reference/installing-python-on-windows/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/reference/installing-python-on-windows/</guid>
+      <description>&lt;p&gt;Python is a popular open-source, high-level programming language. It&amp;rsquo;s intuitive and offers many helpful tools and libraries — Python is a powerful data science asset to have in your toolkit. To start working with Python, we first need to download it and install it on our operating system (in this case, Windows).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Install PostgreSQL 14.7 for macOS</title>
+      <link>http://localhost:1313/docs/reference/install-postgresql-14.7-for-macos/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/reference/install-postgresql-14.7-for-macos/</guid>
+      <description>&lt;p&gt;In this guide, you will learn how to set up PostgreSQL 14.7 on your MacBook using Homebrew, a widely-used package manager for macOS. The steps are straightforward and include:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Install PostgreSQL 14.7 on Windows 10</title>
+      <link>http://localhost:1313/docs/reference/install-postgresql-14.7-on-windows-10/</link>
+      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
+      <guid>http://localhost:1313/docs/reference/install-postgresql-14.7-on-windows-10/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;In this tutorial, you&amp;rsquo;ll learn how to install PostgreSQL 14.7 on Windows 10.&lt;/p&gt;&#xA;&lt;p&gt;The process is straightforward and consists of the following steps:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
