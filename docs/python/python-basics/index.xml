@@ -1,9 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python Basics on Learn Data</title><link>/docs/python/python-basics/</link><description>Recent content in Python Basics on Learn Data</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2024 Datatweets</copyright><lastBuildDate>Sat, 07 Dec 2024 16:04:48 +0200</lastBuildDate><atom:link href="/docs/python/python-basics/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview of the Python Basics Module</title><link>/docs/python/python-basics/overview-of-the-python-basics-module/</link><pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate><guid>/docs/python/python-basics/overview-of-the-python-basics-module/</guid><description>&lt;!-- 
- &lt;div class="card-nav d-flex flex-column flex-sm-row">
- &lt;div class="card text-end w-100">
- &lt;div class="card-body d-flex">
- &lt;div class="d-flex flex-column me-auto text-start">
- &lt;h5 class="card-title my-0">&lt;a href="/docs/python/python-basics/overview-of-the-python-basics-module/" target="_self" class="stretched-link text-reset text-decoration-none">Showcase&lt;/a>&lt;/h5>
- &lt;p class="card-text mt-1">Explore the infinite possibilities of Doks&lt;/p></description></item><item><title>Lesson 1 - Programming in Python</title><link>/docs/python/python-basics/lesson-1-programming-in-python/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>/docs/python/python-basics/lesson-1-programming-in-python/</guid><description>&lt;h2 id="laying-the-foundation-for-data-analytics">Laying the Foundation for Data Analytics&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python Basics on Learn Data</title><link>/docs/python/python-basics/</link><description>Recent content in Python Basics on Learn Data</description><generator>Hugo</generator><language>en</language><copyright>Copyright (c) 2024 Datatweets</copyright><lastBuildDate>Sat, 07 Dec 2024 16:04:48 +0200</lastBuildDate><atom:link href="/docs/python/python-basics/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview of the Python Basics Module</title><link>/docs/python/python-basics/overview-of-the-python-basics-module/</link><pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate><guid>/docs/python/python-basics/overview-of-the-python-basics-module/</guid><description>&lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/coffee svg-inline" id="svg-coffee" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1" />
+ &lt;path d="M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" />
+ &lt;path d="M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" />
+ &lt;path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5z" />
+ &lt;path d="M16.746 16.726a3 3 0 1 0 .252 -5.555" />
+&lt;/svg>
+&lt;blockquote>
+&lt;p>I&amp;rsquo;m currently updating the content on the Datatweets website and will have it ready as soon as possible. ~ Mehdi&lt;/p></description></item><item><title>Lesson 1 - Programming in Python</title><link>/docs/python/python-basics/lesson-1-programming-in-python/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>/docs/python/python-basics/lesson-1-programming-in-python/</guid><description>&lt;h2 id="laying-the-foundation-for-data-analytics">Laying the Foundation for Data Analytics&lt;/h2>
 &lt;p>This is your starting point for learning Python as a powerful tool for data analytics. Whether you are new to programming or already have some experience, this course and its lessons will help you understand how Python can assist in exploring and understanding data.&lt;/p></description></item><item><title>Lesson 2 - Variables and Data Types</title><link>/docs/python/python-basics/lesson-2-variables-and-data-types/</link><pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate><guid>/docs/python/python-basics/lesson-2-variables-and-data-types/</guid><description>&lt;h2 id="building-on-your-knowledge-of-python-data-handling">Building on Your Knowledge of Python Data Handling&lt;/h2>
-&lt;p>In this lesson, we’ll learn how to store values and work with both numerical and text data in Python. Knowing how to manage numbers and strings sets the groundwork for more advanced tasks, including data analytics and machine learning models. Before starting, it’s best if you already know how to write basic Python code and perform simple arithmetic operations.&lt;/p></description></item><item><title>Lesson 3 - Lists and For Loops</title><link>/docs/python/python-basics/lesson-3-lists-and-for-loops/</link><pubDate>Sat, 07 Dec 2024 16:04:48 +0200</pubDate><guid>/docs/python/python-basics/lesson-3-lists-and-for-loops/</guid><description>This lesson introduces lists, indexing, slicing, and for loops in Python, and shows how to read and process a large dataset efficiently.</description></item><item><title>Lesson 4 - Introduction to Python</title><link>/docs/python/python-basics/lesson-4-introduction-to-python/</link><pubDate>Thu, 07 Sep 2023 16:07:48 +0200</pubDate><guid>/docs/python/python-basics/lesson-4-introduction-to-python/</guid><description>&lt;p>In this guide, you will learn how to set up PostgreSQL 14.7 on your MacBook using Homebrew, a widely-used package manager for macOS. The steps are straightforward and include:&lt;/p></description></item><item><title>Lesson 5 - Introduction to Python</title><link>/docs/python/python-basics/lesson-5-introduction-to-python/</link><pubDate>Thu, 07 Sep 2023 16:08:48 +0200</pubDate><guid>/docs/python/python-basics/lesson-5-introduction-to-python/</guid><description>&lt;p>In this guide, you will learn how to set up PostgreSQL 14.7 on your MacBook using Homebrew, a widely-used package manager for macOS. The steps are straightforward and include:&lt;/p></description></item></channel></rss>
+&lt;p>In this lesson, we’ll learn how to store values and work with both numerical and text data in Python. Knowing how to manage numbers and strings sets the groundwork for more advanced tasks, including data analytics and machine learning models. Before starting, it’s best if you already know how to write basic Python code and perform simple arithmetic operations.&lt;/p></description></item><item><title>Lesson 3 - Lists and For Loops</title><link>/docs/python/python-basics/lesson-3-lists-and-for-loops/</link><pubDate>Sat, 07 Dec 2024 16:04:48 +0200</pubDate><guid>/docs/python/python-basics/lesson-3-lists-and-for-loops/</guid><description>This lesson introduces lists, indexing, slicing, and for loops in Python, and shows how to read and process a large dataset efficiently.</description></item><item><title>Lesson 4 - Introduction to Python</title><link>/docs/python/python-basics/lesson-4-introduction-to-python/</link><pubDate>Thu, 07 Sep 2023 16:07:48 +0200</pubDate><guid>/docs/python/python-basics/lesson-4-introduction-to-python/</guid><description>&lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/coffee svg-inline" id="svg-coffee" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1" />
+ &lt;path d="M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" />
+ &lt;path d="M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" />
+ &lt;path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5z" />
+ &lt;path d="M16.746 16.726a3 3 0 1 0 .252 -5.555" />
+&lt;/svg>
+&lt;blockquote>
+&lt;p>I&amp;rsquo;m currently updating the content on the Datatweets website and will have it ready as soon as possible. ~ Mehdi&lt;/p></description></item><item><title>Lesson 5 - Introduction to Python</title><link>/docs/python/python-basics/lesson-5-introduction-to-python/</link><pubDate>Thu, 07 Sep 2023 16:08:48 +0200</pubDate><guid>/docs/python/python-basics/lesson-5-introduction-to-python/</guid><description>&lt;svg
+ xmlns="http://www.w3.org/2000/svg"
+ width="24"
+ height="24"
+ viewBox="0 0 24 24"
+ fill="none"
+ stroke="currentColor"
+ stroke-width="2"
+ stroke-linecap="round"
+ stroke-linejoin="round"
+ 
+ class="outline/coffee svg-inline" id="svg-coffee" role="img">
+ &lt;path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+ &lt;path d="M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1" />
+ &lt;path d="M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" />
+ &lt;path d="M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" />
+ &lt;path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5z" />
+ &lt;path d="M16.746 16.726a3 3 0 1 0 .252 -5.555" />
+&lt;/svg>
+&lt;blockquote>
+&lt;p>I&amp;rsquo;m currently updating the content on the Datatweets website and will have it ready as soon as possible. ~ Mehdi&lt;/p></description></item></channel></rss>
