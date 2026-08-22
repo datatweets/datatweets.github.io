@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="360" viewBox="0 0 1100 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>assign() versus subscribe(): two incompatible ways to read a topic</title>
+  <desc>Two columns. Left, subscribe(): assignment() is empty until the first poll() completes a group-join handshake, partitions are chosen by the group coordinator and can be rebalanced automatically when membership changes, and it gives automatic failover if a consumer dies. Right, assign(): assignment() populates immediately with no group-join needed, the calling code names the exact partition, there is no rebalancing even if a group_id is set for offset tracking, and there is no automatic failover if the process managing an assigned partition dies. A red box at the bottom shows that calling subscribe() on a consumer that already called assign() raises a real IllegalStateError -- the two modes cannot be mixed.</desc>
+  <rect width="1100" height="360" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Two Modes, Never Both at Once</text>
+
+  <!-- subscribe column -->
+  <rect x="40" y="55" width="480" height="180" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="280" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#2c5282">subscribe()</text>
+  <text x="60" y="106" font-size="9.5" fill="#2c5282">- assignment() empty until first poll() joins the group</text>
+  <text x="60" y="126" font-size="9.5" fill="#2c5282">- group coordinator chooses which partitions this consumer gets</text>
+  <text x="60" y="146" font-size="9.5" fill="#2c5282">- automatic rebalance when membership changes (Lesson 2)</text>
+  <text x="60" y="166" font-size="9.5" fill="#2c5282">- automatic failover -- a dead consumer's partitions get</text>
+  <text x="60" y="182" font-size="9.5" fill="#2c5282">  reassigned to whoever's left, with no outside intervention</text>
+  <text x="60" y="208" font-size="9.5" font-weight="700" fill="#2c5282">Default choice: parallel processing, automatic recovery</text>
+
+  <!-- assign column -->
+  <rect x="580" y="55" width="480" height="180" rx="8" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="820" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#553c9a">assign()</text>
+  <text x="600" y="106" font-size="9.5" fill="#553c9a">- assignment() populated immediately, no group-join at all</text>
+  <text x="600" y="126" font-size="9.5" fill="#553c9a">- the calling code names the exact partition it wants</text>
+  <text x="600" y="146" font-size="9.5" fill="#553c9a">- no rebalancing, ever -- even with a group_id set</text>
+  <text x="600" y="166" font-size="9.5" fill="#553c9a">- group_id (if set) only stores offsets for tracking</text>
+  <text x="600" y="182" font-size="9.5" fill="#553c9a">- no automatic failover -- a dead process's assigned</text>
+  <text x="600" y="198" font-size="9.5" fill="#553c9a">  partition simply stops being read until restarted</text>
+  <text x="600" y="220" font-size="9.5" font-weight="700" fill="#553c9a">Narrow use: debugging, manual partition control</text>
+
+  <line x1="40" y1="255" x2="1060" y2="255" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <rect x="40" y="270" width="1020" height="70" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="60" y="296" font-size="12" font-weight="700" fill="#742a2a">Calling subscribe() after assign() (or the reverse) raises a real IllegalStateError</text>
+  <text x="60" y="318" font-size="10" font-family="Menlo, monospace" fill="#742a2a">"You must choose only one way to configure your consumer" -- a protocol-level constraint, not a library quirk.</text>
+</svg>

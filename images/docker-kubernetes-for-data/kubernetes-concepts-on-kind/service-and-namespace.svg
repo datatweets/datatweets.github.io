@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" width="960" height="580" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="580" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">A Service Load-Balances Across a Deployment's Pods</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">namespace cityflow-demo &#8212; kubectl expose deployment web --port=80 --name=web-svc</text>
+
+<rect x="60" y="84" width="840" height="380" rx="12" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="90" y="110" font-size="13" font-weight="700" fill="#4a5568">namespace: cityflow-demo</text>
+
+<rect x="370" y="126" width="220" height="76" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="150" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2b6cb0">Service: web-svc</text>
+<text x="480" y="170" text-anchor="middle" font-size="11" fill="#4a5568">ClusterIP 10.96.102.222</text>
+<text x="480" y="188" text-anchor="middle" font-size="10.5" fill="#4a5568">port 80 &#8594; targetPort 80</text>
+
+<line x1="430" y1="202" x2="290" y2="248" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrown)"/>
+<line x1="530" y1="202" x2="670" y2="248" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrown)"/>
+<text x="230" y="232" text-anchor="middle" font-size="9.5" fill="#2b6cb0">endpoint 10.244.0.14:80</text>
+<text x="730" y="232" text-anchor="middle" font-size="9.5" fill="#2b6cb0">endpoint 10.244.0.15:80</text>
+
+<rect x="160" y="252" width="220" height="76" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="270" y="276" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">pod web-...-ssx2m</text>
+<text x="270" y="294" text-anchor="middle" font-size="11" fill="#4a5568">10.244.0.14:80</text>
+<text x="270" y="312" text-anchor="middle" font-size="10.5" fill="#4a5568">Running</text>
+
+<rect x="580" y="252" width="220" height="76" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="690" y="276" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">pod web-...-q28wj</text>
+<text x="690" y="294" text-anchor="middle" font-size="11" fill="#4a5568">10.244.0.15:80</text>
+<text x="690" y="312" text-anchor="middle" font-size="10.5" fill="#4a5568">Running</text>
+
+<line x1="480" y1="384" x2="480" y2="204" stroke="#c05621" stroke-width="1.5" marker-end="url(#arrowo)"/>
+<text x="530" y="360" font-size="9.5" fill="#c05621">DNS: web-svc.cityflow-demo</text>
+
+<rect x="370" y="384" width="220" height="66" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="480" y="406" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c05621">client pod</text>
+<text x="480" y="424" text-anchor="middle" font-size="10.5" fill="#4a5568">wget http://web-svc</text>
+<text x="480" y="440" text-anchor="middle" font-size="9.5" fill="#718096">resolved by service name, no IP hardcoded</text>
+
+<rect x="90" y="474" width="780" height="70" rx="8" fill="#ffffff" stroke="#a0aec0" stroke-width="1"/>
+<text x="110" y="496" font-size="11.5" font-weight="700" fill="#2d3748">real result: full nginx welcome page returned</text>
+<text x="110" y="514" font-size="11" fill="#4a5568">every request lands on one of the two real pod IPs behind web-svc; the Service's name and</text>
+<text x="110" y="530" font-size="11" fill="#4a5568">ClusterIP stay stable even as the ReplicaSet replaces the pods behind them.</text>
+
+<text x="480" y="568" text-anchor="middle" font-size="10.5" fill="#a0aec0">Cluster IPs, pod IPs, and the welcome-page result above are real, captured for this lesson.</text>
+
+<defs>
+<marker id="arrown" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#2b6cb0"/>
+</marker>
+<marker id="arrowo" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#c05621"/>
+</marker>
+</defs>
+</svg>

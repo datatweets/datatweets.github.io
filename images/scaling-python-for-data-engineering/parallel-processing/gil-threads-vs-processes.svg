@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="620" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Threads share one GIL; processes each get their own</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Identical CPU-bound work on 6 taxi partitions (~6M trips), measured on a 10-core machine</text>
+<line x1="480" y1="78" x2="480" y2="576" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- LEFT: THREADS -->
+<text x="240" y="102" text-anchor="middle" font-size="16" font-weight="700" fill="#2b6cb0">THREADS</text>
+<text x="240" y="122" text-anchor="middle" font-size="11" fill="#718096">ThreadPoolExecutor(max_workers=6)</text>
+
+<rect x="55" y="138" width="370" height="212" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="240" y="160" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">one Python interpreter</text>
+
+<rect x="72" y="172" width="196" height="22" rx="4" fill="#4299e1" stroke="#2b6cb0" stroke-width="1"/>
+<text x="80" y="187" font-size="11" font-weight="600" fill="#ffffff">thread 1 &#183; running Python</text>
+<rect x="72" y="199" width="196" height="22" rx="4" fill="#ffffff" stroke="#90cdf4" stroke-width="1"/>
+<text x="80" y="214" font-size="11" fill="#4a5568">thread 2 &#183; waiting for GIL</text>
+<rect x="72" y="226" width="196" height="22" rx="4" fill="#ffffff" stroke="#90cdf4" stroke-width="1"/>
+<text x="80" y="241" font-size="11" fill="#4a5568">thread 3 &#183; waiting for GIL</text>
+<rect x="72" y="253" width="196" height="22" rx="4" fill="#ffffff" stroke="#90cdf4" stroke-width="1"/>
+<text x="80" y="268" font-size="11" fill="#4a5568">thread 4 &#183; waiting for GIL</text>
+<rect x="72" y="280" width="196" height="22" rx="4" fill="#ffffff" stroke="#90cdf4" stroke-width="1"/>
+<text x="80" y="295" font-size="11" fill="#4a5568">thread 5 &#183; waiting for GIL</text>
+<rect x="72" y="307" width="196" height="22" rx="4" fill="#ffffff" stroke="#90cdf4" stroke-width="1"/>
+<text x="80" y="322" font-size="11" fill="#4a5568">thread 6 &#183; waiting for GIL</text>
+
+<rect x="300" y="222" width="106" height="56" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="353" y="245" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">GIL</text>
+<text x="353" y="264" text-anchor="middle" font-size="10" fill="#c05621">1 holder at a time</text>
+
+<text x="240" y="374" text-anchor="middle" font-size="11" fill="#718096">CPU cores &#8212; 1 of 10 doing Python work</text>
+<rect x="98" y="384" width="22" height="22" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="128" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="158" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="188" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="218" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="248" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="278" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="308" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="338" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="368" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+
+<rect x="55" y="428" width="370" height="46" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+<text x="240" y="450" text-anchor="middle" font-size="15" font-weight="700" fill="#c05621">9.19 s &#160;=&#160; 1.04&#215; speedup</text>
+<text x="240" y="467" text-anchor="middle" font-size="11" fill="#c05621">the GIL serialises Python bytecode &#8212; no real gain</text>
+
+<!-- RIGHT: PROCESSES -->
+<text x="720" y="102" text-anchor="middle" font-size="16" font-weight="700" fill="#276749">PROCESSES</text>
+<text x="720" y="122" text-anchor="middle" font-size="11" fill="#718096">multiprocessing.Pool(processes=6)</text>
+
+<rect x="548" y="172" width="248" height="22" rx="4" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+<text x="556" y="187" font-size="11" font-weight="600" fill="#ffffff">process 1 &#183; own interpreter + own GIL</text>
+<rect x="548" y="199" width="248" height="22" rx="4" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+<text x="556" y="214" font-size="11" font-weight="600" fill="#ffffff">process 2 &#183; own interpreter + own GIL</text>
+<rect x="548" y="226" width="248" height="22" rx="4" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+<text x="556" y="241" font-size="11" font-weight="600" fill="#ffffff">process 3 &#183; own interpreter + own GIL</text>
+<rect x="548" y="253" width="248" height="22" rx="4" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+<text x="556" y="268" font-size="11" font-weight="600" fill="#ffffff">process 4 &#183; own interpreter + own GIL</text>
+<rect x="548" y="280" width="248" height="22" rx="4" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+<text x="556" y="295" font-size="11" font-weight="600" fill="#ffffff">process 5 &#183; own interpreter + own GIL</text>
+<rect x="548" y="307" width="248" height="22" rx="4" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+<text x="556" y="322" font-size="11" font-weight="600" fill="#ffffff">process 6 &#183; own interpreter + own GIL</text>
+
+<text x="720" y="374" text-anchor="middle" font-size="11" fill="#718096">CPU cores &#8212; 6 of 10 running in parallel</text>
+<rect x="578" y="384" width="22" height="22" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="608" y="384" width="22" height="22" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="638" y="384" width="22" height="22" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="668" y="384" width="22" height="22" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="698" y="384" width="22" height="22" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="728" y="384" width="22" height="22" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="758" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="788" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="818" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+<rect x="848" y="384" width="22" height="22" rx="3" fill="#f7fafc" stroke="#cbd5e0"/>
+
+<rect x="540" y="428" width="360" height="46" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+<text x="720" y="450" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">2.42 s &#160;=&#160; 3.96&#215; speedup</text>
+<text x="720" y="467" text-anchor="middle" font-size="11" fill="#276749">separate GILs run truly in parallel across cores</text>
+
+<text x="480" y="516" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Same code, same data, same 6 workers &#8212; only the execution model differs.</text>
+<text x="480" y="538" text-anchor="middle" font-size="12" fill="#4a5568">CPU-bound pure-Python work needs processes; threads help only I/O-bound work, where the GIL is released while waiting.</text>
+</svg>

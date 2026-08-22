@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Fix scikit-learn's Expected 2D Array Error in Python</title>
+  <desc id="desc">A DataTweets tutorial thumbnail showing the same one-dimensional values reshaped either as three samples with one feature or as one sample with three features.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="146" font-size="30" font-weight="600" letter-spacing="1.2" fill="#59636e">SCIKIT-LEARN INPUT SHAPES</text>
+    <text x="90" y="278" font-size="78" font-weight="700" fill="#1b1f24">ROWS FIRST</text>
+    <text x="90" y="368" font-size="66" font-weight="700" fill="#1b1f24">FEATURES SECOND</text>
+    <rect x="94" y="405" width="360" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="482" font-size="29" font-weight="500" fill="#59636e">NUMPY &#183; RESHAPE &#183; PREDICT</text>
+    <text x="94" y="544" font-size="24" font-weight="500" fill="#59636e">X.shape = (samples, features)</text>
+  </g>
+
+  <g transform="translate(650 102)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="245" y="25" text-anchor="middle" font-size="21" font-weight="600" letter-spacing="1" fill="#59636e">ONE-DIMENSIONAL VALUES</text>
+    <rect x="50" y="45" width="390" height="72" rx="16" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+    <line x1="180" y1="45" x2="180" y2="117" stroke="#c7ccd2" stroke-width="2"/>
+    <line x1="310" y1="45" x2="310" y2="117" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="115" y="91" text-anchor="middle" font-size="27" font-weight="700" fill="#1b1f24">24</text>
+    <text x="245" y="91" text-anchor="middle" font-size="27" font-weight="700" fill="#1b1f24">58</text>
+    <text x="375" y="91" text-anchor="middle" font-size="27" font-weight="700" fill="#1b1f24">103</text>
+
+    <path d="M145 128 V148" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+    <path d="M137 140 L145 148 L153 140" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M350 128 V148" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+    <path d="M342 140 L350 148 L358 140" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="145" y="181" text-anchor="middle" font-size="20" font-weight="600" fill="#0067c0">reshape(-1, 1)</text>
+    <text x="350" y="181" text-anchor="middle" font-size="20" font-weight="600" fill="#0067c0">reshape(1, -1)</text>
+
+    <rect x="103" y="200" width="84" height="180" rx="14" fill="#e3f0fa" stroke="#0067c0" stroke-width="2.5"/>
+    <line x1="103" y1="260" x2="187" y2="260" stroke="#0067c0" stroke-width="2"/>
+    <line x1="103" y1="320" x2="187" y2="320" stroke="#0067c0" stroke-width="2"/>
+    <text x="145" y="238" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">24</text>
+    <text x="145" y="298" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">58</text>
+    <text x="145" y="358" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">103</text>
+
+    <rect x="230" y="235" width="240" height="70" rx="14" fill="#e3f0fa" stroke="#0067c0" stroke-width="2.5"/>
+    <line x1="310" y1="235" x2="310" y2="305" stroke="#0067c0" stroke-width="2"/>
+    <line x1="390" y1="235" x2="390" y2="305" stroke="#0067c0" stroke-width="2"/>
+    <text x="270" y="279" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">24</text>
+    <text x="350" y="279" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">58</text>
+    <text x="430" y="279" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">103</text>
+
+    <text x="145" y="417" text-anchor="middle" font-size="25" font-weight="700" fill="#1b1f24">shape (3, 1)</text>
+    <text x="145" y="450" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">3 SAMPLES &#183; 1 FEATURE</text>
+    <text x="350" y="342" text-anchor="middle" font-size="25" font-weight="700" fill="#1b1f24">shape (1, 3)</text>
+    <text x="350" y="375" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">1 SAMPLE &#183; 3 FEATURES</text>
+  </g>
+</svg>

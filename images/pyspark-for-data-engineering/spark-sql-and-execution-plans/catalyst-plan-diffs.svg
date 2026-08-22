@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 968" width="960" height="968" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="968" fill="#ffffff"/>
+
+  <text x="480" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Catalyst as plan diffs &#8212; the plan you write vs the plan Spark runs</text>
+  <text x="480" y="54" text-anchor="middle" font-size="14" fill="#718096">Real NYC TLC yellow taxi &#183; January 2024 &#183; 2,964,624 trips &#183; 19 columns &#183; 3 row groups, is_stats_set = False</text>
+
+  <!-- ============ PANEL 1: COLUMN PRUNING ============ -->
+  <line x1="60" y1="72" x2="900" y2="72" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="94" font-size="14" font-weight="700" fill="#276749">1 &#183; Column pruning &#8212; automatic and genuine</text>
+  <text x="60" y="112" font-size="12" fill="#718096">code reads all 19 columns then selects 3; Catalyst pushes the projection into the scan so the reader never touches the other 16</text>
+
+  <!-- written box -->
+  <rect x="60" y="124" width="250" height="74" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.3"/>
+  <text x="72" y="143" font-size="11" font-weight="700" fill="#4a5568">you write</text>
+  <text x="72" y="162" font-size="10.5" fill="#4a5568">spark.read.parquet(JAN)</text>
+  <text x="72" y="178" font-size="10.5" fill="#4a5568">&#160;&#160;.select(3 report columns)</text>
+  <text x="72" y="193" font-size="10" fill="#c05621">asks for all 19 columns</text>
+
+  <text x="322" y="166" font-size="18" fill="#276749">&#8594;</text>
+
+  <!-- physical box -->
+  <rect x="352" y="124" width="290" height="74" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.6"/>
+  <text x="364" y="143" font-size="11" font-weight="700" fill="#276749">FileScan runs</text>
+  <text x="364" y="161" font-size="10" fill="#276749">ReadSchema: struct&lt;</text>
+  <text x="372" y="176" font-size="10" fill="#276749">tpep_pickup_datetime, PULocationID,</text>
+  <text x="372" y="190" font-size="10" fill="#276749">total_amount&gt; &#8212; 3 columns, not 19</text>
+
+  <!-- measured box -->
+  <rect x="662" y="124" width="238" height="74" rx="8" fill="#ffffff" stroke="#48bb78" stroke-width="1.4"/>
+  <text x="674" y="143" font-size="11" font-weight="700" fill="#276749">measured I/O win</text>
+  <text x="674" y="161" font-size="10.5" fill="#276749">19,810,094 B read, not 49,951,108</text>
+  <text x="674" y="176" font-size="10.5" font-weight="700" fill="#276749">2.52&#215; fewer bytes (39.7% of file)</text>
+  <text x="674" y="191" font-size="10.5" font-weight="700" fill="#276749">5.7&#215; faster warm: 69 ms vs 392 ms</text>
+
+  <!-- ============ PANEL 2: PREDICATE PUSHDOWN (honest) ============ -->
+  <line x1="60" y1="216" x2="900" y2="216" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="238" font-size="14" font-weight="700" fill="#c53030">2 &#183; Predicate pushdown on the real file &#8212; the plan promises more than the file delivers</text>
+  <text x="60" y="256" font-size="12" fill="#718096">filter PULocationID = 132 (JFK) &#8212; PushedFilters appears in the scan, but the file carries no statistics to skip against</text>
+
+  <!-- pushed filter box -->
+  <rect x="60" y="268" width="330" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4"/>
+  <text x="72" y="287" font-size="11" font-weight="700" fill="#2b6cb0">the plan looks optimized</text>
+  <text x="72" y="305" font-size="10" fill="#2b6cb0">PushedFilters: [IsNotNull(PULocationID),</text>
+  <text x="80" y="319" font-size="10" fill="#2b6cb0">EqualTo(PULocationID, 132)]</text>
+  <text x="72" y="334" font-size="9.5" fill="#718096">Catalyst even inferred IsNotNull for free</text>
+
+  <!-- footer check -->
+  <rect x="405" y="268" width="240" height="70" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3"/>
+  <text x="417" y="287" font-size="11" font-weight="700" fill="#c05621">but the footer says</text>
+  <text x="417" y="304" font-size="9.5" fill="#c05621">rg0 &#183; is_stats_set = False</text>
+  <text x="417" y="318" font-size="9.5" fill="#c05621">rg1 &#183; is_stats_set = False</text>
+  <text x="417" y="332" font-size="9.5" fill="#c05621">rg2 &#183; is_stats_set = False</text>
+
+  <!-- result box -->
+  <rect x="660" y="268" width="240" height="70" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.4"/>
+  <text x="672" y="287" font-size="11" font-weight="700" fill="#c53030">so 0 row groups skipped</text>
+  <text x="672" y="304" font-size="10" fill="#c53030">scan reads all 2,964,624 rows</text>
+  <text x="672" y="318" font-size="10" fill="#c53030">55 ms filtered &#8776; 62 ms unfiltered</text>
+  <text x="672" y="333" font-size="10" fill="#c53030">filter keeps 145,240 &#8212; downstream</text>
+
+  <rect x="60" y="348" width="840" height="26" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.2"/>
+  <text x="480" y="365" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c05621">A pushed filter is NOT a skipped read &#8212; the plan shows Catalyst&#8217;s intent, the file&#8217;s statistics decide the payoff.</text>
+
+  <!-- ============ PANEL 3: PARTITION PRUNING ============ -->
+  <line x1="60" y1="392" x2="900" y2="392" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="414" font-size="14" font-weight="700" fill="#276749">3 &#183; Partition pruning &#8212; where the same filter finally skips</text>
+  <text x="60" y="432" font-size="12" fill="#718096">write c2m4l3_trips_partitioned.parquet with partitionBy(PULocationID): the value lives in the directory name, no statistics needed</text>
+
+  <!-- 260 directories row -->
+  <text x="60" y="456" font-size="11" font-weight="700" fill="#4a5568">260 partition directories written; the filter opens exactly 1</text>
+  <g>
+    <rect x="60" y="466" width="46" height="30" rx="4" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.1"/>
+    <text x="83" y="485" text-anchor="middle" font-size="8.5" fill="#a0aec0">=1</text>
+    <rect x="112" y="466" width="46" height="30" rx="4" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.1"/>
+    <text x="135" y="485" text-anchor="middle" font-size="8.5" fill="#a0aec0">=2</text>
+    <rect x="164" y="466" width="46" height="30" rx="4" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.1"/>
+    <text x="187" y="485" text-anchor="middle" font-size="8.5" fill="#a0aec0">&#183;&#183;&#183;</text>
+    <rect x="216" y="466" width="66" height="30" rx="4" fill="#f0fff4" stroke="#276749" stroke-width="1.8"/>
+    <text x="249" y="481" text-anchor="middle" font-size="8.5" font-weight="700" fill="#276749">=132</text>
+    <text x="249" y="491" text-anchor="middle" font-size="7.5" fill="#276749">READ</text>
+    <rect x="288" y="466" width="46" height="30" rx="4" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.1"/>
+    <text x="311" y="485" text-anchor="middle" font-size="8.5" fill="#a0aec0">&#183;&#183;&#183;</text>
+    <rect x="340" y="466" width="60" height="30" rx="4" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.1"/>
+    <text x="370" y="485" text-anchor="middle" font-size="8.5" fill="#a0aec0">=265</text>
+  </g>
+  <text x="60" y="516" font-size="10" fill="#718096">plan: PartitionFilters: [(PULocationID = 132)] &#183; PushedFilters: [] &#183; Location: 1 path, not 260</text>
+
+  <!-- measured skip box -->
+  <rect x="430" y="446" width="470" height="76" rx="8" fill="#ffffff" stroke="#48bb78" stroke-width="1.4"/>
+  <text x="444" y="465" font-size="11" font-weight="700" fill="#276749">measured skip (259 of 260 directories eliminated)</text>
+  <g font-size="10.5" fill="#276749">
+    <text x="444" y="484" font-weight="700">rows scanned</text>
+    <text x="700" y="484" text-anchor="end">145,240 vs 2,964,624</text>
+    <text x="884" y="484" text-anchor="end" font-weight="700">20.4&#215;</text>
+    <text x="444" y="502" font-weight="700">bytes read</text>
+    <text x="700" y="502" text-anchor="end">1,216,512 vs 30,195,712</text>
+    <text x="884" y="502" text-anchor="end" font-weight="700">24.8&#215;</text>
+    <text x="444" y="516" font-size="9.5" fill="#718096">warm 47 ms vs 163 ms &#183; answer still 145,240 JFK trips &#8212; skipping changes work, never the answer</text>
+  </g>
+
+  <!-- ============ PANEL 4: two smaller diffs ============ -->
+  <line x1="60" y1="540" x2="900" y2="540" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="562" font-size="14" font-weight="700" fill="#1a202c">4 &#183; Two smaller diffs &#8212; analyzed (as written) vs optimized (Catalyst)</text>
+
+  <!-- constant folding -->
+  <text x="60" y="586" font-size="12" font-weight="700" fill="#2b6cb0">constant folding: WHERE 1 = 1 AND total_amount &gt; 5</text>
+  <rect x="60" y="596" width="400" height="46" rx="7" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.2"/>
+  <text x="72" y="614" font-size="10" font-weight="700" fill="#4a5568">analyzed</text>
+  <text x="72" y="631" font-size="10" fill="#4a5568">Filter ((1 = 1) AND (total_amount &gt; cast(5 as double)))</text>
+  <text x="230" y="660" text-anchor="middle" font-size="16" fill="#276749">&#8595;</text>
+  <rect x="60" y="668" width="400" height="46" rx="7" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="72" y="686" font-size="10" font-weight="700" fill="#276749">optimized</text>
+  <text x="72" y="703" font-size="10" fill="#276749">Filter (isnotnull(total_amount) AND (total_amount &gt; 5.0))</text>
+  <text x="60" y="732" font-size="9.5" fill="#718096">the always-true 1 = 1 is deleted; cast(5 as double) folds to 5.0, computed once not 2,964,624 times</text>
+
+  <!-- filter reordering -->
+  <text x="500" y="586" font-size="12" font-weight="700" fill="#2b6cb0">filter reordering: compute hour, then filter PULocationID = 132</text>
+  <rect x="500" y="596" width="400" height="46" rx="7" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.2"/>
+  <text x="512" y="614" font-size="10" font-weight="700" fill="#4a5568">analyzed &#8212; filter ABOVE the projection</text>
+  <text x="512" y="631" font-size="10" fill="#4a5568">Filter(PULocationID = 132) &#8594; Project(hour, &#8230;)</text>
+  <text x="700" y="660" text-anchor="middle" font-size="16" fill="#276749">&#8595;</text>
+  <rect x="500" y="668" width="400" height="46" rx="7" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="512" y="686" font-size="10" font-weight="700" fill="#276749">optimized &#8212; filter BELOW it, next to the scan</text>
+  <text x="512" y="703" font-size="10" fill="#276749">Project(hour, &#8230;) &#8594; Filter(PULocationID = 132)</text>
+  <text x="500" y="732" font-size="9.5" fill="#718096">date_trunc now runs on 145,240 surviving rows instead of all 2,964,624</text>
+
+  <!-- footer rule -->
+  <rect x="60" y="752" width="840" height="72" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.4"/>
+  <text x="480" y="774" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2b6cb0">Catalyst is a tree of rewrite rules: you diff analyzed vs optimized to see each one.</text>
+  <text x="480" y="795" text-anchor="middle" font-size="11" fill="#2b6cb0">Column pruning always pays. Predicate pushdown pays only when the file&#8217;s layout &#8212; statistics or partitions &#8212; lets the reader skip.</text>
+  <text x="480" y="814" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">Read the plan for intent, the footer for the payoff &#8212; and the answer stays 145,240 JFK trips through every rewrite.</text>
+
+  <!-- ============ scan-cost bars (bottom strip) ============ -->
+  <text x="60" y="852" font-size="12" font-weight="700" fill="#1a202c">Rows the scan must actually read for &#8220;JFK trips&#8221; (PULocationID = 132), by file layout</text>
+
+  <!-- bar: raw file no skip -->
+  <text x="60" y="880" font-size="10.5" fill="#4a5568">raw TLC file, filter pushed</text>
+  <rect x="250" y="870" width="600" height="16" rx="3" fill="#fed7d7" stroke="#c53030" stroke-width="1"/>
+  <text x="856" y="882" font-size="10" font-weight="700" fill="#c53030">2,964,624 rows &#8212; 0 skipped</text>
+
+  <!-- bar: partitioned -->
+  <text x="60" y="908" font-size="10.5" fill="#4a5568">partitioned by PULocationID</text>
+  <rect x="250" y="898" width="29" height="16" rx="3" fill="#c6f6d5" stroke="#276749" stroke-width="1"/>
+  <text x="286" y="910" font-size="10" font-weight="700" fill="#276749">145,240 rows &#8212; 259/260 dirs skipped (20.4&#215; fewer)</text>
+
+  <text x="60" y="940" font-size="10" fill="#718096" font-style="italic">Same predicate, same 145,240-trip answer. The only thing that changed is whether the file&#8217;s physical layout let the reader act on the filter.</text>
+</svg>

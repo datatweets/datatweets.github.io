@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 690" width="960" height="690" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="690" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Narrow vs wide: what the shuffle actually costs</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">CityFlow zone-hour report &#183; 9,554,757 trips &#183; pyspark 4.2.0, local[*], 10 partitions</text>
+
+<!-- LEFT: NARROW -->
+<text x="215" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#2b6cb0">NARROW &#8212; one stage, nothing moves</text>
+
+<rect x="55" y="110" width="320" height="300" rx="12" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+
+<rect x="80" y="128" width="270" height="42" rx="8" fill="#ffffff" stroke="#4299e1"/>
+<text x="215" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">Scan parquet</text>
+<text x="215" y="163" text-anchor="middle" font-size="10" fill="#4a5568">3 of 19 columns, filters pushed</text>
+<line x1="215" y1="170" x2="215" y2="186" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#ar)"/>
+
+<rect x="80" y="188" width="270" height="42" rx="8" fill="#ffffff" stroke="#4299e1"/>
+<text x="215" y="208" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">Filter window</text>
+<text x="215" y="223" text-anchor="middle" font-size="10" fill="#4a5568">drops rows where they sit</text>
+<line x1="215" y1="230" x2="215" y2="246" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#ar)"/>
+
+<rect x="80" y="248" width="270" height="42" rx="8" fill="#ffffff" stroke="#4299e1"/>
+<text x="215" y="268" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">Select zone, amount</text>
+<text x="215" y="283" text-anchor="middle" font-size="10" fill="#4a5568">reshapes rows in place</text>
+
+<text x="215" y="322" text-anchor="middle" font-size="11" fill="#4a5568">each output partition depends on</text>
+<text x="215" y="338" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">exactly ONE input partition</text>
+<text x="215" y="360" text-anchor="middle" font-size="11" fill="#4a5568">10 partitions in &#8594; 10 out, no row crosses</text>
+<rect x="110" y="374" width="210" height="24" rx="12" fill="#2b6cb0"/>
+<text x="215" y="390" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">one stage &#183; median 0.24s</text>
+
+<!-- RIGHT: WIDE -->
+<text x="662" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#c05621">WIDE &#8212; a shuffle: write &#183; transfer &#183; read</text>
+
+<rect x="420" y="110" width="485" height="300" rx="12" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+
+<!-- map tasks -->
+<rect x="440" y="126" width="135" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0"/>
+<text x="507" y="146" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">map task</text>
+<text x="507" y="162" text-anchor="middle" font-size="9.5" fill="#4a5568">scan + partial_count</text>
+<text x="507" y="173" text-anchor="middle" font-size="9.5" fill="#4a5568">partial_sum</text>
+<rect x="595" y="126" width="135" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0"/>
+<text x="662" y="146" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">map task</text>
+<text x="662" y="168" text-anchor="middle" font-size="9.5" fill="#4a5568">&#215; 10, one per partition</text>
+<rect x="750" y="126" width="135" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0"/>
+<text x="817" y="146" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">map task</text>
+<text x="817" y="162" text-anchor="middle" font-size="9.5" fill="#4a5568">combine before</text>
+<text x="817" y="173" text-anchor="middle" font-size="9.5" fill="#4a5568">you move</text>
+<text x="662" y="196" text-anchor="middle" font-size="11" fill="#4a5568">9,554,757 rows read &#8594; pre-aggregated to <tspan font-weight="700" fill="#c05621">332,510</tspan> partial rows (<tspan font-weight="700" fill="#c05621">28.7&#215;</tspan> smaller)</text>
+
+<!-- shuffle write -->
+<line x1="507" y1="204" x2="507" y2="224" stroke="#c05621" stroke-width="1.5" marker-end="url(#aro)"/>
+<line x1="662" y1="204" x2="662" y2="224" stroke="#c05621" stroke-width="1.5" marker-end="url(#aro)"/>
+<line x1="817" y1="204" x2="817" y2="224" stroke="#c05621" stroke-width="1.5" marker-end="url(#aro)"/>
+<rect x="440" y="226" width="445" height="34" rx="8" fill="#fed7aa" stroke="#c05621"/>
+<text x="662" y="248" text-anchor="middle" font-size="11" font-weight="700" fill="#9c4221">SHUFFLE WRITE &#8212; each task writes rows bucketed by (zone, hour) to local files</text>
+
+<!-- transfer -->
+<text x="662" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">NETWORK TRANSFER &#8212; the 332,510 partial rows cross to their target partitions</text>
+<line x1="470" y1="286" x2="540" y2="306" stroke="#c05621" stroke-width="1.2" stroke-dasharray="5 3"/>
+<line x1="620" y1="286" x2="690" y2="306" stroke="#c05621" stroke-width="1.2" stroke-dasharray="5 3"/>
+<line x1="800" y1="286" x2="730" y2="306" stroke="#c05621" stroke-width="1.2" stroke-dasharray="5 3"/>
+<line x1="750" y1="286" x2="560" y2="306" stroke="#c05621" stroke-width="1.2" stroke-dasharray="5 3"/>
+
+<!-- shuffle read / reduce -->
+<rect x="440" y="310" width="445" height="34" rx="8" fill="#fed7aa" stroke="#c05621"/>
+<text x="662" y="332" text-anchor="middle" font-size="11" font-weight="700" fill="#9c4221">SHUFFLE READ &#8212; each reduce task pulls its buckets from every map task</text>
+
+<rect x="440" y="352" width="215" height="46" rx="8" fill="#f0fff4" stroke="#276749"/>
+<text x="547" y="371" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">6 reduce tasks</text>
+<text x="547" y="388" text-anchor="middle" font-size="9.5" fill="#4a5568">AQE-coalesced from 200</text>
+<line x1="655" y1="375" x2="672" y2="375" stroke="#276749" stroke-width="1.5" marker-end="url(#arg)"/>
+<rect x="675" y="352" width="210" height="46" rx="8" fill="#f0fff4" stroke="#276749"/>
+<text x="780" y="371" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">240,917 buckets</text>
+<text x="780" y="388" text-anchor="middle" font-size="9.5" fill="#4a5568">final HashAggregate</text>
+
+<!-- BOTTOM BAND -->
+<rect x="420" y="424" width="485" height="26" rx="13" fill="#c05621"/>
+<text x="662" y="442" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">one shuffle &#183; median 0.85s &#8776; 3.6&#215; the narrow scan</text>
+
+<line x1="55" y1="474" x2="905" y2="474" stroke="#e2e8f0" stroke-width="1"/>
+
+<rect x="55" y="490" width="850" height="60" rx="10" fill="#f7fafc" stroke="#cbd5e0"/>
+<text x="480" y="516" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Exchange hashpartitioning(PULocationID, pickup_hour, 200) &#8212; the shuffle IS the stage boundary</text>
+<text x="480" y="538" text-anchor="middle" font-size="12" fill="#4a5568">spark.sql.shuffle.partitions = 200 by default; AQE read the real post-shuffle size and coalesced it to 6</text>
+
+<rect x="55" y="566" width="850" height="88" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="480" y="592" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">The cross-check (matches Course 1 to the cent)</text>
+<text x="480" y="614" text-anchor="middle" font-size="12" fill="#4a5568">240,917 zone-hour buckets &#183; 9,554,757 trips kept &#183; $256,692,373.14 revenue</text>
+<text x="480" y="638" text-anchor="middle" font-size="12" fill="#718096">Narrow transformations pipeline within a stage; wide ones cut a stage and pay to move data across the cluster.</text>
+
+<defs>
+<marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2b6cb0"/></marker>
+<marker id="aro" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#c05621"/></marker>
+<marker id="arg" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#276749"/></marker>
+</defs>
+</svg>

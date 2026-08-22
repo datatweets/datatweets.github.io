@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Handle Imbalanced Classes with XGBoost in Python</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail. On the left, the words Find Rare Faults introduce class weights, thresholds, and recall. On the right, separate training and decision panels show a rare positive row receiving more weight and a score threshold determining which cases become alerts.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1.2" fill="#59636e">IMBALANCED XGBOOST</text>
+    <text x="90" y="275" font-size="88" font-weight="700" fill="#1b1f24">FIND RARE</text>
+    <text x="90" y="375" font-size="88" font-weight="700" fill="#1b1f24">FAULTS</text>
+    <rect x="94" y="409" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="482" font-size="28" font-weight="500" fill="#59636e">CLASS WEIGHTS &#183; THRESHOLDS</text>
+    <text x="94" y="525" font-size="28" font-weight="500" fill="#59636e">PRECISION &#183; RECALL</text>
+
+    <g transform="translate(712 112)">
+      <rect x="0" y="0" width="382" height="198" rx="22" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="26" y="38" font-size="20" font-weight="700" letter-spacing="1.4" fill="#59636e">TRAIN</text>
+      <text x="26" y="73" font-size="25" font-weight="600" fill="#1b1f24">Rare rows count more</text>
+
+      <g transform="translate(28 105)">
+        <circle cx="10" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="40" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="70" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="100" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="130" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="160" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="190" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="220" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="250" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="280" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="310" cy="10" r="9" fill="#d7dce2"/>
+        <circle cx="10" cy="42" r="9" fill="#d7dce2"/>
+        <circle cx="40" cy="42" r="9" fill="#d7dce2"/>
+        <circle cx="82" cy="42" r="13" fill="#e3f0fa" stroke="#0067c0" stroke-width="4"/>
+        <path d="M108 42 H206" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M198 34 L208 42 L198 50" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="224" y="25" width="108" height="36" rx="18" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+        <text x="278" y="50" text-anchor="middle" font-size="18" font-weight="700" fill="#0067c0">WEIGHT</text>
+      </g>
+
+      <rect x="0" y="224" width="382" height="218" rx="22" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="26" y="262" font-size="20" font-weight="700" letter-spacing="1.4" fill="#59636e">DECIDE</text>
+      <text x="26" y="297" font-size="25" font-weight="600" fill="#1b1f24">Threshold sets alerts</text>
+
+      <g transform="translate(28 337)">
+        <rect x="0" y="0" width="326" height="20" rx="10" fill="#e3e6ea"/>
+        <path d="M136 0 H316 Q326 0 326 10 Q326 20 316 20 H136 Z" fill="#e3f0fa"/>
+        <line x1="136" y1="-15" x2="136" y2="43" stroke="#0067c0" stroke-width="4"/>
+        <circle cx="48" cy="10" r="8" fill="#9ea7b1"/>
+        <circle cx="104" cy="10" r="8" fill="#9ea7b1"/>
+        <circle cx="169" cy="10" r="9" fill="#0067c0"/>
+        <circle cx="224" cy="10" r="9" fill="#0067c0"/>
+        <circle cx="292" cy="10" r="9" fill="#0067c0"/>
+        <text x="136" y="70" text-anchor="middle" font-size="18" font-weight="700" fill="#0067c0">THRESHOLD</text>
+        <text x="326" y="70" text-anchor="end" font-size="18" font-weight="600" fill="#59636e">ALERTS</text>
+      </g>
+    </g>
+  </g>
+</svg>

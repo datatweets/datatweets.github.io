@@ -1,0 +1,9 @@
+case_id,scenario,prompt,synthetic_upstream_behavior,expected_http_status,expected_final_event
+S01,normal stream,Define a CSV row in one short sentence.,Two response objects followed by one done object.,200,complete
+S02,split network chunks,Explain a null value in one short sentence.,Valid NDJSON lines split across arbitrary byte chunks.,200,complete
+S03,blank NDJSON lines,Define a primary key in one short sentence.,Blank lines appear between valid NDJSON objects.,200,complete
+S04,mid-stream Ollama error,Explain a database index in one short sentence.,One response object is followed by an Ollama error object.,200,error
+S05,invalid NDJSON,Define a DataFrame column in one short sentence.,The upstream body contains a line that is not JSON.,200,error
+S06,stream ends early,Explain a SQL filter in one short sentence.,"A response object arrives, but no done object follows it.",200,error
+S07,model missing,Explain a JSON object in one short sentence.,Ollama returns HTTP 404 before response streaming starts.,502,http_502
+S08,Ollama offline,Define an API endpoint in one short sentence.,The proxy cannot connect to the Ollama service.,503,http_503

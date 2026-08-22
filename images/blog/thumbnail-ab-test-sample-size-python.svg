@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Calculate A/B Test Sample Size in Python Before You Experiment</title>
+  <desc id="desc">DATATWEETS tutorial thumbnail with the words Size the Test and three horizontal power bars showing that 2,735 visitors per group reaches the 80 percent target.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="36" font-weight="600" fill="#59636e">A/B TEST PLANNING</text>
+    <text x="90" y="275" font-size="88" font-weight="700" fill="#1b1f24">SIZE THE</text>
+    <text x="90" y="370" font-size="88" font-weight="700" fill="#1b1f24">TEST</text>
+    <rect x="98" y="402" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="96" y="480" font-size="30" font-weight="500" fill="#59636e">POWER &#183; EFFECT &#183; SAMPLE</text>
+
+    <g transform="translate(690 142)">
+      <text x="0" y="40" font-size="28" font-weight="600" fill="#59636e">POWER BY GROUP SIZE</text>
+      <rect x="0" y="78" width="400" height="3" fill="#c7ccd2"/>
+      <text x="0" y="125" font-size="23" font-weight="500" fill="#59636e">1,000</text>
+      <rect x="92" y="101" width="118" height="30" rx="15" fill="#e3f0fa"/>
+      <text x="225" y="126" font-size="25" font-weight="700" fill="#1b1f24">40%</text>
+      <text x="0" y="205" font-size="23" font-weight="500" fill="#59636e">2,735</text>
+      <rect x="92" y="181" width="240" height="30" rx="15" fill="#0067c0"/>
+      <text x="347" y="206" font-size="25" font-weight="700" fill="#0067c0">80%</text>
+      <text x="0" y="285" font-size="23" font-weight="500" fill="#59636e">3,000</text>
+      <rect x="92" y="261" width="251" height="30" rx="15" fill="#e3f0fa"/>
+      <text x="358" y="286" font-size="25" font-weight="700" fill="#1b1f24">84%</text>
+      <rect x="0" y="334" width="400" height="3" fill="#c7ccd2"/>
+      <text x="0" y="385" font-size="24" font-weight="600" fill="#59636e">VISITORS PER GROUP</text>
+      <text x="0" y="430" font-size="23" font-weight="500" fill="#0067c0">TARGET REACHED AT 2,735</text>
+    </g>
+  </g>
+</svg>

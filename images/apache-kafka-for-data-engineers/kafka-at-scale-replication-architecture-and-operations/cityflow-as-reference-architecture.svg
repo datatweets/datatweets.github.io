@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>CityFlow's own ten modules, read as four named reference patterns</title>
+  <desc>CityFlow's ten-module platform read as four named Kafka reference patterns. Pattern 1, the event-streaming backbone: cityflow-trip-events, 6 partitions RF 3, decoupling producers from consumers since Module 1. Pattern 2, CDC and data integration: Module 8's JDBC source connector from MySQL and Elasticsearch sink connector, named as polling-based rather than true CDC since Debezium was never deployed despite MySQL's CDC-ready binlog. Pattern 3, real-time stream processing: Module 9's Faust and Spark Structured Streaming jobs computing revenue aggregates directly off the live topic. Pattern 4, the Lambda batch/speed split: the PySpark course's static-file batch computation and this course's live Spark Structured Streaming speed layer, reconciled to the identical figure, $256,692,373.14 across 9,554,757 trips.</desc>
+  <rect width="1100" height="520" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">CityFlow's Ten Modules, Read as Four Named Patterns</text>
+
+  <!-- central backbone -->
+  <rect x="380" y="55" width="340" height="60" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="550" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">Pattern 1: Event-Streaming Backbone</text>
+  <text x="550" y="98" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">cityflow-trip-events -- 6 partitions, RF 3</text>
+
+  <path d="M550,115 L550,140" stroke="#a0aec0" stroke-width="2" />
+  <path d="M550,140 L200,140 L200,165" stroke="#a0aec0" stroke-width="1.6" fill="none" marker-end="url(#a15)" />
+  <path d="M550,140 L550,140 L550,165" stroke="#a0aec0" stroke-width="1.6" fill="none" marker-end="url(#a15)" />
+  <path d="M550,140 L900,140 L900,165" stroke="#a0aec0" stroke-width="1.6" fill="none" marker-end="url(#a15)" />
+
+  <!-- pattern 2 -->
+  <rect x="60" y="165" width="280" height="110" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="200" y="188" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7b341e">Pattern 2: CDC / Integration</text>
+  <text x="200" y="208" text-anchor="middle" font-size="8.5" fill="#7b341e">Module 8: JDBC source (MySQL) -&gt;</text>
+  <text x="200" y="223" text-anchor="middle" font-size="8.5" fill="#7b341e">topic -&gt; Elasticsearch sink</text>
+  <text x="200" y="243" text-anchor="middle" font-size="8.5" font-weight="700" fill="#975a16">polling-based, not true CDC</text>
+  <text x="200" y="260" text-anchor="middle" font-size="8" fill="#975a16">Debezium never deployed</text>
+
+  <!-- pattern 3 -->
+  <rect x="410" y="165" width="280" height="110" rx="8" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="550" y="188" text-anchor="middle" font-size="10.5" font-weight="700" fill="#553c9a">Pattern 3: Stream Processing</text>
+  <text x="550" y="208" text-anchor="middle" font-size="8.5" fill="#553c9a">Module 9: Faust (per-message) +</text>
+  <text x="550" y="223" text-anchor="middle" font-size="8.5" fill="#553c9a">Spark Structured Streaming (windowed)</text>
+  <text x="550" y="243" text-anchor="middle" font-size="8.5" font-weight="700" fill="#6b46c1">computed while data still moves</text>
+  <text x="550" y="260" text-anchor="middle" font-size="8" fill="#6b46c1">two scales, same topic</text>
+
+  <!-- pattern 4 -->
+  <rect x="760" y="165" width="280" height="110" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="900" y="188" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">Pattern 4: Lambda Split</text>
+  <text x="900" y="208" text-anchor="middle" font-size="8.5" fill="#2c5282">Batch: PySpark capstone (static file)</text>
+  <text x="900" y="223" text-anchor="middle" font-size="8.5" fill="#2c5282">Speed: Module 9 Spark on live Kafka</text>
+  <text x="900" y="245" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">$256,692,373.14</text>
+  <text x="900" y="260" text-anchor="middle" font-size="8" fill="#2c5282">both layers, proven identical</text>
+
+  <!-- gaps -->
+  <text x="550" y="320" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Named Plainly: What CityFlow's Platform Doesn't Implement</text>
+
+  <rect x="60" y="340" width="310" height="70" rx="7" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.2" />
+  <text x="215" y="365" text-anchor="middle" font-size="10" font-weight="700" fill="#822727">No true CDC</text>
+  <text x="215" y="383" text-anchor="middle" font-size="8.5" fill="#822727">polling only; deletes not captured</text>
+  <text x="215" y="398" text-anchor="middle" font-size="8" fill="#822727">MySQL log_bin=ON, but unused for this</text>
+
+  <rect x="395" y="340" width="310" height="70" rx="7" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.2" />
+  <text x="550" y="365" text-anchor="middle" font-size="10" font-weight="700" fill="#822727">No schema-on-read lake</text>
+  <text x="550" y="383" text-anchor="middle" font-size="8.5" fill="#822727">no Parquet/Iceberg/Delta landing zone</text>
+  <text x="550" y="398" text-anchor="middle" font-size="8" fill="#822727">Kafka retention = days, not years</text>
+
+  <rect x="730" y="340" width="310" height="70" rx="7" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.2" />
+  <text x="885" y="365" text-anchor="middle" font-size="10" font-weight="700" fill="#822727">No multi-tenant governance</text>
+  <text x="885" y="383" text-anchor="middle" font-size="8.5" fill="#822727">no quotas, no per-topic ACLs</text>
+  <text x="885" y="398" text-anchor="middle" font-size="8" fill="#822727">single-tenant lab, by design</text>
+
+  <text x="550" y="440" text-anchor="middle" font-size="10.5" fill="#4a5568">All four patterns share the same backbone topic -- different USES of the identical log, not separate infrastructure.</text>
+  <text x="550" y="462" text-anchor="middle" font-size="10" fill="#718096">A real architecture reading names what's built AND what's deliberately left out.</text>
+
+  <defs>
+    <marker id="a15" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="460" viewBox="0 0 1100 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>ELT moves transformation logic into version-controlled SQL</title>
+  <desc>ETL transforms data in code before it ever lands in a warehouse -- the shape every earlier course in this Data Engineering path used, with transformation logic hidden inside a Python script. ELT lands raw data in the warehouse first, untransformed, then applies transformation logic afterward as SQL the warehouse itself runs -- version-controlled, testable, auditable. The analytics engineer role sits in that second, ELT-created seam: between the data engineer who gets data into the warehouse and the analyst who queries it once it's trustworthy, applying software-engineering discipline to SQL using the warehouse's own compute.</desc>
+  <rect width="1100" height="460" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">ETL vs. ELT: Where Transformation Logic Lives</text>
+
+  <!-- ETL row -->
+  <text x="60" y="70" font-size="12.5" font-weight="700" fill="#7b341e">ETL (Courses 1-5)</text>
+  <rect x="60" y="85" width="180" height="55" rx="7" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="150" y="108" text-anchor="middle" font-size="10" fill="#7b341e">Extract</text>
+  <text x="150" y="124" text-anchor="middle" font-size="8.5" fill="#7b341e">raw source</text>
+  <path d="M240,112 L290,112" stroke="#a0aec0" stroke-width="2" marker-end="url(#d1)" />
+  <rect x="290" y="85" width="220" height="55" rx="7" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="400" y="106" text-anchor="middle" font-size="10" font-weight="700" fill="#822727">Transform (in code)</text>
+  <text x="400" y="122" text-anchor="middle" font-size="8.5" fill="#822727">hidden inside a Python script</text>
+  <path d="M510,112 L560,112" stroke="#a0aec0" stroke-width="2" marker-end="url(#d1)" />
+  <rect x="560" y="85" width="180" height="55" rx="7" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="650" y="108" text-anchor="middle" font-size="10" fill="#7b341e">Load</text>
+  <text x="650" y="124" text-anchor="middle" font-size="8.5" fill="#7b341e">finished result lands</text>
+
+  <text x="850" y="112" text-anchor="middle" font-size="9.5" fill="#822727">business logic invisible</text>
+  <text x="850" y="126" text-anchor="middle" font-size="9.5" fill="#822727">until someone reads the script</text>
+
+  <!-- ELT row -->
+  <text x="60" y="200" font-size="12.5" font-weight="700" fill="#2c5282">ELT (this course)</text>
+  <rect x="60" y="215" width="180" height="55" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="150" y="238" text-anchor="middle" font-size="10" fill="#2c5282">Extract</text>
+  <text x="150" y="254" text-anchor="middle" font-size="8.5" fill="#2c5282">raw source</text>
+  <path d="M240,242 L290,242" stroke="#a0aec0" stroke-width="2" marker-end="url(#d1)" />
+  <rect x="290" y="215" width="180" height="55" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="380" y="238" text-anchor="middle" font-size="10" fill="#2c5282">Load</text>
+  <text x="380" y="254" text-anchor="middle" font-size="8.5" fill="#2c5282">untransformed, into raw</text>
+  <path d="M470,242 L520,242" stroke="#a0aec0" stroke-width="2" marker-end="url(#d1)" />
+  <rect x="520" y="215" width="270" height="55" rx="7" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="655" y="236" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">Transform (dbt, SQL)</text>
+  <text x="655" y="252" text-anchor="middle" font-size="8.5" fill="#22543d">version-controlled, tested, documented</text>
+
+  <text x="950" y="236" text-anchor="middle" font-size="9.5" fill="#22543d">logic visible in</text>
+  <text x="950" y="250" text-anchor="middle" font-size="9.5" fill="#22543d">every commit</text>
+
+  <!-- roles -->
+  <text x="550" y="325" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2d3748">The Seam ELT Creates</text>
+
+  <rect x="60" y="345" width="300" height="80" rx="8" fill="#f7fafc" stroke="#cbd5e0" />
+  <text x="210" y="368" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">Data Engineer</text>
+  <text x="210" y="386" text-anchor="middle" font-size="9" fill="#4a5568">gets data INTO the warehouse</text>
+  <text x="210" y="402" text-anchor="middle" font-size="8.5" fill="#718096">Courses 1-5 of this path</text>
+
+  <rect x="400" y="345" width="300" height="80" rx="8" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="550" y="368" text-anchor="middle" font-size="10.5" font-weight="700" fill="#553c9a">Analytics Engineer</text>
+  <text x="550" y="386" text-anchor="middle" font-size="9" fill="#553c9a">turns landed data into trusted data</text>
+  <text x="550" y="402" text-anchor="middle" font-size="8.5" fill="#6b46c1">this course</text>
+
+  <rect x="740" y="345" width="300" height="80" rx="8" fill="#f7fafc" stroke="#cbd5e0" />
+  <text x="890" y="368" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">Analyst</text>
+  <text x="890" y="386" text-anchor="middle" font-size="9" fill="#4a5568">queries data OUT of the warehouse</text>
+  <text x="890" y="402" text-anchor="middle" font-size="8.5" fill="#718096">dashboards, ad hoc questions</text>
+
+  <defs>
+    <marker id="d1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

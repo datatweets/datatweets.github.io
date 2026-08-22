@@ -1,0 +1,22 @@
+erDiagram
+    RAW_TRIPS {
+        timestamp pickup_time
+        integer pickup_zone
+        numeric fare_amount
+        numeric total_amount
+    }
+    STG_TRIPS {
+        timestamp pickup_time
+        integer pickup_zone
+        numeric fare_amount
+        numeric total_amount
+        numeric tip_and_fees
+    }
+    ZONE_REVENUE {
+        integer pickup_zone
+        integer trip_count
+        numeric total_revenue
+        numeric avg_tip_and_fees
+    }
+    RAW_TRIPS ||--|| STG_TRIPS : source
+    STG_TRIPS ||--|| ZONE_REVENUE : ref

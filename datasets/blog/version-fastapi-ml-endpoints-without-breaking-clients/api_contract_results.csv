@@ -1,0 +1,8 @@
+check,layer,result
+v1_returns_200,runtime,passed
+v1_exact_fields,runtime,passed
+v2_returns_200,runtime,passed
+v2_keeps_v1_fields,runtime,passed
+openapi_lists_both_paths,documentation,passed
+v1_schema_unchanged,compatibility,passed
+renamed_field_is_detected,compatibility,passed

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="960" height="660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="660" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Resource Requests and Limits: Two Real Effects</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">A memory limit kills. A CPU limit only slows. Both measured for real.</text>
+
+<text x="240" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#2d3748">Memory is incompressible</text>
+<line x1="480" y1="76" x2="480" y2="480" stroke="#e2e8f0" stroke-width="1"/>
+
+<rect x="60" y="110" width="360" height="60" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="240" y="132" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#c53030">cityflow-etl-oom: limits.memory 64Mi</text>
+<text x="240" y="150" text-anchor="middle" font-size="10" fill="#4a5568">real January 2024 aggregation, mounted file</text>
+
+<line x1="240" y1="170" x2="240" y2="196" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="60" y="200" width="360" height="76" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="240" y="222" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c53030">STATUS: OOMKilled</text>
+<text x="240" y="242" text-anchor="middle" font-size="11" fill="#4a5568">Reason: OOMKilled &#8226; Exit Code: 137</text>
+<text x="240" y="260" text-anchor="middle" font-size="10" fill="#718096">the process never got the chance to finish</text>
+
+<rect x="60" y="292" width="360" height="60" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="240" y="314" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#276749">cityflow-etl-safe: limits.memory 256Mi</text>
+<text x="240" y="332" text-anchor="middle" font-size="10" fill="#4a5568">identical image, identical real file</text>
+
+<line x1="240" y1="352" x2="240" y2="378" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="60" y="382" width="360" height="76" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="240" y="404" text-anchor="middle" font-size="12.5" font-weight="700" fill="#276749">STATUS: Complete</text>
+<text x="240" y="424" text-anchor="middle" font-size="10.5" fill="#4a5568">77,530 buckets &#8226; 2,964,606 trips &#8226; $79,455,941.50</text>
+<text x="240" y="442" text-anchor="middle" font-size="10" fill="#718096">real measured boundary: fails &#8804;112Mi, succeeds &#8805;120Mi</text>
+
+<text x="720" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#2d3748">CPU is compressible</text>
+
+<rect x="540" y="110" width="360" height="60" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="720" y="132" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#2b6cb0">cityflow-cpu-normal: limits.cpu 1</text>
+<text x="720" y="150" text-anchor="middle" font-size="10" fill="#4a5568">counting primes below 1,500,000</text>
+
+<line x1="720" y1="170" x2="720" y2="196" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="540" y="200" width="360" height="76" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="720" y="222" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2b6cb0">STATUS: Complete</text>
+<text x="720" y="242" text-anchor="middle" font-size="11" fill="#4a5568">elapsed: 5.18 seconds</text>
+<text x="720" y="260" text-anchor="middle" font-size="10" fill="#718096">114,155 primes found</text>
+
+<rect x="540" y="292" width="360" height="60" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="720" y="314" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#c05621">cityflow-cpu-throttled: limits.cpu 100m</text>
+<text x="720" y="332" text-anchor="middle" font-size="10" fill="#4a5568">identical image, identical task</text>
+
+<line x1="720" y1="352" x2="720" y2="378" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="540" y="382" width="360" height="76" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="720" y="404" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c05621">STATUS: Complete (slower)</text>
+<text x="720" y="424" text-anchor="middle" font-size="11" fill="#4a5568">elapsed: 147.09 seconds</text>
+<text x="720" y="442" text-anchor="middle" font-size="10" fill="#718096">identical 114,155 primes - a real 28.4x slowdown</text>
+
+<line x1="60" y1="490" x2="900" y2="490" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="520" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">the core distinction</text>
+<text x="480" y="546" text-anchor="middle" font-size="12" fill="#4a5568">A memory limit that's too tight kills the container outright - there is no "give it a little less."</text>
+<text x="480" y="568" text-anchor="middle" font-size="12" fill="#4a5568">A CPU limit that's too tight only makes the same, correct work take longer.</text>
+<text x="480" y="600" text-anchor="middle" font-size="10.5" fill="#a0aec0">All exit codes, statuses, and timings above are from real kubectl runs captured for this lesson.</text>
+
+<defs>
+<marker id="arrows" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

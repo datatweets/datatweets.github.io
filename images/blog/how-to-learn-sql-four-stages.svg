@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc"><title id="title">The four-stage order for learning SQL</title><desc id="desc">Diagram of four SQL learning stages in order: filtering and sorting a single table, joining tables together, grouping and aggregating joined results, and window functions that compute aggregates without collapsing rows. Each stage is shown depending on the one before it, with an arrow labeled each stage assumes the last running through all four.</desc><rect width="1200" height="560" fill="#f7f8fa" /><g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"><text x="165" y="76" font-size="22" font-weight="600" fill="#0067c0" text-anchor="middle">STAGE 1</text><text x="455" y="76" font-size="22" font-weight="600" fill="#0067c0" text-anchor="middle">STAGE 2</text><text x="745" y="76" font-size="22" font-weight="600" fill="#0067c0" text-anchor="middle">STAGE 3</text><text x="1035" y="76" font-size="22" font-weight="600" fill="#0067c0" text-anchor="middle">STAGE 4</text></g><g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<rect x="50" y="110" width="230" height="220" rx="16" fill="#e3f0fa" stroke="#0067c0" stroke-width="3" />
+<text x="165" y="152" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">Filtering and</text>
+<text x="165" y="178" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">Sorting</text>
+<text x="165" y="222" font-size="19" font-family="'SFMono-Regular', Consolas, Menlo, monospace" fill="#0067c0" text-anchor="middle">WHERE ...</text>
+<text x="165" y="284" font-size="16" fill="#59636e" text-anchor="middle">reads one table</text>
+
+<rect x="340" y="110" width="230" height="220" rx="16" fill="#fdeede" stroke="#0067c0" stroke-width="3" />
+<text x="455" y="152" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">Joining</text>
+<text x="455" y="178" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">Tables</text>
+<text x="455" y="222" font-size="19" font-family="'SFMono-Regular', Consolas, Menlo, monospace" fill="#0067c0" text-anchor="middle">JOIN ... ON ...</text>
+<text x="455" y="284" font-size="16" fill="#59636e" text-anchor="middle">depends on 2 tables</text>
+
+<rect x="630" y="110" width="230" height="220" rx="16" fill="#e6f4e6" stroke="#0067c0" stroke-width="3" />
+<text x="745" y="152" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">Grouping and</text>
+<text x="745" y="178" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">Aggregates</text>
+<text x="745" y="222" font-size="19" font-family="'SFMono-Regular', Consolas, Menlo, monospace" fill="#0067c0" text-anchor="middle">GROUP BY ...</text>
+<text x="745" y="284" font-size="16" fill="#59636e" text-anchor="middle">one row per group</text>
+
+<rect x="920" y="110" width="230" height="220" rx="16" fill="#e3f0fa" stroke="#0067c0" stroke-width="3" />
+<text x="1035" y="152" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">Window</text>
+<text x="1035" y="178" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">Functions</text>
+<text x="1035" y="222" font-size="19" font-family="'SFMono-Regular', Consolas, Menlo, monospace" fill="#0067c0" text-anchor="middle">... OVER (...)</text>
+<text x="1035" y="284" font-size="16" fill="#59636e" text-anchor="middle">keeps every row</text>
+</g>
+<g stroke="#0067c0" stroke-width="5" stroke-linecap="round" fill="none">
+<path d="M280 220H340" />
+<path d="M570 220H630" />
+<path d="M860 220H920" />
+</g>
+<g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"><text x="600" y="410" font-size="20" font-weight="600" fill="#0067c0" text-anchor="middle">EACH STAGE ASSUMES THE LAST</text></g>
+<path d="M50 440H1140" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" />
+<path d="M1140 440L1120 428V452Z" fill="#0067c0" />
+</svg>

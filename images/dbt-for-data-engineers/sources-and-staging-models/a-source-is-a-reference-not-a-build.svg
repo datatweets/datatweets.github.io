@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="380" viewBox="0 0 1100 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A source is a reference dbt checks against, never an object dbt builds</title>
+  <desc>raw.trips is declared as a source in __sources.yml -- a name and a schema pointing at a table psycopg2 already created, nothing more. dbt ls --resource-type source lists it with a distinct source: prefix. dbt ls --resource-type model never lists it at all -- it does not appear in the model list alongside stg_trips, zone_revenue, int_hourly_pattern, daily_summary, and hello_cityflow. dbt run --select source:raw.trips reports Nothing to do, because a source has no materialization to build. By contrast, stg_trips is a real model: dbt run creates it as a Postgres view, a CREATE VIEW statement Postgres actually executes. A source is checked against; a model is built.</desc>
+  <rect width="1100" height="380" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Source Is a Reference. A Model Is a Build.</text>
+  <text x="550" y="50" text-anchor="middle" font-size="11" fill="#718096">Confirmed three ways against the real project, not assumed from the word "source" alone</text>
+
+  <!-- source side -->
+  <rect x="50" y="75" width="470" height="270" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="285" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#2c5282">source: raw.trips</text>
+  <text x="285" y="118" text-anchor="middle" font-size="9.5" fill="#2c5282">a table psycopg2 already created</text>
+
+  <rect x="75" y="132" width="420" height="35" rx="6" fill="#2c5282" />
+  <text x="285" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#ebf8ff">dbt ls --resource-type source</text>
+
+  <rect x="75" y="172" width="420" height="30" rx="6" fill="#ffffff" stroke="#4299e1" stroke-width="1.2" />
+  <text x="285" y="192" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#2c5282">source:cityflow_warehouse.raw.trips</text>
+
+  <rect x="75" y="212" width="420" height="35" rx="6" fill="#2c5282" />
+  <text x="285" y="234" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#ebf8ff">dbt ls --resource-type model</text>
+
+  <rect x="75" y="252" width="420" height="30" rx="6" fill="#ffffff" stroke="#4299e1" stroke-width="1.2" />
+  <text x="285" y="272" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#822727">not listed -- not a model at all</text>
+
+  <rect x="75" y="292" width="420" height="35" rx="6" fill="#2c5282" />
+  <text x="285" y="309" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#ebf8ff">dbt run --select source:raw.trips</text>
+  <text x="285" y="321" text-anchor="middle" font-size="8.5" font-weight="700" font-family="Menlo, monospace" fill="#fed7d7">WARNING: Nothing to do</text>
+
+  <!-- model side -->
+  <rect x="580" y="75" width="470" height="270" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="815" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#22543d">model: stg_trips</text>
+  <text x="815" y="118" text-anchor="middle" font-size="9.5" fill="#22543d">a .sql file with a SELECT in it</text>
+
+  <rect x="605" y="132" width="420" height="35" rx="6" fill="#22543d" />
+  <text x="815" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">dbt ls --resource-type model</text>
+
+  <rect x="605" y="172" width="420" height="30" rx="6" fill="#ffffff" stroke="#48bb78" stroke-width="1.2" />
+  <text x="815" y="192" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">cityflow_warehouse.staging.stg_trips</text>
+
+  <rect x="605" y="212" width="420" height="35" rx="6" fill="#22543d" />
+  <text x="815" y="234" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">dbt run --select stg_trips</text>
+
+  <rect x="605" y="252" width="420" height="30" rx="6" fill="#ffffff" stroke="#48bb78" stroke-width="1.2" />
+  <text x="815" y="272" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#22543d">OK created sql view model</text>
+
+  <rect x="605" y="292" width="420" height="35" rx="6" fill="#22543d" />
+  <text x="815" y="309" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">CREATE VIEW public.stg_trips AS (...)</text>
+  <text x="815" y="321" text-anchor="middle" font-size="8.5" font-weight="700" font-family="Menlo, monospace" fill="#c6f6d5">a real object, built and confirmed</text>
+
+  <text x="550" y="365" text-anchor="middle" font-size="10.5" fill="#4a5568">Every model's own ref()/source() graph traces back to a source -- but a source itself has nothing dbt run ever executes.</text>
+</svg>

@@ -1,0 +1,6 @@
+case,expected_result,observed_result,requests_accepted
+valid_artifacts,ready,ready,True
+missing_model,model artifact is missing,model artifact is missing,False
+checksum_mismatch,model checksum does not match metadata,model checksum does not match metadata,False
+package_version_mismatch,scikit-learn version does not match training,scikit-learn version does not match training,False
+feature_schema_mismatch,model features do not match metadata,model features do not match metadata,False

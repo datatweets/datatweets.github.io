@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 812" width="960" height="812" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="812" fill="#ffffff"/>
+
+  <text x="480" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Writing a partitioned analytics table &#8212; and measuring what the layout buys</text>
+  <text x="480" y="54" text-anchor="middle" font-size="14" fill="#718096">CityFlow cleaned trips &#183; 9,554,757 rows &#183; Jan&#8211;Mar 2024 &#183; written with df.write.partitionBy(&#8220;pickup_date&#8221;)</text>
+
+  <!-- ============ PANEL 1: the on-disk layout ============ -->
+  <line x1="60" y1="72" x2="900" y2="72" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="94" font-size="14" font-weight="700" fill="#2b6cb0">1 &#183; The write &#8212; partitionBy turns one column into a directory tree</text>
+  <text x="60" y="112" font-size="12" fill="#718096">the partition value lives in the directory name (col=value/), not inside the files; a _SUCCESS marker means the job committed atomically</text>
+
+  <!-- code box -->
+  <rect x="60" y="124" width="300" height="70" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.3"/>
+  <text x="72" y="143" font-size="10.5" fill="#4a5568">trips.write</text>
+  <text x="72" y="159" font-size="10.5" fill="#2b6cb0">&#160;&#160;.partitionBy(&#8220;pickup_date&#8221;)</text>
+  <text x="72" y="175" font-size="10.5" fill="#4a5568">&#160;&#160;.mode(&#8220;overwrite&#8221;)</text>
+  <text x="72" y="191" font-size="10.5" fill="#4a5568">&#160;&#160;.parquet(path)</text>
+
+  <text x="372" y="163" font-size="18" fill="#276749">&#8594;</text>
+
+  <!-- tree box -->
+  <rect x="402" y="124" width="498" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="414" y="142" font-size="10.5" font-weight="700" fill="#276749">c2m6l3_trips_by_date.parquet/</text>
+  <text x="426" y="158" font-size="10" fill="#276749">pickup_date=2024-01-01/&#160;&#160;part-00000-&#8230;.snappy.parquet</text>
+  <text x="426" y="173" font-size="10" fill="#276749">pickup_date=2024-01-02/&#160;&#160;&#8230;&#160;&#160;(91 day directories in all)</text>
+  <text x="426" y="188" font-size="10" fill="#c05621">_SUCCESS&#160;&#160;&#8212; commit marker, written last</text>
+
+  <!-- ============ PANEL 2: the read-back payoff ============ -->
+  <line x1="60" y1="212" x2="900" y2="212" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="234" font-size="14" font-weight="700" fill="#276749">2 &#183; The payoff &#8212; the SAME filter, read three ways</text>
+  <text x="60" y="252" font-size="12" fill="#718096">spark.read.parquet(&#8230;).where(pickup_date == &#8220;2024-01-15&#8221;) &#8212; the answer is 77,033 trips in every case; only the work changes</text>
+
+  <!-- header row -->
+  <text x="72" y="278" font-size="10.5" font-weight="700" fill="#4a5568">layout</text>
+  <text x="430" y="278" font-size="10.5" font-weight="700" fill="#4a5568">the plan says</text>
+  <text x="690" y="278" text-anchor="end" font-size="10.5" font-weight="700" fill="#4a5568">files opened</text>
+  <text x="884" y="278" text-anchor="end" font-size="10.5" font-weight="700" fill="#4a5568">rows read off disk</text>
+
+  <!-- partitioned row -->
+  <rect x="60" y="286" width="840" height="40" rx="7" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="72" y="303" font-size="11" font-weight="700" fill="#276749">partitioned by day</text>
+  <text x="72" y="319" font-size="9.5" fill="#718096">90 of 91 day-directories never opened</text>
+  <text x="430" y="311" font-size="10" fill="#276749">PartitionFilters: [pickup_date = 2024-01-15] &#183; 1 path</text>
+  <text x="690" y="311" text-anchor="end" font-size="12" font-weight="700" fill="#276749">2</text>
+  <text x="884" y="311" text-anchor="end" font-size="12" font-weight="700" fill="#276749">77,033</text>
+
+  <!-- flat as-written row -->
+  <rect x="60" y="330" width="840" height="40" rx="7" fill="#fffaf0" stroke="#c05621" stroke-width="1.3"/>
+  <text x="72" y="347" font-size="11" font-weight="700" fill="#c05621">flat, as written</text>
+  <text x="72" y="363" font-size="9.5" fill="#718096">pushdown skips row groups &#8212; by luck of arrival order</text>
+  <text x="430" y="355" font-size="10" fill="#c05621">PushedFilters: [EqualTo(pickup_date, 2024-01-15)]</text>
+  <text x="690" y="355" text-anchor="end" font-size="12" font-weight="700" fill="#c05621">10</text>
+  <text x="884" y="355" text-anchor="end" font-size="12" font-weight="700" fill="#c05621">140,000</text>
+
+  <!-- flat shuffled row -->
+  <rect x="60" y="374" width="840" height="40" rx="7" fill="#fff5f5" stroke="#c53030" stroke-width="1.4"/>
+  <text x="72" y="391" font-size="11" font-weight="700" fill="#c53030">flat, shuffled</text>
+  <text x="72" y="407" font-size="9.5" fill="#718096">same rows, order destroyed &#8212; stats can no longer skip</text>
+  <text x="430" y="399" font-size="10" fill="#c53030">PushedFilters: [EqualTo(pickup_date, 2024-01-15)]</text>
+  <text x="690" y="399" text-anchor="end" font-size="12" font-weight="700" fill="#c53030">10</text>
+  <text x="884" y="399" text-anchor="end" font-size="12" font-weight="700" fill="#c53030">560,000</text>
+
+  <!-- rows-read bars -->
+  <text x="60" y="440" font-size="11" font-weight="700" fill="#1a202c">Rows the scan actually reads to answer &#8220;trips on 2024-01-15&#8221; (fewer is better)</text>
+  <text x="60" y="463" font-size="10" fill="#4a5568">partitioned</text>
+  <rect x="180" y="453" width="12" height="14" rx="2" fill="#c6f6d5" stroke="#276749" stroke-width="1"/>
+  <text x="200" y="464" font-size="10" font-weight="700" fill="#276749">77,033 &#8212; exactly the answer, nothing wasted</text>
+  <text x="60" y="485" font-size="10" fill="#4a5568">flat, as written</text>
+  <rect x="180" y="475" width="22" height="14" rx="2" fill="#feebc8" stroke="#c05621" stroke-width="1"/>
+  <text x="210" y="486" font-size="10" font-weight="700" fill="#c05621">140,000 &#8212; 1.8&#215; the answer</text>
+  <text x="60" y="507" font-size="10" fill="#4a5568">flat, shuffled</text>
+  <rect x="180" y="497" width="88" height="14" rx="2" fill="#fed7d7" stroke="#c53030" stroke-width="1"/>
+  <text x="276" y="508" font-size="10" font-weight="700" fill="#c53030">560,000 &#8212; 7.3&#215; the answer, and every file opened</text>
+
+  <rect x="60" y="522" width="840" height="26" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.2"/>
+  <text x="480" y="539" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">A partition filter is a directory decision made before a file is opened &#8212; a guarantee, not a gamble on how the data happened to be sorted.</text>
+
+  <!-- ============ PANEL 3: small files ============ -->
+  <line x1="60" y1="566" x2="900" y2="566" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="588" font-size="14" font-weight="700" fill="#1a202c">3 &#183; The small-files tradeoff &#8212; control the file count before you write</text>
+  <text x="60" y="606" font-size="12" fill="#718096">10 time-ordered input partitions straddle day boundaries, so a plain partitionBy scatters 176 files across 91 days</text>
+
+  <rect x="60" y="618" width="400" height="70" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.3"/>
+  <text x="72" y="637" font-size="11" font-weight="700" fill="#c05621">plain partitionBy(&#8220;pickup_date&#8221;)</text>
+  <text x="72" y="656" font-size="10.5" fill="#c05621">176 files across 91 days (up to 2 per day)</text>
+  <text x="72" y="673" font-size="10" fill="#718096">many tiny files &#8212; each one is a footer to open on read</text>
+
+  <text x="472" y="660" font-size="18" fill="#276749">&#8594;</text>
+
+  <rect x="500" y="618" width="400" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="512" y="637" font-size="11" font-weight="700" fill="#276749">.repartition(&#8220;pickup_date&#8221;) first</text>
+  <text x="512" y="656" font-size="10.5" fill="#276749">91 files &#8212; exactly one per day directory</text>
+  <text x="512" y="673" font-size="10" fill="#718096">costs one shuffle; coalesce(1) collapses a flat table to 1 file</text>
+
+  <text x="60" y="712" font-size="11" fill="#4a5568">Granularity is the dial: partition by a column you filter on whose cardinality is modest (91 days, a few hundred zones) &#8212; not one so fine it</text>
+  <text x="60" y="730" font-size="11" fill="#4a5568">makes a file per row. Snappy is the default codec (fast); gzip wrote the same table at 21.9 MB instead of 29.8 MB, but slower to read and write.</text>
+
+  <!-- footer rule -->
+  <rect x="60" y="748" width="840" height="46" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.4"/>
+  <text x="480" y="769" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">Write the table the way it will be read: partition by the filter column, control the file count, overwrite to rebuild.</text>
+  <text x="480" y="787" text-anchor="middle" font-size="11" fill="#2b6cb0">The read-back reads to 9,554,757 rows and 256,692,373.14 either way &#8212; the layout changes the cost, never the answer.</text>
+</svg>

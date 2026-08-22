@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="400" viewBox="0 0 1080 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>One macro, two call sites, every downstream number confirmed unchanged</title>
+  <desc>Before panel: int_trips_summed_to_hour.sql, built in Module 2, and zone_hour_report.sql, built in Module 5's guided project, each independently spell out date_trunc of hour comma pickup_time -- the identical six-word expression typed separately in two files built months apart. After panel: both files call hour_bucket of pickup_time instead, one shared macro definition in macros/hour_bucket.sql, discovered automatically with no registration step, macro count moving from 593 to 594. A verification panel below confirms every downstream number held after the refactor -- 81,013 trips and 2,814 zone-hours on Postgres, and Module 5's own 240,917-bucket, 9,554,757-trip, $256,692,373.14 anchor reproduced to the cent again on DuckDB.</desc>
+  <rect width="1080" height="400" fill="#ffffff" />
+  <text x="540" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Macro, Two Call Sites, Nothing Downstream Changed</text>
+
+  <rect x="30" y="55" width="490" height="140" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="275" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">Before: duplicated, months apart</text>
+  <rect x="50" y="92" width="450" height="42" rx="6" fill="#822727" />
+  <text x="275" y="110" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#fff5f5">int_trips_summed_to_hour.sql (Module 2)</text>
+  <text x="275" y="126" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#fff5f5">date_trunc('hour', pickup_time)</text>
+  <rect x="50" y="140" width="450" height="42" rx="6" fill="#822727" />
+  <text x="275" y="158" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#fff5f5">zone_hour_report.sql (Module 5)</text>
+  <text x="275" y="174" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#fff5f5">date_trunc('hour', pickup_time)</text>
+
+  <rect x="560" y="55" width="490" height="140" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="805" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">After: one shared definition</text>
+  <rect x="580" y="92" width="200" height="90" rx="6" fill="#22543d" />
+  <text x="680" y="112" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">macros/hour_bucket.sql</text>
+  <text x="680" y="130" text-anchor="middle" font-size="8" font-family="Menlo, monospace" fill="#f0fff4">{% macro hour_bucket %}</text>
+  <text x="680" y="145" text-anchor="middle" font-size="8" font-family="Menlo, monospace" fill="#f0fff4">date_trunc('hour', col)</text>
+  <text x="680" y="160" text-anchor="middle" font-size="8" font-family="Menlo, monospace" fill="#f0fff4">{% endmacro %}</text>
+  <text x="680" y="176" text-anchor="middle" font-size="7.5" fill="#f0fff4">593 to 594 macros, no registration</text>
+  <rect x="800" y="92" width="230" height="40" rx="6" fill="#2f855a" />
+  <text x="915" y="116" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">{{ hour_bucket('pickup_time') }}</text>
+  <rect x="800" y="140" width="230" height="40" rx="6" fill="#2f855a" />
+  <text x="915" y="164" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">{{ hour_bucket('pickup_time') }}</text>
+
+  <path d="M540,125 L555,125" stroke="none" />
+
+  <rect x="30" y="210" width="1020" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="540" y="233" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">Verified unchanged after the refactor</text>
+
+  <rect x="60" y="248" width="460" height="95" rx="8" fill="#2c5282" />
+  <text x="290" y="270" text-anchor="middle" font-size="10" font-weight="700" fill="#ebf8ff">int_trips_summed_to_hour + daily_summary (Postgres)</text>
+  <text x="290" y="292" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">2,814 zone-hours</text>
+  <text x="290" y="312" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">81,013 trips -- $2,442,843.25</text>
+  <text x="290" y="330" text-anchor="middle" font-size="8.5" fill="#ebf8ff">identical to every earlier figure</text>
+
+  <rect x="560" y="248" width="460" height="95" rx="8" fill="#2c5282" />
+  <text x="790" y="270" text-anchor="middle" font-size="10" font-weight="700" fill="#ebf8ff">zone_hour_report (DuckDB)</text>
+  <text x="790" y="292" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">240,917 buckets -- 9,554,757 trips</text>
+  <text x="790" y="312" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">$256,692,373.14</text>
+  <text x="790" y="330" text-anchor="middle" font-size="8.5" fill="#ebf8ff">Module 5's own anchor, to the cent</text>
+
+  <text x="540" y="385" text-anchor="middle" font-size="10" font-weight="700" fill="#2d3748">A refactor is only proven safe by checking numbers before and after -- not by a passing dbt run alone.</text>
+
+</svg>

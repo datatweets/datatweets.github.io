@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Token-level F1 gives partial credit where exact match gives zero: a token-overlap diagram and a bar chart comparing EM and F1 on four Docent answers.</title>
+  <rect x="0" y="0" width="900" height="520" fill="#ffffff"/>
+
+  <text x="450" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Token-level F1: partial credit where exact match scores zero</text>
+
+  <!-- LEFT PANEL: token-overlap Venn -->
+  <text x="235" y="80" text-anchor="middle" font-size="15" font-weight="600" fill="#4a5568">Prediction and reference as bags of tokens</text>
+
+  <!-- prediction circle -->
+  <circle cx="180" cy="200" r="105" fill="#ebf8ff" fill-opacity="0.75" stroke="#2b6cb0" stroke-width="2.5"/>
+  <!-- reference circle -->
+  <circle cx="290" cy="200" r="105" fill="#f0fff4" fill-opacity="0.75" stroke="#276749" stroke-width="2.5"/>
+
+  <text x="128" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">prediction</text>
+  <text x="342" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">reference</text>
+
+  <!-- only-in-pred region label -->
+  <text x="120" y="205" text-anchor="middle" font-size="12" fill="#4a5568">extra</text>
+  <text x="120" y="221" text-anchor="middle" font-size="12" fill="#4a5568">words</text>
+  <!-- shared region -->
+  <text x="235" y="197" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">shared</text>
+  <text x="235" y="215" text-anchor="middle" font-size="11" fill="#4a5568">|pred &#8745; ref|</text>
+  <!-- only-in-ref region -->
+  <text x="350" y="205" text-anchor="middle" font-size="12" fill="#4a5568">missed</text>
+  <text x="350" y="221" text-anchor="middle" font-size="12" fill="#4a5568">words</text>
+
+  <!-- formulas -->
+  <text x="235" y="350" text-anchor="middle" font-size="14" fill="#2b6cb0" font-weight="600">precision = shared &#247; |prediction|</text>
+  <text x="235" y="376" text-anchor="middle" font-size="14" fill="#276749" font-weight="600">recall = shared &#247; |reference|</text>
+  <text x="235" y="404" text-anchor="middle" font-size="14" fill="#6b46c1" font-weight="700">F1 = harmonic mean of precision, recall</text>
+  <text x="235" y="440" text-anchor="middle" font-size="12" fill="#718096" font-style="italic">Extra words hurt precision; missed words hurt recall.</text>
+
+  <!-- divider -->
+  <line x1="470" y1="70" x2="470" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- RIGHT PANEL: EM vs F1 bars -->
+  <text x="690" y="80" text-anchor="middle" font-size="15" font-weight="600" fill="#4a5568">EM vs F1 on four Docent answers</text>
+
+  <!-- axis baseline -->
+  <line x1="560" y1="380" x2="880" y2="380" stroke="#a0aec0" stroke-width="1.5"/>
+  <!-- y gridlines 0 and 1 -->
+  <line x1="560" y1="150" x2="880" y2="150" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="552" y="384" text-anchor="end" font-size="10" fill="#718096">0.0</text>
+  <text x="552" y="154" text-anchor="end" font-size="10" fill="#718096">1.0</text>
+
+  <!-- legend -->
+  <rect x="560" y="100" width="13" height="13" fill="#a0aec0"/>
+  <text x="578" y="111" font-size="11" fill="#4a5568">EM (exact match)</text>
+  <rect x="686" y="100" width="13" height="13" fill="#9f7aea"/>
+  <text x="704" y="111" font-size="11" fill="#4a5568">F1 (token overlap)</text>
+
+  <!-- bars: scale 230px = 1.0, base y=380 -->
+  <!-- Case 1: exact hit  EM=1.0 F1=1.0 -->
+  <rect x="574" y="150" width="20" height="230" fill="#a0aec0"/>
+  <rect x="596" y="150" width="20" height="230" fill="#9f7aea"/>
+  <text x="595" y="398" text-anchor="middle" font-size="10" fill="#4a5568">exact</text>
+  <text x="595" y="411" text-anchor="middle" font-size="10" fill="#4a5568">hit</text>
+  <text x="584" y="144" text-anchor="middle" font-size="9" fill="#4a5568">1.0</text>
+  <text x="606" y="144" text-anchor="middle" font-size="9" fill="#6b46c1">1.0</text>
+
+  <!-- Case 2: verbose  EM=0 F1=0.25 -->
+  <rect x="650" y="380" width="20" height="0" fill="#a0aec0"/>
+  <rect x="672" y="322" width="20" height="58" fill="#9f7aea"/>
+  <text x="671" y="398" text-anchor="middle" font-size="10" fill="#4a5568">verbose</text>
+  <text x="660" y="374" text-anchor="middle" font-size="9" fill="#4a5568">0</text>
+  <text x="682" y="316" text-anchor="middle" font-size="9" fill="#6b46c1">0.25</text>
+
+  <!-- Case 3: terse partial  EM=0 F1=0.80 -->
+  <rect x="726" y="380" width="20" height="0" fill="#a0aec0"/>
+  <rect x="748" y="196" width="20" height="184" fill="#9f7aea"/>
+  <text x="747" y="398" text-anchor="middle" font-size="10" fill="#4a5568">terse</text>
+  <text x="736" y="374" text-anchor="middle" font-size="9" fill="#4a5568">0</text>
+  <text x="758" y="190" text-anchor="middle" font-size="9" fill="#6b46c1">0.80</text>
+
+  <!-- Case 4: wrong  EM=0 F1=0 -->
+  <rect x="802" y="380" width="20" height="0" fill="#a0aec0"/>
+  <rect x="824" y="380" width="20" height="0" fill="#9f7aea"/>
+  <text x="823" y="398" text-anchor="middle" font-size="10" fill="#4a5568">wrong</text>
+  <text x="812" y="374" text-anchor="middle" font-size="9" fill="#4a5568">0</text>
+  <text x="834" y="374" text-anchor="middle" font-size="9" fill="#c53030">0</text>
+
+  <!-- aggregate callout -->
+  <rect x="560" y="425" width="320" height="60" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5"/>
+  <text x="720" y="448" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">Aggregate over the 4 answers</text>
+  <text x="720" y="470" text-anchor="middle" font-size="13" fill="#4a5568">mean EM = 0.25&#160;&#160;&#160;vs&#160;&#160;&#160;mean F1 = 0.51</text>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="440" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">pl.Date, pl.Datetime, and pl.Duration</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">Three related types, built from real Thistlewood order O00588</text>
+
+  <rect x="30" y="70" width="200" height="92" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="130" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">pl.Date</text>
+  <text x="130" y="112" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">order_date</text>
+  <text x="130" y="130" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">2024-01-01</text>
+  <text x="130" y="148" text-anchor="middle" font-size="8.5" fill="#4a5568">calendar day only</text>
+
+  <rect x="260" y="70" width="200" height="92" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="360" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">pl.Datetime(&quot;us&quot;, &quot;UTC&quot;)</text>
+  <text x="360" y="112" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">order_timestamp_utc</text>
+  <text x="360" y="130" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">2024-01-01 20:39:26 UTC</text>
+  <text x="360" y="148" text-anchor="middle" font-size="8.5" fill="#4a5568">microsecond precision, tz-aware</text>
+
+  <rect x="490" y="70" width="200" height="92" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="590" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#9c4221">pl.Duration(&quot;us&quot;)</text>
+  <text x="590" y="112" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">reference_date - order_date</text>
+  <text x="590" y="130" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">731d</text>
+  <text x="590" y="148" text-anchor="middle" font-size="8.5" fill="#4a5568">a real elapsed span, not a date</text>
+
+  <rect x="40" y="192" width="640" height="66" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="214" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">Default time unit is microseconds (&quot;us&quot;), not nanoseconds</text>
+  <text x="360" y="234" text-anchor="middle" font-size="9.5" fill="#22543d">pl.read_csv(try_parse_dates=True) and Date-minus-Date subtraction both land on &quot;us&quot; by default.</text>
+
+  <rect x="40" y="272" width="640" height="90" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="294" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">Casting the time unit can silently drop the time zone</text>
+  <text x="360" y="314" text-anchor="middle" font-size="9.5" fill="#742a2a">.cast(pl.Datetime(&quot;ns&quot;)) sets time_zone=None by default -- UTC is lost unless you</text>
+  <text x="360" y="332" text-anchor="middle" font-size="9.5" fill="#742a2a">pass it explicitly: .cast(pl.Datetime(&quot;ns&quot;, time_zone=&quot;UTC&quot;)).</text>
+  <text x="360" y="350" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#c53030">datetime[us, UTC] --cast(Datetime(&quot;ns&quot;))--&gt; datetime[ns]  (tz gone)</text>
+
+  <rect x="40" y="378" width="640" height="46" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="360" y="406" text-anchor="middle" font-size="9.5" fill="#2b6cb0">450 real returns: order-to-return spans 3-30 days (mean 16.58) -- Module 1's own generator rule, confirmed with Duration arithmetic.</text>
+</svg>

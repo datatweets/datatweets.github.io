@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Kafka lost nothing. The application's own memory of what it had already added up did.</title>
+  <desc>A plain KafkaConsumer loop keeps a revenue-by-zone tally in an ordinary Python dictionary. Run 1 processes 30,000 real trip events and tallies $711,532.04 in memory, then the process ends. Run 2 starts fresh, correctly resumes from Kafka's own committed offset with zero messages lost or repeated, and tallies its own $676,671.90 -- with no memory of run 1's total. Kafka guaranteed the messages; nothing guaranteed the aggregate built from them. The true combined total, $1,388,203.94, exists nowhere.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Two Runs, Two Disconnected Totals</text>
+
+  <!-- Run 1 -->
+  <rect x="60" y="55" width="440" height="150" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="280" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">RUN 1 -- messages 1 to 30,000</text>
+  <text x="280" y="102" text-anchor="middle" font-size="10" fill="#2c5282">plain dict, in memory only</text>
+  <rect x="90" y="118" width="380" height="46" rx="6" fill="#2c5282" />
+  <text x="280" y="146" text-anchor="middle" font-size="16" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">$711,532.04</text>
+  <text x="280" y="182" text-anchor="middle" font-size="10" fill="#2c5282">process ends -- dict is gone with it</text>
+
+  <!-- Run 2 -->
+  <rect x="600" y="55" width="440" height="150" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="820" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">RUN 2 -- messages 30,001 to 60,000</text>
+  <text x="820" y="102" text-anchor="middle" font-size="10" fill="#7b341e">a fresh dict, in a fresh process</text>
+  <rect x="630" y="118" width="380" height="46" rx="6" fill="#7b341e" />
+  <text x="820" y="146" text-anchor="middle" font-size="16" font-weight="700" font-family="Menlo, monospace" fill="#feebc8">$676,671.90</text>
+  <text x="820" y="182" text-anchor="middle" font-size="10" fill="#7b341e">correctly resumed -- zero knowledge of run 1</text>
+
+  <!-- reconciliation -->
+  <rect x="200" y="235" width="700" height="100" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="550" y="265" text-anchor="middle" font-size="13" font-weight="700" fill="#742a2a">true combined total: $1,388,203.94</text>
+  <text x="550" y="290" text-anchor="middle" font-size="11" fill="#742a2a">exists in neither process's memory -- computed here only by adding the two prints together</text>
+  <text x="550" y="312" text-anchor="middle" font-size="10.5" fill="#742a2a">Kafka's own offsets were never wrong. The application's memory of its own math was.</text>
+
+  <text x="550" y="368" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">This is the exact gap a stream processor's stateful tables exist to close</text>
+</svg>

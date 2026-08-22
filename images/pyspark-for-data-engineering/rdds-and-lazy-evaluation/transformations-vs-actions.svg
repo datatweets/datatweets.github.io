@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="960" height="660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="660" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">One plan, four actions &#8212; Spark re-ran the whole pipeline every time</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">pyspark 4.2.0 &#183; local[*] = 10 cores &#183; Jan+Feb+Mar 2024 yellow taxi, 160.4 MB &#183; zone-hour report, quarter window &#183; all numbers measured</text>
+
+<!-- SECTION 1: building the plan -->
+<text x="40" y="96" font-size="13" font-weight="700" fill="#4a5568">BUILDING THE PLAN &#8212; transformations, measured in milliseconds</text>
+<line x1="40" y1="106" x2="920" y2="106" stroke="#e2e8f0" stroke-width="1"/>
+
+<rect x="44" y="122" width="150" height="40" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1"/>
+<text x="119" y="139" text-anchor="middle" font-size="11" font-weight="600" fill="#276749">read.parquet(3 files)</text>
+<text x="119" y="154" text-anchor="middle" font-size="10" fill="#718096">69 ms &#8212; footers only</text>
+<text x="207" y="146" text-anchor="middle" font-size="15" fill="#4a5568">&#8594;</text>
+<rect x="220" y="122" width="130" height="40" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="285" y="139" text-anchor="middle" font-size="11" font-weight="600" fill="#2b6cb0">filter(window)</text>
+<text x="285" y="154" text-anchor="middle" font-size="10" fill="#718096">Jan 1 &#8804; t &#60; Apr 1</text>
+<text x="363" y="146" text-anchor="middle" font-size="15" fill="#4a5568">&#8594;</text>
+<rect x="376" y="122" width="140" height="40" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="446" y="139" text-anchor="middle" font-size="11" font-weight="600" fill="#2b6cb0">withColumn("hour")</text>
+<text x="446" y="154" text-anchor="middle" font-size="10" fill="#718096">date_trunc to the hour</text>
+<text x="529" y="146" text-anchor="middle" font-size="15" fill="#4a5568">&#8594;</text>
+<rect x="542" y="122" width="150" height="40" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="617" y="139" text-anchor="middle" font-size="11" font-weight="600" fill="#2b6cb0">groupBy(zone, hour)</text>
+<text x="617" y="154" text-anchor="middle" font-size="10" fill="#718096">.agg(count, sum)</text>
+<text x="705" y="146" text-anchor="middle" font-size="15" fill="#4a5568">&#8594;</text>
+<rect x="718" y="114" width="202" height="56" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="819" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">all four calls: 73 ms</text>
+<text x="819" y="152" text-anchor="middle" font-size="10" fill="#4a5568">0 jobs &#183; 0 rows touched</text>
+<text x="819" y="165" text-anchor="middle" font-size="10" fill="#4a5568">a DataFrame = a plan</text>
+
+<text x="44" y="196" font-size="11" fill="#718096">explain() prints the whole physical plan &#8212; FileScan &#8594; Filter &#8594; partial HashAggregate &#8594; Exchange &#8594; final HashAggregate &#8212; and still launches 0 jobs.</text>
+<text x="44" y="212" font-size="11" fill="#718096">Catalyst already pruned the scan to 3 of 19 columns and pushed the window filter into the Parquet reader &#8212; nobody wrote a select.</text>
+
+<!-- SECTION 2: executing -->
+<text x="40" y="248" font-size="13" font-weight="700" fill="#4a5568">EXECUTING THE PLAN &#8212; actions, measured in seconds (each bar = a full scan + filter + aggregate of 9,554,778 rows)</text>
+<line x1="40" y1="258" x2="920" y2="258" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- bar 1 -->
+<text x="44" y="288" font-size="12" font-weight="700" fill="#1a202c">count() &#8212; run 1</text>
+<text x="44" y="304" font-size="10" fill="#718096">240,917 zone-hour buckets</text>
+<rect x="260" y="274" width="520" height="26" rx="5" fill="#2b6cb0"/>
+<text x="790" y="292" font-size="12" font-weight="700" fill="#2b6cb0">2.31 s</text>
+<!-- bar 2 -->
+<text x="44" y="330" font-size="12" font-weight="700" fill="#1a202c">count() &#8212; run 2, same question</text>
+<text x="44" y="346" font-size="10" fill="#718096">240,917 again &#8212; recomputed</text>
+<rect x="260" y="316" width="178" height="26" rx="5" fill="#4299e1"/>
+<text x="448" y="334" font-size="12" font-weight="700" fill="#2b6cb0">0.79 s &#8212; faster (warm page cache), but a complete re-run</text>
+<!-- bar 3 -->
+<text x="44" y="372" font-size="12" font-weight="700" fill="#1a202c">agg(sum(trips), sum(revenue))</text>
+<text x="44" y="388" font-size="10" fill="#718096">9,554,757 trips &#183; $256,692,373.14</text>
+<rect x="260" y="358" width="261" height="26" rx="5" fill="#4299e1"/>
+<text x="531" y="376" font-size="12" font-weight="700" fill="#2b6cb0">1.16 s &#8212; third full run</text>
+<!-- bar 4 -->
+<text x="44" y="414" font-size="12" font-weight="700" fill="#1a202c">orderBy(trips desc).show(5)</text>
+<text x="44" y="430" font-size="10" fill="#718096">top bucket: zone 79, Sun 1 a.m., 846 trips</text>
+<rect x="260" y="400" width="221" height="26" rx="5" fill="#4299e1"/>
+<text x="491" y="418" font-size="12" font-weight="700" fill="#2b6cb0">0.98 s &#8212; fourth full run</text>
+
+<!-- ratio panel -->
+<rect x="40" y="452" width="430" height="76" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="255" y="476" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">plan vs work: 73 ms to build &#183; 2.31 s to execute</text>
+<text x="255" y="496" text-anchor="middle" font-size="12" fill="#4a5568">a 32&#215; gap &#8212; the instant return was deferral, not speed</text>
+<text x="255" y="516" text-anchor="middle" font-size="11" fill="#718096">transformations describe &#183; actions execute</text>
+
+<rect x="490" y="452" width="430" height="76" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="705" y="476" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">ground truth matched, every action, every run</text>
+<text x="705" y="496" text-anchor="middle" font-size="12" fill="#4a5568">240,917 buckets &#183; 9,554,757 trips &#183; $256,692,373.14</text>
+<text x="705" y="516" text-anchor="middle" font-size="11" fill="#718096">identical to Course 1's verified zone-hour report</text>
+
+<line x1="40" y1="552" x2="920" y2="552" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40" y="566" width="880" height="70" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+<text x="60" y="592" font-size="12" font-weight="700" fill="#c05621">Nothing is materialized unless you instruct it &#8212; four answers cost four executions of the same pipeline.</text>
+<text x="60" y="612" font-size="11" fill="#4a5568">This is the single most common Spark performance surprise. The instruction that keeps a result around is cache() &#8212; Module 5's subject.</text>
+<text x="60" y="628" font-size="11" fill="#718096">Exact seconds vary by machine, run, and load; the ratios are the point.</text>
+</svg>

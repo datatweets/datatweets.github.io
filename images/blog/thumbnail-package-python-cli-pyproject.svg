@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Package a Python Data Checker as a Command-Line Tool</title>
+  <desc id="desc">A Python project folder flows through pyproject.toml into an installed parcelcheck terminal command.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" fill="#59636e">PYTHON PACKAGING</text>
+    <text x="90" y="282" font-size="82" font-weight="700" fill="#1b1f24">SCRIPT TO</text>
+    <text x="90" y="378" font-size="82" font-weight="700" fill="#1b1f24">COMMAND</text>
+    <rect x="94" y="412" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="486" font-size="28" font-weight="500" fill="#59636e">PYPROJECT &#183; SRC LAYOUT &#183; CLI</text>
+
+    <g transform="translate(690 132)">
+      <rect x="0" y="0" width="190" height="122" rx="14" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+      <rect x="18" y="28" width="154" height="66" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <text x="95" y="69" text-anchor="middle" font-size="21" font-weight="600" fill="#1b1f24">src/parcelcheck</text>
+      <text x="95" y="164" text-anchor="middle" font-size="38" font-weight="600" fill="#0067c0">↓</text>
+
+      <rect x="0" y="190" width="190" height="94" rx="14" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+      <text x="95" y="228" text-anchor="middle" font-size="21" font-weight="700" fill="#1b1f24">pyproject.toml</text>
+      <text x="95" y="260" text-anchor="middle" font-size="17" fill="#59636e">parcelcheck.cli:main</text>
+
+      <text x="234" y="249" text-anchor="middle" font-size="40" font-weight="600" fill="#0067c0">→</text>
+
+      <rect x="270" y="164" width="300" height="150" rx="16" fill="#1b1f24"/>
+      <rect x="290" y="184" width="42" height="7" rx="3.5" fill="#e3e6ea"/>
+      <text x="294" y="238" font-size="20" font-weight="500" fill="#ffffff">$ parcelcheck data.csv</text>
+      <text x="294" y="276" font-size="18" fill="#9fd2f5">Checked 8 rows</text>
+    </g>
+  </g>
+</svg>

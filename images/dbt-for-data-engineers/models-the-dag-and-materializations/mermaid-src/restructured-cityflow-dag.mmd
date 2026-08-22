@@ -1,0 +1,28 @@
+erDiagram
+    RAW_TRIPS {
+        timestamp pickup_time
+        integer pickup_zone
+        numeric total_amount
+    }
+    STG_TRIPS {
+        timestamp pickup_time
+        integer pickup_zone
+        numeric tip_and_fees
+    }
+    INT_HOURLY_PATTERN {
+        timestamp pickup_hour
+        integer pickup_zone
+        numeric hourly_revenue
+    }
+    ZONE_REVENUE {
+        integer pickup_zone
+        numeric total_revenue
+    }
+    DAILY_SUMMARY {
+        timestamp pickup_day
+        numeric daily_revenue
+    }
+    RAW_TRIPS ||--|| STG_TRIPS : source
+    STG_TRIPS ||--|| INT_HOURLY_PATTERN : ref
+    STG_TRIPS ||--|| ZONE_REVENUE : ref
+    INT_HOURLY_PATTERN ||--|| DAILY_SUMMARY : ref

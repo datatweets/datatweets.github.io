@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The pipeline that turns Docent's production logs into a golden test set: capture, deduplicate, sample, label, and promote, with the funnel narrowing from 15 logged turns to 13 unique to 8 candidates.</title>
+  <rect x="0" y="0" width="900" height="470" fill="#ffffff"/>
+
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">From Production Logs to a Golden Test Set</text>
+  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#718096">Real Docent traffic becomes reusable test cases &#8212; the funnel narrows at every stage</text>
+
+  <!-- Stage 1: CAPTURE -->
+  <rect x="30" y="90" width="150" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="105" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">1. CAPTURE</text>
+  <text x="105" y="140" text-anchor="middle" font-size="11" fill="#4a5568">Log every turn:</text>
+  <text x="105" y="158" text-anchor="middle" font-size="10.5" fill="#4a5568">question &#183; answer</text>
+  <text x="105" y="174" text-anchor="middle" font-size="10.5" fill="#4a5568">retrieved docs</text>
+  <text x="105" y="190" text-anchor="middle" font-size="10.5" fill="#4a5568">feedback (up/down)</text>
+  <text x="105" y="206" text-anchor="middle" font-size="10.5" fill="#4a5568">latency &#183; cost</text>
+  <rect x="52" y="216" width="106" height="18" rx="9" fill="#4299e1"/>
+  <text x="105" y="229" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">15 logged</text>
+
+  <!-- Stage 2: DEDUPE -->
+  <rect x="222" y="90" width="150" height="150" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <text x="297" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#6b46c1">2. DEDUPE</text>
+  <text x="297" y="142" text-anchor="middle" font-size="11" fill="#4a5568">Cluster near-identical</text>
+  <text x="297" y="158" text-anchor="middle" font-size="11" fill="#4a5568">phrasings; normalize</text>
+  <text x="297" y="174" text-anchor="middle" font-size="11" fill="#4a5568">case, punctuation,</text>
+  <text x="297" y="190" text-anchor="middle" font-size="11" fill="#4a5568">token overlap</text>
+  <rect x="244" y="216" width="106" height="18" rx="9" fill="#9f7aea"/>
+  <text x="297" y="229" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">13 unique</text>
+
+  <!-- Stage 3: SAMPLE -->
+  <rect x="414" y="90" width="150" height="150" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <text x="489" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">3. SAMPLE</text>
+  <text x="489" y="142" text-anchor="middle" font-size="11" fill="#4a5568">random +</text>
+  <text x="489" y="158" text-anchor="middle" font-size="11" fill="#4a5568">stratified +</text>
+  <text x="489" y="174" text-anchor="middle" font-size="11" fill="#4a5568">targeted at</text>
+  <text x="489" y="190" text-anchor="middle" font-size="11" fill="#4a5568">thumbs-down</text>
+  <rect x="436" y="216" width="106" height="18" rx="9" fill="#ed8936"/>
+  <text x="489" y="229" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">8 candidates</text>
+
+  <!-- Stage 4: LABEL -->
+  <rect x="606" y="90" width="150" height="150" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="681" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">4. LABEL</text>
+  <text x="681" y="142" text-anchor="middle" font-size="11" fill="#4a5568">Add the correct</text>
+  <text x="681" y="158" text-anchor="middle" font-size="11" fill="#4a5568">reference answer</text>
+  <text x="681" y="174" text-anchor="middle" font-size="11" fill="#4a5568">+ doc id + tags</text>
+  <text x="681" y="196" text-anchor="middle" font-size="10.5" font-style="italic" fill="#c05621">the hardest step</text>
+  <rect x="628" y="216" width="106" height="18" rx="9" fill="#48bb78"/>
+  <text x="681" y="229" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">labeled</text>
+
+  <!-- Stage 5: PROMOTE -->
+  <rect x="798" y="90" width="72" height="150" rx="10" fill="#276749"/>
+  <text x="834" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">5.</text>
+  <text x="834" y="138" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">PRO-</text>
+  <text x="834" y="154" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">MOTE</text>
+  <text x="834" y="182" text-anchor="middle" font-size="10" fill="#c6f6d5">into the</text>
+  <text x="834" y="196" text-anchor="middle" font-size="10" fill="#c6f6d5">golden</text>
+  <text x="834" y="210" text-anchor="middle" font-size="10" fill="#c6f6d5">set</text>
+
+  <!-- Arrows between stages -->
+  <g fill="#a0aec0">
+    <path d="M182 165 l22 0 l0 -6 l14 8 l-14 8 l0 -6 l-22 0 z"/>
+    <path d="M374 165 l22 0 l0 -6 l14 8 l-14 8 l0 -6 l-22 0 z"/>
+    <path d="M566 165 l22 0 l0 -6 l14 8 l-14 8 l0 -6 l-22 0 z"/>
+    <path d="M758 165 l16 0 l0 -6 l14 8 l-14 8 l0 -6 l-16 0 z"/>
+  </g>
+
+  <!-- Regression callout -->
+  <rect x="606" y="300" width="264" height="130" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+  <text x="738" y="326" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">Failures &#8594; regression cases</text>
+  <text x="620" y="350" font-size="11" fill="#4a5568">A thumbs-down answer is a bug you</text>
+  <text x="620" y="366" font-size="11" fill="#4a5568">already caught. Label it with the</text>
+  <text x="620" y="382" font-size="11" fill="#4a5568">correct reference and freeze it, so</text>
+  <text x="620" y="398" font-size="11" fill="#4a5568">the next model change cannot</text>
+  <text x="620" y="414" font-size="11" fill="#4a5568">silently reintroduce the same error.</text>
+
+  <!-- Privacy note -->
+  <rect x="30" y="300" width="540" height="130" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="52" y="326" font-size="13" font-weight="700" fill="#4a5568">Before anything else: scrub the logs</text>
+  <text x="52" y="352" font-size="11.5" fill="#718096">Production traffic can carry API keys, emails, and other PII. Redact</text>
+  <text x="52" y="370" font-size="11.5" fill="#718096">secrets and personal data as you capture, before a question ever</text>
+  <text x="52" y="388" font-size="11.5" fill="#718096">becomes a fixture that lives in your repo and CI. A test set is a file</text>
+  <text x="52" y="406" font-size="11.5" fill="#718096">many people can read &#8212; treat it as public, not as a private log.</text>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="960" height="660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="660" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">A heap answers &#8220;top 10&#8221; without sorting the other 2,964,614 rows</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">End-to-end: the 10 biggest tips in the January 2024 yellow-taxi month (2,964,624 rows), one 10-core machine</text>
+
+<text x="40" y="96" font-size="13" font-weight="700" fill="#4a5568">TIME &#8212; whole job, read included</text>
+<text x="720" y="96" font-size="13" font-weight="700" fill="#4a5568">PEAK PYTHON MEMORY</text>
+<line x1="40" y1="106" x2="920" y2="106" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- ROW A: full sort -->
+<text x="44" y="140" font-size="13" font-weight="700" fill="#1a202c">materialize + sorted()</text>
+<text x="44" y="158" font-size="11" fill="#718096">sorts all 2.96M rows, keeps 10</text>
+<rect x="300" y="124" width="380" height="28" rx="6" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+<text x="310" y="143" font-size="13" font-weight="700" fill="#c53030">2.56 s</text>
+<rect x="720" y="124" width="200" height="28" rx="6" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+<text x="820" y="143" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">313.1 MB</text>
+
+<!-- ROW B: nlargest -->
+<text x="44" y="210" font-size="13" font-weight="700" fill="#1a202c">materialize + nlargest(10)</text>
+<text x="44" y="228" font-size="11" fill="#718096">heap of 10 over an in-RAM list</text>
+<rect x="300" y="194" width="211" height="28" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="310" y="213" font-size="13" font-weight="700" fill="#2b6cb0">1.42 s</text>
+<rect x="720" y="194" width="200" height="28" rx="6" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+<text x="820" y="213" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">313.1 MB</text>
+
+<!-- ROW C: stream -->
+<text x="44" y="280" font-size="13" font-weight="700" fill="#1a202c">stream + bounded 10-heap</text>
+<text x="44" y="298" font-size="11" fill="#718096">never holds the month in RAM</text>
+<rect x="300" y="264" width="227" height="28" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="310" y="283" font-size="13" font-weight="700" fill="#276749">1.53 s</text>
+<rect x="720" y="264" width="200" height="28" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="820" y="283" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">10.6 MB &#8212; 30&#215; less</text>
+
+<text x="300" y="326" font-size="11" fill="#718096">Isolated top-N step only: sorted() 1.205&#160;s vs heapq.nlargest(10) 0.066&#160;s &#8212; an 18.2&#215; gap on the same in-RAM list.</text>
+
+<line x1="40" y1="348" x2="920" y2="348" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- BOUNDED HEAP DIAGRAM -->
+<text x="40" y="378" font-size="13" font-weight="700" fill="#4a5568">WHY THE STREAM VERSION FITS ANYWHERE &#8212; the heap never grows past k</text>
+
+<rect x="44" y="396" width="86" height="72" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="87" y="424" text-anchor="middle" font-size="11" font-weight="600" fill="#2b6cb0">batch 1</text>
+<text x="87" y="442" text-anchor="middle" font-size="10" fill="#718096">250,000</text>
+<text x="87" y="457" text-anchor="middle" font-size="10" fill="#718096">rows</text>
+
+<rect x="140" y="396" width="86" height="72" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="183" y="424" text-anchor="middle" font-size="11" font-weight="600" fill="#2b6cb0">batch 2</text>
+<text x="183" y="442" text-anchor="middle" font-size="10" fill="#718096">250,000</text>
+<text x="183" y="457" text-anchor="middle" font-size="10" fill="#718096">rows</text>
+
+<text x="253" y="438" text-anchor="middle" font-size="16" fill="#718096">&#183;&#183;&#183;</text>
+
+<rect x="280" y="396" width="86" height="72" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="323" y="424" text-anchor="middle" font-size="11" font-weight="600" fill="#2b6cb0">batch 12</text>
+<text x="323" y="442" text-anchor="middle" font-size="10" fill="#718096">the rest</text>
+
+<text x="400" y="438" text-anchor="middle" font-size="20" fill="#4a5568">&#8594;</text>
+
+<rect x="432" y="384" width="238" height="96" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="551" y="404" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">bounded min-heap &#183; k = 10</text>
+<rect x="446" y="414" width="20" height="20" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="470" y="414" width="20" height="20" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="494" y="414" width="20" height="20" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="518" y="414" width="20" height="20" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="542" y="414" width="20" height="20" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="566" y="414" width="20" height="20" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="590" y="414" width="20" height="20" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="614" y="414" width="20" height="20" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="638" y="414" width="20" height="20" rx="3" fill="#48bb78" stroke="#276749"/>
+<rect x="446" y="438" width="20" height="20" rx="3" fill="#48bb78" stroke="#276749"/>
+<text x="551" y="470" text-anchor="middle" font-size="10" fill="#276749">744 bytes, whether the month has 3M rows or 3B</text>
+
+<text x="700" y="438" text-anchor="middle" font-size="20" fill="#4a5568">&#8594;</text>
+
+<rect x="730" y="396" width="190" height="72" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="825" y="420" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">the 10 biggest tips</text>
+<text x="825" y="440" text-anchor="middle" font-size="11" fill="#c05621">$428.00 &#183; $422.70 &#183; $303.00</text>
+<text x="825" y="457" text-anchor="middle" font-size="10" fill="#c05621">identical to the full sort</text>
+
+<text x="480" y="504" text-anchor="middle" font-size="11" fill="#718096">Each row is compared against the root and discarded unless it beats it &#8212; heappushpop keeps the heap at exactly 10 items forever.</text>
+
+<line x1="40" y1="524" x2="920" y2="524" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- HONEST NOTE -->
+<rect x="40" y="542" width="880" height="94" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+<text x="60" y="566" font-size="12" font-weight="700" fill="#c05621">The honest caveat: at small k the heap wins nothing worth having.</text>
+<text x="60" y="588" font-size="11" fill="#4a5568">Ranking CityFlow&#8217;s 260 pickup zones: sorted() 15.8&#160;&#181;s vs heapq.nlargest(10) 9.6&#160;&#181;s &#8212; a 1.65&#215; ratio on numbers too small to notice. Pick either.</text>
+<text x="60" y="608" font-size="11" fill="#4a5568">The heap earns its keep when n is large (18.2&#215; at 2.96M rows) and, above all, when the data must never fully land in RAM: O(k) memory, not O(n).</text>
+<text x="60" y="628" font-size="11" fill="#718096">Exact seconds vary by machine and run; the ratios and the memory shape are the point.</text>
+</svg>

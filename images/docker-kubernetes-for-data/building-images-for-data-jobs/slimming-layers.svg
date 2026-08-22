@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="560" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Two Ways to Slim an Image, Both Measured</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Neither changes what the job does &#8212; both change only what gets shipped</text>
+
+<text x="240" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#4a5568">1. .dockerignore</text>
+<rect x="60" y="104" width="360" height="46" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="80" y="124" font-size="11" font-weight="700" fill="#c53030">COPY . . with no .dockerignore</text>
+<text x="80" y="140" font-size="10" fill="#742a2a">.git, notebooks/, tests/, __pycache__ all copied in</text>
+
+<rect x="60" y="158" width="360" height="46" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="80" y="178" font-size="11" font-weight="700" fill="#276749">COPY . . with a real .dockerignore</text>
+<text x="80" y="194" font-size="10" fill="#22543d">only report.py, requirements.txt, trips.csv land</text>
+
+<rect x="60" y="216" width="360" height="52" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="80" y="238" font-size="12" font-weight="700" fill="#2d3748">322 MB &#8594; 305 MB</text>
+<text x="80" y="257" font-size="11" fill="#4a5568">17 MB of dev-only cruft never shipped</text>
+
+<line x1="480" y1="80" x2="480" y2="480" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+
+<text x="720" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#4a5568">2. Combine RUN layers</text>
+<rect x="540" y="104" width="360" height="70" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="560" y="122" font-size="10" font-weight="700" fill="#c53030">RUN apt-get update</text>
+<text x="560" y="138" font-size="10" font-weight="700" fill="#c53030">RUN apt-get install -y curl</text>
+<text x="560" y="154" font-size="10" font-weight="700" fill="#c53030">RUN rm -rf /var/lib/apt/lists/*</text>
+<text x="560" y="168" font-size="9" fill="#742a2a">3 layers &#8212; the cleanup layer can't shrink the two before it</text>
+
+<rect x="540" y="182" width="360" height="46" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="560" y="202" font-size="10" font-weight="700" fill="#276749">RUN apt-get update &amp;&amp; apt-get install -y curl \</text>
+<text x="560" y="216" font-size="10" font-weight="700" fill="#276749">&amp;&amp; rm -rf /var/lib/apt/lists/*</text>
+
+<rect x="540" y="238" width="360" height="52" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="560" y="260" font-size="12" font-weight="700" fill="#2d3748">344 MB &#8594; 320 MB</text>
+<text x="560" y="279" font-size="11" fill="#4a5568">apt layer alone: 38.0 MB split vs 14.6 MB combined</text>
+
+<line x1="40" y1="330" x2="920" y2="330" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="356" font-size="13" font-weight="700" fill="#4a5568">WHY THE SPLIT VERSION DOESN'T SHRINK BACK DOWN</text>
+<rect x="40" y="372" width="880" height="150" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="60" y="398" font-size="12" fill="#4a5568">Each RUN instruction commits a new, permanent layer. Deleting a file in a LATER layer only hides it from the final</text>
+<text x="60" y="420" font-size="12" fill="#4a5568">filesystem view &#8212; the bytes are still sitting in the earlier layer underneath, and the image ships all of them.</text>
+<text x="60" y="442" font-size="12" fill="#4a5568">apt-get update's package index (21.3 MB) and apt-get install's downloaded .debs (16.7 MB) both persist even</text>
+<text x="60" y="464" font-size="12" fill="#4a5568">though rm -rf /var/lib/apt/lists/* runs right after &#8212; its own layer records the deletion, not a smaller image.</text>
+<text x="60" y="490" font-size="12" font-weight="700" fill="#2d3748">Combining update, install, and cleanup into ONE RUN means the cleanup happens before that layer is ever committed.</text>
+</svg>

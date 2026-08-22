@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="860" height="470" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">Attention as a soft, content-based lookup</text>
+  <text x="430" y="56" text-anchor="middle" font-size="13" fill="#4a5568">query &#8594; compare with every key &#8594; softmax weights &#8594; weighted average of values</text>
+
+  <!-- Query box -->
+  <rect x="30" y="120" width="120" height="60" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="90" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">query q</text>
+  <text x="90" y="166" text-anchor="middle" font-size="12" fill="#4a5568">[3, 0, 0, 0]</text>
+
+  <!-- Keys column -->
+  <text x="300" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">keys (labels)</text>
+  <rect x="240" y="110" width="120" height="34" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="300" y="132" text-anchor="middle" font-size="12" fill="#1a202c">key 0  [1,0,0,0]</text>
+  <rect x="240" y="152" width="120" height="34" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="300" y="174" text-anchor="middle" font-size="12" fill="#1a202c">key 1  [0,1,0,0]</text>
+  <rect x="240" y="194" width="120" height="34" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="300" y="216" text-anchor="middle" font-size="12" fill="#1a202c">key 2  [0,0,1,0]</text>
+  <rect x="240" y="236" width="120" height="34" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="300" y="258" text-anchor="middle" font-size="12" fill="#1a202c">key 3  [0,0,0,1]</text>
+
+  <!-- arrows query -> keys (dot product) -->
+  <line x1="150" y1="150" x2="238" y2="127" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="150" y1="150" x2="238" y2="169" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="150" y1="150" x2="238" y2="211" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="150" y1="150" x2="238" y2="253" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="188" y="112" text-anchor="middle" font-size="11" fill="#2b6cb0" font-style="italic">q &#183; k</text>
+
+  <!-- Weights column (softmax) -->
+  <text x="500" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">softmax weights</text>
+  <text x="500" y="286" text-anchor="middle" font-size="11" fill="#718096">sum = 1.000</text>
+
+  <!-- weight bars: 0.87, 0.0433, 0.0433, 0.0433 -->
+  <rect x="440" y="112" width="130" height="24" rx="4" fill="#fffaf0" stroke="#ed8936" stroke-width="1"/>
+  <rect x="440" y="112" width="113" height="24" rx="4" fill="#ed8936"/>
+  <text x="576" y="129" font-size="12" font-weight="700" fill="#c05621">0.870</text>
+
+  <rect x="440" y="154" width="130" height="24" rx="4" fill="#fffaf0" stroke="#ed8936" stroke-width="1"/>
+  <rect x="440" y="154" width="6" height="24" rx="4" fill="#ed8936"/>
+  <text x="576" y="171" font-size="12" fill="#c05621">0.043</text>
+
+  <rect x="440" y="196" width="130" height="24" rx="4" fill="#fffaf0" stroke="#ed8936" stroke-width="1"/>
+  <rect x="440" y="196" width="6" height="24" rx="4" fill="#ed8936"/>
+  <text x="576" y="213" font-size="12" fill="#c05621">0.043</text>
+
+  <rect x="440" y="238" width="130" height="24" rx="4" fill="#fffaf0" stroke="#ed8936" stroke-width="1"/>
+  <rect x="440" y="238" width="6" height="24" rx="4" fill="#ed8936"/>
+  <text x="576" y="255" font-size="12" fill="#c05621">0.043</text>
+
+  <!-- arrows keys -> weights -->
+  <line x1="360" y1="127" x2="438" y2="124" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="360" y1="169" x2="438" y2="166" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="360" y1="211" x2="438" y2="208" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="360" y1="253" x2="438" y2="250" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- Values column -->
+  <text x="700" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">values (content)</text>
+  <rect x="640" y="110" width="120" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="700" y="132" text-anchor="middle" font-size="12" fill="#1a202c">v0  [10, 0]</text>
+  <rect x="640" y="152" width="120" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="700" y="174" text-anchor="middle" font-size="12" fill="#1a202c">v1  [0, 10]</text>
+  <rect x="640" y="194" width="120" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="700" y="216" text-anchor="middle" font-size="12" fill="#1a202c">v2  [5, 5]</text>
+  <rect x="640" y="236" width="120" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="700" y="258" text-anchor="middle" font-size="12" fill="#1a202c">v3  [-5, -5]</text>
+
+  <!-- arrows weights -> weighted sum node -->
+  <line x1="570" y1="124" x2="640" y2="127" stroke="#48bb78" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="570" y1="166" x2="640" y2="169" stroke="#48bb78" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="570" y1="208" x2="640" y2="211" stroke="#48bb78" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="570" y1="250" x2="640" y2="253" stroke="#48bb78" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- Output box -->
+  <rect x="330" y="360" width="200" height="66" rx="10" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="430" y="386" text-anchor="middle" font-size="14" font-weight="700" fill="#6b46c1">blended output</text>
+  <text x="430" y="408" text-anchor="middle" font-size="13" fill="#4a5568">0.870&#183;v0 + 0.043&#183;(v1+v2+v3) = [8.70, 0.43]</text>
+
+  <!-- arrows values/weights down into output -->
+  <line x1="700" y1="270" x2="520" y2="358" stroke="#9f7aea" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="300" y1="270" x2="345" y2="358" stroke="#9f7aea" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="430" y="322" text-anchor="middle" font-size="12" fill="#6b46c1" font-style="italic">weighted average of values (nothing retrieved exactly)</text>
+
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#4a5568"/>
+    </marker>
+  </defs>
+</svg>

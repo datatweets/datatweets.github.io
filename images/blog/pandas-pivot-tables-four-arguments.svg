@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc"><title id="title">The four arguments that build a pandas pivot table</title><desc id="desc">Four labeled inputs -- index set to office, columns set to department, values set to score, and aggfunc set to mean -- feed into pivot_table(), which produces a result grid of offices by department with the tutorial's real verified average scores in every cell.</desc><rect width="1200" height="600" fill="#f7f8fa" /><g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"><text x="200" y="40" font-size="26" font-weight="600" fill="#0067c0" text-anchor="middle">ARGUMENTS</text><text x="440" y="40" font-size="26" font-weight="600" fill="#0067c0" text-anchor="middle">PIVOT_TABLE()</text><text x="890" y="40" font-size="26" font-weight="600" fill="#0067c0" text-anchor="middle">RESULT</text>
+
+<g font-family="'SFMono-Regular', Consolas, Menlo, monospace"><rect x="40" y="70" width="230" height="86" rx="14" fill="#ffffff" stroke="#0067c0" stroke-width="3" /><text x="60" y="104" font-size="24" font-weight="700" fill="#0067c0" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">index</text><text x="60" y="136" font-size="20" fill="#596362">office</text>
+
+<rect x="40" y="180" width="230" height="86" rx="14" fill="#ffffff" stroke="#0067c0" stroke-width="3" /><text x="60" y="214" font-size="24" font-weight="700" fill="#0067c0" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">columns</text><text x="60" y="246" font-size="20" fill="#59636c">department</text>
+
+<rect x="40" y="290" width="230" height="86" rx="14" fill="#ffffff" stroke="#0067c0" stroke-width="3" /><text x="60" y="324" font-size="24" font-weight="700" fill="#0067c0" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">values</text><text x="60" y="356" font-size="20" fill="#59636c">score</text>
+
+<rect x="40" y="400" width="230" height="86" rx="14" fill="#ffffff" stroke="#0067c0" stroke-width="3" /><text x="60" y="434" font-size="24" font-weight="700" fill="#0067c0" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">aggfunc</text><text x="60" y="466" font-size="20" fill="#59636c">mean (default)</text></g>
+
+<path d="M270 113C300 113 300 278 320 278" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round" /><path d="M270 223C300 223 300 278 320 278" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round" /><path d="M270 333C300 333 300 278 320 278" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round" /><path d="M270 443C300 443 300 278 320 278" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round" />
+
+<rect x="320" y="218" width="200" height="120" rx="16" fill="#ffffff" stroke="#0067c0" stroke-width="4" /><text x="420" y="270" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">split</text><text x="420" y="298" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">apply</text><text x="420" y="326" font-size="22" font-weight="600" fill="#1b1f24" text-anchor="middle">combine</text>
+
+<path d="M520 278H636" fill="none" stroke="#0067c0" stroke-width="6" stroke-linecap="round" /><path d="M636 278L616 266V290Z" fill="#0067c0" />
+
+<g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"><rect x="640" y="100" width="140" height="60" rx="10" fill="#eef1f4" stroke="#e3e6ea" stroke-width="2" /><rect x="640" y="160" width="140" height="100" rx="0" fill="#eef1f4" stroke="#e3e6ea" stroke-width="2" /><rect x="640" y="260" width="140" height="100" rx="0" fill="#eef1f4" stroke="#e3e6ea" stroke-width="2" /><rect x="640" y="360" width="140" height="100" rx="0" fill="#eef1f4" stroke="#e3e6ea" stroke-width="2" /><rect x="640" y="460" width="140" height="100" rx="10" fill="#eef1f4" stroke="#e3e6ea" stroke-width="2" />
+
+<text x="710" y="136" font-size="20" font-weight="600" fill="#59636c" text-anchor="middle">office</text><text x="710" y="216" font-size="20" fill="#1b1f24" text-anchor="middle">Austin</text><text x="710" y="316" font-size="20" fill="#1b1f24" text-anchor="middle">Manila</text><text x="710" y="416" font-size="20" fill="#1b1f24" text-anchor="middle">Nairobi</text><text x="710" y="516" font-size="20" fill="#1b1f24" text-anchor="middle">Warsaw</text>
+
+<rect x="780" y="100" width="90" height="60" fill="#e3f0fa" stroke="#e3e6ea" stroke-width="2" /><rect x="870" y="100" width="90" height="60" fill="#e3f0fa" stroke="#e3e6ea" stroke-width="2" /><rect x="960" y="100" width="90" height="60" fill="#e3f0fa" stroke="#e3e6ea" stroke-width="2" /><rect x="1050" y="100" width="90" height="60" rx="10" fill="#e3f0fa" stroke="#e3e6ea" stroke-width="2" />
+<text x="825" y="136" font-size="17" font-weight="600" fill="#0067c0" text-anchor="middle">Design</text><text x="915" y="136" font-size="15" font-weight="600" fill="#0067c0" text-anchor="middle">Engineer</text><text x="1005" y="136" font-size="17" font-weight="600" fill="#0067c0" text-anchor="middle">Sales</text><text x="1095" y="136" font-size="16" font-weight="600" fill="#0067c0" text-anchor="middle">Support</text>
+
+<g font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="21" fill="#1b1f24" text-anchor="middle">
+<rect x="780" y="160" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="825" y="216" >7.62</text>
+<rect x="870" y="160" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="915" y="216" >7.37</text>
+<rect x="960" y="160" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="1005" y="216" >6.96</text>
+<rect x="1050" y="160" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="1095" y="216" >6.92</text>
+
+<rect x="780" y="260" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="825" y="316" >7.74</text>
+<rect x="870" y="260" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="915" y="316" >7.64</text>
+<rect x="960" y="260" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="1005" y="316" >7.06</text>
+<rect x="1050" y="260" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="1095" y="316" >6.97</text>
+
+<rect x="780" y="360" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="825" y="416" >8.10</text>
+<rect x="870" y="360" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="915" y="416" >7.66</text>
+<rect x="960" y="360" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="1005" y="416" >7.62</text>
+<rect x="1050" y="360" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="1095" y="416" >7.48</text>
+
+<rect x="780" y="460" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="825" y="516" >7.14</text>
+<rect x="870" y="460" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="915" y="516" >7.15</text>
+<rect x="960" y="460" width="90" height="100" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="1005" y="516" >6.80</text>
+<rect x="1050" y="460" width="90" height="100" rx="10" fill="#ffffff" stroke="#e3e6ea" stroke-width="2" /><text x="1095" y="516" >6.50</text>
+</g></g></g></svg>

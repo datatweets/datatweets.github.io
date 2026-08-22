@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Test AI Agent Tool Descriptions Offline with Python</title>
+  <desc id="desc">A DataTweets tutorial thumbnail showing a user request passing through a text ranker to an ordered shortlist of booking tools.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#0067c0"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="144" font-size="32" font-weight="600" letter-spacing="1.2" fill="#59636e">OFFLINE TOOL AUDIT</text>
+    <text x="90" y="272" font-size="82" font-weight="700" fill="#1b1f24">DESCRIBE</text>
+    <text x="90" y="369" font-size="82" font-weight="700" fill="#1b1f24">THEN RANK</text>
+    <rect x="94" y="405" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="478" font-size="27" font-weight="500" fill="#59636e">TF-IDF &#183; SHORTLISTS &#183; ERROR REVIEW</text>
+
+    <g transform="translate(702 100)">
+      <rect x="0" y="0" width="388" height="104" rx="18" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="24" y="32" font-size="18" font-weight="700" letter-spacing="1" fill="#0067c0">USER REQUEST</text>
+      <text x="24" y="73" font-size="28" font-weight="600" fill="#1b1f24">“Cancel reservation”</text>
+
+      <path d="M194 105 L194 144" fill="none" stroke="#0067c0" stroke-width="3" marker-end="url(#arrow)"/>
+
+      <rect x="91" y="151" width="206" height="66" rx="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <text x="194" y="192" text-anchor="middle" font-size="24" font-weight="700" fill="#0067c0">TEXT RANKER</text>
+
+      <path d="M194 218 L194 257" fill="none" stroke="#0067c0" stroke-width="3" marker-end="url(#arrow)"/>
+
+      <rect x="0" y="264" width="388" height="229" rx="20" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="24" y="298" font-size="18" font-weight="700" letter-spacing="1" fill="#59636e">RANKED TOOL DESCRIPTIONS</text>
+
+      <rect x="18" y="315" width="352" height="52" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <circle cx="48" cy="341" r="16" fill="#0067c0"/>
+      <text x="48" y="348" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">1</text>
+      <text x="78" y="349" font-size="23" font-weight="700" fill="#1b1f24">CANCEL BOOKING</text>
+
+      <rect x="18" y="379" width="352" height="44" rx="11" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="48" y="408" text-anchor="middle" font-size="18" font-weight="700" fill="#59636e">2</text>
+      <text x="78" y="408" font-size="21" font-weight="600" fill="#59636e">LOOK UP BOOKING</text>
+
+      <rect x="18" y="435" width="352" height="44" rx="11" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="48" y="464" text-anchor="middle" font-size="18" font-weight="700" fill="#59636e">3</text>
+      <text x="78" y="464" font-size="21" font-weight="600" fill="#59636e">CREATE BOOKING</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+task_id,task_summary,step_count,needs_tools,path_changes_with_results,independent_branches,review_rule_available,specialist_domains,external_write,expected_pattern
+T01,Summarize one pasted maintenance note,1,False,False,1,False,1,False,single_call
+T02,Classify one support message into a fixed label,1,False,False,1,False,1,False,single_call
+T03,Rewrite one error message in plain English,1,False,False,1,False,1,False,single_call
+T04,Validate and save a notification preference,2,True,False,1,False,1,True,fixed_code_workflow
+T05,Check a request and issue an account credit,3,True,True,1,True,1,True,fixed_code_workflow
+T06,"Parse a CSV, filter rows, and export a report",3,True,False,1,False,1,False,fixed_code_workflow
+T07,"Extract fields, validate them, and fill a template",3,False,False,1,False,1,False,fixed_code_workflow
+T08,Normalize form input and calculate a rule-based score,2,False,False,1,False,1,False,fixed_code_workflow
+T09,Diagnose a data import using logs and schema checks,4,True,True,1,False,1,False,adaptive_tool_loop
+T10,Investigate a Python package conflict from environment evidence,4,True,True,1,False,1,False,adaptive_tool_loop
+T11,Answer an inventory question with conditional database lookups,3,True,True,1,False,1,False,adaptive_tool_loop
+T12,Draft an API explanation and revise it against a rubric,3,False,False,1,True,1,False,review_loop
+T13,Generate SQL and revise it after parser checks,3,True,False,1,True,1,False,review_loop
+T14,Improve alt text until required details are present,3,False,False,1,True,1,False,review_loop
+T15,Summarize four independent document sections and merge them,3,False,False,4,True,1,False,parallel_workers
+T16,Profile three independent data partitions and combine statistics,3,True,False,3,False,1,False,parallel_workers
+T17,"Route access, billing, and technical questions to specialists",2,False,True,1,False,3,False,specialist_router
+T18,Send a mixed data request to the relevant domain specialist,2,True,True,1,False,2,False,specialist_router

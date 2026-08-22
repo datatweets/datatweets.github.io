@@ -1,0 +1,6 @@
+token,q_request,q_urgency,q_object,k_request,k_urgency,k_object,v_refund,v_priority
+refund,1.0,0.2,0.0,1.0,0.1,0.0,1.0,0.2
+for,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+damaged,0.7,1.0,0.2,0.8,1.0,0.1,0.7,1.0
+parcel,0.3,0.2,1.0,0.2,0.2,1.0,0.2,0.4
+<pad>,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

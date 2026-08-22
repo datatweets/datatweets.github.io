@@ -1,0 +1,13 @@
+skill_id,skill,hours,prerequisite_ids
+PY01,Values and types,2,
+PY02,Lists and dictionaries,3,PY01
+PY03,Conditions and loops,3,PY01
+PY04,Functions,3,PY02|PY03
+PY05,Read CSV files,2,PY04
+DA01,pandas DataFrames,4,PY05
+DA02,Clean missing values,3,DA01
+DA03,Group and summarize,3,DA01
+DV01,Matplotlib basics,3,DA01
+DA04,Validate an analysis,2,DA02|DA03
+DV02,Explain a chart,2,DA03|DV01
+PR01,Reproducible mini-project,4,DA04|DV02

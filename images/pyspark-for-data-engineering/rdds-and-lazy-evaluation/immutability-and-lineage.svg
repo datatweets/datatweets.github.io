@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 800" width="960" height="800" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="800" fill="#ffffff"/>
+
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Immutability &#38; Lineage &#8212; Every Frame Is a Recipe, Not a Copy</text>
+  <text x="480" y="56" text-anchor="middle" font-size="14" fill="#718096">Spark 4.2.0, local[*] (10 cores) &#183; 9,554,778 real NYC yellow-taxi trips, Jan&#8211;Mar 2024, 160.4&#8201;MB &#183; every number measured on this machine</text>
+
+  <!-- ============ BAND 1: IMMUTABILITY ============ -->
+  <text x="30" y="90" font-size="15" font-weight="700" fill="#2b6cb0">IMMUTABILITY &#8212; transformations return NEW frames; the original is never touched</text>
+
+  <rect x="30" y="104" width="290" height="118" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="42" y="124" font-size="10" font-weight="700" fill="#2b6cb0">FILTER PROVES IT</text>
+  <text x="42" y="143" font-size="11" font-weight="700" fill="#1a202c">jan: 2,964,624 rows</text>
+  <text x="42" y="160" font-size="10.5" fill="#4a5568">airport = jan.filter(zone == 132)</text>
+  <text x="42" y="176" font-size="10.5" fill="#1a202c">airport: 145,240 rows &#8212; a new frame</text>
+  <text x="42" y="192" font-size="10.5" font-weight="700" fill="#276749">jan recounted after: 2,964,624 &#8212; untouched</text>
+  <text x="42" y="208" font-size="10.5" fill="#4a5568">airport is jan &#8594; False &#183; withColumn: 19&#8594;20 cols</text>
+
+  <rect x="335" y="104" width="290" height="118" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="347" y="124" font-size="10" font-weight="700" fill="#c05621">THE PANDAS CONTRAST (pandas 3.0.3)</text>
+  <text x="347" y="143" font-size="11" font-weight="700" fill="#1a202c">pdf[mask]["trips"] = 0</text>
+  <text x="347" y="160" font-size="10.5" fill="#c53030">ChainedAssignmentError &#8212; write goes nowhere</text>
+  <text x="347" y="176" font-size="10.5" fill="#4a5568">pandas &#60; 3.0: SettingWithCopyWarning &#8212;</text>
+  <text x="347" y="192" font-size="10.5" fill="#4a5568">sometimes mutated, sometimes not (view vs copy).</text>
+  <text x="347" y="208" font-size="10.5" font-weight="700" fill="#1a202c">In Spark the bug class has no grammar: no writes.</text>
+
+  <rect x="640" y="104" width="290" height="118" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="652" y="124" font-size="10" font-weight="700" fill="#276749">THE COST: "MODIFY" = BUILD A NEW FRAME</text>
+  <text x="652" y="143" font-size="11" font-weight="700" fill="#1a202c">withColumn + when / otherwise</text>
+  <text x="652" y="160" font-size="10.5" fill="#4a5568">252 trip_distance claims &#62; 100&#8201;mi &#8594; NULL</text>
+  <text x="652" y="176" font-size="10.5" fill="#1a202c">capped: max 99.77, nulls 252</text>
+  <text x="652" y="192" font-size="10.5" font-weight="700" fill="#276749">quarter: max 312,722.3, nulls 0 &#8212; intact</text>
+  <text x="652" y="208" font-size="10.5" fill="#4a5568">both coexist as plans &#8212; no 160&#8201;MB copy made</text>
+
+  <line x1="30" y1="240" x2="930" y2="240" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 2: THE LINEAGE TREE ============ -->
+  <text x="30" y="270" font-size="15" font-weight="700" fill="#2b6cb0">THE LINEAGE TREE &#8212; report.rdd.toDebugString(), five-step zone-revenue recipe, as executed</text>
+
+  <!-- Stage 1 -->
+  <rect x="30" y="288" width="330" height="150" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="42" y="308" font-size="10" font-weight="700" fill="#2b6cb0">STAGE 1 &#8212; (10) PARTITIONS, NARROW STEPS FUSED</text>
+  <text x="42" y="328" font-size="10.5" font-weight="700" fill="#1a202c">FileScanRDD &#8212; 3 parquet files, 160.4&#8201;MB</text>
+  <text x="42" y="345" font-size="10.5" fill="#4a5568">&#8595; MapPartitionsRDD &#8212; Filter: pickup in window</text>
+  <text x="42" y="362" font-size="10.5" fill="#4a5568">&#8595; MapPartitionsRDD &#8212; Project: + is_reversal</text>
+  <text x="42" y="379" font-size="10.5" fill="#4a5568">&#8595; MapPartitionsRDD &#8212; partial HashAggregate</text>
+  <text x="42" y="400" font-size="10" fill="#718096">one indentation chunk in the printout: no data</text>
+  <text x="42" y="414" font-size="10" fill="#718096">moves, each of the 10 partitions runs alone</text>
+  <text x="42" y="430" font-size="10" fill="#2b6cb0">ReadSchema: 3 of 19 columns &#8212; recipe rewritten</text>
+
+  <!-- shuffle arrow 1 -->
+  <line x1="360" y1="352" x2="398" y2="352" stroke="#c05621" stroke-width="2"/>
+  <polygon points="404,352 394,347 394,357" fill="#c05621"/>
+  <text x="382" y="338" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c05621">shuffle</text>
+
+  <!-- Stage 2 -->
+  <rect x="404" y="288" width="250" height="150" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="416" y="308" font-size="10" font-weight="700" fill="#276749">STAGE 2 &#8212; (1) PARTITION</text>
+  <text x="416" y="328" font-size="10.5" font-weight="700" fill="#1a202c">ShuffledRowRDD &#8212; hash exchange</text>
+  <text x="416" y="345" font-size="10.5" fill="#4a5568">on PULocationID (the groupBy)</text>
+  <text x="416" y="362" font-size="10.5" fill="#4a5568">&#8595; MapPartitionsRDD &#8212; final</text>
+  <text x="416" y="379" font-size="10.5" fill="#4a5568">HashAggregate: trips, revenue</text>
+  <text x="416" y="400" font-size="10" fill="#c05621">AQE coalesced 200 default shuffle</text>
+  <text x="416" y="414" font-size="10" fill="#c05621">partitions &#8594; 1 (kilobytes of</text>
+  <text x="416" y="428" font-size="10" fill="#c05621">partial aggregates, M1's fact)</text>
+
+  <!-- shuffle arrow 2 -->
+  <line x1="654" y1="352" x2="692" y2="352" stroke="#c05621" stroke-width="2"/>
+  <polygon points="698,352 688,347 688,357" fill="#c05621"/>
+  <text x="676" y="338" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c05621">shuffle</text>
+
+  <!-- Stage 3 -->
+  <rect x="698" y="288" width="232" height="150" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="710" y="308" font-size="10" font-weight="700" fill="#276749">STAGE 3 &#8212; (1) PARTITION</text>
+  <text x="710" y="328" font-size="10.5" font-weight="700" fill="#1a202c">ShuffledRowRDD &#8212; range</text>
+  <text x="710" y="345" font-size="10.5" fill="#4a5568">exchange for the orderBy</text>
+  <text x="710" y="362" font-size="10.5" fill="#4a5568">&#8595; Sort: trips DESC</text>
+  <text x="710" y="379" font-size="10.5" font-weight="700" fill="#1a202c">&#8594; 262 sorted rows out</text>
+  <text x="710" y="400" font-size="10" fill="#718096">plus a javaToPython wrapper</text>
+  <text x="710" y="414" font-size="10" fill="#718096">on top &#8212; the PySpark bridge,</text>
+  <text x="710" y="428" font-size="10" fill="#718096">not part of the job itself</text>
+
+  <text x="480" y="462" text-anchor="middle" font-size="11" fill="#4a5568">Every <tspan font-weight="700" fill="#c05621">+-</tspan> in the printed tree is a shuffle = a stage boundary; <tspan font-weight="700">(10)</tspan> and <tspan font-weight="700">(1)</tspan> are partition counts &#183; two ShuffledRowRDDs &#8801; the two Exchange operators in explain()</text>
+
+  <line x1="30" y1="480" x2="930" y2="480" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 3: WHAT LINEAGE BUYS ============ -->
+  <text x="30" y="510" font-size="15" font-weight="700" fill="#276749">WHAT LINEAGE BUYS &#8212; recompute, don't replicate (and what replay costs day to day)</text>
+
+  <!-- timing table -->
+  <rect x="30" y="526" width="560" height="184" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="46" y="550" font-size="11" font-weight="700" fill="#718096">experiment (all on the same 160.4&#8201;MB quarter)</text>
+  <text x="470" y="550" text-anchor="end" font-size="11" font-weight="700" fill="#718096">1st run</text>
+  <text x="560" y="550" text-anchor="end" font-size="11" font-weight="700" fill="#718096">2nd run</text>
+  <line x1="46" y1="558" x2="574" y2="558" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="46" y="578" font-size="11.5" fill="#1a202c">narrow chain (filter), count() twice</text>
+  <text x="470" y="578" text-anchor="end" font-size="11.5" font-weight="700" fill="#1a202c">0.53&#8201;s</text>
+  <text x="560" y="578" text-anchor="end" font-size="11.5" font-weight="700" fill="#1a202c">0.36&#8201;s</text>
+  <text x="46" y="594" font-size="10" fill="#c05621">every action replays the whole recipe from the parquet &#8212; Lesson 1's twice-run trap, explained</text>
+
+  <text x="46" y="618" font-size="11.5" fill="#1a202c">5-step shuffled report, collect() twice on ONE object</text>
+  <text x="470" y="618" text-anchor="end" font-size="11.5" font-weight="700" fill="#1a202c">1.05&#8201;s</text>
+  <text x="560" y="618" text-anchor="end" font-size="11.5" font-weight="700" fill="#276749">0.07&#8201;s</text>
+  <text x="46" y="634" font-size="10" fill="#4a5568">AQE kept the finished shuffle stages on that object's executed plan &#8212; only the 262-row final stage reran</text>
+
+  <text x="46" y="658" font-size="11.5" fill="#1a202c">identical recipe rebuilt as a NEW object, collect()</text>
+  <text x="470" y="658" text-anchor="end" font-size="11.5" font-weight="700" fill="#c53030">0.78&#8201;s</text>
+  <text x="560" y="658" text-anchor="end" font-size="11.5" fill="#718096">&#8212;</text>
+  <text x="46" y="674" font-size="10" fill="#c53030">full price again: the reuse lives on the object, not the code &#8212; not a caching strategy (cache() is M5)</text>
+
+  <text x="46" y="698" font-size="10.5" font-weight="700" fill="#1a202c">Default rule: actions replay lineage from source. Reassigning frames is free &#8212; 4 frames built in 309&#8201;ms, plans not copies.</text>
+
+  <!-- fault tolerance panel -->
+  <rect x="606" y="526" width="324" height="184" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="618" y="550" font-size="10" font-weight="700" fill="#276749">ON A CLUSTER &#8212; THE FAULT-TOLERANCE STORY</text>
+  <text x="618" y="570" font-size="10.5" fill="#1a202c">An executor dies mid-job, its partitions lost.</text>
+  <text x="618" y="586" font-size="10.5" fill="#4a5568">The driver walks this lineage tree, finds the dead</text>
+  <text x="618" y="602" font-size="10.5" fill="#4a5568">partitions' branches, and reschedules ONLY those</text>
+  <text x="618" y="618" font-size="10.5" fill="#4a5568">recipes on surviving executors &#8212; re-reading just</text>
+  <text x="618" y="634" font-size="10.5" fill="#4a5568">the source splits they need. No replicas kept;</text>
+  <text x="618" y="650" font-size="10.5" fill="#4a5568">lost work costs recompute time, nothing more.</text>
+  <text x="618" y="672" font-size="10.5" font-weight="700" fill="#1a202c">Local mode: one process, no executor to kill &#8212;</text>
+  <text x="618" y="688" font-size="10.5" font-weight="700" fill="#1a202c">but the replay it relies on is measured at left.</text>
+
+  <!-- cross-check footer -->
+  <rect x="30" y="726" width="900" height="34" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="480" y="748" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a202c">Recipe replayed 3&#215; today, same certified answers 3&#215;: 262 zones &#183; 9,554,757 trips &#183; $256,692,373.14 &#183; top zone 161 = 453,825 &#8212; Course&#160;1's report to the cent</text>
+
+  <text x="480" y="786" text-anchor="middle" font-size="10.5" fill="#a0aec0">Measured on a 10-core macOS machine, Spark 4.2.0 in local[*], pandas 3.0.3. Timings vary by run; the counts, the $256,692,373.14, and the 312,722.3-mile outlier do not.</text>
+</svg>

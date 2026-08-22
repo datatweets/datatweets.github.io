@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="440" viewBox="0 0 1080 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The identical correction, three different outcomes</title>
+  <desc>Three panels showing the identical scenario -- 105,470 new trips plus one corrected trip, trip_id 500, fare corrected from $18.40 to $43.40 -- run through three incremental strategies. Append: one insert statement, no check for existing keys, target grows to 215,468 rows with trip 500 appearing twice, once at each fare. Delete+insert: a real delete matching incoming trip_ids followed by a separate insert, target lands on the correct 215,467 rows, trip 500 once at its corrected fare. Merge: one MERGE INTO statement with WHEN MATCHED THEN UPDATE and WHEN NOT MATCHED THEN INSERT, same correct 215,467 rows, trip 500 once, updated in place atomically.</desc>
+  <rect width="1080" height="440" fill="#ffffff" />
+  <text x="540" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Identical Correction, Three Different Outcomes</text>
+  <text x="540" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">105,470 new trips + trip_id 500 corrected from $18.40 to $43.40, same batch</text>
+
+  <rect x="30" y="70" width="320" height="330" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="190" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">append</text>
+  <rect x="50" y="108" width="280" height="45" rx="6" fill="#822727" />
+  <text x="190" y="128" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#fff5f5">insert into ... select</text>
+  <text x="190" y="144" text-anchor="middle" font-size="8" fill="#fff5f5">(no existence check at all)</text>
+  <text x="190" y="180" text-anchor="middle" font-size="14" font-weight="700" fill="#822727">215,468 rows</text>
+  <text x="190" y="198" text-anchor="middle" font-size="9" fill="#822727">one too many</text>
+  <rect x="60" y="215" width="260" height="60" rx="6" fill="#742a2a" />
+  <text x="190" y="235" text-anchor="middle" font-size="9" font-weight="700" fill="#fff5f5">trip 500 appears TWICE</text>
+  <text x="190" y="252" text-anchor="middle" font-size="8.5" fill="#fff5f5">$18.40 (old) AND</text>
+  <text x="190" y="266" text-anchor="middle" font-size="8.5" fill="#fff5f5">$43.40 (corrected)</text>
+  <text x="190" y="300" text-anchor="middle" font-size="9" fill="#822727">every sum() and count()</text>
+  <text x="190" y="315" text-anchor="middle" font-size="9" fill="#822727">downstream now silently wrong</text>
+  <text x="190" y="335" text-anchor="middle" font-size="8.5" fill="#822727">no error, no warning</text>
+
+  <rect x="380" y="70" width="320" height="330" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="540" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">delete+insert</text>
+  <rect x="400" y="108" width="280" height="65" rx="6" fill="#22543d" />
+  <text x="540" y="126" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">delete from ... where trip_id in</text>
+  <text x="540" y="140" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">(select distinct trip_id from temp)</text>
+  <text x="540" y="158" text-anchor="middle" font-size="8" fill="#f0fff4">then insert into ... select (2 statements)</text>
+  <text x="540" y="200" text-anchor="middle" font-size="14" font-weight="700" fill="#22543d">215,467 rows</text>
+  <text x="540" y="218" text-anchor="middle" font-size="9" fill="#22543d">mathematically correct</text>
+  <rect x="410" y="235" width="260" height="45" rx="6" fill="#2f855a" />
+  <text x="540" y="255" text-anchor="middle" font-size="9" font-weight="700" fill="#f0fff4">trip 500 appears ONCE</text>
+  <text x="540" y="270" text-anchor="middle" font-size="8.5" fill="#f0fff4">$43.40 -- old row deleted first</text>
+  <text x="540" y="310" text-anchor="middle" font-size="8.5" fill="#22543d">2 real statements -- a failure between</text>
+  <text x="540" y="325" text-anchor="middle" font-size="8.5" fill="#22543d">them could leave rows missing</text>
+
+  <rect x="730" y="70" width="320" height="330" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="890" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">merge</text>
+  <rect x="750" y="108" width="280" height="65" rx="6" fill="#22543d" />
+  <text x="890" y="126" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">merge into ... using temp</text>
+  <text x="890" y="140" text-anchor="middle" font-size="8" fill="#f0fff4">when matched then update</text>
+  <text x="890" y="154" text-anchor="middle" font-size="8" fill="#f0fff4">when not matched then insert (1 statement)</text>
+  <text x="890" y="200" text-anchor="middle" font-size="14" font-weight="700" fill="#22543d">215,467 rows</text>
+  <text x="890" y="218" text-anchor="middle" font-size="9" fill="#22543d">mathematically correct</text>
+  <rect x="760" y="235" width="260" height="45" rx="6" fill="#2f855a" />
+  <text x="890" y="255" text-anchor="middle" font-size="9" font-weight="700" fill="#f0fff4">trip 500 appears ONCE</text>
+  <text x="890" y="270" text-anchor="middle" font-size="8.5" fill="#f0fff4">$43.40 -- updated in place</text>
+  <text x="890" y="310" text-anchor="middle" font-size="8.5" fill="#22543d">1 atomic statement -- no gap</text>
+  <text x="890" y="325" text-anchor="middle" font-size="8.5" fill="#22543d">for a mid-run failure to exploit</text>
+
+  <text x="540" y="425" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">Confirmed by reading what SQL each strategy actually executed, not by trusting its name.</text>
+</svg>

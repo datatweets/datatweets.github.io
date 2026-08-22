@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="414" viewBox="0 0 1000 414" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>world_explorer.py Becomes a Dashboard</title>
+<desc>A four-row stack. Row 1: one year slider drives everything below it. Row 2: three st.metric columns -- Countries 142, World population 6,251,013,179, Mean life expectancy 67.0, all recomputed from the same filtered year. Row 3: st.tabs splits the layout into Bubble Chart and World Map tabs. Row 4: each tab holds its own real Plotly figure -- the bubble chart from Lesson 2, the choropleth from Lesson 4 -- both fed by the identical filtered data as the metrics row above them.</desc>
+<rect width="1000" height="414" fill="#ffffff" />
+<text x="500" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">world_explorer.py Becomes a Dashboard</text>
+<rect x="60" y="60" width="880" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5" />
+<text x="500" y="86" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">st.slider(&quot;Year&quot;) -- one filter drives everything below it</text>
+<path d="M500,107 L500,123" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="126" width="880" height="44" rx="7" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5" />
+<text x="500" y="152" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">3 x st.metric -- Countries 142, Population 6.25B, Mean life exp 67.0</text>
+<path d="M500,173 L500,189" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="192" width="880" height="44" rx="7" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5" />
+<text x="500" y="218" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">st.tabs([&quot;Bubble Chart&quot;, &quot;World Map&quot;])</text>
+<path d="M500,239 L500,255" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="258" width="880" height="44" rx="7" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5" />
+<text x="500" y="284" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">Each tab: one real Plotly figure, fed by the same filtered data</text>
+<rect x="40" y="326" width="920" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="500" y="350" text-anchor="middle" font-size="10.5" fill="#7b341e">One slider, confirmed with AppTest to drive every metric and both tabs consistently -- 142 countries</text>
+<text x="500" y="370" text-anchor="middle" font-size="10.5" fill="#7b341e">and 67.0 mean life expectancy at 2007, recalculating correctly at every other year too.</text>
+<defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

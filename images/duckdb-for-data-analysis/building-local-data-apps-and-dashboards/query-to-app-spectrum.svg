@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="360" viewBox="0 0 1180 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>From a one-off query to a real multi-user app</title>
+  <desc>A five-step spectrum: inline query, reusable function, CLI tool, Streamlit dashboard, and Apache Superset, each wrapping the same underlying DuckDB query in a progressively more reusable and shareable shell.</desc>
+  <rect width="1180" height="360" fill="#ffffff" />
+  <text x="590" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#1a202c">Same Query, Progressively More Reusable Shells</text>
+
+  <defs>
+    <marker id="arrowSpec" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <!-- Box 1: inline query -->
+  <rect x="30" y="110" width="180" height="90" rx="8" fill="#f0f2f5" stroke="#a0aec0" stroke-width="1.4" />
+  <text x="120" y="145" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">Inline Query</text>
+  <text x="120" y="164" text-anchor="middle" font-size="10" fill="#4a5568">run once in a</text>
+  <text x="120" y="178" text-anchor="middle" font-size="10" fill="#4a5568">script or notebook</text>
+
+  <line x1="210" y1="155" x2="248" y2="155" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowSpec)" />
+
+  <!-- Box 2: reusable function -->
+  <rect x="250" y="110" width="180" height="90" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="340" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#2c5282">Reusable Function</text>
+  <text x="340" y="160" text-anchor="middle" font-size="10" fill="#2c5282">category_summary(</text>
+  <text x="340" y="174" text-anchor="middle" font-size="10" fill="#2c5282">con, category)</text>
+  <text x="340" y="192" text-anchor="middle" font-size="9.5" fill="#4a5568">Lesson 1</text>
+
+  <line x1="430" y1="155" x2="468" y2="155" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowSpec)" />
+
+  <!-- Box 3: dashboard -->
+  <rect x="470" y="110" width="180" height="90" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="560" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#9c4221">Streamlit Dashboard</text>
+  <text x="560" y="160" text-anchor="middle" font-size="10" fill="#9c4221">dropdown + chart,</text>
+  <text x="560" y="174" text-anchor="middle" font-size="10" fill="#9c4221">runs in your browser</text>
+  <text x="560" y="192" text-anchor="middle" font-size="9.5" fill="#4a5568">Lesson 2</text>
+
+  <line x1="650" y1="155" x2="688" y2="155" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowSpec)" />
+
+  <!-- Box 4: CLI tool -->
+  <rect x="690" y="110" width="180" height="90" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="780" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#22543d">CLI Tool</text>
+  <text x="780" y="160" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#22543d">--category Bath</text>
+  <text x="780" y="174" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#22543d">--format json</text>
+  <text x="780" y="192" text-anchor="middle" font-size="9.5" fill="#4a5568">Lesson 3</text>
+
+  <line x1="870" y1="155" x2="908" y2="155" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowSpec)" />
+
+  <!-- Box 5: Superset -->
+  <rect x="910" y="110" width="240" height="90" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="1030" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#553c9a">Apache Superset</text>
+  <text x="1030" y="160" text-anchor="middle" font-size="10" fill="#553c9a">persistent BI server,</text>
+  <text x="1030" y="174" text-anchor="middle" font-size="10" fill="#553c9a">many people connect</text>
+  <text x="1030" y="192" text-anchor="middle" font-size="9.5" fill="#4a5568">Lessons 4-5</text>
+
+  <!-- bottom labels: who runs it -->
+  <text x="120" y="240" text-anchor="middle" font-size="10.5" font-weight="600" fill="#718096">you, once</text>
+  <text x="340" y="240" text-anchor="middle" font-size="10.5" font-weight="600" fill="#718096">you, any question</text>
+  <text x="560" y="240" text-anchor="middle" font-size="10.5" font-weight="600" fill="#718096">anyone, self-run</text>
+  <text x="780" y="240" text-anchor="middle" font-size="10.5" font-weight="600" fill="#718096">a teammate, terminal</text>
+  <text x="1030" y="240" text-anchor="middle" font-size="10.5" font-weight="600" fill="#718096">a team, shared server</text>
+
+  <line x1="30" y1="270" x2="1150" y2="270" stroke="#e2e8f0" stroke-width="1.4" />
+  <text x="590" y="300" text-anchor="middle" font-size="12" fill="#4a5568">Every box runs the identical DuckDB query against Thistlewood Goods data --</text>
+  <text x="590" y="320" text-anchor="middle" font-size="12" fill="#4a5568">only who can ask the question, and how, changes from left to right.</text>
+</svg>

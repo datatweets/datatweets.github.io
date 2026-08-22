@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>One opaque query versus three named, chainable models doing the identical work</title>
+  <desc>Before: a single monolithic SQL query reads directly from raw.trips and computes a daily trip count and revenue total in one opaque step, with no named boundary between cleaning the data, aggregating it, and rolling it up -- any other question needing the same cleanup has to copy the whole query. After: the identical work split into three models chained by ref(). stg_trips cleans and relabels columns from the source. int_hourly_pattern aggregates by hour and zone, reusable on its own for time-of-day questions. daily_summary rolls int_hourly_pattern up to a daily total. Each model does one named job and can be read, tested, or reused independently, and a fourth model, zone_revenue, can branch off stg_trips too -- something the one-query version had no way to express.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Opaque Query vs. Three Named Models</text>
+  <text x="550" y="49" text-anchor="middle" font-size="11" fill="#718096">The identical work, computing the identical daily total -- structured two different ways</text>
+
+  <!-- before -->
+  <rect x="45" y="70" width="460" height="290" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="275" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">Before: One Query</text>
+
+  <rect x="70" y="112" width="410" height="140" rx="6" fill="#7b341e" />
+  <text x="90" y="132" font-size="9" font-family="Menlo, monospace" fill="#fffaf0">select</text>
+  <text x="105" y="148" font-size="9" font-family="Menlo, monospace" fill="#fffaf0">date_trunc('day', pickup_time) as pickup_day,</text>
+  <text x="105" y="164" font-size="9" font-family="Menlo, monospace" fill="#fffaf0">count(*) as trip_count,</text>
+  <text x="105" y="180" font-size="9" font-family="Menlo, monospace" fill="#fffaf0">round(sum(total_amount), 2) as daily_revenue</text>
+  <text x="90" y="196" font-size="9" font-family="Menlo, monospace" fill="#fffaf0">from raw.trips</text>
+  <text x="90" y="212" font-size="9" font-family="Menlo, monospace" fill="#fffaf0">group by 1;</text>
+  <text x="90" y="232" font-size="8.5" font-weight="700" font-family="Menlo, monospace" fill="#fed7ac">-- cleanup, aggregation, and rollup, all in one place</text>
+
+  <text x="275" y="278" text-anchor="middle" font-size="10" fill="#7b341e">No named boundary between cleaning columns,</text>
+  <text x="275" y="296" text-anchor="middle" font-size="10" fill="#7b341e">aggregating by hour, and rolling up to a day.</text>
+  <text x="275" y="318" text-anchor="middle" font-size="10" fill="#7b341e">A second question needing the same cleanup</text>
+  <text x="275" y="336" text-anchor="middle" font-size="10" fill="#7b341e">has to copy this whole query to get it.</text>
+
+  <path d="M510,215 L590,215" stroke="#a0aec0" stroke-width="2" fill="none" marker-end="url(#qv2)" />
+  <text x="550" y="205" text-anchor="middle" font-size="9" fill="#718096">split apart</text>
+
+  <!-- after -->
+  <rect x="595" y="70" width="460" height="290" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="825" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">After: Three Named Models</text>
+
+  <rect x="700" y="112" width="250" height="34" rx="6" fill="#48bb78" />
+  <text x="825" y="134" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">stg_trips -- cleans &amp; relabels</text>
+
+  <path d="M825,146 L825,168" stroke="#48bb78" stroke-width="1.8" fill="none" marker-end="url(#qv1)" />
+
+  <rect x="670" y="170" width="310" height="34" rx="6" fill="#48bb78" />
+  <text x="825" y="192" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">int_hourly_pattern -- aggregates by hour</text>
+
+  <path d="M825,204 L825,226" stroke="#48bb78" stroke-width="1.8" fill="none" marker-end="url(#qv1)" />
+
+  <rect x="700" y="228" width="250" height="34" rx="6" fill="#48bb78" />
+  <text x="825" y="250" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">daily_summary -- rolls up to a day</text>
+
+  <text x="825" y="288" text-anchor="middle" font-size="10" fill="#22543d">Each model has one named job, readable,</text>
+  <text x="825" y="306" text-anchor="middle" font-size="10" fill="#22543d">testable, and reusable on its own --</text>
+  <text x="825" y="324" text-anchor="middle" font-size="10" fill="#22543d">zone_revenue branches off stg_trips too,</text>
+  <text x="825" y="342" text-anchor="middle" font-size="10" fill="#22543d">something one query had no way to express.</text>
+
+  <text x="550" y="382" text-anchor="middle" font-size="10.5" fill="#718096">Both versions compute the identical answer: 81,013 trips, $2,442,843.25 -- structure changed, not the result.</text>
+
+  <defs>
+    <marker id="qv1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#48bb78" />
+    </marker>
+    <marker id="qv2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A topic's lifecycle: create, describe, alter, delete</title>
+  <desc>A left-to-right flow: --create with --config sets partitions, replication factor, and per-topic overrides like retention.ms; --describe (via kafka-configs.sh) confirms what actually took effect; --alter --partitions can only increase the partition count, never decrease it; --delete removes the topic entirely, asynchronously. Two real errors are called out below the flow: asking for a replication factor higher than the broker count fails immediately with InvalidReplicationFactorException, and asking --alter to decrease partition count fails with InvalidPartitionsException.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Four Commands, Two Real Errors Worth Knowing</text>
+
+  <rect x="30" y="60" width="230" height="80" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="145" y="83" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">--create --config</text>
+  <text x="145" y="102" text-anchor="middle" font-size="8.5" fill="#2c5282">partitions, replication factor,</text>
+  <text x="145" y="115" text-anchor="middle" font-size="8.5" fill="#2c5282">retention.ms, cleanup.policy</text>
+
+  <line x1="260" y1="100" x2="290" y2="100" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowLC)" />
+
+  <rect x="300" y="60" width="230" height="80" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="415" y="83" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">--describe</text>
+  <text x="415" y="102" text-anchor="middle" font-size="8.5" fill="#2c5282">kafka-configs.sh confirms</text>
+  <text x="415" y="115" text-anchor="middle" font-size="8.5" fill="#2c5282">what actually took effect</text>
+
+  <line x1="530" y1="100" x2="560" y2="100" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowLC)" />
+
+  <rect x="570" y="60" width="230" height="80" rx="6" fill="#fefcbf" stroke="#ecc94b" stroke-width="1.4" />
+  <text x="685" y="83" text-anchor="middle" font-size="11" font-weight="700" fill="#744210">--alter --partitions</text>
+  <text x="685" y="102" text-anchor="middle" font-size="8.5" fill="#744210">can only grow --</text>
+  <text x="685" y="115" text-anchor="middle" font-size="8.5" fill="#744210">never shrinks a topic</text>
+
+  <line x1="800" y1="100" x2="830" y2="100" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowLC)" />
+
+  <rect x="840" y="60" width="230" height="80" rx="6" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="955" y="83" text-anchor="middle" font-size="11" font-weight="700" fill="#742a2a">--delete</text>
+  <text x="955" y="102" text-anchor="middle" font-size="8.5" fill="#742a2a">removes the topic entirely --</text>
+  <text x="955" y="115" text-anchor="middle" font-size="8.5" fill="#742a2a">asynchronously, no undo</text>
+
+  <defs>
+    <marker id="arrowLC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <line x1="40" y1="175" x2="1060" y2="175" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <text x="40" y="205" font-size="13" font-weight="700" fill="#2d3748">Two real errors this lesson triggered on purpose</text>
+
+  <rect x="40" y="220" width="490" height="130" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.3" />
+  <text x="60" y="244" font-size="10.5" font-weight="700" fill="#742a2a">InvalidReplicationFactorException</text>
+  <text x="60" y="264" font-size="9" font-family="Menlo, monospace" fill="#742a2a">--replication-factor 5 on a 3-broker cluster</text>
+  <text x="60" y="286" font-size="9" fill="#742a2a">Fails outright -- the topic is never created.</text>
+  <text x="60" y="303" font-size="9" fill="#742a2a">The cluster refuses to promise a durability</text>
+  <text x="60" y="320" font-size="9" fill="#742a2a">guarantee it can't actually deliver.</text>
+  <text x="60" y="337" font-size="9" fill="#742a2a">A follow-up --list shows the topic never existed.</text>
+
+  <rect x="570" y="220" width="490" height="130" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.3" />
+  <text x="590" y="244" font-size="10.5" font-weight="700" fill="#742a2a">InvalidPartitionsException</text>
+  <text x="590" y="264" font-size="9" font-family="Menlo, monospace" fill="#742a2a">--alter --partitions 2 on a 3-partition topic</text>
+  <text x="590" y="286" font-size="9" fill="#742a2a">"3 partition(s); 2 would not be an increase."</text>
+  <text x="590" y="303" font-size="9" fill="#742a2a">There's no defined way to remove a partition's</text>
+  <text x="590" y="320" font-size="9" fill="#742a2a">stored data automatically -- shrinking needs a new</text>
+  <text x="590" y="337" font-size="9" fill="#742a2a">topic and a real migration, not a flag.</text>
+</svg>

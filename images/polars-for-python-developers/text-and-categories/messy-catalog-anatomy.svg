@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="440" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">thistlewood_products_raw.csv -- Anatomy of the Mess</text>
+  <text x="360" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">61 rows built from the real 60-row canonical catalog, three real problem categories</text>
+
+  <rect x="40" y="76" width="200" height="120" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="140" y="102" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">category</text>
+  <text x="140" y="126" text-anchor="middle" font-size="22" font-weight="700" fill="#2b6cb0">14 rows</text>
+  <text x="140" y="148" text-anchor="middle" font-size="9.5" fill="#2d3748">case/whitespace inconsistent</text>
+  <text x="140" y="164" text-anchor="middle" font-size="9" fill="#4a5568">5 lower, 5 upper, 4 trailing space</text>
+  <text x="140" y="182" text-anchor="middle" font-size="9" fill="#4a5568">22 distinct strings, 8 real categories</text>
+
+  <rect x="260" y="76" width="200" height="120" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="360" y="102" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">product_name</text>
+  <text x="360" y="126" text-anchor="middle" font-size="22" font-weight="700" fill="#6b46c1">6 rows</text>
+  <text x="360" y="148" text-anchor="middle" font-size="9.5" fill="#2d3748">whitespace or casing messy</text>
+  <text x="360" y="164" text-anchor="middle" font-size="9" fill="#4a5568">3 doubled/leading whitespace</text>
+  <text x="360" y="182" text-anchor="middle" font-size="9" fill="#4a5568">3 all-lower or all-upper case</text>
+
+  <rect x="480" y="76" width="200" height="120" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="580" y="102" text-anchor="middle" font-size="12" font-weight="700" fill="#9c4221">appended row</text>
+  <text x="580" y="126" text-anchor="middle" font-size="22" font-weight="700" fill="#9c4221">1 row</text>
+  <text x="580" y="148" text-anchor="middle" font-size="9.5" fill="#2d3748">near-duplicate product</text>
+  <text x="580" y="164" text-anchor="middle" font-size="9" fill="#4a5568">P017 "Charcoal Quilt"</text>
+  <text x="580" y="180" text-anchor="middle" font-size="9" fill="#4a5568">respelled "Charcoal-Quilt"</text>
+
+  <line x1="140" y1="196" x2="140" y2="222" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#m0)" />
+  <line x1="360" y1="196" x2="360" y2="222" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#m1)" />
+  <line x1="580" y1="196" x2="580" y2="222" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#m2)" />
+  <defs>
+    <marker id="m0" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="m1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="m2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <rect x="120" y="226" width="480" height="60" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="360" y="250" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a202c">61 total rows -- 60 real products + 1 appended near-duplicate</text>
+  <text x="360" y="270" text-anchor="middle" font-size="9.5" fill="#4a5568">Built by a seeded (seed 42) generator from the real canonical thistlewood_products.csv</text>
+
+  <line x1="360" y1="286" x2="360" y2="308" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#m3)" />
+  <defs>
+    <marker id="m3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <rect x="150" y="312" width="420" height="70" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="338" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">This module's job: 60 rows, 8 canonical categories</text>
+  <text x="360" y="358" text-anchor="middle" font-size="9.5" fill="#2d3748">verified against the real canonical thistlewood_products.csv, exactly</text>
+
+  <text x="360" y="412" text-anchor="middle" font-size="10.5" fill="#718096">Every count is real and reproducible -- printed directly by</text>
+  <text x="360" y="428" text-anchor="middle" font-size="10.5" fill="#718096">generate_products_raw_variant.py, not estimated after the fact.</text>
+</svg>

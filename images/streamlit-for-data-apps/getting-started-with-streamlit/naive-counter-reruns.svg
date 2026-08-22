@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="390" viewBox="0 0 1050 390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>Three Reruns of the Naive Counter</title>
+<desc>Three sequential rerun panels showing the naive counter. Rerun 1, no click yet: count = 0 executes, count reads 0. Rerun 2, button clicked: count = 0 executes again first, then count += 1 runs because the click registered, count reads 1. Rerun 3, button clicked again: count = 0 executes again, resetting to zero before the increment, then count += 1 runs, count reads 1 again -- never higher, since the previous reruns value was never carried forward.</desc>
+<rect width="1050" height="390" fill="#ffffff" />
+<text x="525" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Three Reruns of the Naive Counter</text>
+<rect x="30" y="60" width="314" height="210" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.6" />
+<text x="187" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">Rerun 1 (initial)</text>
+<text x="187" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">count = 0 runs.</text>
+<text x="187" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">No click yet.</text>
+<text x="187" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">count reads 0.</text>
+<path d="M348,165 L364,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="368" y="60" width="314" height="210" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+<text x="525" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">Rerun 2 (1st click)</text>
+<text x="525" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">count = 0 runs again.</text>
+<text x="525" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Click registered:</text>
+<text x="525" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">count += 1 runs.</text>
+<text x="525" y="176" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">count reads 1.</text>
+<path d="M686,165 L702,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="706" y="60" width="314" height="210" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.6" />
+<text x="863" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">Rerun 3 (2nd click)</text>
+<text x="863" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">count = 0 runs again.</text>
+<text x="863" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Resets before increment.</text>
+<text x="863" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">count += 1 runs.</text>
+<text x="863" y="176" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">count reads 1 -- again.</text>
+<rect x="30" y="286" width="990" height="88" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="525" y="310" text-anchor="middle" font-size="10.5" fill="#7b341e">Every rerun starts count = 0 from scratch -- the increment always lands on 1, it never accumulates.</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

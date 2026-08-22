@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="470" viewBox="0 0 1100 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The same source, the same thresholds, three different freshness verdicts</title>
+  <desc>dbt source freshness against raw.trips, using a real _loaded_at column and thresholds of warn_after 24 hours and error_after 48 hours. When _loaded_at is set to now, the check reports PASS. When _loaded_at is set to 30 hours ago, past warn_after but before error_after, the check reports WARN. When _loaded_at is set to 50 hours ago, past error_after, the check reports ERROR STALE. All three verdicts were produced against the identical 81,013-row table with the identical thresholds -- only the _loaded_at timestamp changed between runs, confirming the check responds to actual data age, not to row count, table existence, or anything else about the table.</desc>
+  <rect width="1100" height="470" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Source, One Threshold Pair, Three Verdicts</text>
+  <text x="550" y="49" text-anchor="middle" font-size="11" fill="#718096">warn_after: 24 hours &#183; error_after: 48 hours &#183; only _loaded_at changes between runs</text>
+
+  <!-- timeline -->
+  <line x1="90" y1="110" x2="1010" y2="110" stroke="#cbd5e0" stroke-width="2" />
+  <text x="90" y="95" text-anchor="middle" font-size="9.5" fill="#718096">now</text>
+  <text x="1010" y="95" text-anchor="middle" font-size="9.5" fill="#718096">54h ago</text>
+
+  <line x1="90" y1="103" x2="90" y2="117" stroke="#48bb78" stroke-width="2.5" />
+  <line x1="450" y1="103" x2="450" y2="117" stroke="#ed8936" stroke-width="2.5" stroke-dasharray="3,2" />
+  <text x="450" y="132" text-anchor="middle" font-size="9" fill="#7b341e">warn_after: 24h</text>
+  <line x1="810" y1="103" x2="810" y2="117" stroke="#e53e3e" stroke-width="2.5" stroke-dasharray="3,2" />
+  <text x="810" y="132" text-anchor="middle" font-size="9" fill="#822727">error_after: 48h</text>
+
+  <circle cx="90" cy="110" r="6" fill="#48bb78" />
+  <circle cx="540" cy="110" r="6" fill="#ed8936" />
+  <circle cx="840" cy="110" r="6" fill="#e53e3e" />
+
+  <!-- three panels -->
+  <rect x="50" y="165" width="320" height="270" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="210" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="#22543d">_loaded_at = now()</text>
+  <rect x="75" y="210" width="270" height="34" rx="6" fill="#22543d" />
+  <text x="210" y="232" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#f0fff4">PASS freshness of raw.trips</text>
+  <text x="210" y="270" text-anchor="middle" font-size="10" fill="#22543d">age: 0 hours</text>
+  <text x="210" y="290" text-anchor="middle" font-size="10" fill="#22543d">under warn_after (24h)</text>
+  <text x="210" y="330" text-anchor="middle" font-size="9.5" fill="#4a5568">The loader ran moments ago --</text>
+  <text x="210" y="348" text-anchor="middle" font-size="9.5" fill="#4a5568">the check reflects that directly.</text>
+
+  <rect x="390" y="165" width="320" height="270" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="550" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="#7b341e">_loaded_at = 30h ago</text>
+  <rect x="415" y="210" width="270" height="34" rx="6" fill="#7b341e" />
+  <text x="550" y="232" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#fffaf0">WARN freshness of raw.trips</text>
+  <text x="550" y="270" text-anchor="middle" font-size="10" fill="#7b341e">age: 30 hours</text>
+  <text x="550" y="290" text-anchor="middle" font-size="10" fill="#7b341e">past warn_after, under error_after</text>
+  <text x="550" y="330" text-anchor="middle" font-size="9.5" fill="#4a5568">Worth a look, not yet a page --</text>
+  <text x="550" y="348" text-anchor="middle" font-size="9.5" fill="#4a5568">exactly what warn_after is for.</text>
+
+  <rect x="730" y="165" width="320" height="270" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="890" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="#822727">_loaded_at = 50h ago</text>
+  <rect x="755" y="210" width="270" height="34" rx="6" fill="#822727" />
+  <text x="890" y="232" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#fff5f5">ERROR STALE freshness of raw.trips</text>
+  <text x="890" y="270" text-anchor="middle" font-size="10" fill="#822727">age: 50 hours</text>
+  <text x="890" y="290" text-anchor="middle" font-size="10" fill="#822727">past error_after (48h)</text>
+  <text x="890" y="330" text-anchor="middle" font-size="9.5" fill="#4a5568">A real command-line exit code 1 --</text>
+  <text x="890" y="348" text-anchor="middle" font-size="9.5" fill="#4a5568">the failure a CI pipeline would catch.</text>
+
+  <text x="550" y="420" text-anchor="middle" font-size="10.5" fill="#718096">Same 81,013 rows, same thresholds, every time -- only the timestamp changed. The row count was never the question.</text>
+</svg>

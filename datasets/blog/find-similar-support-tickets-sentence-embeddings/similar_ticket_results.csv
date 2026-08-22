@@ -1,0 +1,11 @@
+incoming_id,expected_match_id,top_match_id,top_score,second_match_id,second_score,decision,predicted_match_id,correct
+N-201,A-101,A-101,0.615744,A-106,0.329213,suggest match,A-101,True
+N-202,A-102,A-102,0.774733,A-104,0.367897,suggest match,A-102,True
+N-203,A-103,A-103,0.756191,A-102,0.344375,suggest match,A-103,True
+N-204,A-104,A-104,0.776601,A-102,0.38695,suggest match,A-104,True
+N-205,A-105,A-105,0.832552,A-101,0.281598,suggest match,A-105,True
+N-206,A-106,A-106,0.722186,A-101,0.360077,suggest match,A-106,True
+N-207,,A-106,0.086578,A-104,0.086399,manual review,,True
+N-208,,A-104,0.380499,A-105,0.221768,manual review,,True
+N-209,A-107,A-107,0.611254,A-101,0.252373,suggest match,A-107,True
+N-210,A-108,A-108,0.645649,A-106,0.219751,suggest match,A-108,True

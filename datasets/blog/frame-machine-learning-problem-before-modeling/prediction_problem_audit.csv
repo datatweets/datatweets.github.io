@@ -1,0 +1,7 @@
+check,result,value
+ticket_id is unique,pass,True
+target is complete,pass,100.0%
+target contains both classes,pass,"[0, 1]"
+feature list excludes outcome fields,pass,[]
+labels occur after prediction time,pass,100.0%
+chronological holdout is later,pass,2026-05-05T00:00:00+00:00

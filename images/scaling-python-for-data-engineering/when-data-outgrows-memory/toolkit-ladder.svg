@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">The data engineer's toolkit, ordered cheapest to heaviest</title>
+  <desc id="desc">A staircase of six techniques for handling data larger than memory. From the bottom, cheapest step, to the top, heaviest: Load less (Module 1), Shrink in place (Module 3), Process in chunks (Module 4), Parallelize (Module 5), Better data structures (Modules 6 to 7), and Go distributed (the next course). An arrow on the left runs from cheaper and simpler at the bottom to heavier and more complex at the top, with the guidance to always try the cheapest fix first.</desc>
+
+  <rect x="0" y="0" width="900" height="600" fill="#ffffff"/>
+
+  <text x="450" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#1a202c">The Data Engineer&#8217;s Toolkit</text>
+  <text x="450" y="68" text-anchor="middle" font-size="15" fill="#4a5568">Ordered from the cheapest fix to the heaviest &#8212; always climb from the bottom</text>
+
+  <!-- direction arrow on the left -->
+  <line x1="70" y1="520" x2="70" y2="110" stroke="#a0aec0" stroke-width="3"/>
+  <polygon points="70,100 63,116 77,116" fill="#a0aec0"/>
+  <text x="52" y="315" text-anchor="middle" font-size="13" fill="#718096" transform="rotate(-90 52 315)">heavier &#183; more complex</text>
+  <text x="88" y="520" font-size="12" fill="#718096">start here</text>
+
+  <!-- Step 1: Load less (bottom, cheapest) -->
+  <rect x="110" y="470" width="700" height="60" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <rect x="110" y="470" width="10" height="60" rx="4" fill="#48bb78"/>
+  <text x="134" y="497" font-size="17" font-weight="700" fill="#276749">1 &#183; Load less</text>
+  <text x="134" y="518" font-size="13" fill="#4a5568">Read only the columns and rows you need, with the right dtypes</text>
+  <text x="796" y="505" text-anchor="end" font-size="12" font-weight="600" fill="#276749">Module 1</text>
+
+  <!-- Step 2: Shrink in place -->
+  <rect x="140" y="400" width="670" height="60" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <rect x="140" y="400" width="10" height="60" rx="4" fill="#4299e1"/>
+  <text x="164" y="427" font-size="17" font-weight="700" fill="#2b6cb0">2 &#183; Shrink in place</text>
+  <text x="164" y="448" font-size="13" fill="#4a5568">Downcast numerics and turn repeated text into categoricals</text>
+  <text x="796" y="435" text-anchor="end" font-size="12" font-weight="600" fill="#2b6cb0">Module 3</text>
+
+  <!-- Step 3: Process in chunks -->
+  <rect x="170" y="330" width="640" height="60" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <rect x="170" y="330" width="10" height="60" rx="4" fill="#9f7aea"/>
+  <text x="194" y="357" font-size="17" font-weight="700" fill="#6b46c1">3 &#183; Process in chunks</text>
+  <text x="194" y="378" font-size="13" fill="#4a5568">Stream the file piece by piece; aggregate out-of-core with SQLite</text>
+  <text x="796" y="365" text-anchor="end" font-size="12" font-weight="600" fill="#6b46c1">Module 4</text>
+
+  <!-- Step 4: Parallelize -->
+  <rect x="200" y="260" width="610" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <rect x="200" y="260" width="10" height="60" rx="4" fill="#ed8936"/>
+  <text x="224" y="287" font-size="17" font-weight="700" fill="#c05621">4 &#183; Parallelize</text>
+  <text x="224" y="308" font-size="13" fill="#4a5568">Put every CPU core to work instead of just one</text>
+  <text x="796" y="295" text-anchor="end" font-size="12" font-weight="600" fill="#c05621">Module 5</text>
+
+  <!-- Step 5: Better data structures -->
+  <rect x="230" y="190" width="580" height="60" rx="8" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+  <rect x="230" y="190" width="10" height="60" rx="4" fill="#4a5568"/>
+  <text x="254" y="217" font-size="17" font-weight="700" fill="#1a202c">5 &#183; Better data structures</text>
+  <text x="254" y="238" font-size="13" fill="#4a5568">Indexes, queues, and trees matched to the access pattern</text>
+  <text x="796" y="225" text-anchor="end" font-size="12" font-weight="600" fill="#1a202c">Modules 6&#8211;7</text>
+
+  <!-- Step 6: Go distributed (top, heaviest) -->
+  <rect x="260" y="120" width="550" height="60" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+  <rect x="260" y="120" width="10" height="60" rx="4" fill="#fc8181"/>
+  <text x="284" y="147" font-size="17" font-weight="700" fill="#c53030">6 &#183; Go distributed</text>
+  <text x="284" y="168" font-size="13" fill="#4a5568">Spread the work over many machines with Spark</text>
+  <text x="796" y="155" text-anchor="end" font-size="12" font-weight="600" fill="#c53030">Next course</text>
+
+  <text x="450" y="565" text-anchor="middle" font-size="13" fill="#718096">cheaper &#183; simpler &#8212; try these first</text>
+</svg>

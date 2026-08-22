@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Measured failed-request rate, with and without a readiness probe</title>
+  <desc id="desc">Bar chart showing the measured failed-request rate during an identical Kubernetes rolling update under two configurations: 22.6 percent failed (113 of 500 requests) with no readiness probe, and 0.0 percent failed (0 of 500 requests) with a readiness probe added, both tests run against a live kind cluster with a 4-second application startup delay.</desc>
+  <defs>
+    <style>
+      .heading { font: 700 26px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .label { font: 700 18px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .detail { font: 15px Jost, system-ui, sans-serif; fill: #59636e; }
+      .mono { font: 15px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #1b1f24; }
+      .big { font: 700 34px Jost, system-ui, sans-serif; }
+    </style>
+  </defs>
+  <rect width="1200" height="520" fill="#f7f8fa"/>
+  <rect x="28" y="24" width="1144" height="472" rx="24" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <text x="62" y="66" class="heading">Same rollout, same 500 requests, one field different</text>
+
+  <!-- axis -->
+  <line x1="200" y1="400" x2="200" y2="120" stroke="#c7ccd2" stroke-width="2"/>
+  <line x1="200" y1="400" x2="1080" y2="400" stroke="#c7ccd2" stroke-width="2"/>
+  <text x="180" y="126" class="detail" text-anchor="end" font-size="13">25%</text>
+  <text x="180" y="264" class="detail" text-anchor="end" font-size="13">12.5%</text>
+  <text x="180" y="404" class="detail" text-anchor="end" font-size="13">0%</text>
+  <line x1="200" y1="120" x2="1080" y2="120" stroke="#e3e6ea" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="200" y1="260" x2="1080" y2="260" stroke="#e3e6ea" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- bar 1: no probe, 22.6% -->
+  <rect x="360" y="145.6" width="180" height="254.4" fill="#c8515b"/>
+  <text x="450" y="130" class="big" text-anchor="middle" fill="#c8515b">22.6%</text>
+  <text x="450" y="426" class="label" text-anchor="middle">no readiness probe</text>
+  <text x="450" y="450" class="mono" text-anchor="middle" font-size="14" fill="#59636e">113 / 500 failed</text>
+
+  <!-- bar 2: with probe, 0.0% -->
+  <rect x="660" y="398" width="180" height="2" fill="#4d9870"/>
+  <text x="750" y="130" class="big" text-anchor="middle" fill="#2f6b4a">0.0%</text>
+  <text x="750" y="426" class="label" text-anchor="middle">with readiness probe</text>
+  <text x="750" y="450" class="mono" text-anchor="middle" font-size="14" fill="#59636e">0 / 500 failed</text>
+</svg>

@@ -1,0 +1,9 @@
+chunk_id,topic,text
+W01,registration deadline,Registration for a workshop closes 48 hours before its listed start time. Places cannot be held after the deadline.
+W02,cancellation credit,A cancellation made at least 72 hours before the start receives a full account credit. Later cancellations receive no credit.
+W03,accessibility support,Accessibility requests should be sent to access@example.test at least five calendar days before a workshop. A support coordinator replies within two working days.
+W04,attendance certificates,Attendance certificates are issued only after a participant completes every session. Certificates arrive by email within three working days after the final session.
+W05,equipment returns,Loaned equipment must be returned to reception within seven calendar days after a workshop ends. Late returns pause future equipment loans.
+W06,late arrival,"Participants may enter up to 15 minutes after the start. After that time, entry is not allowed because the safety briefing has ended."
+W07,online workshop link,Online workshop links are emailed to registered participants 24 hours before the start. Participants should check the spam folder if the message is missing.
+W08,group bookings,Group bookings can include at most six participants. Every participant needs a separate email address.

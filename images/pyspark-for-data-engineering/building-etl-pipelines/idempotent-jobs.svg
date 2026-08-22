@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 588" width="960" height="588" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="588" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Three ways to re-run the same job &#8212; only one is idempotent</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Zone-hour analytics table partitioned by pickup month &#183; re-running February &#183; measured on the verified quarter</text>
+
+<!-- baseline row -->
+<text x="30" y="92" font-size="14" font-weight="700" fill="#2b6cb0">THE TABLE BEFORE ANY RE-RUN (3 monthly partitions)</text>
+<g>
+  <rect x="30" y="104" width="180" height="46" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.3"/>
+  <text x="120" y="123" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">pickup_month=2024-01</text>
+  <text x="120" y="141" text-anchor="middle" font-size="12" fill="#4a5568">2,964,617 trips</text>
+  <rect x="220" y="104" width="180" height="46" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.3"/>
+  <text x="310" y="123" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">pickup_month=2024-02</text>
+  <text x="310" y="141" text-anchor="middle" font-size="12" fill="#4a5568">3,007,533 trips</text>
+  <rect x="410" y="104" width="180" height="46" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.3"/>
+  <text x="500" y="123" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">pickup_month=2024-03</text>
+  <text x="500" y="141" text-anchor="middle" font-size="12" fill="#4a5568">3,582,607 trips</text>
+  <text x="620" y="123" font-size="13" font-weight="700" fill="#1a202c">total 9,554,757 trips</text>
+  <text x="620" y="141" font-size="13" font-weight="700" fill="#276749">$256,692,373.14</text>
+</g>
+
+<line x1="30" y1="172" x2="930" y2="172" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- three panels -->
+<!-- PANEL 1: append -->
+<rect x="30" y="188" width="285" height="300" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="172" y="212" text-anchor="middle" font-size="13.5" font-weight="700" fill="#c53030">mode("append") the same data</text>
+<text x="172" y="230" text-anchor="middle" font-size="11.5" fill="#718096">a retry re-adds every row</text>
+<rect x="52" y="244" width="242" height="26" rx="4" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+<text x="173" y="261" text-anchor="middle" font-size="11" fill="#c53030">2024-01: 2,964,617 &#215; 2</text>
+<rect x="52" y="276" width="242" height="26" rx="4" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+<text x="173" y="293" text-anchor="middle" font-size="11" fill="#c53030">2024-02: 3,007,533 &#215; 2</text>
+<rect x="52" y="308" width="242" height="26" rx="4" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+<text x="173" y="325" text-anchor="middle" font-size="11" fill="#c53030">2024-03: 3,582,607 &#215; 2</text>
+<text x="172" y="372" text-anchor="middle" font-size="12" fill="#4a5568">every partition doubled</text>
+<text x="172" y="400" text-anchor="middle" font-size="20" font-weight="700" fill="#c53030">19,109,514 trips</text>
+<text x="172" y="424" text-anchor="middle" font-size="14" font-weight="700" fill="#c53030">$513,384,746.28</text>
+<text x="172" y="462" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c53030">WRONG &#8212; double-counted</text>
+
+<!-- PANEL 2: static overwrite of one month -->
+<rect x="337" y="188" width="285" height="300" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="479" y="212" text-anchor="middle" font-size="13.5" font-weight="700" fill="#c05621">static mode("overwrite"), Feb only</text>
+<text x="479" y="230" text-anchor="middle" font-size="11.5" fill="#718096">replaces the WHOLE table</text>
+<rect x="359" y="244" width="242" height="26" rx="4" fill="#ffffff" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="480" y="261" text-anchor="middle" font-size="11" fill="#a0aec0">2024-01: deleted</text>
+<rect x="359" y="276" width="242" height="26" rx="4" fill="#feebc8" stroke="#c05621" stroke-width="1"/>
+<text x="480" y="293" text-anchor="middle" font-size="11" fill="#c05621">2024-02: 3,007,533 (rewritten)</text>
+<rect x="359" y="308" width="242" height="26" rx="4" fill="#ffffff" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="480" y="325" text-anchor="middle" font-size="11" fill="#a0aec0">2024-03: deleted</text>
+<text x="479" y="372" text-anchor="middle" font-size="12" fill="#4a5568">Jan and Mar wiped out</text>
+<text x="479" y="400" text-anchor="middle" font-size="20" font-weight="700" fill="#c05621">3,007,533 trips</text>
+<text x="479" y="424" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">$80,073,797.21</text>
+<text x="479" y="462" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c05621">WRONG &#8212; siblings destroyed</text>
+
+<!-- PANEL 3: dynamic overwrite -->
+<rect x="644" y="188" width="285" height="300" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="786" y="212" text-anchor="middle" font-size="13.5" font-weight="700" fill="#276749">dynamic partition overwrite, Feb</text>
+<text x="786" y="230" text-anchor="middle" font-size="11.5" fill="#718096">replaces ONLY Feb's partition</text>
+<rect x="666" y="244" width="242" height="26" rx="4" fill="#ffffff" stroke="#48bb78" stroke-width="1"/>
+<text x="787" y="261" text-anchor="middle" font-size="11" fill="#276749">2024-01: 2,964,617 (untouched)</text>
+<rect x="666" y="276" width="242" height="26" rx="4" fill="#c6f6d5" stroke="#276749" stroke-width="1.3"/>
+<text x="787" y="293" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">2024-02: 3,007,533 (replaced)</text>
+<rect x="666" y="308" width="242" height="26" rx="4" fill="#ffffff" stroke="#48bb78" stroke-width="1"/>
+<text x="787" y="325" text-anchor="middle" font-size="11" fill="#276749">2024-03: 3,582,607 (untouched)</text>
+<text x="786" y="372" text-anchor="middle" font-size="12" fill="#4a5568">re-run in place, no drift</text>
+<text x="786" y="400" text-anchor="middle" font-size="20" font-weight="700" fill="#276749">9,554,757 trips</text>
+<text x="786" y="424" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">$256,692,373.14</text>
+<text x="786" y="462" text-anchor="middle" font-size="12.5" font-weight="700" fill="#276749">IDEMPOTENT &#8212; unchanged</text>
+
+<line x1="30" y1="508" x2="930" y2="508" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30" y="522" width="900" height="50" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="552" text-anchor="middle" font-size="13" fill="#1a202c">The invariant a trustworthy job must hold across re-runs: <tspan font-weight="700">240,917</tspan> buckets &#183; <tspan font-weight="700">9,554,757</tspan> trips &#183; <tspan font-weight="700" fill="#276749">$256,692,373.14</tspan> &#8212; matching Course&#160;1 to the cent, every night.</text>
+</svg>

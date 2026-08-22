@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Shape Tests vs Value Tests</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">clean_orders() needs both -- neither one substitutes for the other</text>
+
+  <rect x="30" y="66" width="300" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="180" y="90" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2b6cb0">Shape tests</text>
+  <text x="50" y="112" font-size="9" fill="#1a202c">- row count == 792</text>
+  <text x="50" y="130" font-size="9" fill="#1a202c">- no duplicate order_ids</text>
+  <text x="50" y="148" font-size="9" fill="#1a202c">- no nulls in city / email</text>
+  <text x="50" y="166" font-size="9" fill="#1a202c">- order_date is a Date dtype</text>
+  <text x="50" y="190" font-size="8.5" fill="#4a5568">Checks structure, without looking</text>
+  <text x="50" y="202" font-size="8.5" fill="#4a5568">at any single value.</text>
+
+  <rect x="390" y="66" width="300" height="150" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="540" y="90" text-anchor="middle" font-size="11.5" font-weight="700" fill="#6b46c1">Value tests</text>
+  <text x="410" y="112" font-size="9" font-family="monospace" fill="#1a202c">O00473 city == "Missoula"</text>
+  <text x="410" y="130" font-size="8.5" fill="#4a5568">(recovered from customers table)</text>
+  <text x="410" y="154" font-size="9" font-family="monospace" fill="#1a202c">O01005 date == 2024-01-07</text>
+  <text x="410" y="172" font-size="8.5" fill="#4a5568">(parsed from raw "07-Jan-2024")</text>
+  <text x="410" y="196" font-size="8.5" fill="#4a5568">Checks that a specific row holds</text>
+  <text x="410" y="208" font-size="8.5" fill="#4a5568">the specific correct data.</text>
+
+  <rect x="40" y="240" width="640" height="80" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="264" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">A transformation can pass every shape test and still be wrong</text>
+  <text x="360" y="286" text-anchor="middle" font-size="9" fill="#742a2a">Dropping the wrong 3 duplicate order_ids still leaves 792 rows and no nulls --</text>
+  <text x="360" y="302" text-anchor="middle" font-size="9" fill="#742a2a">only a value test catches which specific row ended up wrong.</text>
+
+  <rect x="40" y="336" width="640" height="60" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="360" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">pytest.main() ran 7 tests against clean_orders() -- 7 passed</text>
+  <text x="360" y="380" text-anchor="middle" font-size="9" fill="#22543d">5 shape tests, 2 value tests, exit code 0</text>
+</svg>

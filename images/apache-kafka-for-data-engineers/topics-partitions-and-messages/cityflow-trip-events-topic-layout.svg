@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>cityflow-trip-events: the topic layout, with a reason for every setting</title>
+  <desc>A summary card for the cityflow-trip-events topic: 6 partitions (chosen for consumer-parallelism headroom, not one per zone), replication factor 3 (the cluster's maximum, for full fault tolerance), 30-day retention with cleanup.policy=delete (event-shaped data, not state), and keyed by pickup zone. Below, four real trip events are shown routing to their real partitions: zone 132 (JFK Airport) to partition 3, and zones 138, 161, and 237 all coincidentally landing on partition 2, illustrating that a small sample of only 4 zones against 6 partitions doesn't spread perfectly evenly.</desc>
+  <rect width="1100" height="420" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">cityflow-trip-events: Four Decisions, Each One Justified</text>
+
+  <rect x="40" y="55" width="245" height="90" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="162" y="78" text-anchor="middle" font-size="11.5" font-weight="700" fill="#22543d">6 partitions</text>
+  <text x="162" y="98" text-anchor="middle" font-size="8.5" fill="#22543d">consumer-parallelism headroom</text>
+  <text x="162" y="112" text-anchor="middle" font-size="8.5" fill="#22543d">for Module 4's consumer group --</text>
+  <text x="162" y="126" text-anchor="middle" font-size="8.5" fill="#22543d">not one partition per zone</text>
+
+  <rect x="300" y="55" width="245" height="90" rx="6" fill="#bee3f8" stroke="#4299e1" stroke-width="1.4" />
+  <text x="422" y="78" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2c5282">replication factor 3</text>
+  <text x="422" y="98" text-anchor="middle" font-size="8.5" fill="#2c5282">the cluster's maximum --</text>
+  <text x="422" y="112" text-anchor="middle" font-size="8.5" fill="#2c5282">survives 2 simultaneous</text>
+  <text x="422" y="126" text-anchor="middle" font-size="8.5" fill="#2c5282">broker failures</text>
+
+  <rect x="560" y="55" width="245" height="90" rx="6" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="682" y="78" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7b341e">30-day retention</text>
+  <text x="682" y="98" text-anchor="middle" font-size="8.5" fill="#7b341e">cleanup.policy=delete --</text>
+  <text x="682" y="112" text-anchor="middle" font-size="8.5" fill="#7b341e">event-shaped data, a full month</text>
+  <text x="682" y="126" text-anchor="middle" font-size="8.5" fill="#7b341e">of replay history</text>
+
+  <rect x="820" y="55" width="245" height="90" rx="6" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="942" y="78" text-anchor="middle" font-size="11.5" font-weight="700" fill="#553c9a">keyed by pickup zone</text>
+  <text x="942" y="98" text-anchor="middle" font-size="8.5" fill="#553c9a">PULocationID --</text>
+  <text x="942" y="112" text-anchor="middle" font-size="8.5" fill="#553c9a">every event for one zone stays</text>
+  <text x="942" y="126" text-anchor="middle" font-size="8.5" fill="#553c9a">in order on one partition</text>
+
+  <line x1="40" y1="170" x2="1060" y2="170" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <text x="40" y="200" font-size="13" font-weight="700" fill="#2d3748">Five real trip events, produced and confirmed</text>
+
+  <rect x="40" y="215" width="260" height="150" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="170" y="238" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">Partition 0</text>
+  <text x="170" y="260" text-anchor="middle" font-size="9" fill="#a0aec0">no zones from this sample</text>
+
+  <rect x="320" y="215" width="260" height="150" rx="6" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="450" y="238" text-anchor="middle" font-size="10.5" font-weight="700" fill="#742a2a">Partition 2</text>
+  <text x="450" y="260" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#742a2a">zone 138 -- LaGuardia Airport</text>
+  <text x="450" y="278" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#742a2a">zone 161 -- Midtown Center</text>
+  <text x="450" y="296" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#742a2a">zone 237 -- Upper East Side S.</text>
+  <text x="450" y="318" text-anchor="middle" font-size="8.5" fill="#742a2a">3 zones collided -- small sample,</text>
+  <text x="450" y="332" text-anchor="middle" font-size="8.5" fill="#742a2a">6 partitions, expected per Lesson 4</text>
+
+  <rect x="600" y="215" width="260" height="150" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="730" y="238" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">Partition 3</text>
+  <text x="730" y="262" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">zone 132 -- JFK Airport</text>
+  <text x="730" y="282" text-anchor="middle" font-size="8.5" fill="#22543d">2 trips (t-0001, t-0005),</text>
+  <text x="730" y="296" text-anchor="middle" font-size="8.5" fill="#22543d">same partition both times --</text>
+  <text x="730" y="310" text-anchor="middle" font-size="8.5" fill="#22543d">the determinism Lesson 4 proved,</text>
+  <text x="730" y="324" text-anchor="middle" font-size="8.5" fill="#22543d">now on real trip data</text>
+
+  <rect x="880" y="215" width="180" height="150" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="970" y="238" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">Partitions 1, 4, 5</text>
+  <text x="970" y="260" text-anchor="middle" font-size="9" fill="#a0aec0">no zones from this</text>
+  <text x="970" y="274" text-anchor="middle" font-size="9" fill="#a0aec0">5-event sample --</text>
+  <text x="970" y="288" text-anchor="middle" font-size="9" fill="#a0aec0">ready for Module 3's</text>
+  <text x="970" y="302" text-anchor="middle" font-size="9" fill="#a0aec0">full replay producer</text>
+</svg>

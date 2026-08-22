@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">con.execute() vs. con.sql()</text>
+
+  <text x="180" y="62" text-anchor="middle" font-size="11.5" font-weight="700" fill="#742a2a">con.execute("SELECT ...")</text>
+  <rect x="50" y="76" width="260" height="46" rx="6" fill="#fed7d7" stroke="#fc8181" stroke-width="1.3" />
+  <text x="180" y="104" text-anchor="middle" font-size="10" fill="#742a2a">runs immediately</text>
+
+  <line x1="180" y1="122" x2="180" y2="154" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowE)" />
+
+  <rect x="50" y="154" width="260" height="46" rx="6" fill="#742a2a" />
+  <text x="180" y="182" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">.fetchall() reads the result</text>
+
+  <text x="620" y="62" text-anchor="middle" font-size="11.5" font-weight="700" fill="#22543d">con.sql("SELECT ...")</text>
+  <rect x="490" y="76" width="260" height="46" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="620" y="104" text-anchor="middle" font-size="10" fill="#22543d">returns a Relation -- nothing runs</text>
+
+  <line x1="620" y1="122" x2="620" y2="154" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowE)" />
+
+  <rect x="490" y="154" width="260" height="46" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="620" y="177" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">.filter(...).aggregate(...)</text>
+  <text x="620" y="192" text-anchor="middle" font-size="8.5" fill="#276749">still just building a plan</text>
+
+  <line x1="620" y1="200" x2="620" y2="232" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowE)" />
+
+  <rect x="490" y="232" width="260" height="46" rx="6" fill="#22543d" />
+  <text x="620" y="260" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">.fetchall() finally runs it</text>
+
+  <rect x="60" y="300" width="680" height="60" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="400" y="326" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">sql_query() proves it: shows the full generated SQL</text>
+  <text x="400" y="344" text-anchor="middle" font-size="9.5" fill="#2c5282">before a single row of the Relation chain has been read</text>
+
+  <defs>
+    <marker id="arrowE" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

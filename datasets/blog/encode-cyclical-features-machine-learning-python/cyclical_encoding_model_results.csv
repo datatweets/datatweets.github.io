@@ -1,0 +1,4 @@
+method,transformed_features,test_mae_kw,test_rmse_kw
+Raw hour,3,1.8529,2.2631
+One-hot hour,26,0.7007,0.8652
+Sine + cosine,4,0.6985,0.8624

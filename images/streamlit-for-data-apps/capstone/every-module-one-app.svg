@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="612" viewBox="0 0 1000 612" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>Every Module, One Final App</title>
+<desc>A seven-row stack showing which module contributed each piece of the final World Development Explorer. Module 1: the rerun model, session state, the first filtered chart. Module 2: cached loading, a real filter panel, a debugging workflow. Module 3: Plotly and Altair charts, a choropleth map, the metrics-and-tabs dashboard. Module 4: bordered layout, wide page config, a real multi-page split into Overview, Compare, and Data. Module 5: a real pytest suite, secrets, and a ship-readiness pass. Module 6: matplotlib/seaborn, a real CSV export, custom theming, and LaTeX. Module 7, this capstone: attribution to the real data source, and one final anchor-figure verification closing the loop.</desc>
+<rect width="1000" height="612" fill="#ffffff" />
+<text x="500" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Every Module, One Final App</text>
+<rect x="60" y="60" width="880" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5" />
+<text x="500" y="86" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">M1: rerun model, session state, first filtered chart</text>
+<path d="M500,107 L500,123" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="126" width="880" height="44" rx="7" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5" />
+<text x="500" y="152" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">M2: cached loading, real filter panel, debugging workflow</text>
+<path d="M500,173 L500,189" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="192" width="880" height="44" rx="7" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5" />
+<text x="500" y="218" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">M3: Plotly, Altair, choropleth map, metrics+tabs dashboard</text>
+<path d="M500,239 L500,255" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="258" width="880" height="44" rx="7" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5" />
+<text x="500" y="284" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">M4: bordered cards, wide layout, real multi-page split</text>
+<path d="M500,305 L500,321" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="324" width="880" height="44" rx="7" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5" />
+<text x="500" y="350" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">M5: real pytest suite, secrets, ship-readiness pass</text>
+<path d="M500,371 L500,387" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="390" width="880" height="44" rx="7" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5" />
+<text x="500" y="416" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">M6: matplotlib/seaborn, CSV export, custom theming, LaTeX</text>
+<path d="M500,437 L500,453" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="456" width="880" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5" />
+<text x="500" y="482" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">M7 (this capstone): data attribution + final anchor-figure check</text>
+<rect x="40" y="524" width="920" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="500" y="548" text-anchor="middle" font-size="10.5" fill="#7b341e">142 countries, 6,251,013,179 world population, 67.0 mean life expectancy for 2007 -- the same real</text>
+<text x="500" y="568" text-anchor="middle" font-size="10.5" fill="#7b341e">anchor figure, verified once more here, that every earlier module already confirmed independently.</text>
+<defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

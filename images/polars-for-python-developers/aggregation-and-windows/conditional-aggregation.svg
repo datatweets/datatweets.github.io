@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Conditional Aggregation -- .filter() Inside .agg()</text>
+  <text x="360" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">Real revenue per channel, split by real order status, in one query</text>
+
+  <rect x="255" y="66" width="210" height="40" rx="8" fill="#edf2f7" stroke="#4a5568" stroke-width="1.4" />
+  <text x="360" y="91" text-anchor="middle" font-size="10.5" font-family="monospace" fill="#1a202c">group_by("channel").agg(</text>
+
+  <line x1="300" y1="106" x2="140" y2="132" stroke="#a0aec0" stroke-width="1.3" />
+  <line x1="360" y1="106" x2="360" y2="132" stroke="#a0aec0" stroke-width="1.3" />
+  <line x1="420" y1="106" x2="580" y2="132" stroke="#a0aec0" stroke-width="1.3" />
+
+  <rect x="30" y="132" width="220" height="56" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="140" y="152" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">completed_revenue</text>
+  <text x="140" y="169" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">.filter(status=="completed")</text>
+
+  <rect x="250" y="132" width="220" height="56" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="152" text-anchor="middle" font-size="10" font-weight="700" fill="#c53030">cancelled_revenue</text>
+  <text x="360" y="169" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">.filter(status=="cancelled")</text>
+
+  <rect x="470" y="132" width="220" height="56" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="580" y="152" text-anchor="middle" font-size="10" font-weight="700" fill="#9c4221">pending_revenue</text>
+  <text x="580" y="169" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">.filter(status=="pending")</text>
+
+  <rect x="30" y="204" width="660" height="98" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="1.3" />
+  <text x="360" y="226" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">Real per-channel results (all 3 channels combined)</text>
+  <text x="120" y="248" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#276749">completed</text>
+  <text x="120" y="264" text-anchor="middle" font-size="10" font-family="monospace" fill="#1a202c">$8,423,103.02</text>
+  <text x="360" y="248" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#c53030">cancelled</text>
+  <text x="360" y="264" text-anchor="middle" font-size="10" font-family="monospace" fill="#1a202c">$475,616.70</text>
+  <text x="600" y="248" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#9c4221">pending</text>
+  <text x="600" y="264" text-anchor="middle" font-size="10" font-family="monospace" fill="#1a202c">$296,323.90</text>
+  <text x="360" y="288" text-anchor="middle" font-size="9.5" fill="#4a5568">8,423,103.02 + 475,616.70 + 296,323.90 = 9,195,043.62</text>
+
+  <rect x="90" y="322" width="540" height="60" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="344" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Matches the real $9,195,043.62 grand total exactly</text>
+  <text x="360" y="364" text-anchor="middle" font-size="9.5" fill="#2d3748">Every real line item belongs to exactly one status.</text>
+
+  <rect x="90" y="396" width="540" height="48" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="360" y="418" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">pl.when().then().otherwise() reaches the identical real result</text>
+  <text x="360" y="434" text-anchor="middle" font-size="9" fill="#2d3748">Verified with .equals() -- two structurally different code paths, one answer.</text>
+</svg>

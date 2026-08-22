@@ -1,0 +1,24 @@
+case_id,label,attempt,outcome,delay_s,elapsed_s,final_status
+R01,first attempt succeeds,1,ok,0.0,0.0,succeeded
+R02,timeout then success,1,timeout,0.56,0.0,succeeded
+R02,timeout then success,2,ok,0.0,0.56,succeeded
+R03,rate limit then success,1,http_429,2.0,0.0,succeeded
+R03,rate limit then success,2,ok,0.0,2.0,succeeded
+R04,service recovers,1,http_503,0.57,0.0,succeeded
+R04,service recovers,2,http_503,1.12,0.57,succeeded
+R04,service recovers,3,ok,0.0,1.69,succeeded
+R05,bad gateway then success,1,http_502,0.54,0.0,succeeded
+R05,bad gateway then success,2,ok,0.0,0.54,succeeded
+R06,request timeout then success,1,http_408,0.56,0.0,succeeded
+R06,request timeout then success,2,ok,0.0,0.56,succeeded
+R07,invalid request,1,http_400,0.0,0.0,permanent_error
+R08,missing credentials,1,http_401,0.0,0.0,permanent_error
+R09,dock does not exist,1,http_404,0.0,0.0,permanent_error
+R10,service stays unavailable,1,http_503,0.62,0.0,attempt_limit
+R10,service stays unavailable,2,http_503,1.09,0.62,attempt_limit
+R10,service stays unavailable,3,http_503,2.42,1.71,attempt_limit
+R10,service stays unavailable,4,http_503,0.0,4.13,attempt_limit
+R11,server delay exceeds budget,1,http_429,0.0,0.0,wait_budget
+R12,write has unknown outcome,1,timeout,0.0,0.0,unsafe_retry
+R13,idempotent write recovers,1,timeout,0.53,0.0,succeeded
+R13,idempotent write recovers,2,ok,0.0,0.53,succeeded

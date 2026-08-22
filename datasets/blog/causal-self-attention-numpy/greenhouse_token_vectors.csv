@@ -1,0 +1,7 @@
+token,entity,action,condition,urgency
+greenhouse,1.0,0.1,0.0,0.2
+sensor,0.8,0.5,0.0,0.1
+reports,0.1,0.8,0.2,0.0
+soil,0.7,0.1,0.9,0.0
+is,0.0,0.7,0.1,0.1
+dry,0.2,0.1,1.0,0.8

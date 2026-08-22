@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">A Column is an expression &#8212; a plan node, not a list of values</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">pyspark 4.2.0 &#183; local[*] = 10 cores &#183; Jan&#8211;Mar 2024 yellow taxi, 9,554,757 windowed rows &#183; all numbers measured</text>
+
+<!-- SECTION 1: naming a column -->
+<text x="40" y="96" font-size="13" font-weight="700" fill="#4a5568">THREE NAMES, ONE THING &#8212; and arithmetic builds a new one</text>
+<line x1="40" y1="106" x2="920" y2="106" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="44" y="120" width="176" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="132" y="141" text-anchor="middle" font-size="12" font-weight="600" fill="#2b6cb0">df["total_amount"]</text>
+<rect x="236" y="120" width="176" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="324" y="141" text-anchor="middle" font-size="12" font-weight="600" fill="#2b6cb0">F.col("total_amount")</text>
+<rect x="428" y="120" width="176" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="516" y="141" text-anchor="middle" font-size="12" font-weight="600" fill="#2b6cb0">df.total_amount</text>
+<text x="628" y="141" text-anchor="middle" font-size="15" fill="#4a5568">&#8594;</text>
+<rect x="648" y="114" width="272" height="46" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="784" y="133" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">all three: type == Column</text>
+<text x="784" y="150" text-anchor="middle" font-size="11" fill="#4a5568">F.col("x") + 1 is also a Column</text>
+<text x="44" y="182" font-size="11" fill="#718096">A Column is an unevaluated expression. <tspan font-weight="700" fill="#4a5568">df.select(expr)</tspan> returns a new DataFrame &#8212; a longer plan &#8212; and touches zero rows (Module 2).</text>
+
+<!-- SECTION 2: the cast trap -->
+<text x="40" y="216" font-size="13" font-weight="700" fill="#4a5568">THE timestamp_ntz CAST TRAP &#8212; a duration computed wrong is a silent bug</text>
+<line x1="40" y1="226" x2="920" y2="226" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="44" y="240" width="280" height="62" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="184" y="262" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">ts.cast("long")</text>
+<text x="184" y="280" text-anchor="middle" font-size="11" fill="#c53030">AnalysisException &#8212; Spark 4</text>
+<text x="184" y="295" text-anchor="middle" font-size="10" fill="#718096">cannot cast TIMESTAMP_NTZ to BIGINT</text>
+<text x="340" y="275" text-anchor="middle" font-size="15" fill="#4a5568">&#8594;</text>
+<rect x="360" y="240" width="280" height="62" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="500" y="262" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">ts.cast("timestamp").cast("long")</text>
+<text x="500" y="280" text-anchor="middle" font-size="11" fill="#276749">works &#8212; and the unit is SECONDS</text>
+<text x="500" y="295" text-anchor="middle" font-size="10" fill="#718096">not microseconds, not nanoseconds</text>
+<rect x="656" y="240" width="264" height="62" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="788" y="261" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">1188 s &#8801; 19.8 min &#10003;</text>
+<text x="788" y="279" text-anchor="middle" font-size="10" fill="#4a5568">read as &#181;s &#8594; 0.0000198 min</text>
+<text x="788" y="294" text-anchor="middle" font-size="10" fill="#718096">off by 1,000,000&#215; &#8212; silent</text>
+
+<!-- SECTION 3: derived columns on a real row -->
+<text x="40" y="336" font-size="13" font-weight="700" fill="#4a5568">DERIVED COLUMNS ON ONE REAL TRIP &#8212; pickup 2024-01-01 00:57:55 &#8594; dropoff 01:17:43</text>
+<line x1="40" y1="346" x2="920" y2="346" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="44" y="360" width="284" height="70" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="186" y="384" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">duration_min</text>
+<text x="186" y="404" text-anchor="middle" font-size="11" fill="#4a5568">(dropoff &#8722; pickup) seconds / 60</text>
+<text x="186" y="420" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">19.8 min</text>
+<rect x="338" y="360" width="284" height="70" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="480" y="384" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">fare_per_mile</text>
+<text x="480" y="404" text-anchor="middle" font-size="11" fill="#4a5568">total_amount 22.7 / distance 1.72</text>
+<text x="480" y="420" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">$13.20 / mile</text>
+<rect x="632" y="360" width="288" height="70" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="776" y="384" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">pickup_hour</text>
+<text x="776" y="404" text-anchor="middle" font-size="11" fill="#4a5568">F.hour(...) &#183; F.date_trunc("hour", ...)</text>
+<text x="776" y="420" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">hour 0 (00:00 bucket)</text>
+
+<!-- cross-check panel -->
+<rect x="40" y="452" width="880" height="90" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="60" y="478" font-size="12" font-weight="700" fill="#276749">Cross-check against ground truth &#8212; group the derived hour buckets by zone and hour, sort by trips:</text>
+<text x="60" y="502" font-size="12" fill="#4a5568">busiest zone-hour = zone 79 (East Village) &#183; 2024-02-25 01:00 &#183; <tspan font-weight="700" fill="#1a202c">846 trips</tspan> &#183; a Sunday 1 a.m.</text>
+<text x="60" y="524" font-size="11" fill="#718096">Identical to Module 2's report and Course 1's verified answer &#8212; the derived column is correct, not just plausible.</text>
+
+<line x1="40" y1="566" x2="920" y2="566" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40" y="580" width="880" height="96" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+<text x="60" y="606" font-size="12" font-weight="700" fill="#c05621">Columns are expressions, so Catalyst can see and optimize them &#8212; prefer built-in F.* functions over Python UDFs.</text>
+<text x="60" y="628" font-size="11" fill="#4a5568">withColumn returns a NEW DataFrame (the source frame is never mutated); alias renames, cast retypes &#8212; all still just plan.</text>
+<text x="60" y="648" font-size="11" fill="#4a5568">Nothing computes until an action. Building all of these columns over 9.5M rows launches zero jobs.</text>
+<text x="60" y="666" font-size="11" fill="#718096">Session time zone shifts the absolute epoch a cast produces, but never the difference &#8212; a duration is tz-safe; an instant is not.</text>
+</svg>

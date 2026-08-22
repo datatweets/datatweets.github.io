@@ -1,0 +1,7 @@
+region,seasonal_order,mae,successful_origins,required_origins,failure_count,failure_notes,selected
+validation,No seasonal block,8.355649,8,8,0,,False
+validation,"(1, 0, 0, 7)",4.949814,8,8,0,,False
+validation,"(0, 0, 1, 7)",6.743621,8,8,0,,False
+validation,"(1, 0, 1, 7)",3.680769,8,8,0,,True
+validation,"(0, 1, 1, 7)",3.803094,8,8,0,,False
+validation,"(1, 1, 0, 7)",4.144409,8,8,0,,False

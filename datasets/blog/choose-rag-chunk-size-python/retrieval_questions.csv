@@ -1,0 +1,13 @@
+question_id,question,expected_section,evidence_span,split
+Q01,How late can I arrive before my quiet room booking is released?,V01,within 12 minutes of its start,dev
+Q02,When does a visitor's paper entry pass expire?,V02,until 20:00 on the day it is issued,dev
+Q03,Where is the wheelchair-friendly entrance?,V03,east side beside the bicycle shelter,test
+Q04,How long does the desk keep an ordinary found item?,V04,stored for 30 calendar days,dev
+Q05,What happens if I do not approve a 3D print preview?,E01,"within 10 minutes, the queued job is cancelled automatically",test
+Q06,How much empty space is required behind the laser machine?,E02,by at least 25 centimetres,dev
+Q07,What time must an overnight camera loan be returned?,E03,due by 12:00 on the next working day,dev
+Q08,How long should extraction stay on after soldering?,E04,leave the fume extraction running for two minutes,test
+Q09,What interval does the downloadable room sensor file summarize?,D01,15-minute summaries,dev
+Q10,Can I cancel a request to erase my member profile?,D02,7-day waiting period during which it can be withdrawn,dev
+Q11,How many days are routine machine incident reports kept?,D03,remain in the safety system for 180 days,test
+Q12,How long can terminals store access events without a network?,D04,queued events for up to two hours,dev

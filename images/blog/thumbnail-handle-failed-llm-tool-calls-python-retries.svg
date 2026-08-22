@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Handle Failed LLM Tool Calls with Python Retries</title>
+  <desc id="desc">A retry policy checks whether an error is temporary, the operation is safe to repeat, attempts remain, and the delay fits the wait budget. Only then does it wait and try the function again; any failed check stops the retry.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0067c0"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="151" font-size="32" font-weight="600" letter-spacing="1" fill="#59636e">RELIABLE TOOL EXECUTION</text>
+    <text x="90" y="291" font-size="84" font-weight="700" fill="#1b1f24">SAFE TOOL</text>
+    <text x="90" y="390" font-size="84" font-weight="700" fill="#1b1f24">RETRIES</text>
+    <rect x="94" y="420" width="430" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="493" font-size="29" font-weight="500" fill="#59636e">BACKOFF &#183; JITTER &#183; LIMITS</text>
+
+    <rect x="674" y="96" width="426" height="483" rx="24" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+    <text x="710" y="140" font-size="22" font-weight="700" letter-spacing="1" fill="#59636e">RETRY POLICY</text>
+
+    <rect x="710" y="162" width="354" height="52" rx="12" fill="#ffffff" stroke="#d7dce1" stroke-width="2"/>
+    <circle cx="738" cy="188" r="14" fill="#e3f0fa"/>
+    <text x="738" y="195" text-anchor="middle" font-size="18" font-weight="700" fill="#0067c0">1</text>
+    <text x="765" y="195" font-size="20" font-weight="600" fill="#1b1f24">TEMPORARY ERROR?</text>
+    <text x="1034" y="195" text-anchor="end" font-size="17" font-weight="700" fill="#0067c0">YES</text>
+
+    <rect x="710" y="225" width="354" height="52" rx="12" fill="#ffffff" stroke="#d7dce1" stroke-width="2"/>
+    <circle cx="738" cy="251" r="14" fill="#e3f0fa"/>
+    <text x="738" y="258" text-anchor="middle" font-size="18" font-weight="700" fill="#0067c0">2</text>
+    <text x="765" y="258" font-size="20" font-weight="600" fill="#1b1f24">SAFE TO REPEAT?</text>
+    <text x="1034" y="258" text-anchor="end" font-size="17" font-weight="700" fill="#0067c0">YES</text>
+
+    <rect x="710" y="288" width="354" height="52" rx="12" fill="#ffffff" stroke="#d7dce1" stroke-width="2"/>
+    <circle cx="738" cy="314" r="14" fill="#e3f0fa"/>
+    <text x="738" y="321" text-anchor="middle" font-size="18" font-weight="700" fill="#0067c0">3</text>
+    <text x="765" y="321" font-size="20" font-weight="600" fill="#1b1f24">ATTEMPTS LEFT?</text>
+    <text x="1034" y="321" text-anchor="end" font-size="17" font-weight="700" fill="#0067c0">YES</text>
+
+    <rect x="710" y="351" width="354" height="52" rx="12" fill="#ffffff" stroke="#d7dce1" stroke-width="2"/>
+    <circle cx="738" cy="377" r="14" fill="#e3f0fa"/>
+    <text x="738" y="384" text-anchor="middle" font-size="18" font-weight="700" fill="#0067c0">4</text>
+    <text x="765" y="384" font-size="20" font-weight="600" fill="#1b1f24">WAIT FITS BUDGET?</text>
+    <text x="1034" y="384" text-anchor="end" font-size="17" font-weight="700" fill="#0067c0">YES</text>
+
+    <text x="710" y="440" font-size="16" font-weight="700" fill="#59636e">ALL YES</text>
+    <rect x="785" y="416" width="98" height="40" rx="20" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <text x="834" y="442" text-anchor="middle" font-size="18" font-weight="700" fill="#0067c0">WAIT</text>
+    <line x1="895" y1="436" x2="932" y2="436" stroke="#0067c0" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="940" y="416" width="124" height="40" rx="20" fill="#0067c0"/>
+    <text x="1002" y="442" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">RETRY</text>
+
+    <rect x="710" y="486" width="354" height="58" rx="14" fill="#fff3f0" stroke="#d8a69b" stroke-width="2"/>
+    <text x="738" y="522" font-size="18" font-weight="700" fill="#8a4638">ANY NO</text>
+    <line x1="836" y1="515" x2="910" y2="515" stroke="#8a4638" stroke-width="2"/>
+    <text x="1034" y="522" text-anchor="end" font-size="20" font-weight="700" fill="#8a4638">STOP</text>
+  </g>
+</svg>

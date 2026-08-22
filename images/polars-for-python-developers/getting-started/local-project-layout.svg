@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Sensible Local Layout for the Thistlewood Project</text>
+
+  <rect x="60" y="56" width="600" height="330" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+
+  <text x="90" y="86" font-size="13" font-weight="700" fill="#1a202c">thistlewood-polars/</text>
+
+  <rect x="100" y="98" width="150" height="28" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="112" y="117" font-size="10.5" fill="#2b6cb0">.venv/</text>
+  <text x="270" y="117" font-size="9.5" fill="#718096">your isolated Python environment</text>
+
+  <rect x="100" y="134" width="150" height="28" rx="6" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.3" />
+  <text x="112" y="153" font-size="10.5" fill="#6b46c1">data/</text>
+  <text x="270" y="153" font-size="9.5" fill="#718096">all project data lives here</text>
+
+  <rect x="130" y="170" width="150" height="26" rx="6" fill="#faf5ff" stroke="#b794f4" stroke-width="1.1" />
+  <text x="142" y="188" font-size="10" fill="#6b46c1">raw/</text>
+  <text x="300" y="188" font-size="9.5" fill="#718096">downloaded CSVs, never edited by hand</text>
+
+  <rect x="130" y="204" width="150" height="26" rx="6" fill="#faf5ff" stroke="#b794f4" stroke-width="1.1" />
+  <text x="142" y="222" font-size="10" fill="#6b46c1">processed/</text>
+  <text x="300" y="222" font-size="9.5" fill="#718096">cleaned output your scripts write</text>
+
+  <rect x="100" y="240" width="150" height="28" rx="6" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="112" y="259" font-size="10.5" fill="#9c4221">notebooks/</text>
+  <text x="270" y="259" font-size="9.5" fill="#718096">exploratory Jupyter notebooks (optional)</text>
+
+  <rect x="100" y="276" width="150" height="28" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3" />
+  <text x="112" y="295" font-size="10.5" fill="#276749">pipeline.py</text>
+  <text x="270" y="295" font-size="9.5" fill="#718096">the real script this module builds</text>
+
+  <rect x="100" y="312" width="150" height="28" rx="6" fill="#fdf2f2" stroke="#fc8181" stroke-width="1.3" />
+  <text x="112" y="331" font-size="10.5" fill="#c53030">requirements.txt</text>
+  <text x="270" y="331" font-size="9.5" fill="#718096">records exactly what's installed</text>
+
+  <rect x="100" y="348" width="150" height="26" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.1" />
+  <text x="112" y="366" font-size="10" fill="#4a5568">.gitignore</text>
+  <text x="270" y="366" font-size="9.5" fill="#718096">keeps .venv/ and data/raw/ out of git</text>
+
+  <text x="360" y="408" text-anchor="middle" font-size="10.5" fill="#718096">Raw data is never edited in place; scripts read from data/raw/ and write results to data/processed/.</text>
+</svg>

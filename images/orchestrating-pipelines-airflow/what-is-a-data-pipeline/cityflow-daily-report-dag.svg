@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 460" width="980" height="460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="980" height="460" fill="#ffffff"/>
+<text x="490" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">CityFlow's Daily Report DAG</text>
+<text x="490" y="58" text-anchor="middle" font-size="14" fill="#718096">a straight line in, a branch into two independent tasks, a merge back to one line out</text>
+
+<!-- ingest -->
+<rect x="30" y="180" width="150" height="80" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+<text x="105" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">ingest_taxi</text>
+<text x="105" y="231" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">_data</text>
+
+<!-- validate -->
+<rect x="230" y="180" width="150" height="80" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+<text x="305" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">validate</text>
+<text x="305" y="231" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">_trips</text>
+
+<!-- fare summary (top branch) -->
+<rect x="430" y="80" width="170" height="80" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+<text x="515" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">compute_fare</text>
+<text x="515" y="131" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">_summary</text>
+
+<!-- zone summary (bottom branch) -->
+<rect x="430" y="280" width="170" height="80" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+<text x="515" y="315" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">compute_zone</text>
+<text x="515" y="331" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">_summary</text>
+
+<!-- merge -->
+<rect x="660" y="180" width="150" height="80" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+<text x="735" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">merge</text>
+<text x="735" y="231" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">_summaries</text>
+
+<!-- load -->
+<rect x="850" y="180" width="110" height="80" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+<text x="905" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">load</text>
+<text x="905" y="231" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">_report</text>
+
+<!-- ingest -> validate -->
+<line x1="180" y1="220" x2="224" y2="220" stroke="#718096" stroke-width="2" marker-end="url(#arrowd)"/>
+
+<!-- validate -> fare summary -->
+<line x1="380" y1="200" x2="424" y2="130" stroke="#718096" stroke-width="2" marker-end="url(#arrowd)"/>
+<!-- validate -> zone summary -->
+<line x1="380" y1="240" x2="424" y2="310" stroke="#718096" stroke-width="2" marker-end="url(#arrowd)"/>
+
+<!-- fare summary -> merge -->
+<line x1="600" y1="130" x2="700" y2="196" stroke="#718096" stroke-width="2" marker-end="url(#arrowd)"/>
+<!-- zone summary -> merge -->
+<line x1="600" y1="310" x2="700" y2="244" stroke="#718096" stroke-width="2" marker-end="url(#arrowd)"/>
+
+<!-- merge -> load -->
+<line x1="810" y1="220" x2="844" y2="220" stroke="#718096" stroke-width="2" marker-end="url(#arrowd)"/>
+
+<line x1="40" y1="400" x2="940" y2="400" stroke="#e2e8f0" stroke-width="1"/>
+<text x="490" y="422" text-anchor="middle" font-size="12" fill="#4a5568">compute_fare_summary and compute_zone_summary share validate_trips as their only common ancestor --</text>
+<text x="490" y="440" text-anchor="middle" font-size="12" fill="#4a5568">there is no direct edge between them, so an orchestrator can run them at the same time.</text>
+
+<defs>
+<marker id="arrowd" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#718096"/>
+</marker>
+</defs>
+</svg>

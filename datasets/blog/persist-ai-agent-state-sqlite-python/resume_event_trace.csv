@@ -1,0 +1,10 @@
+run_id,sequence,session,event_type,action,detail,created_at_utc
+run-T104,1,session-1,run_started,start,new run,2026-07-19T08:00:01Z
+run-T104,2,session-1,checkpoint_saved,classify_priority,version 1; next=lookup_runbook,2026-07-19T08:00:02Z
+run-T104,3,session-1,tool_executed,lookup_runbook,run-T104:lookup_runbook,2026-07-19T08:00:03Z
+run-T104,4,session-2,run_resumed,resume,loaded durable state,2026-07-19T08:00:04Z
+run-T104,5,session-2,tool_reused,lookup_runbook,run-T104:lookup_runbook,2026-07-19T08:00:05Z
+run-T104,6,session-2,checkpoint_saved,lookup_runbook,version 2; next=draft_reply,2026-07-19T08:00:06Z
+run-T104,7,session-2,tool_executed,draft_reply,run-T104:draft_reply,2026-07-19T08:00:07Z
+run-T104,8,session-2,checkpoint_saved,draft_reply,version 3; next=finish,2026-07-19T08:00:08Z
+run-T104,9,session-2,checkpoint_saved,finish,version 4; next=none,2026-07-19T08:00:09Z

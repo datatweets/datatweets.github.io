@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="600" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">One Line Decides Whether Data Survives a Recreate</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Identical remove-and-recreate operation, run twice, on this machine</text>
+
+<!-- top timeline: no volume -->
+<text x="60" y="94" font-size="14" font-weight="700" fill="#c05621">NO VOLUMES KEY</text>
+
+<rect x="60" y="108" width="190" height="64" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="155" y="132" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c05621">db container</text>
+<text x="155" y="150" text-anchor="middle" font-size="10.5" fill="#4a5568">checkpoint: 1 row</text>
+<text x="155" y="164" text-anchor="middle" font-size="9.5" fill="#718096">(in writable layer)</text>
+
+<text x="290" y="145" text-anchor="middle" font-size="16" fill="#a0aec0">&#8594;</text>
+<text x="290" y="120" text-anchor="middle" font-size="10.5" fill="#4a5568">compose down</text>
+
+<rect x="330" y="108" width="190" height="64" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="425" y="132" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4a5568">container removed</text>
+<text x="425" y="150" text-anchor="middle" font-size="10.5" fill="#718096">writable layer gone</text>
+<text x="425" y="164" text-anchor="middle" font-size="10.5" fill="#718096">with it</text>
+
+<text x="560" y="145" text-anchor="middle" font-size="16" fill="#a0aec0">&#8594;</text>
+<text x="560" y="120" text-anchor="middle" font-size="10.5" fill="#4a5568">compose up -d</text>
+
+<rect x="600" y="108" width="190" height="64" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="695" y="132" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c05621">brand-new container</text>
+<text x="695" y="150" text-anchor="middle" font-size="10.5" fill="#4a5568">brand-new empty</text>
+<text x="695" y="164" text-anchor="middle" font-size="10.5" fill="#4a5568">writable layer</text>
+
+<rect x="810" y="108" width="110" height="64" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="865" y="134" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">relation</text>
+<text x="865" y="150" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">"checkpoint"</text>
+<text x="865" y="166" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">does not exist</text>
+
+<line x1="40" y1="200" x2="920" y2="200" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+
+<!-- bottom timeline: with volume -->
+<text x="60" y="234" font-size="14" font-weight="700" fill="#276749">NAMED VOLUME cf-vol-demo-data</text>
+
+<rect x="60" y="248" width="190" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="155" y="272" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">db container</text>
+<text x="155" y="290" text-anchor="middle" font-size="10.5" fill="#4a5568">checkpoint: 1 row</text>
+<text x="155" y="304" text-anchor="middle" font-size="9.5" fill="#718096">(in named volume)</text>
+
+<text x="290" y="288" text-anchor="middle" font-size="16" fill="#a0aec0">&#8594;</text>
+<text x="290" y="260" text-anchor="middle" font-size="10.5" fill="#4a5568">compose down</text>
+
+<rect x="330" y="248" width="190" height="70" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="425" y="272" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4a5568">container removed</text>
+<text x="425" y="290" text-anchor="middle" font-size="10.5" fill="#276749" font-weight="700">volume stays</text>
+<text x="425" y="304" text-anchor="middle" font-size="9.5" fill="#718096">(down never deletes it)</text>
+
+<text x="560" y="288" text-anchor="middle" font-size="16" fill="#a0aec0">&#8594;</text>
+<text x="560" y="260" text-anchor="middle" font-size="10.5" fill="#4a5568">compose up -d</text>
+
+<rect x="600" y="248" width="190" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="695" y="272" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">new container</text>
+<text x="695" y="290" text-anchor="middle" font-size="10.5" fill="#4a5568">reattaches to the</text>
+<text x="695" y="304" text-anchor="middle" font-size="10.5" fill="#4a5568">same named volume</text>
+
+<rect x="800" y="248" width="130" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="865" y="270" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">1 row, still there:</text>
+<text x="865" y="286" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">"written before</text>
+<text x="865" y="302" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">recreate"</text>
+
+<line x1="40" y1="342" x2="920" y2="342" stroke="#e2e8f0" stroke-width="1"/>
+
+<rect x="40" y="360" width="880" height="90" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="60" y="386" font-size="12.5" font-weight="700" fill="#2d3748">volumes:</text>
+<text x="60" y="406" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">  - cf-vol-demo-data:/var/lib/postgresql/data</text>
+<text x="60" y="430" font-size="11.5" fill="#718096">One added mapping under the db service, plus a top-level "volumes:" declaration, is the entire difference</text>
+<text x="60" y="446" font-size="11.5" fill="#718096">between the two timelines above &#8212; same image, same commands, same TRUNCATE/INSERT script.</text>
+
+<text x="480" y="484" text-anchor="middle" font-size="12" fill="#718096">Plain "docker compose down" never removes a named volume &#8212; "down -v" is the flag that actually deletes it.</text>
+</svg>

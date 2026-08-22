@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 712" width="960" height="712" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="712" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Partitions: the unit of parallelism</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">January 2024 yellow taxi &#183; 47.6&#160;MB parquet &#8594; 10 partitions &#8594; 10 tasks on 10 cores &#183; pyspark 4.2.0, local[*]</text>
+
+<!-- ROW 1 LEFT: one partition = one task -->
+<rect x="24" y="80" width="470" height="188" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="1.5"/>
+<text x="40" y="104" font-size="14" font-weight="700" fill="#1a202c">One partition = one task = one core</text>
+<rect x="40" y="118" width="140" height="46" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="110" y="139" text-anchor="middle" font-size="11" fill="#2b6cb0">yellow_tripdata</text>
+<text x="110" y="155" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">_2024-01 &#183; 47.6&#160;MB</text>
+<text x="196" y="145" font-size="16" fill="#4a5568">&#8594;</text>
+<!-- 10 partitions -->
+<g fill="#bee3f8" stroke="#2b6cb0" stroke-width="1">
+<rect x="216" y="120" width="24" height="20" rx="3"/><rect x="244" y="120" width="24" height="20" rx="3"/>
+<rect x="272" y="120" width="24" height="20" rx="3"/><rect x="300" y="120" width="24" height="20" rx="3"/>
+<rect x="328" y="120" width="24" height="20" rx="3"/><rect x="216" y="144" width="24" height="20" rx="3"/>
+<rect x="244" y="144" width="24" height="20" rx="3"/><rect x="272" y="144" width="24" height="20" rx="3"/>
+<rect x="300" y="144" width="24" height="20" rx="3"/><rect x="328" y="144" width="24" height="20" rx="3"/>
+</g>
+<text x="288" y="182" text-anchor="middle" font-size="11" fill="#4a5568">10 partitions</text>
+<text x="368" y="145" font-size="16" fill="#4a5568">&#8594;</text>
+<g fill="#276749">
+<rect x="392" y="120" width="14" height="44" rx="2"/><rect x="410" y="120" width="14" height="44" rx="2"/>
+<rect x="428" y="120" width="14" height="44" rx="2"/><rect x="446" y="120" width="14" height="44" rx="2"/>
+<rect x="464" y="120" width="14" height="44" rx="2"/>
+</g>
+<text x="435" y="182" text-anchor="middle" font-size="11" fill="#276749">10 cores work at once</text>
+<text x="40" y="212" font-size="12" fill="#4a5568">Every stage runs <tspan font-weight="700">one task per partition</tspan>. Ten partitions means</text>
+<text x="40" y="230" font-size="12" fill="#4a5568">all ten cores get work; the count is set at read time.</text>
+<text x="40" y="252" font-size="12" font-weight="700" fill="#1a202c">df.rdd.getNumPartitions() &#8594; 10   (defaultParallelism = 10)</text>
+
+<!-- ROW 1 RIGHT: why 10 -->
+<rect x="506" y="80" width="430" height="188" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="522" y="104" font-size="14" font-weight="700" fill="#c05621">Why 10, not 1?</text>
+<text x="522" y="128" font-size="12" fill="#4a5568">maxSplitBytes = min( 128&#160;MiB cap , max( 4&#160;MiB , bytesPerCore ) )</text>
+<text x="522" y="150" font-size="12" fill="#4a5568">bytesPerCore = (47.6 + 4)&#160;MiB &#247; 10 cores &#8776; <tspan font-weight="700">5.16&#160;MiB</tspan></text>
+<text x="522" y="172" font-size="12" fill="#4a5568">47.6&#160;MiB &#247; 5.16&#160;MiB &#8776; <tspan font-weight="700" fill="#c05621">10 splits</tspan></text>
+<text x="522" y="200" font-size="12" fill="#4a5568">The 128&#160;MiB cap is far above 5.16&#160;MiB, so it does not bind:</text>
+<text x="522" y="220" font-size="12" fill="#4a5568">here <tspan font-weight="700">defaultParallelism</tspan> decides. Shrink the cap and the</text>
+<text x="522" y="240" font-size="12" fill="#4a5568">count climbs: cap 4m&#8594;12, 2m&#8594;24, 1m&#8594;48 partitions.</text>
+<text x="522" y="260" font-size="11" fill="#718096">The 3-file quarter (160&#160;MB) also plans 10 the same way.</text>
+
+<!-- ROW 2: repartition vs coalesce -->
+<rect x="24" y="288" width="452" height="176" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="40" y="312" font-size="15" font-weight="700" fill="#2b6cb0">repartition(n) &#8212; FULL SHUFFLE</text>
+<text x="40" y="334" font-size="12" fill="#4a5568">Even sizes. Can increase <tspan font-weight="700">or</tspan> decrease.</text>
+<text x="40" y="356" font-size="12" fill="#4a5568">Plan node: <tspan font-weight="700">Exchange RoundRobinPartitioning(n)</tspan></text>
+<rect x="40" y="372" width="410" height="30" rx="5" fill="#ffffff" stroke="#bee3f8"/>
+<text x="52" y="392" font-size="11" fill="#2b6cb0">repartition(20) &#8594; 20 even partitions (rows move across the network)</text>
+<text x="40" y="424" font-size="12" fill="#4a5568">Right when you have <tspan font-weight="700">too few</tspan> partitions or need to</text>
+<text x="40" y="442" font-size="12" fill="#4a5568">rebalance &#8212; it is the only way to <tspan font-weight="700">raise</tspan> the count.</text>
+<text x="40" y="460" font-size="11" fill="#718096">repartition(col) hash-partitions by key: same-key rows colocate.</text>
+
+<rect x="488" y="288" width="448" height="176" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="504" y="312" font-size="15" font-weight="700" fill="#276749">coalesce(n) &#8212; NO SHUFFLE</text>
+<text x="504" y="334" font-size="12" fill="#4a5568">Merges neighbours. Can <tspan font-weight="700">only decrease</tspan>. May stay uneven.</text>
+<text x="504" y="356" font-size="12" fill="#4a5568">Plan node: <tspan font-weight="700">Coalesce n</tspan> (no Exchange)</text>
+<rect x="504" y="372" width="418" height="30" rx="5" fill="#ffffff" stroke="#c6f6d5"/>
+<text x="516" y="392" font-size="11" fill="#276749">coalesce(20) &#8594; 10 (ignored: it cannot add partitions)</text>
+<text x="504" y="424" font-size="12" fill="#4a5568">Cheap to shrink output files &#8212; but its low count flows</text>
+<text x="504" y="442" font-size="12" fill="#4a5568"><tspan font-weight="700">upstream</tspan>: coalesce(1) after a big scan serialises the scan.</text>
+<text x="504" y="460" font-size="11" fill="#718096">On a scan-heavy job repartition(1)'s shuffle can beat it.</text>
+
+<!-- ROW 3: goldilocks -->
+<rect x="24" y="484" width="912" height="164" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="1.5"/>
+<text x="40" y="508" font-size="15" font-weight="700" fill="#553c9a">The Goldilocks curve (same zone-hour aggregation, timed)</text>
+<!-- bars -->
+<text x="40" y="536" font-size="12" fill="#4a5568">coalesce(1) &#183; too few</text>
+<rect x="230" y="524" width="186" height="16" rx="3" fill="#fc8181"/>
+<text x="428" y="537" font-size="12" font-weight="700" fill="#c53030">3.0&#215; slower &#8212; one core does it all</text>
+<text x="40" y="566" font-size="12" fill="#4a5568">5 to 10 &#183; sweet spot</text>
+<rect x="230" y="554" width="62" height="16" rx="3" fill="#48bb78"/>
+<text x="304" y="567" font-size="12" font-weight="700" fill="#276749">1.0&#215; baseline &#8212; near the core count (10)</text>
+<text x="40" y="596" font-size="12" fill="#4a5568">repartition(1000) &#183; too many</text>
+<rect x="230" y="584" width="360" height="16" rx="3" fill="#c05621"/>
+<text x="602" y="597" font-size="12" font-weight="700" fill="#c05621">&#8776; 132&#215; slower &#8212; scheduling 1000 tiny tasks</text>
+<text x="40" y="626" font-size="12" fill="#718096">Seconds vary by run and machine &#8212; the <tspan font-weight="700">ratios</tspan> are the point. Aim near your core count.</text>
+
+<!-- footer -->
+<line x1="24" y1="664" x2="936" y2="664" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="692" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Cross-check: the count stays 2,964,624 trips no matter how the data is partitioned.</text>
+</svg>

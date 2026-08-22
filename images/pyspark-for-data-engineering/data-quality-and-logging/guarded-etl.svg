@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 632" width="960" height="632" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="632" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">The Guarded ETL &#8212; the same job, now safe to run unattended</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">validate &#8594; quarantine &#8594; transform &#8594; validate &#8594; gate &#8594; write, with a real exit code at the end</text>
+
+<text x="32" y="92" font-size="15" font-weight="700" fill="#2b6cb0">THE GUARDED JOB &#8212; SIX STAGES, THE GATE BEFORE THE WRITE</text>
+
+<!-- 1 VALIDATE INPUT -->
+<rect x="32" y="104" width="136" height="124" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="32" y="104" width="136" height="24" rx="8" fill="#2b6cb0"/>
+<text x="100" y="121" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">1 &#183; VALIDATE IN</text>
+<text x="100" y="148" text-anchor="middle" font-size="10.5" fill="#4a5568">volume &#183; range</text>
+<text x="100" y="164" text-anchor="middle" font-size="10.5" fill="#4a5568">referential &#183; nulls</text>
+<text x="100" y="182" text-anchor="middle" font-size="10.5" fill="#4a5568">5 rules, one pass</text>
+<text x="100" y="206" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1a202c">9,554,778</text>
+<text x="100" y="220" text-anchor="middle" font-size="10" fill="#718096">rows in</text>
+
+<!-- 2 QUARANTINE -->
+<rect x="184" y="104" width="136" height="124" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<rect x="184" y="104" width="136" height="24" rx="8" fill="#c05621"/>
+<text x="252" y="121" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">2 &#183; QUARANTINE</text>
+<text x="252" y="148" text-anchor="middle" font-size="10.5" fill="#4a5568">good and bad</text>
+<text x="252" y="164" text-anchor="middle" font-size="10.5" fill="#4a5568">both written</text>
+<text x="252" y="180" text-anchor="middle" font-size="10.5" fill="#4a5568">with a reason</text>
+<text x="252" y="202" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1a202c">9,554,757</text>
+<text x="252" y="220" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">+ 21 held back</text>
+
+<!-- 3 TRANSFORM -->
+<rect x="336" y="104" width="136" height="124" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="336" y="104" width="136" height="24" rx="8" fill="#2b6cb0"/>
+<text x="404" y="121" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">3 &#183; TRANSFORM</text>
+<text x="404" y="150" text-anchor="middle" font-size="10.5" fill="#4a5568">date_trunc hour</text>
+<text x="404" y="168" text-anchor="middle" font-size="10.5" fill="#4a5568">broadcast join</text>
+<text x="404" y="184" text-anchor="middle" font-size="10.5" fill="#4a5568">265 zones</text>
+<text x="404" y="208" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1a202c">240,917</text>
+<text x="404" y="222" text-anchor="middle" font-size="10" fill="#718096">zone-hour buckets</text>
+
+<!-- 4 VALIDATE OUTPUT -->
+<rect x="488" y="104" width="136" height="124" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="488" y="104" width="136" height="24" rx="8" fill="#2b6cb0"/>
+<text x="556" y="121" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">4 &#183; VALIDATE OUT</text>
+<text x="556" y="148" text-anchor="middle" font-size="10.5" fill="#4a5568">good + held back</text>
+<text x="556" y="164" text-anchor="middle" font-size="10.5" fill="#4a5568">equals rows in</text>
+<text x="556" y="180" text-anchor="middle" font-size="10.5" fill="#4a5568">trips equal cleaned</text>
+<text x="556" y="204" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a202c">4 recon rules</text>
+<text x="556" y="220" text-anchor="middle" font-size="10" fill="#718096">totals in range</text>
+
+<!-- 5 GATE -->
+<rect x="640" y="104" width="136" height="124" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<rect x="640" y="104" width="136" height="24" rx="8" fill="#c53030"/>
+<text x="708" y="121" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">5 &#183; THE GATE</text>
+<text x="708" y="148" text-anchor="middle" font-size="10.5" fill="#4a5568">warn &#8594; log and go</text>
+<text x="708" y="166" text-anchor="middle" font-size="10.5" fill="#c53030">critical &#8594; abort</text>
+<text x="708" y="192" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">BEFORE</text>
+<text x="708" y="208" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">the write</text>
+<text x="708" y="222" text-anchor="middle" font-size="10" fill="#718096">no bad data published</text>
+
+<!-- 6 WRITE + LOG -->
+<rect x="792" y="104" width="136" height="124" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<rect x="792" y="104" width="136" height="24" rx="8" fill="#276749"/>
+<text x="860" y="121" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">6 &#183; WRITE + LOG</text>
+<text x="860" y="148" text-anchor="middle" font-size="10.5" fill="#4a5568">91 partitions</text>
+<text x="860" y="164" text-anchor="middle" font-size="10.5" fill="#4a5568">JSON run summary</text>
+<text x="860" y="180" text-anchor="middle" font-size="10.5" fill="#4a5568">per-stage seconds</text>
+<text x="860" y="204" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">$256,692,373.14</text>
+<text x="860" y="220" text-anchor="middle" font-size="10" fill="#718096">read back and checked</text>
+
+<text x="176" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#a0aec0">&#8594;</text>
+<text x="328" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#a0aec0">&#8594;</text>
+<text x="480" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#a0aec0">&#8594;</text>
+<text x="632" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#a0aec0">&#8594;</text>
+<text x="784" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#a0aec0">&#8594;</text>
+
+<line x1="32" y1="252" x2="928" y2="252" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="32" y="282" font-size="15" font-weight="700" fill="#1a202c">TWO RUNS OF THE SAME SCRIPT &#8212; TWO REAL EXIT CODES</text>
+
+<!-- GOOD RUN -->
+<rect x="32" y="296" width="440" height="158" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="52" y="320" font-size="13" font-weight="700" fill="#276749">GOOD RUN &#8212; all three months arrive</text>
+<text x="52" y="342" font-size="11.5" fill="#4a5568">9 rules evaluated &#183; 8 pass &#183; 1 warn (a 312,722-mile trip)</text>
+<text x="52" y="360" font-size="11.5" fill="#4a5568">gate: no critical failure &#8594; proceed to write</text>
+<text x="52" y="380" font-size="11.5" fill="#1a202c">published 240,917 buckets &#183; 9,554,757 trips</text>
+<text x="52" y="398" font-size="11.5" fill="#1a202c">revenue <tspan font-weight="700" fill="#276749">$256,692,373.14</tspan> &#183; quarantine holds 21</text>
+<rect x="52" y="410" width="150" height="30" rx="6" fill="#276749"/>
+<text x="127" y="430" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">EXIT CODE 0</text>
+<text x="216" y="430" font-size="11.5" fill="#718096">22.5&#160;s &#183; status &quot;published&quot;</text>
+
+<!-- BAD RUN -->
+<rect x="488" y="296" width="440" height="158" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="508" y="320" font-size="13" font-weight="700" fill="#c53030">BAD RUN &#8212; a half-failed March export</text>
+<text x="508" y="342" font-size="11.5" fill="#4a5568">input.volume observed 6,072,150, expected &#8805;&#160;9,000,000</text>
+<text x="508" y="360" font-size="11.5" fill="#c53030">CRITICAL &#8594; abort at stage 1, nothing transformed or written</text>
+<text x="508" y="380" font-size="11.5" fill="#1a202c">last good table untouched: 91 of 91 files identical</text>
+<text x="508" y="398" font-size="11.5" fill="#1a202c">still reads <tspan font-weight="700" fill="#276749">$256,692,373.14</tspan> &#183; quarantine still 21</text>
+<rect x="508" y="410" width="150" height="30" rx="6" fill="#c53030"/>
+<text x="583" y="430" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">EXIT CODE 2</text>
+<text x="672" y="430" font-size="11.5" fill="#718096">13.8&#160;s &#183; status &quot;aborted&quot;</text>
+
+<line x1="32" y1="474" x2="928" y2="474" stroke="#e2e8f0" stroke-width="1"/>
+
+<rect x="32" y="490" width="896" height="118" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="516" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1a202c">The data-quality checklist this script embodies</text>
+<text x="480" y="540" text-anchor="middle" font-size="12" fill="#4a5568">1&#160;&#183;&#160;validate the input before you trust it &#160;&#160; 2&#160;&#183;&#160;quarantine with a reason, never silently drop</text>
+<text x="480" y="560" text-anchor="middle" font-size="12" fill="#4a5568">3&#160;&#183;&#160;reconcile (good&#160;+&#160;held back &#160;=&#160;rows in) &#160;&#160; 4&#160;&#183;&#160;put the gate BEFORE the write, not after</text>
+<text x="480" y="580" text-anchor="middle" font-size="12" fill="#4a5568">5&#160;&#183;&#160;log one machine-readable run summary &#160;&#160; 6&#160;&#183;&#160;exit nonzero so the scheduler finds out</text>
+<text x="480" y="600" text-anchor="middle" font-size="11.5" font-style="italic" fill="#718096">A job that runs is not a job you can trust &#8212; the difference is what it does on the night the data is wrong.</text>
+</svg>

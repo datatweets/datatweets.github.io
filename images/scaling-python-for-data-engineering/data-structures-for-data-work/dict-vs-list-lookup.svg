@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="640" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">A list scan checks rows one by one; a dict hashes straight to the value</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Zone lookup on the real 265-row NYC TLC zone dimension &#8212; measured over 200,000 lookups and 2,964,624 real trips</text>
+<line x1="480" y1="78" x2="480" y2="424" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- LEFT: LIST SCAN -->
+<text x="240" y="102" text-anchor="middle" font-size="16" font-weight="700" fill="#c05621">LIST &#8212; O(n) scan</text>
+<text x="240" y="122" text-anchor="middle" font-size="11" fill="#718096">zone_list = [(id, zone, borough), &#8230;]</text>
+
+<rect x="55" y="138" width="370" height="252" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="240" y="162" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">lookup_by_scan(132)</text>
+
+<line x1="86" y1="176" x2="86" y2="332" stroke="#c05621" stroke-width="1.5"/>
+<path d="M 86 338 L 82 328 L 90 328 Z" fill="#c05621"/>
+
+<rect x="100" y="176" width="230" height="20" rx="4" fill="#ffffff" stroke="#fbd38d" stroke-width="1"/>
+<text x="108" y="190" font-size="10" fill="#4a5568">id 1 &#183; Newark Airport</text>
+<text x="342" y="190" font-size="11" font-weight="700" fill="#c53030">no</text>
+
+<rect x="100" y="202" width="230" height="20" rx="4" fill="#ffffff" stroke="#fbd38d" stroke-width="1"/>
+<text x="108" y="216" font-size="10" fill="#4a5568">id 2 &#183; Jamaica Bay</text>
+<text x="342" y="216" font-size="11" font-weight="700" fill="#c53030">no</text>
+
+<rect x="100" y="228" width="230" height="20" rx="4" fill="#ffffff" stroke="#fbd38d" stroke-width="1"/>
+<text x="108" y="242" font-size="10" fill="#4a5568">id 3 &#183; Allerton/Pelham Gardens</text>
+<text x="342" y="242" font-size="11" font-weight="700" fill="#c53030">no</text>
+
+<text x="215" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">&#8230; 127 more rows &#8230;</text>
+
+<rect x="100" y="278" width="230" height="20" rx="4" fill="#ffffff" stroke="#fbd38d" stroke-width="1"/>
+<text x="108" y="292" font-size="10" fill="#4a5568">id 131 &#183; Jamaica Estates</text>
+<text x="342" y="292" font-size="11" font-weight="700" fill="#c53030">no</text>
+
+<rect x="100" y="304" width="230" height="24" rx="4" fill="#c05621" stroke="#7b341e" stroke-width="1"/>
+<text x="108" y="320" font-size="10" font-weight="700" fill="#ffffff">id 132 &#183; JFK Airport &#183; Queens</text>
+<text x="342" y="320" font-size="11" font-weight="700" fill="#276749">hit</text>
+
+<rect x="100" y="342" width="230" height="34" rx="6" fill="#ffffff" stroke="#c05621" stroke-width="1"/>
+<text x="215" y="356" text-anchor="middle" font-size="10" fill="#c05621">132 comparisons for this one lookup</text>
+<text x="215" y="369" text-anchor="middle" font-size="10" font-weight="700" fill="#c05621">avg 131.9 of 265 rows compared</text>
+
+<text x="240" y="410" text-anchor="middle" font-size="12" fill="#4a5568">Add zones and every lookup gets slower &#8212; cost grows with the table.</text>
+
+<!-- RIGHT: DICT HASH -->
+<text x="720" y="102" text-anchor="middle" font-size="16" font-weight="700" fill="#276749">DICT &#8212; O(1) hash</text>
+<text x="720" y="122" text-anchor="middle" font-size="11" fill="#718096">zone_dict = {id: (zone, borough)}</text>
+
+<rect x="535" y="138" width="370" height="252" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="720" y="162" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">lookup_by_hash(132)</text>
+
+<rect x="620" y="176" width="200" height="26" rx="6" fill="#ffffff" stroke="#48bb78" stroke-width="1"/>
+<text x="720" y="194" text-anchor="middle" font-size="11" font-weight="600" fill="#276749">hash(132) &#8594; slot number</text>
+<line x1="720" y1="202" x2="720" y2="222" stroke="#276749" stroke-width="1.5"/>
+<path d="M 720 228 L 716 218 L 724 218 Z" fill="#276749"/>
+
+<text x="720" y="246" text-anchor="middle" font-size="10" fill="#718096">hash table slots</text>
+<rect x="560" y="254" width="26" height="26" rx="3" fill="#ffffff" stroke="#c6f6d5"/>
+<rect x="592" y="254" width="26" height="26" rx="3" fill="#ffffff" stroke="#c6f6d5"/>
+<rect x="624" y="254" width="26" height="26" rx="3" fill="#ffffff" stroke="#c6f6d5"/>
+<rect x="656" y="254" width="26" height="26" rx="3" fill="#ffffff" stroke="#c6f6d5"/>
+<rect x="688" y="254" width="26" height="26" rx="3" fill="#48bb78" stroke="#276749" stroke-width="1.5"/>
+<text x="701" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">132</text>
+<rect x="720" y="254" width="26" height="26" rx="3" fill="#ffffff" stroke="#c6f6d5"/>
+<rect x="752" y="254" width="26" height="26" rx="3" fill="#ffffff" stroke="#c6f6d5"/>
+<rect x="784" y="254" width="26" height="26" rx="3" fill="#ffffff" stroke="#c6f6d5"/>
+<rect x="816" y="254" width="26" height="26" rx="3" fill="#ffffff" stroke="#c6f6d5"/>
+<rect x="848" y="254" width="26" height="26" rx="3" fill="#ffffff" stroke="#c6f6d5"/>
+
+<line x1="701" y1="280" x2="701" y2="298" stroke="#276749" stroke-width="1.5"/>
+<path d="M 701 304 L 697 294 L 705 294 Z" fill="#276749"/>
+
+<rect x="590" y="304" width="230" height="24" rx="4" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+<text x="598" y="320" font-size="10" font-weight="700" fill="#ffffff">('JFK Airport', 'Queens')</text>
+
+<rect x="590" y="342" width="230" height="34" rx="6" fill="#ffffff" stroke="#276749" stroke-width="1"/>
+<text x="705" y="356" text-anchor="middle" font-size="10" fill="#276749">1 hash &#43; 1 jump for this one lookup</text>
+<text x="705" y="369" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">same cost at 265 or 265,000 zones</text>
+
+<text x="720" y="410" text-anchor="middle" font-size="12" fill="#4a5568">Hashing computes WHERE the value lives &#8212; size does not matter.</text>
+
+<!-- MEASURED RESULTS -->
+<line x1="55" y1="430" x2="905" y2="430" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="452" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">MEASURED &#8212; same answers, same data, only the structure differs</text>
+
+<rect x="55" y="466" width="270" height="106" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1"/>
+<text x="190" y="486" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">200,000 isolated lookups</text>
+<text x="190" y="506" text-anchor="middle" font-size="11" fill="#c05621">list scan &#183; 0.415 s</text>
+<text x="190" y="524" text-anchor="middle" font-size="11" fill="#276749">dict hash &#183; 0.011 s</text>
+<rect x="80" y="534" width="220" height="28" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+<text x="190" y="553" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">36.5&#215; faster</text>
+
+<rect x="345" y="466" width="270" height="106" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1"/>
+<text x="480" y="486" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">2,964,624 real trips enriched</text>
+<text x="480" y="506" text-anchor="middle" font-size="11" fill="#c05621">list scan &#183; 7.92 s</text>
+<text x="480" y="524" text-anchor="middle" font-size="11" fill="#276749">dict hash &#183; 0.41 s</text>
+<rect x="370" y="534" width="220" height="28" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+<text x="480" y="553" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">19.2&#215; faster</text>
+
+<rect x="635" y="466" width="270" height="106" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1"/>
+<text x="770" y="486" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">the price &#8212; container memory</text>
+<text x="770" y="506" text-anchor="middle" font-size="11" fill="#c05621">list &#183; 2,200 bytes</text>
+<text x="770" y="524" text-anchor="middle" font-size="11" fill="#276749">dict &#183; 9,304 bytes</text>
+<rect x="660" y="534" width="220" height="28" rx="6" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+<text x="770" y="553" text-anchor="middle" font-size="15" font-weight="700" fill="#c05621">4.2&#215; more memory</text>
+
+<text x="480" y="600" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">The dict trades a few kilobytes of empty slots for a lookup that never gets slower.</text>
+<text x="480" y="622" text-anchor="middle" font-size="12" fill="#4a5568">Keys must be hashable, and the hash table has no meaningful order &#8212; on 265 zones that is a bargain worth taking every time.</text>
+</svg>

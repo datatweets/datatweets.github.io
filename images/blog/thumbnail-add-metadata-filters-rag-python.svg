@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Add Metadata Filters to RAG Retrieval with Python</title>
+  <desc id="desc">A DataTweets tutorial thumbnail showing document metadata passing through an eligibility filter before the remaining documents are ranked.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="35" font-weight="600" letter-spacing="1" fill="#59636e">RAG RETRIEVAL</text>
+    <text x="90" y="276" font-size="76" font-weight="700" fill="#1b1f24">FILTER FIRST</text>
+    <text x="90" y="366" font-size="76" font-weight="700" fill="#1b1f24">RANK SECOND</text>
+    <rect x="94" y="402" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="474" font-size="28" font-weight="500" fill="#59636e">REGION &#183; PLAN &#183; STATUS</text>
+
+    <g transform="translate(688 114)">
+      <rect x="0" y="0" width="414" height="446" rx="24" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="28" y="46" font-size="20" font-weight="600" letter-spacing="1" fill="#59636e">DOCUMENTS</text>
+      <text x="329" y="46" font-size="20" font-weight="600" letter-spacing="1" fill="#59636e">RANK</text>
+
+      <path d="M144 112 H183 M144 200 H183 M144 288 H183" fill="none" stroke="#c7ccd2" stroke-width="3" stroke-linecap="round"/>
+      <path d="M304 184 H334 M304 272 H334" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+
+      <rect x="24" y="76" width="120" height="72" rx="12" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+      <circle cx="43" cy="98" r="6" fill="#2ca25f"/>
+      <text x="56" y="105" font-size="19" font-weight="700" fill="#1b1f24">DOC A</text>
+      <text x="42" y="130" font-size="14" font-weight="600" fill="#59636e">APAC &#183; FREE</text>
+
+      <rect x="24" y="164" width="120" height="72" rx="12" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <circle cx="43" cy="186" r="6" fill="#d96b5f"/>
+      <text x="56" y="193" font-size="19" font-weight="700" fill="#59636e">DOC B</text>
+      <text x="42" y="218" font-size="14" font-weight="600" fill="#59636e">ARCHIVED</text>
+
+      <rect x="24" y="252" width="120" height="72" rx="12" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+      <circle cx="43" cy="274" r="6" fill="#2ca25f"/>
+      <text x="56" y="281" font-size="19" font-weight="700" fill="#1b1f24">DOC C</text>
+      <text x="42" y="306" font-size="14" font-weight="600" fill="#59636e">GLOBAL &#183; FREE</text>
+
+      <rect x="183" y="76" width="121" height="248" rx="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <text x="203" y="112" font-size="18" font-weight="700" fill="#1b1f24">ELIGIBLE?</text>
+      <line x1="203" y1="129" x2="284" y2="129" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+      <text x="203" y="168" font-size="16" font-weight="600" fill="#59636e">STATUS</text>
+      <text x="203" y="205" font-size="16" font-weight="600" fill="#59636e">REGION</text>
+      <text x="203" y="242" font-size="16" font-weight="600" fill="#59636e">PLAN</text>
+      <rect x="197" y="269" width="93" height="34" rx="17" fill="#ffffff"/>
+      <text x="209" y="292" font-size="14" font-weight="700" fill="#0067c0">A + C PASS</text>
+
+      <rect x="334" y="148" width="56" height="72" rx="12" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+      <text x="348" y="178" font-size="17" font-weight="700" fill="#0067c0">1</text>
+      <text x="344" y="204" font-size="15" font-weight="700" fill="#1b1f24">A</text>
+      <rect x="334" y="236" width="56" height="72" rx="12" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+      <text x="348" y="266" font-size="17" font-weight="700" fill="#0067c0">2</text>
+      <text x="344" y="292" font-size="15" font-weight="700" fill="#1b1f24">C</text>
+
+      <line x1="24" y1="360" x2="390" y2="360" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="24" y="399" font-size="18" font-weight="600" fill="#59636e">FILTER</text>
+      <text x="91" y="399" font-size="18" font-weight="700" fill="#0067c0">&#8594;</text>
+      <text x="124" y="399" font-size="18" font-weight="600" fill="#59636e">THEN RANK ELIGIBLE TEXT</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Dry run predicts it, execute commits it -- lag moves from 12 to 30</title>
+  <desc>An offset reset on cityflow-orchestration-monitor runs as --dry-run first, showing every partition's new offset would become 0 with nothing committed. Only after confirming that preview matches the intended target does the identical command rerun with --execute, actually committing the change. Real consumer lag moves from 12, measured before the reset, to 30 after it -- exactly the outcome the dry run predicted, since resetting to earliest makes every previously-committed message look unread again.</desc>
+  <rect width="1100" height="440" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Admin Safety: Dry Run Predicts It, Execute Commits It</text>
+
+  <!-- step 1: before -->
+  <rect x="40" y="60" width="230" height="90" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="155" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">Before</text>
+  <text x="155" y="102" text-anchor="middle" font-size="9.5" fill="#22543d">Lesson 2 measured</text>
+  <text x="155" y="118" text-anchor="middle" font-size="13" font-weight="700" font-family="Menlo, monospace" fill="#22543d">total_lag = 12</text>
+  <text x="155" y="136" text-anchor="middle" font-size="8.5" fill="#22543d">partition 2 only, lag=12</text>
+
+  <path d="M270,105 L330,105" stroke="#a0aec0" stroke-width="2" marker-end="url(#a12)" />
+
+  <!-- step 2: dry run -->
+  <rect x="330" y="60" width="240" height="90" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="450" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#7b341e">--dry-run --to-earliest</text>
+  <text x="450" y="102" text-anchor="middle" font-size="9" fill="#7b341e">preview only -- nothing committed</text>
+  <text x="450" y="120" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#7b341e">p0 -> 0   p1 -> 0   p2 -> 0</text>
+  <text x="450" y="136" text-anchor="middle" font-size="8.5" fill="#7b341e">confirm this is the real target</text>
+
+  <path d="M570,105 L630,105" stroke="#a0aec0" stroke-width="2" marker-end="url(#a12)" />
+
+  <!-- step 3: execute -->
+  <rect x="630" y="60" width="230" height="90" rx="8" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="745" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#822727">--execute --to-earliest</text>
+  <text x="745" y="102" text-anchor="middle" font-size="9" fill="#822727">identical command, now real</text>
+  <text x="745" y="120" text-anchor="middle" font-size="9" fill="#822727">offsets actually committed to 0</text>
+
+  <path d="M745,150 L745,190" stroke="#a0aec0" stroke-width="2" marker-end="url(#a12)" />
+
+  <!-- result -->
+  <rect x="400" y="200" width="300" height="80" rx="8" fill="#2c5282" />
+  <text x="550" y="228" text-anchor="middle" font-size="14" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">total_lag = 30</text>
+  <text x="550" y="250" text-anchor="middle" font-size="9.5" fill="#bee3f8">10 + 0 + 20 -- exactly what the</text>
+  <text x="550" y="264" text-anchor="middle" font-size="9.5" fill="#bee3f8">dry run's preview already predicted</text>
+
+  <text x="550" y="320" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Resetting offsets doesn't clear lag -- it creates it</text>
+  <text x="550" y="343" text-anchor="middle" font-size="10.5" fill="#4a5568">Every previously-committed message looks unread again the instant the reset commits.</text>
+
+  <rect x="230" y="370" width="640" height="46" rx="6" fill="#f7fafc" stroke="#cbd5e0" />
+  <text x="550" y="398" text-anchor="middle" font-size="10.5" fill="#4a5568">The habit: dry-run any destructive command that offers one, before it ever executes for real.</text>
+
+  <defs>
+    <marker id="a12" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

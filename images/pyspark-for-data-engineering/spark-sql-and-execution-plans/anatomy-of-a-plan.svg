@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 772" width="960" height="772" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="772" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Anatomy of a physical plan: reading .explain() bottom-up</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">zone-hour report &#183; one Exchange = one shuffle = one stage boundary &#183; pyspark 4.2.0, local[*], 10 read partitions</text>
+
+<!-- read direction arrow -->
+<line x1="26" y1="560" x2="26" y2="120" stroke="#c05621" stroke-width="2"/>
+<polygon points="26,110 21,124 31,124" fill="#c05621"/>
+<text x="18" y="360" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621" transform="rotate(-90 18 360)">READ BOTTOM-UP &#8212; leaves first, data flows UP</text>
+
+<!-- stage brackets -->
+<path d="M44 98 h-8 v122 h8" fill="none" stroke="#276749" stroke-width="1.5"/>
+<text x="30" y="163" text-anchor="middle" font-size="10" font-weight="700" fill="#276749" transform="rotate(-90 30 163)">STAGE 1 &#183; reduce</text>
+<path d="M44 296 h-8 v266 h8" fill="none" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="30" y="430" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0" transform="rotate(-90 30 430)">STAGE 0 &#183; map side</text>
+
+<!-- NODE 1: AdaptiveSparkPlan -->
+<rect x="56" y="98" width="330" height="56" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="1.5"/>
+<text x="72" y="122" font-size="13" font-weight="700" fill="#553c9a">(7) AdaptiveSparkPlan</text>
+<text x="72" y="142" font-size="11" fill="#4a5568">isFinalPlan=false &#8594; true after it runs</text>
+<text x="404" y="122" font-size="11.5" fill="#4a5568">The wrapper, not an operator: Spark re-plans</text>
+<text x="404" y="140" font-size="11.5" fill="#4a5568">the tree at runtime from real shuffle statistics.</text>
+
+<!-- NODE 2: HashAggregate final -->
+<rect x="56" y="164" width="330" height="56" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="72" y="188" font-size="13" font-weight="700" fill="#276749">(6) HashAggregate &#8212; final</text>
+<text x="72" y="208" font-size="11" fill="#4a5568">count(1), sum(total_amount)</text>
+<text x="404" y="188" font-size="11.5" fill="#4a5568">Combines the per-partition partials into the</text>
+<text x="404" y="206" font-size="11.5" fill="#4a5568">240,917 finished zone-hour buckets.</text>
+
+<!-- NODE 3: Exchange - the boundary -->
+<line x1="56" y1="228" x2="906" y2="228" stroke="#c05621" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="56" y="230" width="330" height="56" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+<text x="72" y="254" font-size="13" font-weight="700" fill="#c05621">(5) Exchange hashpartitioning(&#8230;, 200)</text>
+<text x="72" y="274" font-size="11" fill="#4a5568">THE SHUFFLE &#8212; rows move by key</text>
+<text x="404" y="248" font-size="11.5" font-weight="700" fill="#c05621">The one stage boundary. Every Exchange is a</text>
+<text x="404" y="266" font-size="11.5" fill="#4a5568">shuffle: the M2 rule that stages split where</text>
+<text x="404" y="284" font-size="11.5" fill="#4a5568">data must move. Configured 200 &#8594; AQE coalesced 6.</text>
+
+<!-- NODE 4: HashAggregate partial -->
+<rect x="56" y="296" width="330" height="56" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="72" y="320" font-size="13" font-weight="700" fill="#2b6cb0">(4) HashAggregate &#8212; partial_count / partial_sum</text>
+<text x="72" y="340" font-size="11" fill="#4a5568">map-side pre-aggregate</text>
+<text x="404" y="320" font-size="11.5" fill="#4a5568">Combines before the move: each task emits one</text>
+<text x="404" y="338" font-size="11.5" fill="#4a5568">row per zone-hour it saw, shrinking the shuffle.</text>
+
+<!-- NODE 5: Project -->
+<rect x="56" y="362" width="330" height="56" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="72" y="386" font-size="13" font-weight="700" fill="#2b6cb0">(3) Project &#8212; date_trunc(hour, &#8230;)</text>
+<text x="72" y="406" font-size="11" fill="#4a5568">Some(Asia/Tehran) = session TZ</text>
+<text x="404" y="386" font-size="11.5" fill="#4a5568">Reshapes rows where they sit: computes the</text>
+<text x="404" y="404" font-size="11.5" fill="#4a5568">truncated pickup hour. Narrow, no movement.</text>
+
+<!-- NODE 6: Filter -->
+<rect x="56" y="428" width="330" height="56" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="72" y="452" font-size="13" font-weight="700" fill="#2b6cb0">(2) Filter &#8212; the quarter window</text>
+<text x="72" y="472" font-size="11" fill="#4a5568">isnotnull AND &#8805; 2024-01-01 AND &lt; 2024-04-01</text>
+<text x="404" y="452" font-size="11.5" fill="#4a5568">Drops rows outside the window. Same predicate</text>
+<text x="404" y="470" font-size="11.5" fill="#4a5568">is also PushedFilters below &#8212; applied twice.</text>
+
+<!-- NODE 7: FileScan leaf -->
+<rect x="56" y="494" width="330" height="68" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+<text x="72" y="518" font-size="13" font-weight="700" fill="#1a202c">(1) FileScan parquet &#8212; the LEAF</text>
+<text x="72" y="537" font-size="11" fill="#4a5568">ReadSchema: 3 of 19 columns (pruned)</text>
+<text x="72" y="554" font-size="11" fill="#4a5568">PushedFilters: [&#8805;, &lt;] &#183; PartitionFilters: []</text>
+<text x="404" y="512" font-size="11.5" font-weight="700" fill="#1a202c">Where every plan starts. Reads only the 3</text>
+<text x="404" y="530" font-size="11.5" fill="#4a5568">columns the query needs and hands the filter to</text>
+<text x="404" y="548" font-size="11.5" fill="#4a5568">Parquet. (Pushed, but this file has no stats to</text>
+<text x="404" y="566" font-size="11.5" fill="#4a5568">skip on &#8212; Lesson 3.)</text>
+
+<!-- bottom band -->
+<line x1="56" y1="586" x2="906" y2="586" stroke="#e2e8f0" stroke-width="1"/>
+
+<rect x="56" y="600" width="430" height="130" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="271" y="624" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">How to read ANY plan</text>
+<text x="72" y="648" font-size="11.5" fill="#4a5568">1. Start at the leaves (bottom): find every FileScan.</text>
+<text x="72" y="668" font-size="11.5" fill="#4a5568">2. On each scan, read ReadSchema (columns kept)</text>
+<text x="86" y="684" font-size="11.5" fill="#4a5568">and PushedFilters (predicates handed down).</text>
+<text x="72" y="704" font-size="11.5" fill="#4a5568">3. Count the Exchanges &#8212; those are the shuffles,</text>
+<text x="86" y="720" font-size="11.5" fill="#4a5568">the stage boundaries, the expensive parts.</text>
+
+<rect x="506" y="600" width="400" height="130" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="706" y="624" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">What this plan produced (matches Course 1)</text>
+<text x="706" y="650" text-anchor="middle" font-size="12" fill="#4a5568">240,917 zone-hour buckets</text>
+<text x="706" y="672" text-anchor="middle" font-size="12" fill="#4a5568">9,554,757 trips kept in the window</text>
+<text x="706" y="694" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">$256,692,373.14 total revenue</text>
+<text x="706" y="716" text-anchor="middle" font-size="12" fill="#4a5568">one Exchange, 200 tasks coalesced to 6</text>
+
+<text x="480" y="756" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1a202c">Every node has a job: point at it, name what runs. The Exchange is the only place data moves.</text>
+</svg>

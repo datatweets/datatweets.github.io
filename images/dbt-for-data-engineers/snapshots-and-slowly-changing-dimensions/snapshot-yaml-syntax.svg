@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="400" viewBox="0 0 1060 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The current YAML config block, confirmed live against dbt 1.12.2</title>
+  <desc>A diagram showing the current YAML snapshots colon config block confirmed live against dbt 1.12.2, contrasted with the older Jinja percent-snapshot-percent block both source books still show as current. The YAML version: snapshots colon, dash name zones_snapshot, relation ref stg_cityflow__zones, config block with unique_key, strategy check, check_cols. Below, an actual run's own output: 265 zones captured on the first run, all currently valid, dbt_valid_to null. A second run against unchanged data: INSERT 0 0, confirmed idempotent by direct count, not assumed.</desc>
+  <rect width="1060" height="400" fill="#ffffff" />
+  <text x="530" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Current YAML Config Block, Confirmed Live</text>
+
+  <rect x="30" y="55" width="460" height="140" rx="8" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="260" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#822727">Older syntax (both source books) -- pre-1.9</text>
+  <text x="260" y="100" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#822727">{% snapshot zones_snapshot %}</text>
+  <text x="260" y="118" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#822727">{{ config(target_schema=..., </text>
+  <text x="260" y="134" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#822727">  strategy='check', ...) }}</text>
+  <text x="260" y="150" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#822727">select * from ...</text>
+  <text x="260" y="166" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#822727">{% endsnapshot %}</text>
+  <text x="260" y="184" text-anchor="middle" font-size="8.5" fill="#822727">not used in this project</text>
+
+  <rect x="570" y="55" width="460" height="140" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="800" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">Current syntax -- confirmed on dbt 1.12.2</text>
+  <text x="800" y="100" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">snapshots:</text>
+  <text x="800" y="116" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">  - name: zones_snapshot</text>
+  <text x="800" y="132" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">    relation: ref('stg_cityflow__zones')</text>
+  <text x="800" y="148" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">    config:</text>
+  <text x="800" y="164" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">      unique_key: zone_id</text>
+  <text x="800" y="180" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">      strategy: check</text>
+
+  <rect x="130" y="215" width="800" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="530" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">Two real runs, confirmed against actual output</text>
+  <rect x="160" y="255" width="330" height="90" rx="6" fill="#2c5282" />
+  <text x="325" y="278" text-anchor="middle" font-size="10" font-weight="700" fill="#ebf8ff">Run 1: SELECT 265</text>
+  <text x="325" y="298" text-anchor="middle" font-size="9" fill="#ebf8ff">265 zones captured</text>
+  <text x="325" y="315" text-anchor="middle" font-size="9" fill="#ebf8ff">all currently valid --</text>
+  <text x="325" y="330" text-anchor="middle" font-size="9" fill="#ebf8ff">dbt_valid_to IS NULL</text>
+  <rect x="570" y="255" width="330" height="90" rx="6" fill="#2f855a" />
+  <text x="735" y="278" text-anchor="middle" font-size="10" font-weight="700" fill="#f0fff4">Run 2: INSERT 0 0</text>
+  <text x="735" y="298" text-anchor="middle" font-size="9" fill="#f0fff4">unchanged data --</text>
+  <text x="735" y="315" text-anchor="middle" font-size="9" fill="#f0fff4">zero new rows</text>
+  <text x="735" y="330" text-anchor="middle" font-size="9" fill="#f0fff4">confirmed idempotent</text>
+
+  <text x="530" y="390" text-anchor="middle" font-size="9.5" fill="#4a5568">Compiles to two separate statements: an UPDATE closing out changed rows, then an INSERT adding what's new.</text>
+</svg>

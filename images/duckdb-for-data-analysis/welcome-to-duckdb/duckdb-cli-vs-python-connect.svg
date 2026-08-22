@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="360" viewBox="0 0 800 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="360" fill="#ffffff" />
+  <text x="400" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Two Front Doors, One Engine</text>
+
+  <!-- Left: CLI -->
+  <rect x="80" y="70" width="240" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="200" y="98" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">DuckDB CLI</text>
+  <text x="200" y="118" text-anchor="middle" font-size="9.5" fill="#2c5282">duckdb -c "SELECT ..."</text>
+
+  <!-- Right: Python -->
+  <rect x="480" y="70" width="240" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="600" y="98" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">Python Package</text>
+  <text x="600" y="118" text-anchor="middle" font-size="9.5" fill="#2c5282">duckdb.connect()</text>
+
+  <line x1="200" y1="140" x2="330" y2="200" stroke="#a0aec0" stroke-width="1.8" />
+  <line x1="600" y1="140" x2="470" y2="200" stroke="#a0aec0" stroke-width="1.8" />
+
+  <!-- Shared engine -->
+  <rect x="290" y="205" width="220" height="90" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2" />
+  <text x="400" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">DuckDB Engine</text>
+  <text x="400" y="258" text-anchor="middle" font-size="9.5" fill="#2f855a">v1.5.5, in-process</text>
+  <text x="400" y="273" text-anchor="middle" font-size="9.5" fill="#2f855a">no server in between</text>
+
+  <text x="400" y="330" text-anchor="middle" font-size="10.5" fill="#718096">Both front doors returned answer = 42 for the same query -- proof they embed the identical engine, not two separate implementations.</text>
+</svg>

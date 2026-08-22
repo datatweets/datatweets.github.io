@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A real failure, a real fix, and a real query that only works because of it</title>
+  <desc>An Elasticsearch sink connector fails with DataException: Key is used as document id and can not be null, because the source topic's messages have no key. A source-side transform (ValueToKey plus ExtractField$Key) promotes trip_id into the Kafka message key. The sink connector redeployed succeeds: 5 documents land in Elasticsearch with _id values matching trip_id exactly. A real range query for fare_amount greater than 20 returns exactly trips 3 and 5, proving the index is genuinely searchable, not just populated.</desc>
+  <rect width="1100" height="420" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Missing Key, a Transform, and a Real Query</text>
+
+  <!-- Failure -->
+  <rect x="40" y="55" width="500" height="130" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="290" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#742a2a">FIRST ATTEMPT: no message key</text>
+  <text x="290" y="102" text-anchor="middle" font-size="10" fill="#742a2a">key.ignore=false, every message key=null</text>
+  <rect x="70" y="115" width="440" height="50" rx="6" fill="#742a2a" />
+  <text x="290" y="136" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#fed7d7">DataException: Key is used as</text>
+  <text x="290" y="152" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#fed7d7">document id and can not be null</text>
+
+  <!-- Fix -->
+  <rect x="560" y="55" width="500" height="130" rx="8" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="810" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#553c9a">THE FIX: source-side transform</text>
+  <text x="810" y="102" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#553c9a">ValueToKey(fields=trip_id)</text>
+  <text x="810" y="118" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#553c9a">ExtractField$Key(field=trip_id)</text>
+  <rect x="590" y="130" width="440" height="35" rx="6" fill="#553c9a" />
+  <text x="810" y="153" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#e9d8fd">every message key -&gt; trip_id</text>
+
+  <!-- Result -->
+  <rect x="140" y="215" width="820" height="130" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="550" y="242" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">SINK REDEPLOYED -- RUNNING</text>
+  <text x="550" y="266" text-anchor="middle" font-size="11" font-family="Menlo, monospace" fill="#22543d">5 documents indexed -- _id=3 matches trip_id=3 exactly</text>
+  <rect x="220" y="280" width="660" height="46" rx="6" fill="#22543d" />
+  <text x="550" y="300" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#c6f6d5">range query: fare_amount &gt; 20</text>
+  <text x="550" y="317" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#c6f6d5">-&gt; trips [3, 5] -- exactly correct</text>
+
+  <text x="550" y="375" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">This query only works because Lesson 2 fixed fare_amount's encoding first</text>
+  <text x="550" y="398" text-anchor="middle" font-size="11" fill="#4a5568">A base64 string can't be numerically compared -- a real number can.</text>
+</svg>

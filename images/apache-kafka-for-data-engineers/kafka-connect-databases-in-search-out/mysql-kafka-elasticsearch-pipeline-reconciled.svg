@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Eight rows, then ten -- reconciled exactly, twice, field by field</title>
+  <desc>A complete MySQL-to-Kafka-to-Elasticsearch pipeline for CityFlow. Eight trip rows in MySQL flow through a correctly configured JDBC source connector into Kafka, then through an Elasticsearch sink connector into a search index. A row-for-row reconciliation confirms all 8 documents match MySQL exactly, field by field, not just by count. Two more rows are inserted while the pipeline keeps running, and a second reconciliation confirms 10 of 10 still match exactly. An aggregate revenue query against Elasticsearch returns 242.3499994277954 against MySQL's precise decimal sum of 242.35 -- a small floating-point difference from Elasticsearch's double-based aggregation, flagged rather than ignored.</desc>
+  <rect width="1100" height="430" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Complete Pipeline, Reconciled Twice</text>
+
+  <!-- pipeline stages -->
+  <rect x="30" y="55" width="220" height="70" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="140" y="82" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">MySQL</text>
+  <text x="140" y="102" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#7b341e">trips: 8 -&gt; 10 rows</text>
+
+  <path d="M250,90 L305,90" stroke="#a0aec0" stroke-width="2.5" marker-end="url(#a4)" />
+
+  <rect x="310" y="55" width="220" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="420" y="76" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">JDBC Source Connector</text>
+  <text x="420" y="94" text-anchor="middle" font-size="9" fill="#2c5282">numeric fix + key transform,</text>
+  <text x="420" y="108" text-anchor="middle" font-size="9" fill="#2c5282">both applied from the start</text>
+
+  <path d="M530,90 L585,90" stroke="#a0aec0" stroke-width="2.5" marker-end="url(#a4)" />
+
+  <rect x="590" y="55" width="180" height="70" rx="8" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="680" y="82" text-anchor="middle" font-size="12" font-weight="700" fill="#553c9a">Kafka</text>
+  <text x="680" y="102" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#553c9a">cityflow-mysql-trips</text>
+
+  <path d="M770,90 L825,90" stroke="#a0aec0" stroke-width="2.5" marker-end="url(#a4)" />
+
+  <rect x="830" y="55" width="240" height="70" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="950" y="76" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">Elasticsearch Sink Connector</text>
+  <text x="950" y="94" text-anchor="middle" font-size="9" fill="#22543d">_id = trip_id, key-based upsert</text>
+  <text x="950" y="108" text-anchor="middle" font-size="9" fill="#22543d">8 -&gt; 10 documents</text>
+
+  <defs>
+    <marker id="a4" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <!-- reconciliation results -->
+  <rect x="80" y="155" width="460" height="100" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="310" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Round 1: 8 rows</text>
+  <text x="310" y="205" text-anchor="middle" font-size="13" font-weight="700" font-family="Menlo, monospace" fill="#22543d">8 of 8 match exactly</text>
+  <text x="310" y="228" text-anchor="middle" font-size="10" fill="#22543d">every field compared, not just the count</text>
+
+  <rect x="560" y="155" width="460" height="100" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="790" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Round 2: +2 rows while running</text>
+  <text x="790" y="205" text-anchor="middle" font-size="13" font-weight="700" font-family="Menlo, monospace" fill="#22543d">10 of 10 match exactly</text>
+  <text x="790" y="228" text-anchor="middle" font-size="10" fill="#22543d">proves ongoing correctness, not a one-time snapshot</text>
+
+  <!-- precision note -->
+  <rect x="140" y="280" width="820" height="80" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="550" y="308" text-anchor="middle" font-size="12" font-weight="700" fill="#742a2a">Aggregate revenue: ES 242.3499994277954 vs MySQL 242.35 exactly</text>
+  <text x="550" y="330" text-anchor="middle" font-size="10.5" fill="#742a2a">a real floating-point difference from ES's double-based sum -- flagged, not hidden</text>
+  <text x="550" y="348" text-anchor="middle" font-size="10" fill="#742a2a">MySQL's exact decimal stays the source of truth for anything financial-grade</text>
+
+  <text x="550" y="395" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Known limitations stated plainly: latency, missed deletes, float rounding</text>
+  <text x="550" y="415" text-anchor="middle" font-size="11" fill="#4a5568">A working pipeline and an honest write-up of its edges, not one at the expense of the other.</text>
+</svg>

@@ -1,0 +1,7 @@
+candidate_id,candidate_name,required_facets,covered_facets,critical_complete,usable_findings,coverage,additional_findings,decision,missing_facets
+S01,Aster One,5,5,True,7,1.0,2,ready_for_synthesis,
+S02,Birch Pro,5,4,False,4,0.8,0,research_more,calibration
+S03,Cedar Mini,5,4,True,5,0.8,1,ready_for_synthesis,maintenance
+S04,Dune S,5,3,False,3,0.6,0,research_more,operating_range|data_export
+S05,Elm Edge,5,4,True,5,0.8,1,ready_for_synthesis,data_export
+S06,Fir Lite,5,4,False,4,0.8,0,research_more,calibration

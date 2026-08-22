@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="figTitle figDesc">
+  <title id="figTitle">Detecting input drift and a quality regression by comparing a baseline window to a recent window</title>
+  <desc id="figDesc">Left panel: input distribution shift. Baseline topic proportions for auth, ratelimits, plans, errors, and backups are compared with a recent window where a brand-new billing category appears at 34 percent of traffic, giving a total-variation distance of 0.34 above the 0.15 threshold, so input drift is flagged. Right panel: quality regression. A baseline window of judge scores has mean 0.865 and a recent window after a prompt change has mean 0.655, a drop of 0.21 above the 0.05 threshold, so a regression is flagged and confirmed by a two-proportion z of 4.12.</desc>
+  <rect x="0" y="0" width="860" height="520" fill="#ffffff"/>
+
+  <!-- header -->
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">Compare a recent window against a baseline &#8594; flag drift or regression</text>
+  <text x="430" y="56" text-anchor="middle" font-size="13" fill="#718096">Two silent failure modes for Docent, each caught by a windowed comparison and a threshold</text>
+
+  <!-- ===================== LEFT PANEL: input drift ===================== -->
+  <rect x="24" y="80" width="392" height="410" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="44" y="108" font-size="15" font-weight="700" fill="#2b6cb0">Input drift &#8212; distribution shift</text>
+  <text x="44" y="128" font-size="12" fill="#718096">What topics are users asking about?</text>
+
+  <!-- baseline mini bars -->
+  <text x="44" y="156" font-size="12" font-weight="600" fill="#4a5568">Baseline window (share of questions)</text>
+  <!-- auth .40 -->
+  <rect x="44" y="166" width="140" height="16" rx="3" fill="#4299e1"/>
+  <text x="192" y="179" font-size="11" fill="#4a5568">auth 40%</text>
+  <!-- ratelimits .25 -->
+  <rect x="44" y="186" width="88" height="16" rx="3" fill="#4299e1"/>
+  <text x="140" y="199" font-size="11" fill="#4a5568">ratelimits 25%</text>
+  <!-- plans .20 -->
+  <rect x="44" y="206" width="70" height="16" rx="3" fill="#4299e1"/>
+  <text x="122" y="219" font-size="11" fill="#4a5568">plans 20%</text>
+  <!-- errors .10 backups .05 -->
+  <rect x="44" y="226" width="35" height="16" rx="3" fill="#4299e1"/>
+  <text x="87" y="239" font-size="11" fill="#4a5568">errors 10% &#183; backups 5%</text>
+
+  <!-- recent mini bars -->
+  <text x="44" y="272" font-size="12" font-weight="600" fill="#4a5568">Recent window</text>
+  <rect x="44" y="282" width="77" height="16" rx="3" fill="#a0aec0"/>
+  <text x="129" y="295" font-size="11" fill="#4a5568">auth 22%</text>
+  <rect x="44" y="302" width="63" height="16" rx="3" fill="#a0aec0"/>
+  <text x="115" y="315" font-size="11" fill="#4a5568">ratelimits 18% &#183; plans 14%</text>
+  <!-- new billing category highlighted -->
+  <rect x="44" y="322" width="119" height="16" rx="3" fill="#ed8936"/>
+  <text x="171" y="335" font-size="11" font-weight="700" fill="#c05621">billing 34%  &#9733; NEW</text>
+
+  <!-- verdict box -->
+  <rect x="44" y="360" width="352" height="108" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+  <text x="60" y="384" font-size="12.5" fill="#c05621">total-variation distance = <tspan font-weight="700">0.34</tspan>  (threshold 0.15)</text>
+  <text x="60" y="406" font-size="12.5" fill="#c05621">new category: <tspan font-weight="700">billing</tspan> = 34% of recent traffic</text>
+  <text x="60" y="428" font-size="12.5" fill="#4a5568">golden set under-covers billing &#8594; blind spot</text>
+  <rect x="60" y="440" width="150" height="20" rx="10" fill="#ed8936"/>
+  <text x="135" y="454" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">INPUT DRIFT FLAGGED</text>
+
+  <!-- ===================== RIGHT PANEL: quality regression ===================== -->
+  <rect x="444" y="80" width="392" height="410" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="464" y="108" font-size="15" font-weight="700" fill="#c53030">Quality regression &#8212; scores drop</text>
+  <text x="464" y="128" font-size="12" fill="#718096">A prompt change shipped between the windows</text>
+
+  <!-- score axis -->
+  <line x1="500" y1="160" x2="500" y2="330" stroke="#a0aec0" stroke-width="1.5"/>
+  <line x1="500" y1="330" x2="812" y2="330" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="492" y="164" text-anchor="end" font-size="10" fill="#718096">1.0</text>
+  <text x="492" y="250" text-anchor="end" font-size="10" fill="#718096">0.5</text>
+  <text x="492" y="333" text-anchor="end" font-size="10" fill="#718096">0.0</text>
+
+  <!-- baseline mean bar (0.865 -> height) axis: y=330 is 0, y=160 is 1.0 => 170px per 1.0 -->
+  <!-- 0.865 -> 147px tall, top at 330-147=183 -->
+  <rect x="540" y="183" width="80" height="147" rx="4" fill="#48bb78"/>
+  <text x="580" y="348" text-anchor="middle" font-size="11" fill="#4a5568">baseline</text>
+  <text x="580" y="362" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">mean 0.865</text>
+  <!-- recent mean bar 0.655 -> 111px tall, top 330-111=219 -->
+  <rect x="690" y="219" width="80" height="111" rx="4" fill="#fc8181"/>
+  <text x="730" y="348" text-anchor="middle" font-size="11" fill="#4a5568">recent</text>
+  <text x="730" y="362" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">mean 0.655</text>
+
+  <!-- drop bracket -->
+  <line x1="640" y1="183" x2="672" y2="183" stroke="#c53030" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="640" y1="219" x2="672" y2="219" stroke="#c53030" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="656" y1="183" x2="656" y2="219" stroke="#c53030" stroke-width="1.5"/>
+  <text x="662" y="205" font-size="11" font-weight="700" fill="#c53030">&#8595; 0.21</text>
+
+  <!-- verdict box -->
+  <rect x="464" y="382" width="352" height="86" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="480" y="406" font-size="12.5" fill="#c53030">mean drop = <tspan font-weight="700">0.21</tspan> &#62; 0.05 threshold</text>
+  <text x="480" y="428" font-size="12.5" fill="#c53030">two-proportion z = <tspan font-weight="700">4.12</tspan>  (&#8739;z&#8739; &#62; 1.96 &#8594; significant)</text>
+  <rect x="480" y="440" width="180" height="20" rx="10" fill="#c53030"/>
+  <text x="570" y="454" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">REGRESSION FLAGGED</text>
+
+  <!-- footer rule -->
+  <text x="430" y="508" text-anchor="middle" font-size="12" fill="#4a5568">A threshold plus a significance check separates a real shift from small-sample wobble &#8212; a 5-item window that only jiggles stays green.</text>
+</svg>

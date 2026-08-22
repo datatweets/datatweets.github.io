@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Docent reference-metric scorecard: eight golden questions scored on exact match, token F1, and ROUGE-L, with a mean row showing EM 0.00, F1 0.44, ROUGE-L 0.42.</title>
+  <rect x="0" y="0" width="860" height="620" fill="#ffffff"/>
+
+  <text x="40" y="46" font-size="23" font-weight="700" fill="#1a202c">Docent Reference-Metric Scorecard</text>
+  <text x="40" y="72" font-size="14" fill="#718096">One live run over the 8-item golden set &#8226; three deterministic metrics, side by side</text>
+
+  <!-- header -->
+  <g font-size="14" font-weight="700" fill="#4a5568">
+    <text x="48" y="118">Reference answer</text>
+    <text x="470" y="118" text-anchor="middle">EM</text>
+    <text x="600" y="118" text-anchor="middle">F1</text>
+    <text x="740" y="118" text-anchor="middle">ROUGE-L</text>
+  </g>
+  <line x1="40" y1="130" x2="820" y2="130" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- rows: y start 150, step 44 -->
+  <!-- helper columns: label x=48, EM rect cx=470, F1 rect cx=600, RL rect cx=740, rect w=96 h=30 -->
+
+  <!-- row 1 -->
+  <g font-size="14">
+    <text x="48" y="171" fill="#1a202c">429</text>
+    <rect x="422" y="152" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="470" y="171" text-anchor="middle" fill="#c53030" font-weight="700">0</text>
+    <rect x="552" y="152" width="96" height="28" rx="5" fill="#fffaf0" stroke="#ed8936"/>
+    <text x="600" y="171" text-anchor="middle" fill="#c05621" font-weight="700">0.17</text>
+    <rect x="692" y="152" width="96" height="28" rx="5" fill="#fffaf0" stroke="#ed8936"/>
+    <text x="740" y="171" text-anchor="middle" fill="#c05621" font-weight="700">0.15</text>
+  </g>
+  <!-- row 2 -->
+  <g font-size="14">
+    <text x="48" y="215" fill="#1a202c">600 requests per minute</text>
+    <rect x="422" y="196" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="470" y="215" text-anchor="middle" fill="#c53030" font-weight="700">0</text>
+    <rect x="552" y="196" width="96" height="28" rx="5" fill="#f0fff4" stroke="#48bb78"/>
+    <text x="600" y="215" text-anchor="middle" fill="#276749" font-weight="700">0.73</text>
+    <rect x="692" y="196" width="96" height="28" rx="5" fill="#f0fff4" stroke="#48bb78"/>
+    <text x="740" y="215" text-anchor="middle" fill="#276749" font-weight="700">0.67</text>
+  </g>
+  <!-- row 3 -->
+  <g font-size="14">
+    <text x="48" y="259" fill="#1a202c">25 dollars per month</text>
+    <rect x="422" y="240" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="470" y="259" text-anchor="middle" fill="#c53030" font-weight="700">0</text>
+    <rect x="552" y="240" width="96" height="28" rx="5" fill="#fffaf0" stroke="#ed8936"/>
+    <text x="600" y="259" text-anchor="middle" fill="#c05621" font-weight="700">0.60</text>
+    <rect x="692" y="240" width="96" height="28" rx="5" fill="#fffaf0" stroke="#ed8936"/>
+    <text x="740" y="259" text-anchor="middle" fill="#c05621" font-weight="700">0.55</text>
+  </g>
+  <!-- row 4 -->
+  <g font-size="14">
+    <text x="48" y="303" fill="#1a202c">90 days</text>
+    <rect x="422" y="284" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="470" y="303" text-anchor="middle" fill="#c53030" font-weight="700">0</text>
+    <rect x="552" y="284" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="600" y="303" text-anchor="middle" fill="#c53030" font-weight="700">0.36</text>
+    <rect x="692" y="284" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="740" y="303" text-anchor="middle" fill="#c53030" font-weight="700">0.33</text>
+  </g>
+  <!-- row 5 -->
+  <g font-size="14">
+    <text x="48" y="347" fill="#1a202c">MERIDIAN_API_KEY</text>
+    <rect x="422" y="328" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="470" y="347" text-anchor="middle" fill="#c53030" font-weight="700">0</text>
+    <rect x="552" y="328" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="600" y="347" text-anchor="middle" fill="#c53030" font-weight="700">0.22</text>
+    <rect x="692" y="328" width="96" height="28" rx="5" fill="#fffaf0" stroke="#ed8936"/>
+    <text x="740" y="347" text-anchor="middle" fill="#c05621" font-weight="700">0.40</text>
+  </g>
+  <!-- row 6 -->
+  <g font-size="14">
+    <text x="48" y="391" fill="#1a202c">A missing or invalid API key</text>
+    <rect x="422" y="372" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="470" y="391" text-anchor="middle" fill="#c53030" font-weight="700">0</text>
+    <rect x="552" y="372" width="96" height="28" rx="5" fill="#f0fff4" stroke="#48bb78"/>
+    <text x="600" y="391" text-anchor="middle" fill="#276749" font-weight="700">0.77</text>
+    <rect x="692" y="372" width="96" height="28" rx="5" fill="#f0fff4" stroke="#48bb78"/>
+    <text x="740" y="391" text-anchor="middle" fill="#276749" font-weight="700">0.75</text>
+  </g>
+  <!-- row 7 -->
+  <g font-size="14">
+    <text x="48" y="435" fill="#1a202c">24 hours</text>
+    <rect x="422" y="416" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="470" y="435" text-anchor="middle" fill="#c53030" font-weight="700">0</text>
+    <rect x="552" y="416" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="600" y="435" text-anchor="middle" fill="#c53030" font-weight="700">0.24</text>
+    <rect x="692" y="416" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="740" y="435" text-anchor="middle" fill="#c53030" font-weight="700">0.21</text>
+  </g>
+  <!-- row 8 -->
+  <g font-size="14">
+    <text x="48" y="479" fill="#1a202c">Only the Scale plan</text>
+    <rect x="422" y="460" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="470" y="479" text-anchor="middle" fill="#c53030" font-weight="700">0</text>
+    <rect x="552" y="460" width="96" height="28" rx="5" fill="#fffaf0" stroke="#ed8936"/>
+    <text x="600" y="479" text-anchor="middle" fill="#c05621" font-weight="700">0.43</text>
+    <rect x="692" y="460" width="96" height="28" rx="5" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="740" y="479" text-anchor="middle" fill="#c53030" font-weight="700">0.32</text>
+  </g>
+
+  <!-- MEAN row -->
+  <line x1="40" y1="502" x2="820" y2="502" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="40" y="512" width="780" height="46" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="56" y="541" font-size="16" font-weight="700" fill="#2b6cb0">MEAN across 8 items</text>
+  <text x="470" y="541" text-anchor="middle" font-size="17" font-weight="700" fill="#c53030">0.00</text>
+  <text x="600" y="541" text-anchor="middle" font-size="17" font-weight="700" fill="#c05621">0.44</text>
+  <text x="740" y="541" text-anchor="middle" font-size="17" font-weight="700" fill="#c05621">0.42</text>
+
+  <text x="40" y="592" font-size="13" fill="#718096">EM is all-or-nothing: Docent answers in full sentences, so every strict match fails. F1 and ROUGE-L</text>
+  <text x="40" y="610" font-size="13" fill="#718096">award partial credit for the overlapping words &#8212; a fairer read of short factual correctness.</text>
+</svg>

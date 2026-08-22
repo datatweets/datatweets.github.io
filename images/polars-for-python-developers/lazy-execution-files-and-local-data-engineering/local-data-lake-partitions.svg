@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Building thistlewood_lake/</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">write_parquet(partition_by=["year", "month"]) -- a real hive-style directory</text>
+
+  <rect x="30" y="66" width="280" height="60" rx="8" fill="#edf2f7" stroke="#4a5568" stroke-width="1.4" />
+  <text x="170" y="88" text-anchor="middle" font-size="10" font-weight="700" fill="#1a202c">orders_with_revenue</text>
+  <text x="170" y="106" text-anchor="middle" font-size="8.5" fill="#4a5568">6,000 rows, year + month columns</text>
+
+  <text x="330" y="102" font-size="16" fill="#4a5568">--&gt;</text>
+
+  <rect x="360" y="66" width="330" height="60" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="525" y="88" text-anchor="middle" font-size="10" font-family="monospace" font-weight="700" fill="#2b6cb0">thistlewood_lake/</text>
+  <text x="525" y="106" text-anchor="middle" font-size="8.5" fill="#2b6cb0">24 partition files, hive-style directories</text>
+
+  <text x="360" y="150" text-anchor="middle" font-size="10.5" fill="#4a5568" font-family="monospace">year=2024/month=1/00000000.parquet  ...  year=2025/month=12/00000000.parquet</text>
+
+  <rect x="24" y="168" width="212" height="52" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.2" />
+  <text x="130" y="188" text-anchor="middle" font-size="9" font-family="monospace" fill="#1a202c">year=2024/month=1/</text>
+  <text x="130" y="204" text-anchor="middle" font-size="9" fill="#6b46c1">274 orders</text>
+
+  <rect x="254" y="168" width="212" height="52" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.2" />
+  <text x="360" y="188" text-anchor="middle" font-size="9" font-family="monospace" fill="#1a202c">year=2024/month=2/</text>
+  <text x="360" y="204" text-anchor="middle" font-size="9" fill="#6b46c1">248 orders</text>
+
+  <rect x="484" y="168" width="212" height="52" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.2" />
+  <text x="590" y="188" text-anchor="middle" font-size="9" font-family="monospace" fill="#1a202c">... 21 more ...</text>
+  <text x="590" y="204" text-anchor="middle" font-size="9" fill="#6b46c1">212-284 each</text>
+
+  <text x="360" y="252" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">pl.scan_parquet("thistlewood_lake/**/*.parquet", hive_partitioning=True)</text>
+  <text x="360" y="270" text-anchor="middle" font-size="9.5" fill="#4a5568">reads all 24 files as one LazyFrame, reconstructing year/month from each path</text>
+
+  <rect x="40" y="292" width="640" height="66" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="316" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">collected.group_by(["year","month"]).len() sums to exactly 6,000</text>
+  <text x="360" y="334" text-anchor="middle" font-size="9" fill="#22543d">24 partitions, matching the original order count exactly</text>
+  <text x="360" y="348" text-anchor="middle" font-size="8.5" fill="#4a5568">(grouped on the collected DataFrame, not the lazy scan directly -- see Lesson 5)</text>
+
+  <rect x="40" y="374" width="640" height="52" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="396" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c53030">year and month stay inside each file's own data too, not just the path</text>
+  <text x="360" y="412" text-anchor="middle" font-size="8.5" fill="#742a2a">Both copies agree here -- but this duplication matters directly in Lesson 5.</text>
+</svg>

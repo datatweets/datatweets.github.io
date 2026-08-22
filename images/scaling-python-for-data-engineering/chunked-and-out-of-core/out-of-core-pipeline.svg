@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="940" height="520" fill="#ffffff"/>
+  <text x="470" y="38" text-anchor="middle" font-size="21" font-weight="700" fill="#1a202c">Out-of-core pipeline: aggregate ~6M rows that don&#8217;t fit in RAM</text>
+  <text x="470" y="62" text-anchor="middle" font-size="14" fill="#4a5568">Two months stream through a tiny window &#8212; peak memory stays small while every row reaches disk</text>
+
+  <!-- Stage 1: month files -->
+  <g>
+    <rect x="30" y="120" width="150" height="66" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="105" y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">yellow_tripdata</text>
+    <text x="105" y="166" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">2024-01.parquet</text>
+    <text x="105" y="180" text-anchor="middle" font-size="11" fill="#4a5568">2,964,624 rows</text>
+
+    <rect x="30" y="200" width="150" height="66" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="105" y="228" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">yellow_tripdata</text>
+    <text x="105" y="246" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">2024-02.parquet</text>
+    <text x="105" y="260" text-anchor="middle" font-size="11" fill="#4a5568">3,007,526 rows</text>
+
+    <text x="105" y="300" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">&#8776; 5.97M rows total</text>
+    <text x="105" y="317" text-anchor="middle" font-size="11" fill="#c53030">&#8776; 800+ MB as pandas</text>
+  </g>
+
+  <!-- arrow 1 -->
+  <line x1="185" y1="200" x2="235" y2="200" stroke="#a0aec0" stroke-width="2.5"/>
+  <polygon points="235,195 245,200 235,205" fill="#a0aec0"/>
+
+  <!-- Stage 2: chunked + downcast window -->
+  <g>
+    <rect x="250" y="120" width="190" height="200" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+    <text x="345" y="145" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">Chunked + downcast ingest</text>
+    <text x="345" y="163" text-anchor="middle" font-size="11" fill="#4a5568">iter_batches(200,000) &#215; downcast</text>
+
+    <!-- sliding window batches -->
+    <rect x="272" y="182" width="30" height="70" rx="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1.5"/>
+    <rect x="308" y="182" width="30" height="70" rx="3" fill="#ed8936" stroke="#c05621" stroke-width="2"/>
+    <rect x="344" y="182" width="30" height="70" rx="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1.5"/>
+    <rect x="380" y="182" width="30" height="70" rx="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1.5"/>
+    <text x="323" y="272" text-anchor="middle" font-size="10" fill="#c05621">one batch in memory</text>
+
+    <rect x="272" y="284" width="146" height="26" rx="5" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+    <text x="345" y="301" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">peak &#8776; 9.8 MB</text>
+  </g>
+
+  <!-- arrow 2 -->
+  <line x1="445" y1="200" x2="495" y2="200" stroke="#a0aec0" stroke-width="2.5"/>
+  <polygon points="495,195 505,200 495,205" fill="#a0aec0"/>
+
+  <!-- Stage 3: SQLite on disk -->
+  <g>
+    <rect x="510" y="120" width="180" height="200" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+    <text x="600" y="145" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">SQLite: cityflow.db</text>
+    <text x="600" y="162" text-anchor="middle" font-size="11" fill="#4a5568">on disk &#8212; 439 MB</text>
+
+    <rect x="532" y="176" width="136" height="46" rx="5" fill="#ffffff" stroke="#9f7aea" stroke-width="1.5"/>
+    <text x="600" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">trips table</text>
+    <text x="600" y="212" text-anchor="middle" font-size="11" fill="#4a5568">5,972,150 rows</text>
+
+    <rect x="532" y="230" width="64" height="40" rx="5" fill="#ffffff" stroke="#9f7aea" stroke-width="1.5"/>
+    <text x="564" y="248" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">ledger</text>
+    <text x="564" y="263" text-anchor="middle" font-size="10" fill="#4a5568">resumable</text>
+
+    <rect x="604" y="230" width="64" height="40" rx="5" fill="#ffffff" stroke="#9f7aea" stroke-width="1.5"/>
+    <text x="636" y="248" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">index</text>
+    <text x="636" y="263" text-anchor="middle" font-size="10" fill="#4a5568">zone,date</text>
+
+    <text x="600" y="298" text-anchor="middle" font-size="11" fill="#4a5568">SQL rollup + zone join</text>
+    <text x="600" y="313" text-anchor="middle" font-size="11" fill="#4a5568">runs on disk, not in RAM</text>
+  </g>
+
+  <!-- arrow 3 -->
+  <line x1="695" y1="200" x2="745" y2="200" stroke="#a0aec0" stroke-width="2.5"/>
+  <polygon points="745,195 755,200 745,205" fill="#a0aec0"/>
+
+  <!-- Stage 4: summary -->
+  <g>
+    <rect x="760" y="120" width="150" height="200" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="835" y="145" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">Per-zone / per-day</text>
+    <text x="835" y="162" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">summary</text>
+
+    <rect x="778" y="178" width="114" height="112" rx="5" fill="#ffffff" stroke="#48bb78" stroke-width="1.5"/>
+    <line x1="778" y1="200" x2="892" y2="200" stroke="#c6f6d5" stroke-width="1"/>
+    <line x1="778" y1="222" x2="892" y2="222" stroke="#c6f6d5" stroke-width="1"/>
+    <line x1="778" y1="244" x2="892" y2="244" stroke="#c6f6d5" stroke-width="1"/>
+    <line x1="778" y1="266" x2="892" y2="266" stroke="#c6f6d5" stroke-width="1"/>
+    <text x="835" y="193" text-anchor="middle" font-size="10" fill="#276749">zone &#183; day &#183; trips</text>
+    <text x="835" y="215" text-anchor="middle" font-size="10" fill="#4a5568">revenue &#183; avg_fare</text>
+    <text x="835" y="237" text-anchor="middle" font-size="10" fill="#4a5568">avg_miles &#183; Borough</text>
+    <text x="835" y="259" text-anchor="middle" font-size="10" fill="#4a5568">JFK &#183; Midtown &#8230;</text>
+    <text x="835" y="282" text-anchor="middle" font-size="10" fill="#4a5568">&#8230;</text>
+
+    <text x="835" y="308" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">13,448 rows</text>
+  </g>
+
+  <!-- footer band -->
+  <rect x="30" y="360" width="880" height="128" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="470" y="388" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">The trade at the heart of out-of-core work</text>
+  <text x="60" y="416" font-size="12.5" fill="#4a5568">&#8226; <tspan font-weight="700" fill="#c53030">Rows flowing through:</tspan> ~5,972,150 &#8212; far more than fits comfortably in RAM.</text>
+  <text x="60" y="440" font-size="12.5" fill="#4a5568">&#8226; <tspan font-weight="700" fill="#276749">Peak memory held at once:</tspan> ~9.8 MB &#8212; one downcast batch, never the whole dataset.</text>
+  <text x="60" y="464" font-size="12.5" fill="#4a5568">&#8226; <tspan font-weight="700" fill="#6b46c1">Result:</tspan> a tidy 13,448-row summary, produced idempotently and resumably via a ledger.</text>
+</svg>

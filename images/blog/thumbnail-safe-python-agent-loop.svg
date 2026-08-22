@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Build a Safe AI Agent Loop in Python</title>
+  <desc id="desc">A proposed tool call passes through four runtime checks: allowlist, arguments, approval, and step limit. Accepted calls reach a Python function, while rejected calls stop and create a trace.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">BOUNDED TOOL EXECUTION</text>
+    <text x="90" y="292" font-size="80" font-weight="700" fill="#1b1f24">Proposal</text>
+    <text x="90" y="378" font-size="80" font-weight="700" fill="#1b1f24">Through a Gate</text>
+    <rect x="98" y="410" width="420" height="12" rx="6" fill="#0067c0"/>
+    <text x="98" y="490" font-size="31" font-weight="500" fill="#59636e">validate &#183; approve &#183; limit &#183; trace</text>
+    <g transform="translate(625 126)">
+      <rect x="0" y="165" width="112" height="76" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+      <text x="56" y="196" text-anchor="middle" font-size="15" font-weight="600" fill="#1b1f24">TOOL</text>
+      <text x="56" y="218" text-anchor="middle" font-size="15" fill="#59636e">PROPOSAL</text>
+      <line x1="112" y1="203" x2="162" y2="203" stroke="#0067c0" stroke-width="4"/>
+      <text x="137" y="192" text-anchor="middle" font-size="17" fill="#0067c0">&#8594;</text>
+      <rect x="170" y="42" width="184" height="322" rx="22" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+      <text x="262" y="82" text-anchor="middle" font-size="19" font-weight="700" fill="#1b1f24">RUNTIME GATE</text>
+      <g font-size="16" fill="#1b1f24">
+        <rect x="194" y="108" width="136" height="40" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/><text x="262" y="134" text-anchor="middle">ALLOWLIST &#10003;</text>
+        <rect x="194" y="158" width="136" height="40" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/><text x="262" y="184" text-anchor="middle">ARGUMENTS &#10003;</text>
+        <rect x="194" y="208" width="136" height="40" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/><text x="262" y="234" text-anchor="middle">APPROVAL &#10003;</text>
+        <rect x="194" y="258" width="136" height="40" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/><text x="262" y="284" text-anchor="middle">STEP LIMIT &#10003;</text>
+      </g>
+      <line x1="354" y1="203" x2="398" y2="203" stroke="#0067c0" stroke-width="4"/>
+      <text x="376" y="192" text-anchor="middle" font-size="17" fill="#0067c0">&#8594;</text>
+      <rect x="406" y="165" width="112" height="76" rx="12" fill="#f7f8fa" stroke="#0067c0" stroke-width="3"/>
+      <text x="462" y="196" text-anchor="middle" font-size="15" font-weight="600" fill="#1b1f24">PYTHON</text>
+      <text x="462" y="218" text-anchor="middle" font-size="15" fill="#59636e">FUNCTION</text>
+      <line x1="262" y1="364" x2="262" y2="408" stroke="#b44b4b" stroke-width="4"/>
+      <line x1="262" y1="408" x2="172" y2="408" stroke="#b44b4b" stroke-width="4"/>
+      <text x="166" y="446" text-anchor="middle" font-size="16" font-weight="600" fill="#8f3434">REJECT + TRACE</text>
+    </g>
+  </g>
+</svg>

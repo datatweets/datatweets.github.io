@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Encode Cyclical Features for Machine Learning in Python</title>
+  <desc id="desc">A tutorial thumbnail showing time mapped onto a circle, where hour 23 and hour 0 are adjacent sine-and-cosine positions.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="31" font-weight="600" letter-spacing="1.2" fill="#59636e">CYCLICAL FEATURE ENCODING</text>
+    <text x="90" y="282" font-size="92" font-weight="700" fill="#1b1f24">TIME</text>
+    <text x="90" y="378" font-size="70" font-weight="700" fill="#1b1f24">ON A CIRCLE</text>
+    <rect x="96" y="417" width="410" height="12" rx="6" fill="#0067c0"/>
+    <text x="96" y="496" font-size="31" font-weight="500" fill="#59636e">SINE &#183; COSINE &#183; PYTHON</text>
+  </g>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <circle cx="930" cy="332" r="164" fill="#f7fbff" stroke="#e3e6ea" stroke-width="3"/>
+    <line x1="766" y1="332" x2="1094" y2="332" stroke="#c7ccd2" stroke-width="2"/>
+    <line x1="930" y1="168" x2="930" y2="496" stroke="#c7ccd2" stroke-width="2"/>
+
+    <line x1="930" y1="332" x2="1094" y2="332" stroke="#0067c0" stroke-width="3"/>
+    <line x1="930" y1="332" x2="1088" y2="374" stroke="#0067c0" stroke-width="3"/>
+    <path d="M 1088 374 A 164 164 0 0 0 1094 332" fill="none" stroke="#0067c0" stroke-width="8" stroke-linecap="round"/>
+
+    <circle cx="1094" cy="332" r="12" fill="#ffffff" stroke="#0067c0" stroke-width="4"/>
+    <circle cx="930" cy="168" r="9" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+    <circle cx="766" cy="332" r="9" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+    <circle cx="930" cy="496" r="9" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+    <circle cx="1088" cy="374" r="12" fill="#ffffff" stroke="#0067c0" stroke-width="4"/>
+
+    <text x="1116" y="340" font-size="25" font-weight="700" fill="#0067c0">00</text>
+    <text x="917" y="144" font-size="23" font-weight="600" fill="#59636e">06</text>
+    <text x="721" y="340" font-size="23" font-weight="600" fill="#59636e">12</text>
+    <text x="917" y="535" font-size="23" font-weight="600" fill="#59636e">18</text>
+    <text x="1107" y="400" font-size="25" font-weight="700" fill="#0067c0">23</text>
+
+    <rect x="806" y="551" width="248" height="43" rx="21.5" fill="#e3f0fa"/>
+    <text x="835" y="580" font-size="20" font-weight="600" letter-spacing="0.5" fill="#0067c0">END MEETS START</text>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Fact, Two Independent Queries</text>
+
+  <!-- file -->
+  <rect x="330" y="50" width="140" height="46" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="400" y="78" text-anchor="middle" font-size="10.5" fill="#9c4221">thistlewood_orders_flat.csv</text>
+
+  <line x1="400" y1="96" x2="230" y2="130" stroke="#a0aec0" stroke-width="1.6" />
+  <line x1="400" y1="96" x2="570" y2="130" stroke="#a0aec0" stroke-width="1.6" />
+
+  <!-- Query A -->
+  <rect x="110" y="135" width="240" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="230" y="160" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">sum(total)</text>
+  <text x="230" y="176" text-anchor="middle" font-size="9.5" fill="#2c5282">one aggregate query</text>
+  <text x="230" y="190" text-anchor="middle" font-size="9.5" fill="#2c5282">→ $1,171,856.43</text>
+
+  <!-- Query B -->
+  <rect x="450" y="135" width="240" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="570" y="160" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">GROUP BY category</text>
+  <text x="570" y="176" text-anchor="middle" font-size="9.5" fill="#2c5282">8 totals, summed by hand</text>
+  <text x="570" y="190" text-anchor="middle" font-size="9.5" fill="#2c5282">→ $1,171,856.43</text>
+
+  <line x1="230" y1="205" x2="370" y2="255" stroke="#a0aec0" stroke-width="1.6" />
+  <line x1="570" y1="205" x2="430" y2="255" stroke="#a0aec0" stroke-width="1.6" />
+
+  <!-- compare -->
+  <rect x="290" y="260" width="220" height="60" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="2" />
+  <text x="400" y="285" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Compare</text>
+  <text x="400" y="302" text-anchor="middle" font-size="10" fill="#2f855a">Equal -&gt; trust the number</text>
+
+  <text x="400" y="350" text-anchor="middle" font-size="10.5" fill="#718096">A query that runs without an error has cleared the lowest bar. Two independent queries agreeing is what earns a number this project's trust.</text>
+</svg>

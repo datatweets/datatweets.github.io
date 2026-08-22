@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Two-panel diagram of retrieval metrics on Docent's retriever. Left panel shows the ranked list the retriever returns for the question "What does Meridian charge for the Free plan?": position 1 errors, 2 backups, 3 auth, 4 ratelimits, 5 plans. A dashed cutoff line sits after position 2 marking k equals 2. The relevant document plans is highlighted green at rank 5, below the cutoff, so it is missed at k equals 2, giving Recall at 2 equals 0 and reciprocal rank one fifth equals 0.20 for this question. The right panel is a bar chart of the aggregate metrics over 9 golden questions at k equals 2: Recall at 2 equals 0.889 in blue, Precision at 2 equals 0.444 in orange, MRR equals 0.800 in purple, and NDCG at 2 equals 0.807 in green. A dashed line marks the 0.50 precision ceiling that arises because each question has exactly one relevant document.</title>
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="440" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#1a202c">Retrieval metrics on Docent's retriever</text>
+  <text x="440" y="56" text-anchor="middle" font-size="13" fill="#718096">One relevant doc per question &#8594; four metrics, four different stories</text>
+
+  <!-- ================= LEFT PANEL: ranked list ================= -->
+  <rect x="28" y="78" width="376" height="392" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="48" y="104" font-size="14" font-weight="700" fill="#2b6cb0">Ranked list &#8212; the "Free plan" question</text>
+  <text x="48" y="124" font-size="11.5" fill="#718096">relevant doc = plans (the Module-1 bug)</text>
+
+  <!-- rows -->
+  <!-- rank 1 -->
+  <rect x="48" y="138" width="336" height="40" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <circle cx="72" cy="158" r="13" fill="#a0aec0"/>
+  <text x="72" y="163" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+  <text x="98" y="163" font-size="13.5" fill="#4a5568">errors</text>
+  <text x="368" y="163" text-anchor="end" font-size="11.5" fill="#a0aec0">not relevant</text>
+  <!-- rank 2 -->
+  <rect x="48" y="182" width="336" height="40" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <circle cx="72" cy="202" r="13" fill="#a0aec0"/>
+  <text x="72" y="207" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+  <text x="98" y="207" font-size="13.5" fill="#4a5568">backups</text>
+  <text x="368" y="207" text-anchor="end" font-size="11.5" fill="#a0aec0">not relevant</text>
+
+  <!-- k=2 cutoff -->
+  <line x1="40" y1="230" x2="392" y2="230" stroke="#c53030" stroke-width="2" stroke-dasharray="6 4"/>
+  <rect x="300" y="221" width="86" height="18" rx="9" fill="#fff5f5" stroke="#fc8181" stroke-width="1"/>
+  <text x="343" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">k = 2 cutoff</text>
+
+  <!-- rank 3 -->
+  <rect x="48" y="240" width="336" height="38" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <circle cx="72" cy="259" r="13" fill="#cbd5e0"/>
+  <text x="72" y="264" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">3</text>
+  <text x="98" y="264" font-size="13.5" fill="#718096">auth</text>
+  <!-- rank 4 -->
+  <rect x="48" y="282" width="336" height="38" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <circle cx="72" cy="301" r="13" fill="#cbd5e0"/>
+  <text x="72" y="306" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">4</text>
+  <text x="98" y="306" font-size="13.5" fill="#718096">ratelimits</text>
+  <!-- rank 5 = relevant, missed -->
+  <rect x="48" y="324" width="336" height="42" rx="7" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <circle cx="72" cy="345" r="13" fill="#48bb78"/>
+  <text x="72" y="350" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">5</text>
+  <text x="98" y="350" font-size="13.5" font-weight="700" fill="#276749">plans</text>
+  <text x="368" y="350" text-anchor="end" font-size="11.5" font-weight="700" fill="#276749">relevant &#8594; missed</text>
+
+  <!-- per-question outcome -->
+  <rect x="48" y="382" width="336" height="72" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1"/>
+  <text x="64" y="404" font-size="12.5" fill="#c53030">Relevant doc sits at rank 5, below k = 2:</text>
+  <text x="64" y="426" font-size="12.5" fill="#4a5568">Recall@2 = 0 &#160;&#160; Precision@2 = 0 &#160;&#160; NDCG@2 = 0</text>
+  <text x="64" y="446" font-size="12.5" fill="#4a5568">Reciprocal rank = 1/5 = 0.20 (MRR still sees it)</text>
+
+  <!-- ================= RIGHT PANEL: aggregate bars ================= -->
+  <rect x="428" y="78" width="424" height="392" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="448" y="104" font-size="14" font-weight="700" fill="#2b6cb0">Aggregates over 9 golden questions (k = 2)</text>
+
+  <!-- chart area: x 470..820, y baseline 400, top(1.0) 150 -> height 250 -->
+  <!-- axis -->
+  <line x1="470" y1="400" x2="828" y2="400" stroke="#a0aec0" stroke-width="1.5"/>
+  <line x1="470" y1="150" x2="470" y2="400" stroke="#a0aec0" stroke-width="1.5"/>
+  <!-- gridlines 0.5 and 1.0 -->
+  <line x1="470" y1="275" x2="828" y2="275" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="470" y1="150" x2="828" y2="150" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="464" y="404" text-anchor="end" font-size="11" fill="#718096">0.0</text>
+  <text x="464" y="279" text-anchor="end" font-size="11" fill="#718096">0.5</text>
+  <text x="464" y="154" text-anchor="end" font-size="11" fill="#718096">1.0</text>
+
+  <!-- 0.50 precision ceiling -->
+  <line x1="470" y1="275" x2="828" y2="275" stroke="#c05621" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="824" y="269" text-anchor="end" font-size="10.5" fill="#c05621">precision ceiling = 1/k = 0.50</text>
+
+  <!-- bars: values *250 height. Recall .889=222, Prec .444=111, MRR .800=200, NDCG .807=202 -->
+  <!-- Recall@2 0.889 -->
+  <rect x="496" y="178" width="58" height="222" rx="4" fill="#4299e1"/>
+  <text x="525" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">0.889</text>
+  <text x="525" y="418" text-anchor="middle" font-size="12" fill="#4a5568">Recall@2</text>
+  <!-- Precision@2 0.444 -->
+  <rect x="584" y="289" width="58" height="111" rx="4" fill="#ed8936"/>
+  <text x="613" y="281" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">0.444</text>
+  <text x="613" y="418" text-anchor="middle" font-size="12" fill="#4a5568">Precision@2</text>
+  <!-- MRR 0.800 -->
+  <rect x="672" y="200" width="58" height="200" rx="4" fill="#9f7aea"/>
+  <text x="701" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">0.800</text>
+  <text x="701" y="418" text-anchor="middle" font-size="12" fill="#4a5568">MRR</text>
+  <!-- NDCG@2 0.807 -->
+  <rect x="760" y="198" width="58" height="202" rx="4" fill="#48bb78"/>
+  <text x="789" y="190" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">0.807</text>
+  <text x="789" y="418" text-anchor="middle" font-size="12" fill="#4a5568">NDCG@2</text>
+
+  <!-- caption strip -->
+  <rect x="448" y="432" width="384" height="24" rx="6" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1"/>
+  <text x="640" y="448" text-anchor="middle" font-size="11.5" fill="#2b6cb0">High recall, low precision, strong ranking &#8212; each answers a different question.</text>
+</svg>

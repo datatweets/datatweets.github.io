@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="410" viewBox="0 0 1100 410" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Incremental mode ships only what's new. A converter fix only affects what's written after it.</title>
+  <desc>A JDBC source connector reads CityFlow's trips table. The first five rows are produced with the default decimal encoding, landing on Kafka with fare_amount as an unreadable base64 string like 'Bzo='  -- Kafka Connect's Decimal logical type with no schema to interpret it. After setting value.converter.decimal.format=NUMERIC, two new rows are inserted and land with fare_amount as a plain readable number like 27.75. The five original messages are never rewritten -- only new messages reflect the fixed encoding, and only the two new rows appear at all, proving incremental mode never re-scans rows it has already read.</desc>
+  <rect width="1100" height="410" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Seven Messages, One Fix Applied Mid-Stream</text>
+
+  <!-- Before fix -->
+  <rect x="40" y="55" width="480" height="180" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="280" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#742a2a">trips 1-5 -- default decimal encoding</text>
+  <g font-family="Menlo, monospace" font-size="9.5" fill="#742a2a">
+    <text x="60" y="102">trip_id=1  fare_amount: "Bzo="</text>
+    <text x="60" y="118">trip_id=2  fare_amount: "A88="</text>
+    <text x="60" y="134">trip_id=3  fare_amount: "DIA="</text>
+    <text x="60" y="150">trip_id=4  fare_amount: "BfU="</text>
+    <text x="60" y="166">trip_id=5  fare_amount: "CKI="</text>
+  </g>
+  <text x="280" y="190" text-anchor="middle" font-size="10" fill="#742a2a">Decimal logical type, base64 --</text>
+  <text x="280" y="206" text-anchor="middle" font-size="10" fill="#742a2a">correct bytes, unreadable without a schema</text>
+  <text x="280" y="222" text-anchor="middle" font-size="9.5" font-weight="700" fill="#742a2a">never rewritten by the later fix</text>
+
+  <!-- After fix -->
+  <rect x="580" y="55" width="480" height="180" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="820" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">trips 6-7 -- after decimal.format=NUMERIC</text>
+  <g font-family="Menlo, monospace" font-size="10.5" fill="#22543d">
+    <text x="600" y="115">trip_id=6  fare_amount: 27.75</text>
+    <text x="600" y="140">trip_id=7  fare_amount: 11.20</text>
+  </g>
+  <text x="820" y="180" text-anchor="middle" font-size="10" fill="#22543d">plain, readable numbers --</text>
+  <text x="820" y="196" text-anchor="middle" font-size="10" fill="#22543d">only 2 new messages, not a 7-row re-scan</text>
+  <text x="820" y="216" text-anchor="middle" font-size="9.5" font-weight="700" fill="#22543d">incremental mode remembered trip_id=5</text>
+
+  <rect x="140" y="260" width="820" height="80" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="550" y="288" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">numeric.mapping=best_fit did NOT fix this -- tested and confirmed first</text>
+  <text x="550" y="310" text-anchor="middle" font-size="11" fill="#2c5282">value.converter.decimal.format=NUMERIC is the setting that actually does</text>
+  <text x="550" y="328" text-anchor="middle" font-size="10" fill="#2c5282">DECIMAL(10,2) always keeps a fixed precision/scale -- numeric.mapping only affects unbounded NUMERIC columns</text>
+
+  <text x="550" y="375" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">A converter change reaches forward, never backward</text>
+</svg>

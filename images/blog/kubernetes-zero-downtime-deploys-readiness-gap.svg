@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">The readiness gap: traffic routed before an app is listening</title>
+  <desc id="desc">Timeline diagram comparing a pod without a readiness probe to a pod with one during startup. Without a probe, the pod is added to the Service's endpoints the instant the container starts running, before the application inside is listening, creating a gap where routed requests fail. With a probe, Kubernetes polls the pod and only adds it to the endpoints once the probe actually succeeds, so no traffic reaches the pod during its startup window.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#59636e"/>
+    </marker>
+    <style>
+      .heading { font: 700 26px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .label { font: 700 18px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .detail { font: 15px Jost, system-ui, sans-serif; fill: #59636e; }
+      .mono { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #1b1f24; }
+    </style>
+  </defs>
+  <rect width="1200" height="520" fill="#f7f8fa"/>
+  <rect x="28" y="24" width="1144" height="472" rx="24" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <text x="62" y="66" class="heading">Traffic starts routing the instant the container is Running</text>
+
+  <!-- WITHOUT probe -->
+  <text x="62" y="112" class="label" fill="#c8515b">WITHOUT a readiness probe</text>
+  <text x="220" y="150" class="mono" text-anchor="middle" font-size="12">t=0</text>
+  <text x="540" y="150" class="mono" text-anchor="middle" font-size="12">t=4s</text>
+  <line x1="220" y1="176" x2="1080" y2="176" stroke="#c7ccd2" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="220" y="158" width="320" height="36" fill="#fdeced"/>
+  <line x1="220" y1="158" x2="220" y2="194" stroke="#c8515b" stroke-width="2"/>
+  <line x1="540" y1="158" x2="540" y2="194" stroke="#c8515b" stroke-width="2"/>
+  <text x="380" y="182" class="mono" text-anchor="middle" font-size="13" fill="#c8515b" font-weight="700">refused</text>
+  <text x="600" y="182" class="detail" font-size="14">app actually starts listening here</text>
+  <text x="220" y="218" class="detail" font-size="13">container Running &#8594; added to endpoints</text>
+
+  <!-- WITH probe -->
+  <text x="62" y="280" class="label" fill="#2f6b4a">WITH a readiness probe</text>
+  <text x="220" y="318" class="mono" text-anchor="middle" font-size="12">t=0</text>
+  <text x="540" y="318" class="mono" text-anchor="middle" font-size="12">t=4s</text>
+  <line x1="220" y1="344" x2="1080" y2="344" stroke="#c7ccd2" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="220" y="326" width="320" height="36" fill="#eaf6ef"/>
+  <line x1="220" y1="326" x2="220" y2="362" stroke="#2f6b4a" stroke-width="2"/>
+  <line x1="540" y1="326" x2="540" y2="362" stroke="#2f6b4a" stroke-width="2"/>
+  <text x="380" y="350" class="mono" text-anchor="middle" font-size="13" fill="#2f6b4a" font-weight="700">waiting</text>
+  <text x="600" y="350" class="detail" font-size="14">probe succeeds &#8594; added to endpoints, right on time</text>
+  <text x="220" y="386" class="detail" font-size="13">container Running &#8212; probe not passing yet, no traffic sent</text>
+
+  <line x1="62" y1="420" x2="1140" y2="420" stroke="#e3e6ea" stroke-width="2"/>
+  <text x="62" y="456" class="detail">Same 4-second startup either way &#8212; the only difference is whether Kubernetes</text>
+  <text x="62" y="478" class="detail">sends traffic to the pod before or after it's actually able to answer.</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="410" viewBox="0 0 1100 410" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Fifteen lines of JSON, zero lines of producer code -- three MySQL rows land on a Kafka topic</title>
+  <desc>Kafka Connect architecture, shown against a real deployed connector. The worker is the kafka-connect process itself, storing its state in three internal Kafka topics: _connect-configs, _connect-offsets, _connect-status. A JDBC source connector, configured with fifteen lines of JSON and zero lines of producer code, schedules one task, which reads three rows from a real MySQL table and writes three matching JSON messages to a Kafka topic -- confirmed with a plain kafka-python consumer.</desc>
+  <rect width="1100" height="410" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Worker, One Connector, One Task -- Zero Producer Code</text>
+
+  <!-- MySQL -->
+  <rect x="30" y="150" width="180" height="80" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="120" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">MySQL</text>
+  <text x="120" y="200" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#7b341e">3 rows</text>
+
+  <!-- Worker box -->
+  <rect x="260" y="60" width="580" height="260" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="550" y="85" text-anchor="middle" font-size="13" font-weight="700" fill="#2c5282">Worker -- the kafka-connect process (localhost:8083)</text>
+
+  <rect x="290" y="100" width="230" height="70" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.2" />
+  <text x="405" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">Connector</text>
+  <text x="405" y="140" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">JdbcSourceConnector</text>
+  <text x="405" y="155" text-anchor="middle" font-size="8.5" fill="#22543d">15 lines of JSON config</text>
+
+  <path d="M520,135 L570,135" stroke="#a0aec0" stroke-width="2" marker-end="url(#a3)" />
+
+  <rect x="580" y="100" width="230" height="70" rx="6" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.2" />
+  <text x="695" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#553c9a">Task 0</text>
+  <text x="695" y="140" text-anchor="middle" font-size="9" fill="#553c9a">RUNNING on kafka-connect:8083</text>
+  <text x="695" y="155" text-anchor="middle" font-size="8.5" fill="#553c9a">does the actual read/write work</text>
+
+  <text x="550" y="195" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">state lives in Kafka itself, not local disk:</text>
+  <g font-family="Menlo, monospace" font-size="9">
+    <rect x="290" y="205" width="150" height="28" rx="5" fill="#ffffff" stroke="#4299e1"/>
+    <text x="365" y="223" text-anchor="middle" fill="#2c5282">_connect-configs</text>
+    <rect x="455" y="205" width="150" height="28" rx="5" fill="#ffffff" stroke="#4299e1"/>
+    <text x="530" y="223" text-anchor="middle" fill="#2c5282">_connect-offsets</text>
+    <rect x="620" y="205" width="150" height="28" rx="5" fill="#ffffff" stroke="#4299e1"/>
+    <text x="695" y="223" text-anchor="middle" fill="#2c5282">_connect-status</text>
+  </g>
+
+  <rect x="290" y="250" width="520" height="50" rx="6" fill="#2c5282" />
+  <text x="550" y="272" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">connector.state=RUNNING  task.state=RUNNING</text>
+  <text x="550" y="288" text-anchor="middle" font-size="9" fill="#ebf8ff">confirmed via GET /connectors/{name}/status</text>
+
+  <path d="M210,190 L260,190" stroke="#a0aec0" stroke-width="2" marker-end="url(#a3)" />
+
+  <!-- Kafka topic -->
+  <rect x="890" y="150" width="180" height="80" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="980" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Kafka topic</text>
+  <text x="980" y="200" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#22543d">3 messages</text>
+
+  <path d="M840,190 L890,190" stroke="#a0aec0" stroke-width="2" marker-end="url(#a3)" />
+  <defs>
+    <marker id="a3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <text x="550" y="345" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">The identical structure runs in reverse for a sink connector</text>
+  <text x="550" y="370" text-anchor="middle" font-size="11" fill="#4a5568">Kafka in, external system out -- Lesson 3's Elasticsearch connector uses this exact same worker.</text>
+</svg>

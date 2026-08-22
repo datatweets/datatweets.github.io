@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Use XGBoost Early Stopping Without Test Data Leakage</title>
+  <desc id="desc">A DataTweets tutorial thumbnail showing a leakage-safe XGBoost workflow: training rows fit trees, validation rows choose round 250, and the test set checks the locked model once.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#0067c0"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="145" font-size="34" font-weight="600" letter-spacing="1.4" fill="#59636e">XGBOOST EARLY STOPPING</text>
+    <text x="90" y="267" font-size="78" font-weight="700" fill="#1b1f24">VALIDATE</text>
+    <text x="90" y="354" font-size="78" font-weight="700" fill="#1b1f24">THEN TEST</text>
+    <rect x="98" y="389" width="355" height="12" rx="6" fill="#0067c0"/>
+    <text x="96" y="474" font-size="30" font-weight="500" fill="#59636e">train &#183; validate &#183; test</text>
+
+    <g transform="translate(700 91)">
+      <path d="M 195 111 L 195 141" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+      <path d="M 195 241 L 195 271" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+      <path d="M 195 371 L 195 401" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+      <rect x="20" y="10" width="350" height="100" rx="18" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+      <circle cx="70" cy="60" r="25" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+      <path d="M 58 63 L 68 73 L 84 49" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="112" y="52" font-size="24" font-weight="700" fill="#1b1f24">TRAIN</text>
+      <text x="112" y="80" font-size="19" font-weight="500" fill="#59636e">fit each tree</text>
+
+      <rect x="20" y="140" width="350" height="100" rx="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+      <path d="M 56 205 C 78 178, 93 194, 108 169" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="108" cy="169" r="6" fill="#0067c0"/>
+      <text x="132" y="182" font-size="24" font-weight="700" fill="#1b1f24">VALIDATE</text>
+      <text x="132" y="211" font-size="19" font-weight="500" fill="#59636e">choose round 250</text>
+
+      <rect x="20" y="270" width="350" height="100" rx="18" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <rect x="54" y="302" width="52" height="42" rx="8" fill="#f7f8fa" stroke="#59636e" stroke-width="3"/>
+      <path d="M 65 302 V 290 C 65 270, 95 270, 95 290 V 302" fill="none" stroke="#59636e" stroke-width="3" stroke-linecap="round"/>
+      <text x="132" y="312" font-size="24" font-weight="700" fill="#1b1f24">LOCK MODEL</text>
+      <text x="132" y="341" font-size="19" font-weight="500" fill="#59636e">selection is finished</text>
+
+      <rect x="20" y="400" width="350" height="100" rx="18" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+      <circle cx="80" cy="450" r="25" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+      <text x="80" y="459" text-anchor="middle" font-size="28" font-weight="700" fill="#0067c0">1</text>
+      <text x="132" y="442" font-size="24" font-weight="700" fill="#1b1f24">TEST</text>
+      <text x="132" y="471" font-size="19" font-weight="500" fill="#59636e">check once</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="960" height="660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="660" fill="#ffffff"/>
+
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Broadcast the 265-row dimension, skip the 9.5M-row shuffle</text>
+  <text x="480" y="56" text-anchor="middle" font-size="14" fill="#718096">trips &#215; taxi_zone_lookup on PULocationID = LocationID &#183; 9,554,757 trips &#183; pyspark 4.2 local[*] on 10 cores &#183; medians of 3 warmed runs</text>
+
+  <!-- ============ LEFT PANEL: BROADCAST ============ -->
+  <rect x="40" y="76" width="430" height="300" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4"/>
+  <text x="60" y="102" font-size="14" font-weight="700" fill="#276749">Broadcast join &#8212; the default here</text>
+  <text x="60" y="122" font-size="11.5" fill="#276749">trips.join(broadcast(zones), &#8230;) &#8212; 0.579&#160;s</text>
+
+  <rect x="60" y="138" width="150" height="54" rx="6" fill="#ffffff" stroke="#48bb78" stroke-width="1.2"/>
+  <text x="135" y="160" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">zones dimension</text>
+  <text x="135" y="176" text-anchor="middle" font-size="10.5" fill="#276749">265 rows &#183; &#8776;10&#160;KB</text>
+
+  <g stroke="#276749" stroke-width="1.5" fill="#276749">
+    <line x1="210" y1="165" x2="290" y2="165"/><path d="M290 165 l-7 -4 v8 z"/>
+  </g>
+  <text x="250" y="156" text-anchor="middle" font-size="9.5" fill="#276749">copied whole</text>
+
+  <rect x="296" y="138" width="154" height="54" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.2"/>
+  <text x="373" y="158" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">every executor gets</text>
+  <text x="373" y="174" text-anchor="middle" font-size="10.5" fill="#2b6cb0">a full copy of zones</text>
+
+  <rect x="60" y="206" width="390" height="46" rx="6" fill="#ffffff" stroke="#4299e1" stroke-width="1.2"/>
+  <text x="255" y="226" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">trips: 9,554,757 rows stay where they are</text>
+  <text x="255" y="242" text-anchor="middle" font-size="10.5" fill="#2b6cb0">no Exchange on the big side &#8212; each partition looks up locally</text>
+
+  <text x="60" y="278" font-size="11" font-weight="700" fill="#276749">Physical plan (trimmed):</text>
+  <g font-size="10" font-family="ui-monospace, 'SF Mono', Menlo, monospace" fill="#276749">
+    <text x="60" y="296">BroadcastHashJoin [PULocationID], [LocationID],</text>
+    <text x="76" y="311">Inner, BuildRight</text>
+    <text x="60" y="330">&#8226; BroadcastExchange &#8212; 265-row side only</text>
+    <text x="60" y="349">&#8226; FileScan parquet (trips) &#8212; no Exchange</text>
+  </g>
+  <text x="60" y="368" font-size="10.5" font-style="italic" fill="#276749">The 9.5M-row side never moves.</text>
+
+  <!-- ============ RIGHT PANEL: SORT-MERGE ============ -->
+  <rect x="490" y="76" width="430" height="300" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.4"/>
+  <text x="510" y="102" font-size="14" font-weight="700" fill="#c05621">Sort-merge join &#8212; broadcast disabled</text>
+  <text x="510" y="122" font-size="11.5" fill="#c05621">autoBroadcastJoinThreshold = -1 &#8212; 1.362&#160;s &#183; 2.35&#215; slower</text>
+
+  <rect x="510" y="138" width="180" height="54" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.4"/>
+  <text x="600" y="158" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">9,554,757 trips</text>
+  <text x="600" y="174" text-anchor="middle" font-size="10.5" fill="#c53030">shuffled + sorted by key</text>
+
+  <rect x="710" y="138" width="180" height="54" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.4"/>
+  <text x="800" y="158" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">265 zones</text>
+  <text x="800" y="174" text-anchor="middle" font-size="10.5" fill="#c53030">shuffled + sorted by key</text>
+
+  <rect x="510" y="206" width="380" height="46" rx="6" fill="#ffffff" stroke="#c05621" stroke-width="1.2"/>
+  <text x="700" y="226" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">Exchange hashpartitioning(&#8230;, 200) on BOTH sides</text>
+  <text x="700" y="242" text-anchor="middle" font-size="10.5" fill="#c05621">rows with the same key move to the same partition, then merge</text>
+
+  <text x="510" y="278" font-size="11" font-weight="700" fill="#c05621">Physical plan (trimmed):</text>
+  <g font-size="10" font-family="ui-monospace, 'SF Mono', Menlo, monospace" fill="#c05621">
+    <text x="510" y="296">SortMergeJoin [PULocationID], [LocationID], Inner</text>
+    <text x="510" y="315">&#8226; Sort + Exchange hashpartitioning(&#8230;, 200)</text>
+    <text x="510" y="330">&#8226; Sort + Exchange hashpartitioning(&#8230;, 200)</text>
+  </g>
+  <text x="510" y="358" font-size="10.5" font-style="italic" fill="#c53030">Both sides cross the network &#8212; the big one for nothing.</text>
+
+  <!-- ============ TIMING BARS ============ -->
+  <line x1="40" y1="398" x2="920" y2="398" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="40" y="424" font-size="14" font-weight="700" fill="#1a202c">Same join, same answer &#8212; only the plan differs</text>
+
+  <g font-size="11.5">
+    <text x="230" y="454" text-anchor="end" fill="#276749" font-weight="700">broadcast join</text>
+    <rect x="240" y="440" width="196" height="20" rx="3" fill="#48bb78"/>
+    <text x="444" y="454" font-size="11" fill="#276749" font-weight="700">0.579&#160;s</text>
+
+    <text x="230" y="490" text-anchor="end" fill="#c53030" font-weight="700">sort-merge join</text>
+    <rect x="240" y="476" width="462" height="20" rx="3" fill="#c53030"/>
+    <text x="710" y="490" font-size="11" fill="#c53030" font-weight="700">1.362&#160;s &#8212; 2.35&#215;</text>
+  </g>
+  <text x="240" y="520" font-size="10.5" fill="#4a5568">Spark auto-broadcasts any side under 10&#160;MB by default, so the plan is ALREADY BroadcastHashJoin &#8212; the explicit</text>
+  <text x="240" y="535" font-size="10.5" fill="#4a5568">broadcast() hint only confirms it. The 2.35&#215; gap is what you pay when that optimization is switched off.</text>
+
+  <!-- ============ KEY-ON-ID TRAP ============ -->
+  <rect x="40" y="556" width="880" height="88" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3"/>
+  <text x="58" y="580" font-size="12" font-weight="700" fill="#2b6cb0">Join on the ID, carry the name &#8212; two zones are both named &#8220;Corona&#8221;</text>
+  <text x="58" y="600" font-size="11" fill="#2b6cb0">Key on LocationID: 56 = 899 trips and 57 = 35 trips stay separate. Group on the NAME &#8220;Corona&#8221; and they merge into 934 across 2 distinct zones.</text>
+  <text x="58" y="620" font-size="11" fill="#2b6cb0">LocationIDs 103/104/105 all read &#8220;Governor's Island/Ellis Island/Liberty Island.&#8221; Podium keyed on ID matches Course 1 to the trip: Midtown Center (161) = 453,825.</text>
+  <text x="58" y="637" font-size="10.5" font-style="italic" fill="#2b6cb0">The name is for humans; the ID is the key. Grouping on a display string silently fuses distinct places.</text>
+</svg>

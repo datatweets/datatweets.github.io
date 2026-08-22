@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="960" height="660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="660" fill="#ffffff"/>
+
+  <text x="480" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Should you index it? The crossover, and the guide</text>
+  <text x="480" y="54" text-anchor="middle" font-size="14" fill="#718096">Measured on 2,964,624 NYC TLC yellow-taxi trips (January 2024), CPython 3, 10-core machine</text>
+
+  <!-- ============ LEFT PANEL: crossover chart ============ -->
+  <text x="70" y="86" font-size="14" font-weight="700" fill="#1a202c">&#8220;How many trips ran from zone A to zone B?&#8221;</text>
+  <text x="70" y="103" font-size="12" fill="#718096">total seconds to answer q questions, two ways</text>
+
+  <!-- axes -->
+  <line x1="90" y1="120" x2="90" y2="390" stroke="#1a202c" stroke-width="1.5"/>
+  <line x1="90" y1="390" x2="470" y2="390" stroke="#1a202c" stroke-width="1.5"/>
+  <text x="46" y="255" text-anchor="middle" font-size="12" fill="#4a5568" transform="rotate(-90 46 255)">total time (seconds)</text>
+  <text x="280" y="428" text-anchor="middle" font-size="12" fill="#4a5568">q = number of questions asked</text>
+
+  <!-- y gridlines 0 .. 0.6 s -->
+  <g font-size="10.5" fill="#718096">
+    <line x1="90" y1="390" x2="470" y2="390" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="83" y="394" text-anchor="end">0.0</text>
+    <line x1="90" y1="341.3" x2="470" y2="341.3" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="83" y="345.3" text-anchor="end">0.1</text>
+    <line x1="90" y1="292.7" x2="470" y2="292.7" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="83" y="296.7" text-anchor="end">0.2</text>
+    <line x1="90" y1="244" x2="470" y2="244" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="83" y="248" text-anchor="end">0.3</text>
+    <line x1="90" y1="195.3" x2="470" y2="195.3" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="83" y="199.3" text-anchor="end">0.4</text>
+    <line x1="90" y1="146.7" x2="470" y2="146.7" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="83" y="150.7" text-anchor="end">0.5</text>
+    <line x1="90" y1="120" x2="470" y2="120" stroke="#e2e8f0" stroke-width="1"/>
+  </g>
+
+  <!-- x ticks 0..10 -->
+  <g font-size="10.5" fill="#718096" text-anchor="middle">
+    <text x="90" y="408">0</text>
+    <text x="166" y="408">2</text>
+    <text x="242" y="408">4</text>
+    <text x="318" y="408">6</text>
+    <text x="394" y="408">8</text>
+    <text x="470" y="408">10</text>
+  </g>
+
+  <!-- region shading: scan wins left of crossover -->
+  <rect x="90" y="120" width="167.2" height="270" fill="#fffaf0"/>
+  <rect x="257.2" y="120" width="212.8" height="270" fill="#f0fff4"/>
+
+  <!-- scan line: q * 53.9 ms  (0,0) -> (10, 0.539 s) -->
+  <line x1="90" y1="390" x2="470" y2="129.5" stroke="#c05621" stroke-width="2.5"/>
+  <text x="400" y="150" font-size="11.5" font-weight="700" fill="#c05621">scan the list:</text>
+  <text x="400" y="164" font-size="11.5" fill="#c05621">q &#215; 53.9&#160;ms</text>
+
+  <!-- index line: 237.7 ms build, then ~53 ns per hit (flat) -->
+  <line x1="90" y1="275.1" x2="470" y2="275.1" stroke="#2b6cb0" stroke-width="2.5"/>
+  <text x="100" y="267" font-size="11.5" font-weight="700" fill="#2b6cb0">build the dict index: 237.7&#160;ms, then 53&#160;ns per question &#8212; flat</text>
+
+  <!-- build cost bracket -->
+  <line x1="90" y1="390" x2="90" y2="275.1" stroke="#4299e1" stroke-width="4"/>
+
+  <!-- crossover marker -->
+  <line x1="257.2" y1="120" x2="257.2" y2="390" stroke="#276749" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <circle cx="257.2" cy="275.1" r="6" fill="#276749"/>
+  <rect x="186" y="196" width="150" height="46" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3"/>
+  <text x="261" y="214" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">CROSSOVER: q &#8776; 4.4</text>
+  <text x="261" y="231" text-anchor="middle" font-size="11" fill="#276749">237.7&#160;ms &#247; 53.9&#160;ms</text>
+
+  <text x="150" y="372" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">scan wins</text>
+  <text x="150" y="386" text-anchor="middle" font-size="10" fill="#c05621">q &#8804; 4</text>
+  <text x="380" y="372" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">index wins</text>
+  <text x="380" y="386" text-anchor="middle" font-size="10" fill="#276749">q &#8805; 5</text>
+
+  <!-- the real workload annotation -->
+  <rect x="98" y="128" width="284" height="40" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.2"/>
+  <text x="108" y="145" font-size="11" font-weight="700" fill="#2b6cb0">CityFlow asks all 26,335 OD pairs:</text>
+  <text x="108" y="160" font-size="11" fill="#2b6cb0">scan = 1,419.8&#160;s (23.7&#160;min) &#183; index = 0.239&#160;s</text>
+
+  <!-- ============ RIGHT PANEL: decision guide ============ -->
+  <text x="520" y="86" font-size="14" font-weight="700" fill="#1a202c">Pick by access pattern, not by speed</text>
+  <text x="520" y="103" font-size="12" fill="#718096">the question is what you do to the data, and how often</text>
+
+  <rect x="518" y="114" width="424" height="300" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- row 1 -->
+  <rect x="530" y="124" width="72" height="26" rx="5" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.2"/>
+  <text x="566" y="142" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">dict</text>
+  <text x="614" y="136" font-size="11.5" fill="#1a202c">find a record BY KEY, over and over</text>
+  <text x="614" y="150" font-size="10.5" fill="#718096">24.89&#160;ms list scan &#8594; 47&#160;ns &#183; 526,222&#215; faster</text>
+  <line x1="530" y1="160" x2="930" y2="160" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- row 2 -->
+  <rect x="530" y="168" width="72" height="26" rx="5" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.2"/>
+  <text x="566" y="186" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">set</text>
+  <text x="614" y="180" font-size="11.5" fill="#1a202c">&#8220;have I SEEN this?&#8221; &#183; dedup</text>
+  <text x="614" y="194" font-size="10.5" fill="#718096">dedup 2.96M: ~222&#160;s by scanning &#8594; 65&#160;ms &#183; 3,415&#215;</text>
+  <line x1="530" y1="204" x2="930" y2="204" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- row 3 -->
+  <rect x="530" y="212" width="72" height="26" rx="5" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2"/>
+  <text x="566" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">deque</text>
+  <text x="614" y="224" font-size="11.5" fill="#1a202c">add / remove at the ENDS &#183; buffers, queues</text>
+  <text x="614" y="238" font-size="10.5" fill="#718096">pop-front: 466.9&#160;&#181;s list &#8594; 30&#160;ns &#183; 15,603&#215; faster</text>
+  <line x1="530" y1="248" x2="930" y2="248" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- row 4 -->
+  <rect x="530" y="256" width="72" height="26" rx="5" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2"/>
+  <text x="566" y="274" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">heap</text>
+  <text x="614" y="268" font-size="11.5" fill="#1a202c">TOP-N out of a big stream</text>
+  <text x="614" y="282" font-size="10.5" fill="#718096">top-10 of 2.96M: 766.9&#160;ms sort &#8594; 60.7&#160;ms &#183; 12.6&#215;</text>
+  <line x1="530" y1="292" x2="930" y2="292" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- row 5 -->
+  <rect x="530" y="300" width="72" height="26" rx="5" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.2"/>
+  <text x="566" y="318" text-anchor="middle" font-size="12" font-weight="700" fill="#4a5568">list</text>
+  <text x="614" y="312" font-size="11.5" fill="#1a202c">iterate in ORDER &#183; index by position &#183; append</text>
+  <text x="614" y="326" font-size="10.5" fill="#718096">cheapest memory (8.2&#160;B/trip) &#183; nothing beats it here</text>
+  <line x1="530" y1="336" x2="930" y2="336" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- row 6 -->
+  <rect x="530" y="344" width="72" height="26" rx="5" fill="#fff5f5" stroke="#c53030" stroke-width="1.2"/>
+  <text x="566" y="362" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">none</text>
+  <text x="614" y="356" font-size="11.5" fill="#1a202c">insert in the MIDDLE, a lot</text>
+  <text x="614" y="370" font-size="10.5" fill="#718096">all O(n): list 751.7&#160;&#181;s, deque 1.05&#160;ms &#8212; rethink it</text>
+  <line x1="530" y1="380" x2="930" y2="380" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="530" y="398" font-size="10.5" fill="#4a5568" font-style="italic">Rule: a structure slow to build but instant to query wins only if you query it</text>
+  <text x="530" y="410" font-size="10.5" fill="#4a5568" font-style="italic">more than the crossover number of times. Below it, just scan.</text>
+
+  <!-- ============ BOTTOM: memory strip ============ -->
+  <line x1="60" y1="452" x2="940" y2="452" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="480" font-size="14" font-weight="700" fill="#1a202c">The other half of the bargain: container bytes per trip (2,964,624 trips)</text>
+  <text x="60" y="497" font-size="12" fill="#718096">sys.getsizeof of the container itself &#8212; the trip records are shared, not counted twice</text>
+
+  <!-- bars: scale 56.6 B -> 300 px -->
+  <g font-size="11">
+    <text x="176" y="527" text-anchor="end" fill="#4a5568">list</text>
+    <rect x="186" y="516" width="43.5" height="15" rx="3" fill="#a0aec0"/>
+    <text x="238" y="528" font-size="10.5" fill="#4a5568">8.2 B/trip &#183; 24.4&#160;MB</text>
+
+    <text x="176" y="551" text-anchor="end" fill="#4a5568">heap</text>
+    <rect x="186" y="540" width="43.5" height="15" rx="3" fill="#a0aec0"/>
+    <text x="238" y="552" font-size="10.5" fill="#4a5568">8.2 B/trip &#183; 24.4&#160;MB (it IS a list)</text>
+
+    <text x="176" y="575" text-anchor="end" fill="#4a5568">deque</text>
+    <rect x="186" y="564" width="44" height="15" rx="3" fill="#a0aec0"/>
+    <text x="238" y="576" font-size="10.5" fill="#4a5568">8.3 B/trip &#183; 24.5&#160;MB</text>
+
+    <text x="176" y="599" text-anchor="end" fill="#276749" font-weight="700">set</text>
+    <rect x="186" y="588" width="240.2" height="15" rx="3" fill="#48bb78"/>
+    <text x="434" y="600" font-size="10.5" fill="#276749">45.3 B/trip &#183; 134.2&#160;MB &#183; 5.5&#215; a list</text>
+
+    <text x="176" y="623" text-anchor="end" fill="#2b6cb0" font-weight="700">dict</text>
+    <rect x="186" y="612" width="300" height="15" rx="3" fill="#4299e1"/>
+    <text x="494" y="624" font-size="10.5" fill="#2b6cb0" font-weight="700">56.6 B/trip &#183; 167.8&#160;MB &#183; 6.9&#215; a list</text>
+  </g>
+
+  <rect x="640" y="512" width="300" height="118" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.3"/>
+  <text x="656" y="533" font-size="11.5" font-weight="700" fill="#c05621">Module 1&#8217;s memory wall still applies</text>
+  <text x="656" y="551" font-size="10.5" fill="#c05621">Speed is bought with bytes. A dict index over the</text>
+  <text x="656" y="566" font-size="10.5" fill="#c05621">same trips costs 6.9&#215; the list that holds them.</text>
+  <text x="656" y="584" font-size="10.5" fill="#c05621">At 100M trips that index alone wants ~5.7&#160;GB &#8212;</text>
+  <text x="656" y="599" font-size="10.5" fill="#c05621">and it peaks higher while building, because a dict</text>
+  <text x="656" y="614" font-size="10.5" fill="#c05621">resizes by copying into a new, larger table.</text>
+  <text x="656" y="626" font-size="10.5" font-weight="700" fill="#c53030">An index that does not fit is not an optimization.</text>
+</svg>

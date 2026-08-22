@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 670" width="960" height="670" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="670" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Two front-ends, one engine &#8212; the DataFrame API and SQL compile to one plan</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">pyspark 4.2.0 &#183; local[*] = 10 cores &#183; Jan&#8211;Mar 2024 yellow taxi, 9,554,757 windowed trips &#183; all numbers measured</text>
+
+<!-- front-end boxes -->
+<rect x="48" y="82" width="410" height="98" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="253" y="106" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">DATAFRAME API</text>
+<text x="66" y="130" font-size="12" fill="#4a5568">trips.filter(pickup in the quarter)</text>
+<text x="66" y="150" font-size="12" fill="#4a5568">&#160;&#160;&#160;&#160;.groupBy("PULocationID", hour_bucket)</text>
+<text x="66" y="170" font-size="12" fill="#4a5568">&#160;&#160;&#160;&#160;.agg(count("*"), sum("total_amount"))</text>
+
+<rect x="502" y="82" width="410" height="98" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="707" y="106" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">SPARK SQL</text>
+<text x="520" y="130" font-size="12" fill="#4a5568">SELECT PULocationID, count(*), sum(total_amount)</text>
+<text x="520" y="150" font-size="12" fill="#4a5568">FROM trips WHERE pickup in the quarter</text>
+<text x="520" y="170" font-size="12" fill="#4a5568">GROUP BY PULocationID, hour_bucket</text>
+
+<!-- converging arrows into Catalyst -->
+<line x1="253" y1="180" x2="430" y2="208" stroke="#4a5568" stroke-width="1.5"/>
+<line x1="707" y1="180" x2="530" y2="208" stroke="#4a5568" stroke-width="1.5"/>
+<text x="130" y="150" font-size="11" fill="#718096">df.createOrReplaceTempView("trips")</text>
+
+<rect x="286" y="210" width="388" height="46" rx="8" fill="#1a202c"/>
+<text x="480" y="232" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Catalyst optimizer</text>
+<text x="480" y="249" text-anchor="middle" font-size="11" fill="#cbd5e0">one engine &#8212; equal logic gives one plan</text>
+<line x1="480" y1="256" x2="480" y2="278" stroke="#4a5568" stroke-width="1.5"/>
+<polygon points="474,272 486,272 480,282" fill="#4a5568"/>
+
+<!-- physical plan -->
+<rect x="48" y="284" width="864" height="184" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5"/>
+<text x="64" y="308" font-size="13" font-weight="700" fill="#4a5568">== Physical Plan == &#8212; the SAME tree from both front-ends</text>
+<text x="64" y="328" font-size="11" fill="#c05621">DataFrame API plan &#8801; SQL plan, byte-identical after erasing cosmetic ids: _groupingexpression#128 vs #129, plan_id=181 vs 198</text>
+<text x="64" y="352" font-size="12" fill="#1a202c">AdaptiveSparkPlan isFinalPlan=false</text>
+<text x="82" y="372" font-size="12" fill="#1a202c">&#8627; HashAggregate [count(1), sum(total_amount)] &#8212; final</text>
+<text x="100" y="392" font-size="12" fill="#c53030">&#8627; Exchange hashpartitioning(&#8230;, 200) &#8212; the shuffle</text>
+<text x="118" y="412" font-size="12" fill="#1a202c">&#8627; HashAggregate [partial_count, partial_sum] &#8212; map-side</text>
+<text x="136" y="432" font-size="12" fill="#1a202c">&#8627; Project [date_trunc("hour", pickup) &#8594; hour_bucket]</text>
+<text x="154" y="452" font-size="12" fill="#1a202c">&#8627; Filter [2024-01-01 &#8804; pickup &lt; 2024-04-01]</text>
+<text x="172" y="472" font-size="12" fill="#2b6cb0">&#8627; FileScan parquet [pickup, PULocationID, total_amount]</text>
+
+<!-- cross-check panel -->
+<rect x="48" y="480" width="864" height="80" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="66" y="504" font-size="12" font-weight="700" fill="#276749">Both front-ends &#8594; the same verified answer (cross-checked to Course 1, to the cent):</text>
+<text x="66" y="528" font-size="13" fill="#1a202c">240,917 zone-hour buckets &#183; 9,554,757 trips kept &#183; <tspan font-weight="700">$256,692,373.14</tspan> revenue</text>
+<text x="66" y="550" font-size="11" fill="#718096">busiest bucket: zone 79 (East Village) &#183; 2024-02-25 01:00 &#183; 846 trips</text>
+
+<!-- footer -->
+<rect x="48" y="572" width="864" height="86" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+<text x="66" y="596" font-size="11" fill="#4a5568">spark.sql(&#8230;) returns an ordinary DataFrame &#8212; order it, join it, re-register it, keep chaining. No seam between SQL and the API.</text>
+<text x="66" y="618" font-size="11" fill="#4a5568">createOrReplaceGlobalTempView puts a view in the global_temp database (query it as global_temp.name); a temp view is session-scoped.</text>
+<text x="66" y="640" font-size="11" fill="#c05621">A temp view is a named plan, NOT a cache &#8212; querying it re-runs the FileScan every time (Module 5 is where you cache).</text>
+</svg>

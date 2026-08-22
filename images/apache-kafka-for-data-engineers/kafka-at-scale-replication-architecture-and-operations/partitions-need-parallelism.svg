@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>One producer: more partitions hurt. Four producers: more partitions help.</title>
+  <desc>A real benchmark on this course's own 3-broker cluster: with one producer, a 3-partition topic reaches 59,201 messages a second while a 12-partition topic reaches only 48,342 -- more partitions with no parallelism to exploit them measurably hurt throughput. With four concurrent producers, the result reverses: the 3-partition topic reaches 111,265 messages a second while the 12-partition topic reaches 129,075 -- more partitions help once real parallel producers exist to use them. The conclusion: partitions are a unit of parallelism, not a source of throughput by themselves.</desc>
+  <rect width="1100" height="440" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Partitions Enable Parallelism -- They Don't Create It</text>
+
+  <!-- 1 producer panel -->
+  <rect x="40" y="55" width="500" height="200" rx="10" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="290" y="80" text-anchor="middle" font-size="12.5" font-weight="700" fill="#822727">1 Producer</text>
+
+  <text x="90" y="115" font-size="9.5" fill="#822727">3 partitions</text>
+  <rect x="90" y="122" width="296" height="22" fill="#fc8181" />
+  <text x="238" y="138" text-anchor="middle" font-size="10" font-weight="700" fill="#742a2a">59,201 msg/s</text>
+
+  <text x="90" y="168" font-size="9.5" fill="#822727">12 partitions</text>
+  <rect x="90" y="175" width="242" height="22" fill="#feb2b2" />
+  <text x="211" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#742a2a">48,342 msg/s</text>
+
+  <text x="290" y="228" text-anchor="middle" font-size="10.5" font-weight="700" fill="#822727">More partitions -&gt; LOWER throughput</text>
+
+  <!-- 4 producer panel -->
+  <rect x="560" y="55" width="500" height="200" rx="10" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="810" y="80" text-anchor="middle" font-size="12.5" font-weight="700" fill="#22543d">4 Concurrent Producers</text>
+
+  <text x="610" y="115" font-size="9.5" fill="#22543d">3 partitions</text>
+  <rect x="610" y="122" width="258" height="22" fill="#68d391" />
+  <text x="739" y="138" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">111,265 msg/s</text>
+
+  <text x="610" y="168" font-size="9.5" fill="#22543d">12 partitions</text>
+  <rect x="610" y="175" width="300" height="22" fill="#48bb78" />
+  <text x="760" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">129,075 msg/s</text>
+
+  <text x="810" y="228" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">More partitions -&gt; HIGHER throughput</text>
+
+  <text x="550" y="290" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2d3748">Same cluster, same partition counts -- only the parallelism changed</text>
+
+  <rect x="180" y="315" width="740" height="90" rx="8" fill="#f7fafc" stroke="#cbd5e0" />
+  <text x="550" y="345" text-anchor="middle" font-size="11" fill="#4a5568">Partitions are a unit of parallelism, not a source of throughput by themselves.</text>
+  <text x="550" y="368" text-anchor="middle" font-size="10.5" fill="#4a5568">Provisioning partitions with nobody to read or write them in parallel</text>
+  <text x="550" y="388" text-anchor="middle" font-size="10.5" fill="#4a5568">costs coordination overhead and gains nothing -- proven here, not assumed.</text>
+</svg>

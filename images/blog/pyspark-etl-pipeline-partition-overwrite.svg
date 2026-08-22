@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Static vs. dynamic partition overwrite mode, with verified row counts</title>
+  <desc id="desc">Diagram showing a Parquet warehouse with 43 rows across a city=rotterdam partition (23 rows) and a city=vienna partition (20 rows). Rewriting only the Rotterdam partition under the default static overwrite mode deletes the whole warehouse first, leaving 23 rows and losing the Vienna partition entirely. The same rewrite under dynamic partition overwrite mode replaces only the Rotterdam partition, leaving all 43 rows intact across both partitions.</desc>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="40" y="40" font-size="20" font-weight="700" letter-spacing="1" fill="#0067c0">BEFORE THE RERUN</text>
+    <rect x="40" y="70" width="230" height="180" rx="16" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="60" y="100" font-size="16" font-weight="700" fill="#59636e">warehouse/trips</text>
+    <rect x="60" y="118" width="190" height="52" rx="10" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <text x="70" y="140" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="14" fill="#1b1f24">city=rotterdam</text>
+    <text x="70" y="160" font-size="14" fill="#59636e">23 rows</text>
+    <rect x="60" y="180" width="190" height="52" rx="10" fill="#e6f4e6" stroke="#0067c0" stroke-width="2"/>
+    <text x="70" y="202" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="14" fill="#1b1f24">city=vienna</text>
+    <text x="70" y="222" font-size="14" fill="#59636e">20 rows</text>
+    <text x="60" y="270" font-size="15" font-weight="600" fill="#1b1f24">Total: 43 rows</text>
+
+    <text x="360" y="145" font-size="16" font-weight="600" fill="#59636e">rewrite</text>
+    <text x="360" y="163" font-size="14" fill="#59636e">rotterdam only</text>
+    <path d="M280 190H420" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+    <path d="M420 185 L440 190 L420 195" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <path d="M440 190C480 190 480 90 520 90" fill="none" stroke="#c94f4f" stroke-width="5" stroke-linecap="round"/>
+    <path d="M440 190C480 190 480 300 520 300" fill="none" stroke="#0067c0" stroke-width="5" stroke-linecap="round"/>
+
+    <text x="520" y="50" font-size="20" font-weight="700" letter-spacing="1" fill="#c94f4f">STATIC MODE (DEFAULT)</text>
+    <rect x="520" y="70" width="230" height="120" rx="16" fill="#ffffff" stroke="#c94f4f" stroke-width="2"/>
+    <rect x="540" y="90" width="190" height="52" rx="10" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <text x="550" y="112" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="14" fill="#1b1f24">city=rotterdam</text>
+    <text x="550" y="132" font-size="14" fill="#59636e">23 rows</text>
+    <text x="540" y="172" font-size="14" fill="#c94f4f" text-decoration="line-through">city=vienna &#8212; deleted</text>
+    <text x="520" y="212" font-size="15" font-weight="700" fill="#c94f4f">Total: 23 rows (20 lost)</text>
+
+    <text x="520" y="270" font-size="20" font-weight="700" letter-spacing="1" fill="#0067c0">DYNAMIC MODE</text>
+    <rect x="520" y="290" width="230" height="180" rx="16" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+    <rect x="540" y="310" width="190" height="52" rx="10" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <text x="550" y="332" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="14" fill="#1b1f24">city=rotterdam</text>
+    <text x="550" y="352" font-size="14" fill="#59636e">23 rows (refreshed)</text>
+    <rect x="540" y="372" width="190" height="52" rx="10" fill="#e6f4e6" stroke="#0067c0" stroke-width="2"/>
+    <text x="550" y="394" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="14" fill="#1b1f24">city=vienna</text>
+    <text x="550" y="414" font-size="14" fill="#59636e">20 rows (untouched)</text>
+    <text x="520" y="450" font-size="15" font-weight="700" fill="#0067c0">Total: 43 rows</text>
+
+    <g transform="translate(800 40)">
+      <rect x="0" y="0" width="360" height="480" rx="16" fill="#fdeede" stroke="#e0b184" stroke-width="2"/>
+      <text x="24" y="36" font-size="18" font-weight="700" fill="#1b1f24">spark.conf.set(</text>
+      <text x="24" y="62" font-size="14" font-family="'SFMono-Regular', Consolas, Menlo, monospace" fill="#1b1f24">"spark.sql.sources.</text>
+      <text x="24" y="82" font-size="14" font-family="'SFMono-Regular', Consolas, Menlo, monospace" fill="#1b1f24">partitionOverwriteMode",</text>
+      <text x="24" y="102" font-size="14" font-family="'SFMono-Regular', Consolas, Menlo, monospace" fill="#0067c0" font-weight="700">"dynamic"</text>
+      <text x="24" y="122" font-size="14" font-family="'SFMono-Regular', Consolas, Menlo, monospace" fill="#1b1f24">)</text>
+      <line x1="24" y1="150" x2="336" y2="150" stroke="#e0b184" stroke-width="2"/>
+      <text x="24" y="182" font-size="16" fill="#1b1f24">One config flag decides whether</text>
+      <text x="24" y="206" font-size="16" fill="#1b1f24">an overwrite means "replace</text>
+      <text x="24" y="230" font-size="16" fill="#1b1f24">everything here" (static, the</text>
+      <text x="24" y="254" font-size="16" fill="#1b1f24">Spark default) or "replace only</text>
+      <text x="24" y="278" font-size="16" fill="#1b1f24">the partitions I actually wrote"</text>
+      <text x="24" y="302" font-size="16" fill="#1b1f24">(dynamic).</text>
+      <text x="24" y="340" font-size="16" font-weight="600" fill="#1b1f24">Same rewrite. Same code.</text>
+      <text x="24" y="364" font-size="16" font-weight="600" fill="#1b1f24">Only this setting decides</text>
+      <text x="24" y="388" font-size="16" font-weight="600" fill="#1b1f24">whether Vienna survives.</text>
+    </g>
+  </g>
+</svg>

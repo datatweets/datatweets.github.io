@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
+
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">One Pass, Three Structures, 39 Kilobytes of Answers</text>
+  <text x="480" y="56" text-anchor="middle" font-size="14" fill="#718096">2,964,624 January 2024 yellow-taxi trips &#183; 10-core macOS &#183; 134&#8201;MB peak RSS vs 1,026&#8201;MB for the naive materialize-and-sort baseline</text>
+
+  <!-- Column headers -->
+  <text x="120" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#2b6cb0">STREAM</text>
+  <text x="120" y="109" text-anchor="middle" font-size="11" fill="#718096">one batch resident</text>
+
+  <text x="430" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">ONE PASS &#183; per trip</text>
+  <text x="430" y="109" text-anchor="middle" font-size="11" fill="#718096">bounded by keys and k, never by rows</text>
+
+  <text x="800" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#6b46c1">ANSWERS &#183; 39.0&#8201;KB total</text>
+  <text x="800" y="109" text-anchor="middle" font-size="11" fill="#718096">identical size at 1&#215; and 2&#215; the data</text>
+
+  <!-- Stream column -->
+  <rect x="30" y="126" width="180" height="78" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="120" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">yellow_tripdata</text>
+  <text x="120" y="167" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">_2024-01.parquet</text>
+  <text x="120" y="187" text-anchor="middle" font-size="11" fill="#4a5568">2,964,624 trips &#183; 3 row groups</text>
+
+  <line x1="120" y1="204" x2="120" y2="240" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="120,246 115,236 125,236" fill="#a0aec0"/>
+
+  <rect x="30" y="248" width="180" height="78" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="120" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">iter_batches(</text>
+  <text x="120" y="288" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">batch_size=65_536)</text>
+  <text x="120" y="309" text-anchor="middle" font-size="11" fill="#4a5568">3 columns only, ~65k rows</text>
+
+  <text x="120" y="352" text-anchor="middle" font-size="11" font-style="italic" fill="#718096">the batch is dropped</text>
+  <text x="120" y="368" text-anchor="middle" font-size="11" font-style="italic" fill="#718096">before the next arrives</text>
+
+  <!-- Stream -> one pass arrow -->
+  <line x1="210" y1="287" x2="242" y2="287" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="248,287 238,282 238,292" fill="#a0aec0"/>
+
+  <!-- One-pass container -->
+  <rect x="250" y="120" width="360" height="300" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Set box -->
+  <rect x="264" y="134" width="332" height="72" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="278" y="155" font-size="12" font-weight="700" fill="#276749">1. set &#183; REPORTABLE &#8212; 263 zone ids</text>
+  <text x="278" y="173" font-size="11" fill="#4a5568">if zid not in reportable: skip &#8212; O(1) membership</text>
+  <text x="278" y="191" font-size="11" fill="#c05621">12,018 trips dropped (264 Unknown, 265 Outside of NYC)</text>
+
+  <!-- Dict box -->
+  <rect x="264" y="216" width="332" height="90" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="278" y="237" font-size="12" font-weight="700" fill="#276749">2. dict &#183; index &#8212; 258 zones seen</text>
+  <text x="278" y="255" font-size="11" fill="#4a5568">index[zid] &#8594; [trips, total_fare, total_miles]</text>
+  <text x="278" y="273" font-size="11" fill="#4a5568">running totals, updated in place &#8212; O(1) per trip</text>
+  <text x="278" y="292" font-size="11" fill="#276749">grows with ZONES (258), not with trips (2.96M)</text>
+
+  <!-- Heap box -->
+  <rect x="264" y="316" width="332" height="90" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="278" y="337" font-size="12" font-weight="700" fill="#276749">3. heap &#183; top_trips &#8212; exactly 10 entries</text>
+  <text x="278" y="355" font-size="11" fill="#4a5568">if fare &gt; heap[0]: heappushpop &#8212; O(log k)</text>
+  <text x="278" y="373" font-size="11" fill="#4a5568">the other 2,952,596 fares are never stored</text>
+  <text x="278" y="392" font-size="11" fill="#276749">grows with k (10), not with trips</text>
+
+  <!-- One pass -> answers arrows -->
+  <line x1="610" y1="170" x2="652" y2="170" stroke="#9f7aea" stroke-width="1.5"/>
+  <polygon points="658,170 648,165 648,175" fill="#9f7aea"/>
+  <line x1="610" y1="261" x2="652" y2="261" stroke="#9f7aea" stroke-width="1.5"/>
+  <polygon points="658,261 648,256 648,266" fill="#9f7aea"/>
+  <line x1="610" y1="361" x2="652" y2="361" stroke="#9f7aea" stroke-width="1.5"/>
+  <polygon points="658,361 648,356 648,366" fill="#9f7aea"/>
+
+  <!-- Answer boxes -->
+  <rect x="660" y="134" width="270" height="72" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="674" y="155" font-size="12" font-weight="700" fill="#6b46c1">O(1) zone tile</text>
+  <text x="674" y="173" font-size="11" fill="#4a5568">lookup(132) &#8594; JFK Airport, Queens</text>
+  <text x="674" y="191" font-size="11" fill="#4a5568">145,240 trips &#183; $59.40 avg &#183; 15.49 mi</text>
+
+  <rect x="660" y="216" width="270" height="90" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="674" y="237" font-size="12" font-weight="700" fill="#6b46c1">busiest zones</text>
+  <text x="674" y="255" font-size="11" fill="#4a5568">nlargest(10, index) over 258 items</text>
+  <text x="674" y="273" font-size="11" fill="#4a5568">1. JFK Airport &#8212; 145,240</text>
+  <text x="674" y="292" font-size="11" fill="#4a5568">2. Midtown Center &#8212; 143,471</text>
+
+  <rect x="660" y="316" width="270" height="90" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="674" y="337" font-size="12" font-weight="700" fill="#6b46c1">biggest fares</text>
+  <text x="674" y="355" font-size="11" fill="#4a5568">read straight off the heap</text>
+  <text x="674" y="373" font-size="11" fill="#4a5568">$2,221.30 &#8212; Spuyten Duyvil/Kingsbridge</text>
+  <text x="674" y="392" font-size="11" fill="#4a5568">$1,616.50 &#8212; Mott Haven/Port Morris</text>
+
+  <!-- Divider -->
+  <line x1="30" y1="446" x2="930" y2="446" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Memory panel -->
+  <text x="30" y="474" font-size="15" font-weight="700" fill="#1a202c">Peak resident memory &#8212; what happens when the data doubles</text>
+  <text x="30" y="492" font-size="11" fill="#718096">getrusage(RUSAGE_SELF).ru_maxrss, each variant in its own spawned process &#183; includes the 94&#8201;MB interpreter + pandas floor</text>
+
+  <!-- Bars -->
+  <text x="196" y="522" text-anchor="end" font-size="11" fill="#276749">one pass &#183; 1 month</text>
+  <rect x="200" y="512" width="45" height="16" rx="3" fill="#48bb78"/>
+  <text x="253" y="524" font-size="11" font-weight="700" fill="#276749">134 MB</text>
+
+  <text x="196" y="546" text-anchor="end" font-size="11" fill="#276749">one pass &#183; 2 months</text>
+  <rect x="200" y="536" width="48" height="16" rx="3" fill="#48bb78"/>
+  <text x="256" y="548" font-size="11" font-weight="700" fill="#276749">143 MB</text>
+  <text x="330" y="548" font-size="11" fill="#276749">2&#215; the trips, +9&#8201;MB &#8212; and the answers stay 39.0&#8201;KB</text>
+
+  <text x="196" y="578" text-anchor="end" font-size="11" fill="#c05621">naive &#183; 1 month</text>
+  <rect x="200" y="568" width="343" height="16" rx="3" fill="#ed8936"/>
+  <text x="551" y="580" font-size="11" font-weight="700" fill="#c05621">1,026 MB</text>
+
+  <text x="196" y="602" text-anchor="end" font-size="11" fill="#c05621">naive &#183; 2 months</text>
+  <rect x="200" y="592" width="600" height="16" rx="3" fill="#ed8936"/>
+  <text x="808" y="604" font-size="11" font-weight="700" fill="#c53030">1,796 MB</text>
+  <text x="330" y="624" font-size="11" fill="#c53030">2&#215; the trips, +769&#8201;MB &#8212; its row scaffold doubles exactly: 204&#8201;MB &#8594; 407&#8201;MB</text>
+
+  <text x="480" y="666" text-anchor="middle" font-size="13" fill="#4a5568">Same 10 zones, same 10 fares, same 258-zone index &#8212; at 7.7&#215; less peak memory, because the answers were built as the data went by.</text>
+  <text x="480" y="686" text-anchor="middle" font-size="11" font-style="italic" fill="#718096">Peak RSS varies by machine and run; the 39.0&#8201;KB of retained answers and the exact 2.00&#215; scaffold growth do not.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Why order_date Auto-Detects as VARCHAR</text>
+
+  <text x="175" y="64" text-anchor="middle" font-size="11.5" font-weight="700" fill="#742a2a">order_date (mixed formats)</text>
+  <rect x="40" y="78" width="270" height="120" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.3" />
+  <text x="58" y="104" font-size="11" font-family="Menlo, monospace" fill="#742a2a">2024-01-01</text>
+  <text x="58" y="128" font-size="11" font-family="Menlo, monospace" fill="#742a2a">07-Jan-2024</text>
+  <text x="58" y="152" font-size="11" font-family="Menlo, monospace" fill="#742a2a">01/09/2024</text>
+  <text x="175" y="182" text-anchor="middle" font-size="9.5" fill="#9c4221">no single DATE format fits all three</text>
+
+  <line x1="310" y1="138" x2="352" y2="138" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowS)" />
+
+  <rect x="352" y="112" width="108" height="52" rx="6" fill="#fed7d7" stroke="#fc8181" stroke-width="1.3" />
+  <text x="406" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#742a2a">VARCHAR</text>
+  <text x="406" y="150" text-anchor="middle" font-size="8.5" fill="#9c4221">the correct call</text>
+
+  <text x="625" y="64" text-anchor="middle" font-size="11.5" font-weight="700" fill="#22543d">a real DATE column</text>
+  <rect x="490" y="78" width="270" height="120" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="508" y="104" font-size="11" font-family="Menlo, monospace" fill="#22543d">2024-01-01</text>
+  <text x="508" y="128" font-size="11" font-family="Menlo, monospace" fill="#22543d">2024-01-23</text>
+  <text x="508" y="152" font-size="11" font-family="Menlo, monospace" fill="#22543d">2024-02-06</text>
+  <text x="625" y="182" text-anchor="middle" font-size="9.5" fill="#276749">one consistent format -&gt; DATE</text>
+
+  <rect x="60" y="228" width="680" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="400" y="252" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">The fix isn't a read-time type override -- it's a post-read parse</text>
+  <text x="400" y="270" text-anchor="middle" font-size="10.5" fill="#9c4221">COALESCE(try_strptime(..., fmt1), try_strptime(..., fmt2), try_strptime(..., fmt3)) -- all 795 rows parsed</text>
+
+  <rect x="60" y="304" width="680" height="56" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="400" y="328" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">Contrast: unit_price auto-detects fine (DOUBLE) but gets a read-time override anyway</text>
+  <text x="400" y="346" text-anchor="middle" font-size="10.5" fill="#2c5282">columns={'unit_price': 'DECIMAL(10,2)'} -- a different problem, a different tool</text>
+
+  <defs>
+    <marker id="arrowS" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

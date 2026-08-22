@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Three Real Choices for a Null Value</text>
+
+  <rect x="270" y="52" width="180" height="56" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="360" y="76" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a202c">pos_export</text>
+  <text x="360" y="94" text-anchor="middle" font-size="9.5" fill="#4a5568">email: 2 of 4 rows null</text>
+
+  <line x1="360" y1="108" x2="360" y2="132" stroke="#a0aec0" stroke-width="1.3" />
+  <rect x="270" y="132" width="180" height="34" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="360" y="153" text-anchor="middle" font-size="10.5" fill="#2b6cb0">.is_null() -- find them</text>
+
+  <line x1="270" y1="185" x2="180" y2="220" stroke="#4299e1" stroke-width="1.3" marker-end="url(#n1)" />
+  <line x1="360" y1="185" x2="360" y2="220" stroke="#4299e1" stroke-width="1.3" marker-end="url(#n2)" />
+  <line x1="450" y1="185" x2="540" y2="220" stroke="#4299e1" stroke-width="1.3" marker-end="url(#n3)" />
+  <defs>
+    <marker id="n1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4299e1"/></marker>
+    <marker id="n2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4299e1"/></marker>
+    <marker id="n3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4299e1"/></marker>
+  </defs>
+
+  <rect x="70" y="228" width="200" height="110" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="170" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">.fill_null(value)</text>
+  <text x="170" y="274" text-anchor="middle" font-size="9.5" fill="#2d3748">replace nulls with a</text>
+  <text x="170" y="290" text-anchor="middle" font-size="9.5" fill="#2d3748">real placeholder value</text>
+  <text x="170" y="312" text-anchor="middle" font-size="9.5" fill="#4a5568">keeps all 4 rows</text>
+
+  <rect x="260" y="228" width="200" height="110" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#9c4221">.drop_nulls()</text>
+  <text x="360" y="274" text-anchor="middle" font-size="9.5" fill="#2d3748">remove rows that have</text>
+  <text x="360" y="290" text-anchor="middle" font-size="9.5" fill="#2d3748">a null (whole row, or</text>
+  <text x="360" y="306" text-anchor="middle" font-size="9.5" fill="#2d3748">a chosen subset= )</text>
+  <text x="360" y="326" text-anchor="middle" font-size="9.5" fill="#4a5568">keeps only complete rows</text>
+
+  <rect x="450" y="228" width="200" height="110" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="550" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">.filter(is_null())</text>
+  <text x="550" y="274" text-anchor="middle" font-size="9.5" fill="#2d3748">isolate just the rows</text>
+  <text x="550" y="290" text-anchor="middle" font-size="9.5" fill="#2d3748">missing data, to review</text>
+  <text x="550" y="306" text-anchor="middle" font-size="9.5" fill="#2d3748">or fix by hand</text>
+  <text x="550" y="326" text-anchor="middle" font-size="9.5" fill="#4a5568">keeps only the gaps</text>
+
+  <text x="360" y="376" text-anchor="middle" font-size="10.5" fill="#718096">Same starting table, three different real outputs -- which one is right depends on what</text>
+  <text x="360" y="394" text-anchor="middle" font-size="10.5" fill="#718096">the missing value actually means, not on which method happens to be shortest to type.</text>
+</svg>

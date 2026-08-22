@@ -1,0 +1,31 @@
+doc_id,topic,title,text,region,min_plan,status
+G01,report_recovery,Restore removed reports,A removed analytics report stays in the recycle area for 7 days before permanent deletion.,global,free,current
+E01,report_recovery,How long can I recover a deleted analytics report — Europe,A deleted analytics report can be recovered for 14 days in a Europe Team workspace.,eu,team,current
+A01,report_recovery,How long can I recover a deleted analytics report — Asia Pacific,A deleted analytics report can be recovered for 21 days in an Asia Pacific Team workspace.,apac,team,current
+U01,report_recovery,How long can I recover a deleted analytics report — United States,A deleted analytics report can be recovered for 30 days in a United States Enterprise workspace.,us,enterprise,current
+X01,report_recovery,How long can I recover a deleted analytics report — archived,A deleted analytics report can be recovered for 90 days under the retired 2024 policy.,global,free,archived
+G02,audit_export,Download activity records,The standard activity download is supplied as a CSV file with one event per row.,global,free,current
+E02,audit_export,Which file format does the audit export use — Europe,The audit export uses a JSON Lines file for Europe Team workspaces.,eu,team,current
+A02,audit_export,Which file format does the audit export use — Asia Pacific,The audit export uses a parquet file for Asia Pacific Team workspaces.,apac,team,current
+U02,audit_export,Which file format does the audit export use — United States,The audit export uses a signed ZIP archive of CSV files for United States Enterprise workspaces.,us,enterprise,current
+X02,audit_export,Which file format does the audit export use — archived,The audit export uses an XML file under the retired 2024 export service.,global,free,archived
+G03,guest_link,Share with a guest,A guest sharing link stops working 24 hours after it is created on the Free plan.,global,free,current
+E03,guest_link,When does a guest sharing link expire — Europe,A guest sharing link expires after 72 hours in a Europe Team workspace.,eu,team,current
+A03,guest_link,When does a guest sharing link expire — Asia Pacific,A guest sharing link expires after 48 hours in an Asia Pacific Team workspace.,apac,team,current
+U03,guest_link,When does a guest sharing link expire — United States,A guest sharing link expires after 7 days in a United States Enterprise workspace.,us,enterprise,current
+X03,guest_link,When does a guest sharing link expire — archived,A guest sharing link expires after 30 days under the retired 2024 sharing policy.,global,free,archived
+G04,offline_sync,Store records for offline work,Offline sync can queue 200 record changes on the Free plan and uploads them after reconnection.,global,free,current
+E04,offline_sync,How many records can offline sync store — Europe,"Offline sync can store 2,000 records in a Europe Team workspace.",eu,team,current
+A04,offline_sync,How many records can offline sync store — Asia Pacific,"Offline sync can store 1,500 records in an Asia Pacific Team workspace.",apac,team,current
+U04,offline_sync,How many records can offline sync store — United States,"Offline sync can store 10,000 records in a United States Enterprise workspace.",us,enterprise,current
+X04,offline_sync,How many records can offline sync store — archived,"Offline sync can store 50,000 records under the retired desktop client policy.",global,free,archived
+G05,tax_receipt,Download an invoice receipt,"Free-plan administrators can download an invoice tax receipt from Billing, then Payment history.",global,free,current
+E05,tax_receipt,Where can I download the invoice tax receipt — Europe,"Download the invoice tax receipt from Billing, Tax documents in a Europe Team workspace.",eu,team,current
+A05,tax_receipt,Where can I download the invoice tax receipt — Asia Pacific,"Download the invoice tax receipt from Billing, Regional documents in an Asia Pacific Team workspace.",apac,team,current
+U05,tax_receipt,Where can I download the invoice tax receipt — United States,"Download the invoice tax receipt from Billing, Compliance archive in a United States Enterprise workspace.",us,enterprise,current
+X05,tax_receipt,Where can I download the invoice tax receipt — archived,"Download the invoice tax receipt from Account, Legacy invoices under the retired 2024 menu.",global,free,archived
+G06,session_timeout,Sign in again after inactivity,A Free-plan user is signed out after 8 hours without activity.,global,free,current
+E06,session_timeout,When does an inactive sign-in session end — Europe,An inactive sign-in session ends after 2 hours in a Europe Team workspace.,eu,team,current
+A06,session_timeout,When does an inactive sign-in session end — Asia Pacific,An inactive sign-in session ends after 4 hours in an Asia Pacific Team workspace.,apac,team,current
+U06,session_timeout,When does an inactive sign-in session end — United States,An inactive sign-in session ends after 30 minutes in a United States Enterprise workspace.,us,enterprise,current
+X06,session_timeout,When does an inactive sign-in session end — archived,An inactive sign-in session ends after 24 hours under the retired 2024 security policy.,global,free,archived

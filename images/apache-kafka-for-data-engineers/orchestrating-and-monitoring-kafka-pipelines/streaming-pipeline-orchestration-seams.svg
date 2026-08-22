@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="460" viewBox="0 0 1100 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The pipeline runs itself -- four real seams around it need a scheduler</title>
+  <desc>CityFlow's Kafka pipeline runs continuously with no scheduler of its own -- three brokers, a JDBC connector polling on its own internal timer, and a Faust worker processing forever. Four real seams around that pipeline have a natural schedule instead: a nightly Spark reconciliation against a published batch figure, a periodic check that the JDBC connector's incremental offset is still advancing, a periodic check that a Faust table's changelog partition count still matches its source topic, and a periodic consumer-group lag check across the whole cluster. Airflow orchestrates these four seams, never the streaming pipeline itself.</desc>
+  <rect width="1100" height="460" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Pipeline Runs Itself -- Four Real Seams Around It Need a Scheduler</text>
+
+  <!-- Always-on pipeline band -->
+  <rect x="40" y="60" width="640" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="360" y="82" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2c5282">Always Running -- No Scheduler Needed</text>
+
+  <rect x="65" y="100" width="140" height="60" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.2" />
+  <text x="135" y="126" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">3 Kafka brokers</text>
+  <text x="135" y="142" text-anchor="middle" font-size="9" fill="#22543d">up since Module 1</text>
+
+  <rect x="235" y="100" width="180" height="60" rx="6" fill="#feebc8" stroke="#ed8936" stroke-width="1.2" />
+  <text x="325" y="122" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7b341e">JDBC connector</text>
+  <text x="325" y="138" text-anchor="middle" font-size="9" fill="#7b341e">polls on its own timer</text>
+  <text x="325" y="152" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#7b341e">mode: incrementing</text>
+
+  <rect x="445" y="100" width="210" height="60" rx="6" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.2" />
+  <text x="550" y="122" text-anchor="middle" font-size="10.5" font-weight="700" fill="#553c9a">Faust worker</text>
+  <text x="550" y="138" text-anchor="middle" font-size="9" fill="#553c9a">processes forever</text>
+  <text x="550" y="152" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#553c9a">revenue_by_zone table</text>
+
+  <text x="360" y="184" text-anchor="middle" font-size="10" fill="#2c5282">Nothing here waits for a trigger -- Airflow orchestrates around it, never inside it</text>
+
+  <!-- Airflow box -->
+  <rect x="770" y="60" width="290" height="150" rx="10" fill="#2c5282" />
+  <text x="915" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#ebf8ff">Apache Airflow</text>
+  <text x="915" y="108" text-anchor="middle" font-size="9.5" fill="#bee3f8">webserver + scheduler, joined to</text>
+  <text x="915" y="122" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#bee3f8">kafka-net</text>
+  <text x="915" y="146" text-anchor="middle" font-size="9.5" fill="#bee3f8">schedule + retry + record --</text>
+  <text x="915" y="162" text-anchor="middle" font-size="9.5" fill="#bee3f8">never the stream's own lifecycle</text>
+
+  <path d="M680,135 L770,135" stroke="#a0aec0" stroke-width="2" marker-end="url(#a10)" />
+
+  <!-- Four seams -->
+  <text x="550" y="245" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2d3748">Four Real Seams With a Natural Schedule</text>
+
+  <g>
+    <rect x="30" y="265" width="250" height="80" rx="7" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.2" />
+    <text x="155" y="288" text-anchor="middle" font-size="10.5" font-weight="700" fill="#744210">Nightly reconciliation</text>
+    <text x="155" y="305" text-anchor="middle" font-size="9" fill="#744210">Spark vs. published</text>
+    <text x="155" y="319" text-anchor="middle" font-size="9" fill="#744210">batch figure (Module 9)</text>
+    <text x="155" y="335" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#975a16">schedule="@daily"</text>
+  </g>
+
+  <g>
+    <rect x="300" y="265" width="250" height="80" rx="7" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.2" />
+    <text x="425" y="288" text-anchor="middle" font-size="10.5" font-weight="700" fill="#744210">Connector checkpoint check</text>
+    <text x="425" y="305" text-anchor="middle" font-size="9" fill="#744210">is the JDBC connector's</text>
+    <text x="425" y="319" text-anchor="middle" font-size="9" fill="#744210">incrementing offset advancing?</text>
+    <text x="425" y="335" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#975a16">GET /connectors/.../status</text>
+  </g>
+
+  <g>
+    <rect x="570" y="265" width="250" height="80" rx="7" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.2" />
+    <text x="695" y="288" text-anchor="middle" font-size="10.5" font-weight="700" fill="#744210">Table health check</text>
+    <text x="695" y="305" text-anchor="middle" font-size="9" fill="#744210">does the changelog partition</text>
+    <text x="695" y="319" text-anchor="middle" font-size="9" fill="#744210">count still match the source?</text>
+    <text x="695" y="335" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#975a16">the Module 9 PartitionsMismatch fix</text>
+  </g>
+
+  <g>
+    <rect x="840" y="265" width="230" height="80" rx="7" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.4" />
+    <text x="955" y="288" text-anchor="middle" font-size="10.5" font-weight="700" fill="#822727">Consumer-group lag check</text>
+    <text x="955" y="305" text-anchor="middle" font-size="9" fill="#822727">this module's own focus --</text>
+    <text x="955" y="319" text-anchor="middle" font-size="9" fill="#822727">Lessons 2, 3, and 5</text>
+    <text x="955" y="335" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#822727">compute_group_lag()</text>
+  </g>
+
+  <path d="M155,265 L155,220 L900,220 L900,210" stroke="#a0aec0" stroke-width="1.6" fill="none" marker-end="url(#a10)" />
+  <path d="M425,265 L425,220" stroke="#a0aec0" stroke-width="1.6" fill="none" />
+  <path d="M695,265 L695,220" stroke="#a0aec0" stroke-width="1.6" fill="none" />
+  <path d="M955,265 L955,220 L920,220" stroke="#a0aec0" stroke-width="1.6" fill="none" />
+
+  <defs>
+    <marker id="a10" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <text x="550" y="405" text-anchor="middle" font-size="11" fill="#4a5568">Airflow schedules and retries these four checks -- it never runs the streaming pipeline itself.</text>
+  <text x="550" y="428" text-anchor="middle" font-size="10.5" fill="#718096">Lesson 2 makes the lag check real: an Airflow Hook, joined to kafka-net, computing per-partition lag.</text>
+</svg>

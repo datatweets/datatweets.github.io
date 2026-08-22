@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Plant growth stage transitions: one forward path, one terminal state</title>
+  <desc id="desc">State diagram showing four plant growth stages: seed transitions to sprout, sprout transitions to mature, forming one forward path, while all three of seed, sprout, and mature can transition directly to wilted, and wilted has no outgoing transitions at all.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0067c0"/>
+    </marker>
+    <marker id="arrow-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a9b1b9"/>
+    </marker>
+    <style>
+      .heading { font: 700 26px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .label { font: 700 20px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .wlabel { font: 700 20px Jost, system-ui, sans-serif; fill: #ffffff; }
+      .detail { font: 15px Jost, system-ui, sans-serif; fill: #59636e; }
+      .flow { fill: none; stroke: #0067c0; stroke-width: 3; marker-end: url(#arrow); }
+      .neglect { fill: none; stroke: #a9b1b9; stroke-width: 2; stroke-dasharray: 5 4; marker-end: url(#arrow-grey); }
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="#f7f8fa"/>
+  <rect x="28" y="24" width="1144" height="512" rx="24" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <text x="62" y="66" class="heading">Three states move forward; one is a trapdoor</text>
+
+  <!-- top row: SEED -> SPROUT -> MATURE -->
+  <rect x="80" y="110" width="180" height="76" rx="14" fill="#eef1f4" stroke="#c7ccd2" stroke-width="2"/>
+  <text x="170" y="155" class="label" text-anchor="middle">SEED</text>
+
+  <path d="M260 148 L392 148" class="flow"/>
+
+  <rect x="396" y="110" width="180" height="76" rx="14" fill="#eef1f4" stroke="#c7ccd2" stroke-width="2"/>
+  <text x="486" y="155" class="label" text-anchor="middle">SPROUT</text>
+
+  <path d="M576 148 L708 148" class="flow"/>
+
+  <rect x="712" y="110" width="180" height="76" rx="14" fill="#eef1f4" stroke="#c7ccd2" stroke-width="2"/>
+  <text x="802" y="155" class="label" text-anchor="middle">MATURE</text>
+
+  <text x="920" y="140" class="detail" font-size="14">tick() advances age_days</text>
+  <text x="920" y="160" class="detail" font-size="14">and only moves a plant to</text>
+  <text x="920" y="180" class="detail" font-size="14">the next stage once its own</text>
+  <text x="920" y="200" class="detail" font-size="14">threshold is reached.</text>
+
+  <!-- bottom: WILTED, reachable from all three -->
+  <rect x="396" y="380" width="180" height="76" rx="14" fill="#c8515b"/>
+  <text x="486" y="425" class="wlabel" text-anchor="middle">WILTED</text>
+
+  <path d="M170 186 C170 300 420 320 460 378" class="neglect"/>
+  <path d="M486 186 L486 378" class="neglect"/>
+  <path d="M802 186 C802 300 552 320 512 378" class="neglect"/>
+
+  <text x="62" y="500" class="detail">Any of the three growing states falls to WILTED after too many days without water.</text>
+  <text x="62" y="522" class="detail">WILTED has no outgoing arrow &#8212; water() and tick() both refuse to change it further.</text>
+
+  <text x="486" y="478" class="detail" fill="#c8515b" font-weight="700" font-size="13" text-anchor="middle">NO WAY OUT</text>
+</svg>

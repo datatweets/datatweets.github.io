@@ -1,0 +1,29 @@
+erDiagram
+    SOURCE_PARQUET {
+        int VendorID
+        timestamp tpep_pickup_datetime
+        timestamp tpep_dropoff_datetime
+        int passenger_count
+        float trip_distance
+        int RatecodeID
+        string store_and_fwd_flag
+        int PULocationID
+        int DOLocationID
+        int payment_type
+        float fare_amount
+        float extra
+        float mta_tax
+        float tip_amount
+        float tolls_amount
+        float improvement_surcharge
+        float total_amount
+        float congestion_surcharge
+        float Airport_fee
+    }
+    RAW_TRIPS {
+        timestamp pickup_time
+        integer pickup_zone
+        numeric fare_amount
+        numeric total_amount
+    }
+    SOURCE_PARQUET ||--|| RAW_TRIPS : narrows

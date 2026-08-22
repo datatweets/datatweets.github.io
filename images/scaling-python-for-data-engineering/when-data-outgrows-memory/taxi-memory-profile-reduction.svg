@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="920" height="540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="920" height="540" fill="#ffffff"/>
+  <text x="460" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1a202c">Profiling the NYC Taxi Data: where the memory lives, and how far it drops</text>
+  <text x="460" y="58" text-anchor="middle" font-size="13" fill="#4a5568">2,964,624 real trips &#183; one month &#183; measured with memory_usage(deep=True)</text>
+
+  <!-- Left panel: per-column memory -->
+  <rect x="30" y="82" width="430" height="410" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="50" y="112" font-size="15" font-weight="700" fill="#2b6cb0">Per-column memory (heaviest columns)</text>
+
+  <!-- store_and_fwd_flag -->
+  <text x="50" y="150" font-size="12" fill="#1a202c">store_and_fwd_flag</text>
+  <text x="50" y="165" font-size="10.5" fill="#718096">str</text>
+  <rect x="200" y="140" width="240" height="20" rx="3" fill="#ed8936"/>
+  <text x="428" y="155" text-anchor="end" font-size="11.5" font-weight="700" fill="#ffffff">25.4 MB</text>
+
+  <!-- payment_type -->
+  <text x="50" y="196" font-size="12" fill="#1a202c">payment_type</text>
+  <text x="50" y="211" font-size="10.5" fill="#718096">int64</text>
+  <rect x="200" y="186" width="214" height="20" rx="3" fill="#4299e1"/>
+  <text x="402" y="201" text-anchor="end" font-size="11.5" font-weight="700" fill="#ffffff">22.6 MB</text>
+
+  <!-- fare_amount -->
+  <text x="50" y="242" font-size="12" fill="#1a202c">fare_amount</text>
+  <text x="50" y="257" font-size="10.5" fill="#718096">float64</text>
+  <rect x="200" y="232" width="214" height="20" rx="3" fill="#4299e1"/>
+  <text x="402" y="247" text-anchor="end" font-size="11.5" font-weight="700" fill="#ffffff">22.6 MB</text>
+
+  <!-- tpep_pickup_datetime -->
+  <text x="50" y="288" font-size="12" fill="#1a202c">tpep_pickup_datetime</text>
+  <text x="50" y="303" font-size="10.5" fill="#718096">datetime64[us]</text>
+  <rect x="200" y="278" width="214" height="20" rx="3" fill="#4299e1"/>
+  <text x="402" y="293" text-anchor="end" font-size="11.5" font-weight="700" fill="#ffffff">22.6 MB</text>
+
+  <!-- PULocationID -->
+  <text x="50" y="334" font-size="12" fill="#1a202c">PULocationID</text>
+  <text x="50" y="349" font-size="10.5" fill="#718096">int32</text>
+  <rect x="200" y="324" width="107" height="20" rx="3" fill="#a0aec0"/>
+  <text x="315" y="339" font-size="11.5" font-weight="700" fill="#4a5568">11.3 MB</text>
+
+  <text x="50" y="392" font-size="11.5" fill="#4a5568">The orange bar is a two-value flag (Y / N) stored as text &#8212;</text>
+  <text x="50" y="410" font-size="11.5" fill="#4a5568">the single most wasteful column, and the easiest to shrink.</text>
+  <text x="50" y="440" font-size="11.5" fill="#4a5568">Fifteen 8-byte columns each weigh the same 22.6 MB;</text>
+  <text x="50" y="458" font-size="11.5" fill="#4a5568">most hold small values that never needed 64 bits.</text>
+
+  <!-- Right panel: reduction -->
+  <rect x="490" y="82" width="400" height="410" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="510" y="112" font-size="15" font-weight="700" fill="#276749">The reduction plan, measured</text>
+
+  <!-- baseline -->
+  <line x1="530" y1="440" x2="860" y2="440" stroke="#a0aec0" stroke-width="1.5"/>
+
+  <!-- Naive load bar: 398.6 -> 300px -->
+  <rect x="540" y="140" width="80" height="300" rx="4" fill="#fc8181"/>
+  <text x="580" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#c53030">398.6 MB</text>
+  <text x="580" y="458" text-anchor="middle" font-size="11.5" fill="#4a5568">Naive load</text>
+  <text x="580" y="474" text-anchor="middle" font-size="10.5" fill="#718096">all 19 cols</text>
+
+  <!-- Column select: 203.6 -> 153px -->
+  <rect x="660" y="287" width="80" height="153" rx="4" fill="#ed8936"/>
+  <text x="700" y="279" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">203.6 MB</text>
+  <text x="700" y="458" text-anchor="middle" font-size="11.5" fill="#4a5568">Keep 10 cols</text>
+  <text x="700" y="474" text-anchor="middle" font-size="10.5" fill="#718096">column select</text>
+
+  <!-- Downcast: 115.9 -> 87px -->
+  <rect x="780" y="353" width="80" height="87" rx="4" fill="#48bb78"/>
+  <text x="820" y="345" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">115.9 MB</text>
+  <text x="820" y="458" text-anchor="middle" font-size="11.5" fill="#4a5568">Downcast</text>
+  <text x="820" y="474" text-anchor="middle" font-size="10.5" fill="#718096">dtypes</text>
+
+  <text x="690" y="504" text-anchor="middle" font-size="12.5" font-weight="700" fill="#276749">3.4&#215; smaller &#8212; 70.9% of the memory gone, same rows</text>
+</svg>

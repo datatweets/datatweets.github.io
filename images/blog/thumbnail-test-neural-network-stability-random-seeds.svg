@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Test Neural Network Stability Across Random Seeds</title>
+  <desc id="desc">A neural network stability thumbnail. The left side reads One Setup, Many Results. On the right, three runs use the same fixed setup but different seeds and produce validation balanced accuracy scores of 0.608, 0.575, and 0.505.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="148" font-size="32" font-weight="600" letter-spacing="1.5" fill="#59636e">NEURAL NETWORK CHECK</text>
+    <text x="90" y="276" font-size="72" font-weight="700" fill="#1b1f24">ONE SETUP</text>
+    <text x="90" y="370" font-size="72" font-weight="700" fill="#1b1f24">MANY RESULTS</text>
+    <rect x="94" y="408" width="350" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="482" font-size="27" font-weight="500" fill="#59636e">FIX SPLIT &#183; REPEAT &#183; COMPARE</text>
+
+    <g transform="translate(690 112)">
+      <rect x="0" y="0" width="410" height="446" rx="22" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="30" y="48" font-size="23" font-weight="600" letter-spacing="1.2" fill="#59636e">FIXED MODEL RECIPE</text>
+      <rect x="30" y="70" width="350" height="58" rx="14" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+      <text x="205" y="106" text-anchor="middle" font-size="23" font-weight="600" fill="#1b1f24">SAME DATA &#183; SAME SETTINGS</text>
+
+      <path d="M205 128 V158 M80 158 H330 M80 158 V188 M205 158 V188 M330 158 V188" fill="none" stroke="#b8c0c8" stroke-width="2"/>
+
+      <rect x="30" y="188" width="100" height="46" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <rect x="155" y="188" width="100" height="46" rx="12" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+      <rect x="280" y="188" width="100" height="46" rx="12" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+      <text x="80" y="218" text-anchor="middle" font-size="20" font-weight="600" fill="#1b1f24">SEED 11</text>
+      <text x="205" y="218" text-anchor="middle" font-size="20" font-weight="600" fill="#1b1f24">SEED 3</text>
+      <text x="330" y="218" text-anchor="middle" font-size="20" font-weight="600" fill="#1b1f24">SEED 19</text>
+
+      <text x="30" y="286" font-size="19" font-weight="600" fill="#59636e">VALIDATION BALANCED ACCURACY</text>
+      <line x1="80" y1="324" x2="300" y2="324" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+      <line x1="80" y1="366" x2="300" y2="366" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+      <line x1="80" y1="408" x2="300" y2="408" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="294" cy="324" r="10" fill="#0067c0"/>
+      <circle cx="224" cy="366" r="10" fill="#0067c0"/>
+      <circle cx="88" cy="408" r="10" fill="#0067c0"/>
+      <text x="30" y="331" font-size="20" font-weight="600" fill="#59636e">11</text>
+      <text x="30" y="373" font-size="20" font-weight="600" fill="#59636e">3</text>
+      <text x="30" y="415" font-size="20" font-weight="600" fill="#59636e">19</text>
+      <text x="375" y="331" text-anchor="end" font-size="21" font-weight="700" fill="#1b1f24">0.608</text>
+      <text x="375" y="373" text-anchor="end" font-size="21" font-weight="700" fill="#1b1f24">0.575</text>
+      <text x="375" y="415" text-anchor="end" font-size="21" font-weight="700" fill="#1b1f24">0.505</text>
+    </g>
+  </g>
+</svg>

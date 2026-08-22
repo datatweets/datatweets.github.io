@@ -1,0 +1,13 @@
+query_id,query,expected_document_id,query_type,keyword_top_document_id,keyword_expected_rank,keyword_top_score,semantic_top_document_id,semantic_expected_rank,semantic_top_score,hybrid_rrf_top_document_id,hybrid_rrf_expected_rank,hybrid_rrf_top_score
+Q01,Which fields form the idempotency key?,KB-106,exact term,KB-106,1,0.195573,KB-102,5,0.281272,KB-106,1,0.031778
+Q02,Will saved measurements upload after internet access returns?,KB-102,paraphrase,KB-102,1,0.180300,KB-102,1,0.471010,KB-102,1,0.032787
+Q03,How do I stop an alarm toggling near its limit?,KB-112,paraphrase,KB-112,1,0.171894,KB-112,1,0.496928,KB-112,1,0.032787
+Q04,Which clock standard appears in downloaded readings?,KB-104,paraphrase,KB-102,2,0.148361,KB-104,1,0.533648,KB-104,1,0.032522
+Q05,Is a read-only user allowed to recalibrate a sensor?,KB-108,paraphrase,KB-108,1,0.188635,KB-108,1,0.436243,KB-108,1,0.032787
+Q06,When does recovery end for an erased site?,KB-110,paraphrase,KB-111,2,0.125160,KB-110,1,0.589088,KB-110,1,0.032522
+Q07,What is PL-18 on the probe label?,KB-101,exact identifier,KB-101,1,0.327635,KB-101,1,0.725620,KB-101,1,0.032787
+Q08,Why is the hub indicator solid yellow?,KB-109,paraphrase,KB-102,2,0.155564,KB-109,1,0.310887,KB-109,1,0.032522
+Q09,Can I return to the earlier software after a failed device update?,KB-111,paraphrase,KB-111,1,0.186990,KB-111,1,0.506577,KB-111,1,0.032787
+Q10,How often are measurements taken in battery-saving mode?,KB-103,paraphrase,KB-103,1,0.173688,KB-103,1,0.556859,KB-103,1,0.032787
+Q11,How many measurements fit on a gateway while it is offline?,KB-102,mixed,KB-102,1,0.172522,KB-102,1,0.498059,KB-102,1,0.032787
+Q12,How frequently should a soil probe be checked against a reference?,KB-107,paraphrase,KB-101,2,0.156022,KB-107,1,0.646860,KB-107,1,0.032522

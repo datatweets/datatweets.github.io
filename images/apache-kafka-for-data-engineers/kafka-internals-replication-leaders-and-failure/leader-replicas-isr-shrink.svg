@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="380" viewBox="0 0 1100 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Replicas stays fixed; Isr shrinks and recovers around a real broker outage</title>
+  <desc>Partition 0 of cityflow-isr-check, tracked through a real broker-3 outage. Healthy: Leader 3, Replicas 3-1-2, Isr 3-1-2, all matching. Broker 3 stopped: Leader moves to 1, Replicas stays 3-1-2 unchanged, Isr shrinks to 1-2. Broker 3 restarted: Isr grows back to 1-2-3, but Leader stays on 1 rather than moving back to 3.</desc>
+  <rect width="1100" height="380" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Partition 0, Tracked Through a Real Broker Outage</text>
+
+  <!-- healthy -->
+  <text x="150" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Healthy</text>
+  <rect x="40" y="78" width="220" height="110" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.5" />
+  <text x="60" y="100" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">Leader: 3</text>
+  <text x="60" y="120" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">Replicas: 3,1,2</text>
+  <text x="60" y="140" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">Isr: 3,1,2</text>
+  <text x="60" y="165" font-size="8.5" fill="#22543d">all three match --</text>
+  <text x="60" y="178" font-size="8.5" fill="#22543d">nothing is behind</text>
+
+  <line x1="270" y1="130" x2="300" y2="130" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowLR)" />
+  <text x="285" y="115" text-anchor="middle" font-size="9" fill="#4a5568">docker stop</text>
+  <text x="285" y="150" text-anchor="middle" font-size="9" fill="#4a5568">kafka3</text>
+
+  <!-- broker 3 down -->
+  <text x="450" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="#742a2a">Broker 3 stopped</text>
+  <rect x="310" y="78" width="280" height="110" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.5" />
+  <text x="330" y="100" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a">Leader: 1  (moved from 3)</text>
+  <text x="330" y="120" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a">Replicas: 3,1,2  (unchanged)</text>
+  <text x="330" y="140" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a">Isr: 1,2  (shrunk from 3)</text>
+  <text x="330" y="165" font-size="8.5" fill="#742a2a">acks='all' writes still succeed --</text>
+  <text x="330" y="178" font-size="8.5" fill="#742a2a">min.insync.replicas=2 still met</text>
+
+  <line x1="600" y1="130" x2="630" y2="130" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowLR)" />
+  <text x="615" y="115" text-anchor="middle" font-size="9" fill="#4a5568">docker start</text>
+  <text x="615" y="150" text-anchor="middle" font-size="9" fill="#4a5568">kafka3</text>
+
+  <!-- recovered -->
+  <text x="800" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">Broker 3 recovered</text>
+  <rect x="640" y="78" width="280" height="110" rx="8" fill="#bee3f8" stroke="#4299e1" stroke-width="1.5" />
+  <text x="660" y="100" font-size="9.5" font-family="Menlo, monospace" fill="#2c5282">Leader: 1  (still -- didn't move back)</text>
+  <text x="660" y="120" font-size="9.5" font-family="Menlo, monospace" fill="#2c5282">Replicas: 3,1,2  (unchanged)</text>
+  <text x="660" y="140" font-size="9.5" font-family="Menlo, monospace" fill="#2c5282">Isr: 1,2,3  (back to 3)</text>
+  <text x="660" y="165" font-size="8.5" fill="#2c5282">rejoined Isr automatically --</text>
+  <text x="660" y="178" font-size="8.5" fill="#2c5282">leadership needs a separate step</text>
+
+  <defs>
+    <marker id="arrowLR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <line x1="40" y1="220" x2="1060" y2="220" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <text x="550" y="250" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Replicas never changed across all three states -- only Leader and Isr did</text>
+  <text x="550" y="278" text-anchor="middle" font-size="11" fill="#4a5568">Replicas is the fixed assignment made when the topic was created.</text>
+  <text x="550" y="298" text-anchor="middle" font-size="11" fill="#4a5568">Isr is a live, honestly-reported subset -- it shrinks the instant a broker falls behind, and grows back once it catches up.</text>
+  <text x="550" y="318" text-anchor="middle" font-size="11" fill="#4a5568">Leader only changes for partitions the stopped broker was actually leading, and never moves back on its own.</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The anatomy of an evaluation: four inputs feeding a repeatable eval loop</title>
+  <rect x="0" y="0" width="860" height="500" fill="#ffffff"/>
+
+  <text x="430" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1a202c">The anatomy of an evaluation</text>
+  <text x="430" y="56" text-anchor="middle" font-size="13" fill="#718096">Four components feed one repeatable loop that turns outputs into a decision</text>
+
+  <!-- Left column: the four components -->
+  <text x="150" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">THE FOUR COMPONENTS</text>
+
+  <!-- 1 Task -->
+  <rect x="30" y="108" width="240" height="58" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <circle cx="56" cy="137" r="14" fill="#4299e1"/>
+  <text x="56" y="142" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">1</text>
+  <text x="80" y="132" font-size="14" font-weight="700" fill="#2b6cb0">Task</text>
+  <text x="80" y="152" font-size="11.5" fill="#4a5568">What &#8220;good&#8221; means for Docent</text>
+
+  <!-- 2 Dataset -->
+  <rect x="30" y="176" width="240" height="58" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <circle cx="56" cy="205" r="14" fill="#48bb78"/>
+  <text x="56" y="210" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">2</text>
+  <text x="80" y="200" font-size="14" font-weight="700" fill="#276749">Dataset</text>
+  <text x="80" y="220" font-size="11.5" fill="#4a5568">Inputs + reference answers</text>
+
+  <!-- 3 Metric -->
+  <rect x="30" y="244" width="240" height="58" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <circle cx="56" cy="273" r="14" fill="#ed8936"/>
+  <text x="56" y="278" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3</text>
+  <text x="80" y="268" font-size="14" font-weight="700" fill="#c05621">Metric</text>
+  <text x="80" y="288" font-size="11.5" fill="#4a5568">A function that scores an output</text>
+
+  <!-- 4 Target -->
+  <rect x="30" y="312" width="240" height="58" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <circle cx="56" cy="341" r="14" fill="#9f7aea"/>
+  <text x="56" y="346" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">4</text>
+  <text x="80" y="336" font-size="14" font-weight="700" fill="#6b46c1">Target &#38; aggregate</text>
+  <text x="80" y="356" font-size="11.5" fill="#4a5568">Threshold + how to roll up scores</text>
+
+  <!-- Arrows from components into the loop -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a0aec0"/>
+    </marker>
+  </defs>
+  <path d="M 270 137 C 330 137, 340 239, 400 239" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 270 205 C 330 205, 345 239, 400 239" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 270 273 C 330 273, 345 239, 400 239" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 270 341 C 330 341, 340 239, 400 239" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Right column: the eval loop -->
+  <text x="620" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">THE EVAL LOOP</text>
+
+  <rect x="400" y="106" width="440" height="290" rx="12" fill="#f7fafc" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- loop steps -->
+  <rect x="430" y="132" width="170" height="46" rx="8" fill="#ffffff" stroke="#4299e1" stroke-width="2"/>
+  <text x="515" y="153" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">Run system</text>
+  <text x="515" y="169" text-anchor="middle" font-size="11" fill="#718096">over the dataset</text>
+
+  <rect x="640" y="132" width="170" height="46" rx="8" fill="#ffffff" stroke="#ed8936" stroke-width="2"/>
+  <text x="725" y="153" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">Score each output</text>
+  <text x="725" y="169" text-anchor="middle" font-size="11" fill="#718096">with the metric</text>
+
+  <rect x="640" y="212" width="170" height="46" rx="8" fill="#ffffff" stroke="#9f7aea" stroke-width="2"/>
+  <text x="725" y="233" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">Aggregate</text>
+  <text x="725" y="249" text-anchor="middle" font-size="11" fill="#718096">into one number</text>
+
+  <rect x="430" y="212" width="170" height="46" rx="8" fill="#ffffff" stroke="#48bb78" stroke-width="2"/>
+  <text x="515" y="233" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">Compare</text>
+  <text x="515" y="249" text-anchor="middle" font-size="11" fill="#718096">vs threshold / baseline</text>
+
+  <rect x="500" y="300" width="240" height="58" rx="8" fill="#1a202c"/>
+  <text x="620" y="325" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Decide: ship or fix</text>
+  <text x="620" y="345" text-anchor="middle" font-size="11" fill="#a0aec0">absolute pass, or better/worse than last</text>
+
+  <!-- loop arrows -->
+  <path d="M 600 155 L 636 155" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 725 178 L 725 208" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 640 235 L 604 235" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 545 258 C 545 285, 575 290, 600 300" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- reproducibility footer -->
+  <text x="620" y="384" text-anchor="middle" font-size="11.5" font-style="italic" fill="#718096">Fix the dataset &#183; version the prompt &#183; record the score &#8594; same run, same result</text>
+
+  <!-- bottom caption strip -->
+  <text x="430" y="428" text-anchor="middle" font-size="12.5" fill="#4a5568">Change one thing at a time: if you edit the prompt <tspan font-weight="700">and</tspan> the test set together, the number can&#8217;t tell you which moved it.</text>
+  <text x="430" y="460" text-anchor="middle" font-size="12.5" fill="#c53030">Beginner trap: no fixed dataset &#183; a metric that ignores the task &#183; averaging away a critical failure</text>
+</svg>

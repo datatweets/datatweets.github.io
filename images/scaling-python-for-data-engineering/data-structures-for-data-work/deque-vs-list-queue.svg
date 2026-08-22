@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<defs>
+<marker id="shift" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#c05621"/>
+</marker>
+</defs>
+<rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">A list is a fast stack but a quadratic queue</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Draining a FIFO queue of N integers, one pop at a time &#8212; measured on a 10-core machine</text>
+
+<!-- LEFT PANEL: list.pop(0) -->
+<rect x="40" y="78" width="418" height="228" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="249" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#c05621">list.pop(0) &#8212; O(n) per pop</text>
+
+<text x="60" y="124" font-size="11" fill="#4a5568">the queue before the pop:</text>
+<rect x="60" y="140" width="58" height="28" rx="4" fill="#c53030" stroke="#c53030" stroke-width="1"/>
+<text x="89" y="159" text-anchor="middle" font-size="11" font-weight="600" fill="#ffffff">b1</text>
+<rect x="122" y="140" width="58" height="28" rx="4" fill="#ffffff" stroke="#c05621" stroke-width="1"/>
+<text x="151" y="159" text-anchor="middle" font-size="11" fill="#4a5568">b2</text>
+<rect x="184" y="140" width="58" height="28" rx="4" fill="#ffffff" stroke="#c05621" stroke-width="1"/>
+<text x="213" y="159" text-anchor="middle" font-size="11" fill="#4a5568">b3</text>
+<rect x="246" y="140" width="58" height="28" rx="4" fill="#ffffff" stroke="#c05621" stroke-width="1"/>
+<text x="275" y="159" text-anchor="middle" font-size="11" fill="#4a5568">b4</text>
+<rect x="308" y="140" width="58" height="28" rx="4" fill="#ffffff" stroke="#c05621" stroke-width="1"/>
+<text x="337" y="159" text-anchor="middle" font-size="11" fill="#4a5568">b5</text>
+<rect x="370" y="140" width="58" height="28" rx="4" fill="#ffffff" stroke="#c05621" stroke-width="1"/>
+<text x="399" y="159" text-anchor="middle" font-size="11" fill="#4a5568">b6</text>
+
+<text x="89" y="192" text-anchor="middle" font-size="10" font-weight="700" fill="#c53030">returned</text>
+<line x1="151" y1="174" x2="97" y2="214" stroke="#c05621" stroke-width="1.4" marker-end="url(#shift)"/>
+<line x1="213" y1="174" x2="159" y2="214" stroke="#c05621" stroke-width="1.4" marker-end="url(#shift)"/>
+<line x1="275" y1="174" x2="221" y2="214" stroke="#c05621" stroke-width="1.4" marker-end="url(#shift)"/>
+<line x1="337" y1="174" x2="283" y2="214" stroke="#c05621" stroke-width="1.4" marker-end="url(#shift)"/>
+<line x1="399" y1="174" x2="345" y2="214" stroke="#c05621" stroke-width="1.4" marker-end="url(#shift)"/>
+
+<rect x="60" y="222" width="58" height="28" rx="4" fill="#feebc8" stroke="#c05621" stroke-width="1"/>
+<text x="89" y="241" text-anchor="middle" font-size="11" fill="#4a5568">b2</text>
+<rect x="122" y="222" width="58" height="28" rx="4" fill="#feebc8" stroke="#c05621" stroke-width="1"/>
+<text x="151" y="241" text-anchor="middle" font-size="11" fill="#4a5568">b3</text>
+<rect x="184" y="222" width="58" height="28" rx="4" fill="#feebc8" stroke="#c05621" stroke-width="1"/>
+<text x="213" y="241" text-anchor="middle" font-size="11" fill="#4a5568">b4</text>
+<rect x="246" y="222" width="58" height="28" rx="4" fill="#feebc8" stroke="#c05621" stroke-width="1"/>
+<text x="275" y="241" text-anchor="middle" font-size="11" fill="#4a5568">b5</text>
+<rect x="308" y="222" width="58" height="28" rx="4" fill="#feebc8" stroke="#c05621" stroke-width="1"/>
+<text x="337" y="241" text-anchor="middle" font-size="11" fill="#4a5568">b6</text>
+<rect x="370" y="222" width="58" height="28" rx="4" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="3 3"/>
+
+<text x="249" y="278" text-anchor="middle" font-size="11" fill="#c05621">N&#8722;1 elements each move one slot left to close the gap.</text>
+<text x="249" y="296" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">Draining N items costs O(N&#178;) &#8212; slower the fuller it is.</text>
+
+<!-- RIGHT PANEL: deque.popleft() -->
+<rect x="502" y="78" width="418" height="228" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="711" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">deque.popleft() &#8212; O(1) per pop</text>
+
+<text x="522" y="124" font-size="11" fill="#4a5568">the queue before the pop:</text>
+<text x="551" y="136" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">head</text>
+<text x="861" y="136" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">tail</text>
+<rect x="522" y="140" width="58" height="28" rx="4" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+<text x="551" y="159" text-anchor="middle" font-size="11" font-weight="600" fill="#ffffff">b1</text>
+<rect x="584" y="140" width="58" height="28" rx="4" fill="#ffffff" stroke="#276749" stroke-width="1"/>
+<text x="613" y="159" text-anchor="middle" font-size="11" fill="#4a5568">b2</text>
+<rect x="646" y="140" width="58" height="28" rx="4" fill="#ffffff" stroke="#276749" stroke-width="1"/>
+<text x="675" y="159" text-anchor="middle" font-size="11" fill="#4a5568">b3</text>
+<rect x="708" y="140" width="58" height="28" rx="4" fill="#ffffff" stroke="#276749" stroke-width="1"/>
+<text x="737" y="159" text-anchor="middle" font-size="11" fill="#4a5568">b4</text>
+<rect x="770" y="140" width="58" height="28" rx="4" fill="#ffffff" stroke="#276749" stroke-width="1"/>
+<text x="799" y="159" text-anchor="middle" font-size="11" fill="#4a5568">b5</text>
+<rect x="832" y="140" width="58" height="28" rx="4" fill="#ffffff" stroke="#276749" stroke-width="1"/>
+<text x="861" y="159" text-anchor="middle" font-size="11" fill="#4a5568">b6</text>
+
+<text x="551" y="192" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">returned</text>
+<text x="620" y="192" font-size="10" fill="#276749">nothing else moves &#8212; only the head pointer</text>
+
+<rect x="522" y="222" width="58" height="28" rx="4" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="584" y="222" width="58" height="28" rx="4" fill="#c6f6d5" stroke="#276749" stroke-width="1"/>
+<text x="613" y="241" text-anchor="middle" font-size="11" fill="#4a5568">b2</text>
+<rect x="646" y="222" width="58" height="28" rx="4" fill="#c6f6d5" stroke="#276749" stroke-width="1"/>
+<text x="675" y="241" text-anchor="middle" font-size="11" fill="#4a5568">b3</text>
+<rect x="708" y="222" width="58" height="28" rx="4" fill="#c6f6d5" stroke="#276749" stroke-width="1"/>
+<text x="737" y="241" text-anchor="middle" font-size="11" fill="#4a5568">b4</text>
+<rect x="770" y="222" width="58" height="28" rx="4" fill="#c6f6d5" stroke="#276749" stroke-width="1"/>
+<text x="799" y="241" text-anchor="middle" font-size="11" fill="#4a5568">b5</text>
+<rect x="832" y="222" width="58" height="28" rx="4" fill="#c6f6d5" stroke="#276749" stroke-width="1"/>
+<text x="861" y="241" text-anchor="middle" font-size="11" fill="#4a5568">b6</text>
+<text x="613" y="264" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">head</text>
+
+<text x="711" y="282" text-anchor="middle" font-size="11" fill="#276749">A block is unlinked; every survivor stays exactly where it was.</text>
+<text x="711" y="299" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Draining N items costs O(N) &#8212; and both ends are O(1).</text>
+
+<!-- CHART -->
+<text x="480" y="336" text-anchor="middle" font-size="15" font-weight="700" fill="#1a202c">Measured time to drain the whole queue (log scale)</text>
+<rect x="352" y="348" width="12" height="12" rx="2" fill="#c05621"/>
+<text x="370" y="359" font-size="11" fill="#4a5568">list.pop(0)</text>
+<rect x="470" y="348" width="12" height="12" rx="2" fill="#48bb78"/>
+<text x="488" y="359" font-size="11" fill="#4a5568">deque.popleft()</text>
+
+<line x1="100" y1="391" x2="900" y2="391" stroke="#e2e8f0" stroke-width="1"/>
+<text x="92" y="395" text-anchor="end" font-size="10" fill="#a0aec0">1000 ms</text>
+<line x1="100" y1="433" x2="900" y2="433" stroke="#e2e8f0" stroke-width="1"/>
+<text x="92" y="437" text-anchor="end" font-size="10" fill="#a0aec0">100 ms</text>
+<line x1="100" y1="476" x2="900" y2="476" stroke="#e2e8f0" stroke-width="1"/>
+<text x="92" y="480" text-anchor="end" font-size="10" fill="#a0aec0">10 ms</text>
+<line x1="100" y1="518" x2="900" y2="518" stroke="#e2e8f0" stroke-width="1"/>
+<text x="92" y="522" text-anchor="end" font-size="10" fill="#a0aec0">1 ms</text>
+<line x1="100" y1="560" x2="900" y2="560" stroke="#4a5568" stroke-width="1.5"/>
+<text x="92" y="564" text-anchor="end" font-size="10" fill="#a0aec0">0.1 ms</text>
+
+<!-- group 1: 10,000 -->
+<rect x="148" y="488" width="48" height="72" rx="4" fill="#c05621"/>
+<text x="172" y="482" text-anchor="middle" font-size="10" font-weight="600" fill="#c05621">5.2 ms</text>
+<rect x="204" y="547" width="48" height="13" rx="3" fill="#48bb78"/>
+<text x="228" y="541" text-anchor="middle" font-size="10" font-weight="600" fill="#276749">0.2 ms</text>
+<text x="200" y="580" text-anchor="middle" font-size="12" font-weight="600" fill="#1a202c">10,000</text>
+<text x="200" y="597" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">30&#215;</text>
+
+<!-- group 2: 50,000 -->
+<rect x="338" y="422" width="48" height="138" rx="4" fill="#c05621"/>
+<text x="362" y="416" text-anchor="middle" font-size="10" font-weight="600" fill="#c05621">182.1 ms</text>
+<rect x="394" y="520" width="48" height="40" rx="3" fill="#48bb78"/>
+<text x="418" y="514" text-anchor="middle" font-size="10" font-weight="600" fill="#276749">0.9 ms</text>
+<text x="390" y="580" text-anchor="middle" font-size="12" font-weight="600" fill="#1a202c">50,000</text>
+<text x="390" y="597" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">201&#215;</text>
+
+<!-- group 3: 100,000 -->
+<rect x="528" y="396" width="48" height="164" rx="4" fill="#c05621"/>
+<text x="552" y="390" text-anchor="middle" font-size="10" font-weight="600" fill="#c05621">780.0 ms</text>
+<rect x="584" y="503" width="48" height="57" rx="3" fill="#48bb78"/>
+<text x="608" y="497" text-anchor="middle" font-size="10" font-weight="600" fill="#276749">2.2 ms</text>
+<text x="580" y="580" text-anchor="middle" font-size="12" font-weight="600" fill="#1a202c">100,000</text>
+<text x="580" y="597" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">351&#215;</text>
+
+<!-- group 4: 200,000 -->
+<rect x="718" y="371" width="48" height="189" rx="4" fill="#c05621"/>
+<text x="742" y="365" text-anchor="middle" font-size="10" font-weight="600" fill="#c05621">3012.6 ms</text>
+<rect x="774" y="494" width="48" height="66" rx="3" fill="#48bb78"/>
+<text x="798" y="488" text-anchor="middle" font-size="10" font-weight="600" fill="#276749">3.6 ms</text>
+<text x="770" y="580" text-anchor="middle" font-size="12" font-weight="600" fill="#1a202c">200,000</text>
+<text x="770" y="597" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">829&#215;</text>
+
+<text x="92" y="580" text-anchor="end" font-size="10" fill="#a0aec0">queue size</text>
+<text x="92" y="597" text-anchor="end" font-size="10" fill="#a0aec0">deque faster by</text>
+
+<!-- FOOTER -->
+<line x1="40" y1="614" x2="920" y2="614" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="638" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Each doubling of the queue quadruples the list's drain time (4.28&#215;, then 3.86&#215;) but only doubles the deque's.</text>
+<text x="480" y="660" text-anchor="middle" font-size="12" fill="#4a5568">At 200,000 elements the list takes 3.0&#160;s and the deque 3.6&#160;ms &#8212; a 829&#215; gap that keeps widening with N.</text>
+<text x="480" y="680" text-anchor="middle" font-size="12" fill="#718096">The trade-off: deque indexing in the middle is O(n) &#8212; 8852&#160;ns vs a list's 19.8&#160;ns &#8212; but its ends are just as fast.</text>
+</svg>

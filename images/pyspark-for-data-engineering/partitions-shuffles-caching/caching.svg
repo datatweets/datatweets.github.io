@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" width="960" height="720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="720" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Recompute three times, or materialize once and re-read</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">the zone-hour base (window &#183; shuffle-aggregate &#183; broadcast join) under three actions &#183; pyspark 4.2.0, local[*], all measured</text>
+
+<!-- divider -->
+<line x1="480" y1="82" x2="480" y2="520" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- ===== LEFT: WITHOUT CACHE ===== -->
+<text x="240" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#c05621">WITHOUT cache &#8212; pipeline runs 3&#215;</text>
+
+<!-- three full-pipeline bars -->
+<!-- bar 1 count -->
+<rect x="70" y="126" width="308" height="42" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="82" y="145" font-size="12" font-weight="700" fill="#c05621">count() &#8212; full run</text>
+<text x="82" y="161" font-size="10.5" fill="#4a5568">scan &#8594; filter &#8594; shuffle &#8594; aggregate &#8594; join</text>
+<text x="366" y="153" text-anchor="end" font-size="15" font-weight="700" fill="#c05621">0.77 s</text>
+<!-- bar 2 sum -->
+<rect x="70" y="176" width="308" height="42" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="82" y="195" font-size="12" font-weight="700" fill="#c05621">agg sum &#8212; full run again</text>
+<text x="82" y="211" font-size="10.5" fill="#4a5568">the same pipeline, recomputed start to finish</text>
+<text x="366" y="203" text-anchor="end" font-size="15" font-weight="700" fill="#c05621">1.09 s</text>
+<!-- bar 3 top -->
+<rect x="70" y="226" width="308" height="42" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="82" y="245" font-size="12" font-weight="700" fill="#c05621">top-5 &#8212; full run a third time</text>
+<text x="82" y="261" font-size="10.5" fill="#4a5568">nothing was kept, so everything reruns</text>
+<text x="366" y="253" text-anchor="end" font-size="15" font-weight="700" fill="#c05621">1.05 s</text>
+
+<rect x="70" y="286" width="308" height="46" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+<text x="224" y="306" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">three actions = three pipelines</text>
+<text x="224" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#c53030">2.92 s total</text>
+
+<!-- ===== RIGHT: WITH CACHE ===== -->
+<text x="720" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">WITH cache &#8212; pipeline runs 1&#215;</text>
+
+<!-- bar 1 materialize (taller/emphasis) -->
+<rect x="560" y="126" width="330" height="52" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+<text x="572" y="145" font-size="12" font-weight="700" fill="#276749">count() &#8212; compute AND store</text>
+<text x="572" y="161" font-size="10.5" fill="#4a5568">first action materializes the InMemoryRelation</text>
+<text x="572" y="174" font-size="10.5" fill="#c05621">the honest cost: slower than the uncached count</text>
+<text x="878" y="157" text-anchor="end" font-size="15" font-weight="700" fill="#276749">1.42 s</text>
+<!-- bar 2 memory read -->
+<rect x="560" y="186" width="132" height="42" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="572" y="205" font-size="12" font-weight="700" fill="#2b6cb0">agg sum</text>
+<text x="572" y="221" font-size="10.5" fill="#4a5568">from memory</text>
+<text x="878" y="213" text-anchor="end" font-size="15" font-weight="700" fill="#2b6cb0">0.31 s</text>
+<!-- bar 3 memory read -->
+<rect x="560" y="236" width="96" height="42" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="572" y="255" font-size="12" font-weight="700" fill="#2b6cb0">top-5</text>
+<text x="572" y="271" font-size="10.5" fill="#4a5568">from memory</text>
+<text x="878" y="263" text-anchor="end" font-size="15" font-weight="700" fill="#2b6cb0">0.15 s</text>
+
+<rect x="560" y="286" width="330" height="46" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+<text x="725" y="306" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">store once, re-read twice</text>
+<text x="725" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">1.88 s total &#8212; 1.56&#215; faster</text>
+
+<!-- reads-from-memory callout -->
+<text x="480" y="360" text-anchor="middle" font-size="12" fill="#718096">the win is the RE-READS: 1.09 s &#8594; 0.31 s and 1.05 s &#8594; 0.15 s (the recompute avoided, not the file read &#8212; parquet was already page-cached)</text>
+
+<!-- InMemoryTableScan strip -->
+<rect x="70" y="378" width="820" height="40" rx="8" fill="#faf5ff" stroke="#805ad5" stroke-width="1.5"/>
+<text x="82" y="403" font-size="12" fill="#4a5568"><tspan font-weight="700" fill="#553c9a">In the plan:</tspan> the whole window&#8594;shuffle&#8594;join subtree collapses to <tspan font-family="monospace" font-weight="700" fill="#553c9a">InMemoryTableScan &#8592; InMemoryRelation StorageLevel(disk, memory, deserialized)</tspan></text>
+
+<!-- bottom band: the rule + honest cost -->
+<line x1="70" y1="440" x2="890" y2="440" stroke="#e2e8f0" stroke-width="1"/>
+
+<rect x="70" y="456" width="400" height="150" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="270" y="480" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">The rule: cache when REUSED and it FITS</text>
+<text x="86" y="506" font-size="11.5" fill="#4a5568">&#8226; Reused by 2+ actions? The re-reads pay back the</text>
+<text x="98" y="522" font-size="11.5" fill="#4a5568">one materialization pass. Here: 1.56&#215; over 3 actions.</text>
+<text x="86" y="544" font-size="11.5" fill="#4a5568">&#8226; Fits in memory? The 240,917&#215;6 base does; the</text>
+<text x="98" y="560" font-size="11.5" fill="#4a5568">raw 9.5M&#215;19 frame does not.</text>
+<text x="86" y="582" font-size="11.5" fill="#4a5568">&#8226; Done with it? <tspan font-family="monospace" fill="#276749">unpersist()</tspan> frees it; the cache is</text>
+<text x="98" y="598" font-size="11.5" fill="#4a5568">not garbage-collected while a reference lives.</text>
+
+<rect x="490" y="456" width="400" height="150" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="690" y="480" text-anchor="middle" font-size="14" font-weight="700" fill="#c53030">The honest cost: cache is not free</text>
+<text x="506" y="506" font-size="11.5" fill="#4a5568">&#8226; One action only: no cache 0.23 s vs cached</text>
+<text x="518" y="522" font-size="11.5" fill="#4a5568">0.22 s &#8212; the materialization buys nothing.</text>
+<text x="506" y="544" font-size="11.5" fill="#4a5568">&#8226; Too big to fit: persisting the raw 9.5M&#215;19</text>
+<text x="518" y="560" font-size="11.5" fill="#4a5568">frame threw <tspan font-family="monospace" fill="#c53030">OutOfMemoryError</tspan> &#8212; MEMORY_AND_DISK</text>
+<text x="518" y="576" font-size="11.5" fill="#4a5568">builds column batches in heap before it can spill.</text>
+<text x="506" y="598" font-size="11.5" fill="#4a5568">&#8226; Cache costs RAM + a compute pass every time.</text>
+
+<!-- footer -->
+<text x="480" y="640" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1a202c">Cached result cross-checks to Course 1: 240,917 buckets &#183; 9,554,757 trips &#183; $256,692,373.14, to the cent.</text>
+<text x="480" y="664" text-anchor="middle" font-size="11.5" fill="#718096">cache() = persist(MEMORY_AND_DISK): lazy (is_cached True at once, materialized on the first action).</text>
+<text x="480" y="686" text-anchor="middle" font-size="11.5" fill="#718096">Exact seconds vary by run and machine &#8212; the ratio, and the shape (one slow store, then cheap reads), are the point.</text>
+</svg>

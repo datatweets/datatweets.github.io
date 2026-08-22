@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="430" viewBox="0 0 1050 430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Two ways dbt test can report a problem -- a typo and a real finding, side by side</title>
+  <desc>The complete test suite: dbt build reports PASS 13, WARN 3, ERROR 0, TOTAL 16 across six models and ten data tests -- three genuine, carried-forward findings, all configured with severity warn, zero broken tests. Renaming zone_id to zone_di in stg_cityflow__zones.yml, a typo, causes both the not_null and unique tests on that column to fail with a real Postgres Database Error: column zone_di does not exist, with a HINT suggesting the correct name. That is a broken test, caught and fixed by correcting the typo, restoring PASS 13, WARN 3, ERROR 0. It looks nothing like this module's three genuine WARN findings -- a NULL borough, 111 sign-inconsistent rows, 20 duplicate combinations -- which are ERROR-free, real data findings a fixed typo can never resolve, because there was never a typo to begin with.</desc>
+  <rect width="1050" height="430" fill="#ffffff" />
+  <text x="525" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Broken Test Looks Nothing Like a Real Finding</text>
+
+  <rect x="40" y="55" width="970" height="70" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="525" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">The complete, healthy test suite</text>
+  <text x="525" y="102" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#22543d">dbt build: PASS=13 WARN=3 ERROR=0 TOTAL=16 -- three carried-forward findings, zero broken tests</text>
+
+  <rect x="60" y="150" width="450" height="255" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="285" y="175" text-anchor="middle" font-size="12.5" font-weight="700" fill="#822727">A typo: zone_id &#8594; zone_di</text>
+  <rect x="85" y="188" width="400" height="70" rx="6" fill="#822727" />
+  <text x="285" y="208" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#fff5f5">Database Error: column "zone_di"</text>
+  <text x="285" y="224" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#fff5f5">does not exist</text>
+  <text x="285" y="242" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#fed7d7">HINT: did you mean "zone_id"?</text>
+  <text x="285" y="278" text-anchor="middle" font-size="10" fill="#822727">Two tests ERROR, not WARN --</text>
+  <text x="285" y="296" text-anchor="middle" font-size="10" fill="#822727">Postgres itself rejects the query.</text>
+  <text x="285" y="322" text-anchor="middle" font-size="10" font-weight="700" fill="#822727">The fix: correct the typo.</text>
+  <text x="285" y="340" text-anchor="middle" font-size="10" fill="#822727">Nothing about the data changes --</text>
+  <text x="285" y="356" text-anchor="middle" font-size="10" fill="#822727">there was never anything wrong with it.</text>
+  <text x="285" y="382" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#22543d">restores PASS=13 WARN=3 ERROR=0</text>
+
+  <rect x="540" y="150" width="450" height="255" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="765" y="175" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7b341e">This module's three real findings</text>
+  <rect x="565" y="188" width="400" height="70" rx="6" fill="#7b341e" />
+  <text x="765" y="206" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#fffaf0">WARN 1: NULL borough (zone 265)</text>
+  <text x="765" y="220" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#fffaf0">WARN 111: fare/total sign mismatch</text>
+  <text x="765" y="234" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#fffaf0">WARN 20: duplicate 4-column rows</text>
+  <text x="765" y="278" text-anchor="middle" font-size="10" fill="#7b341e">Every query runs correctly.</text>
+  <text x="765" y="296" text-anchor="middle" font-size="10" fill="#7b341e">Nothing is misspelled or broken.</text>
+  <text x="765" y="322" text-anchor="middle" font-size="10" font-weight="700" fill="#7b341e">There is no fix that makes these</text>
+  <text x="765" y="340" text-anchor="middle" font-size="10" font-weight="700" fill="#7b341e">WARNs disappear, because they</text>
+  <text x="765" y="356" text-anchor="middle" font-size="10" font-weight="700" fill="#7b341e">describe the data honestly.</text>
+  <text x="765" y="382" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#7b341e">stay WARN=3, permanently</text>
+</svg>

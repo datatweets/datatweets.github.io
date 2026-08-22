@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Persist AI Agent State in SQLite and Resume After a Crash</title>
+  <desc id="desc">DATATWEETS tutorial thumbnail showing session one saving an agent checkpoint, event log, and tool result in SQLite, then session two loading the durable state after a restart.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#0067c0"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="151" font-size="32" font-weight="600" letter-spacing="1.2" fill="#59636e">CRASH-SAFE AGENTS</text>
+    <text x="90" y="281" font-size="78" font-weight="700" fill="#1b1f24">SAVE STATE</text>
+    <text x="90" y="374" font-size="66" font-weight="700" fill="#1b1f24">RESUME SAFELY</text>
+    <rect x="94" y="407" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="480" font-size="28" font-weight="500" fill="#59636e">SQLITE &#183; CHECKPOINTS &#183; RETRIES</text>
+
+    <rect x="684" y="167" width="154" height="72" rx="16" fill="#ffffff" stroke="#59636e" stroke-width="2.5"/>
+    <circle cx="713" cy="203" r="9" fill="#0067c0"/>
+    <text x="733" y="211" font-size="22" font-weight="600" fill="#1b1f24">SESSION 1</text>
+
+    <rect x="684" y="351" width="154" height="72" rx="16" fill="#ffffff" stroke="#59636e" stroke-width="2.5"/>
+    <circle cx="713" cy="387" r="9" fill="#198754"/>
+    <text x="733" y="395" font-size="22" font-weight="600" fill="#1b1f24">SESSION 2</text>
+
+    <line x1="693" y1="295" x2="829" y2="295" stroke="#8c959f" stroke-width="2" stroke-dasharray="7 7"/>
+    <rect x="704" y="278" width="114" height="32" rx="8" fill="#ffffff"/>
+    <text x="761" y="301" text-anchor="middle" font-size="18" font-weight="600" letter-spacing="0.8" fill="#59636e">RESTART</text>
+
+    <line x1="842" y1="203" x2="880" y2="203" stroke="#0067c0" stroke-width="3" marker-end="url(#arrow-blue)"/>
+    <text x="860" y="183" text-anchor="middle" font-size="17" font-weight="600" fill="#0067c0">SAVE</text>
+    <line x1="884" y1="387" x2="846" y2="387" stroke="#0067c0" stroke-width="3" marker-end="url(#arrow-blue)"/>
+    <text x="864" y="367" text-anchor="middle" font-size="17" font-weight="600" fill="#0067c0">LOAD</text>
+
+    <rect x="892" y="130" width="226" height="330" rx="22" fill="#f7fbff" stroke="#0067c0" stroke-width="3"/>
+    <text x="1005" y="177" text-anchor="middle" font-size="25" font-weight="700" fill="#1b1f24">SQLITE STATE</text>
+    <line x1="916" y1="193" x2="1094" y2="193" stroke="#c7dff2" stroke-width="2"/>
+
+    <rect x="916" y="215" width="178" height="58" rx="12" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+    <rect x="916" y="215" width="10" height="58" rx="5" fill="#0067c0"/>
+    <text x="945" y="251" font-size="21" font-weight="600" fill="#1b1f24">CHECKPOINT</text>
+
+    <rect x="916" y="291" width="178" height="58" rx="12" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+    <rect x="916" y="291" width="10" height="58" rx="5" fill="#59636e"/>
+    <text x="945" y="327" font-size="21" font-weight="600" fill="#1b1f24">EVENT LOG</text>
+
+    <rect x="916" y="367" width="178" height="58" rx="12" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+    <rect x="916" y="367" width="10" height="58" rx="5" fill="#198754"/>
+    <text x="945" y="403" font-size="21" font-weight="600" fill="#1b1f24">TOOL RESULT</text>
+  </g>
+</svg>

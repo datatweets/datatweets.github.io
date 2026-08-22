@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="960" height="660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="660" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Warn or abort &#8212; and why the gate sits BEFORE the write</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">CityFlow's zone-hour ETL, three real runs of the same job &#183; severity thresholds on the volume rule &#183; measured exit codes</text>
+
+<!-- SEVERITY LADDER -->
+<text x="30" y="92" font-size="14" font-weight="700" fill="#2b6cb0">THE SEVERITY LADDER &#8212; rows received as a share of a normal month</text>
+<rect x="30" y="104" width="375" height="34" fill="#fff5f5" stroke="#c53030" stroke-width="1.3"/>
+<text x="217" y="126" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c53030">below 50%: CRITICAL &#8212; abort</text>
+<rect x="405" y="104" width="300" height="34" fill="#fffaf0" stroke="#c05621" stroke-width="1.3"/>
+<text x="555" y="126" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c05621">50&#8211;90%: WARN &#8212; publish, but say so</text>
+<rect x="705" y="104" width="225" height="34" fill="#f0fff4" stroke="#276749" stroke-width="1.3"/>
+<text x="817" y="126" text-anchor="middle" font-size="12.5" font-weight="700" fill="#276749">90%+: pass</text>
+<circle cx="60" cy="121" r="5" fill="#c53030"/>
+<text x="60" y="156" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">4.0%</text>
+<circle cx="669" cy="121" r="5" fill="#c05621"/>
+<text x="669" y="156" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c05621">85.2%</text>
+<circle cx="827" cy="121" r="5" fill="#276749"/>
+<text x="827" y="156" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">106.2%</text>
+
+<line x1="30" y1="176" x2="930" y2="176" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- PIPELINE SPINE -->
+<text x="30" y="202" font-size="14" font-weight="700" fill="#2b6cb0">THE ORDERING &#8212; validate first, publish last</text>
+<rect x="30" y="214" width="132" height="50" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="96" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">1 &#183; read</text>
+<text x="96" y="253" text-anchor="middle" font-size="11" fill="#4a5568">the feed</text>
+<text x="172" y="245" text-anchor="middle" font-size="15" fill="#718096">&#8594;</text>
+<rect x="182" y="214" width="132" height="50" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="248" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">2 &#183; validate in</text>
+<text x="248" y="253" text-anchor="middle" font-size="11" fill="#4a5568">volume, window</text>
+<text x="324" y="245" text-anchor="middle" font-size="15" fill="#718096">&#8594;</text>
+<rect x="334" y="214" width="132" height="50" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="400" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">3 &#183; transform</text>
+<text x="400" y="253" text-anchor="middle" font-size="11" fill="#4a5568">zone-hour aggregate</text>
+<text x="476" y="245" text-anchor="middle" font-size="15" fill="#718096">&#8594;</text>
+<rect x="486" y="214" width="132" height="50" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.3"/>
+<text x="552" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">4 &#183; validate out</text>
+<text x="552" y="253" text-anchor="middle" font-size="11" fill="#4a5568">reconcile, non-empty</text>
+<text x="628" y="245" text-anchor="middle" font-size="15" fill="#718096">&#8594;</text>
+<rect x="638" y="210" width="132" height="58" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+<text x="704" y="234" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c05621">5 &#183; THE GATE</text>
+<text x="704" y="251" text-anchor="middle" font-size="11" fill="#4a5568">any critical failure?</text>
+<text x="780" y="245" text-anchor="middle" font-size="15" fill="#718096">&#8594;</text>
+<rect x="790" y="214" width="140" height="50" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.3"/>
+<text x="860" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">6 &#183; write</text>
+<text x="860" y="253" text-anchor="middle" font-size="11" fill="#4a5568">only if the gate passed</text>
+
+<path d="M 704 268 L 704 296" stroke="#c53030" stroke-width="1.8" fill="none"/>
+<path d="M 700 290 L 704 298 L 708 290 Z" fill="#c53030"/>
+<text x="716" y="294" font-size="11.5" font-weight="700" fill="#c53030">critical &#8594; abort, exit 1 (step 6 never runs)</text>
+
+<line x1="30" y1="316" x2="930" y2="316" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- THREE RUNS -->
+<text x="30" y="342" font-size="14" font-weight="700" fill="#2b6cb0">THE SAME JOB, THREE FEEDS &#8212; real measured exit codes</text>
+
+<rect x="30" y="354" width="290" height="196" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="175" y="378" text-anchor="middle" font-size="13.5" font-weight="700" fill="#276749">GOOD RUN &#8212; full quarter</text>
+<text x="175" y="400" text-anchor="middle" font-size="11.5" fill="#4a5568">9,554,778 rows &#183; 106.2% of normal</text>
+<text x="175" y="420" text-anchor="middle" font-size="11.5" fill="#4a5568">every critical rule passes</text>
+<text x="175" y="444" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">table WRITTEN</text>
+<text x="175" y="464" text-anchor="middle" font-size="11.5" fill="#4a5568">240,917 buckets &#183; 9,554,757 trips</text>
+<text x="175" y="484" text-anchor="middle" font-size="12.5" font-weight="700" fill="#276749">$256,692,373.14</text>
+<text x="175" y="524" text-anchor="middle" font-size="19" font-weight="700" fill="#276749">exit code 0</text>
+
+<rect x="335" y="354" width="290" height="196" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="480" y="378" text-anchor="middle" font-size="13.5" font-weight="700" fill="#c05621">DEGRADED RUN &#8212; short feed</text>
+<text x="480" y="400" text-anchor="middle" font-size="11.5" fill="#4a5568">2,556,000 rows &#183; 85.2% of normal</text>
+<text x="480" y="420" text-anchor="middle" font-size="11.5" fill="#4a5568">input.volume fails at WARN</text>
+<text x="480" y="444" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">table WRITTEN, warning logged</text>
+<text x="480" y="464" text-anchor="middle" font-size="11.5" fill="#4a5568">62,661 buckets &#183; 2,555,998 trips</text>
+<text x="480" y="484" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c05621">$70,497,153.50</text>
+<text x="480" y="524" text-anchor="middle" font-size="19" font-weight="700" fill="#c05621">exit code 0</text>
+
+<rect x="640" y="354" width="290" height="196" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="785" y="378" text-anchor="middle" font-size="13.5" font-weight="700" fill="#c53030">BAD RUN &#8212; half-failed export</text>
+<text x="785" y="400" text-anchor="middle" font-size="11.5" fill="#4a5568">120,000 rows &#183; 4.0% of normal</text>
+<text x="785" y="420" text-anchor="middle" font-size="11.5" fill="#4a5568">input.volume fails as CRITICAL</text>
+<text x="785" y="444" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">ABORTED BEFORE THE WRITE</text>
+<text x="785" y="464" text-anchor="middle" font-size="11.5" fill="#4a5568">its 2,891 wrong buckets and</text>
+<text x="785" y="484" text-anchor="middle" font-size="11.5" fill="#4a5568">$3,191,378.53 never published</text>
+<text x="785" y="524" text-anchor="middle" font-size="19" font-weight="700" fill="#c53030">exit code 1</text>
+
+<line x1="30" y1="570" x2="930" y2="570" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30" y="584" width="900" height="56" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="608" text-anchor="middle" font-size="13" fill="#1a202c">Read back after the aborted run, the published table is untouched: <tspan font-weight="700">240,917</tspan> buckets &#183; <tspan font-weight="700">9,554,757</tspan> trips &#183; <tspan font-weight="700" fill="#276749">$256,692,373.14</tspan></text>
+<text x="480" y="628" text-anchor="middle" font-size="12.5" fill="#4a5568">A job that swallowed the failure would have exited&#160;0 and told the scheduler the night went fine.</text>
+</svg>

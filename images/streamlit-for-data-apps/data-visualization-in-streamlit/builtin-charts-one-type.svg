@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="390" viewBox="0 0 1050 390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>Three Chart Calls, One AppTest Element Type</title>
+<desc>Three panels showing st.bar_chart, st.line_chart, and st.area_chart, each producing a different visual mark, but all three registering under AppTest as the identical vega_lite_chart element type. A fourth note explains that telling them apart programmatically requires parsing the real vega-lite spec on proto.spec and reading its mark field -- bar, line, or area.</desc>
+<rect width="1050" height="390" fill="#ffffff" />
+<text x="525" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Three Chart Calls, One AppTest Element Type</text>
+<rect x="30" y="60" width="314" height="210" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+<text x="187" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">st.bar_chart(...)</text>
+<text x="187" y="110" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">AppTest type:</text>
+<text x="187" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">vega_lite_chart</text>
+<text x="187" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568"></text>
+<text x="187" y="176" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">real mark:</text>
+<text x="187" y="198" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">{&#x27;type&#x27;: &#x27;bar&#x27;}</text>
+<path d="M348,165 L364,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="368" y="60" width="314" height="210" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+<text x="525" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">st.line_chart(...)</text>
+<text x="525" y="110" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">AppTest type:</text>
+<text x="525" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">vega_lite_chart</text>
+<text x="525" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568"></text>
+<text x="525" y="176" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">real mark:</text>
+<text x="525" y="198" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">{&#x27;type&#x27;: &#x27;line&#x27;}</text>
+<path d="M686,165 L702,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="706" y="60" width="314" height="210" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+<text x="863" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">st.area_chart(...)</text>
+<text x="863" y="110" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">AppTest type:</text>
+<text x="863" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">vega_lite_chart</text>
+<text x="863" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568"></text>
+<text x="863" y="176" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">real mark:</text>
+<text x="863" y="198" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">{&#x27;type&#x27;: &#x27;area&#x27;}</text>
+<rect x="30" y="286" width="990" height="88" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="525" y="310" text-anchor="middle" font-size="10.5" fill="#7b341e">All three share the identical AppTest element type. Telling them apart programmatically means parsing the real</text>
+<text x="525" y="330" text-anchor="middle" font-size="10.5" fill="#7b341e">vega-lite spec (json.loads(el.proto.spec)) and reading its own mark field.</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

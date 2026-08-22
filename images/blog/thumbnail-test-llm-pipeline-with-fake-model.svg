@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Test an LLM pipeline without API calls</title>
+  <desc id="desc">A pipeline diagram shows a question passing through retrieval and a prompt into a replaceable fake model, then through validation to a predictable result.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">RELIABLE LLM APPS</text>
+    <text x="90" y="270" font-size="82" font-weight="700" fill="#1b1f24">TEST THE</text>
+    <text x="90" y="360" font-size="82" font-weight="700" fill="#1b1f24">PIPELINE</text>
+    <rect x="94" y="394" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="472" font-size="29" font-weight="500" fill="#59636e">FAKES · BOUNDARIES · VALIDATION</text>
+
+    <g transform="translate(650 128)">
+      <line x1="92" y1="54" x2="92" y2="106" stroke="#c7ccd2" stroke-width="4"/>
+      <line x1="92" y1="165" x2="92" y2="217" stroke="#c7ccd2" stroke-width="4"/>
+      <line x1="92" y1="296" x2="92" y2="348" stroke="#c7ccd2" stroke-width="4"/>
+      <line x1="92" y1="407" x2="92" y2="459" stroke="#c7ccd2" stroke-width="4"/>
+      <rect x="86" y="98" width="12" height="12" rx="2" fill="#0067c0"/>
+      <rect x="86" y="209" width="12" height="12" rx="2" fill="#0067c0"/>
+      <rect x="86" y="340" width="12" height="12" rx="2" fill="#0067c0"/>
+      <rect x="86" y="451" width="12" height="12" rx="2" fill="#0067c0"/>
+
+      <rect x="0" y="0" width="184" height="54" rx="14" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="92" y="35" text-anchor="middle" font-size="23" font-weight="600" fill="#1b1f24">QUESTION</text>
+
+      <rect x="0" y="106" width="184" height="59" rx="14" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+      <text x="92" y="143" text-anchor="middle" font-size="22" font-weight="600" fill="#1b1f24">RETRIEVE</text>
+
+      <rect x="0" y="217" width="184" height="79" rx="14" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+      <text x="92" y="249" text-anchor="middle" font-size="17" font-weight="600" fill="#0067c0">REPLACEABLE</text>
+      <text x="92" y="278" text-anchor="middle" font-size="25" font-weight="700" fill="#1b1f24">FAKE MODEL</text>
+
+      <rect x="0" y="348" width="184" height="59" rx="14" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+      <text x="92" y="385" text-anchor="middle" font-size="22" font-weight="600" fill="#1b1f24">VALIDATE</text>
+
+      <rect x="0" y="459" width="184" height="54" rx="14" fill="#f2f7f4" stroke="#287271" stroke-width="2"/>
+      <text x="92" y="494" text-anchor="middle" font-size="23" font-weight="700" fill="#1b1f24">RESULT</text>
+
+      <g transform="translate(220 228)">
+        <line x1="0" y1="28" x2="53" y2="28" stroke="#0067c0" stroke-width="3"/>
+        <rect x="45" y="22" width="12" height="12" rx="2" fill="#0067c0"/>
+        <rect x="61" y="0" width="190" height="56" rx="14" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+        <text x="156" y="23" text-anchor="middle" font-size="15" font-weight="600" fill="#59636e">CONTROLLED JSON</text>
+        <text x="156" y="44" text-anchor="middle" font-size="15" fill="#1b1f24">same input, same reply</text>
+      </g>
+    </g>
+  </g>
+</svg>

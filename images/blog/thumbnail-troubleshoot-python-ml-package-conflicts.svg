@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Troubleshoot Python Machine Learning Package Conflicts</title>
+  <desc id="desc">A layered Python machine learning diagnostic. The interpreter and package metadata pass, dependency rules need repair, and the imports and data path still pass.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1.2" fill="#59636e">PYTHON ML DIAGNOSTICS</text>
+    <text x="90" y="280" font-size="82" font-weight="700" fill="#1b1f24">FIND THE</text>
+    <text x="90" y="380" font-size="82" font-weight="700" fill="#1b1f24">CONFLICT</text>
+    <rect x="96" y="414" width="384" height="12" rx="6" fill="#0067c0"/>
+    <text x="96" y="491" font-size="29" font-weight="500" fill="#59636e">INTERPRETER &#183; RULES &#183; RUNTIME</text>
+
+    <g aria-hidden="true">
+      <path d="M742 186V210 M742 274V298 M742 362V386 M742 450V474" fill="none" stroke="#c7ccd2" stroke-width="4" stroke-linecap="round"/>
+
+      <rect x="676" y="122" width="420" height="64" rx="16" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <circle cx="714" cy="154" r="13" fill="#16825d"/>
+      <path d="M708 154l4 4 8-9" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="742" y="162" font-size="24" font-weight="600" fill="#1b1f24">Interpreter</text>
+      <text x="1060" y="161" text-anchor="end" font-size="18" font-weight="700" fill="#16825d">PASS</text>
+
+      <rect x="676" y="210" width="420" height="64" rx="16" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <circle cx="714" cy="242" r="13" fill="#16825d"/>
+      <path d="M708 242l4 4 8-9" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="742" y="250" font-size="24" font-weight="600" fill="#1b1f24">Package metadata</text>
+      <text x="1060" y="249" text-anchor="end" font-size="18" font-weight="700" fill="#16825d">PASS</text>
+
+      <rect x="676" y="298" width="420" height="64" rx="16" fill="#fff7f7" stroke="#c54b4b" stroke-width="3"/>
+      <circle cx="714" cy="330" r="13" fill="#c54b4b"/>
+      <path d="M709 325l10 10 M719 325l-10 10" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+      <text x="742" y="338" font-size="24" font-weight="700" fill="#1b1f24">Dependency rules</text>
+      <text x="1060" y="337" text-anchor="end" font-size="18" font-weight="700" fill="#c54b4b">REPAIR</text>
+
+      <rect x="676" y="386" width="420" height="64" rx="16" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <circle cx="714" cy="418" r="13" fill="#16825d"/>
+      <path d="M708 418l4 4 8-9" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="742" y="426" font-size="24" font-weight="600" fill="#1b1f24">Runtime imports</text>
+      <text x="1060" y="425" text-anchor="end" font-size="18" font-weight="700" fill="#16825d">PASS</text>
+
+      <rect x="676" y="474" width="420" height="64" rx="16" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <circle cx="714" cy="506" r="13" fill="#16825d"/>
+      <path d="M708 506l4 4 8-9" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="742" y="514" font-size="24" font-weight="600" fill="#1b1f24">Data + model path</text>
+      <text x="1060" y="513" text-anchor="end" font-size="18" font-weight="700" fill="#16825d">PASS</text>
+    </g>
+  </g>
+</svg>

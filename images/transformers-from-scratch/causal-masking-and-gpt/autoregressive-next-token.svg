@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-label="A char-level sequence 'the lamp' shown as inputs on top and targets shifted by one below, with an arrow from every input position pointing to the next character it must predict, all in a single parallel forward pass.">
+  <rect x="0" y="0" width="860" height="460" fill="#ffffff"/>
+
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">Autoregressive next-token prediction, all positions at once</text>
+  <text x="430" y="58" text-anchor="middle" font-size="14" fill="#4a5568">inputs = tokens[:-1]  &#8226;  targets = tokens[1:]  (shift by one)</text>
+
+  <!-- column geometry: 8 cells starting x=70, width 88, gap 6 -->
+  <!-- INPUT ROW -->
+  <text x="40" y="118" text-anchor="end" font-size="14" font-weight="600" fill="#2b6cb0">input</text>
+  <!-- TARGET ROW -->
+  <text x="40" y="330" text-anchor="end" font-size="14" font-weight="600" fill="#276749">target</text>
+
+  <!-- cell 0 -->
+  <g>
+    <rect x="70"  y="92" width="88" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="114" y="125" text-anchor="middle" font-size="22" font-weight="700" fill="#2b6cb0">t</text>
+    <text x="114" y="164" text-anchor="middle" font-size="12" fill="#718096">pos 0</text>
+    <rect x="70"  y="304" width="88" height="52" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="114" y="337" text-anchor="middle" font-size="22" font-weight="700" fill="#276749">h</text>
+    <path d="M114 150 L114 298" stroke="#ed8936" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  </g>
+  <!-- cell 1 -->
+  <g>
+    <rect x="164" y="92" width="88" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="208" y="125" text-anchor="middle" font-size="22" font-weight="700" fill="#2b6cb0">h</text>
+    <text x="208" y="164" text-anchor="middle" font-size="12" fill="#718096">pos 1</text>
+    <rect x="164" y="304" width="88" height="52" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="208" y="337" text-anchor="middle" font-size="22" font-weight="700" fill="#276749">e</text>
+    <path d="M208 150 L208 298" stroke="#ed8936" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  </g>
+  <!-- cell 2 -->
+  <g>
+    <rect x="258" y="92" width="88" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="302" y="125" text-anchor="middle" font-size="22" font-weight="700" fill="#2b6cb0">e</text>
+    <text x="302" y="164" text-anchor="middle" font-size="12" fill="#718096">pos 2</text>
+    <rect x="258" y="304" width="88" height="52" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="302" y="337" text-anchor="middle" font-size="22" font-weight="700" fill="#276749">&#183;</text>
+    <text x="302" y="376" text-anchor="middle" font-size="11" fill="#718096">space</text>
+    <path d="M302 150 L302 298" stroke="#ed8936" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  </g>
+  <!-- cell 3 -->
+  <g>
+    <rect x="352" y="92" width="88" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="396" y="125" text-anchor="middle" font-size="20" font-weight="700" fill="#2b6cb0">&#183;</text>
+    <text x="396" y="164" text-anchor="middle" font-size="12" fill="#718096">pos 3</text>
+    <rect x="352" y="304" width="88" height="52" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="396" y="337" text-anchor="middle" font-size="22" font-weight="700" fill="#276749">l</text>
+    <path d="M396 150 L396 298" stroke="#ed8936" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  </g>
+  <!-- cell 4 -->
+  <g>
+    <rect x="446" y="92" width="88" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="490" y="125" text-anchor="middle" font-size="22" font-weight="700" fill="#2b6cb0">l</text>
+    <text x="490" y="164" text-anchor="middle" font-size="12" fill="#718096">pos 4</text>
+    <rect x="446" y="304" width="88" height="52" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="490" y="337" text-anchor="middle" font-size="22" font-weight="700" fill="#276749">a</text>
+    <path d="M490 150 L490 298" stroke="#ed8936" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  </g>
+  <!-- cell 5 -->
+  <g>
+    <rect x="540" y="92" width="88" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="584" y="125" text-anchor="middle" font-size="22" font-weight="700" fill="#2b6cb0">a</text>
+    <text x="584" y="164" text-anchor="middle" font-size="12" fill="#718096">pos 5</text>
+    <rect x="540" y="304" width="88" height="52" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="584" y="337" text-anchor="middle" font-size="22" font-weight="700" fill="#276749">m</text>
+    <path d="M584 150 L584 298" stroke="#ed8936" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  </g>
+  <!-- cell 6 -->
+  <g>
+    <rect x="634" y="92" width="88" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="678" y="125" text-anchor="middle" font-size="22" font-weight="700" fill="#2b6cb0">m</text>
+    <text x="678" y="164" text-anchor="middle" font-size="12" fill="#718096">pos 6</text>
+    <rect x="634" y="304" width="88" height="52" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="678" y="337" text-anchor="middle" font-size="22" font-weight="700" fill="#276749">p</text>
+    <path d="M678 150 L678 298" stroke="#ed8936" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  </g>
+  <!-- cell 7 -->
+  <g>
+    <rect x="728" y="92" width="88" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+    <text x="772" y="125" text-anchor="middle" font-size="22" font-weight="700" fill="#2b6cb0">p</text>
+    <text x="772" y="164" text-anchor="middle" font-size="12" fill="#718096">pos 7</text>
+    <rect x="728" y="304" width="88" height="52" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="772" y="333" text-anchor="middle" font-size="15" font-weight="700" fill="#6b46c1">next</text>
+    <text x="772" y="349" text-anchor="middle" font-size="11" fill="#6b46c1">to predict</text>
+    <path d="M772 150 L772 298" stroke="#9f7aea" stroke-width="2.5" fill="none" marker-end="url(#arrowp)"/>
+  </g>
+
+  <text x="430" y="410" text-anchor="middle" font-size="13.5" fill="#4a5568">Every orange arrow is one supervised prediction. Position t sees only tokens 0..t and must predict token t+1.</text>
+  <text x="430" y="434" text-anchor="middle" font-size="13.5" font-weight="600" fill="#c05621">A length-T row yields T predictions in ONE parallel forward pass &#8212; no step-by-step loop.</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#ed8936"/>
+    </marker>
+    <marker id="arrowp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9f7aea"/>
+    </marker>
+  </defs>
+</svg>

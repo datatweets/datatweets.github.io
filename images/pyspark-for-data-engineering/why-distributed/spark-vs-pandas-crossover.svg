@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
+
+  <text x="480" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">When Spark wins (and loses) &#8212; the same report, three engines, three sizes</text>
+  <text x="480" y="54" text-anchor="middle" font-size="14" fill="#718096">zone-hour revenue over the NYC taxi quarter (9,554,778 rows &#183; 160.4&#160;MB) &#183; pyspark 4.2 local[*] on 10 cores &#183; median of 3 warmed runs</text>
+
+  <!-- ============ LEFT PANEL: warm in-session crossover chart ============ -->
+  <text x="60" y="88" font-size="14" font-weight="700" fill="#1a202c">Session already open: seconds per report</text>
+  <text x="60" y="105" font-size="12" fill="#718096">Spark passes the big frame between months 1 and 2 &#8212; and never catches streaming</text>
+
+  <!-- axes -->
+  <line x1="90" y1="120" x2="90" y2="390" stroke="#1a202c" stroke-width="1.5"/>
+  <line x1="90" y1="390" x2="470" y2="390" stroke="#1a202c" stroke-width="1.5"/>
+  <text x="48" y="255" text-anchor="middle" font-size="12" fill="#4a5568" transform="rotate(-90 48 255)">wall seconds (warm)</text>
+  <text x="280" y="428" text-anchor="middle" font-size="12" fill="#4a5568">months of the 2024 quarter loaded</text>
+
+  <!-- y gridlines 0..3 s -->
+  <g font-size="10.5" fill="#718096">
+    <line x1="90" y1="390" x2="470" y2="390" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="83" y="394" text-anchor="end">0</text>
+    <line x1="90" y1="305.6" x2="470" y2="305.6" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="83" y="309.6" text-anchor="end">1</text>
+    <line x1="90" y1="221.3" x2="470" y2="221.3" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="83" y="225.3" text-anchor="end">2</text>
+    <line x1="90" y1="136.9" x2="470" y2="136.9" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="83" y="140.9" text-anchor="end">3</text>
+  </g>
+
+  <!-- x ticks -->
+  <g font-size="10.5" fill="#718096" text-anchor="middle">
+    <text x="170" y="408">1 (50&#160;MB)</text>
+    <text x="300" y="408">2 (100&#160;MB)</text>
+    <text x="430" y="408">3 (160&#160;MB)</text>
+  </g>
+
+  <!-- naive pandas line (orange) 0.26 / 1.16 / 2.99 -->
+  <polyline points="170,368.1 300,292.1 430,137.7" fill="none" stroke="#c05621" stroke-width="2.5"/>
+  <circle cx="170" cy="368.1" r="4" fill="#c05621"/>
+  <circle cx="300" cy="292.1" r="4" fill="#c05621"/>
+  <circle cx="430" cy="137.7" r="4" fill="#c05621"/>
+  <text x="425" y="128" text-anchor="end" font-size="11.5" font-weight="700" fill="#c05621">pandas, one big frame &#8212; 2.99&#160;s</text>
+
+  <!-- spark line (blue) 0.74 / 1.11 / 2.71 -->
+  <polyline points="170,327.6 300,296.3 430,161.3" fill="none" stroke="#2b6cb0" stroke-width="2.5"/>
+  <circle cx="170" cy="327.6" r="4" fill="#2b6cb0"/>
+  <circle cx="300" cy="296.3" r="4" fill="#2b6cb0"/>
+  <circle cx="430" cy="161.3" r="4" fill="#2b6cb0"/>
+  <text x="425" y="182" text-anchor="end" font-size="11.5" font-weight="700" fill="#2b6cb0">Spark local[*] &#8212; 2.71&#160;s</text>
+
+  <!-- streaming line (green) 0.21 / 0.38 / 0.60 -->
+  <polyline points="170,372.3 300,357.9 430,339.4" fill="none" stroke="#276749" stroke-width="2.5"/>
+  <circle cx="170" cy="372.3" r="4" fill="#276749"/>
+  <circle cx="300" cy="357.9" r="4" fill="#276749"/>
+  <circle cx="430" cy="339.4" r="4" fill="#276749"/>
+  <text x="425" y="333" text-anchor="end" font-size="11.5" font-weight="700" fill="#276749">pandas, streaming &#8212; 0.60&#160;s</text>
+
+  <!-- crossover marker: Spark vs big frame at ~month 1.9 -->
+  <line x1="287.7" y1="130" x2="287.7" y2="390" stroke="#276749" stroke-width="1.3" stroke-dasharray="4 4"/>
+  <circle cx="287.7" cy="299.3" r="6" fill="#276749"/>
+  <rect x="120" y="140" width="212" height="60" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3"/>
+  <text x="132" y="158" font-size="11.5" font-weight="700" fill="#276749">CROSSOVER vs the big frame:</text>
+  <text x="132" y="174" font-size="11" fill="#276749">just under 2 months (~100&#160;MB) &#8212;</text>
+  <text x="132" y="189" font-size="11" fill="#276749">at 3 months Spark wins, 2.71 vs 2.99&#160;s</text>
+
+  <!-- no-crossover note for streaming -->
+  <text x="132" y="378" font-size="10.5" font-style="italic" fill="#276749">streaming&#8217;s marginal cost (0.20&#160;s/month) beats Spark&#8217;s (0.99) &#8212; no crossover on this axis</text>
+
+  <!-- ============ RIGHT PANEL: script view + fixed cost ============ -->
+  <text x="510" y="88" font-size="14" font-weight="700" fill="#1a202c">Fresh script: cold process to finished 3-month report</text>
+  <text x="510" y="105" font-size="12" fill="#718096">a script pays Spark&#8217;s fixed cost on every single run</text>
+
+  <g font-size="11.5">
+    <text x="628" y="146" text-anchor="end" fill="#276749" font-weight="700">streaming</text>
+    <rect x="638" y="132" width="27" height="22" rx="3" fill="#48bb78"/>
+    <text x="672" y="146" font-size="11" fill="#276749" font-weight="700">1.0&#160;s</text>
+
+    <text x="628" y="186" text-anchor="end" fill="#c05621" font-weight="700">big frame</text>
+    <rect x="638" y="172" width="124" height="22" rx="3" fill="#ed8936"/>
+    <text x="769" y="186" font-size="11" fill="#c05621" font-weight="700">4.6&#160;s</text>
+
+    <text x="628" y="226" text-anchor="end" fill="#2b6cb0" font-weight="700">Spark</text>
+    <rect x="638" y="212" width="236" height="22" rx="3" fill="#2b6cb0"/>
+    <rect x="874" y="212" width="58" height="22" rx="3" fill="#90cdf4"/>
+    <text x="700" y="226" font-size="10.5" fill="#ffffff" font-weight="700">fixed cost 8.75&#160;s</text>
+    <text x="878" y="226" font-size="10" fill="#1a202c">query</text>
+    <text x="874" y="250" text-anchor="middle" font-size="11" fill="#2b6cb0" font-weight="700">10.9&#160;s</text>
+  </g>
+
+  <rect x="510" y="266" width="430" height="88" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.2"/>
+  <text x="524" y="287" font-size="11.5" font-weight="700" fill="#2b6cb0">Spark&#8217;s fixed bill, measured piece by piece</text>
+  <text x="524" y="305" font-size="11" fill="#2b6cb0">import pyspark 0.07&#160;s &#183; create the SparkSession 3.85&#160;s &#183; first job ever</text>
+  <text x="524" y="320" font-size="11" fill="#2b6cb0">(JIT + codegen warm-up) 4.83&#160;s &#8212; 8.75&#160;s before the engine runs warm.</text>
+  <text x="524" y="338" font-size="11" fill="#2b6cb0">The same job again: 0.74&#160;s. Planning is not the cost &#8212; building the</text>
+  <text x="524" y="353" font-size="11" fill="#2b6cb0">whole query took 41.7&#160;ms, lazily; startup and warm-up are the cost.</text>
+
+  <text x="510" y="382" font-size="10.5" font-style="italic" fill="#4a5568">Per extra month of data: Spark +0.99&#160;s &#183; big frame +1.37&#160;s &#183; streaming +0.20&#160;s.</text>
+  <text x="510" y="396" font-size="10.5" font-style="italic" fill="#4a5568">A fixed cost only amortizes against a rival with a steeper slope.</text>
+
+  <!-- ============ BOTTOM: memory strip ============ -->
+  <line x1="60" y1="430" x2="940" y2="430" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="458" font-size="14" font-weight="700" fill="#1a202c">Peak resident memory &#8212; fresh process each, 3 months, measured while running</text>
+  <text x="60" y="475" font-size="12" fill="#718096">Python driver via ru_maxrss; Spark&#8217;s JVM sampled with ps while the job ran</text>
+
+  <!-- bars: scale 0.08 px/MB -->
+  <g font-size="11">
+    <text x="175" y="507" text-anchor="end" fill="#276749" font-weight="700">streaming</text>
+    <rect x="185" y="494" width="36.9" height="18" rx="3" fill="#48bb78"/>
+    <text x="230" y="507" font-size="10.5" fill="#276749" font-weight="700">461&#160;MB</text>
+
+    <text x="175" y="537" text-anchor="end" fill="#2b6cb0" font-weight="700">Spark</text>
+    <rect x="185" y="524" width="19.7" height="18" rx="3" fill="#90cdf4"/>
+    <rect x="204.7" y="524" width="86.2" height="18" rx="3" fill="#4299e1"/>
+    <text x="299" y="537" font-size="10.5" fill="#2b6cb0" font-weight="700">1,323&#160;MB &#8212; driver 246 + JVM 1,077</text>
+
+    <text x="175" y="567" text-anchor="end" fill="#c05621" font-weight="700">big frame</text>
+    <rect x="185" y="554" width="304.9" height="18" rx="3" fill="#ed8936"/>
+    <text x="497" y="567" font-size="10.5" fill="#c05621" font-weight="700">3,811&#160;MB (frame alone: 1,347&#160;MB)</text>
+  </g>
+
+  <text x="60" y="605" font-size="10.5" fill="#4a5568">Spark never materialized the quarter &#8212; about a third of the big frame&#8217;s peak &#8212; but its JVM idles</text>
+  <text x="60" y="620" font-size="10.5" fill="#4a5568">around a gigabyte even for this small job. Streaming keeps its Course&#160;1 promise at 461&#160;MB.</text>
+  <text x="60" y="642" font-size="10.5" font-weight="700" fill="#1a202c">All three engines returned exactly 240,917 buckets &#183; 9,554,757 trips &#183; $256,692,373.14.</text>
+
+  <rect x="640" y="588" width="300" height="92" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.3"/>
+  <text x="656" y="609" font-size="11.5" font-weight="700" fill="#c05621">This crossover is yours, not a law</text>
+  <text x="656" y="627" font-size="10.5" fill="#c05621">Cores, disk, and the workload all move it. What</text>
+  <text x="656" y="642" font-size="10.5" fill="#c05621">transfers is the shape: Spark = fixed + marginal,</text>
+  <text x="656" y="657" font-size="10.5" fill="#c05621">pandas = marginal only. Measure C and m on your</text>
+  <text x="656" y="672" font-size="10.5" fill="#c05621">machine; the crossover is C &#247; (m&#8321; &#8722; m&#8322;), if it exists.</text>
+</svg>

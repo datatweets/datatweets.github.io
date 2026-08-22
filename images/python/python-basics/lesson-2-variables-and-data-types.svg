@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+ <title id="title">Variables and Data Types concept map</title>
+ <desc id="desc">A three-step map of the main concepts covered in this lesson.</desc>
+ <defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#718096"/></marker></defs>
+ <style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1a202c; }
+  .title { font-size: 34px; font-weight: 700; } .subtitle { font-size: 18px; fill: #718096; }
+  .box { font-size: 18px; font-weight: 600; } .step { fill: white; font-size: 20px; font-weight: 700; }
+  .arrow { fill: none; stroke: #718096; stroke-width: 3; marker-end: url(#arrowhead); }
+ </style>
+ <rect width="1200" height="560" fill="#ffffff"/>
+ <text x="600" y="82" text-anchor="middle" class="title"><tspan x="600" dy="0">Variables and Data Types</tspan></text>
+ <text x="600" y="180" text-anchor="middle" class="subtitle">The lesson moves from understanding to application and verification.</text>
+ <g>
+  <rect x="70" y="245" width="290" height="180" rx="18" fill="#ebf8ff" stroke="#3182ce" stroke-width="2"/>
+  <circle cx="215" cy="285" r="22" fill="#3182ce"/>
+  <text x="215" y="293" text-anchor="middle" class="step">1</text>
+  <text x="215" y="345" text-anchor="middle" class="box"><tspan x="215" dy="0">Building on Your</tspan><tspan x="215" dy="28">Knowledge of Python</tspan></text>
+ </g><g>
+  <rect x="440" y="245" width="290" height="180" rx="18" fill="#faf5ff" stroke="#805ad5" stroke-width="2"/>
+  <circle cx="585" cy="285" r="22" fill="#805ad5"/>
+  <text x="585" y="293" text-anchor="middle" class="step">2</text>
+  <text x="585" y="345" text-anchor="middle" class="box"><tspan x="585" dy="0">Understanding</tspan><tspan x="585" dy="28">Variables</tspan></text>
+ </g><g>
+  <rect x="810" y="245" width="290" height="180" rx="18" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+  <circle cx="955" cy="285" r="22" fill="#38a169"/>
+  <text x="955" y="293" text-anchor="middle" class="step">3</text>
+  <text x="955" y="345" text-anchor="middle" class="box"><tspan x="955" dy="0">Naming Your Variables</tspan></text>
+ </g>
+ <path d="M360 335 H425" class="arrow"/><path d="M730 335 H795" class="arrow"/>
+ <text x="600" y="500" text-anchor="middle" class="subtitle">Use this map to connect each concept as you work through the examples.</text>
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="figTitle figDesc">
+  <title id="figTitle">The three pillars of observability for an LLM app</title>
+  <desc id="figDesc">Evaluation before shipping asks "is it good?" against a dataset. Observability after shipping asks "what is it doing right now?" on live traffic, resting on three pillars: logs are discrete per-call events; metrics are aggregate numbers over time such as request rate and p95 latency and cost per day; traces are the causal path of one request through retrieval, tools, and generation. Each pillar lists what a Docent app captures.</desc>
+  <rect x="0" y="0" width="860" height="560" fill="#ffffff"/>
+
+  <!-- Top banner: eval vs observability -->
+  <rect x="30" y="24" width="380" height="70" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="220" y="50" text-anchor="middle" font-size="15" font-weight="700" fill="#2b6cb0">Evaluation (before ship)</text>
+  <text x="220" y="72" text-anchor="middle" font-size="12.5" fill="#4a5568">&#8220;Is it good?&#8221; on a fixed dataset</text>
+  <text x="220" y="88" text-anchor="middle" font-size="11.5" fill="#718096">Modules 1&#8211;6</text>
+
+  <rect x="450" y="24" width="380" height="70" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="640" y="50" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">Observability (after ship)</text>
+  <text x="640" y="72" text-anchor="middle" font-size="12.5" fill="#4a5568">&#8220;What is it doing right now?&#8221; on live traffic</text>
+  <text x="640" y="88" text-anchor="middle" font-size="11.5" fill="#718096">This module &#8212; production side</text>
+
+  <!-- Arrow between banners -->
+  <line x1="410" y1="59" x2="450" y2="59" stroke="#a0aec0" stroke-width="2"/>
+  <polygon points="450,59 440,54 440,64" fill="#a0aec0"/>
+
+  <text x="430" y="128" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1a202c">Observability rests on three pillars</text>
+
+  <!-- Pillar 1: LOGS -->
+  <rect x="30" y="150" width="255" height="330" rx="12" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <rect x="30" y="150" width="255" height="52" rx="12" fill="#9f7aea"/>
+  <rect x="30" y="178" width="255" height="24" fill="#9f7aea"/>
+  <text x="157" y="183" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Logs</text>
+  <text x="157" y="223" text-anchor="middle" font-size="12.5" font-weight="600" fill="#6b46c1">Discrete events</text>
+  <text x="157" y="242" text-anchor="middle" font-size="11.5" fill="#4a5568">one record per model call</text>
+
+  <text x="52" y="278" font-size="12" fill="#4a5568">&#8226; the prompt &#38; response</text>
+  <text x="52" y="302" font-size="12" fill="#4a5568">&#8226; model + params</text>
+  <text x="52" y="326" font-size="12" fill="#4a5568">&#8226; input / output tokens</text>
+  <text x="52" y="350" font-size="12" fill="#4a5568">&#8226; latency &#38; cost</text>
+  <text x="52" y="374" font-size="12" fill="#4a5568">&#8226; tool calls, retrieved ctx</text>
+  <text x="52" y="398" font-size="12" fill="#4a5568">&#8226; a request / trace id</text>
+
+  <rect x="52" y="418" width="211" height="46" rx="8" fill="#ffffff" stroke="#9f7aea" stroke-width="1.2"/>
+  <text x="157" y="438" text-anchor="middle" font-size="11" fill="#6b46c1">One row = one Docent</text>
+  <text x="157" y="454" text-anchor="middle" font-size="11" fill="#6b46c1">answer, fully described</text>
+
+  <!-- Pillar 2: METRICS -->
+  <rect x="302" y="150" width="255" height="330" rx="12" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <rect x="302" y="150" width="255" height="52" rx="12" fill="#4299e1"/>
+  <rect x="302" y="178" width="255" height="24" fill="#4299e1"/>
+  <text x="429" y="183" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Metrics</text>
+  <text x="429" y="223" text-anchor="middle" font-size="12.5" font-weight="600" fill="#2b6cb0">Aggregate numbers</text>
+  <text x="429" y="242" text-anchor="middle" font-size="11.5" fill="#4a5568">rolled up over time</text>
+
+  <text x="324" y="278" font-size="12" fill="#4a5568">&#8226; request rate (req / min)</text>
+  <text x="324" y="302" font-size="12" fill="#4a5568">&#8226; error rate (% failed)</text>
+  <text x="324" y="326" font-size="12" fill="#4a5568">&#8226; p50 / p95 latency</text>
+  <text x="324" y="350" font-size="12" fill="#4a5568">&#8226; tokens / request</text>
+  <text x="324" y="374" font-size="12" fill="#4a5568">&#8226; cost per day</text>
+
+  <!-- tiny bar chart -->
+  <line x1="324" y1="452" x2="512" y2="452" stroke="#a0aec0" stroke-width="1"/>
+  <rect x="332" y="424" width="16" height="28" fill="#4299e1"/>
+  <rect x="356" y="414" width="16" height="38" fill="#4299e1"/>
+  <rect x="380" y="430" width="16" height="22" fill="#4299e1"/>
+  <rect x="404" y="408" width="16" height="44" fill="#2b6cb0"/>
+  <rect x="428" y="420" width="16" height="32" fill="#4299e1"/>
+  <rect x="452" y="412" width="16" height="40" fill="#4299e1"/>
+  <text x="500" y="428" text-anchor="end" font-size="10.5" fill="#718096">over time</text>
+
+  <!-- Pillar 3: TRACES -->
+  <rect x="574" y="150" width="256" height="330" rx="12" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <rect x="574" y="150" width="256" height="52" rx="12" fill="#ed8936"/>
+  <rect x="574" y="178" width="256" height="24" fill="#ed8936"/>
+  <text x="702" y="183" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Traces</text>
+  <text x="702" y="223" text-anchor="middle" font-size="12.5" font-weight="600" fill="#c05621">Causal path</text>
+  <text x="702" y="242" text-anchor="middle" font-size="11.5" fill="#4a5568">of one request, end to end</text>
+
+  <!-- trace waterfall -->
+  <rect x="596" y="272" width="150" height="22" rx="4" fill="#ed8936"/>
+  <text x="604" y="287" font-size="11" fill="#ffffff">retrieve docs</text>
+  <rect x="620" y="300" width="120" height="22" rx="4" fill="#f6ad55"/>
+  <text x="628" y="315" font-size="11" fill="#7b341e">rank / select</text>
+  <rect x="640" y="328" width="170" height="22" rx="4" fill="#c05621"/>
+  <text x="648" y="343" font-size="11" fill="#ffffff">generate (Claude call)</text>
+  <line x1="596" y1="360" x2="810" y2="360" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="596" y="378" font-size="10.5" fill="#718096">t = 0</text>
+  <text x="810" y="378" text-anchor="end" font-size="10.5" fill="#718096">t = latency</text>
+
+  <text x="702" y="408" text-anchor="middle" font-size="11.5" fill="#4a5568">where did the time</text>
+  <text x="702" y="426" text-anchor="middle" font-size="11.5" fill="#4a5568">and tokens actually go?</text>
+  <rect x="596" y="440" width="212" height="26" rx="8" fill="#ffffff" stroke="#ed8936" stroke-width="1.2"/>
+  <text x="702" y="457" text-anchor="middle" font-size="11" fill="#c05621">tied together by one trace id</text>
+
+  <!-- bottom rule -->
+  <text x="430" y="516" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">The core rule: you can&#8217;t debug what you didn&#8217;t log.</text>
+  <text x="430" y="540" text-anchor="middle" font-size="11.5" fill="#718096">Non-determinism, per-call cost, token limits, and silent quality drift make this capture layer non-optional.</text>
+</svg>

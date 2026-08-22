@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="400" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">read_json_auto('thistlewood_orders_nested.json')</text>
+
+  <text x="150" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">Five flat columns</text>
+  <rect x="40" y="72" width="220" height="30" rx="5" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="150" y="92" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">order_id: VARCHAR</text>
+  <rect x="40" y="106" width="220" height="30" rx="5" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="150" y="126" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">order_date: DATE</text>
+  <rect x="40" y="140" width="220" height="30" rx="5" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="150" y="160" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">customer_id: VARCHAR</text>
+  <rect x="40" y="174" width="220" height="30" rx="5" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="150" y="194" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">channel: VARCHAR</text>
+  <rect x="40" y="208" width="220" height="30" rx="5" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="150" y="228" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">status: VARCHAR</text>
+
+  <text x="570" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#742a2a">One genuinely nested column</text>
+  <rect x="380" y="76" width="380" height="140" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="570" y="102" text-anchor="middle" font-size="10.5" font-weight="700" font-family="Menlo, monospace" fill="#742a2a">line_items: STRUCT(...)[]</text>
+  <text x="570" y="126" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#9c4221">product_id VARCHAR</text>
+  <text x="570" y="144" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#9c4221">quantity BIGINT</text>
+  <text x="570" y="162" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#9c4221">unit_price_at_sale DOUBLE</text>
+  <text x="570" y="188" text-anchor="middle" font-size="9" fill="#9c4221">a real list-of-structs type,</text>
+  <text x="570" y="203" text-anchor="middle" font-size="9" fill="#9c4221">not a flat column or unparsed text</text>
+
+  <rect x="60" y="270" width="680" height="90" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="400" y="296" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">A flat CSV can't hold "one order, its own line items" in one record</text>
+  <text x="400" y="316" text-anchor="middle" font-size="10" fill="#2c5282">JSON's nesting captures that relationship directly --</text>
+  <text x="400" y="334" text-anchor="middle" font-size="10" fill="#2c5282">and DuckDB types it precisely instead of leaving it as an unparsed blob</text>
+</svg>

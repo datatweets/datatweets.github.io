@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">A namespace scopes the name; a Service stays stable while its pods roll</title>
+  <desc id="desc">Diagram showing two Kubernetes namespaces, dev and staging, each containing a Service named web with its own stable ClusterIP. Inside each Service, a rolling update is shown replacing old version-1 pods with new version-2 pods one at a time, while an arrow labeled ClusterIP unchanged points from the old state to the new state, indicating the Service address never changes even as the pods behind it are replaced.</desc>
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#59636e"/>
+    </marker>
+    <style>
+      .heading { font: 700 24px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .stage { font: 700 16px Jost, system-ui, sans-serif; fill: #0067c0; letter-spacing: 1px; }
+      .label { font: 700 16px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .detail { font: 14px Jost, system-ui, sans-serif; fill: #59636e; }
+      .mono { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #1b1f24; }
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="#f7f8fa"/>
+  <rect x="28" y="24" width="1144" height="512" rx="24" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <text x="62" y="66" class="heading">Same Service name, two namespaces, two stable addresses</text>
+
+  <!-- dev namespace panel -->
+  <text x="62" y="104" class="stage">NAMESPACE: DEV</text>
+  <rect x="62" y="118" width="290" height="56" rx="10" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+  <text x="207" y="140" class="label" text-anchor="middle">Service web</text>
+  <text x="207" y="162" class="mono" text-anchor="middle" fill="#0067c0">10.96.112.205 &#8212; fixed</text>
+  <line x1="207" y1="174" x2="207" y2="206" stroke="#c7ccd2" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <text x="62" y="232" class="detail">before rollout</text>
+  <circle cx="82" cy="258" r="16" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+  <circle cx="122" cy="258" r="16" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+  <circle cx="162" cy="258" r="16" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+  <circle cx="202" cy="258" r="16" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+  <text x="142" y="298" class="mono" text-anchor="middle" font-size="11">v1 x4</text>
+
+  <line x1="230" y1="258" x2="272" y2="258" stroke="#59636e" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <text x="292" y="232" class="detail">after rollout</text>
+  <circle cx="312" cy="258" r="16" fill="#e6f4e6" stroke="#2f6b4a" stroke-width="2"/>
+  <circle cx="352" cy="258" r="16" fill="#e6f4e6" stroke="#2f6b4a" stroke-width="2"/>
+  <circle cx="392" cy="258" r="16" fill="#e6f4e6" stroke="#2f6b4a" stroke-width="2"/>
+  <circle cx="432" cy="258" r="16" fill="#e6f4e6" stroke="#2f6b4a" stroke-width="2"/>
+  <text x="372" y="298" class="mono" text-anchor="middle" font-size="11">v2 x4</text>
+
+  <line x1="62" y1="322" x2="460" y2="322" stroke="#c7ccd2" stroke-width="2"/>
+  <text x="62" y="348" class="detail" fill="#0067c0" font-weight="700">ClusterIP unchanged: 10.96.112.205, recorded before and after</text>
+
+  <!-- divider -->
+  <line x1="530" y1="96" x2="530" y2="480" stroke="#e3e6ea" stroke-width="2"/>
+
+  <!-- staging namespace panel -->
+  <text x="580" y="104" class="stage">NAMESPACE: STAGING</text>
+  <rect x="580" y="118" width="290" height="56" rx="10" fill="#e6f4e6" stroke="#2f6b4a" stroke-width="2"/>
+  <text x="725" y="140" class="label" text-anchor="middle">Service web</text>
+  <text x="725" y="162" class="mono" text-anchor="middle" fill="#2f6b4a">10.96.178.39 &#8212; fixed</text>
+  <line x1="725" y1="174" x2="725" y2="206" stroke="#c7ccd2" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <circle cx="725" cy="258" r="16" fill="#e6f4e6" stroke="#2f6b4a" stroke-width="2"/>
+  <text x="725" y="298" class="mono" text-anchor="middle" font-size="11">v1 x1, no rollout here</text>
+
+  <text x="580" y="342" class="detail">Same name &#8220;web&#8221;, different ClusterIP &#8212; the namespace it lives</text>
+  <text x="580" y="364" class="detail">in decides which one an unqualified lookup reaches.</text>
+
+  <line x1="62" y1="404" x2="1140" y2="404" stroke="#e3e6ea" stroke-width="2"/>
+  <text x="62" y="440" class="detail">A rolling update only ever changes what's inside a namespace's Service &#8212; new</text>
+  <text x="62" y="462" class="detail">pods in, old pods out. The Service's own name and address never move, and</text>
+  <text x="62" y="484" class="detail">the other namespace's identically named Service is never affected by it.</text>
+</svg>

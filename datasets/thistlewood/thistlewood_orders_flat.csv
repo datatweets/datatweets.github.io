@@ -1,0 +1,1750 @@
+order_id,order_date,customer_name,product_name,category,quantity,unit_price,total
+O00588,2024-01-01,Benjamin Norwood,Hand-Glazed Laundry Basket,Storage,1,271.08,271.08
+O00588,2024-01-01,Benjamin Norwood,Hand-Glazed Stackable Bin,Storage,3,193.81,581.43
+O00588,2024-01-01,Benjamin Norwood,Charcoal Entry Bench,Furniture,4,34.75,139.0
+O00588,2024-01-01,Benjamin Norwood,Reclaimed Wood Glass Vase,Decor,1,23.84,23.84
+O00968,2024-01-01,Zoey Holloway,Powder-Coated Body Pillow,Bedding,4,443.61,1774.44
+O00968,2024-01-01,Zoey Holloway,Modern Saucepan,Kitchen,3,267.21,801.63
+O02320,2024-01-01,David Hensley,Woven Cotton Hanging Planter,Outdoor,1,91.24,91.24
+O02320,2024-01-01,David Hensley,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O02320,2024-01-01,David Hensley,Navy Fairy Lights,Lighting,2,349.98,699.96
+O02918,2024-01-01,Levi Hensley,Matte Black Dining Chair,Furniture,5,155.23,776.15
+O02918,2024-01-01,Levi Hensley,Matte Black Chandelier,Lighting,2,384.93,769.86
+O03129,2024-01-01,Sebastian Yates,Sage Green Planter Pot,Outdoor,1,114.8,114.8
+O03300,2024-01-01,Emma Lindqvist,Natural Linen Body Pillow,Bedding,3,252.47,757.41
+O03300,2024-01-01,Emma Lindqvist,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O03407,2024-01-01,Elijah Diaz,Slate Gray Shower Curtain,Bath,5,384.59,1922.95
+O03407,2024-01-01,Elijah Diaz,Slate Gray Stackable Bin,Storage,5,133.77,668.85
+O03407,2024-01-01,Elijah Diaz,Reclaimed Wood Fairy Lights,Lighting,2,268.92,537.84
+O04135,2024-01-01,Grace Thatcher,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O04135,2024-01-01,Grace Thatcher,Slate Gray Washcloth Set,Bath,5,441.96,2209.8
+O04135,2024-01-01,Grace Thatcher,Powder-Coated Toothbrush Holder,Bath,5,407.27,2036.35
+O04423,2024-01-01,Harper Bennett,Powder-Coated Toothbrush Holder,Bath,4,407.27,1629.08
+O04423,2024-01-01,Harper Bennett,Sage Green Whisk,Kitchen,1,157.6,157.6
+O04423,2024-01-01,Harper Bennett,Matte Black Shower Curtain,Bath,1,417.94,417.94
+O04985,2024-01-01,Zoey Holloway,Powder-Coated Side Table,Furniture,3,182.2,546.6
+O05782,2024-01-01,Elizabeth Everhart,Hand-Glazed Wall Mirror,Decor,4,447.66,1790.64
+O03128,2024-01-02,Ella Hensley,Modern Saucepan,Kitchen,3,267.21,801.63
+O03128,2024-01-02,Ella Hensley,Powder-Coated Toothbrush Holder,Bath,1,407.27,407.27
+O03916,2024-01-02,Abigail Rowan,Rustic Oak Baking Sheet,Kitchen,1,27.73,27.73
+O04575,2024-01-02,Benjamin Iversen,Matte Black Skillet,Kitchen,1,380.87,380.87
+O04575,2024-01-02,Benjamin Iversen,Matte Black Chandelier,Lighting,4,384.93,1539.72
+O05399,2024-01-02,Emily Gallo,Reclaimed Wood Garden Tool Set,Outdoor,2,310.0,620.0
+O05399,2024-01-02,Emily Gallo,Walnut Storage Basket,Storage,5,15.81,79.05
+O00426,2024-01-03,Lily Diaz,Solid Brass Curtain Liner,Bath,3,383.82,1151.46
+O00426,2024-01-03,Lily Diaz,Hand-Glazed Stackable Bin,Storage,4,193.81,775.24
+O00426,2024-01-03,Lily Diaz,Woven Cotton Wall Art Print,Decor,3,358.05,1074.15
+O00512,2024-01-03,Ella Parrish,Matte Black Entry Bench,Furniture,1,146.16,146.16
+O00512,2024-01-03,Ella Parrish,Rustic Oak Baking Sheet,Kitchen,5,27.73,138.65
+O00512,2024-01-03,Ella Parrish,Rustic Oak Quilt,Bedding,2,358.81,717.62
+O02323,2024-01-03,Elijah Diaz,Navy Fairy Lights,Lighting,2,349.98,699.96
+O02323,2024-01-03,Elijah Diaz,Walnut Storage Basket,Storage,3,15.81,47.43
+O02323,2024-01-03,Elijah Diaz,Reclaimed Wood Garden Tool Set,Outdoor,2,310.0,620.0
+O02356,2024-01-03,Matthew Vance,Matte Black Dining Chair,Furniture,5,155.23,776.15
+O02356,2024-01-03,Matthew Vance,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O02572,2024-01-03,John Abbott,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O02572,2024-01-03,John Abbott,Powder-Coated Side Table,Furniture,5,182.2,911.0
+O02657,2024-01-03,Amelia Chandler,Classic Shower Curtain,Bath,1,11.23,11.23
+O02756,2024-01-03,Gabriel Parrish,Carrara Marble Pendant Light,Lighting,4,364.88,1459.52
+O04721,2024-01-03,Harper Vance,Brushed Copper Coffee Maker,Kitchen,2,215.44,430.88
+O04721,2024-01-03,Harper Vance,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O04721,2024-01-03,Harper Vance,Charcoal Fleece Blanket,Bedding,4,62.75,251.0
+O04721,2024-01-03,Harper Vance,Carrara Marble Ladle,Kitchen,4,345.2,1380.8
+O05460,2024-01-03,Michael Whitfield,Terracotta Hanging Planter,Outdoor,3,10.1,30.3
+O00277,2024-01-04,Wyatt Rowan,Rustic Oak Garden Tool Set,Outdoor,1,29.47,29.47
+O00277,2024-01-04,Wyatt Rowan,Modern Saucepan,Kitchen,2,267.21,534.42
+O00277,2024-01-04,Wyatt Rowan,Reclaimed Wood Glass Vase,Decor,1,23.84,23.84
+O00277,2024-01-04,Wyatt Rowan,Walnut Chandelier,Lighting,4,29.64,118.56
+O00779,2024-01-04,Harper Whitfield,Slate Gray Washcloth Set,Bath,2,441.96,883.92
+O00779,2024-01-04,Harper Whitfield,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O00779,2024-01-04,Harper Whitfield,Rustic Oak Garden Tool Set,Outdoor,1,29.47,29.47
+O01030,2024-01-04,Owen Hensley,Bamboo Pruning Shears,Outdoor,2,349.64,699.28
+O01030,2024-01-04,Owen Hensley,Reclaimed Wood Glass Vase,Decor,4,23.84,95.36
+O01030,2024-01-04,Owen Hensley,Hand-Glazed Laundry Basket,Storage,5,271.08,1355.4
+O03450,2024-01-04,James Zimmerman,Slate Gray Shower Curtain,Bath,4,384.59,1538.36
+O03450,2024-01-04,James Zimmerman,Powder-Coated Toothbrush Holder,Bath,1,407.27,407.27
+O03450,2024-01-04,James Zimmerman,Carrara Marble Ladle,Kitchen,2,345.2,690.4
+O03450,2024-01-04,James Zimmerman,Navy Closet Organizer,Storage,2,68.48,136.96
+O03679,2024-01-04,Benjamin Iversen,Matte Black Shower Curtain,Bath,4,417.94,1671.76
+O03679,2024-01-04,Benjamin Iversen,Woven Cotton Sheet Set,Bedding,3,29.52,88.56
+O03679,2024-01-04,Benjamin Iversen,Modern Doormat,Outdoor,2,28.94,57.88
+O03873,2024-01-04,James Zimmerman,Matte Black Entry Bench,Furniture,5,146.16,730.8
+O03873,2024-01-04,James Zimmerman,Woven Cotton Sheet Set,Bedding,1,29.52,29.52
+O04716,2024-01-04,Sophia Norwood,Matte Black Dining Chair,Furniture,1,155.23,155.23
+O04716,2024-01-04,Sophia Norwood,Woven Cotton Wall Art Print,Decor,3,358.05,1074.15
+O04716,2024-01-04,Sophia Norwood,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O04716,2024-01-04,Sophia Norwood,Brushed Copper Coffee Maker,Kitchen,1,215.44,215.44
+O00141,2024-01-05,Harper Vance,Matte Black Entry Bench,Furniture,1,146.16,146.16
+O00141,2024-01-05,Harper Vance,Reclaimed Wood Garden Tool Set,Outdoor,5,310.0,1550.0
+O00141,2024-01-05,Harper Vance,Solid Brass Canvas Print,Decor,3,296.59,889.77
+O00141,2024-01-05,Harper Vance,Navy Closet Organizer,Storage,4,68.48,273.92
+O00555,2024-01-05,Noah Ellison,Slate Gray Shower Curtain,Bath,2,384.59,769.18
+O00694,2024-01-05,Wyatt Abbott,Powder-Coated Hand Mixer,Kitchen,3,378.87,1136.61
+O00694,2024-01-05,Wyatt Abbott,Carrara Marble Ladle,Kitchen,5,345.2,1726.0
+O00694,2024-01-05,Wyatt Abbott,Charcoal Bath Tray,Bath,4,86.46,345.84
+O01239,2024-01-05,Matthew Thatcher,Sage Green Whisk,Kitchen,3,157.6,472.8
+O01239,2024-01-05,Matthew Thatcher,Walnut Chandelier,Lighting,1,29.64,29.64
+O01239,2024-01-05,Matthew Thatcher,Powder-Coated Body Pillow,Bedding,1,443.61,443.61
+O01356,2024-01-05,Hannah Keller,Sage Green Planter Pot,Outdoor,5,114.8,574.0
+O01356,2024-01-05,Hannah Keller,Matte Black Chandelier,Lighting,2,384.93,769.86
+O01356,2024-01-05,Hannah Keller,Powder-Coated Hand Mixer,Kitchen,5,378.87,1894.35
+O02821,2024-01-05,Zoey Gallo,Slate Gray Table Lamp,Lighting,5,90.92,454.6
+O03802,2024-01-05,Sofia Norwood,Navy Closet Organizer,Storage,4,68.48,273.92
+O03802,2024-01-05,Sofia Norwood,Charcoal Fleece Blanket,Bedding,5,62.75,313.75
+O05704,2024-01-05,Harper Ostrander,Reclaimed Wood Garden Tool Set,Outdoor,3,310.0,930.0
+O05704,2024-01-05,Harper Ostrander,Reclaimed Wood Glass Vase,Decor,4,23.84,95.36
+O05916,2024-01-05,Luke Grant,Woven Cotton Sheet Set,Bedding,4,29.52,118.08
+O05916,2024-01-05,Luke Grant,Slate Gray Stackable Bin,Storage,5,133.77,668.85
+O05916,2024-01-05,Luke Grant,Rustic Oak Desk Lamp,Lighting,4,9.99,39.96
+O02311,2024-01-06,Benjamin Norwood,Modern Doormat,Outdoor,4,28.94,115.76
+O02311,2024-01-06,Benjamin Norwood,Carrara Marble Ladle,Kitchen,4,345.2,1380.8
+O02486,2024-01-06,Sebastian Yates,Charcoal Entry Bench,Furniture,1,34.75,34.75
+O02486,2024-01-06,Sebastian Yates,Hand-Glazed Laundry Basket,Storage,1,271.08,271.08
+O02486,2024-01-06,Sebastian Yates,Navy Closet Organizer,Storage,4,68.48,273.92
+O02486,2024-01-06,Sebastian Yates,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O03653,2024-01-06,Olivia Lambert,Ivory Shelf Unit,Storage,3,409.81,1229.43
+O03653,2024-01-06,Olivia Lambert,Rustic Oak Corner Shelf,Storage,4,67.39,269.56
+O03653,2024-01-06,Olivia Lambert,Charcoal Bath Tray,Bath,4,86.46,345.84
+O04545,2024-01-06,Lucas Dunmore,Classic Quilt,Bedding,5,135.4,677.0
+O04787,2024-01-06,Emma Lindqvist,Matte Black Shower Curtain,Bath,3,417.94,1253.82
+O04787,2024-01-06,Emma Lindqvist,Slate Gray Fitted Sheet,Bedding,5,416.72,2083.6
+O04787,2024-01-06,Emma Lindqvist,Classic Shower Curtain,Bath,3,11.23,33.69
+O04787,2024-01-06,Emma Lindqvist,Slate Gray Arc Lamp,Lighting,3,185.4,556.2
+O00042,2024-01-07,Lily Diaz,Matte Black Accent Chair,Furniture,1,389.34,389.34
+O00148,2024-01-07,Matthew Ingram,Rustic Oak Corner Shelf,Storage,5,67.39,336.95
+O01005,2024-01-07,John Bishop,Solid Brass Canvas Print,Decor,5,296.59,1482.95
+O01005,2024-01-07,John Bishop,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O01005,2024-01-07,John Bishop,Bamboo Pruning Shears,Outdoor,5,349.64,1748.2
+O01069,2024-01-07,Emma Ingram,Slate Gray Washcloth Set,Bath,3,441.96,1325.88
+O01069,2024-01-07,Emma Ingram,Walnut Chandelier,Lighting,2,29.64,59.28
+O01069,2024-01-07,Emma Ingram,Hand-Glazed Stackable Bin,Storage,4,193.81,775.24
+O02555,2024-01-07,David Vance,Natural Linen Body Pillow,Bedding,3,252.47,757.41
+O02555,2024-01-07,David Vance,Charcoal Fleece Blanket,Bedding,3,62.75,188.25
+O02555,2024-01-07,David Vance,Navy Closet Organizer,Storage,2,68.48,136.96
+O02795,2024-01-07,Zoey Gallo,Rustic Oak Corner Shelf,Storage,2,67.39,134.78
+O02795,2024-01-07,Zoey Gallo,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O02795,2024-01-07,Zoey Gallo,Walnut Chandelier,Lighting,3,29.64,88.92
+O00374,2024-01-08,Elizabeth Carter,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O01846,2024-01-08,Jack Zimmerman,Matte Black Skillet,Kitchen,5,380.87,1904.35
+O01846,2024-01-08,Jack Zimmerman,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O01846,2024-01-08,Jack Zimmerman,Charcoal Fleece Blanket,Bedding,3,62.75,188.25
+O02230,2024-01-08,Ella Parrish,Walnut Chandelier,Lighting,2,29.64,59.28
+O02230,2024-01-08,Ella Parrish,Slate Gray Shower Curtain,Bath,2,384.59,769.18
+O02230,2024-01-08,Ella Parrish,Matte Black Chandelier,Lighting,3,384.93,1154.79
+O02426,2024-01-08,Chloe Osei,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O02426,2024-01-08,Chloe Osei,Matte Black Accent Chair,Furniture,5,389.34,1946.7
+O02494,2024-01-08,John Quintero,Sage Green Planter Pot,Outdoor,5,114.8,574.0
+O02494,2024-01-08,John Quintero,Reclaimed Wood Fairy Lights,Lighting,1,268.92,268.92
+O02811,2024-01-08,Emma Diaz,Solid Brass Curtain Liner,Bath,3,383.82,1151.46
+O02811,2024-01-08,Emma Diaz,Classic Quilt,Bedding,4,135.4,541.6
+O02811,2024-01-08,Emma Diaz,Solid Brass Canvas Print,Decor,5,296.59,1482.95
+O02811,2024-01-08,Emma Diaz,Reclaimed Wood Garden Tool Set,Outdoor,1,310.0,310.0
+O03471,2024-01-08,Ava Quintero,Rustic Oak Corner Shelf,Storage,2,67.39,134.78
+O03471,2024-01-08,Ava Quintero,Solid Brass Canvas Print,Decor,1,296.59,296.59
+O03810,2024-01-08,Benjamin Holloway,Terracotta Scented Candle,Decor,1,356.11,356.11
+O04197,2024-01-08,Chloe Ellison,Powder-Coated Side Table,Furniture,3,182.2,546.6
+O04197,2024-01-08,Chloe Ellison,Slate Gray Fitted Sheet,Bedding,3,416.72,1250.16
+O04578,2024-01-08,Carter Holloway,Matte Black Accent Chair,Furniture,5,389.34,1946.7
+O04578,2024-01-08,Carter Holloway,Rustic Oak Desk Lamp,Lighting,4,9.99,39.96
+O05210,2024-01-08,Olivia Dunmore,Navy Closet Organizer,Storage,3,68.48,205.44
+O05511,2024-01-08,Julian Norwood,Hand-Glazed Wall Mirror,Decor,1,447.66,447.66
+O05903,2024-01-08,Gabriel Thatcher,Rustic Oak Baking Sheet,Kitchen,5,27.73,138.65
+O05903,2024-01-08,Gabriel Thatcher,Matte Black Chandelier,Lighting,1,384.93,384.93
+O00473,2024-01-09,Owen Grant,Rustic Oak Baking Sheet,Kitchen,3,27.73,83.19
+O00473,2024-01-09,Owen Grant,Modern Saucepan,Kitchen,3,267.21,801.63
+O00766,2024-01-09,Michael Yates,Terracotta Scented Candle,Decor,3,356.11,1068.33
+O00766,2024-01-09,Michael Yates,Hand-Glazed Stackable Bin,Storage,4,193.81,775.24
+O00766,2024-01-09,Michael Yates,Rustic Oak Baking Sheet,Kitchen,5,27.73,138.65
+O02390,2024-01-09,Sebastian Chandler,Bamboo Pruning Shears,Outdoor,1,349.64,349.64
+O02390,2024-01-09,Sebastian Chandler,Slate Gray Table Lamp,Lighting,2,90.92,181.84
+O02390,2024-01-09,Sebastian Chandler,Matte Black Shower Curtain,Bath,1,417.94,417.94
+O02524,2024-01-09,Elizabeth Carter,Reclaimed Wood Fairy Lights,Lighting,3,268.92,806.76
+O02524,2024-01-09,Elizabeth Carter,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O02778,2024-01-09,Wyatt Ingram,Sage Green Planter Pot,Outdoor,2,114.8,229.6
+O02778,2024-01-09,Wyatt Ingram,Natural Linen Body Pillow,Bedding,5,252.47,1262.35
+O02778,2024-01-09,Wyatt Ingram,Powder-Coated Toothbrush Holder,Bath,2,407.27,814.54
+O03787,2024-01-09,Olivia Lambert,Powder-Coated Toothbrush Holder,Bath,5,407.27,2036.35
+O05055,2024-01-09,Amelia Bennett,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O05474,2024-01-09,Michael Yates,Terracotta Hanging Planter,Outdoor,2,10.1,20.2
+O05474,2024-01-09,Michael Yates,Slate Gray Shower Curtain,Bath,3,384.59,1153.77
+O05474,2024-01-09,Michael Yates,Powder-Coated Body Pillow,Bedding,4,443.61,1774.44
+O01734,2024-01-10,Zoey Hensley,Carrara Marble Pendant Light,Lighting,4,364.88,1459.52
+O01917,2024-01-10,Luke Nolan,Ivory Shelf Unit,Storage,2,409.81,819.62
+O01917,2024-01-10,Luke Nolan,Navy Fairy Lights,Lighting,4,349.98,1399.92
+O01917,2024-01-10,Luke Nolan,Powder-Coated Side Table,Furniture,3,182.2,546.6
+O01917,2024-01-10,Luke Nolan,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O02573,2024-01-10,Harper Bennett,Rustic Oak Baking Sheet,Kitchen,4,27.73,110.92
+O02573,2024-01-10,Harper Bennett,Matte Black Entry Bench,Furniture,2,146.16,292.32
+O03024,2024-01-10,Aria Jasper,Rustic Oak Quilt,Bedding,5,358.81,1794.05
+O03024,2024-01-10,Aria Jasper,Ivory Shelf Unit,Storage,5,409.81,2049.05
+O03024,2024-01-10,Aria Jasper,Sage Green Whisk,Kitchen,5,157.6,788.0
+O05203,2024-01-10,Noah Ellison,Navy Closet Organizer,Storage,1,68.48,68.48
+O05203,2024-01-10,Noah Ellison,Matte Black Dining Chair,Furniture,3,155.23,465.69
+O05203,2024-01-10,Noah Ellison,Matte Black Entry Bench,Furniture,2,146.16,292.32
+O05370,2024-01-10,Ella Nolan,Reclaimed Wood Garden Tool Set,Outdoor,4,310.0,1240.0
+O05370,2024-01-10,Ella Nolan,Slate Gray Table Lamp,Lighting,4,90.92,363.68
+O05370,2024-01-10,Ella Nolan,Charcoal Quilt,Bedding,4,391.13,1564.52
+O05750,2024-01-10,Isabella Quintero,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O05750,2024-01-10,Isabella Quintero,Carrara Marble Ladle,Kitchen,3,345.2,1035.6
+O05750,2024-01-10,Isabella Quintero,Matte Black Chandelier,Lighting,2,384.93,769.86
+O05802,2024-01-10,Wyatt Abbott,Sage Green Planter Pot,Outdoor,5,114.8,574.0
+O05802,2024-01-10,Wyatt Abbott,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O05802,2024-01-10,Wyatt Abbott,Powder-Coated Toothbrush Holder,Bath,2,407.27,814.54
+O00258,2024-01-11,Benjamin Norwood,Classic Shower Curtain,Bath,3,11.23,33.69
+O00258,2024-01-11,Benjamin Norwood,Rustic Oak Garden Tool Set,Outdoor,2,29.47,58.94
+O00258,2024-01-11,Benjamin Norwood,Slate Gray Shower Curtain,Bath,4,384.59,1538.36
+O00989,2024-01-11,Lucas Dunmore,Matte Black Shower Curtain,Bath,2,417.94,835.88
+O00989,2024-01-11,Lucas Dunmore,Rustic Oak Corner Shelf,Storage,5,67.39,336.95
+O00989,2024-01-11,Lucas Dunmore,Brushed Copper Coffee Maker,Kitchen,2,215.44,430.88
+O01934,2024-01-11,Chloe Nolan,Ivory Shelf Unit,Storage,1,409.81,409.81
+O01934,2024-01-11,Chloe Nolan,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O01934,2024-01-11,Chloe Nolan,Reclaimed Wood Garden Tool Set,Outdoor,5,310.0,1550.0
+O01934,2024-01-11,Chloe Nolan,Matte Black Bookshelf,Furniture,3,116.76,350.28
+O02856,2024-01-11,Noah Grant,Carrara Marble Ladle,Kitchen,5,345.2,1726.0
+O02856,2024-01-11,Noah Grant,Matte Black Accent Chair,Furniture,2,389.34,778.68
+O02950,2024-01-11,Liam Foster,Matte Black Chandelier,Lighting,5,384.93,1924.65
+O03635,2024-01-11,James Grant,Walnut Storage Basket,Storage,1,15.81,15.81
+O03635,2024-01-11,James Grant,Slate Gray Fitted Sheet,Bedding,3,416.72,1250.16
+O03635,2024-01-11,James Grant,Matte Black Dining Chair,Furniture,3,155.23,465.69
+O04389,2024-01-11,Zoey Fairweather,Woven Cotton Sheet Set,Bedding,1,29.52,29.52
+O04389,2024-01-11,Zoey Fairweather,Solid Brass Canvas Print,Decor,1,296.59,296.59
+O04389,2024-01-11,Zoey Fairweather,Natural Linen Body Pillow,Bedding,2,252.47,504.94
+O05534,2024-01-11,Benjamin Iversen,Charcoal Entry Bench,Furniture,4,34.75,139.0
+O05534,2024-01-11,Benjamin Iversen,Carrara Marble Pendant Light,Lighting,4,364.88,1459.52
+O00930,2024-01-12,Lily Diaz,Carrara Marble Ladle,Kitchen,5,345.2,1726.0
+O01159,2024-01-12,Evelyn Pemberton,Carrara Marble Pendant Light,Lighting,5,364.88,1824.4
+O01159,2024-01-12,Evelyn Pemberton,Navy Closet Organizer,Storage,2,68.48,136.96
+O02239,2024-01-12,Ella Nolan,Woven Cotton Wall Art Print,Decor,4,358.05,1432.2
+O02239,2024-01-12,Ella Nolan,Terracotta Hanging Planter,Outdoor,2,10.1,20.2
+O02239,2024-01-12,Ella Nolan,Reclaimed Wood Garden Tool Set,Outdoor,5,310.0,1550.0
+O03209,2024-01-12,Carter Jennings,Sage Green Whisk,Kitchen,4,157.6,630.4
+O03209,2024-01-12,Carter Jennings,Slate Gray Arc Lamp,Lighting,4,185.4,741.6
+O03209,2024-01-12,Carter Jennings,Brushed Copper Coffee Maker,Kitchen,1,215.44,215.44
+O03954,2024-01-12,Gabriel Marsh,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O03954,2024-01-12,Gabriel Marsh,Bamboo Ladder Shelf,Furniture,5,123.07,615.35
+O03954,2024-01-12,Gabriel Marsh,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O03970,2024-01-12,Zoey Gallo,Rustic Oak Glass Vase,Decor,4,296.82,1187.28
+O04738,2024-01-12,Sophia Yates,Woven Cotton Hanging Planter,Outdoor,3,91.24,273.72
+O05394,2024-01-12,Isabella Quintero,Hand-Glazed Wall Mirror,Decor,4,447.66,1790.64
+O05394,2024-01-12,Isabella Quintero,Matte Black Dining Chair,Furniture,3,155.23,465.69
+O05394,2024-01-12,Isabella Quintero,Ivory Shelf Unit,Storage,4,409.81,1639.24
+O05530,2024-01-12,Luke Thatcher,Carrara Marble Ladle,Kitchen,3,345.2,1035.6
+O05530,2024-01-12,Luke Thatcher,Rustic Oak Corner Shelf,Storage,5,67.39,336.95
+O05530,2024-01-12,Luke Thatcher,Charcoal Quilt,Bedding,4,391.13,1564.52
+O00325,2024-01-13,John Abbott,Walnut Chandelier,Lighting,3,29.64,88.92
+O01332,2024-01-13,Amelia Jasper,Sage Green Whisk,Kitchen,2,157.6,315.2
+O01332,2024-01-13,Amelia Jasper,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O01438,2024-01-13,Emma Foster,Matte Black Shower Curtain,Bath,3,417.94,1253.82
+O01467,2024-01-13,Carter Diaz,Classic Quilt,Bedding,3,135.4,406.2
+O01467,2024-01-13,Carter Diaz,Ivory Shelf Unit,Storage,2,409.81,819.62
+O02276,2024-01-13,James Everhart,Matte Black Dining Chair,Furniture,4,155.23,620.92
+O02276,2024-01-13,James Everhart,Hand-Glazed Laundry Basket,Storage,3,271.08,813.24
+O03695,2024-01-13,Olivia Carter,Powder-Coated Side Table,Furniture,3,182.2,546.6
+O03695,2024-01-13,Olivia Carter,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O03695,2024-01-13,Olivia Carter,Classic Quilt,Bedding,4,135.4,541.6
+O03695,2024-01-13,Olivia Carter,Walnut Chandelier,Lighting,1,29.64,29.64
+O04972,2024-01-13,James Diaz,Slate Gray Table Lamp,Lighting,1,90.92,90.92
+O04972,2024-01-13,James Diaz,Classic Shower Curtain,Bath,5,11.23,56.15
+O04972,2024-01-13,James Diaz,Terracotta Scented Candle,Decor,1,356.11,356.11
+O05996,2024-01-13,Lily Keller,Navy Closet Organizer,Storage,3,68.48,205.44
+O05996,2024-01-13,Lily Keller,Classic Shower Curtain,Bath,4,11.23,44.92
+O01188,2024-01-14,Ava Yates,Matte Black Bookshelf,Furniture,5,116.76,583.8
+O01560,2024-01-14,Chloe Zimmerman,Matte Black Chandelier,Lighting,1,384.93,384.93
+O01560,2024-01-14,Chloe Zimmerman,Powder-Coated Side Table,Furniture,2,182.2,364.4
+O01560,2024-01-14,Chloe Zimmerman,Rustic Oak Quilt,Bedding,1,358.81,358.81
+O03057,2024-01-14,Sofia Norwood,Navy Closet Organizer,Storage,3,68.48,205.44
+O03057,2024-01-14,Sofia Norwood,Natural Linen Body Pillow,Bedding,4,252.47,1009.88
+O01253,2024-01-15,Zoey Hensley,Walnut Chandelier,Lighting,2,29.64,59.28
+O01253,2024-01-15,Zoey Hensley,Matte Black Accent Chair,Furniture,1,389.34,389.34
+O01253,2024-01-15,Zoey Hensley,Modern Doormat,Outdoor,2,28.94,57.88
+O01253,2024-01-15,Zoey Hensley,Bamboo Ladder Shelf,Furniture,3,123.07,369.21
+O02053,2024-01-15,Owen Thatcher,Charcoal Fleece Blanket,Bedding,4,62.75,251.0
+O02053,2024-01-15,Owen Thatcher,Solid Brass Curtain Liner,Bath,5,383.82,1919.1
+O02053,2024-01-15,Owen Thatcher,Matte Black Ceramic Vase,Decor,1,76.71,76.71
+O02088,2024-01-15,Henry Everhart,Rustic Oak Desk Lamp,Lighting,4,9.99,39.96
+O02088,2024-01-15,Henry Everhart,Reclaimed Wood Glass Vase,Decor,3,23.84,71.52
+O02088,2024-01-15,Henry Everhart,Rustic Oak Baking Sheet,Kitchen,5,27.73,138.65
+O00580,2024-01-16,James Zimmerman,Ivory Shelf Unit,Storage,4,409.81,1639.24
+O00580,2024-01-16,James Zimmerman,Solid Brass Curtain Liner,Bath,3,383.82,1151.46
+O00580,2024-01-16,James Zimmerman,Classic Quilt,Bedding,3,135.4,406.2
+O01803,2024-01-16,Aria Ostrander,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O01803,2024-01-16,Aria Ostrander,Matte Black Shower Curtain,Bath,1,417.94,417.94
+O02009,2024-01-16,John Abbott,Powder-Coated Hand Mixer,Kitchen,4,378.87,1515.48
+O02009,2024-01-16,John Abbott,Classic Shower Curtain,Bath,5,11.23,56.15
+O02009,2024-01-16,John Abbott,Matte Black Shower Curtain,Bath,4,417.94,1671.76
+O02009,2024-01-16,John Abbott,Slate Gray Shower Curtain,Bath,1,384.59,384.59
+O02129,2024-01-16,Matthew Lindqvist,Hand-Glazed Wall Mirror,Decor,3,447.66,1342.98
+O02129,2024-01-16,Matthew Lindqvist,Powder-Coated Toothbrush Holder,Bath,1,407.27,407.27
+O02272,2024-01-16,Sofia Fairweather,Rustic Oak Garden Tool Set,Outdoor,4,29.47,117.88
+O02272,2024-01-16,Sofia Fairweather,Modern Doormat,Outdoor,2,28.94,57.88
+O02272,2024-01-16,Sofia Fairweather,Slate Gray Shower Curtain,Bath,4,384.59,1538.36
+O02338,2024-01-16,Carter Diaz,Woven Cotton Sheet Set,Bedding,5,29.52,147.6
+O02338,2024-01-16,Carter Diaz,Classic Shower Curtain,Bath,4,11.23,44.92
+O02959,2024-01-16,Charlotte Norwood,Ivory Shelf Unit,Storage,1,409.81,409.81
+O02959,2024-01-16,Charlotte Norwood,Matte Black Chandelier,Lighting,1,384.93,384.93
+O02995,2024-01-16,Chloe Jasper,Woven Cotton Sheet Set,Bedding,1,29.52,29.52
+O02995,2024-01-16,Chloe Jasper,Matte Black Entry Bench,Furniture,5,146.16,730.8
+O02995,2024-01-16,Chloe Jasper,Hand-Glazed Wall Mirror,Decor,4,447.66,1790.64
+O03073,2024-01-16,Matthew Parrish,Powder-Coated Toothbrush Holder,Bath,5,407.27,2036.35
+O04703,2024-01-16,Harper Vance,Powder-Coated Body Pillow,Bedding,2,443.61,887.22
+O05278,2024-01-16,Owen Nolan,Matte Black Entry Bench,Furniture,4,146.16,584.64
+O00375,2024-01-17,Evelyn Pemberton,Matte Black Accent Chair,Furniture,4,389.34,1557.36
+O00375,2024-01-17,Evelyn Pemberton,Ivory Shelf Unit,Storage,4,409.81,1639.24
+O00375,2024-01-17,Evelyn Pemberton,Terracotta Scented Candle,Decor,2,356.11,712.22
+O01801,2024-01-17,Aria Jasper,Bamboo Pruning Shears,Outdoor,5,349.64,1748.2
+O02235,2024-01-17,Harper Iversen,Slate Gray Arc Lamp,Lighting,5,185.4,927.0
+O02563,2024-01-17,Zoey Dunmore,Bamboo Pruning Shears,Outdoor,4,349.64,1398.56
+O02563,2024-01-17,Zoey Dunmore,Matte Black Entry Bench,Furniture,1,146.16,146.16
+O02563,2024-01-17,Zoey Dunmore,Natural Linen Body Pillow,Bedding,4,252.47,1009.88
+O02563,2024-01-17,Zoey Dunmore,Hand-Glazed Stackable Bin,Storage,3,193.81,581.43
+O03162,2024-01-17,Isabella Zimmerman,Rustic Oak Baking Sheet,Kitchen,5,27.73,138.65
+O03162,2024-01-17,Isabella Zimmerman,Walnut Chandelier,Lighting,5,29.64,148.2
+O03868,2024-01-17,Hannah Marsh,Walnut Storage Basket,Storage,5,15.81,79.05
+O03868,2024-01-17,Hannah Marsh,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O03868,2024-01-17,Hannah Marsh,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O04187,2024-01-17,Chloe Quintero,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O04187,2024-01-17,Chloe Quintero,Brushed Copper Coffee Maker,Kitchen,4,215.44,861.76
+O04187,2024-01-17,Chloe Quintero,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O04405,2024-01-17,Ella Hensley,Classic Quilt,Bedding,2,135.4,270.8
+O04405,2024-01-17,Ella Hensley,Modern Saucepan,Kitchen,3,267.21,801.63
+O00038,2024-01-18,Noah Mercer,Charcoal Bath Tray,Bath,4,86.46,345.84
+O00038,2024-01-18,Noah Mercer,Sage Green Whisk,Kitchen,3,157.6,472.8
+O01240,2024-01-18,Gabriel Marsh,Navy Fairy Lights,Lighting,5,349.98,1749.9
+O01240,2024-01-18,Gabriel Marsh,Slate Gray Spatula Set,Kitchen,2,181.52,363.04
+O01240,2024-01-18,Gabriel Marsh,Hand-Glazed Laundry Basket,Storage,3,271.08,813.24
+O01303,2024-01-18,Alexander Yates,Rustic Oak Baking Sheet,Kitchen,3,27.73,83.19
+O01303,2024-01-18,Alexander Yates,Rustic Oak Garden Tool Set,Outdoor,1,29.47,29.47
+O01303,2024-01-18,Alexander Yates,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O01551,2024-01-18,Liam Foster,Charcoal Entry Bench,Furniture,4,34.75,139.0
+O01551,2024-01-18,Liam Foster,Powder-Coated Side Table,Furniture,4,182.2,728.8
+O01551,2024-01-18,Liam Foster,Terracotta Scented Candle,Decor,5,356.11,1780.55
+O02852,2024-01-18,Isabella Fairweather,Brushed Copper Coffee Maker,Kitchen,3,215.44,646.32
+O02852,2024-01-18,Isabella Fairweather,Powder-Coated Body Pillow,Bedding,3,443.61,1330.83
+O02852,2024-01-18,Isabella Fairweather,Sage Green Whisk,Kitchen,2,157.6,315.2
+O03043,2024-01-18,Luke Jasper,Woven Cotton Hanging Planter,Outdoor,2,91.24,182.48
+O03043,2024-01-18,Luke Jasper,Matte Black Chandelier,Lighting,2,384.93,769.86
+O03043,2024-01-18,Luke Jasper,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O03343,2024-01-18,Elijah Mercer,Matte Black Entry Bench,Furniture,3,146.16,438.48
+O03343,2024-01-18,Elijah Mercer,Slate Gray Stackable Bin,Storage,2,133.77,267.54
+O03343,2024-01-18,Elijah Mercer,Rustic Oak Garden Tool Set,Outdoor,1,29.47,29.47
+O03343,2024-01-18,Elijah Mercer,Charcoal Entry Bench,Furniture,5,34.75,173.75
+O03628,2024-01-18,Hannah Marsh,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O03628,2024-01-18,Hannah Marsh,Walnut Storage Basket,Storage,2,15.81,31.62
+O03628,2024-01-18,Hannah Marsh,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O04168,2024-01-18,Ava Gallo,Bamboo Ladder Shelf,Furniture,2,123.07,246.14
+O04168,2024-01-18,Ava Gallo,Powder-Coated Toothbrush Holder,Bath,4,407.27,1629.08
+O04168,2024-01-18,Ava Gallo,Brushed Copper Coffee Maker,Kitchen,3,215.44,646.32
+O04884,2024-01-18,Hannah Keller,Classic Shower Curtain,Bath,5,11.23,56.15
+O04884,2024-01-18,Hannah Keller,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O04884,2024-01-18,Hannah Keller,Solid Brass Curtain Liner,Bath,5,383.82,1919.1
+O05641,2024-01-18,Aria Hensley,Solid Brass Curtain Liner,Bath,3,383.82,1151.46
+O05641,2024-01-18,Aria Hensley,Modern Doormat,Outdoor,1,28.94,28.94
+O00407,2024-01-19,Evelyn Pemberton,Powder-Coated Toothbrush Holder,Bath,5,407.27,2036.35
+O00407,2024-01-19,Evelyn Pemberton,Modern Saucepan,Kitchen,1,267.21,267.21
+O00407,2024-01-19,Evelyn Pemberton,Sage Green Planter Pot,Outdoor,5,114.8,574.0
+O01446,2024-01-19,Sofia Parrish,Navy Fairy Lights,Lighting,1,349.98,349.98
+O01446,2024-01-19,Sofia Parrish,Rustic Oak Baking Sheet,Kitchen,4,27.73,110.92
+O01446,2024-01-19,Sofia Parrish,Hand-Glazed Stackable Bin,Storage,3,193.81,581.43
+O02026,2024-01-19,Aria Lindqvist,Charcoal Quilt,Bedding,2,391.13,782.26
+O02026,2024-01-19,Aria Lindqvist,Charcoal Entry Bench,Furniture,1,34.75,34.75
+O02119,2024-01-19,Matthew Parrish,Slate Gray Washcloth Set,Bath,2,441.96,883.92
+O02119,2024-01-19,Matthew Parrish,Sage Green Planter Pot,Outdoor,3,114.8,344.4
+O02119,2024-01-19,Matthew Parrish,Reclaimed Wood Fairy Lights,Lighting,2,268.92,537.84
+O02119,2024-01-19,Matthew Parrish,Navy Fairy Lights,Lighting,1,349.98,349.98
+O02180,2024-01-19,Carter Holloway,Walnut Chandelier,Lighting,4,29.64,118.56
+O02180,2024-01-19,Carter Holloway,Reclaimed Wood Glass Vase,Decor,2,23.84,47.68
+O03019,2024-01-19,Evelyn Pemberton,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O03019,2024-01-19,Evelyn Pemberton,Matte Black Ceramic Vase,Decor,4,76.71,306.84
+O03019,2024-01-19,Evelyn Pemberton,Slate Gray Table Lamp,Lighting,4,90.92,363.68
+O03019,2024-01-19,Evelyn Pemberton,Hand-Glazed Stackable Bin,Storage,5,193.81,969.05
+O03197,2024-01-19,Avery Holloway,Modern Saucepan,Kitchen,1,267.21,267.21
+O03197,2024-01-19,Avery Holloway,Rustic Oak Corner Shelf,Storage,4,67.39,269.56
+O03197,2024-01-19,Avery Holloway,Matte Black Accent Chair,Furniture,5,389.34,1946.7
+O03197,2024-01-19,Avery Holloway,Charcoal Bath Tray,Bath,4,86.46,345.84
+O04096,2024-01-19,Ava Gallo,Slate Gray Arc Lamp,Lighting,5,185.4,927.0
+O00129,2024-01-20,Sophia Yates,Reclaimed Wood Fairy Lights,Lighting,4,268.92,1075.68
+O00129,2024-01-20,Sophia Yates,Ivory Shelf Unit,Storage,2,409.81,819.62
+O00129,2024-01-20,Sophia Yates,Classic Quilt,Bedding,3,135.4,406.2
+O00129,2024-01-20,Sophia Yates,Natural Linen Body Pillow,Bedding,5,252.47,1262.35
+O00515,2024-01-20,Luke Grant,Modern Saucepan,Kitchen,5,267.21,1336.05
+O00515,2024-01-20,Luke Grant,Carrara Marble Ladle,Kitchen,1,345.2,345.2
+O00515,2024-01-20,Luke Grant,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O00515,2024-01-20,Luke Grant,Rustic Oak Glass Vase,Decor,5,296.82,1484.1
+O02313,2024-01-20,Elijah Diaz,Rustic Oak Glass Vase,Decor,1,296.82,296.82
+O02313,2024-01-20,Elijah Diaz,Reclaimed Wood Garden Tool Set,Outdoor,2,310.0,620.0
+O02313,2024-01-20,Elijah Diaz,Matte Black Shower Curtain,Bath,5,417.94,2089.7
+O02809,2024-01-20,Emily Keller,Charcoal Fleece Blanket,Bedding,4,62.75,251.0
+O02809,2024-01-20,Emily Keller,Powder-Coated Body Pillow,Bedding,2,443.61,887.22
+O04041,2024-01-20,Isabella Zimmerman,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O04041,2024-01-20,Isabella Zimmerman,Powder-Coated Hand Mixer,Kitchen,4,378.87,1515.48
+O04136,2024-01-20,Matthew Thatcher,Powder-Coated Side Table,Furniture,3,182.2,546.6
+O04136,2024-01-20,Matthew Thatcher,Sage Green Planter Pot,Outdoor,5,114.8,574.0
+O04342,2024-01-20,Ella Hensley,Rustic Oak Desk Lamp,Lighting,3,9.99,29.97
+O01164,2024-01-21,Emma Foster,Slate Gray Shower Curtain,Bath,4,384.59,1538.36
+O01164,2024-01-21,Emma Foster,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O01164,2024-01-21,Emma Foster,Charcoal Fleece Blanket,Bedding,4,62.75,251.0
+O02431,2024-01-21,James Bishop,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O02431,2024-01-21,James Bishop,Navy Fairy Lights,Lighting,1,349.98,349.98
+O02431,2024-01-21,James Bishop,Powder-Coated Body Pillow,Bedding,4,443.61,1774.44
+O02489,2024-01-21,Sebastian Jasper,Powder-Coated Side Table,Furniture,1,182.2,182.2
+O02489,2024-01-21,Sebastian Jasper,Powder-Coated Body Pillow,Bedding,2,443.61,887.22
+O02489,2024-01-21,Sebastian Jasper,Matte Black Bookshelf,Furniture,3,116.76,350.28
+O02489,2024-01-21,Sebastian Jasper,Matte Black Accent Chair,Furniture,5,389.34,1946.7
+O04167,2024-01-21,Matthew Parrish,Brushed Copper Coffee Maker,Kitchen,1,215.44,215.44
+O04167,2024-01-21,Matthew Parrish,Solid Brass Canvas Print,Decor,1,296.59,296.59
+O04167,2024-01-21,Matthew Parrish,Charcoal Bath Tray,Bath,5,86.46,432.3
+O05546,2024-01-21,Benjamin Norwood,Matte Black Accent Chair,Furniture,1,389.34,389.34
+O05546,2024-01-21,Benjamin Norwood,Carrara Marble Pendant Light,Lighting,1,364.88,364.88
+O05546,2024-01-21,Benjamin Norwood,Slate Gray Table Lamp,Lighting,5,90.92,454.6
+O05900,2024-01-21,John Quintero,Solid Brass Canvas Print,Decor,2,296.59,593.18
+O00892,2024-01-22,Aria Jasper,Rustic Oak Corner Shelf,Storage,1,67.39,67.39
+O01346,2024-01-22,Chloe Gallo,Charcoal Fleece Blanket,Bedding,4,62.75,251.0
+O01346,2024-01-22,Chloe Gallo,Matte Black Entry Bench,Furniture,4,146.16,584.64
+O01346,2024-01-22,Chloe Gallo,Navy Closet Organizer,Storage,4,68.48,273.92
+O01346,2024-01-22,Chloe Gallo,Powder-Coated Hand Mixer,Kitchen,1,378.87,378.87
+O02125,2024-01-22,Owen Holloway,Carrara Marble Ladle,Kitchen,3,345.2,1035.6
+O02125,2024-01-22,Owen Holloway,Slate Gray Shower Curtain,Bath,1,384.59,384.59
+O02750,2024-01-22,Olivia Lambert,Bamboo Pruning Shears,Outdoor,1,349.64,349.64
+O02785,2024-01-22,Hannah Marsh,Rustic Oak Garden Tool Set,Outdoor,2,29.47,58.94
+O02785,2024-01-22,Hannah Marsh,Reclaimed Wood Glass Vase,Decor,3,23.84,71.52
+O02785,2024-01-22,Hannah Marsh,Terracotta Hanging Planter,Outdoor,5,10.1,50.5
+O02785,2024-01-22,Hannah Marsh,Reclaimed Wood Garden Tool Set,Outdoor,5,310.0,1550.0
+O03190,2024-01-22,Harper Vance,Matte Black Shower Curtain,Bath,4,417.94,1671.76
+O03658,2024-01-22,Jack Chandler,Rustic Oak Baking Sheet,Kitchen,2,27.73,55.46
+O03658,2024-01-22,Jack Chandler,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O03658,2024-01-22,Jack Chandler,Slate Gray Shower Curtain,Bath,3,384.59,1153.77
+O04558,2024-01-22,Samuel Chandler,Hand-Glazed Stackable Bin,Storage,2,193.81,387.62
+O04936,2024-01-22,David Ellison,Powder-Coated Body Pillow,Bedding,1,443.61,443.61
+O04936,2024-01-22,David Ellison,Walnut Storage Basket,Storage,1,15.81,15.81
+O00496,2024-01-23,Ava Yates,Rustic Oak Corner Shelf,Storage,2,67.39,134.78
+O00496,2024-01-23,Ava Yates,Slate Gray Washcloth Set,Bath,1,441.96,441.96
+O01528,2024-01-23,Avery Chandler,Reclaimed Wood Garden Tool Set,Outdoor,5,310.0,1550.0
+O01528,2024-01-23,Avery Chandler,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O01528,2024-01-23,Avery Chandler,Natural Linen Body Pillow,Bedding,3,252.47,757.41
+O01528,2024-01-23,Avery Chandler,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O01569,2024-01-23,John Abbott,Matte Black Shower Curtain,Bath,4,417.94,1671.76
+O01569,2024-01-23,John Abbott,Slate Gray Washcloth Set,Bath,5,441.96,2209.8
+O01569,2024-01-23,John Abbott,Matte Black Chandelier,Lighting,2,384.93,769.86
+O02187,2024-01-23,Michael Sawyer,Sage Green Planter Pot,Outdoor,4,114.8,459.2
+O02187,2024-01-23,Michael Sawyer,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O02187,2024-01-23,Michael Sawyer,Modern Saucepan,Kitchen,3,267.21,801.63
+O02244,2024-01-23,Chloe Osei,Modern Doormat,Outdoor,4,28.94,115.76
+O03618,2024-01-23,Luke Nolan,Charcoal Bath Tray,Bath,3,86.46,259.38
+O03648,2024-01-23,Luke Jasper,Slate Gray Table Lamp,Lighting,4,90.92,363.68
+O03648,2024-01-23,Luke Jasper,Charcoal Entry Bench,Furniture,2,34.75,69.5
+O05042,2024-01-23,Emma Diaz,Bamboo Ladder Shelf,Furniture,3,123.07,369.21
+O05042,2024-01-23,Emma Diaz,Hand-Glazed Stackable Bin,Storage,2,193.81,387.62
+O00118,2024-01-24,Luke Nolan,Slate Gray Washcloth Set,Bath,4,441.96,1767.84
+O00118,2024-01-24,Luke Nolan,Ivory Shelf Unit,Storage,5,409.81,2049.05
+O00118,2024-01-24,Luke Nolan,Modern Doormat,Outdoor,2,28.94,57.88
+O02309,2024-01-24,James Bishop,Carrara Marble Ladle,Kitchen,1,345.2,345.2
+O02488,2024-01-24,Chloe Nolan,Walnut Storage Basket,Storage,3,15.81,47.43
+O02488,2024-01-24,Chloe Nolan,Woven Cotton Hanging Planter,Outdoor,4,91.24,364.96
+O02488,2024-01-24,Chloe Nolan,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O02788,2024-01-24,Sebastian Jasper,Slate Gray Washcloth Set,Bath,2,441.96,883.92
+O02788,2024-01-24,Sebastian Jasper,Slate Gray Arc Lamp,Lighting,5,185.4,927.0
+O02788,2024-01-24,Sebastian Jasper,Natural Linen Memory Foam Mat,Bath,4,54.4,217.6
+O02788,2024-01-24,Sebastian Jasper,Woven Cotton Wall Art Print,Decor,4,358.05,1432.2
+O03619,2024-01-24,Benjamin Iversen,Woven Cotton Wall Art Print,Decor,3,358.05,1074.15
+O03619,2024-01-24,Benjamin Iversen,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O03619,2024-01-24,Benjamin Iversen,Charcoal Bath Tray,Bath,2,86.46,172.92
+O03619,2024-01-24,Benjamin Iversen,Rustic Oak Quilt,Bedding,1,358.81,358.81
+O04092,2024-01-24,Zoey Bennett,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O05536,2024-01-24,Joseph Hensley,Charcoal Bath Tray,Bath,1,86.46,86.46
+O05536,2024-01-24,Joseph Hensley,Ivory Shelf Unit,Storage,3,409.81,1229.43
+O05536,2024-01-24,Joseph Hensley,Classic Quilt,Bedding,5,135.4,677.0
+O05536,2024-01-24,Joseph Hensley,Rustic Oak Corner Shelf,Storage,2,67.39,134.78
+O00652,2024-01-25,Aria Lindqvist,Charcoal Bath Tray,Bath,4,86.46,345.84
+O00652,2024-01-25,Aria Lindqvist,Solid Brass Curtain Liner,Bath,5,383.82,1919.1
+O00652,2024-01-25,Aria Lindqvist,Reclaimed Wood Garden Tool Set,Outdoor,4,310.0,1240.0
+O00815,2024-01-25,Emma Foster,Classic Quilt,Bedding,2,135.4,270.8
+O02392,2024-01-25,Zoey Fairweather,Matte Black Skillet,Kitchen,3,380.87,1142.61
+O03668,2024-01-25,Julian Rowan,Bamboo Ladder Shelf,Furniture,2,123.07,246.14
+O03668,2024-01-25,Julian Rowan,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O03668,2024-01-25,Julian Rowan,Reclaimed Wood Garden Tool Set,Outdoor,5,310.0,1550.0
+O03668,2024-01-25,Julian Rowan,Slate Gray Arc Lamp,Lighting,3,185.4,556.2
+O04004,2024-01-25,Matthew Thatcher,Walnut Storage Basket,Storage,5,15.81,79.05
+O04004,2024-01-25,Matthew Thatcher,Brushed Copper Coffee Maker,Kitchen,2,215.44,430.88
+O04004,2024-01-25,Matthew Thatcher,Natural Linen Body Pillow,Bedding,3,252.47,757.41
+O04222,2024-01-25,Olivia Carter,Rustic Oak Garden Tool Set,Outdoor,5,29.47,147.35
+O04670,2024-01-25,John Abbott,Terracotta Scented Candle,Decor,4,356.11,1424.44
+O05096,2024-01-25,Emma Diaz,Matte Black Shower Curtain,Bath,3,417.94,1253.82
+O05096,2024-01-25,Emma Diaz,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O05096,2024-01-25,Emma Diaz,Walnut Storage Basket,Storage,5,15.81,79.05
+O00408,2024-01-26,Amelia Jasper,Matte Black Accent Chair,Furniture,5,389.34,1946.7
+O00408,2024-01-26,Amelia Jasper,Matte Black Chandelier,Lighting,3,384.93,1154.79
+O00658,2024-01-26,Isaac Bishop,Rustic Oak Garden Tool Set,Outdoor,3,29.47,88.41
+O00658,2024-01-26,Isaac Bishop,Reclaimed Wood Glass Vase,Decor,3,23.84,71.52
+O00658,2024-01-26,Isaac Bishop,Matte Black Skillet,Kitchen,4,380.87,1523.48
+O00835,2024-01-26,Matthew Vance,Matte Black Chandelier,Lighting,1,384.93,384.93
+O00835,2024-01-26,Matthew Vance,Matte Black Ceramic Vase,Decor,3,76.71,230.13
+O01844,2024-01-26,Julian Norwood,Rustic Oak Baking Sheet,Kitchen,5,27.73,138.65
+O01844,2024-01-26,Julian Norwood,Carrara Marble Ladle,Kitchen,4,345.2,1380.8
+O02106,2024-01-26,Joseph Underwood,Charcoal Fleece Blanket,Bedding,2,62.75,125.5
+O02106,2024-01-26,Joseph Underwood,Powder-Coated Side Table,Furniture,3,182.2,546.6
+O02106,2024-01-26,Joseph Underwood,Carrara Marble Pendant Light,Lighting,1,364.88,364.88
+O02275,2024-01-26,Luke Nolan,Natural Linen Body Pillow,Bedding,2,252.47,504.94
+O02275,2024-01-26,Luke Nolan,Slate Gray Washcloth Set,Bath,4,441.96,1767.84
+O02275,2024-01-26,Luke Nolan,Powder-Coated Toothbrush Holder,Bath,5,407.27,2036.35
+O02561,2024-01-26,Michael Whitfield,Charcoal Bath Tray,Bath,5,86.46,432.3
+O02561,2024-01-26,Michael Whitfield,Classic Quilt,Bedding,3,135.4,406.2
+O02561,2024-01-26,Michael Whitfield,Modern Doormat,Outdoor,2,28.94,57.88
+O02561,2024-01-26,Michael Whitfield,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O02610,2024-01-26,Chloe Hensley,Woven Cotton Sheet Set,Bedding,5,29.52,147.6
+O02633,2024-01-26,Aria Hensley,Powder-Coated Body Pillow,Bedding,2,443.61,887.22
+O02633,2024-01-26,Aria Hensley,Hand-Glazed Laundry Basket,Storage,4,271.08,1084.32
+O02633,2024-01-26,Aria Hensley,Charcoal Fleece Blanket,Bedding,3,62.75,188.25
+O03305,2024-01-26,Owen Grant,Hand-Glazed Stackable Bin,Storage,3,193.81,581.43
+O04432,2024-01-26,John Quintero,Natural Linen Body Pillow,Bedding,4,252.47,1009.88
+O04432,2024-01-26,John Quintero,Slate Gray Stackable Bin,Storage,5,133.77,668.85
+O04432,2024-01-26,John Quintero,Charcoal Bath Tray,Bath,5,86.46,432.3
+O04432,2024-01-26,John Quintero,Terracotta Hanging Planter,Outdoor,2,10.1,20.2
+O04812,2024-01-26,Chloe Ellison,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O04812,2024-01-26,Chloe Ellison,Slate Gray Fitted Sheet,Bedding,4,416.72,1666.88
+O05128,2024-01-26,Levi Zimmerman,Ivory Shelf Unit,Storage,1,409.81,409.81
+O05128,2024-01-26,Levi Zimmerman,Classic Shower Curtain,Bath,2,11.23,22.46
+O05128,2024-01-26,Levi Zimmerman,Rustic Oak Desk Lamp,Lighting,5,9.99,49.95
+O05159,2024-01-26,Isabella Quintero,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O00059,2024-01-27,Sebastian Jasper,Solid Brass Canvas Print,Decor,1,296.59,296.59
+O00565,2024-01-27,Isaac Bishop,Reclaimed Wood Garden Tool Set,Outdoor,2,310.0,620.0
+O00565,2024-01-27,Isaac Bishop,Natural Linen Memory Foam Mat,Bath,1,54.4,54.4
+O01299,2024-01-27,Owen Thatcher,Hand-Glazed Wall Mirror,Decor,3,447.66,1342.98
+O01299,2024-01-27,Owen Thatcher,Rustic Oak Baking Sheet,Kitchen,3,27.73,83.19
+O02442,2024-01-27,Isaac Bishop,Rustic Oak Corner Shelf,Storage,4,67.39,269.56
+O02442,2024-01-27,Isaac Bishop,Powder-Coated Side Table,Furniture,3,182.2,546.6
+O02442,2024-01-27,Isaac Bishop,Solid Brass Canvas Print,Decor,2,296.59,593.18
+O04348,2024-01-27,Michael Yates,Terracotta Scented Candle,Decor,3,356.11,1068.33
+O04348,2024-01-27,Michael Yates,Bamboo Ladder Shelf,Furniture,4,123.07,492.28
+O04978,2024-01-27,Sebastian Chandler,Powder-Coated Body Pillow,Bedding,1,443.61,443.61
+O05622,2024-01-27,John Abbott,Walnut Storage Basket,Storage,3,15.81,47.43
+O00569,2024-01-28,Sofia Fairweather,Matte Black Chandelier,Lighting,2,384.93,769.86
+O00569,2024-01-28,Sofia Fairweather,Powder-Coated Hand Mixer,Kitchen,3,378.87,1136.61
+O00569,2024-01-28,Sofia Fairweather,Slate Gray Shower Curtain,Bath,2,384.59,769.18
+O00837,2024-01-28,Lucas Dunmore,Woven Cotton Hanging Planter,Outdoor,1,91.24,91.24
+O00891,2024-01-28,John Parrish,Modern Saucepan,Kitchen,2,267.21,534.42
+O00891,2024-01-28,John Parrish,Woven Cotton Wall Art Print,Decor,3,358.05,1074.15
+O00891,2024-01-28,John Parrish,Navy Fairy Lights,Lighting,1,349.98,349.98
+O01040,2024-01-28,Luke Grant,Matte Black Accent Chair,Furniture,5,389.34,1946.7
+O01040,2024-01-28,Luke Grant,Woven Cotton Sheet Set,Bedding,5,29.52,147.6
+O01784,2024-01-28,Jack Chandler,Modern Saucepan,Kitchen,2,267.21,534.42
+O01784,2024-01-28,Jack Chandler,Terracotta Scented Candle,Decor,4,356.11,1424.44
+O02136,2024-01-28,Luke Grant,Modern Saucepan,Kitchen,4,267.21,1068.84
+O02136,2024-01-28,Luke Grant,Matte Black Skillet,Kitchen,1,380.87,380.87
+O02136,2024-01-28,Luke Grant,Matte Black Accent Chair,Furniture,1,389.34,389.34
+O02136,2024-01-28,Luke Grant,Woven Cotton Hanging Planter,Outdoor,2,91.24,182.48
+O02583,2024-01-28,Emily Holloway,Hand-Glazed Stackable Bin,Storage,2,193.81,387.62
+O02627,2024-01-28,Harper Vance,Carrara Marble Pendant Light,Lighting,4,364.88,1459.52
+O02627,2024-01-28,Harper Vance,Slate Gray Washcloth Set,Bath,1,441.96,441.96
+O02627,2024-01-28,Harper Vance,Slate Gray Stackable Bin,Storage,5,133.77,668.85
+O02869,2024-01-28,Lily Diaz,Hand-Glazed Wall Mirror,Decor,3,447.66,1342.98
+O03187,2024-01-28,Matthew Parrish,Matte Black Ceramic Vase,Decor,1,76.71,76.71
+O03391,2024-01-28,Olivia Dunmore,Matte Black Chandelier,Lighting,5,384.93,1924.65
+O03391,2024-01-28,Olivia Dunmore,Woven Cotton Wall Art Print,Decor,4,358.05,1432.2
+O04090,2024-01-28,Matthew Whitfield,Matte Black Skillet,Kitchen,4,380.87,1523.48
+O04774,2024-01-28,Elizabeth Everhart,Walnut Storage Basket,Storage,2,15.81,31.62
+O00108,2024-01-29,Aria Lindqvist,Modern Doormat,Outdoor,4,28.94,115.76
+O00974,2024-01-29,Wyatt Rowan,Natural Linen Memory Foam Mat,Bath,4,54.4,217.6
+O00974,2024-01-29,Wyatt Rowan,Solid Brass Canvas Print,Decor,4,296.59,1186.36
+O01492,2024-01-29,Aria Dunmore,Classic Quilt,Bedding,4,135.4,541.6
+O01492,2024-01-29,Aria Dunmore,Woven Cotton Hanging Planter,Outdoor,5,91.24,456.2
+O01492,2024-01-29,Aria Dunmore,Matte Black Bookshelf,Furniture,5,116.76,583.8
+O01492,2024-01-29,Aria Dunmore,Hand-Glazed Stackable Bin,Storage,2,193.81,387.62
+O01558,2024-01-29,Noah Grant,Solid Brass Canvas Print,Decor,2,296.59,593.18
+O01558,2024-01-29,Noah Grant,Matte Black Chandelier,Lighting,2,384.93,769.86
+O01979,2024-01-29,David Ellison,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O01979,2024-01-29,David Ellison,Woven Cotton Hanging Planter,Outdoor,4,91.24,364.96
+O01979,2024-01-29,David Ellison,Slate Gray Spatula Set,Kitchen,5,181.52,907.6
+O01979,2024-01-29,David Ellison,Matte Black Skillet,Kitchen,2,380.87,761.74
+O02271,2024-01-29,Emma Ingram,Hand-Glazed Stackable Bin,Storage,1,193.81,193.81
+O02271,2024-01-29,Emma Ingram,Terracotta Scented Candle,Decor,5,356.11,1780.55
+O02271,2024-01-29,Emma Ingram,Hand-Glazed Laundry Basket,Storage,1,271.08,271.08
+O02367,2024-01-29,Carter Holloway,Slate Gray Stackable Bin,Storage,3,133.77,401.31
+O02367,2024-01-29,Carter Holloway,Charcoal Bath Tray,Bath,4,86.46,345.84
+O02367,2024-01-29,Carter Holloway,Slate Gray Fitted Sheet,Bedding,4,416.72,1666.88
+O02408,2024-01-29,Ella Nolan,Charcoal Quilt,Bedding,4,391.13,1564.52
+O02408,2024-01-29,Ella Nolan,Bamboo Ladder Shelf,Furniture,5,123.07,615.35
+O02408,2024-01-29,Ella Nolan,Classic Quilt,Bedding,3,135.4,406.2
+O02408,2024-01-29,Ella Nolan,Hand-Glazed Wall Mirror,Decor,5,447.66,2238.3
+O02864,2024-01-29,Isaac Carter,Bamboo Pruning Shears,Outdoor,5,349.64,1748.2
+O02864,2024-01-29,Isaac Carter,Matte Black Dining Chair,Furniture,3,155.23,465.69
+O02864,2024-01-29,Isaac Carter,Matte Black Bookshelf,Furniture,3,116.76,350.28
+O02864,2024-01-29,Isaac Carter,Matte Black Chandelier,Lighting,2,384.93,769.86
+O03143,2024-01-29,Luke Nolan,Matte Black Entry Bench,Furniture,1,146.16,146.16
+O03143,2024-01-29,Luke Nolan,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O03143,2024-01-29,Luke Nolan,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O03406,2024-01-29,Wyatt Abbott,Charcoal Quilt,Bedding,4,391.13,1564.52
+O03406,2024-01-29,Wyatt Abbott,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O03406,2024-01-29,Wyatt Abbott,Natural Linen Body Pillow,Bedding,4,252.47,1009.88
+O03406,2024-01-29,Wyatt Abbott,Woven Cotton Wall Art Print,Decor,2,358.05,716.1
+O03847,2024-01-29,Henry Thatcher,Matte Black Shower Curtain,Bath,3,417.94,1253.82
+O00221,2024-01-30,Benjamin Osei,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O00221,2024-01-30,Benjamin Osei,Matte Black Skillet,Kitchen,4,380.87,1523.48
+O01169,2024-01-30,Ella Nolan,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O01169,2024-01-30,Ella Nolan,Ivory Shelf Unit,Storage,3,409.81,1229.43
+O02233,2024-01-30,Lily Diaz,Hand-Glazed Stackable Bin,Storage,2,193.81,387.62
+O02233,2024-01-30,Lily Diaz,Carrara Marble Pendant Light,Lighting,5,364.88,1824.4
+O02233,2024-01-30,Lily Diaz,Modern Doormat,Outdoor,2,28.94,57.88
+O02359,2024-01-30,Joseph Underwood,Sage Green Planter Pot,Outdoor,2,114.8,229.6
+O02359,2024-01-30,Joseph Underwood,Woven Cotton Wall Art Print,Decor,4,358.05,1432.2
+O02739,2024-01-30,Wyatt Rowan,Terracotta Hanging Planter,Outdoor,3,10.1,30.3
+O02739,2024-01-30,Wyatt Rowan,Matte Black Chandelier,Lighting,2,384.93,769.86
+O02739,2024-01-30,Wyatt Rowan,Hand-Glazed Stackable Bin,Storage,1,193.81,193.81
+O02739,2024-01-30,Wyatt Rowan,Slate Gray Table Lamp,Lighting,1,90.92,90.92
+O03447,2024-01-30,David Hensley,Slate Gray Washcloth Set,Bath,5,441.96,2209.8
+O03447,2024-01-30,David Hensley,Rustic Oak Glass Vase,Decor,4,296.82,1187.28
+O05102,2024-01-30,Sofia Dunmore,Brushed Copper Coffee Maker,Kitchen,4,215.44,861.76
+O05102,2024-01-30,Sofia Dunmore,Modern Saucepan,Kitchen,1,267.21,267.21
+O05102,2024-01-30,Sofia Dunmore,Matte Black Shower Curtain,Bath,5,417.94,2089.7
+O05276,2024-01-30,Sebastian Yates,Woven Cotton Hanging Planter,Outdoor,1,91.24,91.24
+O05293,2024-01-30,Ava Quintero,Matte Black Chandelier,Lighting,2,384.93,769.86
+O05293,2024-01-30,Ava Quintero,Walnut Storage Basket,Storage,4,15.81,63.24
+O05293,2024-01-30,Ava Quintero,Matte Black Accent Chair,Furniture,3,389.34,1168.02
+O00439,2024-01-31,Owen Thatcher,Walnut Storage Basket,Storage,4,15.81,63.24
+O00439,2024-01-31,Owen Thatcher,Woven Cotton Hanging Planter,Outdoor,5,91.24,456.2
+O00439,2024-01-31,Owen Thatcher,Slate Gray Stackable Bin,Storage,2,133.77,267.54
+O01430,2024-01-31,Liam Foster,Carrara Marble Pendant Light,Lighting,1,364.88,364.88
+O01845,2024-01-31,Noah Mercer,Terracotta Hanging Planter,Outdoor,3,10.1,30.3
+O01845,2024-01-31,Noah Mercer,Bamboo Pruning Shears,Outdoor,1,349.64,349.64
+O01845,2024-01-31,Noah Mercer,Sage Green Whisk,Kitchen,1,157.6,157.6
+O04407,2024-01-31,Levi Zimmerman,Powder-Coated Body Pillow,Bedding,2,443.61,887.22
+O04407,2024-01-31,Levi Zimmerman,Woven Cotton Sheet Set,Bedding,4,29.52,118.08
+O04440,2024-01-31,Owen Hensley,Slate Gray Table Lamp,Lighting,2,90.92,181.84
+O04450,2024-01-31,Chloe Osei,Ivory Shelf Unit,Storage,4,409.81,1639.24
+O05964,2024-01-31,Harper Iversen,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O05964,2024-01-31,Harper Iversen,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O05964,2024-01-31,Harper Iversen,Rustic Oak Baking Sheet,Kitchen,5,27.73,138.65
+O01777,2024-02-01,Emma Ingram,Matte Black Chandelier,Lighting,4,384.93,1539.72
+O01777,2024-02-01,Emma Ingram,Carrara Marble Ladle,Kitchen,1,345.2,345.2
+O01777,2024-02-01,Emma Ingram,Matte Black Skillet,Kitchen,5,380.87,1904.35
+O01966,2024-02-01,Levi Kirkland,Slate Gray Fitted Sheet,Bedding,2,416.72,833.44
+O02068,2024-02-01,Jack Jasper,Hand-Glazed Wall Mirror,Decor,5,447.66,2238.3
+O02308,2024-02-01,Julian Rowan,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O02308,2024-02-01,Julian Rowan,Natural Linen Memory Foam Mat,Bath,5,54.4,272.0
+O02308,2024-02-01,Julian Rowan,Bamboo Pruning Shears,Outdoor,2,349.64,699.28
+O02387,2024-02-01,Matthew Ingram,Slate Gray Arc Lamp,Lighting,4,185.4,741.6
+O02387,2024-02-01,Matthew Ingram,Rustic Oak Glass Vase,Decor,5,296.82,1484.1
+O02387,2024-02-01,Matthew Ingram,Terracotta Scented Candle,Decor,2,356.11,712.22
+O03189,2024-02-01,Zoey Dunmore,Charcoal Entry Bench,Furniture,1,34.75,34.75
+O03189,2024-02-01,Zoey Dunmore,Rustic Oak Garden Tool Set,Outdoor,4,29.47,117.88
+O03189,2024-02-01,Zoey Dunmore,Walnut Chandelier,Lighting,2,29.64,59.28
+O03189,2024-02-01,Zoey Dunmore,Reclaimed Wood Glass Vase,Decor,1,23.84,23.84
+O03800,2024-02-01,John Abbott,Woven Cotton Wall Art Print,Decor,1,358.05,358.05
+O03800,2024-02-01,John Abbott,Terracotta Hanging Planter,Outdoor,2,10.1,20.2
+O03879,2024-02-01,Sofia Norwood,Sage Green Planter Pot,Outdoor,3,114.8,344.4
+O04626,2024-02-01,Jack Chandler,Reclaimed Wood Fairy Lights,Lighting,3,268.92,806.76
+O04626,2024-02-01,Jack Chandler,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O04626,2024-02-01,Jack Chandler,Slate Gray Table Lamp,Lighting,4,90.92,363.68
+O04671,2024-02-01,Sophia Chandler,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O04671,2024-02-01,Sophia Chandler,Rustic Oak Desk Lamp,Lighting,3,9.99,29.97
+O04671,2024-02-01,Sophia Chandler,Hand-Glazed Laundry Basket,Storage,1,271.08,271.08
+O05019,2024-02-01,John Bishop,Matte Black Shower Curtain,Bath,5,417.94,2089.7
+O05019,2024-02-01,John Bishop,Carrara Marble Ladle,Kitchen,1,345.2,345.2
+O05019,2024-02-01,John Bishop,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O05627,2024-02-01,Matthew Thatcher,Brushed Copper Coffee Maker,Kitchen,4,215.44,861.76
+O05627,2024-02-01,Matthew Thatcher,Rustic Oak Glass Vase,Decor,2,296.82,593.64
+O05627,2024-02-01,Matthew Thatcher,Classic Shower Curtain,Bath,5,11.23,56.15
+O01331,2024-02-02,Levi Hensley,Rustic Oak Desk Lamp,Lighting,3,9.99,29.97
+O02198,2024-02-02,Abigail Holloway,Rustic Oak Quilt,Bedding,2,358.81,717.62
+O02198,2024-02-02,Abigail Holloway,Hand-Glazed Wall Mirror,Decor,5,447.66,2238.3
+O02198,2024-02-02,Abigail Holloway,Slate Gray Table Lamp,Lighting,3,90.92,272.76
+O02198,2024-02-02,Abigail Holloway,Rustic Oak Glass Vase,Decor,3,296.82,890.46
+O02420,2024-02-02,Gabriel Marsh,Woven Cotton Sheet Set,Bedding,2,29.52,59.04
+O02420,2024-02-02,Gabriel Marsh,Powder-Coated Hand Mixer,Kitchen,5,378.87,1894.35
+O02420,2024-02-02,Gabriel Marsh,Hand-Glazed Stackable Bin,Storage,2,193.81,387.62
+O03329,2024-02-02,Isabella Iversen,Slate Gray Washcloth Set,Bath,2,441.96,883.92
+O03351,2024-02-02,Emma Foster,Classic Quilt,Bedding,1,135.4,135.4
+O03351,2024-02-02,Emma Foster,Matte Black Accent Chair,Furniture,1,389.34,389.34
+O03638,2024-02-02,Chloe Hensley,Matte Black Dining Chair,Furniture,3,155.23,465.69
+O03638,2024-02-02,Chloe Hensley,Charcoal Quilt,Bedding,2,391.13,782.26
+O03638,2024-02-02,Chloe Hensley,Rustic Oak Glass Vase,Decor,4,296.82,1187.28
+O03931,2024-02-02,Zoey Gallo,Matte Black Ceramic Vase,Decor,3,76.71,230.13
+O03931,2024-02-02,Zoey Gallo,Terracotta Scented Candle,Decor,2,356.11,712.22
+O05041,2024-02-02,Levi Kirkland,Terracotta Hanging Planter,Outdoor,1,10.1,10.1
+O05041,2024-02-02,Levi Kirkland,Woven Cotton Sheet Set,Bedding,2,29.52,59.04
+O05281,2024-02-02,Hannah Grant,Hand-Glazed Stackable Bin,Storage,2,193.81,387.62
+O05281,2024-02-02,Hannah Grant,Matte Black Skillet,Kitchen,5,380.87,1904.35
+O05281,2024-02-02,Hannah Grant,Charcoal Fleece Blanket,Bedding,4,62.75,251.0
+O05281,2024-02-02,Hannah Grant,Sage Green Planter Pot,Outdoor,4,114.8,459.2
+O05811,2024-02-02,Harper Bennett,Matte Black Accent Chair,Furniture,4,389.34,1557.36
+O00243,2024-02-03,Chloe Jasper,Slate Gray Shower Curtain,Bath,2,384.59,769.18
+O00243,2024-02-03,Chloe Jasper,Charcoal Bath Tray,Bath,5,86.46,432.3
+O00243,2024-02-03,Chloe Jasper,Natural Linen Body Pillow,Bedding,4,252.47,1009.88
+O00386,2024-02-03,Owen Everhart,Modern Saucepan,Kitchen,3,267.21,801.63
+O00386,2024-02-03,Owen Everhart,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O00386,2024-02-03,Owen Everhart,Powder-Coated Body Pillow,Bedding,1,443.61,443.61
+O00793,2024-02-03,Owen Grant,Slate Gray Table Lamp,Lighting,5,90.92,454.6
+O00793,2024-02-03,Owen Grant,Slate Gray Shower Curtain,Bath,1,384.59,384.59
+O00793,2024-02-03,Owen Grant,Charcoal Entry Bench,Furniture,4,34.75,139.0
+O00793,2024-02-03,Owen Grant,Ivory Shelf Unit,Storage,3,409.81,1229.43
+O01629,2024-02-03,Carter Jennings,Walnut Chandelier,Lighting,3,29.64,88.92
+O01629,2024-02-03,Carter Jennings,Matte Black Chandelier,Lighting,2,384.93,769.86
+O01629,2024-02-03,Carter Jennings,Slate Gray Table Lamp,Lighting,1,90.92,90.92
+O02326,2024-02-03,Michael Yates,Rustic Oak Desk Lamp,Lighting,5,9.99,49.95
+O02800,2024-02-03,Avery Holloway,Matte Black Chandelier,Lighting,1,384.93,384.93
+O02800,2024-02-03,Avery Holloway,Charcoal Fleece Blanket,Bedding,5,62.75,313.75
+O04223,2024-02-03,Emma Diaz,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O04247,2024-02-03,Sebastian Chandler,Ivory Shelf Unit,Storage,4,409.81,1639.24
+O05412,2024-02-03,David Ellison,Ivory Shelf Unit,Storage,1,409.81,409.81
+O05412,2024-02-03,David Ellison,Bamboo Ladder Shelf,Furniture,2,123.07,246.14
+O05412,2024-02-03,David Ellison,Rustic Oak Baking Sheet,Kitchen,1,27.73,27.73
+O05480,2024-02-03,Olivia Lambert,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O05480,2024-02-03,Olivia Lambert,Sage Green Planter Pot,Outdoor,3,114.8,344.4
+O05480,2024-02-03,Olivia Lambert,Terracotta Hanging Planter,Outdoor,4,10.1,40.4
+O02851,2024-02-04,David Ellison,Solid Brass Canvas Print,Decor,1,296.59,296.59
+O02851,2024-02-04,David Ellison,Charcoal Fleece Blanket,Bedding,1,62.75,62.75
+O02851,2024-02-04,David Ellison,Reclaimed Wood Fairy Lights,Lighting,1,268.92,268.92
+O04355,2024-02-04,Aria Ostrander,Natural Linen Memory Foam Mat,Bath,1,54.4,54.4
+O05165,2024-02-04,Avery Chandler,Woven Cotton Hanging Planter,Outdoor,1,91.24,91.24
+O05165,2024-02-04,Avery Chandler,Powder-Coated Side Table,Furniture,2,182.2,364.4
+O05875,2024-02-04,Owen Everhart,Matte Black Accent Chair,Furniture,5,389.34,1946.7
+O02683,2024-02-05,Aria Ostrander,Modern Doormat,Outdoor,4,28.94,115.76
+O02683,2024-02-05,Aria Ostrander,Hand-Glazed Wall Mirror,Decor,1,447.66,447.66
+O02700,2024-02-05,John Parrish,Hand-Glazed Laundry Basket,Storage,4,271.08,1084.32
+O02700,2024-02-05,John Parrish,Ivory Shelf Unit,Storage,4,409.81,1639.24
+O02982,2024-02-05,Emma Ingram,Reclaimed Wood Garden Tool Set,Outdoor,5,310.0,1550.0
+O03732,2024-02-05,David Vance,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O03732,2024-02-05,David Vance,Rustic Oak Quilt,Bedding,2,358.81,717.62
+O05079,2024-02-05,Lily Keller,Matte Black Shower Curtain,Bath,3,417.94,1253.82
+O05079,2024-02-05,Lily Keller,Matte Black Ceramic Vase,Decor,1,76.71,76.71
+O05575,2024-02-05,Sebastian Yates,Rustic Oak Quilt,Bedding,5,358.81,1794.05
+O05575,2024-02-05,Sebastian Yates,Slate Gray Shower Curtain,Bath,3,384.59,1153.77
+O05745,2024-02-05,Wyatt Abbott,Charcoal Fleece Blanket,Bedding,1,62.75,62.75
+O05745,2024-02-05,Wyatt Abbott,Matte Black Shower Curtain,Bath,2,417.94,835.88
+O05745,2024-02-05,Wyatt Abbott,Matte Black Ceramic Vase,Decor,1,76.71,76.71
+O05745,2024-02-05,Wyatt Abbott,Rustic Oak Garden Tool Set,Outdoor,3,29.47,88.41
+O01110,2024-02-06,Liam Dunmore,Hand-Glazed Laundry Basket,Storage,1,271.08,271.08
+O02168,2024-02-06,Jack Iversen,Bamboo Ladder Shelf,Furniture,5,123.07,615.35
+O02168,2024-02-06,Jack Iversen,Matte Black Ceramic Vase,Decor,1,76.71,76.71
+O03215,2024-02-06,James Bishop,Slate Gray Spatula Set,Kitchen,4,181.52,726.08
+O03215,2024-02-06,James Bishop,Classic Shower Curtain,Bath,1,11.23,11.23
+O03215,2024-02-06,James Bishop,Slate Gray Washcloth Set,Bath,5,441.96,2209.8
+O03957,2024-02-06,Emily Lambert,Terracotta Hanging Planter,Outdoor,3,10.1,30.3
+O03957,2024-02-06,Emily Lambert,Rustic Oak Corner Shelf,Storage,1,67.39,67.39
+O04385,2024-02-06,Ella Keller,Bamboo Pruning Shears,Outdoor,4,349.64,1398.56
+O04385,2024-02-06,Ella Keller,Charcoal Entry Bench,Furniture,2,34.75,69.5
+O04385,2024-02-06,Ella Keller,Natural Linen Memory Foam Mat,Bath,4,54.4,217.6
+O05205,2024-02-06,Lily Diaz,Matte Black Chandelier,Lighting,4,384.93,1539.72
+O05205,2024-02-06,Lily Diaz,Charcoal Quilt,Bedding,5,391.13,1955.65
+O05434,2024-02-06,Matthew Ingram,Charcoal Entry Bench,Furniture,4,34.75,139.0
+O05434,2024-02-06,Matthew Ingram,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O05434,2024-02-06,Matthew Ingram,Solid Brass Curtain Liner,Bath,2,383.82,767.64
+O02386,2024-02-07,Matthew Parrish,Woven Cotton Sheet Set,Bedding,4,29.52,118.08
+O02386,2024-02-07,Matthew Parrish,Rustic Oak Baking Sheet,Kitchen,3,27.73,83.19
+O02386,2024-02-07,Matthew Parrish,Rustic Oak Quilt,Bedding,3,358.81,1076.43
+O02386,2024-02-07,Matthew Parrish,Powder-Coated Body Pillow,Bedding,2,443.61,887.22
+O05192,2024-02-07,James Rowan,Reclaimed Wood Glass Vase,Decor,3,23.84,71.52
+O05688,2024-02-07,Ava Quintero,Natural Linen Memory Foam Mat,Bath,5,54.4,272.0
+O05688,2024-02-07,Ava Quintero,Woven Cotton Sheet Set,Bedding,5,29.52,147.6
+O05688,2024-02-07,Ava Quintero,Slate Gray Arc Lamp,Lighting,1,185.4,185.4
+O05904,2024-02-07,Abigail Rowan,Ivory Shelf Unit,Storage,5,409.81,2049.05
+O05904,2024-02-07,Abigail Rowan,Solid Brass Canvas Print,Decor,5,296.59,1482.95
+O01122,2024-02-08,Zoey Bennett,Matte Black Entry Bench,Furniture,4,146.16,584.64
+O01122,2024-02-08,Zoey Bennett,Classic Shower Curtain,Bath,2,11.23,22.46
+O01122,2024-02-08,Zoey Bennett,Rustic Oak Glass Vase,Decor,1,296.82,296.82
+O01622,2024-02-08,Harper Ostrander,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O01622,2024-02-08,Harper Ostrander,Rustic Oak Corner Shelf,Storage,2,67.39,134.78
+O01622,2024-02-08,Harper Ostrander,Matte Black Entry Bench,Furniture,5,146.16,730.8
+O02262,2024-02-08,David Hensley,Matte Black Dining Chair,Furniture,3,155.23,465.69
+O04233,2024-02-08,Harper Whitfield,Rustic Oak Baking Sheet,Kitchen,4,27.73,110.92
+O04233,2024-02-08,Harper Whitfield,Matte Black Skillet,Kitchen,4,380.87,1523.48
+O04233,2024-02-08,Harper Whitfield,Matte Black Chandelier,Lighting,4,384.93,1539.72
+O00775,2024-02-09,Chloe Nolan,Matte Black Chandelier,Lighting,3,384.93,1154.79
+O00775,2024-02-09,Chloe Nolan,Carrara Marble Pendant Light,Lighting,1,364.88,364.88
+O00775,2024-02-09,Chloe Nolan,Matte Black Shower Curtain,Bath,1,417.94,417.94
+O01126,2024-02-09,Ava Dunmore,Terracotta Scented Candle,Decor,2,356.11,712.22
+O01126,2024-02-09,Ava Dunmore,Terracotta Hanging Planter,Outdoor,1,10.1,10.1
+O01954,2024-02-09,Olivia Dunmore,Slate Gray Shower Curtain,Bath,1,384.59,384.59
+O01954,2024-02-09,Olivia Dunmore,Powder-Coated Hand Mixer,Kitchen,5,378.87,1894.35
+O01954,2024-02-09,Olivia Dunmore,Walnut Storage Basket,Storage,1,15.81,15.81
+O01954,2024-02-09,Olivia Dunmore,Matte Black Accent Chair,Furniture,3,389.34,1168.02
+O01999,2024-02-09,Luke Nolan,Slate Gray Stackable Bin,Storage,4,133.77,535.08
+O04649,2024-02-09,Grace Thatcher,Matte Black Ceramic Vase,Decor,4,76.71,306.84
+O04649,2024-02-09,Grace Thatcher,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O04649,2024-02-09,Grace Thatcher,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O04649,2024-02-09,Grace Thatcher,Charcoal Entry Bench,Furniture,5,34.75,173.75
+O05462,2024-02-09,Zoey Fairweather,Sage Green Planter Pot,Outdoor,4,114.8,459.2
+O05462,2024-02-09,Zoey Fairweather,Powder-Coated Side Table,Furniture,1,182.2,182.2
+O05462,2024-02-09,Zoey Fairweather,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O00550,2024-02-10,John Parrish,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O00550,2024-02-10,John Parrish,Natural Linen Memory Foam Mat,Bath,5,54.4,272.0
+O01536,2024-02-10,Amelia Chandler,Reclaimed Wood Glass Vase,Decor,2,23.84,47.68
+O01536,2024-02-10,Amelia Chandler,Woven Cotton Sheet Set,Bedding,2,29.52,59.04
+O01536,2024-02-10,Amelia Chandler,Reclaimed Wood Fairy Lights,Lighting,3,268.92,806.76
+O02000,2024-02-10,Luke Jasper,Terracotta Scented Candle,Decor,5,356.11,1780.55
+O03267,2024-02-10,Joseph Underwood,Walnut Storage Basket,Storage,1,15.81,15.81
+O03267,2024-02-10,Joseph Underwood,Matte Black Accent Chair,Furniture,3,389.34,1168.02
+O03267,2024-02-10,Joseph Underwood,Brushed Copper Coffee Maker,Kitchen,1,215.44,215.44
+O03267,2024-02-10,Joseph Underwood,Carrara Marble Pendant Light,Lighting,5,364.88,1824.4
+O03341,2024-02-10,Owen Everhart,Hand-Glazed Wall Mirror,Decor,1,447.66,447.66
+O03341,2024-02-10,Owen Everhart,Rustic Oak Baking Sheet,Kitchen,3,27.73,83.19
+O03341,2024-02-10,Owen Everhart,Hand-Glazed Stackable Bin,Storage,5,193.81,969.05
+O03473,2024-02-10,Luke Thatcher,Matte Black Accent Chair,Furniture,4,389.34,1557.36
+O03473,2024-02-10,Luke Thatcher,Rustic Oak Baking Sheet,Kitchen,5,27.73,138.65
+O03494,2024-02-10,Matthew Thatcher,Powder-Coated Toothbrush Holder,Bath,1,407.27,407.27
+O03494,2024-02-10,Matthew Thatcher,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O04195,2024-02-10,Hannah Keller,Matte Black Entry Bench,Furniture,2,146.16,292.32
+O04839,2024-02-10,Owen Thatcher,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O04839,2024-02-10,Owen Thatcher,Reclaimed Wood Garden Tool Set,Outdoor,1,310.0,310.0
+O04839,2024-02-10,Owen Thatcher,Powder-Coated Toothbrush Holder,Bath,2,407.27,814.54
+O05697,2024-02-10,Chloe Lindqvist,Navy Closet Organizer,Storage,2,68.48,136.96
+O05697,2024-02-10,Chloe Lindqvist,Hand-Glazed Wall Mirror,Decor,2,447.66,895.32
+O05697,2024-02-10,Chloe Lindqvist,Charcoal Fleece Blanket,Bedding,2,62.75,125.5
+O00041,2024-02-11,Henry Thatcher,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O00371,2024-02-11,Wyatt Rowan,Charcoal Fleece Blanket,Bedding,3,62.75,188.25
+O00577,2024-02-11,Julian Rowan,Rustic Oak Baking Sheet,Kitchen,4,27.73,110.92
+O00577,2024-02-11,Julian Rowan,Slate Gray Spatula Set,Kitchen,4,181.52,726.08
+O00577,2024-02-11,Julian Rowan,Carrara Marble Ladle,Kitchen,4,345.2,1380.8
+O00683,2024-02-11,Zoey Sawyer,Rustic Oak Baking Sheet,Kitchen,4,27.73,110.92
+O00683,2024-02-11,Zoey Sawyer,Matte Black Ceramic Vase,Decor,4,76.71,306.84
+O00683,2024-02-11,Zoey Sawyer,Powder-Coated Body Pillow,Bedding,5,443.61,2218.05
+O01373,2024-02-11,Elizabeth Everhart,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O01373,2024-02-11,Elizabeth Everhart,Rustic Oak Quilt,Bedding,4,358.81,1435.24
+O01566,2024-02-11,Michael Sawyer,Rustic Oak Desk Lamp,Lighting,1,9.99,9.99
+O01566,2024-02-11,Michael Sawyer,Modern Saucepan,Kitchen,1,267.21,267.21
+O03144,2024-02-11,Liam Foster,Slate Gray Washcloth Set,Bath,2,441.96,883.92
+O03144,2024-02-11,Liam Foster,Bamboo Ladder Shelf,Furniture,5,123.07,615.35
+O03534,2024-02-11,Alexander Yates,Powder-Coated Body Pillow,Bedding,5,443.61,2218.05
+O03761,2024-02-11,Jack Chandler,Reclaimed Wood Fairy Lights,Lighting,4,268.92,1075.68
+O03761,2024-02-11,Jack Chandler,Slate Gray Stackable Bin,Storage,4,133.77,535.08
+O03761,2024-02-11,Jack Chandler,Modern Doormat,Outdoor,3,28.94,86.82
+O04133,2024-02-11,Carter Diaz,Bamboo Pruning Shears,Outdoor,2,349.64,699.28
+O04524,2024-02-11,Sofia Dunmore,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O04524,2024-02-11,Sofia Dunmore,Matte Black Shower Curtain,Bath,3,417.94,1253.82
+O04524,2024-02-11,Sofia Dunmore,Rustic Oak Corner Shelf,Storage,2,67.39,134.78
+O04524,2024-02-11,Sofia Dunmore,Matte Black Accent Chair,Furniture,3,389.34,1168.02
+O05018,2024-02-11,Aria Lindqvist,Modern Doormat,Outdoor,4,28.94,115.76
+O05018,2024-02-11,Aria Lindqvist,Woven Cotton Hanging Planter,Outdoor,3,91.24,273.72
+O05058,2024-02-11,Ella Parrish,Matte Black Shower Curtain,Bath,2,417.94,835.88
+O05058,2024-02-11,Ella Parrish,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O05202,2024-02-11,Jack Iversen,Matte Black Accent Chair,Furniture,2,389.34,778.68
+O05202,2024-02-11,Jack Iversen,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O05202,2024-02-11,Jack Iversen,Rustic Oak Desk Lamp,Lighting,1,9.99,9.99
+O05656,2024-02-11,Isabella Iversen,Carrara Marble Ladle,Kitchen,5,345.2,1726.0
+O05656,2024-02-11,Isabella Iversen,Matte Black Entry Bench,Furniture,1,146.16,146.16
+O05656,2024-02-11,Isabella Iversen,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O02236,2024-02-12,Hannah Keller,Charcoal Quilt,Bedding,2,391.13,782.26
+O02236,2024-02-12,Hannah Keller,Classic Shower Curtain,Bath,1,11.23,11.23
+O02681,2024-02-12,Olivia Dunmore,Modern Doormat,Outdoor,3,28.94,86.82
+O02681,2024-02-12,Olivia Dunmore,Reclaimed Wood Fairy Lights,Lighting,4,268.92,1075.68
+O02681,2024-02-12,Olivia Dunmore,Rustic Oak Garden Tool Set,Outdoor,1,29.47,29.47
+O02971,2024-02-12,Amelia Jasper,Reclaimed Wood Garden Tool Set,Outdoor,5,310.0,1550.0
+O02971,2024-02-12,Amelia Jasper,Matte Black Entry Bench,Furniture,4,146.16,584.64
+O02996,2024-02-12,Julian Rowan,Matte Black Entry Bench,Furniture,2,146.16,292.32
+O02996,2024-02-12,Julian Rowan,Rustic Oak Corner Shelf,Storage,2,67.39,134.78
+O02996,2024-02-12,Julian Rowan,Classic Shower Curtain,Bath,1,11.23,11.23
+O02996,2024-02-12,Julian Rowan,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O03966,2024-02-12,Ella Parrish,Matte Black Accent Chair,Furniture,1,389.34,389.34
+O03966,2024-02-12,Ella Parrish,Classic Quilt,Bedding,1,135.4,135.4
+O03966,2024-02-12,Ella Parrish,Matte Black Chandelier,Lighting,1,384.93,384.93
+O04289,2024-02-12,Wyatt Rowan,Woven Cotton Hanging Planter,Outdoor,1,91.24,91.24
+O05393,2024-02-12,Grace Thatcher,Hand-Glazed Wall Mirror,Decor,2,447.66,895.32
+O05393,2024-02-12,Grace Thatcher,Charcoal Quilt,Bedding,3,391.13,1173.39
+O05393,2024-02-12,Grace Thatcher,Carrara Marble Ladle,Kitchen,5,345.2,1726.0
+O05393,2024-02-12,Grace Thatcher,Powder-Coated Side Table,Furniture,5,182.2,911.0
+O05614,2024-02-12,Noah Ellison,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O05614,2024-02-12,Noah Ellison,Hand-Glazed Stackable Bin,Storage,1,193.81,193.81
+O00551,2024-02-13,Wyatt Abbott,Rustic Oak Quilt,Bedding,5,358.81,1794.05
+O00553,2024-02-13,Chloe Osei,Bamboo Pruning Shears,Outdoor,1,349.64,349.64
+O00553,2024-02-13,Chloe Osei,Rustic Oak Glass Vase,Decor,1,296.82,296.82
+O00617,2024-02-13,Alexander Yates,Matte Black Shower Curtain,Bath,5,417.94,2089.7
+O00617,2024-02-13,Alexander Yates,Ivory Shelf Unit,Storage,2,409.81,819.62
+O00776,2024-02-13,Chloe Ellison,Slate Gray Spatula Set,Kitchen,4,181.52,726.08
+O00776,2024-02-13,Chloe Ellison,Matte Black Skillet,Kitchen,3,380.87,1142.61
+O00776,2024-02-13,Chloe Ellison,Reclaimed Wood Glass Vase,Decor,4,23.84,95.36
+O00776,2024-02-13,Chloe Ellison,Hand-Glazed Laundry Basket,Storage,5,271.08,1355.4
+O01123,2024-02-13,Emily Keller,Matte Black Chandelier,Lighting,4,384.93,1539.72
+O01123,2024-02-13,Emily Keller,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O01123,2024-02-13,Emily Keller,Sage Green Whisk,Kitchen,5,157.6,788.0
+O01123,2024-02-13,Emily Keller,Solid Brass Canvas Print,Decor,2,296.59,593.18
+O01317,2024-02-13,Hannah Jasper,Navy Closet Organizer,Storage,5,68.48,342.4
+O01317,2024-02-13,Hannah Jasper,Hand-Glazed Laundry Basket,Storage,2,271.08,542.16
+O02278,2024-02-13,Alexander Sawyer,Slate Gray Shower Curtain,Bath,4,384.59,1538.36
+O02278,2024-02-13,Alexander Sawyer,Woven Cotton Hanging Planter,Outdoor,1,91.24,91.24
+O02278,2024-02-13,Alexander Sawyer,Carrara Marble Ladle,Kitchen,2,345.2,690.4
+O02567,2024-02-13,Evelyn Jasper,Terracotta Hanging Planter,Outdoor,1,10.1,10.1
+O04566,2024-02-13,Joseph Iversen,Navy Closet Organizer,Storage,1,68.48,68.48
+O04793,2024-02-13,David Vance,Hand-Glazed Stackable Bin,Storage,1,193.81,193.81
+O05493,2024-02-13,Gabriel Marsh,Slate Gray Washcloth Set,Bath,4,441.96,1767.84
+O05493,2024-02-13,Gabriel Marsh,Powder-Coated Hand Mixer,Kitchen,3,378.87,1136.61
+O00394,2024-02-14,Isabella Fairweather,Sage Green Whisk,Kitchen,2,157.6,315.2
+O00394,2024-02-14,Isabella Fairweather,Woven Cotton Hanging Planter,Outdoor,5,91.24,456.2
+O00938,2024-02-14,Hannah Pemberton,Rustic Oak Garden Tool Set,Outdoor,1,29.47,29.47
+O00938,2024-02-14,Hannah Pemberton,Matte Black Ceramic Vase,Decor,5,76.71,383.55
+O00938,2024-02-14,Hannah Pemberton,Rustic Oak Baking Sheet,Kitchen,3,27.73,83.19
+O02981,2024-02-14,Liam Dunmore,Walnut Storage Basket,Storage,3,15.81,47.43
+O02981,2024-02-14,Liam Dunmore,Natural Linen Body Pillow,Bedding,2,252.47,504.94
+O04823,2024-02-14,Emily Jennings,Terracotta Scented Candle,Decor,2,356.11,712.22
+O01086,2024-02-15,Zoey Dunmore,Reclaimed Wood Garden Tool Set,Outdoor,3,310.0,930.0
+O01086,2024-02-15,Zoey Dunmore,Hand-Glazed Laundry Basket,Storage,5,271.08,1355.4
+O01086,2024-02-15,Zoey Dunmore,Hand-Glazed Stackable Bin,Storage,5,193.81,969.05
+O01086,2024-02-15,Zoey Dunmore,Rustic Oak Baking Sheet,Kitchen,1,27.73,27.73
+O01898,2024-02-15,Matthew Whitfield,Rustic Oak Desk Lamp,Lighting,1,9.99,9.99
+O01898,2024-02-15,Matthew Whitfield,Solid Brass Canvas Print,Decor,5,296.59,1482.95
+O02112,2024-02-15,Julian Rowan,Hand-Glazed Laundry Basket,Storage,2,271.08,542.16
+O02112,2024-02-15,Julian Rowan,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O02112,2024-02-15,Julian Rowan,Rustic Oak Desk Lamp,Lighting,3,9.99,29.97
+O03444,2024-02-15,Wyatt Ingram,Carrara Marble Ladle,Kitchen,2,345.2,690.4
+O03454,2024-02-15,Zoey Holloway,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O03454,2024-02-15,Zoey Holloway,Rustic Oak Quilt,Bedding,4,358.81,1435.24
+O03454,2024-02-15,Zoey Holloway,Bamboo Pruning Shears,Outdoor,1,349.64,349.64
+O04036,2024-02-15,Evelyn Pemberton,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O04036,2024-02-15,Evelyn Pemberton,Slate Gray Fitted Sheet,Bedding,5,416.72,2083.6
+O04091,2024-02-15,Sophia Yates,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O04091,2024-02-15,Sophia Yates,Matte Black Bookshelf,Furniture,4,116.76,467.04
+O04091,2024-02-15,Sophia Yates,Carrara Marble Ladle,Kitchen,3,345.2,1035.6
+O04518,2024-02-15,Sebastian Kirkland,Navy Fairy Lights,Lighting,4,349.98,1399.92
+O04518,2024-02-15,Sebastian Kirkland,Navy Closet Organizer,Storage,4,68.48,273.92
+O04518,2024-02-15,Sebastian Kirkland,Walnut Storage Basket,Storage,3,15.81,47.43
+O04875,2024-02-15,Grace Thatcher,Terracotta Scented Candle,Decor,5,356.11,1780.55
+O05420,2024-02-15,Sophia Yates,Sage Green Planter Pot,Outdoor,3,114.8,344.4
+O05712,2024-02-15,Harper Bennett,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O05712,2024-02-15,Harper Bennett,Reclaimed Wood Glass Vase,Decor,4,23.84,95.36
+O05712,2024-02-15,Harper Bennett,Classic Quilt,Bedding,5,135.4,677.0
+O05712,2024-02-15,Harper Bennett,Slate Gray Table Lamp,Lighting,5,90.92,454.6
+O00880,2024-02-16,James Diaz,Charcoal Fleece Blanket,Bedding,3,62.75,188.25
+O00880,2024-02-16,James Diaz,Reclaimed Wood Fairy Lights,Lighting,4,268.92,1075.68
+O00880,2024-02-16,James Diaz,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O01395,2024-02-16,Benjamin Iversen,Bamboo Ladder Shelf,Furniture,2,123.07,246.14
+O02983,2024-02-16,Isabella Zimmerman,Slate Gray Spatula Set,Kitchen,2,181.52,363.04
+O02983,2024-02-16,Isabella Zimmerman,Modern Doormat,Outdoor,3,28.94,86.82
+O02983,2024-02-16,Isabella Zimmerman,Hand-Glazed Stackable Bin,Storage,3,193.81,581.43
+O03082,2024-02-16,Owen Holloway,Charcoal Fleece Blanket,Bedding,2,62.75,125.5
+O03082,2024-02-16,Owen Holloway,Woven Cotton Sheet Set,Bedding,1,29.52,29.52
+O03082,2024-02-16,Owen Holloway,Natural Linen Memory Foam Mat,Bath,5,54.4,272.0
+O04506,2024-02-16,John Abbott,Slate Gray Shower Curtain,Bath,5,384.59,1922.95
+O04506,2024-02-16,John Abbott,Matte Black Accent Chair,Furniture,3,389.34,1168.02
+O04684,2024-02-16,James Rowan,Solid Brass Canvas Print,Decor,3,296.59,889.77
+O05270,2024-02-16,Owen Holloway,Terracotta Hanging Planter,Outdoor,3,10.1,30.3
+O05270,2024-02-16,Owen Holloway,Modern Saucepan,Kitchen,4,267.21,1068.84
+O05270,2024-02-16,Owen Holloway,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O05270,2024-02-16,Owen Holloway,Slate Gray Washcloth Set,Bath,4,441.96,1767.84
+O00796,2024-02-17,John Parrish,Carrara Marble Pendant Light,Lighting,1,364.88,364.88
+O00796,2024-02-17,John Parrish,Charcoal Fleece Blanket,Bedding,5,62.75,313.75
+O00796,2024-02-17,John Parrish,Natural Linen Body Pillow,Bedding,4,252.47,1009.88
+O01049,2024-02-17,Carter Jennings,Matte Black Dining Chair,Furniture,2,155.23,310.46
+O01049,2024-02-17,Carter Jennings,Reclaimed Wood Garden Tool Set,Outdoor,1,310.0,310.0
+O02779,2024-02-17,Benjamin Norwood,Slate Gray Shower Curtain,Bath,5,384.59,1922.95
+O02779,2024-02-17,Benjamin Norwood,Navy Closet Organizer,Storage,1,68.48,68.48
+O02779,2024-02-17,Benjamin Norwood,Reclaimed Wood Glass Vase,Decor,3,23.84,71.52
+O02779,2024-02-17,Benjamin Norwood,Woven Cotton Hanging Planter,Outdoor,3,91.24,273.72
+O02860,2024-02-17,Chloe Zimmerman,Powder-Coated Side Table,Furniture,3,182.2,546.6
+O03067,2024-02-17,Owen Everhart,Charcoal Bath Tray,Bath,2,86.46,172.92
+O03067,2024-02-17,Owen Everhart,Powder-Coated Side Table,Furniture,1,182.2,182.2
+O03067,2024-02-17,Owen Everhart,Powder-Coated Body Pillow,Bedding,5,443.61,2218.05
+O03681,2024-02-17,James Diaz,Powder-Coated Toothbrush Holder,Bath,2,407.27,814.54
+O03681,2024-02-17,James Diaz,Matte Black Shower Curtain,Bath,4,417.94,1671.76
+O03681,2024-02-17,James Diaz,Natural Linen Body Pillow,Bedding,3,252.47,757.41
+O00634,2024-02-18,Owen Nolan,Rustic Oak Quilt,Bedding,3,358.81,1076.43
+O00634,2024-02-18,Owen Nolan,Slate Gray Table Lamp,Lighting,5,90.92,454.6
+O01145,2024-02-18,Amelia Jasper,Rustic Oak Baking Sheet,Kitchen,4,27.73,110.92
+O01145,2024-02-18,Amelia Jasper,Natural Linen Body Pillow,Bedding,4,252.47,1009.88
+O02666,2024-02-18,Ella Parrish,Matte Black Dining Chair,Furniture,3,155.23,465.69
+O02881,2024-02-18,Elizabeth Carter,Solid Brass Curtain Liner,Bath,5,383.82,1919.1
+O02881,2024-02-18,Elizabeth Carter,Matte Black Chandelier,Lighting,5,384.93,1924.65
+O02881,2024-02-18,Elizabeth Carter,Hand-Glazed Stackable Bin,Storage,1,193.81,193.81
+O03102,2024-02-18,Chloe Nolan,Slate Gray Table Lamp,Lighting,3,90.92,272.76
+O03102,2024-02-18,Chloe Nolan,Charcoal Entry Bench,Furniture,5,34.75,173.75
+O03523,2024-02-18,Chloe Jasper,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O03523,2024-02-18,Chloe Jasper,Woven Cotton Sheet Set,Bedding,4,29.52,118.08
+O03523,2024-02-18,Chloe Jasper,Brushed Copper Coffee Maker,Kitchen,4,215.44,861.76
+O04862,2024-02-18,John Abbott,Navy Closet Organizer,Storage,3,68.48,205.44
+O04862,2024-02-18,John Abbott,Charcoal Bath Tray,Bath,5,86.46,432.3
+O04862,2024-02-18,John Abbott,Classic Quilt,Bedding,4,135.4,541.6
+O04862,2024-02-18,John Abbott,Charcoal Entry Bench,Furniture,1,34.75,34.75
+O04981,2024-02-18,Charlotte Norwood,Hand-Glazed Stackable Bin,Storage,5,193.81,969.05
+O04981,2024-02-18,Charlotte Norwood,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O04981,2024-02-18,Charlotte Norwood,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O05084,2024-02-18,Avery Holloway,Navy Fairy Lights,Lighting,3,349.98,1049.94
+O05717,2024-02-18,Sofia Norwood,Reclaimed Wood Fairy Lights,Lighting,2,268.92,537.84
+O05717,2024-02-18,Sofia Norwood,Rustic Oak Quilt,Bedding,3,358.81,1076.43
+O05717,2024-02-18,Sofia Norwood,Matte Black Bookshelf,Furniture,4,116.76,467.04
+O05962,2024-02-18,Zoey Hensley,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O00790,2024-02-19,Sophia Quintero,Natural Linen Body Pillow,Bedding,3,252.47,757.41
+O00790,2024-02-19,Sophia Quintero,Solid Brass Curtain Liner,Bath,5,383.82,1919.1
+O00790,2024-02-19,Sophia Quintero,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O00851,2024-02-19,Sebastian Jasper,Carrara Marble Ladle,Kitchen,3,345.2,1035.6
+O01908,2024-02-19,Benjamin Holloway,Navy Closet Organizer,Storage,5,68.48,342.4
+O01908,2024-02-19,Benjamin Holloway,Modern Saucepan,Kitchen,4,267.21,1068.84
+O03610,2024-02-19,Zoey Dunmore,Modern Doormat,Outdoor,3,28.94,86.82
+O03610,2024-02-19,Zoey Dunmore,Walnut Chandelier,Lighting,4,29.64,118.56
+O03610,2024-02-19,Zoey Dunmore,Reclaimed Wood Fairy Lights,Lighting,4,268.92,1075.68
+O04968,2024-02-19,Ava Quintero,Walnut Chandelier,Lighting,5,29.64,148.2
+O04968,2024-02-19,Ava Quintero,Carrara Marble Pendant Light,Lighting,5,364.88,1824.4
+O04968,2024-02-19,Ava Quintero,Modern Doormat,Outdoor,5,28.94,144.7
+O05298,2024-02-19,Michael Yates,Navy Fairy Lights,Lighting,1,349.98,349.98
+O05298,2024-02-19,Michael Yates,Bamboo Ladder Shelf,Furniture,2,123.07,246.14
+O05298,2024-02-19,Michael Yates,Rustic Oak Garden Tool Set,Outdoor,3,29.47,88.41
+O00765,2024-02-20,Sofia Fairweather,Powder-Coated Hand Mixer,Kitchen,2,378.87,757.74
+O00765,2024-02-20,Sofia Fairweather,Matte Black Chandelier,Lighting,4,384.93,1539.72
+O00765,2024-02-20,Sofia Fairweather,Matte Black Dining Chair,Furniture,1,155.23,155.23
+O00765,2024-02-20,Sofia Fairweather,Bamboo Ladder Shelf,Furniture,4,123.07,492.28
+O01064,2024-02-20,Aria Mercer,Walnut Storage Basket,Storage,1,15.81,15.81
+O01064,2024-02-20,Aria Mercer,Carrara Marble Pendant Light,Lighting,5,364.88,1824.4
+O01064,2024-02-20,Aria Mercer,Rustic Oak Glass Vase,Decor,5,296.82,1484.1
+O02095,2024-02-20,Matthew Vance,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O02095,2024-02-20,Matthew Vance,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O02095,2024-02-20,Matthew Vance,Modern Doormat,Outdoor,2,28.94,57.88
+O02926,2024-02-20,Luke Thatcher,Charcoal Quilt,Bedding,1,391.13,391.13
+O02926,2024-02-20,Luke Thatcher,Hand-Glazed Wall Mirror,Decor,5,447.66,2238.3
+O02926,2024-02-20,Luke Thatcher,Woven Cotton Wall Art Print,Decor,1,358.05,358.05
+O02926,2024-02-20,Luke Thatcher,Slate Gray Stackable Bin,Storage,5,133.77,668.85
+O03401,2024-02-20,Aria Lindqvist,Matte Black Entry Bench,Furniture,2,146.16,292.32
+O03934,2024-02-20,Henry Thatcher,Reclaimed Wood Fairy Lights,Lighting,4,268.92,1075.68
+O03934,2024-02-20,Henry Thatcher,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O03934,2024-02-20,Henry Thatcher,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O05774,2024-02-20,Hannah Marsh,Modern Doormat,Outdoor,4,28.94,115.76
+O01022,2024-02-21,Matthew Whitfield,Classic Shower Curtain,Bath,4,11.23,44.92
+O01022,2024-02-21,Matthew Whitfield,Bamboo Ladder Shelf,Furniture,2,123.07,246.14
+O01022,2024-02-21,Matthew Whitfield,Powder-Coated Side Table,Furniture,3,182.2,546.6
+O01022,2024-02-21,Matthew Whitfield,Terracotta Hanging Planter,Outdoor,2,10.1,20.2
+O01982,2024-02-21,Michael Sawyer,Slate Gray Washcloth Set,Bath,1,441.96,441.96
+O01982,2024-02-21,Michael Sawyer,Powder-Coated Hand Mixer,Kitchen,3,378.87,1136.61
+O01982,2024-02-21,Michael Sawyer,Hand-Glazed Stackable Bin,Storage,3,193.81,581.43
+O02319,2024-02-21,Olivia Lambert,Rustic Oak Garden Tool Set,Outdoor,3,29.47,88.41
+O02319,2024-02-21,Olivia Lambert,Navy Fairy Lights,Lighting,5,349.98,1749.9
+O02319,2024-02-21,Olivia Lambert,Reclaimed Wood Garden Tool Set,Outdoor,2,310.0,620.0
+O02737,2024-02-21,Emily Keller,Rustic Oak Baking Sheet,Kitchen,4,27.73,110.92
+O02737,2024-02-21,Emily Keller,Matte Black Shower Curtain,Bath,4,417.94,1671.76
+O02737,2024-02-21,Emily Keller,Solid Brass Canvas Print,Decor,1,296.59,296.59
+O04397,2024-02-21,James Zimmerman,Sage Green Planter Pot,Outdoor,2,114.8,229.6
+O04397,2024-02-21,James Zimmerman,Brushed Copper Coffee Maker,Kitchen,1,215.44,215.44
+O05617,2024-02-21,Chloe Nolan,Hand-Glazed Stackable Bin,Storage,5,193.81,969.05
+O05617,2024-02-21,Chloe Nolan,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O05824,2024-02-21,Alexander Yates,Matte Black Dining Chair,Furniture,4,155.23,620.92
+O05824,2024-02-21,Alexander Yates,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O05851,2024-02-21,David Everhart,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O05851,2024-02-21,David Everhart,Navy Closet Organizer,Storage,5,68.48,342.4
+O00287,2024-02-22,Levi Zimmerman,Navy Fairy Lights,Lighting,3,349.98,1049.94
+O00287,2024-02-22,Levi Zimmerman,Rustic Oak Garden Tool Set,Outdoor,5,29.47,147.35
+O00287,2024-02-22,Levi Zimmerman,Bamboo Ladder Shelf,Furniture,4,123.07,492.28
+O00787,2024-02-22,Aria Hensley,Natural Linen Memory Foam Mat,Bath,1,54.4,54.4
+O00787,2024-02-22,Aria Hensley,Rustic Oak Quilt,Bedding,2,358.81,717.62
+O00787,2024-02-22,Aria Hensley,Powder-Coated Side Table,Furniture,5,182.2,911.0
+O01984,2024-02-22,Ella Keller,Slate Gray Table Lamp,Lighting,3,90.92,272.76
+O01984,2024-02-22,Ella Keller,Navy Closet Organizer,Storage,3,68.48,205.44
+O01984,2024-02-22,Ella Keller,Matte Black Dining Chair,Furniture,4,155.23,620.92
+O05064,2024-02-22,Isabella Fairweather,Rustic Oak Desk Lamp,Lighting,4,9.99,39.96
+O05064,2024-02-22,Isabella Fairweather,Powder-Coated Toothbrush Holder,Bath,5,407.27,2036.35
+O05064,2024-02-22,Isabella Fairweather,Modern Saucepan,Kitchen,5,267.21,1336.05
+O05919,2024-02-22,Hannah Pemberton,Rustic Oak Corner Shelf,Storage,2,67.39,134.78
+O00446,2024-02-23,Sofia Parrish,Classic Shower Curtain,Bath,1,11.23,11.23
+O00446,2024-02-23,Sofia Parrish,Powder-Coated Hand Mixer,Kitchen,2,378.87,757.74
+O01024,2024-02-23,Evelyn Jasper,Matte Black Skillet,Kitchen,3,380.87,1142.61
+O01024,2024-02-23,Evelyn Jasper,Carrara Marble Pendant Light,Lighting,5,364.88,1824.4
+O01024,2024-02-23,Evelyn Jasper,Navy Fairy Lights,Lighting,1,349.98,349.98
+O01508,2024-02-23,Isabella Fairweather,Slate Gray Arc Lamp,Lighting,5,185.4,927.0
+O01508,2024-02-23,Isabella Fairweather,Natural Linen Body Pillow,Bedding,5,252.47,1262.35
+O01508,2024-02-23,Isabella Fairweather,Powder-Coated Side Table,Furniture,4,182.2,728.8
+O03422,2024-02-23,Alexander Yates,Matte Black Ceramic Vase,Decor,2,76.71,153.42
+O03422,2024-02-23,Alexander Yates,Powder-Coated Toothbrush Holder,Bath,4,407.27,1629.08
+O03422,2024-02-23,Alexander Yates,Terracotta Hanging Planter,Outdoor,3,10.1,30.3
+O03886,2024-02-23,Carter Diaz,Classic Quilt,Bedding,2,135.4,270.8
+O03886,2024-02-23,Carter Diaz,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O04759,2024-02-23,Charlotte Norwood,Rustic Oak Garden Tool Set,Outdoor,1,29.47,29.47
+O05010,2024-02-23,Luke Thatcher,Charcoal Bath Tray,Bath,4,86.46,345.84
+O05010,2024-02-23,Luke Thatcher,Sage Green Planter Pot,Outdoor,5,114.8,574.0
+O05010,2024-02-23,Luke Thatcher,Walnut Storage Basket,Storage,3,15.81,47.43
+O05010,2024-02-23,Luke Thatcher,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O05126,2024-02-23,Wyatt Abbott,Terracotta Hanging Planter,Outdoor,2,10.1,20.2
+O05497,2024-02-23,Amelia Chandler,Slate Gray Washcloth Set,Bath,3,441.96,1325.88
+O00814,2024-02-24,Hannah Pemberton,Slate Gray Shower Curtain,Bath,2,384.59,769.18
+O00814,2024-02-24,Hannah Pemberton,Carrara Marble Ladle,Kitchen,5,345.2,1726.0
+O00814,2024-02-24,Hannah Pemberton,Slate Gray Washcloth Set,Bath,3,441.96,1325.88
+O00814,2024-02-24,Hannah Pemberton,Terracotta Scented Candle,Decor,5,356.11,1780.55
+O02005,2024-02-24,Sophia Quintero,Matte Black Shower Curtain,Bath,1,417.94,417.94
+O02241,2024-02-24,Carter Diaz,Carrara Marble Ladle,Kitchen,5,345.2,1726.0
+O02241,2024-02-24,Carter Diaz,Modern Saucepan,Kitchen,3,267.21,801.63
+O02241,2024-02-24,Carter Diaz,Slate Gray Fitted Sheet,Bedding,5,416.72,2083.6
+O02815,2024-02-24,Aria Lindqvist,Natural Linen Memory Foam Mat,Bath,5,54.4,272.0
+O02815,2024-02-24,Aria Lindqvist,Slate Gray Shower Curtain,Bath,4,384.59,1538.36
+O02815,2024-02-24,Aria Lindqvist,Matte Black Ceramic Vase,Decor,3,76.71,230.13
+O03052,2024-02-24,Noah Ellison,Slate Gray Table Lamp,Lighting,2,90.92,181.84
+O03052,2024-02-24,Noah Ellison,Hand-Glazed Wall Mirror,Decor,1,447.66,447.66
+O03052,2024-02-24,Noah Ellison,Sage Green Whisk,Kitchen,5,157.6,788.0
+O05605,2024-02-24,Sebastian Yates,Matte Black Ceramic Vase,Decor,3,76.71,230.13
+O05605,2024-02-24,Sebastian Yates,Charcoal Fleece Blanket,Bedding,2,62.75,125.5
+O05871,2024-02-24,Riley Bennett,Powder-Coated Toothbrush Holder,Bath,2,407.27,814.54
+O05871,2024-02-24,Riley Bennett,Solid Brass Curtain Liner,Bath,1,383.82,383.82
+O01232,2024-02-25,Carter Parrish,Ivory Shelf Unit,Storage,5,409.81,2049.05
+O01232,2024-02-25,Carter Parrish,Reclaimed Wood Garden Tool Set,Outdoor,5,310.0,1550.0
+O01232,2024-02-25,Carter Parrish,Solid Brass Canvas Print,Decor,4,296.59,1186.36
+O01232,2024-02-25,Carter Parrish,Rustic Oak Garden Tool Set,Outdoor,1,29.47,29.47
+O03544,2024-02-25,Harper Ostrander,Sage Green Planter Pot,Outdoor,4,114.8,459.2
+O04181,2024-02-25,Henry Everhart,Woven Cotton Hanging Planter,Outdoor,5,91.24,456.2
+O04181,2024-02-25,Henry Everhart,Rustic Oak Garden Tool Set,Outdoor,2,29.47,58.94
+O04181,2024-02-25,Henry Everhart,Natural Linen Memory Foam Mat,Bath,1,54.4,54.4
+O04623,2024-02-25,Alexander Yates,Hand-Glazed Laundry Basket,Storage,5,271.08,1355.4
+O04623,2024-02-25,Alexander Yates,Matte Black Entry Bench,Furniture,5,146.16,730.8
+O04623,2024-02-25,Alexander Yates,Matte Black Chandelier,Lighting,3,384.93,1154.79
+O04623,2024-02-25,Alexander Yates,Navy Closet Organizer,Storage,3,68.48,205.44
+O05636,2024-02-25,Amelia Jasper,Slate Gray Washcloth Set,Bath,4,441.96,1767.84
+O00154,2024-02-26,Levi Kirkland,Matte Black Accent Chair,Furniture,4,389.34,1557.36
+O00154,2024-02-26,Levi Kirkland,Terracotta Hanging Planter,Outdoor,5,10.1,50.5
+O00154,2024-02-26,Levi Kirkland,Matte Black Chandelier,Lighting,5,384.93,1924.65
+O00425,2024-02-26,Harper Whitfield,Modern Doormat,Outdoor,2,28.94,57.88
+O00425,2024-02-26,Harper Whitfield,Matte Black Bookshelf,Furniture,3,116.76,350.28
+O01124,2024-02-26,Sebastian Chandler,Carrara Marble Ladle,Kitchen,4,345.2,1380.8
+O01699,2024-02-26,Grace Thatcher,Reclaimed Wood Fairy Lights,Lighting,3,268.92,806.76
+O01843,2024-02-26,John Parrish,Woven Cotton Wall Art Print,Decor,4,358.05,1432.2
+O01843,2024-02-26,John Parrish,Navy Closet Organizer,Storage,5,68.48,342.4
+O01843,2024-02-26,John Parrish,Carrara Marble Ladle,Kitchen,1,345.2,345.2
+O03063,2024-02-26,Harper Ostrander,Rustic Oak Desk Lamp,Lighting,4,9.99,39.96
+O00894,2024-02-27,Hannah Keller,Navy Fairy Lights,Lighting,4,349.98,1399.92
+O00894,2024-02-27,Hannah Keller,Walnut Chandelier,Lighting,4,29.64,118.56
+O00894,2024-02-27,Hannah Keller,Classic Shower Curtain,Bath,4,11.23,44.92
+O01120,2024-02-27,Charlotte Norwood,Hand-Glazed Stackable Bin,Storage,5,193.81,969.05
+O01810,2024-02-27,Elijah Mercer,Charcoal Quilt,Bedding,3,391.13,1173.39
+O01810,2024-02-27,Elijah Mercer,Bamboo Pruning Shears,Outdoor,4,349.64,1398.56
+O02107,2024-02-27,Benjamin Osei,Modern Doormat,Outdoor,1,28.94,28.94
+O02107,2024-02-27,Benjamin Osei,Carrara Marble Ladle,Kitchen,2,345.2,690.4
+O02107,2024-02-27,Benjamin Osei,Rustic Oak Glass Vase,Decor,2,296.82,593.64
+O02371,2024-02-27,Zoey Vance,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O03078,2024-02-27,Jack Zimmerman,Matte Black Entry Bench,Furniture,1,146.16,146.16
+O03078,2024-02-27,Jack Zimmerman,Navy Fairy Lights,Lighting,5,349.98,1749.9
+O03744,2024-02-27,Wyatt Abbott,Carrara Marble Ladle,Kitchen,4,345.2,1380.8
+O04606,2024-02-27,Isabella Holloway,Powder-Coated Hand Mixer,Kitchen,4,378.87,1515.48
+O04606,2024-02-27,Isabella Holloway,Reclaimed Wood Garden Tool Set,Outdoor,2,310.0,620.0
+O04726,2024-02-27,Emma Ingram,Powder-Coated Body Pillow,Bedding,3,443.61,1330.83
+O04784,2024-02-27,Hannah Marsh,Brushed Copper Coffee Maker,Kitchen,3,215.44,646.32
+O05769,2024-02-27,Chloe Nolan,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O05769,2024-02-27,Chloe Nolan,Reclaimed Wood Garden Tool Set,Outdoor,2,310.0,620.0
+O05906,2024-02-27,Hannah Grant,Hand-Glazed Wall Mirror,Decor,4,447.66,1790.64
+O00852,2024-02-28,Isabella Zimmerman,Slate Gray Arc Lamp,Lighting,4,185.4,741.6
+O00852,2024-02-28,Isabella Zimmerman,Sage Green Planter Pot,Outdoor,1,114.8,114.8
+O01343,2024-02-28,Ava Quintero,Matte Black Accent Chair,Furniture,2,389.34,778.68
+O01343,2024-02-28,Ava Quintero,Slate Gray Arc Lamp,Lighting,5,185.4,927.0
+O01343,2024-02-28,Ava Quintero,Charcoal Fleece Blanket,Bedding,2,62.75,125.5
+O01728,2024-02-28,Harper Bennett,Hand-Glazed Laundry Basket,Storage,1,271.08,271.08
+O01728,2024-02-28,Harper Bennett,Walnut Storage Basket,Storage,5,15.81,79.05
+O01728,2024-02-28,Harper Bennett,Slate Gray Spatula Set,Kitchen,5,181.52,907.6
+O02710,2024-02-28,Sofia Fairweather,Slate Gray Stackable Bin,Storage,3,133.77,401.31
+O02710,2024-02-28,Sofia Fairweather,Charcoal Bath Tray,Bath,5,86.46,432.3
+O04129,2024-02-28,Alexander Yates,Powder-Coated Hand Mixer,Kitchen,3,378.87,1136.61
+O04129,2024-02-28,Alexander Yates,Slate Gray Arc Lamp,Lighting,3,185.4,556.2
+O04129,2024-02-28,Alexander Yates,Walnut Storage Basket,Storage,5,15.81,79.05
+O00497,2024-02-29,Isaac Bishop,Slate Gray Washcloth Set,Bath,1,441.96,441.96
+O00497,2024-02-29,Isaac Bishop,Matte Black Skillet,Kitchen,5,380.87,1904.35
+O00497,2024-02-29,Isaac Bishop,Ivory Shelf Unit,Storage,4,409.81,1639.24
+O00976,2024-02-29,Abigail Rowan,Matte Black Dining Chair,Furniture,5,155.23,776.15
+O01436,2024-02-29,Sebastian Chandler,Woven Cotton Wall Art Print,Decor,4,358.05,1432.2
+O01617,2024-02-29,Zoey Fairweather,Hand-Glazed Wall Mirror,Decor,5,447.66,2238.3
+O01617,2024-02-29,Zoey Fairweather,Rustic Oak Garden Tool Set,Outdoor,2,29.47,58.94
+O02919,2024-02-29,Michael Whitfield,Charcoal Bath Tray,Bath,4,86.46,345.84
+O02919,2024-02-29,Michael Whitfield,Carrara Marble Pendant Light,Lighting,1,364.88,364.88
+O04534,2024-02-29,Gabriel Marsh,Slate Gray Arc Lamp,Lighting,4,185.4,741.6
+O04534,2024-02-29,Gabriel Marsh,Rustic Oak Glass Vase,Decor,3,296.82,890.46
+O04534,2024-02-29,Gabriel Marsh,Powder-Coated Side Table,Furniture,5,182.2,911.0
+O05784,2024-02-29,Zoey Vance,Carrara Marble Pendant Light,Lighting,4,364.88,1459.52
+O05784,2024-02-29,Zoey Vance,Slate Gray Stackable Bin,Storage,5,133.77,668.85
+O05784,2024-02-29,Zoey Vance,Modern Doormat,Outdoor,1,28.94,28.94
+O05826,2024-02-29,Hannah Keller,Terracotta Scented Candle,Decor,3,356.11,1068.33
+O05826,2024-02-29,Hannah Keller,Hand-Glazed Laundry Basket,Storage,2,271.08,542.16
+O05826,2024-02-29,Hannah Keller,Powder-Coated Toothbrush Holder,Bath,5,407.27,2036.35
+O05826,2024-02-29,Hannah Keller,Matte Black Accent Chair,Furniture,4,389.34,1557.36
+O00180,2024-03-01,John Bishop,Charcoal Entry Bench,Furniture,2,34.75,69.5
+O00180,2024-03-01,John Bishop,Slate Gray Arc Lamp,Lighting,1,185.4,185.4
+O00180,2024-03-01,John Bishop,Terracotta Scented Candle,Decor,2,356.11,712.22
+O00180,2024-03-01,John Bishop,Navy Closet Organizer,Storage,1,68.48,68.48
+O02670,2024-03-01,Owen Thatcher,Woven Cotton Wall Art Print,Decor,2,358.05,716.1
+O02670,2024-03-01,Owen Thatcher,Reclaimed Wood Garden Tool Set,Outdoor,3,310.0,930.0
+O02670,2024-03-01,Owen Thatcher,Sage Green Planter Pot,Outdoor,5,114.8,574.0
+O02670,2024-03-01,Owen Thatcher,Powder-Coated Toothbrush Holder,Bath,2,407.27,814.54
+O02733,2024-03-01,Emily Keller,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O02733,2024-03-01,Emily Keller,Matte Black Skillet,Kitchen,5,380.87,1904.35
+O04990,2024-03-01,Hannah Grant,Natural Linen Body Pillow,Bedding,3,252.47,757.41
+O04990,2024-03-01,Hannah Grant,Natural Linen Memory Foam Mat,Bath,4,54.4,217.6
+O05286,2024-03-01,Luke Grant,Slate Gray Stackable Bin,Storage,5,133.77,668.85
+O05286,2024-03-01,Luke Grant,Natural Linen Body Pillow,Bedding,3,252.47,757.41
+O05286,2024-03-01,Luke Grant,Carrara Marble Ladle,Kitchen,3,345.2,1035.6
+O05396,2024-03-01,Liam Dunmore,Natural Linen Body Pillow,Bedding,3,252.47,757.41
+O05616,2024-03-01,Julian Norwood,Matte Black Accent Chair,Furniture,4,389.34,1557.36
+O05616,2024-03-01,Julian Norwood,Modern Doormat,Outdoor,2,28.94,57.88
+O01925,2024-03-02,Abigail Holloway,Matte Black Ceramic Vase,Decor,3,76.71,230.13
+O01925,2024-03-02,Abigail Holloway,Matte Black Skillet,Kitchen,3,380.87,1142.61
+O01925,2024-03-02,Abigail Holloway,Matte Black Bookshelf,Furniture,4,116.76,467.04
+O01925,2024-03-02,Abigail Holloway,Rustic Oak Corner Shelf,Storage,5,67.39,336.95
+O03448,2024-03-02,Harper Iversen,Classic Shower Curtain,Bath,5,11.23,56.15
+O03448,2024-03-02,Harper Iversen,Powder-Coated Side Table,Furniture,1,182.2,182.2
+O03448,2024-03-02,Harper Iversen,Slate Gray Stackable Bin,Storage,3,133.77,401.31
+O03756,2024-03-02,Chloe Quintero,Modern Saucepan,Kitchen,1,267.21,267.21
+O03756,2024-03-02,Chloe Quintero,Matte Black Shower Curtain,Bath,4,417.94,1671.76
+O03756,2024-03-02,Chloe Quintero,Slate Gray Shower Curtain,Bath,5,384.59,1922.95
+O03756,2024-03-02,Chloe Quintero,Solid Brass Curtain Liner,Bath,5,383.82,1919.1
+O04292,2024-03-02,Zoey Bennett,Charcoal Entry Bench,Furniture,2,34.75,69.5
+O04292,2024-03-02,Zoey Bennett,Matte Black Chandelier,Lighting,5,384.93,1924.65
+O04292,2024-03-02,Zoey Bennett,Modern Doormat,Outdoor,4,28.94,115.76
+O01146,2024-03-03,Harper Ostrander,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O01146,2024-03-03,Harper Ostrander,Slate Gray Arc Lamp,Lighting,1,185.4,185.4
+O01146,2024-03-03,Harper Ostrander,Ivory Shelf Unit,Storage,2,409.81,819.62
+O01330,2024-03-03,John Quintero,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O01330,2024-03-03,John Quintero,Slate Gray Shower Curtain,Bath,1,384.59,384.59
+O01330,2024-03-03,John Quintero,Navy Closet Organizer,Storage,5,68.48,342.4
+O01330,2024-03-03,John Quintero,Modern Doormat,Outdoor,5,28.94,144.7
+O01638,2024-03-03,Sebastian Yates,Natural Linen Body Pillow,Bedding,5,252.47,1262.35
+O01638,2024-03-03,Sebastian Yates,Modern Saucepan,Kitchen,2,267.21,534.42
+O01638,2024-03-03,Sebastian Yates,Slate Gray Washcloth Set,Bath,2,441.96,883.92
+O01638,2024-03-03,Sebastian Yates,Slate Gray Arc Lamp,Lighting,2,185.4,370.8
+O04596,2024-03-03,Lily Keller,Terracotta Hanging Planter,Outdoor,4,10.1,40.4
+O04596,2024-03-03,Lily Keller,Hand-Glazed Wall Mirror,Decor,3,447.66,1342.98
+O04596,2024-03-03,Lily Keller,Slate Gray Shower Curtain,Bath,3,384.59,1153.77
+O05065,2024-03-03,Chloe Quintero,Solid Brass Canvas Print,Decor,3,296.59,889.77
+O05065,2024-03-03,Chloe Quintero,Hand-Glazed Stackable Bin,Storage,2,193.81,387.62
+O05247,2024-03-03,Benjamin Iversen,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O05247,2024-03-03,Benjamin Iversen,Rustic Oak Glass Vase,Decor,1,296.82,296.82
+O05247,2024-03-03,Benjamin Iversen,Bamboo Pruning Shears,Outdoor,1,349.64,349.64
+O00127,2024-03-04,Benjamin Norwood,Reclaimed Wood Glass Vase,Decor,1,23.84,23.84
+O00127,2024-03-04,Benjamin Norwood,Matte Black Skillet,Kitchen,4,380.87,1523.48
+O00127,2024-03-04,Benjamin Norwood,Hand-Glazed Wall Mirror,Decor,2,447.66,895.32
+O00604,2024-03-04,Luke Grant,Charcoal Bath Tray,Bath,4,86.46,345.84
+O00604,2024-03-04,Luke Grant,Navy Closet Organizer,Storage,3,68.48,205.44
+O00767,2024-03-04,Matthew Whitfield,Slate Gray Arc Lamp,Lighting,3,185.4,556.2
+O00767,2024-03-04,Matthew Whitfield,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O00767,2024-03-04,Matthew Whitfield,Charcoal Quilt,Bedding,3,391.13,1173.39
+O00767,2024-03-04,Matthew Whitfield,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O01990,2024-03-04,Lily Keller,Solid Brass Curtain Liner,Bath,3,383.82,1151.46
+O02369,2024-03-04,Zoey Fairweather,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O04065,2024-03-04,Wyatt Abbott,Rustic Oak Baking Sheet,Kitchen,2,27.73,55.46
+O04065,2024-03-04,Wyatt Abbott,Matte Black Bookshelf,Furniture,5,116.76,583.8
+O04065,2024-03-04,Wyatt Abbott,Woven Cotton Sheet Set,Bedding,4,29.52,118.08
+O04653,2024-03-04,Chloe Hensley,Charcoal Quilt,Bedding,5,391.13,1955.65
+O04653,2024-03-04,Chloe Hensley,Matte Black Skillet,Kitchen,3,380.87,1142.61
+O04653,2024-03-04,Chloe Hensley,Rustic Oak Baking Sheet,Kitchen,4,27.73,110.92
+O05191,2024-03-04,Luke Thatcher,Matte Black Chandelier,Lighting,4,384.93,1539.72
+O05191,2024-03-04,Luke Thatcher,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O05191,2024-03-04,Luke Thatcher,Rustic Oak Quilt,Bedding,5,358.81,1794.05
+O00330,2024-03-05,Avery Chandler,Solid Brass Curtain Liner,Bath,5,383.82,1919.1
+O01568,2024-03-05,Ava Gallo,Hand-Glazed Stackable Bin,Storage,1,193.81,193.81
+O01568,2024-03-05,Ava Gallo,Rustic Oak Baking Sheet,Kitchen,1,27.73,27.73
+O01568,2024-03-05,Ava Gallo,Slate Gray Fitted Sheet,Bedding,5,416.72,2083.6
+O01568,2024-03-05,Ava Gallo,Modern Saucepan,Kitchen,1,267.21,267.21
+O02010,2024-03-05,Noah Mercer,Reclaimed Wood Fairy Lights,Lighting,3,268.92,806.76
+O02010,2024-03-05,Noah Mercer,Charcoal Entry Bench,Furniture,2,34.75,69.5
+O03687,2024-03-05,Isabella Iversen,Natural Linen Body Pillow,Bedding,2,252.47,504.94
+O03687,2024-03-05,Isabella Iversen,Sage Green Whisk,Kitchen,4,157.6,630.4
+O03687,2024-03-05,Isabella Iversen,Slate Gray Stackable Bin,Storage,5,133.77,668.85
+O03687,2024-03-05,Isabella Iversen,Powder-Coated Body Pillow,Bedding,5,443.61,2218.05
+O03838,2024-03-05,Sophia Quintero,Navy Fairy Lights,Lighting,1,349.98,349.98
+O03838,2024-03-05,Sophia Quintero,Matte Black Entry Bench,Furniture,3,146.16,438.48
+O03838,2024-03-05,Sophia Quintero,Slate Gray Spatula Set,Kitchen,1,181.52,181.52
+O03838,2024-03-05,Sophia Quintero,Sage Green Planter Pot,Outdoor,1,114.8,114.8
+O05509,2024-03-05,Julian Mercer,Charcoal Bath Tray,Bath,5,86.46,432.3
+O05588,2024-03-05,Ella Parrish,Hand-Glazed Wall Mirror,Decor,4,447.66,1790.64
+O05666,2024-03-05,Matthew Thatcher,Carrara Marble Ladle,Kitchen,4,345.2,1380.8
+O05666,2024-03-05,Matthew Thatcher,Sage Green Planter Pot,Outdoor,2,114.8,229.6
+O01906,2024-03-06,Chloe Gallo,Matte Black Ceramic Vase,Decor,3,76.71,230.13
+O02047,2024-03-06,Evelyn Jasper,Slate Gray Washcloth Set,Bath,3,441.96,1325.88
+O02047,2024-03-06,Evelyn Jasper,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O02518,2024-03-06,Levi Hensley,Rustic Oak Desk Lamp,Lighting,5,9.99,49.95
+O02518,2024-03-06,Levi Hensley,Matte Black Shower Curtain,Bath,2,417.94,835.88
+O03936,2024-03-06,Hannah Pemberton,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O03936,2024-03-06,Hannah Pemberton,Powder-Coated Hand Mixer,Kitchen,3,378.87,1136.61
+O03936,2024-03-06,Hannah Pemberton,Slate Gray Washcloth Set,Bath,3,441.96,1325.88
+O05537,2024-03-06,Hannah Jasper,Carrara Marble Pendant Light,Lighting,3,364.88,1094.64
+O05537,2024-03-06,Hannah Jasper,Charcoal Entry Bench,Furniture,4,34.75,139.0
+O00013,2024-03-07,Julian Mercer,Slate Gray Table Lamp,Lighting,5,90.92,454.6
+O00013,2024-03-07,Julian Mercer,Woven Cotton Wall Art Print,Decor,4,358.05,1432.2
+O00013,2024-03-07,Julian Mercer,Matte Black Entry Bench,Furniture,1,146.16,146.16
+O00969,2024-03-07,Harper Ostrander,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O00969,2024-03-07,Harper Ostrander,Woven Cotton Hanging Planter,Outdoor,4,91.24,364.96
+O00969,2024-03-07,Harper Ostrander,Powder-Coated Side Table,Furniture,5,182.2,911.0
+O00969,2024-03-07,Harper Ostrander,Walnut Chandelier,Lighting,2,29.64,59.28
+O01484,2024-03-07,Benjamin Osei,Matte Black Skillet,Kitchen,4,380.87,1523.48
+O01894,2024-03-07,Sophia Quintero,Powder-Coated Body Pillow,Bedding,1,443.61,443.61
+O01894,2024-03-07,Sophia Quintero,Powder-Coated Hand Mixer,Kitchen,5,378.87,1894.35
+O01894,2024-03-07,Sophia Quintero,Brushed Copper Coffee Maker,Kitchen,2,215.44,430.88
+O02141,2024-03-07,Harper Ostrander,Matte Black Dining Chair,Furniture,3,155.23,465.69
+O02647,2024-03-07,Julian Rowan,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O03126,2024-03-07,Owen Nolan,Rustic Oak Desk Lamp,Lighting,2,9.99,19.98
+O03126,2024-03-07,Owen Nolan,Terracotta Hanging Planter,Outdoor,2,10.1,20.2
+O03126,2024-03-07,Owen Nolan,Bamboo Pruning Shears,Outdoor,4,349.64,1398.56
+O03126,2024-03-07,Owen Nolan,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O04859,2024-03-07,Riley Bennett,Woven Cotton Hanging Planter,Outdoor,1,91.24,91.24
+O05263,2024-03-07,Harper Bennett,Slate Gray Washcloth Set,Bath,5,441.96,2209.8
+O05263,2024-03-07,Harper Bennett,Ivory Shelf Unit,Storage,5,409.81,2049.05
+O00850,2024-03-08,Evelyn Pemberton,Woven Cotton Wall Art Print,Decor,1,358.05,358.05
+O00850,2024-03-08,Evelyn Pemberton,Solid Brass Canvas Print,Decor,5,296.59,1482.95
+O00896,2024-03-08,Hannah Keller,Hand-Glazed Wall Mirror,Decor,5,447.66,2238.3
+O01491,2024-03-08,Lily Diaz,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O01855,2024-03-08,Julian Mercer,Powder-Coated Toothbrush Holder,Bath,5,407.27,2036.35
+O02752,2024-03-08,John Abbott,Walnut Storage Basket,Storage,5,15.81,79.05
+O04376,2024-03-08,Chloe Vance,Classic Shower Curtain,Bath,1,11.23,11.23
+O04376,2024-03-08,Chloe Vance,Slate Gray Spatula Set,Kitchen,1,181.52,181.52
+O04376,2024-03-08,Chloe Vance,Navy Fairy Lights,Lighting,3,349.98,1049.94
+O04446,2024-03-08,Gabriel Parrish,Walnut Chandelier,Lighting,5,29.64,148.2
+O04446,2024-03-08,Gabriel Parrish,Reclaimed Wood Glass Vase,Decor,1,23.84,23.84
+O04642,2024-03-08,Luke Thatcher,Rustic Oak Desk Lamp,Lighting,2,9.99,19.98
+O04642,2024-03-08,Luke Thatcher,Slate Gray Table Lamp,Lighting,2,90.92,181.84
+O04642,2024-03-08,Luke Thatcher,Rustic Oak Garden Tool Set,Outdoor,3,29.47,88.41
+O05595,2024-03-08,Julian Mercer,Slate Gray Arc Lamp,Lighting,5,185.4,927.0
+O00654,2024-03-09,Noah Grant,Slate Gray Arc Lamp,Lighting,5,185.4,927.0
+O01142,2024-03-09,Isabella Fairweather,Terracotta Hanging Planter,Outdoor,1,10.1,10.1
+O01142,2024-03-09,Isabella Fairweather,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O01142,2024-03-09,Isabella Fairweather,Slate Gray Stackable Bin,Storage,2,133.77,267.54
+O01231,2024-03-09,Michael Yates,Matte Black Bookshelf,Furniture,3,116.76,350.28
+O01231,2024-03-09,Michael Yates,Walnut Chandelier,Lighting,3,29.64,88.92
+O01956,2024-03-09,Riley Bennett,Woven Cotton Wall Art Print,Decor,4,358.05,1432.2
+O03041,2024-03-09,James Zimmerman,Rustic Oak Baking Sheet,Kitchen,2,27.73,55.46
+O03041,2024-03-09,James Zimmerman,Matte Black Ceramic Vase,Decor,5,76.71,383.55
+O03041,2024-03-09,James Zimmerman,Matte Black Accent Chair,Furniture,2,389.34,778.68
+O03393,2024-03-09,Emma Diaz,Classic Shower Curtain,Bath,4,11.23,44.92
+O03935,2024-03-09,Hannah Jasper,Classic Shower Curtain,Bath,4,11.23,44.92
+O03935,2024-03-09,Hannah Jasper,Terracotta Hanging Planter,Outdoor,1,10.1,10.1
+O03935,2024-03-09,Hannah Jasper,Navy Fairy Lights,Lighting,3,349.98,1049.94
+O01719,2024-03-10,Matthew Thatcher,Classic Quilt,Bedding,2,135.4,270.8
+O01744,2024-03-10,Charlotte Norwood,Charcoal Quilt,Bedding,5,391.13,1955.65
+O02003,2024-03-10,Harper Whitfield,Navy Fairy Lights,Lighting,2,349.98,699.96
+O02003,2024-03-10,Harper Whitfield,Carrara Marble Pendant Light,Lighting,4,364.88,1459.52
+O02003,2024-03-10,Harper Whitfield,Modern Saucepan,Kitchen,1,267.21,267.21
+O03014,2024-03-10,John Abbott,Slate Gray Fitted Sheet,Bedding,2,416.72,833.44
+O03014,2024-03-10,John Abbott,Sage Green Whisk,Kitchen,5,157.6,788.0
+O03581,2024-03-10,Luke Grant,Carrara Marble Pendant Light,Lighting,5,364.88,1824.4
+O03581,2024-03-10,Luke Grant,Charcoal Fleece Blanket,Bedding,3,62.75,188.25
+O05066,2024-03-10,David Ellison,Sage Green Planter Pot,Outdoor,2,114.8,229.6
+O05375,2024-03-10,Julian Rowan,Walnut Storage Basket,Storage,3,15.81,47.43
+O05970,2024-03-10,Aria Ostrander,Slate Gray Fitted Sheet,Bedding,3,416.72,1250.16
+O05970,2024-03-10,Aria Ostrander,Bamboo Ladder Shelf,Furniture,5,123.07,615.35
+O00847,2024-03-11,Jack Iversen,Powder-Coated Toothbrush Holder,Bath,4,407.27,1629.08
+O00847,2024-03-11,Jack Iversen,Matte Black Accent Chair,Furniture,4,389.34,1557.36
+O01043,2024-03-11,Sofia Fairweather,Classic Shower Curtain,Bath,1,11.23,11.23
+O01043,2024-03-11,Sofia Fairweather,Hand-Glazed Laundry Basket,Storage,3,271.08,813.24
+O01099,2024-03-11,Emily Keller,Sage Green Whisk,Kitchen,5,157.6,788.0
+O01099,2024-03-11,Emily Keller,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O01099,2024-03-11,Emily Keller,Solid Brass Curtain Liner,Bath,1,383.82,383.82
+O04213,2024-03-11,Julian Mercer,Slate Gray Table Lamp,Lighting,2,90.92,181.84
+O04213,2024-03-11,Julian Mercer,Charcoal Bath Tray,Bath,3,86.46,259.38
+O04724,2024-03-11,Wyatt Rowan,Matte Black Skillet,Kitchen,5,380.87,1904.35
+O04883,2024-03-11,Julian Mercer,Reclaimed Wood Fairy Lights,Lighting,4,268.92,1075.68
+O04883,2024-03-11,Julian Mercer,Reclaimed Wood Garden Tool Set,Outdoor,2,310.0,620.0
+O05780,2024-03-11,Levi Kirkland,Reclaimed Wood Garden Tool Set,Outdoor,5,310.0,1550.0
+O05780,2024-03-11,Levi Kirkland,Charcoal Quilt,Bedding,2,391.13,782.26
+O05780,2024-03-11,Levi Kirkland,Charcoal Fleece Blanket,Bedding,2,62.75,125.5
+O05780,2024-03-11,Levi Kirkland,Bamboo Pruning Shears,Outdoor,5,349.64,1748.2
+O05888,2024-03-11,Matthew Ingram,Matte Black Chandelier,Lighting,2,384.93,769.86
+O05888,2024-03-11,Matthew Ingram,Slate Gray Fitted Sheet,Bedding,3,416.72,1250.16
+O05888,2024-03-11,Matthew Ingram,Matte Black Skillet,Kitchen,2,380.87,761.74
+O00548,2024-03-12,Henry Everhart,Reclaimed Wood Fairy Lights,Lighting,4,268.92,1075.68
+O00548,2024-03-12,Henry Everhart,Charcoal Bath Tray,Bath,1,86.46,86.46
+O00548,2024-03-12,Henry Everhart,Charcoal Entry Bench,Furniture,3,34.75,104.25
+O01140,2024-03-12,John Abbott,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O05007,2024-03-12,Ava Gallo,Charcoal Quilt,Bedding,3,391.13,1173.39
+O05007,2024-03-12,Ava Gallo,Terracotta Scented Candle,Decor,3,356.11,1068.33
+O05601,2024-03-12,Emily Lambert,Powder-Coated Hand Mixer,Kitchen,4,378.87,1515.48
+O05601,2024-03-12,Emily Lambert,Classic Shower Curtain,Bath,2,11.23,22.46
+O05601,2024-03-12,Emily Lambert,Natural Linen Memory Foam Mat,Bath,4,54.4,217.6
+O05601,2024-03-12,Emily Lambert,Slate Gray Arc Lamp,Lighting,2,185.4,370.8
+O00298,2024-03-13,Sebastian Kirkland,Navy Fairy Lights,Lighting,3,349.98,1049.94
+O02089,2024-03-13,Jack Jasper,Woven Cotton Wall Art Print,Decor,2,358.05,716.1
+O02089,2024-03-13,Jack Jasper,Hand-Glazed Wall Mirror,Decor,3,447.66,1342.98
+O02865,2024-03-13,Hannah Grant,Hand-Glazed Stackable Bin,Storage,3,193.81,581.43
+O02865,2024-03-13,Hannah Grant,Sage Green Planter Pot,Outdoor,4,114.8,459.2
+O03049,2024-03-13,Riley Bennett,Natural Linen Body Pillow,Bedding,2,252.47,504.94
+O03049,2024-03-13,Riley Bennett,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O03049,2024-03-13,Riley Bennett,Matte Black Shower Curtain,Bath,5,417.94,2089.7
+O04490,2024-03-13,Ava Quintero,Matte Black Skillet,Kitchen,3,380.87,1142.61
+O04490,2024-03-13,Ava Quintero,Matte Black Accent Chair,Furniture,4,389.34,1557.36
+O04490,2024-03-13,Ava Quintero,Woven Cotton Wall Art Print,Decor,2,358.05,716.1
+O04490,2024-03-13,Ava Quintero,Matte Black Dining Chair,Furniture,2,155.23,310.46
+O00438,2024-03-14,Charlotte Bishop,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O00438,2024-03-14,Charlotte Bishop,Natural Linen Body Pillow,Bedding,1,252.47,252.47
+O00984,2024-03-14,Emma Foster,Charcoal Entry Bench,Furniture,4,34.75,139.0
+O00984,2024-03-14,Emma Foster,Matte Black Entry Bench,Furniture,5,146.16,730.8
+O01254,2024-03-14,Wyatt Ingram,Matte Black Skillet,Kitchen,5,380.87,1904.35
+O01254,2024-03-14,Wyatt Ingram,Matte Black Bookshelf,Furniture,4,116.76,467.04
+O02412,2024-03-14,Wyatt Ingram,Rustic Oak Glass Vase,Decor,5,296.82,1484.1
+O03561,2024-03-14,Gabriel Marsh,Rustic Oak Baking Sheet,Kitchen,3,27.73,83.19
+O03561,2024-03-14,Gabriel Marsh,Sage Green Whisk,Kitchen,3,157.6,472.8
+O03561,2024-03-14,Gabriel Marsh,Matte Black Dining Chair,Furniture,5,155.23,776.15
+O03561,2024-03-14,Gabriel Marsh,Reclaimed Wood Garden Tool Set,Outdoor,2,310.0,620.0
+O03885,2024-03-14,Jack Chandler,Charcoal Quilt,Bedding,2,391.13,782.26
+O03885,2024-03-14,Jack Chandler,Carrara Marble Pendant Light,Lighting,3,364.88,1094.64
+O03885,2024-03-14,Jack Chandler,Matte Black Shower Curtain,Bath,3,417.94,1253.82
+O04251,2024-03-14,James Diaz,Powder-Coated Side Table,Furniture,3,182.2,546.6
+O04251,2024-03-14,James Diaz,Terracotta Hanging Planter,Outdoor,5,10.1,50.5
+O04491,2024-03-14,Chloe Jasper,Classic Shower Curtain,Bath,1,11.23,11.23
+O04491,2024-03-14,Chloe Jasper,Slate Gray Fitted Sheet,Bedding,4,416.72,1666.88
+O04631,2024-03-14,Wyatt Abbott,Modern Saucepan,Kitchen,4,267.21,1068.84
+O04631,2024-03-14,Wyatt Abbott,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O04631,2024-03-14,Wyatt Abbott,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O05183,2024-03-14,Chloe Osei,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O05183,2024-03-14,Chloe Osei,Carrara Marble Ladle,Kitchen,1,345.2,345.2
+O05183,2024-03-14,Chloe Osei,Matte Black Dining Chair,Furniture,5,155.23,776.15
+O05184,2024-03-14,Riley Bennett,Ivory Shelf Unit,Storage,2,409.81,819.62
+O05184,2024-03-14,Riley Bennett,Matte Black Shower Curtain,Bath,5,417.94,2089.7
+O05184,2024-03-14,Riley Bennett,Matte Black Bookshelf,Furniture,5,116.76,583.8
+O05289,2024-03-14,Levi Hensley,Charcoal Quilt,Bedding,3,391.13,1173.39
+O05289,2024-03-14,Levi Hensley,Charcoal Fleece Blanket,Bedding,5,62.75,313.75
+O05604,2024-03-14,Sophia Yates,Solid Brass Curtain Liner,Bath,1,383.82,383.82
+O05604,2024-03-14,Sophia Yates,Navy Closet Organizer,Storage,5,68.48,342.4
+O05604,2024-03-14,Sophia Yates,Ivory Shelf Unit,Storage,3,409.81,1229.43
+O05607,2024-03-14,Aria Mercer,Brushed Copper Coffee Maker,Kitchen,3,215.44,646.32
+O05607,2024-03-14,Aria Mercer,Terracotta Hanging Planter,Outdoor,5,10.1,50.5
+O05607,2024-03-14,Aria Mercer,Powder-Coated Toothbrush Holder,Bath,5,407.27,2036.35
+O00667,2024-03-15,Owen Hensley,Matte Black Ceramic Vase,Decor,1,76.71,76.71
+O00667,2024-03-15,Owen Hensley,Hand-Glazed Stackable Bin,Storage,3,193.81,581.43
+O00667,2024-03-15,Owen Hensley,Rustic Oak Glass Vase,Decor,2,296.82,593.64
+O00889,2024-03-15,Julian Mercer,Charcoal Entry Bench,Furniture,4,34.75,139.0
+O00889,2024-03-15,Julian Mercer,Matte Black Shower Curtain,Bath,5,417.94,2089.7
+O01459,2024-03-15,Gabriel Parrish,Matte Black Accent Chair,Furniture,5,389.34,1946.7
+O02832,2024-03-15,Sebastian Kirkland,Solid Brass Curtain Liner,Bath,2,383.82,767.64
+O02832,2024-03-15,Sebastian Kirkland,Natural Linen Body Pillow,Bedding,2,252.47,504.94
+O02832,2024-03-15,Sebastian Kirkland,Rustic Oak Desk Lamp,Lighting,3,9.99,29.97
+O04040,2024-03-15,Chloe Osei,Natural Linen Body Pillow,Bedding,5,252.47,1262.35
+O04040,2024-03-15,Chloe Osei,Slate Gray Stackable Bin,Storage,3,133.77,401.31
+O04040,2024-03-15,Chloe Osei,Hand-Glazed Stackable Bin,Storage,1,193.81,193.81
+O04040,2024-03-15,Chloe Osei,Rustic Oak Baking Sheet,Kitchen,3,27.73,83.19
+O04361,2024-03-15,Harper Whitfield,Woven Cotton Sheet Set,Bedding,1,29.52,29.52
+O05053,2024-03-15,Owen Thatcher,Hand-Glazed Wall Mirror,Decor,3,447.66,1342.98
+O05053,2024-03-15,Owen Thatcher,Terracotta Hanging Planter,Outdoor,5,10.1,50.5
+O05133,2024-03-15,Chloe Lindqvist,Reclaimed Wood Glass Vase,Decor,1,23.84,23.84
+O05133,2024-03-15,Chloe Lindqvist,Matte Black Shower Curtain,Bath,5,417.94,2089.7
+O05133,2024-03-15,Chloe Lindqvist,Rustic Oak Desk Lamp,Lighting,5,9.99,49.95
+O05133,2024-03-15,Chloe Lindqvist,Woven Cotton Wall Art Print,Decor,3,358.05,1074.15
+O05579,2024-03-15,Matthew Whitfield,Matte Black Skillet,Kitchen,5,380.87,1904.35
+O05579,2024-03-15,Matthew Whitfield,Walnut Chandelier,Lighting,2,29.64,59.28
+O05579,2024-03-15,Matthew Whitfield,Matte Black Bookshelf,Furniture,5,116.76,583.8
+O05779,2024-03-15,Wyatt Rowan,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O05779,2024-03-15,Wyatt Rowan,Classic Shower Curtain,Bath,4,11.23,44.92
+O05779,2024-03-15,Wyatt Rowan,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O05838,2024-03-15,Evelyn Lambert,Charcoal Bath Tray,Bath,5,86.46,432.3
+O00178,2024-03-16,Sofia Parrish,Solid Brass Curtain Liner,Bath,2,383.82,767.64
+O00178,2024-03-16,Sofia Parrish,Reclaimed Wood Fairy Lights,Lighting,2,268.92,537.84
+O00178,2024-03-16,Sofia Parrish,Slate Gray Fitted Sheet,Bedding,3,416.72,1250.16
+O03163,2024-03-16,Levi Fairweather,Matte Black Chandelier,Lighting,1,384.93,384.93
+O04207,2024-03-16,Matthew Whitfield,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O04237,2024-03-16,Lily Keller,Matte Black Dining Chair,Furniture,1,155.23,155.23
+O04237,2024-03-16,Lily Keller,Reclaimed Wood Glass Vase,Decor,4,23.84,95.36
+O04237,2024-03-16,Lily Keller,Natural Linen Memory Foam Mat,Bath,4,54.4,217.6
+O04844,2024-03-16,Alexander Yates,Woven Cotton Wall Art Print,Decor,2,358.05,716.1
+O04844,2024-03-16,Alexander Yates,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O04886,2024-03-16,Zoey Bennett,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O04886,2024-03-16,Zoey Bennett,Reclaimed Wood Fairy Lights,Lighting,4,268.92,1075.68
+O04886,2024-03-16,Zoey Bennett,Modern Doormat,Outdoor,4,28.94,115.76
+O00383,2024-03-17,Evelyn Lambert,Walnut Storage Basket,Storage,5,15.81,79.05
+O00383,2024-03-17,Evelyn Lambert,Matte Black Ceramic Vase,Decor,1,76.71,76.71
+O00383,2024-03-17,Evelyn Lambert,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O00383,2024-03-17,Evelyn Lambert,Matte Black Skillet,Kitchen,3,380.87,1142.61
+O01296,2024-03-17,Ava Quintero,Modern Doormat,Outdoor,1,28.94,28.94
+O02012,2024-03-17,Sebastian Yates,Charcoal Bath Tray,Bath,1,86.46,86.46
+O02012,2024-03-17,Sebastian Yates,Navy Fairy Lights,Lighting,1,349.98,349.98
+O02012,2024-03-17,Sebastian Yates,Matte Black Accent Chair,Furniture,4,389.34,1557.36
+O02639,2024-03-17,Hannah Keller,Modern Doormat,Outdoor,5,28.94,144.7
+O02639,2024-03-17,Hannah Keller,Slate Gray Fitted Sheet,Bedding,4,416.72,1666.88
+O02639,2024-03-17,Hannah Keller,Powder-Coated Body Pillow,Bedding,2,443.61,887.22
+O02838,2024-03-17,Sofia Dunmore,Slate Gray Shower Curtain,Bath,4,384.59,1538.36
+O02838,2024-03-17,Sofia Dunmore,Sage Green Whisk,Kitchen,1,157.6,157.6
+O02838,2024-03-17,Sofia Dunmore,Powder-Coated Side Table,Furniture,5,182.2,911.0
+O02845,2024-03-17,Amelia Bennett,Ivory Shelf Unit,Storage,2,409.81,819.62
+O02845,2024-03-17,Amelia Bennett,Rustic Oak Glass Vase,Decor,3,296.82,890.46
+O02845,2024-03-17,Amelia Bennett,Powder-Coated Toothbrush Holder,Bath,1,407.27,407.27
+O03483,2024-03-17,Elijah Mercer,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O03483,2024-03-17,Elijah Mercer,Hand-Glazed Stackable Bin,Storage,5,193.81,969.05
+O03483,2024-03-17,Elijah Mercer,Solid Brass Curtain Liner,Bath,5,383.82,1919.1
+O04637,2024-03-17,Sophia Chandler,Solid Brass Curtain Liner,Bath,1,383.82,383.82
+O04637,2024-03-17,Sophia Chandler,Modern Doormat,Outdoor,1,28.94,28.94
+O04637,2024-03-17,Sophia Chandler,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O04748,2024-03-17,Owen Thatcher,Classic Shower Curtain,Bath,4,11.23,44.92
+O04748,2024-03-17,Owen Thatcher,Modern Doormat,Outdoor,3,28.94,86.82
+O04748,2024-03-17,Owen Thatcher,Powder-Coated Body Pillow,Bedding,1,443.61,443.61
+O05455,2024-03-17,Julian Rowan,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O05455,2024-03-17,Julian Rowan,Charcoal Bath Tray,Bath,4,86.46,345.84
+O00050,2024-03-18,Charlotte Bishop,Carrara Marble Ladle,Kitchen,2,345.2,690.4
+O00050,2024-03-18,Charlotte Bishop,Bamboo Pruning Shears,Outdoor,4,349.64,1398.56
+O01806,2024-03-18,Sebastian Chandler,Hand-Glazed Stackable Bin,Storage,1,193.81,193.81
+O01806,2024-03-18,Sebastian Chandler,Hand-Glazed Laundry Basket,Storage,3,271.08,813.24
+O01806,2024-03-18,Sebastian Chandler,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O03089,2024-03-18,Hannah Pemberton,Matte Black Dining Chair,Furniture,3,155.23,465.69
+O03089,2024-03-18,Hannah Pemberton,Hand-Glazed Stackable Bin,Storage,3,193.81,581.43
+O04183,2024-03-18,Michael Yates,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O04183,2024-03-18,Michael Yates,Slate Gray Shower Curtain,Bath,1,384.59,384.59
+O04183,2024-03-18,Michael Yates,Woven Cotton Sheet Set,Bedding,5,29.52,147.6
+O04261,2024-03-18,John Bishop,Terracotta Scented Candle,Decor,4,356.11,1424.44
+O04261,2024-03-18,John Bishop,Rustic Oak Desk Lamp,Lighting,5,9.99,49.95
+O04261,2024-03-18,John Bishop,Matte Black Entry Bench,Furniture,3,146.16,438.48
+O04261,2024-03-18,John Bishop,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O04330,2024-03-18,Harper Ostrander,Walnut Storage Basket,Storage,5,15.81,79.05
+O04330,2024-03-18,Harper Ostrander,Carrara Marble Ladle,Kitchen,2,345.2,690.4
+O04330,2024-03-18,Harper Ostrander,Charcoal Entry Bench,Furniture,1,34.75,34.75
+O04366,2024-03-18,Matthew Vance,Sage Green Planter Pot,Outdoor,3,114.8,344.4
+O04366,2024-03-18,Matthew Vance,Slate Gray Stackable Bin,Storage,2,133.77,267.54
+O04398,2024-03-18,Zoey Gallo,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O04398,2024-03-18,Zoey Gallo,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O05558,2024-03-18,Luke Thatcher,Slate Gray Spatula Set,Kitchen,4,181.52,726.08
+O05558,2024-03-18,Luke Thatcher,Brushed Copper Coffee Maker,Kitchen,1,215.44,215.44
+O05558,2024-03-18,Luke Thatcher,Classic Quilt,Bedding,1,135.4,135.4
+O05843,2024-03-18,Matthew Whitfield,Charcoal Bath Tray,Bath,1,86.46,86.46
+O00964,2024-03-19,Noah Grant,Rustic Oak Garden Tool Set,Outdoor,3,29.47,88.41
+O00964,2024-03-19,Noah Grant,Woven Cotton Sheet Set,Bedding,1,29.52,29.52
+O00964,2024-03-19,Noah Grant,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O01015,2024-03-19,Zoey Vance,Sage Green Whisk,Kitchen,2,157.6,315.2
+O01015,2024-03-19,Zoey Vance,Natural Linen Body Pillow,Bedding,1,252.47,252.47
+O01015,2024-03-19,Zoey Vance,Reclaimed Wood Garden Tool Set,Outdoor,1,310.0,310.0
+O01015,2024-03-19,Zoey Vance,Matte Black Ceramic Vase,Decor,1,76.71,76.71
+O01401,2024-03-19,Michael Yates,Matte Black Shower Curtain,Bath,4,417.94,1671.76
+O01401,2024-03-19,Michael Yates,Solid Brass Canvas Print,Decor,1,296.59,296.59
+O01620,2024-03-19,Sophia Quintero,Ivory Shelf Unit,Storage,5,409.81,2049.05
+O01620,2024-03-19,Sophia Quintero,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O01620,2024-03-19,Sophia Quintero,Rustic Oak Corner Shelf,Storage,1,67.39,67.39
+O01875,2024-03-19,Ava Gallo,Woven Cotton Sheet Set,Bedding,5,29.52,147.6
+O01875,2024-03-19,Ava Gallo,Matte Black Ceramic Vase,Decor,2,76.71,153.42
+O01875,2024-03-19,Ava Gallo,Powder-Coated Toothbrush Holder,Bath,1,407.27,407.27
+O02482,2024-03-19,Michael Whitfield,Walnut Chandelier,Lighting,5,29.64,148.2
+O02482,2024-03-19,Michael Whitfield,Slate Gray Stackable Bin,Storage,3,133.77,401.31
+O02482,2024-03-19,Michael Whitfield,Slate Gray Arc Lamp,Lighting,1,185.4,185.4
+O03203,2024-03-19,Isabella Iversen,Slate Gray Arc Lamp,Lighting,3,185.4,556.2
+O03203,2024-03-19,Isabella Iversen,Powder-Coated Toothbrush Holder,Bath,3,407.27,1221.81
+O03203,2024-03-19,Isabella Iversen,Slate Gray Fitted Sheet,Bedding,4,416.72,1666.88
+O03203,2024-03-19,Isabella Iversen,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O03360,2024-03-19,Chloe Lindqvist,Rustic Oak Garden Tool Set,Outdoor,1,29.47,29.47
+O03360,2024-03-19,Chloe Lindqvist,Rustic Oak Quilt,Bedding,4,358.81,1435.24
+O03360,2024-03-19,Chloe Lindqvist,Carrara Marble Pendant Light,Lighting,3,364.88,1094.64
+O03360,2024-03-19,Chloe Lindqvist,Navy Fairy Lights,Lighting,3,349.98,1049.94
+O03643,2024-03-19,John Kirkland,Matte Black Chandelier,Lighting,3,384.93,1154.79
+O03643,2024-03-19,John Kirkland,Rustic Oak Quilt,Bedding,3,358.81,1076.43
+O03932,2024-03-19,Levi Zimmerman,Brushed Copper Coffee Maker,Kitchen,2,215.44,430.88
+O03932,2024-03-19,Levi Zimmerman,Reclaimed Wood Garden Tool Set,Outdoor,1,310.0,310.0
+O03932,2024-03-19,Levi Zimmerman,Bamboo Ladder Shelf,Furniture,5,123.07,615.35
+O04725,2024-03-19,Wyatt Abbott,Rustic Oak Desk Lamp,Lighting,5,9.99,49.95
+O04725,2024-03-19,Wyatt Abbott,Hand-Glazed Laundry Basket,Storage,2,271.08,542.16
+O04795,2024-03-19,Alexander Sawyer,Rustic Oak Garden Tool Set,Outdoor,2,29.47,58.94
+O04795,2024-03-19,Alexander Sawyer,Terracotta Hanging Planter,Outdoor,1,10.1,10.1
+O04795,2024-03-19,Alexander Sawyer,Hand-Glazed Laundry Basket,Storage,2,271.08,542.16
+O04795,2024-03-19,Alexander Sawyer,Slate Gray Arc Lamp,Lighting,3,185.4,556.2
+O05162,2024-03-19,Carter Parrish,Slate Gray Arc Lamp,Lighting,3,185.4,556.2
+O00362,2024-03-20,Lily Keller,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O00362,2024-03-20,Lily Keller,Hand-Glazed Wall Mirror,Decor,1,447.66,447.66
+O01770,2024-03-20,Isabella Zimmerman,Bamboo Ladder Shelf,Furniture,5,123.07,615.35
+O02505,2024-03-20,Wyatt Abbott,Matte Black Ceramic Vase,Decor,3,76.71,230.13
+O02505,2024-03-20,Wyatt Abbott,Woven Cotton Sheet Set,Bedding,3,29.52,88.56
+O02505,2024-03-20,Wyatt Abbott,Hand-Glazed Wall Mirror,Decor,1,447.66,447.66
+O02505,2024-03-20,Wyatt Abbott,Walnut Chandelier,Lighting,4,29.64,118.56
+O02663,2024-03-20,Joseph Iversen,Carrara Marble Ladle,Kitchen,3,345.2,1035.6
+O04868,2024-03-20,Matthew Vance,Powder-Coated Toothbrush Holder,Bath,2,407.27,814.54
+O04868,2024-03-20,Matthew Vance,Natural Linen Body Pillow,Bedding,1,252.47,252.47
+O04868,2024-03-20,Matthew Vance,Reclaimed Wood Glass Vase,Decor,5,23.84,119.2
+O04980,2024-03-20,Olivia Lambert,Rustic Oak Quilt,Bedding,2,358.81,717.62
+O04980,2024-03-20,Olivia Lambert,Carrara Marble Pendant Light,Lighting,3,364.88,1094.64
+O04980,2024-03-20,Olivia Lambert,Hand-Glazed Wall Mirror,Decor,5,447.66,2238.3
+O04980,2024-03-20,Olivia Lambert,Woven Cotton Wall Art Print,Decor,3,358.05,1074.15
+O05649,2024-03-20,Matthew Thatcher,Carrara Marble Pendant Light,Lighting,3,364.88,1094.64
+O05992,2024-03-20,Luke Thatcher,Powder-Coated Side Table,Furniture,5,182.2,911.0
+O05992,2024-03-20,Luke Thatcher,Navy Closet Organizer,Storage,3,68.48,205.44
+O05992,2024-03-20,Luke Thatcher,Rustic Oak Baking Sheet,Kitchen,4,27.73,110.92
+O00882,2024-03-21,Luke Grant,Sage Green Planter Pot,Outdoor,5,114.8,574.0
+O00882,2024-03-21,Luke Grant,Natural Linen Memory Foam Mat,Bath,1,54.4,54.4
+O02502,2024-03-21,Carter Diaz,Bamboo Pruning Shears,Outdoor,1,349.64,349.64
+O02502,2024-03-21,Carter Diaz,Solid Brass Curtain Liner,Bath,3,383.82,1151.46
+O02651,2024-03-21,James Zimmerman,Navy Fairy Lights,Lighting,5,349.98,1749.9
+O02651,2024-03-21,James Zimmerman,Walnut Storage Basket,Storage,2,15.81,31.62
+O02651,2024-03-21,James Zimmerman,Charcoal Entry Bench,Furniture,3,34.75,104.25
+O03323,2024-03-21,Avery Holloway,Slate Gray Fitted Sheet,Bedding,3,416.72,1250.16
+O03837,2024-03-21,Sebastian Jasper,Rustic Oak Desk Lamp,Lighting,2,9.99,19.98
+O03837,2024-03-21,Sebastian Jasper,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O00052,2024-03-22,Emma Foster,Hand-Glazed Laundry Basket,Storage,1,271.08,271.08
+O00529,2024-03-22,Zoey Hensley,Charcoal Quilt,Bedding,5,391.13,1955.65
+O00529,2024-03-22,Zoey Hensley,Matte Black Ceramic Vase,Decor,2,76.71,153.42
+O04257,2024-03-22,Benjamin Holloway,Slate Gray Stackable Bin,Storage,3,133.77,401.31
+O04257,2024-03-22,Benjamin Holloway,Slate Gray Shower Curtain,Bath,1,384.59,384.59
+O04301,2024-03-22,Isabella Quintero,Powder-Coated Toothbrush Holder,Bath,1,407.27,407.27
+O04301,2024-03-22,Isabella Quintero,Rustic Oak Desk Lamp,Lighting,2,9.99,19.98
+O04301,2024-03-22,Isabella Quintero,Matte Black Bookshelf,Furniture,3,116.76,350.28
+O04301,2024-03-22,Isabella Quintero,Matte Black Chandelier,Lighting,3,384.93,1154.79
+O04421,2024-03-22,Harper Iversen,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O04421,2024-03-22,Harper Iversen,Navy Fairy Lights,Lighting,4,349.98,1399.92
+O04477,2024-03-22,Joseph Hensley,Matte Black Accent Chair,Furniture,3,389.34,1168.02
+O04477,2024-03-22,Joseph Hensley,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O05896,2024-03-22,Benjamin Iversen,Slate Gray Spatula Set,Kitchen,5,181.52,907.6
+O05896,2024-03-22,Benjamin Iversen,Matte Black Accent Chair,Furniture,5,389.34,1946.7
+O05896,2024-03-22,Benjamin Iversen,Matte Black Ceramic Vase,Decor,4,76.71,306.84
+O00004,2024-03-23,Hannah Jasper,Classic Quilt,Bedding,4,135.4,541.6
+O00004,2024-03-23,Hannah Jasper,Ivory Shelf Unit,Storage,3,409.81,1229.43
+O00004,2024-03-23,Hannah Jasper,Rustic Oak Corner Shelf,Storage,3,67.39,202.17
+O00226,2024-03-23,Lucas Dunmore,Classic Shower Curtain,Bath,3,11.23,33.69
+O00729,2024-03-23,Owen Hensley,Slate Gray Table Lamp,Lighting,5,90.92,454.6
+O00729,2024-03-23,Owen Hensley,Walnut Chandelier,Lighting,2,29.64,59.28
+O01891,2024-03-23,Zoey Gallo,Navy Fairy Lights,Lighting,2,349.98,699.96
+O01891,2024-03-23,Zoey Gallo,Rustic Oak Glass Vase,Decor,2,296.82,593.64
+O03062,2024-03-23,Sebastian Parrish,Natural Linen Body Pillow,Bedding,5,252.47,1262.35
+O03960,2024-03-23,Liam Dunmore,Sage Green Planter Pot,Outdoor,5,114.8,574.0
+O03960,2024-03-23,Liam Dunmore,Rustic Oak Garden Tool Set,Outdoor,5,29.47,147.35
+O03960,2024-03-23,Liam Dunmore,Rustic Oak Glass Vase,Decor,5,296.82,1484.1
+O03960,2024-03-23,Liam Dunmore,Navy Fairy Lights,Lighting,3,349.98,1049.94
+O04480,2024-03-23,Zoey Hensley,Hand-Glazed Stackable Bin,Storage,4,193.81,775.24
+O04480,2024-03-23,Zoey Hensley,Matte Black Entry Bench,Furniture,1,146.16,146.16
+O04480,2024-03-23,Zoey Hensley,Charcoal Entry Bench,Furniture,3,34.75,104.25
+O04480,2024-03-23,Zoey Hensley,Matte Black Skillet,Kitchen,5,380.87,1904.35
+O04680,2024-03-23,Sebastian Jasper,Brushed Copper Coffee Maker,Kitchen,1,215.44,215.44
+O04680,2024-03-23,Sebastian Jasper,Hand-Glazed Wall Mirror,Decor,3,447.66,1342.98
+O04776,2024-03-23,Isabella Holloway,Matte Black Bookshelf,Furniture,3,116.76,350.28
+O04776,2024-03-23,Isabella Holloway,Sage Green Whisk,Kitchen,3,157.6,472.8
+O05381,2024-03-23,Grace Thatcher,Classic Quilt,Bedding,5,135.4,677.0
+O05381,2024-03-23,Grace Thatcher,Natural Linen Body Pillow,Bedding,5,252.47,1262.35
+O05381,2024-03-23,Grace Thatcher,Slate Gray Stackable Bin,Storage,3,133.77,401.31
+O00955,2024-03-24,Sofia Fairweather,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O00955,2024-03-24,Sofia Fairweather,Carrara Marble Pendant Light,Lighting,5,364.88,1824.4
+O00955,2024-03-24,Sofia Fairweather,Sage Green Whisk,Kitchen,3,157.6,472.8
+O00955,2024-03-24,Sofia Fairweather,Rustic Oak Glass Vase,Decor,2,296.82,593.64
+O01682,2024-03-24,Isabella Quintero,Powder-Coated Body Pillow,Bedding,3,443.61,1330.83
+O01682,2024-03-24,Isabella Quintero,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O01682,2024-03-24,Isabella Quintero,Slate Gray Arc Lamp,Lighting,2,185.4,370.8
+O02007,2024-03-24,Ella Hensley,Navy Fairy Lights,Lighting,4,349.98,1399.92
+O02007,2024-03-24,Ella Hensley,Modern Saucepan,Kitchen,2,267.21,534.42
+O02007,2024-03-24,Ella Hensley,Charcoal Fleece Blanket,Bedding,3,62.75,188.25
+O02175,2024-03-24,Julian Mercer,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O02175,2024-03-24,Julian Mercer,Woven Cotton Hanging Planter,Outdoor,3,91.24,273.72
+O02175,2024-03-24,Julian Mercer,Woven Cotton Sheet Set,Bedding,5,29.52,147.6
+O02538,2024-03-24,Benjamin Norwood,Woven Cotton Hanging Planter,Outdoor,5,91.24,456.2
+O02538,2024-03-24,Benjamin Norwood,Matte Black Shower Curtain,Bath,1,417.94,417.94
+O03158,2024-03-24,Emily Gallo,Solid Brass Canvas Print,Decor,3,296.59,889.77
+O03158,2024-03-24,Emily Gallo,Solid Brass Curtain Liner,Bath,3,383.82,1151.46
+O03882,2024-03-24,Ava Dunmore,Slate Gray Table Lamp,Lighting,4,90.92,363.68
+O03882,2024-03-24,Ava Dunmore,Rustic Oak Glass Vase,Decor,4,296.82,1187.28
+O03959,2024-03-24,Matthew Thatcher,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O03959,2024-03-24,Matthew Thatcher,Powder-Coated Side Table,Furniture,5,182.2,911.0
+O03959,2024-03-24,Matthew Thatcher,Matte Black Dining Chair,Furniture,5,155.23,776.15
+O03962,2024-03-24,Chloe Quintero,Rustic Oak Glass Vase,Decor,5,296.82,1484.1
+O03962,2024-03-24,Chloe Quintero,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O03962,2024-03-24,Chloe Quintero,Rustic Oak Desk Lamp,Lighting,3,9.99,29.97
+O03962,2024-03-24,Chloe Quintero,Reclaimed Wood Fairy Lights,Lighting,3,268.92,806.76
+O03969,2024-03-24,Noah Gallo,Rustic Oak Glass Vase,Decor,3,296.82,890.46
+O03969,2024-03-24,Noah Gallo,Hand-Glazed Wall Mirror,Decor,2,447.66,895.32
+O03969,2024-03-24,Noah Gallo,Solid Brass Curtain Liner,Bath,1,383.82,383.82
+O04702,2024-03-24,Sebastian Yates,Matte Black Bookshelf,Furniture,3,116.76,350.28
+O04702,2024-03-24,Sebastian Yates,Navy Closet Organizer,Storage,2,68.48,136.96
+O04702,2024-03-24,Sebastian Yates,Carrara Marble Ladle,Kitchen,4,345.2,1380.8
+O05806,2024-03-24,Ava Quintero,Solid Brass Canvas Print,Decor,2,296.59,593.18
+O00110,2024-03-25,Zoey Dunmore,Rustic Oak Glass Vase,Decor,2,296.82,593.64
+O00110,2024-03-25,Zoey Dunmore,Reclaimed Wood Fairy Lights,Lighting,4,268.92,1075.68
+O00595,2024-03-25,Chloe Hensley,Navy Closet Organizer,Storage,4,68.48,273.92
+O03297,2024-03-25,Ella Parrish,Reclaimed Wood Fairy Lights,Lighting,2,268.92,537.84
+O03297,2024-03-25,Ella Parrish,Slate Gray Arc Lamp,Lighting,2,185.4,370.8
+O03297,2024-03-25,Ella Parrish,Walnut Storage Basket,Storage,5,15.81,79.05
+O03595,2024-03-25,David Hensley,Slate Gray Spatula Set,Kitchen,5,181.52,907.6
+O04755,2024-03-25,Owen Everhart,Navy Fairy Lights,Lighting,3,349.98,1049.94
+O00484,2024-03-26,Isabella Holloway,Matte Black Skillet,Kitchen,3,380.87,1142.61
+O01439,2024-03-26,Owen Holloway,Rustic Oak Corner Shelf,Storage,1,67.39,67.39
+O03313,2024-03-26,Jack Zimmerman,Matte Black Shower Curtain,Bath,1,417.94,417.94
+O04616,2024-03-26,Harper Ostrander,Rustic Oak Desk Lamp,Lighting,5,9.99,49.95
+O04616,2024-03-26,Harper Ostrander,Natural Linen Body Pillow,Bedding,4,252.47,1009.88
+O04616,2024-03-26,Harper Ostrander,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O05677,2024-03-26,Matthew Ingram,Rustic Oak Desk Lamp,Lighting,3,9.99,29.97
+O05677,2024-03-26,Matthew Ingram,Matte Black Bookshelf,Furniture,3,116.76,350.28
+O00119,2024-03-27,Sebastian Parrish,Navy Closet Organizer,Storage,1,68.48,68.48
+O00119,2024-03-27,Sebastian Parrish,Slate Gray Washcloth Set,Bath,5,441.96,2209.8
+O00119,2024-03-27,Sebastian Parrish,Rustic Oak Corner Shelf,Storage,1,67.39,67.39
+O00119,2024-03-27,Sebastian Parrish,Reclaimed Wood Garden Tool Set,Outdoor,3,310.0,930.0
+O01006,2024-03-27,Isabella Holloway,Reclaimed Wood Glass Vase,Decor,1,23.84,23.84
+O01006,2024-03-27,Isabella Holloway,Terracotta Scented Candle,Decor,4,356.11,1424.44
+O01006,2024-03-27,Isabella Holloway,Classic Shower Curtain,Bath,1,11.23,11.23
+O01876,2024-03-27,Isaac Bishop,Rustic Oak Quilt,Bedding,2,358.81,717.62
+O01881,2024-03-27,Owen Nolan,Slate Gray Shower Curtain,Bath,2,384.59,769.18
+O01881,2024-03-27,Owen Nolan,Reclaimed Wood Glass Vase,Decor,1,23.84,23.84
+O01881,2024-03-27,Owen Nolan,Woven Cotton Wall Art Print,Decor,5,358.05,1790.25
+O01881,2024-03-27,Owen Nolan,Rustic Oak Quilt,Bedding,2,358.81,717.62
+O04313,2024-03-27,Levi Hensley,Modern Doormat,Outdoor,1,28.94,28.94
+O04521,2024-03-27,Hannah Jasper,Ivory Shelf Unit,Storage,5,409.81,2049.05
+O04521,2024-03-27,Hannah Jasper,Woven Cotton Sheet Set,Bedding,2,29.52,59.04
+O04521,2024-03-27,Hannah Jasper,Bamboo Ladder Shelf,Furniture,3,123.07,369.21
+O04521,2024-03-27,Hannah Jasper,Natural Linen Body Pillow,Bedding,4,252.47,1009.88
+O04527,2024-03-27,Ava Yates,Natural Linen Body Pillow,Bedding,5,252.47,1262.35
+O04555,2024-03-27,Ava Yates,Charcoal Fleece Blanket,Bedding,4,62.75,251.0
+O04555,2024-03-27,Ava Yates,Solid Brass Canvas Print,Decor,1,296.59,296.59
+O04555,2024-03-27,Ava Yates,Natural Linen Body Pillow,Bedding,5,252.47,1262.35
+O04560,2024-03-27,Matthew Thatcher,Matte Black Entry Bench,Furniture,1,146.16,146.16
+O04560,2024-03-27,Matthew Thatcher,Modern Saucepan,Kitchen,3,267.21,801.63
+O05918,2024-03-27,Michael Yates,Bamboo Ladder Shelf,Furniture,3,123.07,369.21
+O05918,2024-03-27,Michael Yates,Slate Gray Table Lamp,Lighting,4,90.92,363.68
+O05918,2024-03-27,Michael Yates,Solid Brass Curtain Liner,Bath,2,383.82,767.64
+O01380,2024-03-28,Sophia Norwood,Terracotta Scented Candle,Decor,5,356.11,1780.55
+O01380,2024-03-28,Sophia Norwood,Powder-Coated Hand Mixer,Kitchen,5,378.87,1894.35
+O01539,2024-03-28,Benjamin Norwood,Rustic Oak Garden Tool Set,Outdoor,5,29.47,147.35
+O01539,2024-03-28,Benjamin Norwood,Matte Black Shower Curtain,Bath,5,417.94,2089.7
+O02406,2024-03-28,Owen Nolan,Hand-Glazed Stackable Bin,Storage,2,193.81,387.62
+O02406,2024-03-28,Owen Nolan,Bamboo Ladder Shelf,Furniture,1,123.07,123.07
+O02702,2024-03-28,John Bishop,Slate Gray Table Lamp,Lighting,5,90.92,454.6
+O02702,2024-03-28,John Bishop,Matte Black Chandelier,Lighting,2,384.93,769.86
+O02702,2024-03-28,John Bishop,Matte Black Skillet,Kitchen,4,380.87,1523.48
+O03533,2024-03-28,Ella Nolan,Hand-Glazed Laundry Basket,Storage,5,271.08,1355.4
+O03771,2024-03-28,Carter Diaz,Rustic Oak Quilt,Bedding,4,358.81,1435.24
+O03771,2024-03-28,Carter Diaz,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O03771,2024-03-28,Carter Diaz,Woven Cotton Hanging Planter,Outdoor,5,91.24,456.2
+O03771,2024-03-28,Carter Diaz,Sage Green Whisk,Kitchen,2,157.6,315.2
+O03889,2024-03-28,Lily Diaz,Slate Gray Arc Lamp,Lighting,1,185.4,185.4
+O03889,2024-03-28,Lily Diaz,Matte Black Shower Curtain,Bath,3,417.94,1253.82
+O03906,2024-03-28,Michael Whitfield,Brushed Copper Coffee Maker,Kitchen,4,215.44,861.76
+O03906,2024-03-28,Michael Whitfield,Bamboo Ladder Shelf,Furniture,3,123.07,369.21
+O03906,2024-03-28,Michael Whitfield,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O03909,2024-03-28,Noah Grant,Woven Cotton Wall Art Print,Decor,3,358.05,1074.15
+O03909,2024-03-28,Noah Grant,Sage Green Whisk,Kitchen,1,157.6,157.6
+O03909,2024-03-28,Noah Grant,Rustic Oak Baking Sheet,Kitchen,2,27.73,55.46
+O03909,2024-03-28,Noah Grant,Sage Green Planter Pot,Outdoor,1,114.8,114.8
+O03920,2024-03-28,Elijah Diaz,Brushed Copper Coffee Maker,Kitchen,5,215.44,1077.2
+O03920,2024-03-28,Elijah Diaz,Woven Cotton Hanging Planter,Outdoor,5,91.24,456.2
+O04349,2024-03-28,Riley Bennett,Matte Black Bookshelf,Furniture,2,116.76,233.52
+O04349,2024-03-28,Riley Bennett,Natural Linen Memory Foam Mat,Bath,5,54.4,272.0
+O04349,2024-03-28,Riley Bennett,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O04349,2024-03-28,Riley Bennett,Carrara Marble Pendant Light,Lighting,1,364.88,364.88
+O05027,2024-03-28,Chloe Quintero,Carrara Marble Ladle,Kitchen,1,345.2,345.2
+O05640,2024-03-28,Joseph Iversen,Modern Doormat,Outdoor,1,28.94,28.94
+O05640,2024-03-28,Joseph Iversen,Brushed Copper Coffee Maker,Kitchen,3,215.44,646.32
+O05640,2024-03-28,Joseph Iversen,Hand-Glazed Laundry Basket,Storage,3,271.08,813.24
+O05868,2024-03-28,David Everhart,Matte Black Chandelier,Lighting,3,384.93,1154.79
+O05868,2024-03-28,David Everhart,Slate Gray Stackable Bin,Storage,5,133.77,668.85
+O05868,2024-03-28,David Everhart,Carrara Marble Pendant Light,Lighting,1,364.88,364.88
+O00476,2024-03-29,Chloe Osei,Rustic Oak Desk Lamp,Lighting,2,9.99,19.98
+O00476,2024-03-29,Chloe Osei,Woven Cotton Wall Art Print,Decor,1,358.05,358.05
+O00476,2024-03-29,Chloe Osei,Sage Green Planter Pot,Outdoor,4,114.8,459.2
+O00633,2024-03-29,Henry Thatcher,Charcoal Entry Bench,Furniture,2,34.75,69.5
+O04215,2024-03-29,Harper Bennett,Solid Brass Curtain Liner,Bath,4,383.82,1535.28
+O04215,2024-03-29,Harper Bennett,Slate Gray Washcloth Set,Bath,2,441.96,883.92
+O04215,2024-03-29,Harper Bennett,Reclaimed Wood Garden Tool Set,Outdoor,3,310.0,930.0
+O04230,2024-03-29,Chloe Jasper,Slate Gray Spatula Set,Kitchen,3,181.52,544.56
+O04230,2024-03-29,Chloe Jasper,Rustic Oak Baking Sheet,Kitchen,2,27.73,55.46
+O04230,2024-03-29,Chloe Jasper,Matte Black Shower Curtain,Bath,1,417.94,417.94
+O05523,2024-03-29,Owen Thatcher,Walnut Chandelier,Lighting,5,29.64,148.2
+O00299,2024-03-30,Amelia Chandler,Walnut Chandelier,Lighting,5,29.64,148.2
+O00324,2024-03-30,Amelia Jasper,Powder-Coated Body Pillow,Bedding,5,443.61,2218.05
+O00455,2024-03-30,Isaac Carter,Rustic Oak Desk Lamp,Lighting,5,9.99,49.95
+O00455,2024-03-30,Isaac Carter,Matte Black Entry Bench,Furniture,1,146.16,146.16
+O00455,2024-03-30,Isaac Carter,Natural Linen Memory Foam Mat,Bath,2,54.4,108.8
+O00493,2024-03-30,Michael Yates,Reclaimed Wood Glass Vase,Decor,3,23.84,71.52
+O00493,2024-03-30,Michael Yates,Classic Shower Curtain,Bath,5,11.23,56.15
+O01766,2024-03-30,Lily Keller,Powder-Coated Toothbrush Holder,Bath,1,407.27,407.27
+O01766,2024-03-30,Lily Keller,Modern Saucepan,Kitchen,5,267.21,1336.05
+O01766,2024-03-30,Lily Keller,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O01864,2024-03-30,Chloe Quintero,Modern Saucepan,Kitchen,1,267.21,267.21
+O01864,2024-03-30,Chloe Quintero,Bamboo Pruning Shears,Outdoor,3,349.64,1048.92
+O02902,2024-03-30,Isabella Iversen,Carrara Marble Ladle,Kitchen,3,345.2,1035.6
+O02902,2024-03-30,Isabella Iversen,Woven Cotton Sheet Set,Bedding,2,29.52,59.04
+O02902,2024-03-30,Isabella Iversen,Slate Gray Spatula Set,Kitchen,5,181.52,907.6
+O03794,2024-03-30,Emily Gallo,Charcoal Fleece Blanket,Bedding,3,62.75,188.25
+O03794,2024-03-30,Emily Gallo,Terracotta Scented Candle,Decor,3,356.11,1068.33
+O04048,2024-03-30,Sofia Parrish,Powder-Coated Body Pillow,Bedding,2,443.61,887.22
+O04048,2024-03-30,Sofia Parrish,Rustic Oak Baking Sheet,Kitchen,2,27.73,55.46
+O05134,2024-03-30,Chloe Vance,Slate Gray Spatula Set,Kitchen,5,181.52,907.6
+O05134,2024-03-30,Chloe Vance,Sage Green Planter Pot,Outdoor,5,114.8,574.0
+O05134,2024-03-30,Chloe Vance,Slate Gray Stackable Bin,Storage,1,133.77,133.77
+O00228,2024-03-31,Elijah Diaz,Rustic Oak Desk Lamp,Lighting,3,9.99,29.97
+O00228,2024-03-31,Elijah Diaz,Terracotta Hanging Planter,Outdoor,2,10.1,20.2
+O00228,2024-03-31,Elijah Diaz,Rustic Oak Baking Sheet,Kitchen,5,27.73,138.65
+O00228,2024-03-31,Elijah Diaz,Carrara Marble Pendant Light,Lighting,2,364.88,729.76
+O01244,2024-03-31,David Vance,Woven Cotton Hanging Planter,Outdoor,2,91.24,182.48
+O01244,2024-03-31,David Vance,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O01288,2024-03-31,Ava Gallo,Modern Doormat,Outdoor,2,28.94,57.88
+O01288,2024-03-31,Ava Gallo,Ivory Shelf Unit,Storage,4,409.81,1639.24
+O01288,2024-03-31,Ava Gallo,Matte Black Skillet,Kitchen,2,380.87,761.74
+O01288,2024-03-31,Ava Gallo,Matte Black Bookshelf,Furniture,1,116.76,116.76
+O01697,2024-03-31,Michael Sawyer,Sage Green Whisk,Kitchen,3,157.6,472.8
+O01697,2024-03-31,Michael Sawyer,Bamboo Ladder Shelf,Furniture,2,123.07,246.14
+O01697,2024-03-31,Michael Sawyer,Navy Fairy Lights,Lighting,5,349.98,1749.9
+O01697,2024-03-31,Michael Sawyer,Walnut Chandelier,Lighting,3,29.64,88.92
+O02032,2024-03-31,Evelyn Lambert,Classic Shower Curtain,Bath,3,11.23,33.69
+O02032,2024-03-31,Evelyn Lambert,Woven Cotton Sheet Set,Bedding,1,29.52,29.52
+O02032,2024-03-31,Evelyn Lambert,Rustic Oak Desk Lamp,Lighting,3,9.99,29.97
+O02032,2024-03-31,Evelyn Lambert,Matte Black Accent Chair,Furniture,5,389.34,1946.7
+O02330,2024-03-31,Harper Ostrander,Woven Cotton Sheet Set,Bedding,2,29.52,59.04
+O03704,2024-03-31,Chloe Gallo,Solid Brass Canvas Print,Decor,5,296.59,1482.95
+O03704,2024-03-31,Chloe Gallo,Natural Linen Body Pillow,Bedding,2,252.47,504.94
+O04341,2024-03-31,David Vance,Slate Gray Fitted Sheet,Bedding,1,416.72,416.72
+O04341,2024-03-31,David Vance,Charcoal Entry Bench,Furniture,2,34.75,69.5
+O05598,2024-03-31,Isabella Quintero,Slate Gray Stackable Bin,Storage,3,133.77,401.31
+O05598,2024-03-31,Isabella Quintero,Powder-Coated Body Pillow,Bedding,1,443.61,443.61

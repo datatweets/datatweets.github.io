@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Reversing UNNEST with list(struct_pack(...))</text>
+
+  <rect x="40" y="54" width="220" height="56" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="150" y="78" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">order_items_from_json</text>
+  <text x="150" y="96" text-anchor="middle" font-size="9" fill="#276749">1892 flat rows (Lesson 3)</text>
+
+  <line x1="260" y1="82" x2="305" y2="82" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowR)" />
+
+  <rect x="305" y="54" width="230" height="56" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="420" y="76" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">GROUP BY order_id</text>
+  <text x="420" y="94" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">list(struct_pack(...))</text>
+
+  <line x1="535" y1="82" x2="580" y2="82" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowR)" />
+
+  <rect x="580" y="54" width="180" height="56" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.3" />
+  <text x="670" y="78" text-anchor="middle" font-size="10.5" font-weight="700" fill="#742a2a">re-nested</text>
+  <text x="670" y="96" text-anchor="middle" font-size="9" fill="#9c4221">792 rows, line_items back</text>
+
+  <line x1="670" y1="110" x2="670" y2="150" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowR)" />
+
+  <rect x="490" y="150" width="270" height="46" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="625" y="178" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#9c4221">COPY ... TO ... (ARRAY true)</text>
+
+  <line x1="625" y1="196" x2="625" y2="230" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowR)" />
+
+  <rect x="130" y="230" width="620" height="70" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="440" y="256" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">792 orders, every order's line-item count matches the original file</text>
+  <text x="440" y="276" text-anchor="middle" font-size="10" fill="#276749">verified against thistlewood_orders_nested.json, not assumed</text>
+
+  <rect x="90" y="320" width="620" height="42" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="400" y="346" text-anchor="middle" font-size="10" fill="#2d3748">UNNEST and list(struct_pack(...)) are exact reverses of each other</text>
+
+  <defs>
+    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

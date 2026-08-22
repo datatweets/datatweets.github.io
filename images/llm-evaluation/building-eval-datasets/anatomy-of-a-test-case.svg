@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The anatomy of a hand-written test case and the taxonomy of case types to include: id, input, reference, category, difficulty, type, and source_doc, plus five deliberate case types (factual, paraphrase, negative, ambiguous, adversarial).</title>
+  <rect x="0" y="0" width="860" height="560" fill="#ffffff"/>
+
+  <text x="430" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Anatomy of a Hand-Written Test Case</text>
+  <text x="430" y="58" text-anchor="middle" font-size="13" fill="#718096">One Docent case, seven fields &#8212; and the five types you deliberately include</text>
+
+  <!-- Left: the record card -->
+  <rect x="30" y="82" width="430" height="446" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="50" y="110" font-size="14" font-weight="700" fill="#2b6cb0">TestCase</text>
+
+  <!-- field rows -->
+  <!-- id -->
+  <rect x="50" y="122" width="390" height="44" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1"/>
+  <text x="62" y="140" font-size="12" font-weight="700" fill="#2b6cb0">id</text>
+  <text x="62" y="158" font-size="12" fill="#4a5568">"rl-code-para" &#8212; unique, stable, human-readable</text>
+
+  <!-- input -->
+  <rect x="50" y="172" width="390" height="44" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1"/>
+  <text x="62" y="190" font-size="12" font-weight="700" fill="#2b6cb0">input</text>
+  <text x="62" y="208" font-size="12" fill="#4a5568">"If I send too many requests, which code comes back?"</text>
+
+  <!-- reference -->
+  <rect x="50" y="222" width="390" height="44" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1"/>
+  <text x="62" y="240" font-size="12" font-weight="700" fill="#276749">reference</text>
+  <text x="62" y="258" font-size="12" fill="#4a5568">"429" &#8212; short, checkable, the fact not a phrasing</text>
+
+  <!-- category -->
+  <rect x="50" y="272" width="190" height="44" rx="6" fill="#faf5ff" stroke="#9f7aea" stroke-width="1"/>
+  <text x="62" y="290" font-size="12" font-weight="700" fill="#6b46c1">category</text>
+  <text x="62" y="308" font-size="12" fill="#4a5568">"rate_limits"</text>
+
+  <!-- difficulty -->
+  <rect x="250" y="272" width="190" height="44" rx="6" fill="#faf5ff" stroke="#9f7aea" stroke-width="1"/>
+  <text x="262" y="290" font-size="12" font-weight="700" fill="#6b46c1">difficulty</text>
+  <text x="262" y="308" font-size="12" fill="#4a5568">"medium"</text>
+
+  <!-- type -->
+  <rect x="50" y="322" width="190" height="44" rx="6" fill="#fffaf0" stroke="#ed8936" stroke-width="1"/>
+  <text x="62" y="340" font-size="12" font-weight="700" fill="#c05621">type</text>
+  <text x="62" y="358" font-size="12" fill="#4a5568">"paraphrase"</text>
+
+  <!-- source_doc -->
+  <rect x="250" y="322" width="190" height="44" rx="6" fill="#fffaf0" stroke="#ed8936" stroke-width="1"/>
+  <text x="262" y="340" font-size="12" font-weight="700" fill="#c05621">source_doc</text>
+  <text x="262" y="358" font-size="12" fill="#4a5568">"ratelimits"</text>
+
+  <!-- validated -->
+  <rect x="50" y="386" width="390" height="60" rx="8" fill="#ffffff" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="70" y="410" font-size="13" font-weight="700" fill="#276749">&#10003; validated by a schema</text>
+  <text x="70" y="430" font-size="11.5" fill="#4a5568">known doc id &#183; required fields &#183; negatives cite no doc</text>
+
+  <rect x="50" y="458" width="390" height="52" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="70" y="480" font-size="13" font-weight="700" fill="#c53030">&#10007; source_doc "priceing" &#8594; REJECTED</text>
+  <text x="70" y="498" font-size="11.5" fill="#4a5568">a typo'd doc id is caught before it pollutes the set</text>
+
+  <!-- Right: taxonomy of types -->
+  <rect x="490" y="82" width="340" height="446" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="510" y="110" font-size="14" font-weight="700" fill="#c05621">Types to include on purpose</text>
+
+  <rect x="510" y="124" width="300" height="66" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.2"/>
+  <text x="524" y="145" font-size="13" font-weight="700" fill="#2b6cb0">factual (happy path)</text>
+  <text x="524" y="164" font-size="11.5" fill="#4a5568">"What code on rate limit?" &#8594; 429</text>
+  <text x="524" y="181" font-size="11.5" fill="#4a5568">the straightforward correct answer</text>
+
+  <rect x="510" y="198" width="300" height="66" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2"/>
+  <text x="524" y="219" font-size="13" font-weight="700" fill="#276749">paraphrase</text>
+  <text x="524" y="238" font-size="11.5" fill="#4a5568">same fact, new wording, same reference</text>
+  <text x="524" y="255" font-size="11.5" fill="#4a5568">proves the answer, not the phrasing</text>
+
+  <rect x="510" y="272" width="300" height="66" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.2"/>
+  <text x="524" y="293" font-size="13" font-weight="700" fill="#c53030">negative / out-of-scope</text>
+  <text x="524" y="312" font-size="11.5" fill="#4a5568">"MongoDB pipelines?" &#8594; must refuse</text>
+  <text x="524" y="329" font-size="11.5" fill="#4a5568">reference is the refusal; no source_doc</text>
+
+  <rect x="510" y="346" width="300" height="66" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.2"/>
+  <text x="524" y="367" font-size="13" font-weight="700" fill="#6b46c1">ambiguous / edge</text>
+  <text x="524" y="386" font-size="11.5" fill="#4a5568">"Change a region later?" &#8594; No, export</text>
+  <text x="524" y="403" font-size="11.5" fill="#4a5568">the hard, nuanced correct answer</text>
+
+  <rect x="510" y="420" width="300" height="90" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.2"/>
+  <text x="524" y="441" font-size="13" font-weight="700" fill="#c05621">adversarial (false premise)</text>
+  <text x="524" y="460" font-size="11.5" fill="#4a5568">"Since Meridian lets you change</text>
+  <text x="524" y="477" font-size="11.5" fill="#4a5568">regions freely, how?" &#8212; premise is</text>
+  <text x="524" y="494" font-size="11.5" fill="#4a5568">FALSE; Docent must push back, not comply</text>
+</svg>

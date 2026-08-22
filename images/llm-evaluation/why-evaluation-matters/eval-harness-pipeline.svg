@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 360" role="img" aria-labelledby="titleId descId" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title id="titleId">The Docent evaluation harness pipeline</title>
+  <desc id="descId">A left-to-right pipeline of five stages. A golden dataset of labeled question and reference pairs feeds into running Docent to collect an answer for each item, then a scorer marks each answer pass or fail, then results are aggregated into a pass rate, and finally a per-item table plus the aggregate score are reported.</desc>
+  <rect x="0" y="0" width="860" height="360" fill="#ffffff"/>
+
+  <text x="430" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#1a202c">The Docent Eval Harness</text>
+  <text x="430" y="56" text-anchor="middle" font-size="13" fill="#718096">dataset &#8594; run &#8594; score &#8594; aggregate &#8594; report</text>
+
+  <!-- Stage 1: dataset -->
+  <rect x="24" y="96" width="150" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="99" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">1. Golden dataset</text>
+  <text x="99" y="150" text-anchor="middle" font-size="11" fill="#4a5568">8 labeled items</text>
+  <rect x="40" y="162" width="118" height="24" rx="4" fill="#ffffff" stroke="#a0aec0" stroke-width="1"/>
+  <text x="99" y="178" text-anchor="middle" font-size="10" fill="#4a5568">q + reference</text>
+  <rect x="40" y="192" width="118" height="24" rx="4" fill="#ffffff" stroke="#a0aec0" stroke-width="1"/>
+  <text x="99" y="208" text-anchor="middle" font-size="10" fill="#4a5568">q + reference</text>
+  <rect x="40" y="222" width="118" height="16" rx="4" fill="#fffaf0" stroke="#ed8936" stroke-width="1"/>
+  <text x="99" y="234" text-anchor="middle" font-size="9" fill="#c05621">#11 out-of-scope</text>
+
+  <!-- Stage 2: run -->
+  <rect x="204" y="120" width="140" height="102" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <text x="274" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">2. Run Docent</text>
+  <text x="274" y="174" text-anchor="middle" font-size="11" fill="#4a5568">retrieve &#8594; ask</text>
+  <text x="274" y="192" text-anchor="middle" font-size="11" fill="#4a5568">claude-haiku-4-5</text>
+  <text x="274" y="210" text-anchor="middle" font-size="11" fill="#718096">collect answers</text>
+
+  <!-- Stage 3: score -->
+  <rect x="374" y="120" width="140" height="102" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="444" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">3. Score</text>
+  <text x="444" y="174" text-anchor="middle" font-size="11" fill="#4a5568">scores_correct()</text>
+  <text x="444" y="192" text-anchor="middle" font-size="11" fill="#4a5568">refused()</text>
+  <text x="444" y="210" text-anchor="middle" font-size="11" fill="#718096">pass / fail each</text>
+
+  <!-- Stage 4: aggregate -->
+  <rect x="544" y="120" width="140" height="102" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <text x="614" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">4. Aggregate</text>
+  <text x="614" y="176" text-anchor="middle" font-size="11" fill="#4a5568">passes / total</text>
+  <text x="614" y="196" text-anchor="middle" font-size="11" fill="#718096">= pass rate</text>
+
+  <!-- Report -->
+  <rect x="712" y="96" width="126" height="150" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+  <text x="775" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Report</text>
+  <rect x="726" y="136" width="98" height="18" rx="3" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="775" y="149" text-anchor="middle" font-size="9" fill="#276749">PASS  429</text>
+  <rect x="726" y="158" width="98" height="18" rx="3" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="775" y="171" text-anchor="middle" font-size="9" fill="#276749">PASS  600</text>
+  <rect x="726" y="180" width="98" height="18" rx="3" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="775" y="193" text-anchor="middle" font-size="9" fill="#276749">PASS  25 usd</text>
+  <text x="775" y="222" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">pass rate</text>
+  <text x="775" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">1.00</text>
+
+  <!-- arrows -->
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#4a5568"/>
+    </marker>
+  </defs>
+  <line x1="174" y1="171" x2="200" y2="171" stroke="#4a5568" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="344" y1="171" x2="370" y2="171" stroke="#4a5568" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="514" y1="171" x2="540" y2="171" stroke="#4a5568" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="684" y1="171" x2="708" y2="171" stroke="#4a5568" stroke-width="2" marker-end="url(#ar)"/>
+
+  <text x="430" y="290" text-anchor="middle" font-size="12" fill="#718096">Every later module swaps in a better dataset, a better scorer, or richer reporting &#8212; the four boxes stay.</text>
+  <rect x="24" y="308" width="814" height="34" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="430" y="330" text-anchor="middle" font-size="12" fill="#4a5568">One reproducible number you can trust more than reading three answers and calling it good.</text>
+</svg>

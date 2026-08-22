@@ -1,0 +1,91 @@
+ticket_id,text,category
+1001,I cannot sign in after changing phones.,account
+1002,I cannot sign in since this morning.,account
+1003,I cannot sign in on the mobile app.,account
+1004,the password reset link expired after changing phones.,account
+1005,the password reset link expired since this morning.,account
+1006,the password reset link expired on the mobile app.,account
+1007,my profile is locked after changing phones.,account
+1008,my profile is locked since this morning.,account
+1009,my profile is locked on the mobile app.,account
+1010,I need to change my email address after changing phones.,account
+1011,I need to change my email address since this morning.,account
+1012,I need to change my email address on the mobile app.,account
+1013,two factor login is not working after changing phones.,account
+1014,two factor login is not working since this morning.,account
+1015,two factor login is not working on the mobile app.,account
+1016,I want to close my account after changing phones.,account
+1017,I want to close my account since this morning.,account
+1018,I want to close my account on the mobile app.,account
+1019,my verification code never arrived after changing phones.,account
+1020,my verification code never arrived since this morning.,account
+1021,my verification code never arrived on the mobile app.,account
+1022,the login page rejects my password after changing phones.,account
+1023,the login page rejects my password since this morning.,account
+1024,the login page rejects my password on the mobile app.,account
+1025,I need to update the account owner after changing phones.,account
+1026,I need to update the account owner since this morning.,account
+1027,I need to update the account owner on the mobile app.,account
+1028,my saved profile details disappeared after changing phones.,account
+1029,my saved profile details disappeared since this morning.,account
+1030,my saved profile details disappeared on the mobile app.,account
+1031,I was charged twice for the latest order.,billing
+1032,I was charged twice after upgrading my plan.,billing
+1033,I was charged twice on yesterday's payment.,billing
+1034,my invoice has the wrong total for the latest order.,billing
+1035,my invoice has the wrong total after upgrading my plan.,billing
+1036,my invoice has the wrong total on yesterday's payment.,billing
+1037,please explain this fee for the latest order.,billing
+1038,please explain this fee after upgrading my plan.,billing
+1039,please explain this fee on yesterday's payment.,billing
+1040,I need a refund for the latest order.,billing
+1041,I need a refund after upgrading my plan.,billing
+1042,I need a refund on yesterday's payment.,billing
+1043,the payment was declined for the latest order.,billing
+1044,the payment was declined after upgrading my plan.,billing
+1045,the payment was declined on yesterday's payment.,billing
+1046,my receipt is missing for the latest order.,billing
+1047,my receipt is missing after upgrading my plan.,billing
+1048,my receipt is missing on yesterday's payment.,billing
+1049,the annual plan renewed unexpectedly for the latest order.,billing
+1050,the annual plan renewed unexpectedly after upgrading my plan.,billing
+1051,the annual plan renewed unexpectedly on yesterday's payment.,billing
+1052,I need to change the billing address for the latest order.,billing
+1053,I need to change the billing address after upgrading my plan.,billing
+1054,I need to change the billing address on yesterday's payment.,billing
+1055,the coupon was not applied for the latest order.,billing
+1056,the coupon was not applied after upgrading my plan.,billing
+1057,the coupon was not applied on yesterday's payment.,billing
+1058,my subscription price increased for the latest order.,billing
+1059,my subscription price increased after upgrading my plan.,billing
+1060,my subscription price increased on yesterday's payment.,billing
+1061,the dashboard will not load in the latest version.,technical
+1062,the dashboard will not load when I use the browser.,technical
+1063,the dashboard will not load for every project.,technical
+1064,exporting a report fails in the latest version.,technical
+1065,exporting a report fails when I use the browser.,technical
+1066,exporting a report fails for every project.,technical
+1067,the app keeps freezing in the latest version.,technical
+1068,the app keeps freezing when I use the browser.,technical
+1069,the app keeps freezing for every project.,technical
+1070,uploaded files show an error in the latest version.,technical
+1071,uploaded files show an error when I use the browser.,technical
+1072,uploaded files show an error for every project.,technical
+1073,notifications are delayed in the latest version.,technical
+1074,notifications are delayed when I use the browser.,technical
+1075,notifications are delayed for every project.,technical
+1076,the search returns no results in the latest version.,technical
+1077,the search returns no results when I use the browser.,technical
+1078,the search returns no results for every project.,technical
+1079,the page becomes blank in the latest version.,technical
+1080,the page becomes blank when I use the browser.,technical
+1081,the page becomes blank for every project.,technical
+1082,the API request times out in the latest version.,technical
+1083,the API request times out when I use the browser.,technical
+1084,the API request times out for every project.,technical
+1085,the chart is not updating in the latest version.,technical
+1086,the chart is not updating when I use the browser.,technical
+1087,the chart is not updating for every project.,technical
+1088,the desktop app closes immediately in the latest version.,technical
+1089,the desktop app closes immediately when I use the browser.,technical
+1090,the desktop app closes immediately for every project.,technical

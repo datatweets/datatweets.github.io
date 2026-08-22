@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="460" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">A Pod's Real Lifecycle</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">kubectl run nginx-demo --image=nginx:alpine, watched with kubectl get pods and kubectl describe pod</text>
+
+<rect x="40" y="94" width="190" height="92" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="135" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">Pending</text>
+<text x="135" y="140" text-anchor="middle" font-size="10.5" fill="#4a5568">scheduled to</text>
+<text x="135" y="154" text-anchor="middle" font-size="10.5" fill="#4a5568">control-plane node</text>
+<text x="135" y="172" text-anchor="middle" font-size="9.5" fill="#718096">t+0s</text>
+
+<line x1="230" y1="140" x2="270" y2="140" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowp)"/>
+
+<rect x="270" y="94" width="220" height="92" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="380" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">ContainerCreating</text>
+<text x="380" y="140" text-anchor="middle" font-size="10.5" fill="#4a5568">pulling nginx:alpine</text>
+<text x="380" y="154" text-anchor="middle" font-size="10.5" fill="#4a5568">25,971,031 bytes</text>
+<text x="380" y="172" text-anchor="middle" font-size="9.5" fill="#718096">t+2s &#8594; t+27s (26.044s pull)</text>
+
+<line x1="490" y1="140" x2="530" y2="140" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowp)"/>
+
+<rect x="530" y="94" width="200" height="92" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="630" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">Running</text>
+<text x="630" y="140" text-anchor="middle" font-size="10.5" fill="#4a5568">1/1 Ready</text>
+<text x="630" y="154" text-anchor="middle" font-size="10.5" fill="#4a5568">IP 10.244.0.9</text>
+<text x="630" y="172" text-anchor="middle" font-size="9.5" fill="#718096">t+28s onward</text>
+
+<line x1="730" y1="140" x2="770" y2="140" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowp)"/>
+
+<rect x="770" y="94" width="150" height="92" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="845" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">deleted</text>
+<text x="845" y="140" text-anchor="middle" font-size="10.5" fill="#4a5568">kubectl delete pod</text>
+<text x="845" y="154" text-anchor="middle" font-size="10.5" fill="#4a5568">pod fully gone</text>
+<text x="845" y="172" text-anchor="middle" font-size="9.5" fill="#718096">terminated on request</text>
+
+<line x1="40" y1="212" x2="920" y2="212" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">real Events, from kubectl describe pod nginx-demo</text>
+
+<rect x="60" y="252" width="840" height="150" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="80" y="278" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">Normal  Scheduled  default-scheduler  Successfully assigned default/nginx-demo to datatweets-docker-k8s-control-plane</text>
+<text x="80" y="300" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">Normal  Pulling    kubelet            Pulling image "nginx:alpine"</text>
+<text x="80" y="322" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">Normal  Pulled     kubelet            Successfully pulled image in 26.044s (25,971,031 bytes)</text>
+<text x="80" y="344" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">Normal  Created    kubelet            Created container: nginx-demo</text>
+<text x="80" y="366" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">Normal  Started    kubelet            Started container nginx-demo</text>
+<text x="480" y="388" text-anchor="middle" font-size="10.5" fill="#718096">the scheduler, kubelet, and container runtime each report their own step &#8212; nothing here is guessed</text>
+
+<text x="480" y="430" text-anchor="middle" font-size="12" fill="#4a5568">A Pod is the smallest thing Kubernetes schedules &#8212; one or more containers, one IP, one lifecycle.</text>
+<text x="480" y="448" text-anchor="middle" font-size="11.5" fill="#718096">docker exec ... crictl ps confirms the same container, same ID, from inside the node.</text>
+
+<defs>
+<marker id="arrowp" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

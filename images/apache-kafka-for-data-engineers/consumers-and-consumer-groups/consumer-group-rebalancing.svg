@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="380" viewBox="0 0 1100 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Three real rebalances on a 6-partition topic</title>
+  <desc>A four-column timeline. Column 1: consumer-A alone owns all 6 partitions. Column 2: consumer-B joins and a rebalance splits the 6 partitions 3-and-3 between A and B. Column 3: consumer-C joins and a second rebalance splits them 2-2-2 across A, B, and C. Column 4: consumer-A leaves and a third rebalance splits the 6 partitions 3-and-3 between the remaining B and C. Each rebalance is triggered automatically by Kafka's group coordinator, never by application code.</desc>
+  <rect width="1100" height="380" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Six Partitions, Three Real Rebalances</text>
+
+  <!-- column 1 -->
+  <text x="140" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3748">consumer-A joins</text>
+  <rect x="40" y="80" width="200" height="60" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="140" y="105" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#22543d">A: [0,1,2,3,4,5]</text>
+  <text x="140" y="122" text-anchor="middle" font-size="8.5" fill="#22543d">alone -- gets everything</text>
+
+  <line x1="250" y1="110" x2="280" y2="110" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowCG)" />
+
+  <!-- column 2 -->
+  <text x="380" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3748">consumer-B joins</text>
+  <rect x="290" y="80" width="90" height="60" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="335" y="105" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#22543d">A: [0,1,2]</text>
+  <rect x="390" y="80" width="90" height="60" rx="6" fill="#bee3f8" stroke="#4299e1" stroke-width="1.6" />
+  <text x="435" y="105" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">B: [3,4,5]</text>
+  <text x="380" y="122" text-anchor="middle" font-size="8.5" fill="#4a5568">rebalance #1 -- 3 and 3</text>
+
+  <line x1="500" y1="110" x2="530" y2="110" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowCG)" />
+
+  <!-- column 3 -->
+  <text x="670" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3748">consumer-C joins</text>
+  <rect x="540" y="80" width="80" height="60" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="580" y="105" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#22543d">A: [0,1]</text>
+  <rect x="630" y="80" width="80" height="60" rx="6" fill="#bee3f8" stroke="#4299e1" stroke-width="1.6" />
+  <text x="670" y="105" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">B: [4,5]</text>
+  <rect x="720" y="80" width="80" height="60" rx="6" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="760" y="105" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#553c9a">C: [2,3]</text>
+  <text x="670" y="122" text-anchor="middle" font-size="8.5" fill="#4a5568">rebalance #2 -- 2,2,2</text>
+
+  <line x1="810" y1="110" x2="840" y2="110" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowCG)" />
+
+  <!-- column 4 -->
+  <text x="960" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#742a2a">consumer-A leaves</text>
+  <rect x="850" y="80" width="100" height="60" rx="6" fill="#bee3f8" stroke="#4299e1" stroke-width="1.6" />
+  <text x="900" y="105" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">B: [3,4,5]</text>
+  <rect x="960" y="80" width="100" height="60" rx="6" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="1010" y="105" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#553c9a">C: [0,1,2]</text>
+  <text x="960" y="122" text-anchor="middle" font-size="8.5" fill="#4a5568">rebalance #3 -- back to 3 and 3</text>
+
+  <defs>
+    <marker id="arrowCG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <line x1="40" y1="165" x2="1060" y2="165" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <rect x="40" y="185" width="1020" height="90" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="60" y="210" font-size="12" font-weight="700" fill="#7b341e">Nothing here was application code deciding a split</text>
+  <text x="60" y="232" font-size="10" fill="#7b341e">Every one of these three rebalances was triggered and executed entirely by Kafka's group coordinator -- a consumer</text>
+  <text x="60" y="250" font-size="10" fill="#7b341e">joining or an existing member's leave-group notification is all it takes. No consumer ever asked for specific partitions.</text>
+
+  <text x="550" y="310" text-anchor="middle" font-size="11" fill="#4a5568">A fourth consumer here would get zero partitions -- six can only be split six ways before someone sits idle.</text>
+</svg>

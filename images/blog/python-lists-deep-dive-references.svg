@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc"><title id="title">Plain assignment aliases a Python list, while .copy() makes a new list pointing at the same items</title><desc id="desc">Two panels compare snapshot equals queue against dry underscore run equals queue dot copy on a two item list. In the left panel, snapshot and queue both point at one shared row of two boxes, each box holding an arrow down to a value, so snapshot is queue evaluates to True and appending through either name changes what both names see. In the right panel, dry underscore run dot copy creates a second, separate row of two boxes, so dry underscore run is queue evaluates to False, but each new box still holds an arrow pointing at the very same value objects as the original boxes, since a shallow copy only duplicates the outer row.</desc><rect width="1200" height="520" fill="#f7f8fa" /><g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"><text x="300" y="52" font-size="26" font-weight="600" fill="#0067c0" text-anchor="middle">PLAIN ASSIGNMENT</text><text x="900" y="52" font-size="26" font-weight="600" fill="#0067c0" text-anchor="middle">.COPY()</text></g><line x1="600" y1="86" x2="600" y2="470" stroke="#d0d5db" stroke-width="2" stroke-dasharray="6 8" />
+
+<g transform="translate(90 92)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<rect x="10" y="0" width="110" height="40" rx="10" fill="#ffffff" stroke="#0067c0" stroke-width="4" /><text x="65" y="26" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="20" font-weight="600" fill="#0067c0" text-anchor="middle">queue</text>
+<rect x="180" y="0" width="130" height="40" rx="10" fill="#ffffff" stroke="#0067c0" stroke-width="4" /><text x="245" y="26" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="20" font-weight="600" fill="#0067c0" text-anchor="middle">snapshot</text>
+<path d="M65 40C65 78 150 78 150 100" fill="none" stroke="#0067c0" stroke-width="5" stroke-linecap="round" />
+<path d="M245 40C245 78 150 78 150 100" fill="none" stroke="#0067c0" stroke-width="5" stroke-linecap="round" />
+<g font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="16">
+<rect x="75" y="100" width="60" height="38" rx="8" fill="#ffffff" stroke="#59636e" stroke-width="3" /><text x="105" y="124" text-anchor="middle" fill="#59636e">0</text>
+<rect x="150" y="100" width="60" height="38" rx="8" fill="#ffffff" stroke="#59636e" stroke-width="3" /><text x="180" y="124" text-anchor="middle" fill="#59636e">1</text>
+</g>
+<path d="M105 138V166" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" />
+<path d="M180 138V166" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" />
+<g font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="15">
+<rect x="69" y="168" width="72" height="34" rx="8" fill="#e3f0fa" /><text x="105" y="190" text-anchor="middle" fill="#1b1f24">a.pdf</text>
+<rect x="144" y="168" width="72" height="34" rx="8" fill="#e6f4e6" /><text x="180" y="190" text-anchor="middle" fill="#1b1f24">b.pdf</text>
+</g>
+<text x="145" y="248" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="19" fill="#59636e" text-anchor="middle">one row of boxes, two names on it</text>
+<rect x="-15" y="264" width="320" height="40" rx="10" fill="#fdeede" stroke="#0067c0" stroke-width="2" />
+<text x="145" y="290" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="17" font-weight="700" fill="#0067c0" text-anchor="middle">snapshot is queue &#8594; True</text>
+<text x="145" y="336" font-size="18" fill="#59636e" text-anchor="middle">append() through either name</text>
+<text x="145" y="360" font-size="18" fill="#59636e" text-anchor="middle">changes what both names see</text>
+</g>
+
+<g transform="translate(650 92)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<rect x="10" y="0" width="110" height="40" rx="10" fill="#ffffff" stroke="#0067c0" stroke-width="4" /><text x="65" y="26" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="20" font-weight="600" fill="#0067c0" text-anchor="middle">queue</text>
+<rect x="330" y="0" width="130" height="40" rx="10" fill="#ffffff" stroke="#0067c0" stroke-width="4" /><text x="395" y="26" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="20" font-weight="600" fill="#0067c0" text-anchor="middle">dry_run</text>
+<path d="M65 40V100" fill="none" stroke="#0067c0" stroke-width="5" stroke-linecap="round" />
+<path d="M395 40C395 70 300 70 300 100" fill="none" stroke="#0067c0" stroke-width="5" stroke-linecap="round" />
+<g font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="16">
+<rect x="35" y="100" width="60" height="38" rx="8" fill="#ffffff" stroke="#59636e" stroke-width="3" /><text x="65" y="124" text-anchor="middle" fill="#59636e">0</text>
+<rect x="110" y="100" width="60" height="38" rx="8" fill="#ffffff" stroke="#59636e" stroke-width="3" /><text x="140" y="124" text-anchor="middle" fill="#59636e">1</text>
+<rect x="270" y="100" width="60" height="38" rx="8" fill="#ffffff" stroke="#59636e" stroke-width="3" /><text x="300" y="124" text-anchor="middle" fill="#59636e">0</text>
+<rect x="345" y="100" width="60" height="38" rx="8" fill="#ffffff" stroke="#59636e" stroke-width="3" /><text x="375" y="124" text-anchor="middle" fill="#59636e">1</text>
+</g>
+<path d="M65 138V166" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" />
+<path d="M140 138V166" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" />
+<path d="M300 138C300 150 65 150 65 166" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 5" />
+<path d="M375 138C375 156 140 156 140 166" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 5" />
+<g font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="15">
+<rect x="29" y="168" width="72" height="34" rx="8" fill="#e3f0fa" /><text x="65" y="190" text-anchor="middle" fill="#1b1f24">a.pdf</text>
+<rect x="104" y="168" width="72" height="34" rx="8" fill="#e6f4e6" /><text x="140" y="190" text-anchor="middle" fill="#1b1f24">b.pdf</text>
+</g>
+<text x="215" y="248" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="19" fill="#59636e" text-anchor="middle">two rows of boxes, same items below</text>
+<rect x="55" y="264" width="300" height="40" rx="10" fill="#e3f0fa" stroke="#0067c0" stroke-width="2" />
+<text x="205" y="290" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="17" font-weight="700" fill="#0067c0" text-anchor="middle">dry_run is queue &#8594; False</text>
+<text x="215" y="336" font-size="18" fill="#59636e" text-anchor="middle">but nested items inside are still</text>
+<text x="215" y="360" font-size="18" fill="#59636e" text-anchor="middle">shared &#8212; a shallow copy only</text>
+</g>
+</svg>

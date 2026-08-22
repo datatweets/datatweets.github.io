@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="390" viewBox="0 0 1050 390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>Widget Layout Anatomy</title>
+<desc>A labeled diagram of the unit converter layout. A sidebar panel on the left holds a header and a decimal-places slider. The main area is split into two columns by st.columns(2): the left column holds a number input for miles, the right column holds the computed kilometers text. Arrows show that changing either the number input or the sidebar slider changes the text shown in the right column.</desc>
+<rect width="1050" height="390" fill="#ffffff" />
+<text x="525" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Widget Layout Anatomy</text>
+<rect x="30" y="60" width="314" height="210" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+<text x="187" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">st.sidebar</text>
+<text x="187" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Settings panel</text>
+<text x="187" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">st.header(&quot;Settings&quot;)</text>
+<text x="187" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">st.slider(&quot;Decimal places&quot;)</text>
+<text x="187" y="176" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">not the point of the app</text>
+<path d="M348,165 L364,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="368" y="60" width="314" height="210" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+<text x="525" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">col1 (st.columns)</text>
+<text x="525" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">st.number_input</text>
+<text x="525" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">&quot;Value in miles&quot;</text>
+<text x="525" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">reader-editable</text>
+<path d="M686,165 L702,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="706" y="60" width="314" height="210" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+<text x="863" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">col2 (st.columns)</text>
+<text x="863" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">st.write(...)</text>
+<text x="863" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">computed from col1&#x27;s</text>
+<text x="863" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">value and the slider</text>
+<rect x="30" y="286" width="990" height="88" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="525" y="310" text-anchor="middle" font-size="10.5" fill="#7b341e">Four widgets, three containers -- sidebar, and two columns split from the main page by st.columns(2).</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

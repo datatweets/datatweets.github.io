@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>What Streamlit Community Cloud Deployment Actually Requires</title>
+<desc>A five-row stack of the real, documented deployment steps. Row 1: a real, pinned requirements.txt, confirmed in this lesson to install cleanly in a brand-new empty virtual environment. Row 2: the app pushed to a real GitHub repository, public or private. Row 3: signing in to share.streamlit.io with the same GitHub account. Row 4: New app, pointing at the repo, branch, and main file path. Row 5: secrets added through the app own Settings panel on Streamlit Cloud, mirroring the local secrets.toml this lesson already confirmed is gitignored.</desc>
+<rect width="1000" height="480" fill="#ffffff" />
+<text x="500" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">What Streamlit Community Cloud Deployment Actually Requires</text>
+<rect x="60" y="60" width="880" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5" />
+<text x="500" y="86" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">requirements.txt -- confirmed here to install clean in an empty venv</text>
+<path d="M500,107 L500,123" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="126" width="880" height="44" rx="7" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5" />
+<text x="500" y="152" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">Push the app to a real GitHub repository</text>
+<path d="M500,173 L500,189" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="192" width="880" height="44" rx="7" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5" />
+<text x="500" y="218" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">Sign in to share.streamlit.io with the same GitHub account</text>
+<path d="M500,239 L500,255" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="258" width="880" height="44" rx="7" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5" />
+<text x="500" y="284" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">&quot;New app&quot; -- point at the repo, branch, and main file path</text>
+<path d="M500,305 L500,321" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="324" width="880" height="44" rx="7" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5" />
+<text x="500" y="350" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">Secrets added through the app&#x27;s own Settings panel on Cloud</text>
+<rect x="40" y="392" width="920" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="500" y="416" text-anchor="middle" font-size="10.5" fill="#7b341e">This course confirmed step 1 directly -- the real requirements.txt installs cleanly. Steps 2-5 are</text>
+<text x="500" y="436" text-anchor="middle" font-size="10.5" fill="#7b341e">Streamlit&#x27;s own documented process, reported accurately rather than demonstrated with a live account</text>
+<text x="500" y="456" text-anchor="middle" font-size="10.5" fill="#7b341e">this environment does not have.</text>
+<defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

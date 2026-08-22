@@ -1,0 +1,4 @@
+frac,approximate_neighbors,approximate_minutes,drift_mae_mm_s
+0.080000,29,58,0.035336
+0.200000,72,144,0.013316
+0.450000,162,324,0.017836

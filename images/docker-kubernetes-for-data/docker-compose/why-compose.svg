@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="620" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">The Same Stack, Run Two Ways</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">A Postgres database plus a reporter that seeds and reports on five real trips</text>
+
+<!-- Left column: manual -->
+<text x="240" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">BY HAND &#8212; FIVE COMMANDS</text>
+
+<rect x="80" y="106" width="320" height="34" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="240" y="128" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c05621">docker network create cf-net</text>
+
+<rect x="80" y="146" width="320" height="34" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="240" y="168" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c05621">docker run --network cf-net ... db</text>
+
+<rect x="80" y="186" width="320" height="34" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="240" y="208" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c05621">docker run --network cf-net -h db ...</text>
+
+<rect x="80" y="226" width="320" height="34" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="240" y="248" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">docker rm -f db</text>
+
+<rect x="80" y="266" width="320" height="34" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="240" y="288" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">docker network rm cf-net</text>
+
+<text x="240" y="320" text-anchor="middle" font-size="11" fill="#4a5568">"cf-net" appears 3 times, "db" appears 2 times &#8212;</text>
+<text x="240" y="336" text-anchor="middle" font-size="11" fill="#4a5568">nothing checks that they still agree with each other</text>
+
+<!-- Right column: compose -->
+<text x="720" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">DOCKER-COMPOSE.YML &#8212; TWO COMMANDS</text>
+
+<rect x="560" y="106" width="320" height="150" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="576" y="128" font-size="11.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#276749">services:</text>
+<text x="576" y="146" font-size="11.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#276749">  db:</text>
+<text x="576" y="164" font-size="11.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#276749">    image: postgres:16-alpine</text>
+<text x="576" y="184" font-size="11.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#276749">  reporter:</text>
+<text x="576" y="202" font-size="11.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#276749">    depends_on: [db]</text>
+<text x="576" y="220" font-size="11.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#276749">    command: [psql, -h, db, ...]</text>
+<text x="576" y="240" font-size="10.5" fill="#4a5568">no docker network create anywhere</text>
+
+<rect x="560" y="266" width="150" height="34" rx="6" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+<text x="635" y="288" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">compose up -d</text>
+
+<rect x="730" y="266" width="150" height="34" rx="6" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+<text x="805" y="288" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">compose down</text>
+
+<line x1="480" y1="96" x2="480" y2="340" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+
+<line x1="40" y1="356" x2="920" y2="356" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="382" font-size="13" font-weight="700" fill="#4a5568">REAL, SHARED RESULT &#8212; BOTH APPROACHES</text>
+
+<rect x="40" y="398" width="420" height="76" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="60" y="422" font-size="12" font-weight="700" fill="#2d3748">5 trips &#8226; avg fare $27.36 &#8226; avg distance 4.42mi</text>
+<text x="60" y="442" font-size="12" font-weight="700" fill="#2d3748">total revenue $175.56</text>
+<text x="60" y="462" font-size="11" fill="#718096">the same five real CityFlow trips from Module 1</text>
+
+<rect x="500" y="398" width="420" height="76" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="520" y="420" font-size="12" font-weight="700" fill="#c53030">Real depends_on gotcha, hit for real</text>
+<text x="520" y="440" font-size="11.5" fill="#4a5568">reporter's first run: "connection refused" &#8212;</text>
+<text x="520" y="458" font-size="11.5" fill="#4a5568">depends_on only waits for db to START, not to be READY</text>
+
+<text x="480" y="504" text-anchor="middle" font-size="12" fill="#718096">Compose creates the network automatically and services reach each other by name &#8212;</text>
+<text x="480" y="522" text-anchor="middle" font-size="12" fill="#718096">it doesn't remove the depends_on timing gap, which Lesson 5 fixes with a real healthcheck.</text>
+</svg>

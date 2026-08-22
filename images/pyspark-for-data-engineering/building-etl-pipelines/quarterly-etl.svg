@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 626" width="960" height="626" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="626" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">The Quarterly ETL &#8212; one production job, proven idempotent</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">read &#8594; clean &#8594; transform &#8594; write &#8594; verify, on the NYC taxi quarter &#183; every number cross-checked to Course&#160;1</text>
+
+<text x="32" y="92" font-size="15" font-weight="700" fill="#2b6cb0">THE JOB, END TO END</text>
+
+<!-- Stage 1: READ -->
+<rect x="32" y="104" width="168" height="132" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="32" y="104" width="168" height="26" rx="8" fill="#2b6cb0"/>
+<text x="116" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">1 &#183; READ</text>
+<text x="116" y="150" text-anchor="middle" font-size="11" fill="#4a5568">explicit schema</text>
+<text x="116" y="168" text-anchor="middle" font-size="11" fill="#4a5568">19 typed fields</text>
+<text x="116" y="192" text-anchor="middle" font-size="11" fill="#4a5568">3 months, one read</text>
+<text x="116" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">9,554,778 rows</text>
+
+<!-- Stage 2: CLEAN -->
+<rect x="214" y="104" width="168" height="132" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<rect x="214" y="104" width="168" height="26" rx="8" fill="#c05621"/>
+<text x="298" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">2 &#183; CLEAN</text>
+<text x="298" y="150" text-anchor="middle" font-size="11" fill="#4a5568">window + key on ID</text>
+<text x="298" y="168" text-anchor="middle" font-size="11" fill="#4a5568">quarantine 21 strays</text>
+<text x="298" y="186" text-anchor="middle" font-size="11" fill="#4a5568">keep 115,894 reversals</text>
+<text x="298" y="204" text-anchor="middle" font-size="11" fill="#c05621">drop them &#8594; +$2.99M</text>
+<text x="298" y="224" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">keep 9,554,757</text>
+
+<!-- Stage 3: TRANSFORM -->
+<rect x="396" y="104" width="168" height="132" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="396" y="104" width="168" height="26" rx="8" fill="#2b6cb0"/>
+<text x="480" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">3 &#183; TRANSFORM</text>
+<text x="480" y="150" text-anchor="middle" font-size="11" fill="#4a5568">date_trunc hour</text>
+<text x="480" y="168" text-anchor="middle" font-size="11" fill="#4a5568">broadcast join</text>
+<text x="480" y="186" text-anchor="middle" font-size="11" fill="#4a5568">265 zones</text>
+<text x="480" y="210" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">240,917 buckets</text>
+
+<!-- Stage 4: WRITE -->
+<rect x="578" y="104" width="168" height="132" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<rect x="578" y="104" width="168" height="26" rx="8" fill="#276749"/>
+<text x="662" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">4 &#183; WRITE</text>
+<text x="662" y="150" text-anchor="middle" font-size="11" fill="#4a5568">Parquet, partitionBy</text>
+<text x="662" y="168" text-anchor="middle" font-size="11" fill="#4a5568">pickup_date</text>
+<text x="662" y="186" text-anchor="middle" font-size="11" fill="#4a5568">dynamic overwrite</text>
+<text x="662" y="210" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">91 parts, 91 files</text>
+
+<!-- Stage 5: VERIFY -->
+<rect x="760" y="104" width="168" height="132" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<rect x="760" y="104" width="168" height="26" rx="8" fill="#276749"/>
+<text x="844" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">5 &#183; VERIFY</text>
+<text x="844" y="150" text-anchor="middle" font-size="11" fill="#4a5568">read the table back</text>
+<text x="844" y="168" text-anchor="middle" font-size="11" fill="#4a5568">cross-check to C1</text>
+<text x="844" y="186" text-anchor="middle" font-size="11" fill="#4a5568">podium to the trip</text>
+<text x="844" y="212" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">$256,692,373.14</text>
+
+<!-- arrows -->
+<text x="207" y="176" text-anchor="middle" font-size="16" font-weight="700" fill="#a0aec0">&#8594;</text>
+<text x="389" y="176" text-anchor="middle" font-size="16" font-weight="700" fill="#a0aec0">&#8594;</text>
+<text x="571" y="176" text-anchor="middle" font-size="16" font-weight="700" fill="#a0aec0">&#8594;</text>
+<text x="753" y="176" text-anchor="middle" font-size="16" font-weight="700" fill="#a0aec0">&#8594;</text>
+
+<line x1="32" y1="264" x2="928" y2="264" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- Idempotency panel -->
+<text x="32" y="296" font-size="15" font-weight="700" fill="#276749">THE HEADLINE &#8212; RUN THE SAME JOB TWICE</text>
+
+<!-- run 1 -->
+<text x="60" y="332" font-size="12" font-weight="700" fill="#1a202c">Run 1</text>
+<rect x="150" y="318" width="620" height="22" rx="4" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="164" y="334" font-size="12" fill="#1a202c">240,917 buckets &#183; 9,554,757 trips &#183; <tspan font-weight="700" fill="#276749">$256,692,373.14</tspan></text>
+
+<!-- run 2 -->
+<text x="60" y="372" font-size="12" font-weight="700" fill="#1a202c">Run 2</text>
+<rect x="150" y="358" width="620" height="22" rx="4" fill="#f0fff4" stroke="#276749" stroke-width="1.2"/>
+<text x="164" y="374" font-size="12" fill="#1a202c">240,917 buckets &#183; 9,554,757 trips &#183; <tspan font-weight="700" fill="#276749">$256,692,373.14</tspan></text>
+<text x="790" y="374" font-size="12" font-weight="700" fill="#276749">identical &#8212; dynamic overwrite replaced every partition</text>
+
+<!-- naive append -->
+<text x="60" y="412" font-size="12" font-weight="700" fill="#c53030">Append</text>
+<rect x="150" y="398" width="620" height="22" rx="4" fill="#fff5f5" stroke="#c53030" stroke-width="1.2"/>
+<text x="164" y="414" font-size="12" fill="#1a202c">481,834 buckets &#183; 19,109,514 trips &#183; <tspan font-weight="700" fill="#c53030">$513,384,746.28</tspan></text>
+<text x="790" y="414" font-size="12" font-weight="700" fill="#c53030">doubled &#8212; the bug idempotency prevents</text>
+
+<text x="150" y="446" font-size="11.5" font-style="italic" fill="#718096">A re-run that must not double-count is the difference between a job you can schedule and one you must babysit.</text>
+
+<line x1="32" y1="468" x2="928" y2="468" stroke="#e2e8f0" stroke-width="1"/>
+
+<rect x="32" y="484" width="896" height="118" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="512" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1a202c">The production ETL checklist</text>
+<text x="480" y="536" text-anchor="middle" font-size="12" fill="#4a5568">1&#160;&#183;&#160;declare the schema (a contract, not a guess) &#160;&#160; 2&#160;&#183;&#160;stage clean/transform as tested functions</text>
+<text x="480" y="556" text-anchor="middle" font-size="12" fill="#4a5568">3&#160;&#183;&#160;write a partitioned table with a controlled file count &#160;&#160; 4&#160;&#183;&#160;overwrite dynamically so a re-run is idempotent</text>
+<text x="480" y="576" text-anchor="middle" font-size="12" fill="#4a5568">5&#160;&#183;&#160;verify on read-back against known-good totals, every run</text>
+<text x="480" y="594" text-anchor="middle" font-size="11.5" font-style="italic" fill="#718096">On one 160&#160;MB laptop this runs in seconds &#8212; the value is the structure and the guarantees, which are what let it scale and run unattended.</text>
+</svg>

@@ -1,0 +1,9 @@
+case_id,scenario,request_status,decision_status,execution_status,final_status,expected_status,audit_events
+A01,approved exact action,approval_required,approved,executed,executed,executed,3
+A02,reviewer denies action,approval_required,denied,denied,denied,denied,3
+A03,decision arrives after expiry,approval_required,expired,expired,expired,expired,3
+A04,arguments change after approval,approval_required,approved,action_changed,action_changed,action_changed,3
+A05,requester tries self-approval,approval_required,self_approval_blocked,approval_required,self_approval_blocked,self_approval_blocked,3
+A06,execution before decision,approval_required,not_reached,approval_required,approval_required,approval_required,2
+A07,second execution is blocked,approval_required,approved,already_executed,already_executed,already_executed,4
+A08,unknown tool is rejected,unknown_tool,not_reached,not_reached,unknown_tool,unknown_tool,1

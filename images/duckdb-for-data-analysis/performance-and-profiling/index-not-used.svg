@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="400" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Checked, Not Assumed: Is the Index Used?</text>
+
+  <text x="400" y="58" text-anchor="middle" font-size="10.5" fill="#718096">WHERE trip_id = 1500000 -- 1 row out of 2,964,624</text>
+
+  <rect x="60" y="76" width="300" height="56" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="210" y="98" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">Before: no index</text>
+  <text x="210" y="116" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#2d3748">EXPLAIN -&gt; SEQ_SCAN</text>
+
+  <rect x="440" y="76" width="300" height="56" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="590" y="98" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">After: CREATE INDEX</text>
+  <text x="590" y="116" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">EXPLAIN -&gt; SEQ_SCAN (again)</text>
+
+  <line x1="210" y1="132" x2="360" y2="168" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowIX)" />
+  <line x1="590" y1="132" x2="440" y2="168" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowIX)" />
+
+  <rect x="240" y="168" width="320" height="56" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="400" y="192" text-anchor="middle" font-size="11" font-weight="700" fill="#9c4221">the optimizer chose not to use it</text>
+  <text x="400" y="210" text-anchor="middle" font-size="9.5" fill="#9c4221">both times, verified with EXPLAIN</text>
+
+  <line x1="400" y1="224" x2="400" y2="256" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowIX)" />
+
+  <rect x="160" y="256" width="480" height="66" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="400" y="280" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">indexes still enforce constraints correctly</text>
+  <text x="400" y="298" text-anchor="middle" font-size="9.5" fill="#2c5282">real ConstraintException on a duplicate PRIMARY KEY insert</text>
+  <text x="400" y="314" text-anchor="middle" font-size="9.5" fill="#2c5282">-- just not the default lookup accelerator row-store DBs use them for</text>
+
+  <rect x="90" y="342" width="620" height="42" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="400" y="368" text-anchor="middle" font-size="10" fill="#2d3748">Real pruning comes from per-row-group min/max stats -- automatic, no index required</text>
+
+  <defs>
+    <marker id="arrowIX" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

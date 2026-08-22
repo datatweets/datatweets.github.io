@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Pure convention, no enforcement -- and a rename took down a consumer mid-stream</title>
+  <desc>A producer silently renames fare_amount to total_fare partway through a stream of six events. A downstream consumer, written against the original field name, processes the first three events successfully accumulating 40.5 in revenue, then crashes on the fourth event with a real KeyError because record['fare_amount'] no longer exists. The last three events are never processed. Nothing enforced the shared understanding of the event's shape -- it was pure convention, and it broke without warning.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Rename With No Coordination, Felt Immediately</text>
+
+  <!-- event stream -->
+  <text x="60" y="70" font-size="11" font-weight="700" fill="#4a5568">event stream (in order):</text>
+  <g font-family="Menlo, monospace" font-size="9.5">
+    <rect x="60" y="82" width="150" height="36" rx="5" fill="#c6f6d5" stroke="#48bb78"/>
+    <text x="135" y="98" text-anchor="middle" fill="#22543d">trip-0</text>
+    <text x="135" y="112" text-anchor="middle" fill="#22543d">fare_amount: 12.5</text>
+
+    <rect x="220" y="82" width="150" height="36" rx="5" fill="#c6f6d5" stroke="#48bb78"/>
+    <text x="295" y="98" text-anchor="middle" fill="#22543d">trip-1</text>
+    <text x="295" y="112" text-anchor="middle" fill="#22543d">fare_amount: 13.5</text>
+
+    <rect x="380" y="82" width="150" height="36" rx="5" fill="#c6f6d5" stroke="#48bb78"/>
+    <text x="455" y="98" text-anchor="middle" fill="#22543d">trip-2</text>
+    <text x="455" y="112" text-anchor="middle" fill="#22543d">fare_amount: 14.5</text>
+
+    <rect x="540" y="82" width="150" height="36" rx="5" fill="#fed7d7" stroke="#fc8181"/>
+    <text x="615" y="98" text-anchor="middle" fill="#742a2a">trip-3</text>
+    <text x="615" y="112" text-anchor="middle" fill="#742a2a">total_fare: 15.5</text>
+
+    <rect x="700" y="82" width="150" height="36" rx="5" fill="#e2e8f0" stroke="#a0aec0"/>
+    <text x="775" y="98" text-anchor="middle" fill="#4a5568">trip-4</text>
+    <text x="775" y="112" text-anchor="middle" fill="#4a5568">never read</text>
+
+    <rect x="860" y="82" width="150" height="36" rx="5" fill="#e2e8f0" stroke="#a0aec0"/>
+    <text x="935" y="98" text-anchor="middle" fill="#4a5568">trip-5</text>
+    <text x="935" y="112" text-anchor="middle" fill="#4a5568">never read</text>
+  </g>
+
+  <line x1="60" y1="135" x2="1010" y2="135" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="60" y="150" font-size="9" fill="#4a5568">producer renames the field here, mid-stream, with no version marker</text>
+  <path d="M540,118 L540,135" stroke="#742a2a" stroke-width="2" stroke-dasharray="3,3"/>
+
+  <!-- consumer processing -->
+  <rect x="60" y="175" width="980" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="550" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">consumer: total_revenue += record["fare_amount"]</text>
+  <text x="550" y="220" text-anchor="middle" font-size="11" font-family="Menlo, monospace" fill="#2c5282">trip-0, trip-1, trip-2 processed -- revenue accumulates to 40.5</text>
+  <text x="550" y="236" text-anchor="middle" font-size="10" fill="#2c5282">unmodified code, never told the field name changed</text>
+
+  <!-- crash -->
+  <rect x="60" y="260" width="980" height="80" rx="8" fill="#742a2a" />
+  <text x="550" y="288" text-anchor="middle" font-size="14" font-weight="700" font-family="Menlo, monospace" fill="#fed7d7">CRASHED after 3 of 6 events: KeyError: 'fare_amount'</text>
+  <text x="550" y="310" text-anchor="middle" font-size="11" fill="#fed7d7">trip-3 hits the loop first with no fare_amount key -- the crash stops trip-4 and trip-5 from ever being read</text>
+  <text x="550" y="328" text-anchor="middle" font-size="10" fill="#fed7d7">40.5 in partial revenue captured, then silence -- no alert, just a stopped process</text>
+
+  <text x="550" y="368" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Nothing enforced what "a trip event" meant -- it was pure convention</text>
+  <text x="550" y="390" text-anchor="middle" font-size="11" fill="#4a5568">and convention broke the moment two people stopped coordinating in real time.</text>
+</svg>

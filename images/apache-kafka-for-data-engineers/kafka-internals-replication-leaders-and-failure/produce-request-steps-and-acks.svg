@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="380" viewBox="0 0 1100 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A produce request's three real steps, and how far each acks setting waits</title>
+  <desc>Three steps in order: the leader appends the record to its own local log, the record replicates to the rest of the in-sync replica set, and the high watermark advances once every current ISR member has it. acks=0 returns before any step is confirmed. acks=1 returns after step 1, the leader's own append. acks=all waits for step 3, the high watermark actually advancing. Below, a real test with only one broker alive shows acks=1 succeeding (it only needed step 1) while acks=all fails with a genuine NotEnoughReplicasException, because the ISR can never reach the required min.insync.replicas of 2.</desc>
+  <rect width="1100" height="380" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Three Real Steps, Three Different Waiting Points</text>
+
+  <rect x="40" y="55" width="300" height="60" rx="6" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="190" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">1. Leader appends to its own log</text>
+  <text x="190" y="98" text-anchor="middle" font-size="9" fill="#718096">happens regardless of acks</text>
+
+  <line x1="340" y1="85" x2="370" y2="85" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowPS)" />
+
+  <rect x="380" y="55" width="300" height="60" rx="6" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="530" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">2. Record replicates to the ISR</text>
+  <text x="530" y="98" text-anchor="middle" font-size="9" fill="#718096">each in-sync replica fetches it</text>
+
+  <line x1="680" y1="85" x2="710" y2="85" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowPS)" />
+
+  <rect x="720" y="55" width="340" height="60" rx="6" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="890" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">3. High watermark advances</text>
+  <text x="890" y="98" text-anchor="middle" font-size="9" fill="#718096">every current ISR member has it -- now visible to consumers</text>
+
+  <line x1="190" y1="115" x2="190" y2="140" stroke="#fc8181" stroke-width="1.6" stroke-dasharray="3 3" />
+  <text x="190" y="155" text-anchor="middle" font-size="9.5" font-weight="700" fill="#742a2a">acks=1 waits here</text>
+
+  <line x1="890" y1="115" x2="890" y2="140" stroke="#48bb78" stroke-width="1.6" stroke-dasharray="3 3" />
+  <text x="890" y="155" text-anchor="middle" font-size="9.5" font-weight="700" fill="#22543d">acks='all' waits here</text>
+
+  <text x="40" y="180" font-size="9.5" fill="#4a5568">acks=0 returns before any of these three steps are confirmed at all.</text>
+
+  <defs>
+    <marker id="arrowPS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <line x1="40" y1="205" x2="1060" y2="205" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <text x="550" y="235" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">Only 1 of 3 brokers alive, min.insync.replicas=2 -- same cluster, same topic</text>
+
+  <rect x="200" y="250" width="300" height="70" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="350" y="278" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#22543d">acks=1 -- succeeds</text>
+  <text x="350" y="296" text-anchor="middle" font-size="9" fill="#22543d">only needed the leader (step 1)</text>
+
+  <rect x="600" y="250" width="300" height="70" rx="6" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="750" y="272" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#742a2a">acks='all' -- fails</text>
+  <text x="750" y="290" text-anchor="middle" font-size="8.5" fill="#742a2a">NotEnoughReplicasException</text>
+  <text x="750" y="304" text-anchor="middle" font-size="8.5" fill="#742a2a">ISR(1) can't reach min.insync.replicas(2)</text>
+
+  <text x="550" y="350" text-anchor="middle" font-size="11" fill="#4a5568">Genuinely different guarantees, not the same one at two speeds -- confirmed on a real cluster, not assumed.</text>
+</svg>

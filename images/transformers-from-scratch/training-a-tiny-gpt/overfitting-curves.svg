@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="400" fill="#ffffff"/>
+  <text x="360" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#1a202c">The overfitting signature (training on random data)</text>
+  <text x="360" y="52" text-anchor="middle" font-size="12" fill="#718096">training loss falls while validation loss climbs above the baseline</text>
+
+  <!-- axes -->
+  <line x1="80" y1="330" x2="670" y2="330" stroke="#4a5568" stroke-width="1.5"/>
+  <line x1="80" y1="70" x2="80" y2="330" stroke="#4a5568" stroke-width="1.5"/>
+  <text x="375" y="362" text-anchor="middle" font-size="12" fill="#4a5568">training step</text>
+  <text x="48" y="200" text-anchor="middle" font-size="12" fill="#4a5568" transform="rotate(-90 48 200)">loss</text>
+
+  <!-- y ticks: 9 top(y=70) -> 0 bottom(y=330). y = 330 - loss/9*260 -->
+  <g font-size="11" fill="#718096" text-anchor="end">
+    <text x="72" y="74">9</text><text x="72" y="161">6</text><text x="72" y="248">3</text><text x="72" y="333">0</text>
+  </g>
+  <!-- baseline 3.178 -->
+  <line x1="80" y1="238" x2="670" y2="238" stroke="#a0aec0" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="664" y="232" text-anchor="end" font-size="11" fill="#718096">random baseline log(24)=3.18</text>
+
+  <!-- x ticks 0..800 -> 80..670 -->
+  <g font-size="11" fill="#718096" text-anchor="middle">
+    <text x="80" y="348">0</text><text x="228" y="348">200</text><text x="375" y="348">400</text><text x="522" y="348">600</text><text x="670" y="348">800</text>
+  </g>
+
+  <!-- val curve (climbs): (0,3.26)(100,4.27)(200,5.69)(300,6.94)(400,7.37)(500,7.95)(600,7.56)(700,8.14)(800,8.61)
+       y=330-loss/9*260 -->
+  <polyline fill="none" stroke="#c53030" stroke-width="2.5"
+    points="80,236 154,207 228,166 301,129 375,117 449,100 522,112 596,95 670,81"/>
+  <circle cx="80" cy="236" r="3" fill="#c53030"/><circle cx="670" cy="81" r="3.5" fill="#c53030"/>
+  <text x="470" y="72" font-size="12" fill="#c53030" font-weight="600">validation &#8593; 8.61 (worse than random)</text>
+
+  <!-- train curve (falls): (0,3.19)(100,1.94)(200,0.79)(300,0.45)(500,0.41)(800,0.27) -->
+  <polyline fill="none" stroke="#276749" stroke-width="2.5"
+    points="80,238 154,274 228,307 301,317 375,319 449,318 522,319 596,320 670,322"/>
+  <circle cx="80" cy="238" r="3" fill="#276749"/><circle cx="670" cy="322" r="3.5" fill="#276749"/>
+  <text x="430" y="312" font-size="12" fill="#276749" font-weight="600">training &#8595; 0.27 (memorizing)</text>
+
+  <text x="375" y="388" text-anchor="middle" font-size="12" fill="#1a202c">The widening gap is overfitting; validation above the baseline is confident wrongness.</text>
+</svg>

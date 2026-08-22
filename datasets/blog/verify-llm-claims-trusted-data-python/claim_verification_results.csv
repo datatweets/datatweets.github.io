@@ -1,0 +1,16 @@
+case_id,expected_status,actual_status,reason
+K01,verified,verified,matched format in CAT-001
+K02,verified,verified,matched weekday in CAT-002
+K03,verified,verified,matched start_time in CAT-003
+K04,verified,verified,matched fee_eur in CAT-004
+K05,verified,verified,matched step_free_access in CAT-005
+K06,verified,verified,matched language in CAT-006
+K07,value_mismatch,value_mismatch,claim=online; catalog=hybrid
+K08,value_mismatch,value_mismatch,claim=friday; catalog=tuesday
+K09,value_mismatch,value_mismatch,claim=25.00; catalog=18.00
+K10,unknown_workshop,unknown_workshop,'WS999' is absent from the catalog
+K11,unsupported_attribute,unsupported_attribute,'duration_minutes' is not an approved attribute
+K12,citation_mismatch,citation_mismatch,citation does not identify the workshop's catalog row
+K13,invalid_value,invalid_value,expected a decimal number
+K14,invalid_shape,invalid_shape,output must contain exactly the four required keys
+K15,invalid_json,invalid_json,output is not valid JSON

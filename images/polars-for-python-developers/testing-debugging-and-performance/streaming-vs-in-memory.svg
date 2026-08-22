@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">engine="in-memory" vs engine="streaming"</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">Same query, both confirmed identical -- the memory benefit only matters once data doesn't fit in RAM</text>
+
+  <rect x="30" y="70" width="300" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="180" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">in-memory (default)</text>
+  <rect x="60" y="110" width="240" height="40" rx="6" fill="#ffffff" stroke="#4299e1" stroke-width="1.2" />
+  <text x="180" y="134" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">all source data loaded at once</text>
+  <text x="180" y="168" text-anchor="middle" font-size="8.5" fill="#4a5568">memory use grows with data size</text>
+  <text x="180" y="184" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">median: 4.47 ms on this data</text>
+
+  <rect x="390" y="70" width="300" height="150" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="540" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">streaming</text>
+  <rect x="410" y="110" width="60" height="40" rx="6" fill="#ffffff" stroke="#9f7aea" stroke-width="1.2" />
+  <rect x="480" y="110" width="60" height="40" rx="6" fill="#ffffff" stroke="#9f7aea" stroke-width="1.2" />
+  <rect x="550" y="110" width="60" height="40" rx="6" fill="#ffffff" stroke="#9f7aea" stroke-width="1.2" />
+  <text x="440" y="134" text-anchor="middle" font-size="7.5" fill="#1a202c">chunk 1</text>
+  <text x="510" y="134" text-anchor="middle" font-size="7.5" fill="#1a202c">chunk 2</text>
+  <text x="580" y="134" text-anchor="middle" font-size="7.5" fill="#1a202c">chunk 3</text>
+  <text x="540" y="168" text-anchor="middle" font-size="8.5" fill="#4a5568">memory use stays capped</text>
+  <text x="540" y="184" text-anchor="middle" font-size="9.5" font-weight="700" fill="#6b46c1">median: 5.46 ms on this data</text>
+
+  <rect x="40" y="240" width="640" height="70" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="264" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">Streaming measured slower here, not faster</text>
+  <text x="360" y="284" text-anchor="middle" font-size="9" fill="#742a2a">Thistlewood's ~20,000-row files fit comfortably in memory -- chunking overhead is pure cost</text>
+  <text x="360" y="298" text-anchor="middle" font-size="9" fill="#742a2a">with no memory-pressure problem to solve in exchange</text>
+
+  <rect x="40" y="326" width="640" height="60" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="350" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">Both engines confirmed to produce identical results (.equals() == True)</text>
+  <text x="360" y="370" text-anchor="middle" font-size="9" fill="#22543d">Streaming's real payoff is data too large for RAM at all -- not this course's scale</text>
+</svg>

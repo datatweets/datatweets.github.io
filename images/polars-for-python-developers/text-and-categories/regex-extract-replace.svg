@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="440" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">str.extract() and str.replace_all() -- Two Real Regex Tools</text>
+  <text x="360" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">Both verified against real matching and real non-matching Thistlewood rows</text>
+
+  <rect x="40" y="76" width="300" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="190" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">str.extract(pattern, group)</text>
+  <text x="60" y="126" font-size="10" font-family="monospace" fill="#1a202c">product_id: "P007"</text>
+  <text x="60" y="146" font-size="10" font-family="monospace" fill="#2b6cb0">pattern: ^P(\d+)$</text>
+  <line x1="60" y1="156" x2="320" y2="156" stroke="#cbd5e0" stroke-width="1" />
+  <text x="60" y="176" font-size="10" font-family="monospace" fill="#276749">product_code: "007"</text>
+  <text x="60" y="200" font-size="9" fill="#4a5568">0 nulls across all 61 product_ids;</text>
+  <text x="60" y="214" font-size="9" fill="#4a5568">category values correctly return null</text>
+
+  <rect x="380" y="76" width="300" height="150" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="530" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">str.replace_all(pattern, value)</text>
+  <text x="400" y="126" font-size="10" font-family="monospace" fill="#1a202c">"  Carrara  Marble  Ladle  "</text>
+  <text x="400" y="146" font-size="10" font-family="monospace" fill="#6b46c1">pattern: \s+  -&gt;  " "</text>
+  <line x1="400" y1="156" x2="660" y2="156" stroke="#cbd5e0" stroke-width="1" />
+  <text x="400" y="176" font-size="10" font-family="monospace" fill="#276749">" Carrara Marble Ladle "</text>
+  <text x="400" y="200" font-size="9" fill="#4a5568">3 of 61 product_name rows changed;</text>
+  <text x="400" y="214" font-size="9" fill="#4a5568">58 rows byte-for-byte unchanged</text>
+
+  <rect x="120" y="248" width="480" height="80" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="272" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9c4221">replace() fixes only the first match, replace_all() fixes every match</text>
+  <text x="360" y="292" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">"aa-bb-cc".replace("-","_")     -&gt;  "aa_bb-cc"</text>
+  <text x="360" y="310" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">"aa-bb-cc".replace_all("-","_") -&gt;  "aa_bb_cc"</text>
+
+  <rect x="90" y="344" width="540" height="70" rx="10" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="360" y="368" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">A blanket hyphen-strip on product_name would corrupt 7 real names</text>
+  <text x="360" y="388" text-anchor="middle" font-size="9.5" fill="#742a2a">"Powder-Coated Hand Mixer" -&gt; use a separate match_key column instead</text>
+
+  <text x="360" y="430" text-anchor="middle" font-size="10.5" fill="#718096">A matching key normalizes aggressively for comparison only -- it never overwrites the real display value.</text>
+</svg>

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="660" fill="#ffffff"/>
+  <text x="30" y="38" font-size="22" font-weight="700" fill="#1a202c">The MiniGPT class, end to end</text>
+  <text x="30" y="60" font-size="13" fill="#4a5568">Embeddings &#8594; causal blocks &#8594; final LayerNorm &#8594; LM head &#8594; next-token loss &#8212; forward down, gradients back up</text>
+
+  <!-- ================= FORWARD PIPELINE (left column) ================= -->
+  <!-- idx -->
+  <rect x="60" y="90" width="230" height="42" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="175" y="110" font-size="13" font-weight="600" fill="#1a202c" text-anchor="middle">idx  (B, T) = (4, 16)</text>
+  <text x="175" y="126" font-size="11" fill="#718096" text-anchor="middle">token ids into the context window</text>
+
+  <!-- embed -->
+  <rect x="60" y="152" width="230" height="56" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="175" y="174" font-size="13" font-weight="600" fill="#2b6cb0" text-anchor="middle">E[idx] + P[:T]</text>
+  <text x="175" y="192" font-size="11" fill="#4a5568" text-anchor="middle">token embed (24,32) + position (16,32)</text>
+
+  <!-- x -->
+  <rect x="60" y="228" width="230" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="175" y="250" font-size="13" font-weight="600" fill="#276749" text-anchor="middle">x  (B, T, C) = (4, 16, 32)</text>
+
+  <!-- block 1 -->
+  <rect x="60" y="282" width="230" height="46" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="175" y="303" font-size="13" font-weight="600" fill="#6b46c1" text-anchor="middle">Causal TransformerBlock 1</text>
+  <text x="175" y="320" font-size="11" fill="#4a5568" text-anchor="middle">pre-norm, masked attention + FFN</text>
+
+  <!-- block 2 -->
+  <rect x="60" y="342" width="230" height="46" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="175" y="363" font-size="13" font-weight="600" fill="#6b46c1" text-anchor="middle">Causal TransformerBlock 2</text>
+  <text x="175" y="380" font-size="11" fill="#4a5568" text-anchor="middle">shape preserved: (4, 16, 32)</text>
+
+  <!-- final LN -->
+  <rect x="60" y="402" width="230" height="42" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="175" y="423" font-size="13" font-weight="600" fill="#c05621" text-anchor="middle">final LayerNorm</text>
+  <text x="175" y="438" font-size="11" fill="#4a5568" text-anchor="middle">gamma_f, beta_f  (32,)</text>
+
+  <!-- head -->
+  <rect x="60" y="458" width="230" height="46" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="175" y="479" font-size="13" font-weight="600" fill="#2b6cb0" text-anchor="middle">LM head:  xf @ W_head + b_head</text>
+  <text x="175" y="496" font-size="11" fill="#4a5568" text-anchor="middle">W_head (32, 24),  b_head (24,)</text>
+
+  <!-- logits -->
+  <rect x="60" y="518" width="230" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="175" y="540" font-size="13" font-weight="600" fill="#276749" text-anchor="middle">logits  (B, T, vocab) = (4, 16, 24)</text>
+
+  <!-- loss -->
+  <rect x="60" y="566" width="230" height="46" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+  <text x="175" y="587" font-size="13" font-weight="600" fill="#c53030" text-anchor="middle">next-token cross-entropy loss</text>
+  <text x="175" y="604" font-size="11" fill="#4a5568" text-anchor="middle">init &#8776; log(24) = 3.178</text>
+
+  <!-- forward arrows -->
+  <g stroke="#4a5568" stroke-width="1.6" fill="#4a5568">
+    <line x1="175" y1="132" x2="175" y2="150"/><polygon points="171,150 179,150 175,157"/>
+    <line x1="175" y1="208" x2="175" y2="226"/><polygon points="171,226 179,226 175,233"/>
+    <line x1="175" y1="262" x2="175" y2="280"/><polygon points="171,280 179,280 175,287"/>
+    <line x1="175" y1="328" x2="175" y2="340"/><polygon points="171,340 179,340 175,347"/>
+    <line x1="175" y1="388" x2="175" y2="400"/><polygon points="171,400 179,400 175,407"/>
+    <line x1="175" y1="444" x2="175" y2="456"/><polygon points="171,456 179,456 175,463"/>
+    <line x1="175" y1="504" x2="175" y2="516"/><polygon points="171,516 179,516 175,523"/>
+    <line x1="175" y1="552" x2="175" y2="564"/><polygon points="171,564 179,564 175,571"/>
+  </g>
+
+  <!-- backward arrow (red dashed, up the right edge of the column) -->
+  <g>
+    <line x1="308" y1="588" x2="308" y2="112" stroke="#c53030" stroke-width="2" stroke-dasharray="7 5"/>
+    <polygon points="304,112 312,112 308,104" fill="#c53030"/>
+    <text x="322" y="360" font-size="12" font-weight="600" fill="#c53030" transform="rotate(90 322 360)">backward()  &#8212;  loss to every parameter</text>
+    <text x="322" y="250" font-size="11" fill="#c53030" transform="rotate(90 322 250)">dQuery, dKey, dValue inside each block</text>
+    <text x="322" y="500" font-size="11" fill="#c53030" transform="rotate(90 322 500)">dW_head, db_head, dgamma_f</text>
+    <text x="322" y="150" font-size="11" fill="#c53030" transform="rotate(90 322 150)">dE (scatter-add), dP</text>
+  </g>
+
+  <!-- ================= RIGHT: RESULTS ================= -->
+  <!-- grad check panel -->
+  <rect x="400" y="90" width="520" height="252" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="420" y="118" font-size="15" font-weight="700" fill="#1a202c">float64 gradient check (whole model)</text>
+  <text x="420" y="138" font-size="12" fill="#718096">analytic vs. central-difference &#8212; max relative error per sampled parameter</text>
+
+  <g font-size="13" fill="#1a202c">
+    <text x="430" y="170" font-family="monospace">E</text>       <text x="720" y="170" font-family="monospace" text-anchor="end">5.19e-09</text>
+    <text x="430" y="196" font-family="monospace">P</text>       <text x="720" y="196" font-family="monospace" text-anchor="end">3.99e-09</text>
+    <text x="430" y="222" font-family="monospace">block0.Wq</text><text x="720" y="222" font-family="monospace" text-anchor="end" fill="#c05621" font-weight="700">5.29e-05</text>
+    <text x="430" y="248" font-family="monospace">block0.gamma1</text><text x="720" y="248" font-family="monospace" text-anchor="end">4.85e-07</text>
+    <text x="430" y="274" font-family="monospace">W_head</text>  <text x="720" y="274" font-family="monospace" text-anchor="end">2.74e-08</text>
+  </g>
+  <line x1="430" y1="288" x2="730" y2="288" stroke="#cbd5e0" stroke-width="1"/>
+  <rect x="748" y="150" width="150" height="130" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="823" y="200" font-size="13" fill="#276749" text-anchor="middle" font-weight="600">worst</text>
+  <text x="823" y="228" font-size="22" fill="#276749" text-anchor="middle" font-weight="700" font-family="monospace">5.3e-05</text>
+  <text x="823" y="252" font-size="12" fill="#276749" text-anchor="middle">all under 1e-4</text>
+  <text x="420" y="320" font-size="12" fill="#4a5568">Every sampled gradient matches finite differences &#8212; forward and backward agree.</text>
+
+  <!-- overfit panel -->
+  <rect x="400" y="360" width="520" height="252" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="420" y="388" font-size="15" font-weight="700" fill="#1a202c">overfit one fixed sequence (it learns)</text>
+  <text x="420" y="408" font-size="12" fill="#718096">SGD on &#8220;the lamp keeper w&#8221; &#8212; loss must fall well below 3.178</text>
+
+  <!-- mini loss curve -->
+  <g>
+    <line x1="440" y1="430" x2="440" y2="585" stroke="#4a5568" stroke-width="1.5"/>
+    <line x1="440" y1="585" x2="900" y2="585" stroke="#4a5568" stroke-width="1.5"/>
+    <text x="432" y="440" font-size="10" fill="#718096" text-anchor="end">3.18</text>
+    <text x="432" y="588" font-size="10" fill="#718096" text-anchor="end">0.0</text>
+    <text x="670" y="605" font-size="11" fill="#718096" text-anchor="middle">gradient-descent steps &#8594;</text>
+    <!-- curve: step0=3.18 (top) plunging to ~0 -->
+    <polyline points="440,438 470,455 500,500 530,560 560,578 620,582 700,583 800,584 895,584"
+              fill="none" stroke="#4299e1" stroke-width="2.5"/>
+    <circle cx="440" cy="438" r="4" fill="#c53030"/>
+    <text x="452" y="434" font-size="11" fill="#c53030" font-weight="600">step 0: 3.1788</text>
+    <circle cx="530" cy="560" r="4" fill="#2b6cb0"/>
+    <text x="540" y="552" font-size="11" fill="#2b6cb0">step 50: 0.0158</text>
+    <circle cx="895" cy="584" r="4" fill="#276749"/>
+    <text x="888" y="576" font-size="11" fill="#276749" text-anchor="end" font-weight="600">step 300: 0.0017</text>
+  </g>
+</svg>

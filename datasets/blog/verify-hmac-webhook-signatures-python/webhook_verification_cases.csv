@@ -1,0 +1,6 @@
+case_id,age_seconds,body_sha256_prefix,signature_prefix,accepted,reason
+valid_request,45,40d262595dee,a1cda0ecd229,true,accepted
+changed_body,45,ffa872fa697f,a1cda0ecd229,false,bad_signature
+wrong_secret,45,40d262595dee,55d9c5e756f4,false,bad_signature
+old_request,900,40d262595dee,ef44a549e194,false,stale_timestamp
+empty_signature,45,40d262595dee,,false,bad_signature

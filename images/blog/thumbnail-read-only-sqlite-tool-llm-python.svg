@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Build a Read-Only SQLite Tool for an LLM in Python</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail showing an LLM tool proposal passing through a Python validation gate before a fixed SELECT query reaches a read-only SQLite database.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="148" font-size="28" font-weight="600" letter-spacing="1.5" fill="#59636e">READ-ONLY LLM DATA TOOL</text>
+    <text x="90" y="282" font-size="76" font-weight="700" fill="#1b1f24">FIXED QUERY</text>
+    <text x="90" y="371" font-size="76" font-weight="700" fill="#1b1f24">BOUND VALUES</text>
+    <rect x="94" y="407" width="360" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="476" font-size="27" font-weight="500" fill="#59636e">PYTHON &#183; SQLITE &#183; LEAST PRIVILEGE</text>
+
+    <g transform="translate(708 113)">
+      <rect x="0" y="0" width="384" height="96" rx="16" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+      <circle cx="39" cy="48" r="20" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <path d="M31 48h16M39 40v16" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+      <text x="74" y="39" font-size="19" font-weight="600" letter-spacing="1" fill="#59636e">TOOL PROPOSAL</text>
+      <text x="74" y="69" font-size="24" font-weight="700" fill="#1b1f24">summarize_energy</text>
+
+      <line x1="192" y1="97" x2="192" y2="131" stroke="#0067c0" stroke-width="3"/>
+      <path d="M182 126 L192 138 L202 126 Z" fill="#0067c0"/>
+
+      <rect x="0" y="143" width="384" height="132" rx="18" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+      <text x="24" y="178" font-size="20" font-weight="700" letter-spacing="1" fill="#0067c0">PYTHON GATE</text>
+      <text x="24" y="206" font-size="19" font-weight="500" fill="#59636e">Allowlisted name and exact arguments</text>
+      <rect x="24" y="224" width="85" height="30" rx="15" fill="#e3f0fa"/>
+      <rect x="121" y="224" width="101" height="30" rx="15" fill="#e3f0fa"/>
+      <rect x="234" y="224" width="126" height="30" rx="15" fill="#e3f0fa"/>
+      <text x="66.5" y="245" text-anchor="middle" font-size="15" font-weight="700" fill="#0067c0">NAME</text>
+      <text x="171.5" y="245" text-anchor="middle" font-size="15" font-weight="700" fill="#0067c0">VALUES</text>
+      <text x="297" y="245" text-anchor="middle" font-size="15" font-weight="700" fill="#0067c0">DATE RANGE</text>
+
+      <line x1="192" y1="276" x2="192" y2="310" stroke="#0067c0" stroke-width="3"/>
+      <path d="M182 305 L192 317 L202 305 Z" fill="#0067c0"/>
+
+      <g transform="translate(25 322)">
+        <path d="M0 20 C0 9 30 0 66 0 C102 0 132 9 132 20 V88 C132 99 102 108 66 108 C30 108 0 99 0 88 Z" fill="#f7f8fa" stroke="#59636e" stroke-width="2"/>
+        <ellipse cx="66" cy="20" rx="66" ry="20" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <path d="M0 53 C0 64 30 73 66 73 C102 73 132 64 132 53" fill="none" stroke="#c7ccd2" stroke-width="2"/>
+        <path d="M0 86 C0 97 30 106 66 106 C102 106 132 97 132 86" fill="none" stroke="#c7ccd2" stroke-width="2"/>
+        <rect x="50" y="43" width="32" height="28" rx="5" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+        <path d="M57 43v-8a9 9 0 0 1 18 0v8" fill="none" stroke="#0067c0" stroke-width="2"/>
+      </g>
+      <text x="184" y="362" font-size="19" font-weight="600" letter-spacing="1" fill="#59636e">SQLITE</text>
+      <text x="184" y="397" font-size="29" font-weight="700" fill="#1b1f24">FIXED SELECT</text>
+      <rect x="184" y="414" width="107" height="32" rx="16" fill="#e3f0fa"/>
+      <text x="237.5" y="436" text-anchor="middle" font-size="17" font-weight="700" fill="#0067c0">mode=ro</text>
+    </g>
+  </g>
+</svg>

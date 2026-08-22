@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Constant Literal vs. a Real Derived Column</text>
+
+  <rect x="50" y="56" width="280" height="160" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="190" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">pl.lit("Thistlewood Goods")</text>
+  <text x="190" y="100" text-anchor="middle" font-size="9.5" fill="#2d3748">one constant value,</text>
+  <text x="190" y="116" text-anchor="middle" font-size="9.5" fill="#2d3748">broadcast to every row</text>
+
+  <rect x="70" y="128" width="240" height="24" rx="4" fill="#ffffff" stroke="#a0aec0" stroke-width="1" />
+  <text x="190" y="144" text-anchor="middle" font-size="9" fill="#2d3748">retailer: "Thistlewood Goods"</text>
+  <rect x="70" y="156" width="240" height="24" rx="4" fill="#ffffff" stroke="#a0aec0" stroke-width="1" />
+  <text x="190" y="172" text-anchor="middle" font-size="9" fill="#2d3748">retailer: "Thistlewood Goods"</text>
+  <text x="190" y="200" text-anchor="middle" font-size="9.5" fill="#4a5568">n_unique() == 1, across 60 rows</text>
+
+  <rect x="390" y="56" width="280" height="160" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="530" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">margin_pct = (unit_price - cost)</text>
+  <text x="530" y="96" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">/ unit_price * 100</text>
+  <text x="530" y="116" text-anchor="middle" font-size="9.5" fill="#2d3748">a real value per row, from</text>
+  <text x="530" y="132" text-anchor="middle" font-size="9.5" fill="#2d3748">two real existing columns</text>
+
+  <rect x="410" y="140" width="240" height="24" rx="4" fill="#ffffff" stroke="#a0aec0" stroke-width="1" />
+  <text x="530" y="156" text-anchor="middle" font-size="9" fill="#2d3748">Hand Mixer: $378.87 / $283.60 -&gt; 25.1%</text>
+  <rect x="410" y="168" width="240" height="24" rx="4" fill="#ffffff" stroke="#a0aec0" stroke-width="1" />
+  <text x="530" y="184" text-anchor="middle" font-size="9" fill="#2d3748">Spatula Set: $181.52 / $111.09 -&gt; 38.8%</text>
+  <text x="530" y="204" text-anchor="middle" font-size="9.5" fill="#4a5568">average: 32.86% across the catalog</text>
+
+  <rect x="140" y="240" width="440" height="100" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="360" y="266" text-anchor="middle" font-size="11.5" font-weight="700" fill="#553c9a">Bare Python scalars are implicit literals</text>
+  <text x="360" y="290" text-anchor="middle" font-size="9.5" fill="#2d3748">pl.col("unit_price") * 1.10</text>
+  <text x="360" y="308" text-anchor="middle" font-size="9.5" fill="#2d3748">and pl.col("unit_price") * pl.lit(1.10)</text>
+  <text x="360" y="326" text-anchor="middle" font-size="9.5" fill="#2d3748">produce byte-identical results (verified with .equals())</text>
+
+  <text x="360" y="376" text-anchor="middle" font-size="10.5" fill="#718096">pl.lit broadcasts one constant to every row; a derived column combines real columns --</text>
+  <text x="360" y="394" text-anchor="middle" font-size="10.5" fill="#718096">both are just expressions, resolved the moment they run inside with_columns.</text>
+</svg>

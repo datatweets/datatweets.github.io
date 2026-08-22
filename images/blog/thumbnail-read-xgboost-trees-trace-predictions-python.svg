@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Read XGBoost Trees and Trace Predictions in Python</title>
+  <desc id="desc">A DataTweets tutorial thumbnail with the words Trace the Tree Path beside a compact XGBoost decision tree. A highlighted route passes through two split rules to leaf 6, then joins five leaf values with a base score to produce an 82.40-minute prediction.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="145" font-size="30" font-weight="600" letter-spacing="1.2" fill="#59636e">XGBOOST PREDICTION AUDIT</text>
+    <text x="90" y="277" font-size="82" font-weight="700" fill="#1b1f24">TRACE THE</text>
+    <text x="90" y="375" font-size="82" font-weight="700" fill="#1b1f24">TREE PATH</text>
+    <rect x="96" y="420" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="493" font-size="29" font-weight="500" fill="#59636e">SPLITS &#183; LEAVES &#183; MARGIN</text>
+
+    <g aria-hidden="true">
+      <path d="M910 196 L760 275" fill="none" stroke="#c7ccd2" stroke-width="2.5"/>
+      <path d="M910 196 L1000 275" fill="none" stroke="#0067c0" stroke-width="5"/>
+      <path d="M1000 347 L897 423" fill="none" stroke="#c7ccd2" stroke-width="2.5"/>
+      <path d="M1000 347 L1067 423" fill="none" stroke="#0067c0" stroke-width="5"/>
+      <path d="M1067 489 L999 535" fill="none" stroke="#0067c0" stroke-width="4"/>
+
+      <text x="797" y="237" font-size="18" font-weight="600" fill="#8a949e">YES</text>
+      <text x="970" y="237" font-size="18" font-weight="700" fill="#0067c0">NO</text>
+      <text x="897" y="390" font-size="18" font-weight="600" fill="#8a949e">YES</text>
+      <text x="1031" y="390" font-size="18" font-weight="700" fill="#0067c0">NO</text>
+
+      <rect x="775" y="124" width="270" height="72" rx="16" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+      <text x="910" y="154" text-anchor="middle" font-size="17" font-weight="600" fill="#59636e">NODE 0</text>
+      <text x="910" y="180" text-anchor="middle" font-size="22" font-weight="700" fill="#1b1f24">distance &lt; 8.76?</text>
+
+      <rect x="688" y="275" width="145" height="72" rx="16" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="760" y="305" text-anchor="middle" font-size="17" font-weight="600" fill="#8a949e">NODE 1</text>
+      <text x="760" y="330" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">other path</text>
+
+      <rect x="882" y="275" width="236" height="72" rx="16" fill="#eaf3fb" stroke="#0067c0" stroke-width="3"/>
+      <text x="1000" y="305" text-anchor="middle" font-size="17" font-weight="600" fill="#59636e">NODE 2</text>
+      <text x="1000" y="330" text-anchor="middle" font-size="21" font-weight="700" fill="#1b1f24">traffic &lt; 7.23?</text>
+
+      <rect x="834" y="423" width="126" height="66" rx="16" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="897" y="452" text-anchor="middle" font-size="17" font-weight="600" fill="#8a949e">LEAF 5</text>
+      <text x="897" y="476" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">+29.26</text>
+
+      <rect x="992" y="423" width="150" height="66" rx="16" fill="#eaf3fb" stroke="#0067c0" stroke-width="3"/>
+      <text x="1067" y="452" text-anchor="middle" font-size="17" font-weight="700" fill="#0067c0">LEAF 6</text>
+      <text x="1067" y="477" text-anchor="middle" font-size="20" font-weight="700" fill="#1b1f24">+41.49</text>
+
+      <rect x="790" y="535" width="350" height="62" rx="18" fill="#1b1f24"/>
+      <text x="965" y="559" text-anchor="middle" font-size="15" font-weight="600" letter-spacing="1" fill="#ffffff">BASE + FIVE LEAVES</text>
+      <text x="965" y="585" text-anchor="middle" font-size="23" font-weight="700" fill="#ffffff">20.00 &#8594; 82.40 MIN</text>
+    </g>
+  </g>
+</svg>

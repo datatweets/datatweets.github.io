@@ -1,0 +1,10 @@
+team,request_type,tickets_received,tickets_resolved_same_day
+North,Password reset,120,114
+North,Account access,60,48
+North,Device setup,20,12
+East,Password reset,40,37
+East,Account access,80,66
+East,Device setup,80,52
+South,Password reset,70,63
+South,Account access,70,56
+South,Device setup,60,39

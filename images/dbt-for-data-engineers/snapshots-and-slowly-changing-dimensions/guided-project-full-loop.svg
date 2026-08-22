@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="440" viewBox="0 0 1080 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The complete loop: a change, a fact table that forgets, a snapshot that remembers</title>
+  <desc>A four-panel diagram completing the module's own arc. Panel 1: zone 7, Astoria, reassigned from Queens to Brooklyn, a new change. Panel 2: zones_snapshot catches it, INSERT 0 1, Queens closed out and Brooklyn opened, an as-of query before the change correctly answering Queens. Panel 3: trips, rebuilt with --full-refresh, retroactively rewrites all 5,823 of zone 7's trips to Brooklyn -- the identical loss Lesson 1 first demonstrated, unaffected by the snapshot's own existence. Panel 4: the same as-of query, asked again after trips has already forgotten, still correctly answers Queens from zones_snapshot -- the complete loop this module exists to close.</desc>
+  <rect width="1080" height="440" fill="#ffffff" />
+  <text x="540" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Complete Loop: A Change, a Forgetting Table, a Remembering One</text>
+
+  <rect x="30" y="55" width="240" height="150" rx="8" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.4" />
+  <text x="150" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">1. New change</text>
+  <text x="150" y="105" text-anchor="middle" font-size="9" fill="#4a5568">Zone 7, Astoria</text>
+  <text x="150" y="122" text-anchor="middle" font-size="9" fill="#4a5568">Queens -&gt; Brooklyn</text>
+  <text x="150" y="145" text-anchor="middle" font-size="9" fill="#4a5568">5,823 trips already</text>
+  <text x="150" y="160" text-anchor="middle" font-size="9" fill="#4a5568">recorded under Queens</text>
+  <text x="150" y="185" text-anchor="middle" font-size="8" fill="#4a5568">a zone neither Lesson 1</text>
+  <text x="150" y="197" text-anchor="middle" font-size="8" fill="#4a5568">nor Lesson 3 ever touched</text>
+
+  <rect x="290" y="55" width="240" height="150" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="410" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">2. Snapshot catches it</text>
+  <text x="410" y="103" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">INSERT 0 1</text>
+  <text x="410" y="122" text-anchor="middle" font-size="8.5" fill="#22543d">Queens closed out,</text>
+  <text x="410" y="136" text-anchor="middle" font-size="8.5" fill="#22543d">Brooklyn now open</text>
+  <text x="410" y="160" text-anchor="middle" font-size="8.5" font-weight="700" fill="#22543d">as-of before change:</text>
+  <text x="410" y="175" text-anchor="middle" font-size="9" font-weight="700" fill="#22543d">correctly answers Queens</text>
+
+  <rect x="550" y="55" width="240" height="150" rx="8" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="670" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#822727">3. trips still forgets</text>
+  <text x="670" y="103" text-anchor="middle" font-size="9" fill="#822727">--full-refresh rebuilds</text>
+  <text x="670" y="118" text-anchor="middle" font-size="9" fill="#822727">all 9,554,778 rows</text>
+  <text x="670" y="145" text-anchor="middle" font-size="9" font-weight="700" fill="#822727">all 5,823 zone-7 trips</text>
+  <text x="670" y="160" text-anchor="middle" font-size="9" font-weight="700" fill="#822727">retroactively Brooklyn</text>
+  <text x="670" y="182" text-anchor="middle" font-size="8" fill="#822727">the snapshot's existence</text>
+  <text x="670" y="194" text-anchor="middle" font-size="8" fill="#822727">changed nothing about this</text>
+
+  <rect x="810" y="55" width="240" height="150" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="930" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">4. Snapshot still remembers</text>
+  <text x="930" y="105" text-anchor="middle" font-size="8.5" fill="#22543d">the identical as-of query,</text>
+  <text x="930" y="119" text-anchor="middle" font-size="8.5" fill="#22543d">asked again after trips</text>
+  <text x="930" y="133" text-anchor="middle" font-size="8.5" fill="#22543d">has already forgotten</text>
+  <text x="930" y="165" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">still correctly answers</text>
+  <text x="930" y="182" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">Queens</text>
+
+  <path d="M270,130 L288,130" stroke="#a0aec0" stroke-width="2" fill="none" marker-end="url(#gp1)" />
+  <path d="M530,130 L548,130" stroke="#a0aec0" stroke-width="2" fill="none" marker-end="url(#gp1)" />
+  <path d="M790,130 L808,130" stroke="#a0aec0" stroke-width="2" fill="none" marker-end="url(#gp1)" />
+
+  <rect x="130" y="240" width="820" height="150" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="540" y="265" text-anchor="middle" font-size="12" font-weight="700" fill="#553c9a">This module's own arc, closed</text>
+  <text x="540" y="295" text-anchor="middle" font-size="10" fill="#553c9a">Lesson 1: zone 65 reassigned -- history lost completely, nothing anywhere records the old value</text>
+  <text x="540" y="317" text-anchor="middle" font-size="10" fill="#553c9a">Lessons 2-4: a real snapshot built, two strategies compared, a real historical query proven correct</text>
+  <text x="540" y="339" text-anchor="middle" font-size="10" font-weight="700" fill="#553c9a">Lesson 5: the identical loss happens again, on a new zone -- and this time, something remembers</text>
+  <text x="540" y="365" text-anchor="middle" font-size="9" fill="#553c9a">A snapshot only preserves history in its own table -- trips still forgets, exactly as before</text>
+
+  <defs>
+    <marker id="gp1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

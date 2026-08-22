@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Rolling and Dynamic Time Windows</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">DataFrame.rolling(index_column, period) over 731 real daily revenue buckets</text>
+
+  <text x="180" y="70" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1a202c">Time-based (this lesson)</text>
+  <rect x="30" y="80" width="300" height="112" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="180" y="102" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2b6cb0">.rolling(index_column="day", period="7d")</text>
+  <text x="180" y="122" text-anchor="middle" font-size="9" fill="#1a202c">day 1: window = 1 real day (partial)</text>
+  <text x="180" y="138" text-anchor="middle" font-size="9" fill="#1a202c">day 7: window = 7 real days (full)</text>
+  <text x="180" y="154" text-anchor="middle" font-size="9" fill="#1a202c">min_samples=0 (default): no nulls</text>
+  <text x="180" y="174" text-anchor="middle" font-size="8.5" fill="#4a5568">anchored to real calendar time, not row count</text>
+
+  <text x="540" y="70" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1a202c">Row-based (Module 7 Lesson 5)</text>
+  <rect x="390" y="80" width="300" height="112" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="540" y="102" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#6b46c1">.rolling_mean(window_size=3)</text>
+  <text x="540" y="122" text-anchor="middle" font-size="9" fill="#1a202c">row 1-2: null (window not full)</text>
+  <text x="540" y="138" text-anchor="middle" font-size="9" fill="#1a202c">row 3: first real average</text>
+  <text x="540" y="154" text-anchor="middle" font-size="9" fill="#1a202c">counts rows, not real elapsed time</text>
+  <text x="540" y="174" text-anchor="middle" font-size="8.5" fill="#4a5568">correct only if rows are evenly time-spaced</text>
+
+  <rect x="40" y="210" width="640" height="72" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="234" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">7-day rolling revenue smooths day-to-day noise</text>
+  <text x="360" y="254" text-anchor="middle" font-size="9.5" fill="#22543d">2024-01-07 rolling_7d_total = $84,049.20 (7 real days summed) -- matches Lesson 3's own weekly bucket exactly</text>
+  <text x="360" y="270" text-anchor="middle" font-size="9.5" fill="#22543d">for the same calendar week, computed a different way</text>
+
+  <rect x="40" y="296" width="640" height="76" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="318" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">Want strict full-window-only results instead?</text>
+  <text x="360" y="338" text-anchor="middle" font-size="9.5" fill="#7b341e">rolling_sum_by("day", window_size="7d", min_samples=7) nulls the first 6 real days</text>
+  <text x="360" y="356" text-anchor="middle" font-size="9.5" fill="#7b341e">instead of returning a partial-window sum -- the same trade-off Module 7's row-based rolling made.</text>
+
+  <rect x="40" y="384" width="640" height="24" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.2" />
+  <text x="360" y="401" text-anchor="middle" font-size="9" fill="#c53030">97 of 731 real days flag at 1.5x+ their 30-day rolling average -- used directly in Lesson 6's guided project</text>
+</svg>

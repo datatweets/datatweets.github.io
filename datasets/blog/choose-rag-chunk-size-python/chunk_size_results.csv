@@ -1,0 +1,5 @@
+config,chunk_words,overlap_words,chunk_count,indexed_token_ratio,dev_hit_at_1,dev_hit_at_3,test_hit_at_1,test_hit_at_3,selected_on_dev
+30 words / 0 overlap,30,0,29,1.0,0.125,0.625,0.0,0.75,False
+50 words / 10 overlap,50,10,22,1.228,0.75,1.0,0.75,1.0,False
+80 words / 15 overlap,80,15,14,1.198,1.0,1.0,1.0,1.0,True
+120 words / 30 overlap,120,30,9,1.216,1.0,1.0,1.0,1.0,False

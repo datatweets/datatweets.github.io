@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="440" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Five Real Forms of pl.col, on thistlewood_products.csv</text>
+
+  <text x="60" y="60" font-size="11.5" font-weight="700" fill="#1a202c">All 7 real columns:</text>
+  <text x="60" y="78" font-size="10" fill="#4a5568">product_id, product_name, category, subcategory, unit_price, cost, supplier</text>
+
+  <rect x="40" y="96" width="130" height="66" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="105" y="118" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">pl.col("product_name")</text>
+  <text x="105" y="136" text-anchor="middle" font-size="9" fill="#2d3748">1 column</text>
+  <text x="105" y="150" text-anchor="middle" font-size="9" fill="#2d3748">(60, 1)</text>
+
+  <rect x="185" y="96" width="130" height="66" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="250" y="118" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">pl.col("id","cat","price")</text>
+  <text x="250" y="136" text-anchor="middle" font-size="9" fill="#2d3748">3 named columns</text>
+  <text x="250" y="150" text-anchor="middle" font-size="9" fill="#2d3748">(60, 3)</text>
+
+  <rect x="330" y="96" width="130" height="66" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="395" y="118" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">pl.col("^product.*$")</text>
+  <text x="395" y="136" text-anchor="middle" font-size="9" fill="#2d3748">regex match</text>
+  <text x="395" y="150" text-anchor="middle" font-size="9" fill="#2d3748">(60, 2)</text>
+
+  <rect x="475" y="96" width="105" height="66" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="527" y="118" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">pl.all()</text>
+  <text x="527" y="136" text-anchor="middle" font-size="9" fill="#2d3748">every column</text>
+  <text x="527" y="150" text-anchor="middle" font-size="9" fill="#2d3748">(60, 7)</text>
+
+  <rect x="595" y="96" width="105" height="66" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="647" y="112" text-anchor="middle" font-size="9" font-weight="700" fill="#9c4221">pl.exclude(</text>
+  <text x="647" y="124" text-anchor="middle" font-size="9" font-weight="700" fill="#9c4221">"supplier",</text>
+  <text x="647" y="136" text-anchor="middle" font-size="9" font-weight="700" fill="#9c4221">"subcategory")</text>
+  <text x="647" y="152" text-anchor="middle" font-size="9" fill="#2d3748">(60, 5)</text>
+
+  <text x="60" y="196" font-size="11.5" font-weight="700" fill="#1a202c">What each one returns, verified:</text>
+
+  <rect x="60" y="208" width="150" height="30" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" />
+  <text x="135" y="228" text-anchor="middle" font-size="9.5" fill="#2d3748">['product_name']</text>
+
+  <rect x="220" y="208" width="180" height="30" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" />
+  <text x="310" y="228" text-anchor="middle" font-size="9.5" fill="#2d3748">['product_id','category','unit_price']</text>
+
+  <rect x="410" y="208" width="180" height="30" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" />
+  <text x="500" y="228" text-anchor="middle" font-size="9.5" fill="#2d3748">['product_id','product_name']</text>
+
+  <rect x="60" y="250" width="300" height="30" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" />
+  <text x="210" y="270" text-anchor="middle" font-size="9.5" fill="#2d3748">all 7 columns, unchanged order</text>
+
+  <rect x="410" y="250" width="250" height="30" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" />
+  <text x="535" y="270" text-anchor="middle" font-size="9.5" fill="#2d3748">5 columns: supplier + subcategory dropped</text>
+
+  <rect x="60" y="310" width="600" height="90" rx="10" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.3" />
+  <text x="360" y="336" text-anchor="middle" font-size="11.5" font-weight="700" fill="#744210">Why this matters as tables grow</text>
+  <text x="360" y="358" text-anchor="middle" font-size="9.5" fill="#2d3748">Regex selection and pl.exclude describe a rule about which columns to include,</text>
+  <text x="360" y="376" text-anchor="middle" font-size="9.5" fill="#2d3748">not a fixed list -- code written against them keeps working as new columns are added.</text>
+
+  <text x="360" y="424" text-anchor="middle" font-size="10.5" fill="#718096">Every form is verified against the real, unmodified 60-row, 7-column Thistlewood product catalog.</text>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 624" width="960" height="624" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="624" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">A schema is a contract: declare it, don't infer it</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">CityFlow's 200,000-row taxi CSV and the 9,554,778-row parquet quarter &#183; pyspark 4.2.0, local[*], 10 cores</text>
+
+<!-- STRATEGY BOXES -->
+<!-- A: inferSchema -->
+<rect x="30" y="82" width="290" height="150" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="46" y="106" font-size="14" font-weight="700" fill="#c05621">inferSchema=True</text>
+<text x="46" y="128" font-size="11.5" fill="#4a5568">Reads the CSV TWICE: one full pass to</text>
+<text x="46" y="145" font-size="11.5" fill="#4a5568">GUESS the types, then one pass to load.</text>
+<text x="46" y="176" font-size="15" font-weight="700" fill="#c05621">0.171s &#8212; 3.0&#215; the explicit read</text>
+<text x="46" y="204" font-size="11.5" fill="#4a5568">Guesses timestamp (not ntz) and</text>
+<text x="46" y="221" font-size="11.5" fill="#4a5568">payment_type: integer &#8212; not the contract.</text>
+
+<!-- B: explicit -->
+<rect x="335" y="82" width="290" height="150" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="351" y="106" font-size="14" font-weight="700" fill="#276749">explicit .schema(StructType)</text>
+<text x="351" y="128" font-size="11.5" fill="#4a5568">One pass, no guessing. You declare the</text>
+<text x="351" y="145" font-size="11.5" fill="#4a5568">names, types, and nullability up front.</text>
+<text x="351" y="176" font-size="15" font-weight="700" fill="#276749">0.056s &#8212; the baseline</text>
+<text x="351" y="204" font-size="11.5" fill="#4a5568">timestamp_ntz, payment_type: long &#8212;</text>
+<text x="351" y="221" font-size="11.5" fill="#4a5568">the true shape, matched to the parquet.</text>
+
+<!-- C: parquet -->
+<rect x="640" y="82" width="290" height="150" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="656" y="106" font-size="14" font-weight="700" fill="#2b6cb0">spark.read.parquet(&#8230;)</text>
+<text x="656" y="128" font-size="11.5" fill="#4a5568">The schema rides in the file footer &#8212;</text>
+<text x="656" y="145" font-size="11.5" fill="#4a5568">no pass over rows to know the columns.</text>
+<text x="656" y="176" font-size="15" font-weight="700" fill="#2b6cb0">0.038s &#8212; 19 fields, free</text>
+<text x="656" y="204" font-size="11.5" fill="#4a5568">Already typed: timestamp_ntz carried</text>
+<text x="656" y="221" font-size="11.5" fill="#4a5568">by the format, not inferred.</text>
+
+<!-- CONTRACT STRIP -->
+<rect x="30" y="248" width="900" height="56" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="46" y="272" font-size="12" font-weight="700" fill="#1a202c">The contract, declared once:</text>
+<text x="46" y="292" font-size="11.5" fill="#4a5568">StructField("tpep_pickup_datetime", TimestampNTZType()) &#183; StructField("PULocationID", IntegerType()) &#183; StructField("total_amount", DoubleType()) &#8230;</text>
+
+<!-- MODES LABEL -->
+<text x="480" y="336" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">When a row breaks the contract, the read mode decides what happens</text>
+
+<!-- MODE BOXES -->
+<rect x="30" y="350" width="290" height="140" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="46" y="374" font-size="13.5" font-weight="700" fill="#2b6cb0">PERMISSIVE (default)</text>
+<text x="46" y="396" font-size="11.5" fill="#4a5568">Bad fields become null; the raw</text>
+<text x="46" y="413" font-size="11.5" fill="#4a5568">broken row is captured in the</text>
+<text x="46" y="430" font-size="11.5" fill="#4a5568">_corrupt_record column.</text>
+<text x="46" y="462" font-size="13" font-weight="700" fill="#1a202c">keeps all 4 rows</text>
+<text x="46" y="480" font-size="11" fill="#718096">nothing lost, nothing loud</text>
+
+<rect x="335" y="350" width="290" height="140" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="351" y="374" font-size="13.5" font-weight="700" fill="#c05621">DROPMALFORMED</text>
+<text x="351" y="396" font-size="11.5" fill="#4a5568">Silently drops the 2 malformed</text>
+<text x="351" y="413" font-size="11.5" fill="#4a5568">rows. (count() may still say 4 &#8212;</text>
+<text x="351" y="430" font-size="11.5" fill="#4a5568">it never parsed the columns.)</text>
+<text x="351" y="462" font-size="13" font-weight="700" fill="#1a202c">keeps 2 rows</text>
+<text x="351" y="480" font-size="11" fill="#718096">clean, but bad rows vanish quietly</text>
+
+<rect x="640" y="350" width="290" height="140" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="656" y="374" font-size="13.5" font-weight="700" fill="#c53030">FAILFAST</text>
+<text x="656" y="396" font-size="11.5" fill="#4a5568">The first bad row raises and the</text>
+<text x="656" y="413" font-size="11.5" fill="#4a5568">job STOPS &#8212; before it can write</text>
+<text x="656" y="430" font-size="11.5" fill="#4a5568">wrong data downstream.</text>
+<text x="656" y="462" font-size="13" font-weight="700" fill="#1a202c">0 rows &#8212; loud failure</text>
+<text x="656" y="480" font-size="11" fill="#718096">the contract stops the pipeline</text>
+
+<!-- CROSS-CHECK BAND -->
+<rect x="30" y="506" width="900" height="72" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="480" y="530" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">Cross-checked against Course 1 ground truth</text>
+<text x="480" y="552" text-anchor="middle" font-size="12" fill="#4a5568">The typed parquet carries all 19 known columns; the quarter reads back to 9,554,778 rows.</text>
+<text x="480" y="570" text-anchor="middle" font-size="12" fill="#4a5568">The 200,000-row sample loads to the declared schema every single run.</text>
+
+<text x="480" y="604" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1a202c">Infer to explore. Declare to ship: the schema is the promise a nightly job keeps to every system downstream.</text>
+</svg>

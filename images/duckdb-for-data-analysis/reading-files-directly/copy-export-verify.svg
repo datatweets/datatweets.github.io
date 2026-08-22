@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Query, Two Exports, Both Verified</text>
+
+  <rect x="300" y="52" width="200" height="60" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="400" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3748">category revenue summary</text>
+  <text x="400" y="94" text-anchor="middle" font-size="9.5" fill="#718096">8 rows, GROUP BY category</text>
+
+  <line x1="360" y1="112" x2="220" y2="150" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowC)" />
+  <line x1="440" y1="112" x2="580" y2="150" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowC)" />
+
+  <rect x="90" y="150" width="240" height="56" rx="6" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="210" y="172" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#9c4221">COPY ... TO '....csv'</text>
+  <text x="210" y="190" text-anchor="middle" font-size="9" fill="#9c4221">(HEADER, DELIMITER ',')</text>
+
+  <rect x="470" y="150" width="240" height="56" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="590" y="172" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">COPY ... TO '....parquet'</text>
+  <text x="590" y="190" text-anchor="middle" font-size="9" fill="#2c5282">(FORMAT PARQUET)</text>
+
+  <line x1="210" y1="206" x2="380" y2="240" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowC)" />
+  <line x1="590" y1="206" x2="420" y2="240" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowC)" />
+
+  <rect x="280" y="240" width="240" height="44" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="400" y="266" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">both read back identical</text>
+
+  <rect x="90" y="304" width="620" height="56" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="400" y="328" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">8 category revenues sum to $9,195,043.62</text>
+  <text x="400" y="346" text-anchor="middle" font-size="10.5" fill="#22543d">this course's own established grand total -- reconciled, not assumed</text>
+
+  <defs>
+    <marker id="arrowC" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

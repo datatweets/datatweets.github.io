@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Stream a large CSV into SQLite with Python</title>
+  <desc id="desc">A CSV file feeds small batches of rows into an SQLite database while one fixed-size batch remains in memory.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">BOUNDED-MEMORY IMPORT</text>
+    <text x="90" y="280" font-size="82" font-weight="700" fill="#1b1f24">CSV IN</text>
+    <text x="90" y="374" font-size="82" font-weight="700" fill="#1b1f24">BATCHES</text>
+    <rect x="96" y="405" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="480" font-size="30" font-weight="500" fill="#59636e">STREAM · INSERT · QUERY</text>
+  </g>
+  <g transform="translate(600 155)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="0" y="40" width="135" height="286" rx="12" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+    <text x="68" y="86" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">CSV</text>
+    <g fill="#e3e6ea">
+      <rect x="22" y="116" width="91" height="8" rx="4"/><rect x="22" y="151" width="91" height="8" rx="4"/>
+      <rect x="22" y="186" width="91" height="8" rx="4"/><rect x="22" y="221" width="91" height="8" rx="4"/>
+      <rect x="22" y="256" width="91" height="8" rx="4"/>
+    </g>
+    <text x="166" y="195" font-size="38" font-weight="600" fill="#0067c0">→</text>
+    <rect x="220" y="102" width="130" height="162" rx="16" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+    <text x="285" y="140" text-anchor="middle" font-size="18" font-weight="700" fill="#0067c0">ONE BATCH</text>
+    <g fill="#ffffff" stroke="#0067c0" stroke-width="2">
+      <rect x="241" y="162" width="88" height="18" rx="5"/><rect x="241" y="193" width="88" height="18" rx="5"/>
+      <rect x="241" y="224" width="88" height="18" rx="5"/>
+    </g>
+    <text x="381" y="195" font-size="38" font-weight="600" fill="#0067c0">→</text>
+    <g fill="#fdeede" stroke="#59636e" stroke-width="3">
+      <rect x="435" y="92" width="115" height="62" rx="14"/><rect x="435" y="142" width="115" height="62" rx="14"/>
+      <rect x="435" y="192" width="115" height="62" rx="14"/>
+    </g>
+    <text x="493" y="296" text-anchor="middle" font-size="21" font-weight="700" fill="#1b1f24">SQLITE</text>
+    <rect x="220" y="292" width="130" height="3" rx="2" fill="#c7ccd2"/>
+    <text x="285" y="327" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">FIXED SIZE</text>
+  </g>
+</svg>

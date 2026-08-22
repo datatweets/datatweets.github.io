@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="900" height="660" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">TransformerBlock(C, h): one pre-norm block, forward and backward</text>
+  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#4a5568">a = x + MHA(LN1(x))    &#8226;    out = a + FFN(LN2(a))    &#8226;    shape preserved (B, T, C) &#8594; (B, T, C)</text>
+
+  <!-- residual skip arcs -->
+  <path d="M 92 118 C 92 84, 300 84, 300 118" fill="none" stroke="#a0aec0" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="196" y="80" text-anchor="middle" font-size="11" fill="#718096">residual: + x</text>
+  <path d="M 356 118 C 356 84, 620 84, 620 118" fill="none" stroke="#a0aec0" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="488" y="80" text-anchor="middle" font-size="11" fill="#718096">residual: + a</text>
+
+  <!-- forward pipeline -->
+  <!-- x -->
+  <rect x="40" y="118" width="72" height="52" rx="8" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+  <text x="76" y="142" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">x</text>
+  <text x="76" y="160" text-anchor="middle" font-size="10" fill="#718096">(B,T,C)</text>
+  <path d="M 112 144 L 132 144" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- LN1 -->
+  <rect x="132" y="118" width="70" height="52" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="167" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">LN1</text>
+  <text x="167" y="158" text-anchor="middle" font-size="9" fill="#9f7aea">gamma1,beta1</text>
+  <path d="M 202 144 L 222 144" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- MHA -->
+  <rect x="222" y="112" width="78" height="64" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="261" y="136" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">MHA</text>
+  <text x="261" y="153" text-anchor="middle" font-size="9" fill="#4299e1">Wq,Wk,Wv</text>
+  <text x="261" y="166" text-anchor="middle" font-size="9" fill="#4299e1">Wo</text>
+
+  <!-- add1 -->
+  <circle cx="326" cy="144" r="16" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="326" y="150" text-anchor="middle" font-size="18" font-weight="700" fill="#276749">+</text>
+  <path d="M 300 144 L 310 144" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- a -->
+  <rect x="352" y="118" width="72" height="52" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="388" y="142" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">a</text>
+  <text x="388" y="160" text-anchor="middle" font-size="10" fill="#48bb78">(B,T,C)</text>
+  <path d="M 342 144 L 352 144" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+  <path d="M 424 144 L 444 144" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- LN2 -->
+  <rect x="444" y="118" width="70" height="52" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="479" y="140" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">LN2</text>
+  <text x="479" y="158" text-anchor="middle" font-size="9" fill="#9f7aea">gamma2,beta2</text>
+  <path d="M 514 144 L 534 144" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- FFN -->
+  <rect x="534" y="112" width="82" height="64" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="575" y="136" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">FFN</text>
+  <text x="575" y="153" text-anchor="middle" font-size="9" fill="#ed8936">W1,b1,W2,b2</text>
+  <text x="575" y="166" text-anchor="middle" font-size="9" fill="#ed8936">hidden 4C</text>
+
+  <!-- add2 -->
+  <circle cx="642" cy="144" r="16" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="642" y="150" text-anchor="middle" font-size="18" font-weight="700" fill="#276749">+</text>
+  <path d="M 616 144 L 626 144" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- out -->
+  <rect x="668" y="118" width="82" height="52" rx="8" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+  <text x="709" y="142" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">out</text>
+  <text x="709" y="160" text-anchor="middle" font-size="10" fill="#718096">(B,T,C)</text>
+  <path d="M 658 144 L 668 144" stroke="#4a5568" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- backward flow label -->
+  <path d="M 750 196 L 40 196" stroke="#fc8181" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#ahr)"/>
+  <text x="450" y="214" text-anchor="middle" font-size="12" fill="#c53030">backward(dout): reverse each stage &#8594; dW1,db1,dW2,db2, dgamma/dbeta, dWq,dWk,dWv,dWo (via dQuery,dKey,dValue), returns dx</text>
+
+  <!-- divider -->
+  <line x1="40" y1="238" x2="860" y2="238" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Grad-check panel -->
+  <rect x="40" y="258" width="380" height="360" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="230" y="284" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">float64 gradient check: max relative error</text>
+  <text x="230" y="304" text-anchor="middle" font-size="11" fill="#718096">analytic vs central difference, all 12 params + x</text>
+
+  <!-- rows -->
+  <g font-size="12" fill="#1a202c">
+    <text x="70" y="332">gamma1</text><text x="360" y="332" text-anchor="end" fill="#4a5568">4.9e-09</text>
+    <text x="70" y="354">beta1</text><text x="360" y="354" text-anchor="end" fill="#4a5568">7.5e-10</text>
+    <text x="70" y="376">Wq</text><text x="360" y="376" text-anchor="end" fill="#4a5568">4.3e-07</text>
+    <text x="70" y="398">Wk</text><text x="360" y="398" text-anchor="end" fill="#4a5568">1.7e-07</text>
+    <text x="70" y="420">Wv &#8592; worst</text><text x="360" y="420" text-anchor="end" font-weight="700" fill="#c05621">6.6e-07</text>
+    <text x="70" y="442">Wo</text><text x="360" y="442" text-anchor="end" fill="#4a5568">1.3e-08</text>
+    <text x="70" y="464">gamma2 / beta2</text><text x="360" y="464" text-anchor="end" fill="#4a5568">&#60; 4e-09</text>
+    <text x="70" y="486">W1 / b1</text><text x="360" y="486" text-anchor="end" fill="#4a5568">&#60; 3e-08</text>
+    <text x="70" y="508">W2 / b2</text><text x="360" y="508" text-anchor="end" fill="#4a5568">&#60; 4e-08</text>
+    <text x="70" y="530">x</text><text x="360" y="530" text-anchor="end" fill="#4a5568">4.0e-08</text>
+  </g>
+  <line x1="70" y1="548" x2="390" y2="548" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="70" y="562" width="320" height="38" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="230" y="586" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">worst = 6.6e-07  &#60;  1e-5  &#10003; backward is correct</text>
+
+  <!-- Loss-descent panel -->
+  <rect x="440" y="258" width="420" height="360" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="650" y="284" text-anchor="middle" font-size="15" font-weight="700" fill="#2b6cb0">It learns: MSE loss over 10 gradient steps</text>
+  <text x="650" y="304" text-anchor="middle" font-size="11" fill="#718096">forward &#8594; backward &#8594; update all 12 params, lr = 0.05</text>
+
+  <!-- axes -->
+  <line x1="500" y1="580" x2="820" y2="580" stroke="#4a5568" stroke-width="1.5"/>
+  <line x1="500" y1="330" x2="500" y2="580" stroke="#4a5568" stroke-width="1.5"/>
+  <text x="490" y="336" text-anchor="end" font-size="10" fill="#718096">1.60</text>
+  <text x="490" y="584" text-anchor="end" font-size="10" fill="#718096">1.10</text>
+  <text x="660" y="602" text-anchor="middle" font-size="11" fill="#718096">step 0 &#8594; 9</text>
+
+  <!-- loss polyline: 1.5964..1.1200 mapped; x 500..820 (10 pts step 32), y: loss->y, y=580-(loss-1.10)/0.50*250 -->
+  <polyline points="500,332 532,377 564,415 596,446 628,473 660,497 692,518 724,537 756,555 788,571"
+            fill="none" stroke="#4299e1" stroke-width="2.5"/>
+  <g fill="#2b6cb0">
+    <circle cx="500" cy="332" r="3.5"/><circle cx="532" cy="377" r="3.5"/><circle cx="564" cy="415" r="3.5"/>
+    <circle cx="596" cy="446" r="3.5"/><circle cx="628" cy="473" r="3.5"/><circle cx="660" cy="497" r="3.5"/>
+    <circle cx="692" cy="518" r="3.5"/><circle cx="724" cy="537" r="3.5"/><circle cx="756" cy="555" r="3.5"/>
+    <circle cx="788" cy="571" r="3.5"/>
+  </g>
+  <text x="500" y="322" text-anchor="middle" font-size="10" fill="#2b6cb0">1.5964</text>
+  <text x="788" y="588" text-anchor="middle" font-size="10" fill="#2b6cb0">1.1200</text>
+
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#4a5568"/>
+    </marker>
+    <marker id="ahr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#fc8181"/>
+    </marker>
+  </defs>
+</svg>

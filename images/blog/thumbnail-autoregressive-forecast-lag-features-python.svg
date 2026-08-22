@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">Autoregressive forecasting with lag features</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail showing queue values from 24, 2, and 1 hour earlier flowing into a weighted sum that produces a one-hour-ahead forecast.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">ONE-STEP FORECAST</text>
+    <text x="90" y="286" font-size="76" font-weight="700" fill="#1b1f24">PAST VALUES</text>
+    <text x="90" y="382" font-size="76" font-weight="700" fill="#1b1f24">NEXT HOUR</text>
+    <rect x="94" y="422" width="360" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="510" font-size="29" font-weight="500" fill="#59636e">PANDAS · LAGS · REGRESSION</text>
+
+    <g transform="translate(678 116)">
+      <text x="0" y="22" font-size="22" font-weight="600" letter-spacing="1" fill="#59636e">KNOWN HISTORY</text>
+
+      <rect x="0" y="58" width="152" height="70" rx="14" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="20" y="88" font-size="20" font-weight="600" fill="#59636e">t−24h</text>
+      <text x="112" y="108" font-size="34" font-weight="700" text-anchor="middle" fill="#1b1f24">74</text>
+
+      <rect x="0" y="154" width="152" height="70" rx="14" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="20" y="184" font-size="20" font-weight="600" fill="#59636e">t−2h</text>
+      <text x="112" y="204" font-size="34" font-weight="700" text-anchor="middle" fill="#1b1f24">73</text>
+
+      <rect x="0" y="250" width="152" height="70" rx="14" fill="#eaf3fb" stroke="#0067c0" stroke-width="2.5"/>
+      <text x="20" y="280" font-size="20" font-weight="600" fill="#0067c0">t−1h</text>
+      <text x="112" y="300" font-size="34" font-weight="700" text-anchor="middle" fill="#1b1f24">71</text>
+
+      <line x1="152" y1="93" x2="224" y2="189" stroke="#c7ccd2" stroke-width="2.5"/>
+      <line x1="152" y1="189" x2="224" y2="189" stroke="#c7ccd2" stroke-width="2.5"/>
+      <line x1="152" y1="285" x2="224" y2="189" stroke="#0067c0" stroke-width="2.5"/>
+
+      <rect x="224" y="138" width="172" height="102" rx="18" fill="#ffffff" stroke="#59636e" stroke-width="2.5"/>
+      <text x="310" y="178" font-size="20" font-weight="600" text-anchor="middle" fill="#59636e">LINEAR MODEL</text>
+      <text x="310" y="211" font-size="25" font-weight="700" text-anchor="middle" fill="#1b1f24">weighted sum</text>
+
+      <line x1="310" y1="240" x2="310" y2="286" stroke="#0067c0" stroke-width="3"/>
+      <line x1="302" y1="276" x2="310" y2="286" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+      <line x1="318" y1="276" x2="310" y2="286" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+
+      <rect x="224" y="286" width="172" height="98" rx="18" fill="#eaf3fb" stroke="#0067c0" stroke-width="3"/>
+      <text x="310" y="320" font-size="19" font-weight="600" text-anchor="middle" fill="#0067c0">FORECAST FOR t</text>
+      <text x="310" y="362" font-size="36" font-weight="700" text-anchor="middle" fill="#1b1f24">72.5</text>
+    </g>
+  </g>
+</svg>

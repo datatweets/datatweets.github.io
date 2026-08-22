@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The guardrail sandwich and the human-feedback loop wrapping a deployed Docent app. A user request passes through an input guardrail (block injection, flag off-topic, redact PII) before reaching the model, and the model's answer passes through an output guardrail (format check, safety and grounding check, false-refusal catch) before reaching the user. Each guardrail can allow, block, rewrite, or flag for review. A flagged output goes to a human review queue with thumbs feedback, and downvoted or corrected interactions are promoted back into the golden eval dataset from Module 2, closing the loop.</title>
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+
+  <text x="30" y="40" font-size="22" font-weight="700" fill="#1a202c">Guardrails wrap the model; human feedback closes the loop</text>
+  <text x="30" y="63" font-size="13.5" fill="#4a5568">Checks run around the model, not inside it. Each can allow, block, rewrite, or flag for review.</text>
+
+  <!-- User in -->
+  <rect x="30" y="100" width="110" height="66" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="85" y="130" font-size="14" font-weight="700" fill="#4a5568" text-anchor="middle">User</text>
+  <text x="85" y="150" font-size="12" fill="#718096" text-anchor="middle">request</text>
+
+  <!-- Input guardrail -->
+  <rect x="175" y="88" width="185" height="92" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="267" y="112" font-size="14" font-weight="700" fill="#2b6cb0" text-anchor="middle">Input guardrail</text>
+  <text x="190" y="134" font-size="11.5" fill="#4a5568">&#8226; block prompt injection</text>
+  <text x="190" y="152" font-size="11.5" fill="#4a5568">&#8226; flag off-topic requests</text>
+  <text x="190" y="170" font-size="11.5" fill="#4a5568">&#8226; strip / redact PII</text>
+
+  <!-- Model -->
+  <rect x="395" y="88" width="150" height="92" rx="10" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="470" y="128" font-size="14" font-weight="700" fill="#6b46c1" text-anchor="middle">Docent</text>
+  <text x="470" y="148" font-size="12" fill="#718096" text-anchor="middle">claude-haiku-4-5</text>
+  <text x="470" y="166" font-size="11.5" fill="#718096" text-anchor="middle">the LLM call</text>
+
+  <!-- Output guardrail -->
+  <rect x="580" y="88" width="200" height="92" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="680" y="112" font-size="14" font-weight="700" fill="#276749" text-anchor="middle">Output guardrail</text>
+  <text x="595" y="134" font-size="11.5" fill="#4a5568">&#8226; format / schema check</text>
+  <text x="595" y="152" font-size="11.5" fill="#4a5568">&#8226; safety &amp; grounding check</text>
+  <text x="595" y="170" font-size="11.5" fill="#4a5568">&#8226; catch a false refusal</text>
+
+  <!-- arrows across the top row -->
+  <text x="150" y="140" font-size="24" fill="#4a5568" text-anchor="middle">&#8594;</text>
+  <text x="373" y="140" font-size="24" fill="#4a5568" text-anchor="middle">&#8594;</text>
+  <text x="560" y="140" font-size="24" fill="#4a5568" text-anchor="middle">&#8594;</text>
+
+  <!-- User out -->
+  <rect x="815" y="100" width="45" height="66" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="837" y="128" font-size="12" font-weight="700" fill="#4a5568" text-anchor="middle">to</text>
+  <text x="837" y="146" font-size="12" font-weight="700" fill="#4a5568" text-anchor="middle">user</text>
+  <text x="798" y="140" font-size="22" fill="#276749" text-anchor="middle">&#8594;</text>
+
+  <!-- Decision labels under guardrails -->
+  <rect x="175" y="196" width="605" height="34" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.2"/>
+  <text x="477" y="218" font-size="12.5" fill="#c05621" text-anchor="middle">Each check returns one of: allow &#8226; block &#8226; rewrite &#8226; flag for review</text>
+
+  <!-- Blocked path -->
+  <rect x="175" y="252" width="185" height="52" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.3"/>
+  <text x="267" y="274" font-size="12.5" font-weight="700" fill="#c53030" text-anchor="middle">&#10007; blocked</text>
+  <text x="267" y="293" font-size="11" fill="#c53030" text-anchor="middle">injection / off-topic refused</text>
+
+  <!-- Review queue (from output flag) -->
+  <rect x="580" y="252" width="200" height="52" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.3"/>
+  <text x="680" y="274" font-size="12.5" font-weight="700" fill="#c05621" text-anchor="middle">&#9873; flagged &#8594; review queue</text>
+  <text x="680" y="293" font-size="11" fill="#c05621" text-anchor="middle">low-confidence / ungrounded</text>
+
+  <line x1="267" y1="180" x2="267" y2="252" stroke="#c53030" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="680" y1="180" x2="680" y2="252" stroke="#c05621" stroke-width="1.3" stroke-dasharray="4 3"/>
+
+  <!-- Human feedback panel -->
+  <rect x="30" y="340" width="820" height="180" rx="12" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="50" y="368" font-size="16" font-weight="700" fill="#1a202c">Human feedback closes the loop</text>
+
+  <!-- thumbs -->
+  <rect x="50" y="384" width="230" height="118" rx="10" fill="#ffffff" stroke="#4299e1" stroke-width="1.3"/>
+  <text x="165" y="408" font-size="13" font-weight="700" fill="#2b6cb0" text-anchor="middle">Signals collected</text>
+  <text x="66" y="432" font-size="11.5" fill="#276749">&#9650; thumbs up  (answer was good)</text>
+  <text x="66" y="454" font-size="11.5" fill="#c53030">&#9660; thumbs down  (answer was wrong)</text>
+  <text x="66" y="476" font-size="11.5" fill="#4a5568">&#9998; correction  (user-supplied fix)</text>
+  <text x="66" y="496" font-size="11.5" fill="#4a5568">&#9873; review-queue verdicts</text>
+
+  <text x="300" y="448" font-size="26" fill="#4a5568" text-anchor="middle">&#8594;</text>
+
+  <!-- aggregate -->
+  <rect x="330" y="384" width="230" height="118" rx="10" fill="#ffffff" stroke="#9f7aea" stroke-width="1.3"/>
+  <text x="445" y="408" font-size="13" font-weight="700" fill="#6b46c1" text-anchor="middle">Aggregate &amp; select</text>
+  <text x="346" y="434" font-size="11.5" fill="#4a5568">compute thumbs-down rate</text>
+  <text x="346" y="456" font-size="11.5" fill="#4a5568">pick downvoted / corrected</text>
+  <text x="346" y="478" font-size="11.5" fill="#4a5568">interactions to promote</text>
+
+  <text x="580" y="448" font-size="26" fill="#4a5568" text-anchor="middle">&#8594;</text>
+
+  <!-- golden dataset -->
+  <rect x="610" y="384" width="220" height="118" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="720" y="408" font-size="13" font-weight="700" fill="#276749" text-anchor="middle">Golden eval dataset</text>
+  <text x="720" y="430" font-size="11.5" fill="#4a5568" text-anchor="middle">(Module 2)</text>
+  <text x="720" y="456" font-size="11.5" fill="#4a5568" text-anchor="middle">new labeled test cases</text>
+  <text x="720" y="478" font-size="11.5" fill="#4a5568" text-anchor="middle">feed offline evaluation</text>
+
+  <!-- Feedback loop arrow: golden dataset back up to model -->
+  <path d="M 830 384 C 866 300 866 220 545 140" fill="none" stroke="#276749" stroke-width="2" stroke-dasharray="6 4"/>
+  <polygon points="545,140 559,133 557,148" fill="#276749"/>
+  <text x="856" y="300" font-size="11.5" fill="#276749" text-anchor="middle" transform="rotate(90 856 300)">feedback calibrates the app</text>
+</svg>

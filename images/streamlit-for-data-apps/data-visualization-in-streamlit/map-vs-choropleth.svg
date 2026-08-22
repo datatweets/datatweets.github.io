@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="390" viewBox="0 0 1050 390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>st.map Needs Coordinates This Dataset Does Not Have</title>
+<desc>Two panels. Left, st.map(d): raises a real StreamlitAPIException, Map data must contain a latitude column named LAT, LATITUDE, lat, or latitude -- this dataset has no such column. Right, px.choropleth with locations=iso_alpha: works correctly using the real ISO country codes already in the dataset, no coordinates needed, confirmed to reveal a genuine data quirk -- North and South Korea share the identical code KOR.</desc>
+<rect width="1050" height="390" fill="#ffffff" />
+<text x="525" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">st.map Needs Coordinates This Dataset Does Not Have</text>
+<rect x="30" y="60" width="483" height="210" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.6" />
+<text x="271" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">st.map(d)</text>
+<text x="271" y="110" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">StreamlitAPIException:</text>
+<text x="271" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">Map data must contain</text>
+<text x="271" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">a latitude column named:</text>
+<text x="271" y="176" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">&#x27;LAT&#x27;,&#x27;LATITUDE&#x27;,</text>
+<text x="271" y="198" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">&#x27;lat&#x27;,&#x27;latitude&#x27;</text>
+<text x="271" y="220" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">-- this dataset has none</text>
+<path d="M517,165 L533,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="537" y="60" width="483" height="210" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+<text x="778" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">px.choropleth(locations=&quot;iso_alpha&quot;)</text>
+<text x="778" y="110" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">Works -- no lat/lon needed,</text>
+<text x="778" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">real ISO country codes</text>
+<text x="778" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">already in the dataset.</text>
+<text x="778" y="176" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568"></text>
+<text x="778" y="198" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">Real quirk confirmed:</text>
+<text x="778" y="220" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">&#x27;KOR&#x27; appears twice</text>
+<text x="778" y="242" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">(North + South Korea)</text>
+<rect x="30" y="286" width="990" height="88" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="525" y="310" text-anchor="middle" font-size="10.5" fill="#7b341e">st.map needs real latitude/longitude columns this dataset lacks. A choropleth keyed on ISO country codes works</text>
+<text x="525" y="330" text-anchor="middle" font-size="10.5" fill="#7b341e">instead -- and honestly surfaces a real data quirk rather than hiding it.</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

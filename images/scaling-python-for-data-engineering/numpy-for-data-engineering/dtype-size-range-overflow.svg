@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="840" height="660" fill="#ffffff"/>
+
+  <text x="420" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Pick the smallest safe numeric type</text>
+  <text x="420" y="62" text-anchor="middle" font-size="14" fill="#4a5568">Byte cost and representable range of the common NumPy dtypes</text>
+
+  <!-- ===== dtype table ===== -->
+  <rect x="30" y="86" width="780" height="288" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- header row -->
+  <text x="60" y="118" font-size="13" font-weight="700" fill="#4a5568">DTYPE</text>
+  <text x="210" y="118" font-size="13" font-weight="700" fill="#4a5568">BYTES</text>
+  <text x="320" y="118" font-size="13" font-weight="700" fill="#4a5568">REPRESENTABLE RANGE</text>
+  <line x1="50" y1="128" x2="790" y2="128" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- int8 (highlighted red - too small for zones) -->
+  <rect x="50" y="136" width="740" height="26" rx="4" fill="#fff5f5"/>
+  <text x="60" y="154" font-size="14" font-family="monospace" font-weight="700" fill="#c53030">int8</text>
+  <text x="222" y="154" font-size="13" fill="#4a5568">1</text>
+  <text x="320" y="154" font-size="13" font-family="monospace" fill="#c53030">-128 .. 127</text>
+  <text x="560" y="154" font-size="12" fill="#c53030">too small for zone IDs</text>
+
+  <text x="60" y="184" font-size="14" font-family="monospace" font-weight="700" fill="#2b6cb0">int16</text>
+  <text x="222" y="184" font-size="13" fill="#4a5568">2</text>
+  <text x="320" y="184" font-size="13" font-family="monospace" fill="#276749">-32,768 .. 32,767</text>
+  <text x="560" y="184" font-size="12" fill="#276749">safe minimum for zones</text>
+
+  <text x="60" y="212" font-size="14" font-family="monospace" font-weight="700" fill="#2b6cb0">int32</text>
+  <text x="222" y="212" font-size="13" fill="#4a5568">4</text>
+  <text x="320" y="212" font-size="13" font-family="monospace" fill="#4a5568">-2,147,483,648 .. 2,147,483,647</text>
+
+  <text x="60" y="240" font-size="14" font-family="monospace" font-weight="700" fill="#2b6cb0">int64</text>
+  <text x="222" y="240" font-size="13" fill="#4a5568">8</text>
+  <text x="320" y="240" font-size="13" font-family="monospace" fill="#4a5568">-9.2e18 .. 9.2e18 (pandas default)</text>
+
+  <line x1="50" y1="254" x2="790" y2="254" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="60" y="278" font-size="14" font-family="monospace" font-weight="700" fill="#6b46c1">uint8</text>
+  <text x="222" y="278" font-size="13" fill="#4a5568">1</text>
+  <text x="320" y="278" font-size="13" font-family="monospace" fill="#4a5568">0 .. 255</text>
+
+  <text x="60" y="304" font-size="14" font-family="monospace" font-weight="700" fill="#6b46c1">uint16</text>
+  <text x="222" y="304" font-size="13" fill="#4a5568">2</text>
+  <text x="320" y="304" font-size="13" font-family="monospace" fill="#4a5568">0 .. 65,535</text>
+
+  <line x1="50" y1="316" x2="790" y2="316" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="60" y="340" font-size="14" font-family="monospace" font-weight="700" fill="#c05621">float32</text>
+  <text x="222" y="340" font-size="13" fill="#4a5568">4</text>
+  <text x="320" y="340" font-size="13" font-family="monospace" fill="#4a5568">~6 significant digits (fine for fares)</text>
+
+  <text x="60" y="366" font-size="14" font-family="monospace" font-weight="700" fill="#c05621">float64</text>
+  <text x="222" y="366" font-size="13" fill="#4a5568">8</text>
+  <text x="320" y="366" font-size="13" font-family="monospace" fill="#4a5568">~15 significant digits (pandas default)</text>
+
+  <!-- ===== overflow illustration ===== -->
+  <text x="420" y="412" text-anchor="middle" font-size="16" font-weight="700" fill="#1a202c">The overflow trap: PULocationID max = 265</text>
+
+  <!-- source value -->
+  <rect x="70" y="440" width="150" height="90" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="145" y="470" text-anchor="middle" font-size="13" fill="#2b6cb0">real zone ID</text>
+  <text x="145" y="505" text-anchor="middle" font-size="34" font-weight="700" fill="#2b6cb0">265</text>
+
+  <!-- int8 path (wrong) -->
+  <line x1="220" y1="470" x2="330" y2="470" stroke="#c53030" stroke-width="2"/>
+  <polygon points="330,470 320,465 320,475" fill="#c53030"/>
+  <text x="275" y="460" text-anchor="middle" font-size="12" fill="#c53030">.astype(int8)</text>
+  <rect x="335" y="440" width="200" height="90" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+  <text x="435" y="466" text-anchor="middle" font-size="12" fill="#c53030">wraps: 265 - 256</text>
+  <text x="435" y="500" text-anchor="middle" font-size="34" font-weight="700" fill="#c53030">9</text>
+  <text x="435" y="522" text-anchor="middle" font-size="12" fill="#c53030">wrong zone - silent corruption</text>
+
+  <!-- int16 path (right) -->
+  <line x1="220" y1="500" x2="330" y2="560" stroke="#276749" stroke-width="2"/>
+  <polygon points="330,560 320,551 322,562" fill="#276749"/>
+  <text x="255" y="548" text-anchor="middle" font-size="12" fill="#276749">.astype(int16)</text>
+  <rect x="335" y="548" width="200" height="70" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="435" y="576" text-anchor="middle" font-size="12" fill="#276749">fits easily</text>
+  <text x="435" y="606" text-anchor="middle" font-size="30" font-weight="700" fill="#276749">265</text>
+
+  <!-- impact box -->
+  <rect x="560" y="440" width="250" height="178" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+  <text x="685" y="468" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">On the 200,000-row sample</text>
+  <text x="580" y="498" font-size="13" fill="#4a5568">int8 corrupts</text>
+  <text x="800" y="498" text-anchor="end" font-size="13" font-weight="700" fill="#c53030">155,504 rows</text>
+  <text x="580" y="524" font-size="13" fill="#4a5568">that is</text>
+  <text x="800" y="524" text-anchor="end" font-size="13" font-weight="700" fill="#c53030">77.8%</text>
+  <line x1="580" y1="540" x2="790" y2="540" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="580" y="566" font-size="13" fill="#4a5568">int16 saves</text>
+  <text x="800" y="566" text-anchor="end" font-size="13" font-weight="700" fill="#276749">4x memory</text>
+  <text x="580" y="592" font-size="13" fill="#4a5568">and keeps</text>
+  <text x="800" y="592" text-anchor="end" font-size="13" font-weight="700" fill="#276749">every value</text>
+
+  <text x="420" y="646" text-anchor="middle" font-size="12" fill="#718096">Choose the narrowest dtype whose range still covers the column - int16 here, not int8.</text>
+</svg>

@@ -1,0 +1,6 @@
+token,action_scan,object_label,sequence_link,action_seal,object_parcel,process_signal
+scan,1.6,0.1,0.1,0.0,0.0,0.4
+label,0.2,1.5,0.1,0.0,0.0,0.5
+then,0.1,0.1,1.4,0.1,0.1,0.3
+seal,0.0,0.0,0.1,1.6,0.1,0.4
+parcel,0.0,0.0,0.1,0.2,1.5,0.5

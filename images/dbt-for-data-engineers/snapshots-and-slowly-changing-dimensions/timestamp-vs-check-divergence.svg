@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="400" viewBox="0 0 1060 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The identical change, caught by one strategy and missed by the other</title>
+  <desc>A side-by-side comparison. Zone 33 reassigned from Brooklyn to Queens with updated_at deliberately left unchanged. Left, check strategy: zones_snapshot correctly records two rows -- Brooklyn closed out, Queens now open -- since it compares zone_name, borough, and service_zone directly. Right, timestamp strategy: zones_snapshot_timestamp still shows one row, still Brooklyn, dbt_valid_to still null, since its detection depends entirely on updated_at, which never moved. A caption states the identical change is caught by one strategy and completely missed by the other, confirmed directly against each snapshot's own data.</desc>
+  <rect width="1060" height="400" fill="#ffffff" />
+  <text x="530" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Identical Change, Caught by One Strategy, Missed by the Other</text>
+  <text x="530" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">Zone 33 reassigned Brooklyn to Queens -- updated_at deliberately left untouched</text>
+
+  <rect x="30" y="70" width="480" height="230" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="270" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">check strategy: zones_snapshot</text>
+  <text x="270" y="115" text-anchor="middle" font-size="9" fill="#22543d">compares zone_name, borough, service_zone directly</text>
+  <rect x="55" y="130" width="430" height="45" rx="6" fill="#22543d" />
+  <text x="270" y="150" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">Brooklyn -- dbt_valid_to = closed out</text>
+  <text x="270" y="166" text-anchor="middle" font-size="8.5" fill="#f0fff4">the old, correct history, preserved</text>
+  <rect x="55" y="182" width="430" height="45" rx="6" fill="#2f855a" />
+  <text x="270" y="202" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">Queens -- dbt_valid_to = null (current)</text>
+  <text x="270" y="218" text-anchor="middle" font-size="8.5" fill="#f0fff4">the new, correct current state</text>
+  <text x="270" y="255" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">INSERT 0 1 -- caught it</text>
+  <text x="270" y="275" text-anchor="middle" font-size="9" fill="#22543d">the change is genuinely recorded</text>
+
+  <rect x="550" y="70" width="480" height="230" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="790" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">timestamp strategy: zones_snapshot_timestamp</text>
+  <text x="790" y="115" text-anchor="middle" font-size="9" fill="#822727">depends entirely on updated_at -- never moved</text>
+  <rect x="575" y="130" width="430" height="70" rx="6" fill="#822727" />
+  <text x="790" y="155" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#fff5f5">Brooklyn -- dbt_valid_to still null</text>
+  <text x="790" y="175" text-anchor="middle" font-size="8.5" fill="#fff5f5">as far as this snapshot knows,</text>
+  <text x="790" y="190" text-anchor="middle" font-size="8.5" fill="#fff5f5">nothing about zone 33 ever changed</text>
+  <text x="790" y="255" text-anchor="middle" font-size="11" font-weight="700" fill="#822727">INSERT 0 0 -- missed it entirely</text>
+  <text x="790" y="275" text-anchor="middle" font-size="9" fill="#822727">no error, no warning, just silence</text>
+
+  <text x="530" y="335" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">Confirmed against each snapshot's own real data -- not assumed from either strategy's documentation.</text>
+  <text x="530" y="358" text-anchor="middle" font-size="9.5" fill="#4a5568">Bumping updated_at afterward lets timestamp strategy catch up correctly on the very next run.</text>
+</svg>

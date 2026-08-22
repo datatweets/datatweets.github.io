@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="640" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Kubernetes Jobs: Run to Completion, Not Forever</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">A Job that succeeds once and stops, and one that fails a bounded number of times</text>
+
+<text x="240" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#2d3748">cityflow-report-job (succeeds)</text>
+
+<rect x="60" y="110" width="360" height="66" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="240" y="132" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#2b6cb0">backoffLimit: 2, restartPolicy: Never</text>
+<text x="240" y="150" text-anchor="middle" font-size="10.5" fill="#4a5568">exit 0 after printing the report</text>
+<text x="240" y="166" text-anchor="middle" font-size="9.5" fill="#718096">one pod: cityflow-report-job-s6vqp</text>
+
+<line x1="240" y1="176" x2="240" y2="206" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="60" y="210" width="360" height="76" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="240" y="232" text-anchor="middle" font-size="12.5" font-weight="700" fill="#276749">STATUS: Complete</text>
+<text x="240" y="252" text-anchor="middle" font-size="11" fill="#4a5568">COMPLETIONS 1/1 &#8226; DURATION 3s</text>
+<text x="240" y="270" text-anchor="middle" font-size="10" fill="#718096">pod status: Completed, not Running</text>
+
+<line x1="480" y1="94" x2="480" y2="286" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="720" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#2d3748">cityflow-broken-job (fails)</text>
+
+<rect x="540" y="110" width="360" height="56" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="720" y="132" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#c53030">backoffLimit: 2</text>
+<text x="720" y="150" text-anchor="middle" font-size="10.5" fill="#4a5568">exit 1: "input file is missing"</text>
+
+<line x1="720" y1="166" x2="720" y2="194" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="546" y="198" width="112" height="56" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="602" y="220" text-anchor="middle" font-size="10" font-weight="700" fill="#c53030">6l4zv</text>
+<text x="602" y="238" text-anchor="middle" font-size="9" fill="#4a5568">Error, attempt 1</text>
+
+<rect x="664" y="198" width="112" height="56" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="720" y="220" text-anchor="middle" font-size="10" font-weight="700" fill="#c53030">764sf</text>
+<text x="720" y="238" text-anchor="middle" font-size="9" fill="#4a5568">Error, attempt 2</text>
+
+<rect x="782" y="198" width="112" height="56" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="838" y="220" text-anchor="middle" font-size="10" font-weight="700" fill="#c53030">gtjb5</text>
+<text x="838" y="238" text-anchor="middle" font-size="9" fill="#4a5568">Error, attempt 3</text>
+
+<text x="720" y="270" text-anchor="middle" font-size="9.5" fill="#718096">job-controller created each pod ~10s apart, exponential backoff</text>
+
+<line x1="720" y1="286" x2="720" y2="316" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="540" y="320" width="360" height="76" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="720" y="342" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c53030">STATUS: Failed</text>
+<text x="720" y="362" text-anchor="middle" font-size="11" fill="#4a5568">0 Succeeded / 3 Failed</text>
+<text x="720" y="380" text-anchor="middle" font-size="10" fill="#718096">Warning: BackoffLimitExceeded</text>
+
+<line x1="60" y1="416" x2="900" y2="416" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="444" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">both are terminal, unlike a Deployment</text>
+<text x="480" y="468" text-anchor="middle" font-size="12" fill="#4a5568">A Job always reaches Complete or Failed, with an explicit reason either way.</text>
+<text x="480" y="490" text-anchor="middle" font-size="12" fill="#4a5568">A Deployment's pods are meant to stay Running indefinitely - there is no equivalent "done" state.</text>
+<text x="480" y="522" text-anchor="middle" font-size="11.5" fill="#718096">Each retry is a brand-new pod, never the same one restarted - the same reconciliation pattern</text>
+<text x="480" y="542" text-anchor="middle" font-size="11.5" fill="#718096">Module 5's ReplicaSet used to replace a deleted pod, applied here to a failing one instead.</text>
+<text x="480" y="574" text-anchor="middle" font-size="10.5" fill="#a0aec0">All statuses, pod names, and durations above are from real kubectl output captured for this lesson.</text>
+
+<defs>
+<marker id="arrows" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

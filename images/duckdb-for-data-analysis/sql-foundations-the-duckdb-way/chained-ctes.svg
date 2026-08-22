@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="420" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Two Chained CTEs, Each Built on the Last</text>
+
+  <!-- Stage 0: raw tables -->
+  <rect x="40" y="55" width="150" height="40" rx="5" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="115" y="72" text-anchor="middle" font-size="10.5" fill="#4a5568">customers, orders,</text>
+  <text x="115" y="87" text-anchor="middle" font-size="10.5" fill="#4a5568">order_items</text>
+
+  <path d="M195 75 L233 75" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#a1)"  fill="none" />
+
+  <!-- Stage 1: customer_revenue -->
+  <rect x="235" y="55" width="230" height="60" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="350" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">customer_revenue</text>
+  <text x="350" y="95" text-anchor="middle" font-size="9.5" fill="#2c5282">one row per customer</text>
+  <text x="350" y="108" text-anchor="middle" font-size="9.5" fill="#2c5282">(GROUP BY customer_id, segment)</text>
+
+  <path d="M470 85 L508 85" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#a2)"  fill="none" />
+
+  <!-- Stage 2: segment_avg -->
+  <rect x="510" y="55" width="230" height="60" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="625" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">segment_avg</text>
+  <text x="625" y="95" text-anchor="middle" font-size="9.5" fill="#276749">one row per segment</text>
+  <text x="625" y="108" text-anchor="middle" font-size="9.5" fill="#276749">(GROUP BY segment, avg(revenue))</text>
+
+  <path d="M350 115 L350 165" stroke="#4299e1" stroke-width="1.5" marker-end="url(#a3)"  fill="none" />
+  <path d="M625 115 L625 165 L400 165" stroke="#48bb78" stroke-width="1.5" marker-end="url(#a4)"  fill="none" />
+
+  <!-- Final SELECT -->
+  <rect x="180" y="167" width="440" height="60" rx="6" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="400" y="192" text-anchor="middle" font-size="12" font-weight="700" fill="#9c4221">Final SELECT: JOIN customer_revenue to segment_avg</text>
+  <text x="400" y="210" text-anchor="middle" font-size="9.5" fill="#9c4221">WHERE cr.revenue > sa.avg_revenue -- 86 customers</text>
+
+  <rect x="90" y="255" width="620" height="140" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="115" y="282" font-size="11" font-weight="700" fill="#2c5282">Stage 1: customer_revenue</text>
+  <text x="115" y="299" font-size="10" fill="#4a5568">Joins 3 raw tables and aggregates down to one revenue total per customer.</text>
+
+  <text x="115" y="325" font-size="11" font-weight="700" fill="#276749">Stage 2: segment_avg</text>
+  <text x="115" y="342" font-size="10" fill="#4a5568">Aggregates customer_revenue itself, one more level, down to one average per segment.</text>
+
+  <text x="115" y="368" font-size="11" font-weight="700" fill="#9c4221">Final SELECT</text>
+  <text x="115" y="385" font-size="10" fill="#4a5568">Joins both CTEs together -- comparing each customer against their own segment, not one flat company-wide number.</text>
+
+  <defs>
+    <marker id="a1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" /></marker>
+    <marker id="a2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" /></marker>
+    <marker id="a3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4299e1" /></marker>
+    <marker id="a4" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#48bb78" /></marker>
+  </defs>
+</svg>

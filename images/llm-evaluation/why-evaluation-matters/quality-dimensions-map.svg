@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Six quality dimensions of an LLM app, each mapped to a measurement method and the course module that covers it</title>
+  <desc id="desc">A three-by-two grid of six cards. Correctness, measured by deterministic metrics, covered in Module 3. Faithfulness or grounding, measured by RAG evaluation, Module 5. Relevance or helpfulness, measured by LLM-as-judge, Module 4. Format or structure, measured by structured checks, Module 3. Safety or refusal, measured by guardrails, Module 8. Operational cost and latency, measured by observability, Module 7. A footer notes that you weight the dimensions that matter for your app; a single average hides trade-offs.</desc>
+  <rect x="0" y="0" width="860" height="560" fill="#ffffff"/>
+
+  <text x="430" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#1a202c">What to Measure: Six Quality Dimensions of Docent</text>
+  <text x="430" y="66" text-anchor="middle" font-size="14" fill="#718096">"Good" is not one number &#8212; each dimension needs its own method, taught in its own module</text>
+
+  <!-- Row 1 -->
+  <!-- Correctness (blue) -->
+  <g>
+    <rect x="30" y="90" width="256" height="140" rx="12" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="46" y="120" font-size="17" font-weight="700" fill="#2b6cb0">Correctness</text>
+    <text x="46" y="144" font-size="12.5" fill="#4a5568">Is the answer right?</text>
+    <text x="46" y="164" font-size="12.5" fill="#4a5568">Docent returns "429" for the</text>
+    <text x="46" y="181" font-size="12.5" fill="#4a5568">rate-limit question.</text>
+    <text x="46" y="207" font-size="12" font-weight="600" fill="#2b6cb0">Deterministic metrics</text>
+    <rect x="204" y="196" width="66" height="20" rx="10" fill="#4299e1"/>
+    <text x="237" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Module 3</text>
+  </g>
+
+  <!-- Faithfulness (green) -->
+  <g>
+    <rect x="302" y="90" width="256" height="140" rx="12" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+    <text x="318" y="120" font-size="17" font-weight="700" fill="#276749">Faithfulness</text>
+    <text x="318" y="144" font-size="12.5" fill="#4a5568">Grounded in the context,</text>
+    <text x="318" y="161" font-size="12.5" fill="#4a5568">not invented? It must not</text>
+    <text x="318" y="178" font-size="12.5" fill="#4a5568">quote a plan price not in docs.</text>
+    <text x="318" y="207" font-size="12" font-weight="600" fill="#276749">RAG evaluation</text>
+    <rect x="476" y="196" width="66" height="20" rx="10" fill="#48bb78"/>
+    <text x="509" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Module 5</text>
+  </g>
+
+  <!-- Relevance (purple) -->
+  <g>
+    <rect x="574" y="90" width="256" height="140" rx="12" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+    <text x="590" y="120" font-size="17" font-weight="700" fill="#6b46c1">Relevance</text>
+    <text x="590" y="144" font-size="12.5" fill="#4a5568">Does it actually answer</text>
+    <text x="590" y="161" font-size="12.5" fill="#4a5568">the question, not just say</text>
+    <text x="590" y="178" font-size="12.5" fill="#4a5568">something true and off-topic?</text>
+    <text x="590" y="207" font-size="12" font-weight="600" fill="#6b46c1">LLM-as-judge</text>
+    <rect x="748" y="196" width="66" height="20" rx="10" fill="#9f7aea"/>
+    <text x="781" y="210" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Module 4</text>
+  </g>
+
+  <!-- Row 2 -->
+  <!-- Format (blue) -->
+  <g>
+    <rect x="30" y="250" width="256" height="140" rx="12" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="46" y="280" font-size="17" font-weight="700" fill="#2b6cb0">Format &amp; Structure</text>
+    <text x="46" y="304" font-size="12.5" fill="#4a5568">Valid JSON, required fields,</text>
+    <text x="46" y="321" font-size="12.5" fill="#4a5568">follows instructions &#8212; a check</text>
+    <text x="46" y="338" font-size="12.5" fill="#4a5568">you can run without a key.</text>
+    <text x="46" y="367" font-size="12" font-weight="600" fill="#2b6cb0">Structured checks</text>
+    <rect x="204" y="356" width="66" height="20" rx="10" fill="#4299e1"/>
+    <text x="237" y="370" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Module 3</text>
+  </g>
+
+  <!-- Safety (red) -->
+  <g>
+    <rect x="302" y="250" width="256" height="140" rx="12" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+    <text x="318" y="280" font-size="17" font-weight="700" fill="#c53030">Safety &amp; Refusal</text>
+    <text x="318" y="304" font-size="12.5" fill="#4a5568">Declines out-of-scope or</text>
+    <text x="318" y="321" font-size="12.5" fill="#4a5568">unsafe asks &#8212; the MongoDB</text>
+    <text x="318" y="338" font-size="12.5" fill="#4a5568">aggregation question (#11).</text>
+    <text x="318" y="367" font-size="12" font-weight="600" fill="#c53030">Guardrails</text>
+    <rect x="476" y="356" width="66" height="20" rx="10" fill="#fc8181"/>
+    <text x="509" y="370" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Module 8</text>
+  </g>
+
+  <!-- Operational (orange) -->
+  <g>
+    <rect x="574" y="250" width="256" height="140" rx="12" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+    <text x="590" y="280" font-size="17" font-weight="700" fill="#c05621">Operational</text>
+    <text x="590" y="304" font-size="12.5" fill="#4a5568">Latency, cost, tokens &#8212;</text>
+    <text x="590" y="321" font-size="12.5" fill="#4a5568">measured live: ~1.5&#8211;2.2 s,</text>
+    <text x="590" y="338" font-size="12.5" fill="#4a5568">~200 in / 6&#8211;13 out tokens.</text>
+    <text x="590" y="367" font-size="12" font-weight="600" fill="#c05621">Observability</text>
+    <rect x="748" y="356" width="66" height="20" rx="10" fill="#ed8936"/>
+    <text x="781" y="370" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Module 7</text>
+  </g>
+
+  <!-- Footer band -->
+  <rect x="30" y="418" width="800" height="112" rx="12" fill="#f7fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="52" y="452" font-size="15" font-weight="700" fill="#1a202c">Pick the dimensions that matter for YOUR app &#8212; and weight them.</text>
+  <text x="52" y="478" font-size="13" fill="#4a5568">A documentation assistant lives or dies on correctness and faithfulness; format matters less if answers are plain prose.</text>
+  <text x="52" y="500" font-size="13" fill="#4a5568">A JSON-emitting API tool flips that priority. One blended average would hide the trade-off entirely &#8212; a fast, cheap</text>
+  <text x="52" y="518" font-size="13" fill="#4a5568">answer that is subtly wrong can score higher than a slower answer that is correct. Measure each dimension on its own.</text>
+</svg>

@@ -1,0 +1,9 @@
+claim_id,item,amount,receipt,category
+C01,Laptop stand,48.50,yes,equipment
+C02,USB microphone,92.00,yes,equipment
+C03,Desk lamp,71.25,no,equipment
+C04,Online course,120.00,yes,training
+C05,Monitor,640.00,yes,equipment
+C06,Keyboard,not-recorded,yes,equipment
+C07,Ergonomic mouse,84.90,yes,equipment
+C08,Cloud storage,36.00,yes,subscription

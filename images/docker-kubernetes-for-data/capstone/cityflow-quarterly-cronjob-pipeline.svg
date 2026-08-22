@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 980" width="960" height="980" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="980" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Capstone: CityFlow's Quarterly Report, Scheduled</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Every module folded into one CronJob, verified against Course 1's exact anchor</text>
+
+<rect x="60" y="82" width="390" height="120" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="255" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2b6cb0">ConfigMap</text>
+<text x="255" y="122" text-anchor="middle" font-size="9.5" fill="#4a5568">cityflow-capstone-config</text>
+<text x="255" y="140" text-anchor="middle" font-size="9" fill="#718096">DATA_URLS: 3 monthly parquet URLs</text>
+<text x="255" y="156" text-anchor="middle" font-size="9" fill="#718096">WINDOW: 2024-01-01 .. 2024-04-01</text>
+<text x="255" y="172" text-anchor="middle" font-size="9" fill="#718096">CACHE_DIR /var/cityflow/cache</text>
+<text x="255" y="188" text-anchor="middle" font-size="9" fill="#718096">OUTPUT_PATH .../output/report.json</text>
+
+<rect x="510" y="82" width="390" height="120" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="705" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">PersistentVolumeClaim</text>
+<text x="705" y="122" text-anchor="middle" font-size="9.5" fill="#4a5568">cityflow-capstone-pvc, 300Mi, RWO</text>
+<text x="705" y="140" text-anchor="middle" font-size="9" fill="#718096">/cache - downloaded parquet files,</text>
+<text x="705" y="156" text-anchor="middle" font-size="9" fill="#718096">reused across every firing</text>
+<text x="705" y="172" text-anchor="middle" font-size="9" fill="#718096">/output - report.json, survives every</text>
+<text x="705" y="188" text-anchor="middle" font-size="9" fill="#718096">Job's pod being deleted</text>
+
+<line x1="255" y1="202" x2="255" y2="215" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="705" y1="202" x2="705" y2="215" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="255" y1="215" x2="705" y2="215" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="480" y1="215" x2="480" y2="236" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="230" y="240" width="500" height="76" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="480" y="262" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">CronJob cityflow-quarterly-report</text>
+<text x="480" y="282" text-anchor="middle" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">schedule: */3 * * * *  (demo cadence - production would run hourly, 0 * * * *)</text>
+<text x="480" y="300" text-anchor="middle" font-size="9.5" fill="#718096">successfulJobsHistoryLimit 3, failedJobsHistoryLimit 1</text>
+
+<line x1="480" y1="316" x2="480" y2="340" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="180" y="344" width="600" height="104" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="480" y="366" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">Job (jobTemplate) - image cityflow-capstone:1.0</text>
+<text x="480" y="386" text-anchor="middle" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">requests: cpu 250m, memory 160Mi &#8226; limits: cpu 500m, memory 320Mi</text>
+<text x="480" y="404" text-anchor="middle" font-size="9.5" fill="#718096">real measured boundary: fails at 124Mi, succeeds at 128Mi (3-month job)</text>
+<text x="480" y="422" text-anchor="middle" font-size="9.5" fill="#718096">backoffLimit 1, restartPolicy Never</text>
+
+<line x1="480" y1="448" x2="480" y2="472" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="60" y="476" width="840" height="170" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5"/>
+<text x="480" y="498" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2d3748">Three real, successive firings</text>
+
+<rect x="80" y="514" width="250" height="118" rx="8" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.25"/>
+<text x="205" y="534" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">Run 1 - cache MISS</text>
+<text x="205" y="552" text-anchor="middle" font-size="9" fill="#718096">fetches 3 files (~160MB)</text>
+<text x="205" y="568" text-anchor="middle" font-size="9" fill="#718096">from the public TLC source</text>
+<text x="205" y="586" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">121.08s compute+fetch</text>
+<text x="205" y="602" text-anchor="middle" font-size="9" fill="#a0aec0">wall clock (incl. scheduling): 2m9s</text>
+<text x="205" y="618" text-anchor="middle" font-size="9" fill="#718096">writes report.json to the PVC</text>
+
+<rect x="355" y="514" width="250" height="118" rx="8" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.25"/>
+<text x="480" y="534" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">Run 2 - cache HIT</text>
+<text x="480" y="552" text-anchor="middle" font-size="9" fill="#718096">reuses the 3 cached files</text>
+<text x="480" y="568" text-anchor="middle" font-size="9" fill="#718096">zero network fetch needed</text>
+<text x="480" y="586" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">1.12s compute</text>
+<text x="480" y="602" text-anchor="middle" font-size="9" fill="#a0aec0">wall clock (incl. scheduling): 5s</text>
+<text x="480" y="618" text-anchor="middle" font-size="9" fill="#718096">identical report.json written</text>
+
+<rect x="630" y="514" width="250" height="118" rx="8" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.25"/>
+<text x="755" y="534" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">Run 3 - cache HIT</text>
+<text x="755" y="552" text-anchor="middle" font-size="9" fill="#718096">reuses the 3 cached files</text>
+<text x="755" y="568" text-anchor="middle" font-size="9" fill="#718096">zero network fetch needed</text>
+<text x="755" y="586" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">1.19s compute</text>
+<text x="755" y="602" text-anchor="middle" font-size="9" fill="#a0aec0">wall clock (incl. scheduling): 5s</text>
+<text x="755" y="618" text-anchor="middle" font-size="9" fill="#718096">identical report.json written</text>
+
+<line x1="480" y1="646" x2="480" y2="670" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="60" y="674" width="840" height="120" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="480" y="700" text-anchor="middle" font-size="12.5" fill="#2d3748">240,917 zone-hour buckets &#8226; 9,554,757 trips kept &#8226; 21 quarantined</text>
+<text x="480" y="726" text-anchor="middle" font-size="17" font-weight="700" fill="#276749">$256,692,373.14 total revenue</text>
+<text x="480" y="748" text-anchor="middle" font-size="10.5" fill="#4a5568">busiest zone-hour: zone 79 at 2024-02-25T01, 846 trips</text>
+<text x="480" y="768" text-anchor="middle" font-size="10" fill="#718096">identical, all 3 runs - and identical to Course 1's own capstone anchor</text>
+
+<line x1="200" y1="794" x2="200" y2="818" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+<line x1="480" y1="794" x2="480" y2="818" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+<line x1="760" y1="794" x2="760" y2="818" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="80" y="822" width="240" height="78" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="200" y="846" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">kubectl logs</text>
+<text x="200" y="866" text-anchor="middle" font-size="9.5" fill="#4a5568">identical numbers printed</text>
+<text x="200" y="882" text-anchor="middle" font-size="9.5" fill="#4a5568">by all 3 real runs</text>
+
+<rect x="360" y="822" width="240" height="78" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="846" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">Dashboard screenshots</text>
+<text x="480" y="866" text-anchor="middle" font-size="9.5" fill="#4a5568">CronJob, Job history,</text>
+<text x="480" y="882" text-anchor="middle" font-size="9.5" fill="#4a5568">and the PVC, all Bound</text>
+
+<rect x="640" y="822" width="240" height="78" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="760" y="846" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">reader pod, post-teardown</text>
+<text x="760" y="866" text-anchor="middle" font-size="9.5" fill="#4a5568">all 3 Jobs deleted; report.json</text>
+<text x="760" y="882" text-anchor="middle" font-size="9.5" fill="#4a5568">still reads back off the PVC</text>
+
+<line x1="60" y1="920" x2="900" y2="920" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="946" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4a5568">a different course, a different orchestrator, the identical answer</text>
+<text x="480" y="966" text-anchor="middle" font-size="10.5" fill="#a0aec0">Every object and value above was introduced and run for real somewhere in Modules 1-7.</text>
+
+<defs>
+<marker id="arrows" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

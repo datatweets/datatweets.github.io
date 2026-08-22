@@ -1,0 +1,4 @@
+question,q_energy,q_route,q_link
+power check,2.2,0.1,0.0
+route check,0.1,2.2,0.1
+link check,0.0,0.1,2.2

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>108 bytes as JSON, 24 as Avro -- because Avro never writes a field name</title>
+  <desc>The identical TripEvent record encoded as JSON and as Avro. JSON encodes to 108 bytes, repeating every field name as literal text: trip_id, pickup_zone, dropoff_zone, fare_amount, passenger_count. Avro encodes to 24 bytes, writing only the values in schema-defined order with no field names on the wire at all -- 4.5x smaller for a single record. At 1,000 records, JSON totals 109,000 bytes while Avro totals 24,000 bytes, or 29,000 bytes including Confluent's 5-byte per-message schema ID header -- still 3.76x smaller, because the schema itself is defined once and referenced, never repeated.</desc>
+  <rect width="1100" height="420" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Same Record, Same Five Values -- 4.5x the Bytes for JSON</text>
+
+  <!-- JSON side -->
+  <rect x="40" y="55" width="490" height="170" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="285" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#742a2a">JSON -- 108 bytes</text>
+  <text x="285" y="100" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a" text-anchor="middle">{"trip_id": "trip-00042",</text>
+  <text x="285" y="115" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a" text-anchor="middle">"pickup_zone": 132,</text>
+  <text x="285" y="130" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a" text-anchor="middle">"dropoff_zone": 87,</text>
+  <text x="285" y="145" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a" text-anchor="middle">"fare_amount": 18.5,</text>
+  <text x="285" y="160" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a" text-anchor="middle">"passenger_count": 2}</text>
+  <text x="285" y="185" text-anchor="middle" font-size="10" fill="#742a2a">every field name travels as literal text,</text>
+  <text x="285" y="200" text-anchor="middle" font-size="10" fill="#742a2a">on every single message</text>
+
+  <!-- Avro side -->
+  <rect x="570" y="55" width="490" height="170" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="815" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#22543d">Avro -- 24 bytes</text>
+  <text x="815" y="105" font-size="9.5" font-family="Menlo, monospace" fill="#22543d" text-anchor="middle">\x14trip-00042\x88\x02\xae\x01</text>
+  <text x="815" y="120" font-size="9.5" font-family="Menlo, monospace" fill="#22543d" text-anchor="middle">\x00\x00\x00\x00\x00\x802@\x04</text>
+  <text x="815" y="150" text-anchor="middle" font-size="10" fill="#22543d">no field names at all -- the schema already</text>
+  <text x="815" y="165" text-anchor="middle" font-size="10" fill="#22543d">says field two is pickup_zone, an int</text>
+  <text x="815" y="185" text-anchor="middle" font-size="10" fill="#22543d">unreadable without that exact schema --</text>
+  <text x="815" y="200" text-anchor="middle" font-size="10" fill="#22543d">the direct tradeoff for the size</text>
+
+  <!-- Scale comparison -->
+  <rect x="140" y="250" width="820" height="110" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="550" y="278" text-anchor="middle" font-size="13" font-weight="700" fill="#2c5282">At 1,000 records</text>
+  <text x="550" y="302" text-anchor="middle" font-size="12" font-family="Menlo, monospace" fill="#2c5282">JSON: 109,000 bytes   |   Avro: 24,000 bytes   |   Avro + wire header: 29,000 bytes</text>
+  <text x="550" y="326" text-anchor="middle" font-size="11" fill="#2c5282">Confluent's wire format adds only a 5-byte header per message (magic byte + schema ID) --</text>
+  <text x="550" y="344" text-anchor="middle" font-size="11" fill="#2c5282">the schema itself is registered once and never repeated on the wire.</text>
+
+  <text x="550" y="390" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Still 3.76x smaller than JSON, even counting the real per-message overhead</text>
+</svg>

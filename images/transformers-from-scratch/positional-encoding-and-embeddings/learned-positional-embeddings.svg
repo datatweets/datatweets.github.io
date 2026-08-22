@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="820" height="560" fill="#ffffff"/>
+  <text x="410" y="32" font-size="19" font-weight="600" fill="#1a202c" text-anchor="middle">Learned positional embeddings: a table you add to the token embeddings</text>
+  <text x="410" y="53" font-size="13" fill="#718096" text-anchor="middle">row t of P is the vector for position t, trained like any parameter; for a length-T sequence you add P[:T]</text>
+
+  <!-- ===== forward panel ===== -->
+  <!-- token embeddings (B,T,C) -->
+  <text x="150" y="92" font-size="13.5" font-weight="600" fill="#2b6cb0" text-anchor="middle">token_emb</text>
+  <text x="150" y="110" font-size="12" fill="#718096" text-anchor="middle">(B, T, C) = (2, 5, 4)</text>
+  <g stroke="#2b6cb0" stroke-width="1.2" fill="#ebf8ff">
+    <rect x="70" y="122" width="160" height="24"/>
+    <rect x="70" y="146" width="160" height="24"/>
+    <rect x="70" y="170" width="160" height="24"/>
+    <rect x="70" y="194" width="160" height="24"/>
+    <rect x="70" y="218" width="160" height="24"/>
+  </g>
+  <g font-size="11.5" fill="#2b6cb0" text-anchor="middle">
+    <text x="150" y="139">token at pos 0</text>
+    <text x="150" y="163">token at pos 1</text>
+    <text x="150" y="187">token at pos 2</text>
+    <text x="150" y="211">token at pos 3</text>
+    <text x="150" y="235">token at pos 4</text>
+  </g>
+
+  <!-- plus -->
+  <text x="270" y="188" font-size="30" fill="#4a5568" text-anchor="middle">+</text>
+
+  <!-- P table (block_size, C) -->
+  <text x="400" y="92" font-size="13.5" font-weight="600" fill="#276749" text-anchor="middle">P (learned table)</text>
+  <text x="400" y="110" font-size="12" fill="#718096" text-anchor="middle">(block_size, C) = (8, 4)</text>
+  <g stroke="#276749" stroke-width="1.2" fill="#f0fff4">
+    <rect x="320" y="122" width="160" height="24"/>
+    <rect x="320" y="146" width="160" height="24"/>
+    <rect x="320" y="170" width="160" height="24"/>
+    <rect x="320" y="194" width="160" height="24"/>
+    <rect x="320" y="218" width="160" height="24"/>
+  </g>
+  <!-- rows beyond T: present but unused for this sequence -->
+  <g stroke="#a0aec0" stroke-width="1.2" fill="#f7fafc" stroke-dasharray="4 3">
+    <rect x="320" y="242" width="160" height="20"/>
+    <rect x="320" y="262" width="160" height="20"/>
+    <rect x="320" y="282" width="160" height="20"/>
+  </g>
+  <g font-size="11.5" fill="#276749" text-anchor="middle">
+    <text x="400" y="139">P[0]</text>
+    <text x="400" y="163">P[1]</text>
+    <text x="400" y="187">P[2]</text>
+    <text x="400" y="211">P[3]</text>
+    <text x="400" y="235">P[4]</text>
+  </g>
+  <g font-size="11" fill="#a0aec0" text-anchor="middle">
+    <text x="400" y="256">P[5]</text>
+    <text x="400" y="276">P[6]</text>
+    <text x="400" y="296">P[7]</text>
+  </g>
+  <text x="565" y="256" font-size="11" fill="#a0aec0" text-anchor="middle">rows 5&#8211;7:</text>
+  <text x="565" y="271" font-size="11" fill="#a0aec0" text-anchor="middle">exist but get</text>
+  <text x="565" y="286" font-size="11" fill="#a0aec0" text-anchor="middle">no gradient here</text>
+  <path d="M 484 272 L 512 272" stroke="#a0aec0" stroke-width="1.2" fill="none" marker-end="url(#agray)"/>
+
+  <text x="400" y="318" font-size="11.5" fill="#c53030" text-anchor="middle">only P[:T] (rows 0&#8211;4) is used and broadcast over the batch</text>
+
+  <!-- arrow to output -->
+  <path d="M 490 188 L 560 188" stroke="#4a5568" stroke-width="1.5" fill="none" marker-end="url(#adark)"/>
+  <text x="525" y="180" font-size="12" fill="#4a5568" text-anchor="middle">=</text>
+
+  <!-- output -->
+  <text x="655" y="92" font-size="13.5" font-weight="600" fill="#c05621" text-anchor="middle">out</text>
+  <text x="655" y="110" font-size="12" fill="#718096" text-anchor="middle">(B, T, C) = (2, 5, 4)</text>
+  <g stroke="#c05621" stroke-width="1.2" fill="#fffaf0">
+    <rect x="575" y="122" width="160" height="24"/>
+    <rect x="575" y="146" width="160" height="24"/>
+    <rect x="575" y="170" width="160" height="24"/>
+    <rect x="575" y="194" width="160" height="24"/>
+    <rect x="575" y="218" width="160" height="24"/>
+  </g>
+  <g font-size="11.5" fill="#c05621" text-anchor="middle">
+    <text x="655" y="139">token 0 + P[0]</text>
+    <text x="655" y="163">token 1 + P[1]</text>
+    <text x="655" y="187">token 2 + P[2]</text>
+    <text x="655" y="211">token 3 + P[3]</text>
+    <text x="655" y="235">token 4 + P[4]</text>
+  </g>
+
+  <!-- ===== comparison panel ===== -->
+  <line x1="60" y1="352" x2="760" y2="352" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="410" y="380" font-size="15" font-weight="600" fill="#1a202c" text-anchor="middle">Learned vs sinusoidal: the trade-off</text>
+
+  <!-- learned box -->
+  <rect x="70" y="398" width="330" height="132" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="235" y="420" font-size="13.5" font-weight="600" fill="#276749" text-anchor="middle">Learned (what GPT uses)</text>
+  <g font-size="12" fill="#276749">
+    <text x="88" y="443">&#8226; a trainable table, block_size &#215; C params</text>
+    <text x="88" y="463">&#8226; simple; often as good or better in practice</text>
+    <text x="88" y="483">&#8226; capped at block_size &#8212; no row beyond it</text>
+    <text x="88" y="503">&#8226; cannot extrapolate to longer sequences</text>
+    <text x="88" y="523">&#8226; backward: slice-add the batch-summed grad</text>
+  </g>
+
+  <!-- sinusoidal box -->
+  <rect x="430" y="398" width="330" height="132" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="595" y="420" font-size="13.5" font-weight="600" fill="#2b6cb0" text-anchor="middle">Sinusoidal (Lesson 3)</text>
+  <g font-size="12" fill="#2b6cb0">
+    <text x="448" y="443">&#8226; a fixed formula, zero parameters</text>
+    <text x="448" y="463">&#8226; defined for every position pos</text>
+    <text x="448" y="483">&#8226; extrapolates past training length</text>
+    <text x="448" y="503">&#8226; nothing to learn or gradient-check</text>
+    <text x="448" y="523">&#8226; trades flexibility for that extrapolation</text>
+  </g>
+
+  <defs>
+    <marker id="adark" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#4a5568"/>
+    </marker>
+    <marker id="agray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+    </marker>
+  </defs>
+</svg>

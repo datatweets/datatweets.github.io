@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Three selectors, the same five-model DAG, three different sets of models built</title>
+  <desc>The same five-model DAG -- hello_cityflow standing alone, stg_trips branching into zone_revenue and int_hourly_pattern, int_hourly_pattern feeding daily_summary -- run through three different dbt selectors. --select stg_trips+ builds stg_trips and everything downstream of it: stg_trips, int_hourly_pattern, zone_revenue, and daily_summary, four models, leaving only hello_cityflow unbuilt. --select +daily_summary builds daily_summary and everything upstream of it: stg_trips, int_hourly_pattern, and daily_summary, three models, leaving zone_revenue and hello_cityflow unbuilt even though zone_revenue also depends on stg_trips, because it is not an ancestor of daily_summary. --select int_hourly_pattern+ --exclude daily_summary builds only int_hourly_pattern, since excluding daily_summary removes the only model that a plain int_hourly_pattern+ would otherwise have included alongside it. Built models are shown filled green with a checkmark; skipped models are shown as empty gray outlines.</desc>
+  <rect width="1100" height="520" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Same DAG, Three Selectors, Three Different Builds</text>
+  <text x="550" y="50" text-anchor="middle" font-size="11" fill="#718096">Green = built this run. Gray outline = skipped -- untouched, not deleted.</text>
+
+  <!-- shared legend -->
+  <rect x="430" y="60" width="14" height="14" rx="3" fill="#48bb78" />
+  <text x="452" y="72" font-size="10" fill="#2d3748">built</text>
+  <rect x="510" y="60" width="14" height="14" rx="3" fill="#ffffff" stroke="#a0aec0" stroke-width="1.5" />
+  <text x="532" y="72" font-size="10" fill="#2d3748">skipped</text>
+
+  <!-- Panel template function repeated three times via manual coordinates -->
+  <!-- Panel 1: select stg_trips downstream -->
+  <g>
+    <rect x="20" y="95" width="345" height="405" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+    <text x="192" y="118" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#2d3748">--select stg_trips+</text>
+    <text x="192" y="134" text-anchor="middle" font-size="9.5" fill="#718096">stg_trips + everything downstream</text>
+
+    <!-- hello_cityflow: skipped -->
+    <rect x="35" y="150" width="130" height="30" rx="6" fill="#ffffff" stroke="#a0aec0" stroke-width="1.5" />
+    <text x="100" y="169" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#718096">hello_cityflow</text>
+
+    <!-- stg_trips: built -->
+    <rect x="115" y="200" width="130" height="30" rx="6" fill="#48bb78" />
+    <text x="180" y="219" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">✓ stg_trips</text>
+
+    <path d="M180,230 L120,265" stroke="#48bb78" stroke-width="1.8" fill="none" marker-end="url(#sr1)" />
+    <path d="M180,230 L250,265" stroke="#48bb78" stroke-width="1.8" fill="none" marker-end="url(#sr1)" />
+
+    <!-- int_hourly_pattern: built -->
+    <rect x="55" y="268" width="140" height="30" rx="6" fill="#48bb78" />
+    <text x="125" y="287" text-anchor="middle" font-size="8.5" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">✓ int_hourly_pattern</text>
+
+    <!-- zone_revenue: built -->
+    <rect x="205" y="268" width="130" height="30" rx="6" fill="#48bb78" />
+    <text x="270" y="287" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">✓ zone_revenue</text>
+
+    <path d="M125,298 L125,335" stroke="#48bb78" stroke-width="1.8" fill="none" marker-end="url(#sr1)" />
+
+    <!-- daily_summary: built -->
+    <rect x="60" y="338" width="130" height="30" rx="6" fill="#48bb78" />
+    <text x="125" y="357" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">✓ daily_summary</text>
+
+    <text x="192" y="400" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">4 models built</text>
+    <text x="192" y="418" text-anchor="middle" font-size="9" fill="#4a5568">hello_cityflow has no relation</text>
+    <text x="192" y="432" text-anchor="middle" font-size="9" fill="#4a5568">to stg_trips at all -- left alone</text>
+  </g>
+
+  <!-- Panel 2: select daily_summary upstream -->
+  <g>
+    <rect x="378" y="95" width="345" height="405" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+    <text x="550" y="118" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#2d3748">--select +daily_summary</text>
+    <text x="550" y="134" text-anchor="middle" font-size="9.5" fill="#718096">daily_summary + everything upstream</text>
+
+    <rect x="393" y="150" width="130" height="30" rx="6" fill="#ffffff" stroke="#a0aec0" stroke-width="1.5" />
+    <text x="458" y="169" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#718096">hello_cityflow</text>
+
+    <rect x="473" y="200" width="130" height="30" rx="6" fill="#48bb78" />
+    <text x="538" y="219" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">✓ stg_trips</text>
+
+    <path d="M538,230 L478,265" stroke="#48bb78" stroke-width="1.8" fill="none" marker-end="url(#sr1)" />
+    <path d="M538,230 L608,265" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="3,3" fill="none" />
+
+    <rect x="413" y="268" width="140" height="30" rx="6" fill="#48bb78" />
+    <text x="483" y="287" text-anchor="middle" font-size="8.5" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">✓ int_hourly_pattern</text>
+
+    <rect x="563" y="268" width="130" height="30" rx="6" fill="#ffffff" stroke="#a0aec0" stroke-width="1.5" />
+    <text x="628" y="287" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#718096">zone_revenue</text>
+
+    <path d="M483,298 L483,335" stroke="#48bb78" stroke-width="1.8" fill="none" marker-end="url(#sr1)" />
+
+    <rect x="418" y="338" width="130" height="30" rx="6" fill="#48bb78" />
+    <text x="483" y="357" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">✓ daily_summary</text>
+
+    <text x="550" y="400" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">3 models built</text>
+    <text x="550" y="418" text-anchor="middle" font-size="9" fill="#4a5568">zone_revenue depends on stg_trips</text>
+    <text x="550" y="432" text-anchor="middle" font-size="9" fill="#4a5568">too, but isn't an ancestor of daily_summary</text>
+  </g>
+
+  <!-- Panel 3: int_hourly_pattern+ with daily_summary excluded -->
+  <g>
+    <rect x="736" y="95" width="345" height="405" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+    <text x="908" y="118" text-anchor="middle" font-size="10.5" font-weight="700" font-family="Menlo, monospace" fill="#2d3748">int_hourly_pattern+</text>
+    <text x="908" y="132" text-anchor="middle" font-size="10.5" font-weight="700" font-family="Menlo, monospace" fill="#2d3748">--exclude daily_summary</text>
+
+    <rect x="751" y="150" width="130" height="30" rx="6" fill="#ffffff" stroke="#a0aec0" stroke-width="1.5" />
+    <text x="816" y="169" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#718096">hello_cityflow</text>
+
+    <rect x="831" y="200" width="130" height="30" rx="6" fill="#ffffff" stroke="#a0aec0" stroke-width="1.5" />
+    <text x="896" y="219" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#718096">stg_trips</text>
+
+    <path d="M896,230 L831,265" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="3,3" fill="none" />
+    <path d="M896,230 L966,265" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="3,3" fill="none" />
+
+    <rect x="766" y="268" width="140" height="30" rx="6" fill="#48bb78" />
+    <text x="836" y="287" text-anchor="middle" font-size="8.5" font-weight="700" font-family="Menlo, monospace" fill="#ffffff">✓ int_hourly_pattern</text>
+
+    <rect x="916" y="268" width="130" height="30" rx="6" fill="#ffffff" stroke="#a0aec0" stroke-width="1.5" />
+    <text x="981" y="287" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#718096">zone_revenue</text>
+
+    <path d="M836,298 L836,335" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="3,3" fill="none" />
+
+    <rect x="771" y="338" width="130" height="30" rx="6" fill="#ffffff" stroke="#e53e3e" stroke-width="1.5" />
+    <text x="836" y="357" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#c53030">✗ daily_summary</text>
+
+    <text x="908" y="400" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">1 model built</text>
+    <text x="908" y="418" text-anchor="middle" font-size="9" fill="#4a5568">--exclude applies after --select --</text>
+    <text x="908" y="432" text-anchor="middle" font-size="9" fill="#4a5568">daily_summary is removed from the set</text>
+  </g>
+
+  <text x="550" y="475" text-anchor="middle" font-size="10.5" fill="#718096">A skipped model isn't rebuilt this run -- it stays exactly as it was from a previous dbt run, view or table alike.</text>
+  <text x="550" y="495" text-anchor="middle" font-size="10.5" fill="#718096">dbt ls --select accepts the identical selector syntax, useful for previewing a set before running anything.</text>
+
+  <defs>
+    <marker id="sr1" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#48bb78" />
+    </marker>
+  </defs>
+</svg>

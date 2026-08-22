@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Vectorized SQL vs. a Python Loop</text>
+
+  <text x="200" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#742a2a">Python for loop</text>
+  <rect x="60" y="74" width="90" height="36" rx="4" fill="#fed7d7" stroke="#fc8181" stroke-width="1" />
+  <text x="105" y="96" text-anchor="middle" font-size="8.5" fill="#742a2a">row 1</text>
+  <rect x="160" y="74" width="90" height="36" rx="4" fill="#fed7d7" stroke="#fc8181" stroke-width="1" />
+  <text x="205" y="96" text-anchor="middle" font-size="8.5" fill="#742a2a">row 2</text>
+  <rect x="260" y="74" width="90" height="36" rx="4" fill="#fed7d7" stroke="#fc8181" stroke-width="1" />
+  <text x="305" y="96" text-anchor="middle" font-size="8.5" fill="#742a2a">row 3 ...</text>
+  <text x="200" y="128" text-anchor="middle" font-size="9" fill="#9c4221">one Python object at a time, 2.96M times</text>
+
+  <rect x="60" y="146" width="290" height="42" rx="6" fill="#742a2a" />
+  <text x="205" y="172" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">291.66ms</text>
+
+  <text x="600" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#22543d">DuckDB vectorized SQL</text>
+  <rect x="450" y="74" width="300" height="36" rx="4" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="600" y="96" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#22543d">[batch of ~2,000 raw numbers]</text>
+  <text x="600" y="128" text-anchor="middle" font-size="9" fill="#276749">one CPU pass per batch, not per row</text>
+
+  <rect x="450" y="146" width="300" height="42" rx="6" fill="#22543d" />
+  <text x="600" y="172" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">3.36ms</text>
+
+  <line x1="205" y1="188" x2="400" y2="228" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowV2)" />
+  <line x1="600" y1="188" x2="440" y2="228" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowV2)" />
+
+  <rect x="220" y="228" width="360" height="54" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="400" y="252" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">identical answer, both ways</text>
+  <text x="400" y="270" text-anchor="middle" font-size="9.5" fill="#2c5282">~87x -- illustrative, varies by machine</text>
+
+  <rect x="90" y="310" width="620" height="50" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="400" y="332" text-anchor="middle" font-size="10" fill="#2d3748">Not a smarter algorithm --</text>
+  <text x="400" y="350" text-anchor="middle" font-size="10" fill="#2d3748">a fundamentally different amount of per-value overhead</text>
+
+  <defs>
+    <marker id="arrowV2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

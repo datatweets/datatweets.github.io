@@ -1,0 +1,9 @@
+doc_id,topic,text
+S01,battery logging,"Use a 15-second logging interval during normal collection. When battery charge is below 25 percent, use a 60-second interval."
+S02,flow calibration,Calibrate the air-flow sensor every 180 days. Set the reference flow to 1.5 liters per minute.
+S03,probe storage,Store spare probes between 2 degrees Celsius and 8 degrees Celsius. A probe may remain in its transport case for at most 6 hours.
+S04,data uploads,Move upload bundles to the archive after 30 days. Each bundle must be no larger than 250 megabytes.
+S05,inlet maintenance,"Replace the inlet filter after 120 operating hours or every 4 weeks, whichever comes first."
+S06,temperature alarms,Show a temperature warning at 35 degrees Celsius. Stop collection at 40 degrees Celsius.
+S07,connector cleaning,Clean the probe connector with a dry cloth before each field visit.
+S08,firmware support,Install the maintenance firmware no later than 2026-09-30.

@@ -1,0 +1,6 @@
+stage,rows,columns
+Raw delivery,31,6
+Headers normalized,31,6
+Fields parsed,31,7
+Latest record kept,28,7
+Valid rows kept,25,6

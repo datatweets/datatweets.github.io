@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="470" viewBox="0 0 1100 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The identical five dbt models, run unmodified against two different warehouses</title>
+  <desc>The same cityflow_warehouse dbt project, with the same five model files, run against two targets declared in one profiles.yml file. The dev target points at the Postgres 16 container from Module 1, cityflow-warehouse, on port 5438. The dev_duckdb target points at a local DuckDB file, cityflow.duckdb, loaded by a separate loader script that reads the identical source parquet file. Running dbt run --target dev_duckdb executes the same five models with zero changes to any .sql file. The resulting daily_summary model reports 81,013 trips and $2,442,843.25 in revenue in Postgres, and the identical 81,013 trips and $2,442,843.25 in DuckDB -- confirming the SQL is portable across two genuinely different database engines through dbt's own adapter abstraction.</desc>
+  <rect width="1100" height="470" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Project, Two Warehouses</text>
+  <text x="550" y="50" text-anchor="middle" font-size="11" fill="#718096">The same five model files, unmodified, run against two targets in one profiles.yml</text>
+
+  <!-- profiles.yml -->
+  <rect x="330" y="70" width="440" height="80" rx="8" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.4" />
+  <text x="550" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3748">.dbt-local/profiles/profiles.yml</text>
+  <text x="550" y="112" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">outputs: dev (postgres) | dev_duckdb (duckdb)</text>
+  <text x="550" y="130" text-anchor="middle" font-size="9.5" fill="#718096">one file, two targets -- no model file references either one by name</text>
+
+  <path d="M470,150 L280,190" stroke="#a0aec0" stroke-width="1.8" fill="none" marker-end="url(#dd1)" />
+  <path d="M630,150 L820,190" stroke="#a0aec0" stroke-width="1.8" fill="none" marker-end="url(#dd1)" />
+
+  <!-- postgres side -->
+  <rect x="60" y="195" width="440" height="130" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="280" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">--target dev (Postgres, Module 1)</text>
+  <text x="280" y="240" text-anchor="middle" font-size="9.5" fill="#2c5282">cityflow-warehouse container, port 5438</text>
+  <rect x="90" y="252" width="380" height="55" rx="6" fill="#2c5282" />
+  <text x="280" y="272" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#ebf8ff">daily_summary: 81013 trips</text>
+  <text x="280" y="290" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">$2,442,843.25 revenue</text>
+
+  <!-- duckdb side -->
+  <rect x="600" y="195" width="440" height="130" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="820" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">--target dev_duckdb (new, this lesson)</text>
+  <text x="820" y="240" text-anchor="middle" font-size="9.5" fill="#7b341e">cityflow.duckdb, a local embedded file</text>
+  <rect x="630" y="252" width="380" height="55" rx="6" fill="#7b341e" />
+  <text x="820" y="272" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#fffaf0">daily_summary: 81013 trips</text>
+  <text x="820" y="290" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#fffaf0">$2,442,843.25 revenue</text>
+
+  <text x="550" y="350" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Same five .sql files. Zero lines edited. Identical figures.</text>
+
+  <rect x="130" y="370" width="840" height="70" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="550" y="393" text-anchor="middle" font-size="10" fill="#22543d">ref(), source(), and every materialization compile to whatever SQL each adapter needs --</text>
+  <text x="550" y="411" text-anchor="middle" font-size="10" fill="#22543d">hello_cityflow.sql, stg_trips.sql, zone_revenue.sql, int_hourly_pattern.sql, and daily_summary.sql never mention Postgres or DuckDB by name.</text>
+
+  <text x="550" y="460" text-anchor="middle" font-size="10" fill="#718096">DuckDB needs no server or container at all -- a single embedded file, the same engine this site's own DuckDB course covers in depth.</text>
+
+  <defs>
+    <marker id="dd1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

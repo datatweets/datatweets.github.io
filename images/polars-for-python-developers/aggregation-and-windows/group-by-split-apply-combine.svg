@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">group_by() -- Split, Apply, Combine</text>
+  <text x="360" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">14,054 real Thistlewood order-item rows, grouped by channel</text>
+
+  <rect x="270" y="66" width="180" height="42" rx="8" fill="#edf2f7" stroke="#4a5568" stroke-width="1.4" />
+  <text x="360" y="92" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a202c">14,054 real line items</text>
+
+  <line x1="320" y1="108" x2="130" y2="140" stroke="#a0aec0" stroke-width="1.4" />
+  <line x1="360" y1="108" x2="360" y2="140" stroke="#a0aec0" stroke-width="1.4" />
+  <line x1="400" y1="108" x2="590" y2="140" stroke="#a0aec0" stroke-width="1.4" />
+
+  <rect x="30" y="140" width="200" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="130" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">phone</text>
+  <text x="130" y="180" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">revenue: $908,836.72</text>
+  <text x="130" y="196" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">n_orders: 589</text>
+
+  <rect x="260" y="140" width="200" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="360" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">store</text>
+  <text x="360" y="180" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">revenue: $2,287,108.72</text>
+  <text x="360" y="196" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">n_orders: 1,516</text>
+
+  <rect x="490" y="140" width="200" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="590" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">web</text>
+  <text x="590" y="180" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">revenue: $5,999,098.18</text>
+  <text x="590" y="196" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">n_orders: 3,895</text>
+
+  <text x="360" y="228" text-anchor="middle" font-size="10" fill="#4a5568">apply: .agg(sum, n_unique) inside each real group</text>
+
+  <line x1="130" y1="238" x2="330" y2="270" stroke="#a0aec0" stroke-width="1.4" />
+  <line x1="360" y1="238" x2="360" y2="270" stroke="#a0aec0" stroke-width="1.4" />
+  <line x1="590" y1="238" x2="390" y2="270" stroke="#a0aec0" stroke-width="1.4" />
+
+  <rect x="110" y="270" width="500" height="90" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="294" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">combine: three real revenues sum back to the real grand total</text>
+  <text x="360" y="318" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a202c">908,836.72 + 2,287,108.72 + 5,999,098.18 = 9,195,043.62</text>
+  <text x="360" y="340" text-anchor="middle" font-size="10" fill="#2d3748">matches the real grand total computed with no grouping at all</text>
+
+  <rect x="130" y="384" width="460" height="56" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="406" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">The same grouping column doesn't change what correctness looks like</text>
+  <text x="360" y="424" text-anchor="middle" font-size="9.5" fill="#7b341e">Grouping by category instead of channel reaches the identical real total.</text>
+</svg>

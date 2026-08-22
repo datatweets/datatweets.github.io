@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="520" viewBox="0 0 1180 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The capstone's five pipeline stages</title>
+  <desc>Ingest customers from CSV, orders and order items from nested JSON, and products from Parquet. Join everything into a 1,892-row fact table with zero unexpected row-count changes. Aggregate to $223,675.54 for Bath, the top category, and a three-month running total ending at $1,171,856.43. Export to a local DuckDB file and a JSON report, both round-trip verified. Print a summary report: 733 completed orders, an 8.87 percent return rate. Two reconciliations: completed-order revenue matches Module 1's own total, and all-status revenue matches the figure Modules 3, 5, and 6 already reconciled to independently.</desc>
+  <rect width="1180" height="520" fill="#ffffff" />
+  <text x="590" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#1a202c">Thistlewood Goods' DuckDB Analytics Pipeline</text>
+
+  <defs>
+    <marker id="arrowCap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <!-- Stage 1: Ingest -->
+  <rect x="20" y="70" width="210" height="130" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="125" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#2c5282">1. Ingest</text>
+  <text x="125" y="118" text-anchor="middle" font-size="9.5" fill="#2c5282">customers.csv</text>
+  <text x="125" y="134" text-anchor="middle" font-size="9.5" fill="#2c5282">orders_nested.json</text>
+  <text x="125" y="150" text-anchor="middle" font-size="9.5" fill="#2c5282">products.parquet</text>
+  <text x="125" y="172" text-anchor="middle" font-size="9" fill="#4a5568">792 orders</text>
+  <text x="125" y="186" text-anchor="middle" font-size="9" fill="#4a5568">1,892 line items</text>
+
+  <line x1="230" y1="135" x2="262" y2="135" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowCap)" />
+
+  <!-- Stage 2: Join -->
+  <rect x="264" y="70" width="200" height="130" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="364" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#22543d">2. Join</text>
+  <text x="364" y="120" text-anchor="middle" font-size="9.5" fill="#22543d">check_join() at</text>
+  <text x="364" y="134" text-anchor="middle" font-size="9.5" fill="#22543d">every step</text>
+  <text x="364" y="158" text-anchor="middle" font-size="9" fill="#4a5568">1,892 rows,</text>
+  <text x="364" y="172" text-anchor="middle" font-size="9" fill="#4a5568">0 unexpected</text>
+  <text x="364" y="186" text-anchor="middle" font-size="9" fill="#4a5568">row-count changes</text>
+
+  <line x1="464" y1="135" x2="496" y2="135" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowCap)" />
+
+  <!-- Stage 3: Aggregate -->
+  <rect x="498" y="70" width="220" height="130" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="608" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#9c4221">3. Aggregate</text>
+  <text x="608" y="118" text-anchor="middle" font-size="9.5" fill="#9c4221">category, month,</text>
+  <text x="608" y="132" text-anchor="middle" font-size="9.5" fill="#9c4221">top products, returns</text>
+  <text x="608" y="154" text-anchor="middle" font-size="9" fill="#4a5568">Bath: $223,675.54</text>
+  <text x="608" y="168" text-anchor="middle" font-size="9" fill="#4a5568">running total:</text>
+  <text x="608" y="182" text-anchor="middle" font-size="9" fill="#4a5568">$1,171,856.43</text>
+
+  <line x1="718" y1="135" x2="750" y2="135" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowCap)" />
+
+  <!-- Stage 4: Export -->
+  <rect x="752" y="70" width="200" height="130" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="852" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#553c9a">4. Export</text>
+  <text x="852" y="120" text-anchor="middle" font-size="9.5" fill="#553c9a">.duckdb file +</text>
+  <text x="852" y="134" text-anchor="middle" font-size="9.5" fill="#553c9a">JSON report</text>
+  <text x="852" y="158" text-anchor="middle" font-size="9" fill="#4a5568">round-trip verified</text>
+  <text x="852" y="172" text-anchor="middle" font-size="9" fill="#4a5568">1,892 rows,</text>
+  <text x="852" y="186" text-anchor="middle" font-size="9" fill="#4a5568">identical revenue</text>
+
+  <line x1="952" y1="135" x2="984" y2="135" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowCap)" />
+
+  <!-- Stage 5: Report -->
+  <rect x="986" y="70" width="174" height="130" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="1073" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#742a2a">5. Report</text>
+  <text x="1073" y="120" text-anchor="middle" font-size="9.5" fill="#742a2a">printed summary</text>
+  <text x="1073" y="150" text-anchor="middle" font-size="9" fill="#4a5568">733 completed</text>
+  <text x="1073" y="164" text-anchor="middle" font-size="9" fill="#4a5568">orders</text>
+  <text x="1073" y="182" text-anchor="middle" font-size="9" fill="#4a5568">8.87% return rate</text>
+
+  <!-- Reconciliation panel -->
+  <rect x="20" y="240" width="1140" height="110" rx="8" fill="#f0fff4" stroke="#68d391" stroke-width="1.4" />
+  <text x="40" y="266" font-size="12.5" font-weight="700" fill="#22543d">Two reconciliations, neither invented for the occasion:</text>
+  <text x="40" y="292" font-size="11.5" fill="#2f855a">Completed-order revenue ($1,171,856.43 / 733 orders) matches Module 1's own guided-project total, computed from a completely different file.</text>
+  <text x="40" y="314" font-size="11.5" fill="#2f855a">All-status revenue ($1,262,892.88 / 792 orders) matches the exact figure Modules 3, 5, and 6 already reconciled to independently, from three different sources.</text>
+  <text x="40" y="336" font-size="11.5" fill="#2f855a">Two more checks along the way: a real tie-order instability found and fixed with a deterministic sort key, and a full round trip back off disk.</text>
+
+  <!-- Bottom note -->
+  <rect x="20" y="366" width="1140" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.2" />
+  <text x="40" y="390" font-size="12" font-weight="700" fill="#9c4221">Idempotent by design</text>
+  <text x="40" y="410" font-size="11" fill="#9c4221">Every write checks os.path.exists(...) first and removes any prior output -- running the whole pipeline twice produces identical files, not doubled data.</text>
+
+  <line x1="20" y1="450" x2="1160" y2="450" stroke="#e2e8f0" stroke-width="1.4" />
+  <text x="590" y="478" text-anchor="middle" font-size="12" fill="#4a5568">Five modules' tools, one pipeline: ingest (Modules 3, 5), join (Module 2), aggregate (Module 6), export (Module 4), report (Module 10).</text>
+  <text x="590" y="498" text-anchor="middle" font-size="12" fill="#4a5568">Every headline number traces back to a check, not an assumption.</text>
+</svg>

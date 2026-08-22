@@ -1,0 +1,451 @@
+return_id,order_id,product_id,return_date,reason,quantity
+R00001,O04985,P050,2024-01-26,Ordered by mistake,1
+R00002,O00374,P042,2024-01-23,Ordered by mistake,1
+R00003,O02811,P019,2024-01-15,Item damaged in shipping,3
+R00004,O05511,P043,2024-01-17,Found a better price elsewhere,1
+R00005,O05203,P052,2024-01-27,Item damaged in shipping,1
+R00006,O04738,P057,2024-01-16,Found a better price elsewhere,1
+R00007,O03695,P026,2024-01-25,Found a better price elsewhere,1
+R00008,O02009,P013,2024-02-09,Changed my mind,1
+R00009,O05278,P048,2024-02-06,Not as described online,2
+R00010,O04187,P060,2024-02-12,Changed my mind,2
+R00011,O01551,P049,2024-02-05,Ordered by mistake,3
+R00012,O03019,P037,2024-01-28,Wrong size or fit,1
+R00013,O00129,P030,2024-02-01,Ordered by mistake,1
+R00014,O02313,P054,2024-01-27,Wrong size or fit,2
+R00015,O02431,P021,2024-02-20,Item damaged in shipping,4
+R00016,O04936,P036,2024-01-29,Wrong size or fit,1
+R00017,O01844,P007,2024-02-18,Ordered by mistake,1
+R00018,O02271,P044,2024-02-18,Ordered by mistake,1
+R00019,O00221,P006,2024-02-15,Found a better price elsewhere,3
+R00020,O01777,P029,2024-02-05,Found a better price elsewhere,3
+R00021,O03800,P059,2024-02-06,Found a better price elsewhere,1
+R00022,O04355,P011,2024-03-04,Changed my mind,1
+R00023,O05875,P051,2024-03-04,Changed my mind,5
+R00024,O02700,P039,2024-02-24,Found a better price elsewhere,4
+R00025,O01126,P044,2024-03-02,Found a better price elsewhere,1
+R00026,O05462,P058,2024-02-19,Ordered by mistake,1
+R00027,O04195,P048,2024-02-23,Found a better price elsewhere,1
+R00028,O03534,P021,2024-03-03,Ordered by mistake,4
+R00029,O05058,P010,2024-02-24,Not as described online,4
+R00030,O03966,P029,2024-03-05,Wrong size or fit,1
+R00031,O04289,P057,2024-03-11,Not as described online,1
+R00032,O05614,P011,2024-02-24,Ordered by mistake,2
+R00033,O00551,P022,2024-02-19,Wrong size or fit,2
+R00034,O01086,P054,2024-02-18,Item damaged in shipping,1
+R00035,O04036,P023,2024-03-04,Wrong size or fit,2
+R00036,O05420,P058,2024-03-13,Found a better price elsewhere,1
+R00037,O04506,P009,2024-03-07,Ordered by mistake,5
+R00038,O02860,P050,2024-02-22,Item damaged in shipping,2
+R00039,O01908,P005,2024-03-15,Ordered by mistake,1
+R00040,O05774,P056,2024-03-04,Changed my mind,3
+R00041,O05919,P035,2024-03-03,Wrong size or fit,1
+R00042,O02005,P013,2024-03-24,Wrong size or fit,1
+R00043,O00180,P044,2024-03-25,Changed my mind,1
+R00044,O05191,P053,2024-03-16,Ordered by mistake,1
+R00045,O00330,P010,2024-03-12,Item damaged in shipping,4
+R00046,O03838,P048,2024-03-17,Item damaged in shipping,3
+R00047,O01491,P042,2024-03-28,Changed my mind,1
+R00048,O04446,P026,2024-03-17,Changed my mind,1
+R00049,O04642,P031,2024-04-06,Ordered by mistake,2
+R00050,O03041,P041,2024-03-12,Found a better price elsewhere,1
+R00051,O05066,P058,2024-03-30,Item damaged in shipping,2
+R00052,O01043,P034,2024-03-24,Wrong size or fit,3
+R00053,O03049,P011,2024-04-12,Item damaged in shipping,2
+R00054,O05183,P052,2024-03-29,Wrong size or fit,5
+R00055,O05289,P020,2024-04-04,Changed my mind,1
+R00056,O04040,P004,2024-04-07,Wrong size or fit,1
+R00057,O05455,P016,2024-03-28,Found a better price elsewhere,2
+R00058,O05162,P028,2024-03-29,Changed my mind,2
+R00059,O03062,P018,2024-03-26,Found a better price elsewhere,5
+R00060,O03882,P040,2024-04-23,Item damaged in shipping,1
+R00061,O01380,P001,2024-04-17,Item damaged in shipping,4
+R00062,O04230,P002,2024-04-16,Found a better price elsewhere,3
+R00063,O05134,P002,2024-04-19,Changed my mind,4
+R00064,O00228,P059,2024-04-08,Not as described online,1
+R00065,O01288,P039,2024-04-21,Not as described online,3
+R00066,O04897,P042,2024-05-11,Wrong size or fit,1
+R00067,O04314,P024,2024-04-17,Item damaged in shipping,3
+R00068,O01916,P004,2024-04-20,Item damaged in shipping,4
+R00069,O02701,P014,2024-04-23,Found a better price elsewhere,4
+R00070,O03852,P055,2024-05-18,Ordered by mistake,2
+R00071,O04629,P040,2024-05-07,Ordered by mistake,2
+R00072,O00721,P009,2024-05-09,Changed my mind,2
+R00073,O02428,P008,2024-05-20,Item damaged in shipping,2
+R00074,O03449,P024,2024-05-01,Ordered by mistake,1
+R00075,O02464,P005,2024-05-25,Wrong size or fit,1
+R00076,O05929,P027,2024-05-01,Wrong size or fit,1
+R00077,O02212,P029,2024-05-15,Wrong size or fit,2
+R00078,O05256,P056,2024-05-24,Item damaged in shipping,1
+R00079,O04984,P054,2024-05-21,Wrong size or fit,2
+R00080,O01101,P016,2024-05-31,Found a better price elsewhere,1
+R00081,O02519,P001,2024-05-23,Item damaged in shipping,1
+R00082,O03110,P036,2024-05-20,Not as described online,1
+R00083,O03872,P016,2024-05-18,Changed my mind,2
+R00084,O00409,P042,2024-05-25,Found a better price elsewhere,1
+R00085,O02836,P029,2024-05-27,Ordered by mistake,3
+R00086,O03170,P040,2024-06-05,Changed my mind,2
+R00087,O03352,P031,2024-06-05,Changed my mind,4
+R00088,O05585,P032,2024-05-27,Changed my mind,2
+R00089,O04005,P010,2024-06-09,Found a better price elsewhere,1
+R00090,O00216,P016,2024-05-27,Found a better price elsewhere,1
+R00091,O00678,P035,2024-06-09,Wrong size or fit,1
+R00092,O03778,P015,2024-05-29,Ordered by mistake,2
+R00093,O02676,P060,2024-06-20,Changed my mind,1
+R00094,O05594,P018,2024-06-08,Item damaged in shipping,4
+R00095,O05619,P004,2024-06-24,Ordered by mistake,1
+R00096,O00254,P013,2024-06-22,Not as described online,1
+R00097,O02398,P021,2024-06-20,Ordered by mistake,2
+R00098,O02162,P059,2024-06-26,Ordered by mistake,2
+R00099,O04323,P021,2024-06-28,Wrong size or fit,2
+R00100,O02307,P054,2024-06-18,Changed my mind,2
+R00101,O03976,P052,2024-07-05,Item damaged in shipping,1
+R00102,O00214,P013,2024-06-16,Found a better price elsewhere,5
+R00103,O01202,P052,2024-06-30,Found a better price elsewhere,2
+R00104,O04510,P003,2024-07-09,Not as described online,1
+R00105,O05403,P059,2024-06-26,Ordered by mistake,3
+R00106,O02459,P015,2024-06-23,Ordered by mistake,1
+R00107,O01721,P049,2024-06-18,Not as described online,4
+R00108,O03457,P042,2024-07-03,Item damaged in shipping,4
+R00109,O05960,P059,2024-06-25,Not as described online,2
+R00110,O00994,P002,2024-07-09,Found a better price elsewhere,2
+R00111,O04138,P027,2024-07-12,Ordered by mistake,3
+R00112,O03368,P039,2024-07-17,Item damaged in shipping,2
+R00113,O02991,P043,2024-07-12,Wrong size or fit,3
+R00114,O05090,P051,2024-07-05,Changed my mind,1
+R00115,O00365,P003,2024-07-05,Changed my mind,5
+R00116,O01606,P021,2024-06-28,Ordered by mistake,3
+R00117,O04905,P059,2024-07-28,Found a better price elsewhere,2
+R00118,O04333,P003,2024-07-24,Wrong size or fit,1
+R00119,O01404,P043,2024-07-05,Changed my mind,1
+R00120,O00731,P047,2024-08-01,Item damaged in shipping,3
+R00121,O01823,P027,2024-07-20,Changed my mind,3
+R00122,O04095,P039,2024-07-19,Found a better price elsewhere,3
+R00123,O05132,P002,2024-07-13,Wrong size or fit,1
+R00124,O01900,P002,2024-07-22,Changed my mind,2
+R00125,O00531,P059,2024-07-17,Item damaged in shipping,3
+R00126,O01205,P049,2024-08-11,Changed my mind,2
+R00127,O05340,P054,2024-08-04,Not as described online,2
+R00128,O03999,P055,2024-07-19,Wrong size or fit,2
+R00129,O01837,P026,2024-08-04,Ordered by mistake,1
+R00130,O03688,P047,2024-07-25,Wrong size or fit,2
+R00131,O03768,P001,2024-07-25,Wrong size or fit,1
+R00132,O02691,P043,2024-07-29,Changed my mind,3
+R00133,O00292,P053,2024-07-25,Item damaged in shipping,2
+R00134,O05242,P046,2024-08-03,Changed my mind,3
+R00135,O04852,P049,2024-08-14,Ordered by mistake,2
+R00136,O01883,P029,2024-08-15,Found a better price elsewhere,1
+R00137,O04285,P058,2024-08-18,Found a better price elsewhere,1
+R00138,O01695,P059,2024-08-09,Wrong size or fit,3
+R00139,O01809,P003,2024-08-25,Ordered by mistake,1
+R00140,O03005,P053,2024-08-03,Item damaged in shipping,1
+R00141,O05905,P032,2024-08-17,Ordered by mistake,2
+R00142,O02360,P054,2024-08-24,Found a better price elsewhere,1
+R00143,O02923,P032,2024-08-30,Found a better price elsewhere,2
+R00144,O00929,P014,2024-08-14,Changed my mind,1
+R00145,O02002,P032,2024-08-27,Found a better price elsewhere,1
+R00146,O02841,P018,2024-08-24,Not as described online,1
+R00147,O03199,P038,2024-08-18,Wrong size or fit,1
+R00148,O05457,P021,2024-08-09,Found a better price elsewhere,1
+R00149,O03660,P034,2024-09-04,Wrong size or fit,2
+R00150,O05557,P015,2024-09-04,Not as described online,2
+R00151,O03350,P023,2024-09-15,Changed my mind,1
+R00152,O04318,P052,2024-09-09,Ordered by mistake,1
+R00153,O02974,P057,2024-09-14,Ordered by mistake,2
+R00154,O04288,P041,2024-09-11,Found a better price elsewhere,1
+R00155,O01552,P038,2024-08-30,Wrong size or fit,5
+R00156,O05870,P045,2024-09-11,Changed my mind,1
+R00157,O02008,P054,2024-09-04,Found a better price elsewhere,1
+R00158,O02394,P029,2024-09-11,Wrong size or fit,2
+R00159,O01183,P013,2024-09-02,Not as described online,1
+R00160,O01371,P058,2024-09-02,Ordered by mistake,3
+R00161,O00416,P034,2024-09-09,Item damaged in shipping,2
+R00162,O00596,P040,2024-09-23,Ordered by mistake,1
+R00163,O04210,P011,2024-09-03,Ordered by mistake,1
+R00164,O05554,P018,2024-09-05,Not as described online,2
+R00165,O00727,P029,2024-09-20,Found a better price elsewhere,1
+R00166,O00342,P040,2024-09-19,Not as described online,2
+R00167,O03090,P050,2024-08-31,Not as described online,1
+R00168,O01895,P021,2024-09-29,Not as described online,1
+R00169,O05127,P010,2024-09-30,Found a better price elsewhere,1
+R00170,O01058,P056,2024-09-13,Changed my mind,2
+R00171,O04729,P004,2024-09-12,Wrong size or fit,3
+R00172,O02709,P054,2024-09-12,Ordered by mistake,1
+R00173,O00791,P020,2024-09-22,Changed my mind,2
+R00174,O01396,P019,2024-09-12,Found a better price elsewhere,3
+R00175,O01662,P011,2024-09-30,Wrong size or fit,2
+R00176,O03499,P053,2024-10-10,Changed my mind,5
+R00177,O02686,P045,2024-09-21,Wrong size or fit,1
+R00178,O02128,P016,2024-09-26,Ordered by mistake,1
+R00179,O02376,P035,2024-10-11,Not as described online,4
+R00180,O04651,P027,2024-10-02,Found a better price elsewhere,1
+R00181,O03496,P019,2024-10-04,Changed my mind,2
+R00182,O01384,P004,2024-09-26,Ordered by mistake,2
+R00183,O05882,P037,2024-10-15,Not as described online,2
+R00184,O01016,P040,2024-09-29,Found a better price elsewhere,1
+R00185,O02432,P053,2024-10-21,Found a better price elsewhere,2
+R00186,O02016,P010,2024-10-17,Not as described online,1
+R00187,O05484,P043,2024-10-27,Ordered by mistake,2
+R00188,O03369,P028,2024-10-11,Item damaged in shipping,1
+R00189,O04297,P049,2024-10-23,Not as described online,1
+R00190,O03054,P019,2024-10-14,Found a better price elsewhere,1
+R00191,O05612,P020,2024-10-09,Wrong size or fit,2
+R00192,O02699,P060,2024-10-19,Found a better price elsewhere,3
+R00193,O02758,P010,2024-10-22,Wrong size or fit,5
+R00194,O05720,P021,2024-11-03,Item damaged in shipping,1
+R00195,O02534,P053,2024-10-16,Found a better price elsewhere,1
+R00196,O05189,P052,2024-10-27,Wrong size or fit,1
+R00197,O05733,P006,2024-10-27,Found a better price elsewhere,2
+R00198,O05898,P026,2024-11-06,Found a better price elsewhere,2
+R00199,O05352,P030,2024-10-24,Item damaged in shipping,2
+R00200,O03175,P054,2024-11-04,Changed my mind,2
+R00201,O05269,P018,2024-11-12,Not as described online,3
+R00202,O05611,P007,2024-11-19,Ordered by mistake,3
+R00203,O04926,P044,2024-10-27,Found a better price elsewhere,2
+R00204,O00077,P043,2024-11-10,Not as described online,1
+R00205,O00432,P041,2024-11-21,Ordered by mistake,3
+R00206,O01490,P005,2024-11-11,Not as described online,1
+R00207,O03217,P024,2024-11-23,Ordered by mistake,2
+R00208,O03464,P015,2024-12-01,Item damaged in shipping,5
+R00209,O05200,P007,2024-11-11,Wrong size or fit,1
+R00210,O01357,P053,2024-11-18,Found a better price elsewhere,4
+R00211,O00370,P015,2024-11-21,Found a better price elsewhere,1
+R00212,O05421,P041,2024-11-14,Wrong size or fit,4
+R00213,O03663,P028,2024-12-16,Found a better price elsewhere,5
+R00214,O00341,P029,2024-11-28,Not as described online,1
+R00215,O04771,P022,2024-12-16,Wrong size or fit,1
+R00216,O04999,P055,2024-12-06,Changed my mind,1
+R00217,O05995,P001,2024-12-29,Wrong size or fit,1
+R00218,O02596,P056,2024-12-26,Found a better price elsewhere,1
+R00219,O05756,P022,2024-12-06,Item damaged in shipping,2
+R00220,O00770,P001,2024-12-12,Found a better price elsewhere,3
+R00221,O05418,P037,2024-12-15,Not as described online,3
+R00222,O04797,P023,2025-01-05,Wrong size or fit,3
+R00223,O04374,P023,2024-12-31,Changed my mind,1
+R00224,O00717,P030,2024-12-21,Changed my mind,1
+R00225,O02725,P043,2024-12-24,Ordered by mistake,2
+R00226,O02669,P038,2025-01-10,Not as described online,1
+R00227,O04907,P052,2024-12-31,Ordered by mistake,4
+R00228,O03785,P051,2025-01-18,Item damaged in shipping,2
+R00229,O04255,P043,2024-12-26,Not as described online,2
+R00230,O03091,P042,2025-01-06,Ordered by mistake,1
+R00231,O02742,P020,2025-01-26,Found a better price elsewhere,3
+R00232,O03210,P005,2025-01-20,Ordered by mistake,2
+R00233,O03556,P052,2025-01-17,Wrong size or fit,1
+R00234,O00468,P027,2025-01-14,Found a better price elsewhere,5
+R00235,O04785,P052,2025-01-18,Not as described online,4
+R00236,O02086,P036,2025-01-13,Changed my mind,3
+R00237,O01504,P030,2025-01-30,Found a better price elsewhere,2
+R00238,O02696,P018,2025-01-28,Wrong size or fit,4
+R00239,O03816,P029,2025-01-27,Wrong size or fit,1
+R00240,O00116,P015,2025-01-20,Wrong size or fit,2
+R00241,O04157,P060,2025-01-13,Wrong size or fit,2
+R00242,O04370,P003,2025-01-17,Not as described online,2
+R00243,O02149,P051,2025-01-19,Item damaged in shipping,3
+R00244,O04336,P052,2025-02-04,Ordered by mistake,2
+R00245,O04051,P053,2025-01-27,Changed my mind,2
+R00246,O05901,P020,2025-02-03,Not as described online,1
+R00247,O02074,P028,2025-01-23,Changed my mind,5
+R00248,O01408,P003,2025-02-14,Ordered by mistake,3
+R00249,O01879,P031,2025-01-30,Ordered by mistake,2
+R00250,O03506,P036,2025-01-25,Not as described online,1
+R00251,O02031,P036,2025-02-13,Wrong size or fit,1
+R00252,O05074,P007,2025-02-06,Changed my mind,5
+R00253,O00444,P030,2025-02-09,Ordered by mistake,3
+R00254,O04205,P033,2025-02-05,Not as described online,1
+R00255,O05980,P026,2025-01-30,Not as described online,2
+R00256,O04162,P029,2025-02-18,Ordered by mistake,2
+R00257,O00785,P040,2025-02-15,Changed my mind,3
+R00258,O03008,P042,2025-02-27,Ordered by mistake,3
+R00259,O05889,P039,2025-02-19,Item damaged in shipping,3
+R00260,O01248,P024,2025-02-17,Wrong size or fit,1
+R00261,O02789,P009,2025-02-12,Not as described online,2
+R00262,O00094,P028,2025-03-01,Wrong size or fit,1
+R00263,O04989,P008,2025-02-16,Found a better price elsewhere,1
+R00264,O04914,P017,2025-03-11,Ordered by mistake,1
+R00265,O05990,P048,2025-03-04,Changed my mind,1
+R00266,O05840,P048,2025-03-02,Ordered by mistake,1
+R00267,O01899,P014,2025-03-13,Not as described online,1
+R00268,O02025,P040,2025-03-27,Not as described online,3
+R00269,O02768,P017,2025-03-08,Not as described online,1
+R00270,O00718,P007,2025-03-01,Item damaged in shipping,2
+R00271,O01958,P043,2025-03-24,Changed my mind,4
+R00272,O03560,P009,2025-03-17,Item damaged in shipping,1
+R00273,O00505,P055,2025-03-14,Found a better price elsewhere,1
+R00274,O03410,P005,2025-03-17,Item damaged in shipping,3
+R00275,O00353,P009,2025-03-08,Item damaged in shipping,1
+R00276,O00690,P002,2025-03-09,Changed my mind,2
+R00277,O05312,P024,2025-03-21,Found a better price elsewhere,2
+R00278,O02933,P027,2025-03-31,Wrong size or fit,4
+R00279,O05002,P007,2025-04-14,Item damaged in shipping,4
+R00280,O01247,P047,2025-04-18,Changed my mind,1
+R00281,O03284,P031,2025-04-12,Changed my mind,1
+R00282,O01004,P049,2025-04-20,Found a better price elsewhere,2
+R00283,O03306,P024,2025-04-23,Changed my mind,1
+R00284,O03773,P058,2025-04-23,Changed my mind,4
+R00285,O01285,P057,2025-04-24,Item damaged in shipping,2
+R00286,O00134,P022,2025-04-29,Ordered by mistake,2
+R00287,O01632,P038,2025-05-05,Ordered by mistake,1
+R00288,O00385,P055,2025-04-19,Found a better price elsewhere,1
+R00289,O05445,P019,2025-05-02,Item damaged in shipping,1
+R00290,O02623,P024,2025-05-05,Ordered by mistake,1
+R00291,O03844,P016,2025-05-06,Changed my mind,5
+R00292,O04714,P012,2025-04-15,Wrong size or fit,1
+R00293,O00291,P020,2025-04-13,Changed my mind,2
+R00294,O01913,P036,2025-04-20,Not as described online,1
+R00295,O01561,P029,2025-05-01,Not as described online,4
+R00296,O01355,P020,2025-04-28,Wrong size or fit,2
+R00297,O02729,P050,2025-04-26,Not as described online,1
+R00298,O05642,P018,2025-05-20,Ordered by mistake,2
+R00299,O00023,P001,2025-05-17,Ordered by mistake,1
+R00300,O02322,P018,2025-05-23,Wrong size or fit,3
+R00301,O04685,P014,2025-05-11,Not as described online,4
+R00302,O01813,P008,2025-05-10,Found a better price elsewhere,1
+R00303,O00350,P014,2025-05-10,Item damaged in shipping,1
+R00304,O05969,P014,2025-05-16,Ordered by mistake,1
+R00305,O00184,P007,2025-05-24,Item damaged in shipping,2
+R00306,O02972,P014,2025-06-03,Wrong size or fit,1
+R00307,O00757,P015,2025-05-21,Not as described online,1
+R00308,O00941,P048,2025-05-27,Found a better price elsewhere,1
+R00309,O01771,P056,2025-06-04,Item damaged in shipping,3
+R00310,O02544,P003,2025-05-31,Not as described online,1
+R00311,O04842,P057,2025-05-27,Ordered by mistake,1
+R00312,O04122,P038,2025-05-20,Wrong size or fit,5
+R00313,O01444,P023,2025-05-29,Found a better price elsewhere,1
+R00314,O05032,P056,2025-06-13,Found a better price elsewhere,4
+R00315,O02418,P002,2025-06-03,Changed my mind,2
+R00316,O02910,P051,2025-06-15,Wrong size or fit,3
+R00317,O02646,P033,2025-05-28,Ordered by mistake,2
+R00318,O02030,P054,2025-06-02,Found a better price elsewhere,2
+R00319,O02642,P048,2025-06-15,Ordered by mistake,2
+R00320,O04489,P043,2025-06-25,Item damaged in shipping,1
+R00321,O02051,P016,2025-06-17,Not as described online,3
+R00322,O03029,P022,2025-07-01,Not as described online,1
+R00323,O00396,P028,2025-06-20,Item damaged in shipping,1
+R00324,O01522,P053,2025-06-20,Item damaged in shipping,1
+R00325,O02058,P011,2025-06-24,Wrong size or fit,2
+R00326,O05973,P054,2025-06-18,Found a better price elsewhere,4
+R00327,O02195,P031,2025-06-25,Changed my mind,2
+R00328,O05883,P016,2025-06-20,Found a better price elsewhere,3
+R00329,O00753,P014,2025-07-07,Not as described online,3
+R00330,O01277,P044,2025-06-29,Found a better price elsewhere,3
+R00331,O05926,P007,2025-07-06,Wrong size or fit,1
+R00332,O03667,P007,2025-06-27,Ordered by mistake,3
+R00333,O02726,P009,2025-06-19,Found a better price elsewhere,2
+R00334,O04780,P012,2025-06-20,Wrong size or fit,1
+R00335,O01750,P050,2025-06-29,Found a better price elsewhere,1
+R00336,O01417,P017,2025-06-28,Item damaged in shipping,2
+R00337,O04646,P026,2025-07-01,Item damaged in shipping,4
+R00338,O05169,P019,2025-07-15,Wrong size or fit,2
+R00339,O00235,P026,2025-06-27,Wrong size or fit,3
+R00340,O00454,P060,2025-07-05,Ordered by mistake,2
+R00341,O02830,P035,2025-07-16,Ordered by mistake,1
+R00342,O05724,P031,2025-07-04,Wrong size or fit,3
+R00343,O02446,P007,2025-06-30,Not as described online,2
+R00344,O02303,P009,2025-07-26,Wrong size or fit,4
+R00345,O05751,P020,2025-07-15,Item damaged in shipping,1
+R00346,O01850,P047,2025-07-08,Not as described online,2
+R00347,O03745,P027,2025-07-28,Found a better price elsewhere,2
+R00348,O00460,P051,2025-08-02,Item damaged in shipping,2
+R00349,O04102,P045,2025-07-24,Ordered by mistake,3
+R00350,O01095,P043,2025-07-26,Ordered by mistake,3
+R00351,O03477,P032,2025-07-16,Wrong size or fit,3
+R00352,O03370,P002,2025-08-02,Item damaged in shipping,1
+R00353,O05966,P043,2025-07-14,Found a better price elsewhere,1
+R00354,O01172,P022,2025-08-04,Found a better price elsewhere,1
+R00355,O01514,P003,2025-07-25,Changed my mind,3
+R00356,O00532,P007,2025-08-08,Wrong size or fit,1
+R00357,O03123,P007,2025-08-02,Ordered by mistake,2
+R00358,O03037,P005,2025-08-06,Wrong size or fit,1
+R00359,O00657,P030,2025-07-26,Ordered by mistake,3
+R00360,O02013,P006,2025-07-21,Wrong size or fit,2
+R00361,O00575,P005,2025-08-14,Found a better price elsewhere,2
+R00362,O04070,P053,2025-08-03,Ordered by mistake,2
+R00363,O03285,P036,2025-08-19,Wrong size or fit,3
+R00364,O04846,P045,2025-08-12,Ordered by mistake,1
+R00365,O00782,P002,2025-08-22,Not as described online,2
+R00366,O00224,P031,2025-08-19,Changed my mind,3
+R00367,O00653,P018,2025-08-27,Ordered by mistake,1
+R00368,O04975,P003,2025-08-23,Wrong size or fit,2
+R00369,O00610,P010,2025-09-07,Item damaged in shipping,1
+R00370,O05705,P025,2025-08-23,Found a better price elsewhere,1
+R00371,O00369,P050,2025-08-29,Ordered by mistake,1
+R00372,O02232,P024,2025-09-07,Found a better price elsewhere,2
+R00373,O01841,P035,2025-09-08,Ordered by mistake,4
+R00374,O02066,P013,2025-09-05,Changed my mind,1
+R00375,O03218,P014,2025-09-18,Changed my mind,4
+R00376,O00448,P042,2025-09-10,Not as described online,1
+R00377,O04865,P049,2025-09-02,Ordered by mistake,5
+R00378,O05306,P047,2025-09-24,Item damaged in shipping,1
+R00379,O04362,P012,2025-09-15,Ordered by mistake,1
+R00380,O00730,P059,2025-09-26,Not as described online,1
+R00381,O03468,P052,2025-09-14,Item damaged in shipping,1
+R00382,O04076,P049,2025-09-23,Changed my mind,1
+R00383,O00829,P052,2025-09-28,Changed my mind,1
+R00384,O04027,P020,2025-09-30,Not as described online,3
+R00385,O01515,P052,2025-09-24,Ordered by mistake,3
+R00386,O04456,P013,2025-10-07,Wrong size or fit,2
+R00387,O00991,P021,2025-10-08,Ordered by mistake,2
+R00388,O04561,P031,2025-10-06,Not as described online,4
+R00389,O05989,P027,2025-10-01,Wrong size or fit,5
+R00390,O01668,P049,2025-10-07,Wrong size or fit,2
+R00391,O03293,P027,2025-10-05,Not as described online,1
+R00392,O04733,P026,2025-10-23,Wrong size or fit,2
+R00393,O04749,P006,2025-10-20,Not as described online,4
+R00394,O05313,P003,2025-10-03,Wrong size or fit,5
+R00395,O01887,P041,2025-10-23,Wrong size or fit,1
+R00396,O04198,P031,2025-10-18,Item damaged in shipping,3
+R00397,O03685,P030,2025-10-12,Item damaged in shipping,3
+R00398,O04399,P049,2025-10-15,Changed my mind,3
+R00399,O00698,P023,2025-11-06,Item damaged in shipping,4
+R00400,O04084,P025,2025-10-30,Ordered by mistake,4
+R00401,O03707,P021,2025-10-25,Wrong size or fit,3
+R00402,O00936,P039,2025-11-01,Found a better price elsewhere,2
+R00403,O03640,P035,2025-11-04,Found a better price elsewhere,1
+R00404,O05009,P048,2025-10-28,Found a better price elsewhere,1
+R00405,O03606,P053,2025-11-06,Item damaged in shipping,3
+R00406,O00854,P026,2025-10-28,Item damaged in shipping,1
+R00407,O05855,P039,2025-10-31,Changed my mind,1
+R00408,O01434,P039,2025-11-29,Wrong size or fit,3
+R00409,O03224,P028,2025-11-24,Ordered by mistake,1
+R00410,O04075,P011,2025-11-19,Not as described online,1
+R00411,O01282,P047,2025-11-27,Wrong size or fit,1
+R00412,O00719,P056,2025-11-10,Not as described online,1
+R00413,O05245,P027,2025-11-17,Wrong size or fit,2
+R00414,O04554,P048,2025-11-15,Not as described online,2
+R00415,O02451,P057,2025-12-03,Ordered by mistake,1
+R00416,O01500,P009,2025-12-08,Item damaged in shipping,2
+R00417,O01195,P026,2025-11-16,Not as described online,3
+R00418,O02111,P020,2025-11-18,Found a better price elsewhere,1
+R00419,O01740,P051,2025-11-19,Not as described online,1
+R00420,O03387,P018,2025-11-27,Wrong size or fit,4
+R00421,O02033,P054,2025-11-25,Found a better price elsewhere,4
+R00422,O00447,P038,2025-12-14,Not as described online,1
+R00423,O01924,P056,2025-12-01,Wrong size or fit,1
+R00424,O01336,P007,2025-12-18,Item damaged in shipping,2
+R00425,O03296,P049,2025-12-17,Wrong size or fit,2
+R00426,O03715,P040,2025-12-27,Ordered by mistake,1
+R00427,O01213,P006,2025-12-22,Changed my mind,5
+R00428,O04773,P010,2025-12-18,Wrong size or fit,1
+R00429,O01704,P053,2025-12-10,Found a better price elsewhere,1
+R00430,O03913,P040,2025-12-19,Not as described online,2
+R00431,O04441,P038,2025-12-26,Item damaged in shipping,1
+R00432,O05630,P043,2026-01-06,Item damaged in shipping,1
+R00433,O00288,P011,2025-12-18,Wrong size or fit,1
+R00434,O02060,P005,2026-01-05,Ordered by mistake,2
+R00435,O01670,P016,2025-12-17,Found a better price elsewhere,4
+R00436,O04141,P043,2026-01-10,Ordered by mistake,3
+R00437,O02857,P020,2026-01-07,Found a better price elsewhere,1
+R00438,O01427,P024,2026-01-14,Wrong size or fit,1
+R00439,O02104,P047,2025-12-29,Wrong size or fit,1
+R00440,O05686,P013,2025-12-19,Found a better price elsewhere,2
+R00441,O05123,P036,2026-01-17,Changed my mind,1
+R00442,O01939,P030,2025-12-25,Found a better price elsewhere,1
+R00443,O04303,P029,2026-01-05,Changed my mind,1
+R00444,O00573,P057,2026-01-13,Found a better price elsewhere,3
+R00445,O03570,P026,2026-01-08,Ordered by mistake,1
+R00446,O04433,P044,2025-12-31,Item damaged in shipping,1
+R00447,O04200,P008,2026-01-13,Item damaged in shipping,1
+R00448,O03325,P058,2026-01-12,Wrong size or fit,4
+R00449,O04116,P028,2026-01-22,Changed my mind,1
+R00450,O05279,P058,2026-01-27,Wrong size or fit,1

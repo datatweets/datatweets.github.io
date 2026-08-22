@@ -1,0 +1,11 @@
+case_id,scenario,response_mode,prompt,expected_status
+C01,normal reply,ok,Classify ticket A17 in one word.,ok
+C02,reply with surrounding spaces,spaced_text,Classify ticket B04 in one word.,ok
+C03,empty prompt blocked by client,ok,   ,invalid_prompt
+C04,rejected API key,unauthorized,Classify ticket C22 in one word.,http_401
+C05,rate limit with Retry-After,rate_limited,Classify ticket D31 in one word.,http_429
+C06,temporary server failure,unavailable,Classify ticket E09 in one word.,http_503
+C07,body is not JSON,bad_json,Classify ticket F12 in one word.,invalid_json
+C08,required text field is missing,missing_text,Classify ticket G08 in one word.,invalid_shape
+C09,required text field is empty,empty_text,Classify ticket H15 in one word.,invalid_shape
+C10,response exceeds read timeout,timeout,Classify ticket J03 in one word.,timeout

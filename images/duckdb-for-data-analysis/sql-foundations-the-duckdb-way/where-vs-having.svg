@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">WHERE Filters Rows, HAVING Filters Groups</text>
+
+  <!-- Stage 1: raw rows -->
+  <text x="140" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="#4a5568">order_items rows</text>
+  <rect x="60" y="78" width="160" height="18" rx="3" fill="#f7fafc" stroke="#cbd5e0" />
+  <rect x="60" y="98" width="160" height="18" rx="3" fill="#f7fafc" stroke="#cbd5e0" />
+  <rect x="60" y="118" width="160" height="18" rx="3" fill="#f7fafc" stroke="#cbd5e0" />
+  <rect x="60" y="138" width="160" height="18" rx="3" fill="#f7fafc" stroke="#cbd5e0" />
+  <text x="140" y="91" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#718096">P021 qty 3</text>
+  <text x="140" y="111" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#718096">P021 qty 2</text>
+  <text x="140" y="131" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#718096">P047 qty 1</text>
+  <text x="140" y="151" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#718096">...</text>
+
+  <path d="M230 115 L268 115" stroke="#c05621" stroke-width="1.6" marker-end="url(#arrowW)"  fill="none" />
+  <text x="249" y="105" text-anchor="middle" font-size="9" font-weight="700" fill="#c05621">WHERE</text>
+
+  <!-- Stage 2: GROUP BY -->
+  <rect x="270" y="78" width="160" height="80" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="350" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">GROUP BY</text>
+  <text x="350" y="120" text-anchor="middle" font-size="9" fill="#2c5282">product_id</text>
+  <text x="350" y="138" text-anchor="middle" font-size="9" fill="#2c5282">count(*) computed</text>
+  <text x="350" y="152" text-anchor="middle" font-size="9" fill="#2c5282">for each group</text>
+
+  <path d="M430 115 L468 115" stroke="#2b6cb0" stroke-width="1.6" marker-end="url(#arrowH)"  fill="none" />
+  <text x="449" y="105" text-anchor="middle" font-size="9" font-weight="700" fill="#2b6cb0">HAVING</text>
+
+  <!-- Stage 3: summary groups -->
+  <text x="600" y="65" text-anchor="middle" font-size="12" font-weight="700" fill="#4a5568">summary groups</text>
+  <rect x="510" y="78" width="180" height="20" rx="3" fill="#f0fff4" stroke="#48bb78" />
+  <text x="600" y="92" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#276749">P047: count(*) = 290</text>
+  <rect x="510" y="102" width="180" height="20" rx="3" fill="#f0fff4" stroke="#48bb78" />
+  <text x="600" y="116" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#276749">P021: count(*) = 259</text>
+  <rect x="510" y="126" width="180" height="20" rx="3" fill="#fdf2f2" stroke="#fc8181" stroke-dasharray="2 2" />
+  <text x="600" y="140" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#c53030">product X: count(*) = 120 (dropped)</text>
+
+  <rect x="90" y="200" width="620" height="130" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="120" y="230" font-size="11" font-weight="700" fill="#c05621">WHERE runs first, on raw rows</text>
+  <text x="120" y="248" font-size="10" fill="#4a5568">Can only reference columns that already exist on each row --</text>
+  <text x="120" y="264" font-size="10" fill="#4a5568">count(*) doesn't exist yet at this stage.</text>
+
+  <text x="120" y="292" font-size="11" font-weight="700" fill="#2b6cb0">HAVING runs after GROUP BY</text>
+  <text x="120" y="310" font-size="10" fill="#4a5568">Filters the summary rows GROUP BY already produced --</text>
+  <text x="120" y="326" font-size="10" fill="#4a5568">can reference count(*), sum(...), or any other aggregate directly.</text>
+
+  <defs>
+    <marker id="arrowW" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#c05621" /></marker>
+    <marker id="arrowH" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2b6cb0" /></marker>
+  </defs>
+</svg>

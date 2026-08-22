@@ -1,0 +1,796 @@
+order_id,order_date,customer_id,email,city,channel,status,quantity,unit_price
+O00588,2024-01-01,C0079,benjamin.norwood079@thistlewoodmail.example,Ithaca,web,completed,9,112.82
+O00968,2024-01-01,C0031,zoey.holloway031@thistlewoodmail.example,Duluth,web,completed,7,368.01
+O02320,2024-01-01,C0080,david.hensley080@thistlewoodmail.example,Taos,web,completed,4,228.57
+O02918,2024-01-01,C0116,levi.hensley116@thistlewoodmail.example,Petaluma,phone,completed,7,220.86
+O03129,2024-01-01,C0020,sebastian.yates020@thistlewoodmail.example,Asheville,phone,completed,1,114.8
+O03300,2024-01-01,C0136,emma.lindqvist136@thistlewoodmail.example,Missoula,web,completed,7,327.53
+O03407,2024-01-01,C0098,elijah.diaz098@thistlewoodmail.example,Charleston,phone,completed,12,260.8
+O04135,2024-01-01,C0030,grace.thatcher030@thistlewoodmail.example,Athens,web,completed,15,402.43
+O04423,2024-01-01,C0179,harper.bennett179@thistlewoodmail.example,Missoula,phone,completed,6,367.44
+O04985,2024-01-01,C0031,zoey.holloway031@thistlewoodmail.example,Duluth,store,completed,3,182.2
+O05782,2024-01-01,C0040,elizabeth.everhart040@thistlewoodmail.example,Traverse City,web,completed,4,447.66
+O03128,2024-01-02,C0101,ella.hensley101@thistlewoodmail.example,Ithaca,web,completed,4,302.22
+O03916,2024-01-02,C0028,abigail.rowan028@thistlewoodmail.example,Charleston,store,completed,1,27.73
+O04575,2024-01-02,C0088,benjamin.iversen088@thistlewoodmail.example,Spokane,store,completed,5,384.12
+O05399,2024-01-02,C0177,emily.gallo177@thistlewoodmail.example,Charleston,web,completed,7,99.86
+O00426,2024-01-03,C0087,lily.diaz087@thistlewoodmail.example,Duluth,phone,completed,10,300.09
+O00512,2024-01-03,C0033,ella.parrish033@thistlewoodmail.example,Northampton,web,completed,8,125.3
+O02323,2024-01-03,C0098,elijah.diaz098@thistlewoodmail.example,Charleston,web,completed,7,195.34
+O02356,2024-01-03,C0050,matthew.vance050@thistlewoodmail.example,Taos,web,completed,10,256.64
+O02572,2024-01-03,C0160,john.abbott160@thistlewoodmail.example,Charleston,web,completed,6,221.29
+O02657,2024-01-03,C0141,amelia.chandler141@thistlewoodmail.example,Petaluma,web,completed,1,11.23
+O02756,2024-01-03,C0012,gabriel.parrish012@thistlewoodmail.example,Madison,web,completed,4,364.88
+O04721,2024-01-03,C0102,harper.vance102@thistlewoodmail.example,Yellow Springs,phone,completed,12,191.35
+O05460,2024-01-03,C0166,michael.whitfield166@thistlewoodmail.example,Savannah,phone,completed,3,10.1
+O00277,2024-01-04,C0078,wyatt.rowan078@thistlewoodmail.example,Portland,web,completed,8,88.29
+O00779,2024-01-04,C0082,harper.whitfield082@thistlewoodmail.example,Ithaca,web,completed,8,129.07
+O01030,2024-01-04,C0047,owen.hensley047@thistlewoodmail.example,Asheville,web,completed,11,195.46
+O03450,2024-01-04,C0041,james.zimmerman041@thistlewoodmail.example,Madison,web,completed,9,308.11
+O03679,2024-01-04,C0088,benjamin.iversen088@thistlewoodmail.example,Spokane,store,completed,9,202.02
+O03873,2024-01-04,C0041,james.zimmerman041@thistlewoodmail.example,Madison,web,completed,6,126.72
+O04716,2024-01-04,C0121,sophia.norwood121@thistlewoodmail.example,Taos,web,completed,6,310.26
+O05602,2024-01-04,C0061,aria.lindqvist061@thistlewoodmail.example,Santa Fe,web,pending,6,212.69
+O05714,2024-01-04,C0063,abigail.parrish063@thistlewoodmail.example,Asbury Park,web,cancelled,3,67.39
+O00141,2024-01-05,C0102,harper.vance102@thistlewoodmail.example,Yellow Springs,web,completed,-13,219.99
+O00555,2024-01-05,C0037,noah.ellison037@thistlewoodmail.example,Eugene,web,completed,2,384.59
+O00694,2024-01-05,C0083,wyatt.abbott083@thistlewoodmail.example,Providence,web,completed,12,267.37
+O01239,2024-01-05,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,web,completed,5,189.21
+O01356,2024-01-05,C0055,hannah.keller055@thistlewoodmail.example,Ann Arbor,web,completed,12,269.85
+O02821,2024-01-05,C0054,zoey.gallo054@thistlewoodmail.example,Spokane,web,completed,5,90.92
+O03802,2024-01-05,C0114,sofia.norwood114@thistlewoodmail.example,Athens,web,completed,9,65.3
+O05704,2024-01-05,C0068,harper.ostrander068@thistlewoodmail.example,Duluth,web,completed,7,146.48
+O05916,2024-01-05,C0073,luke.grant073@thistlewoodmail.example,Eugene,web,completed,13,63.61
+O02311,2024-01-06,C0079,benjamin.norwood079@thistlewoodmail.example,Ithaca,store,completed,8,187.07
+O02486,2024-01-06,C0020,sebastian.yates020@thistlewoodmail.example,Asheville,phone,completed,9,124.92
+O03653,2024-01-06,C0149,olivia.lambert149@thistlewoodmail.example,Madison,store,completed,11,167.71
+O04545,2024-01-06,C0017,lucas.dunmore017@thistlewoodmail.example,Traverse City,store,completed,5,135.4
+O04787,2024-01-06,C0136,emma.lindqvist136@thistlewoodmail.example,Missoula,web,completed,14,280.52
+O00042,2024-01-07,C0087,lily.diaz087@thistlewoodmail.example,Duluth,phone,completed,1,389.34
+O00148,2024-01-07,C0039,matthew.ingram039@thistlewoodmail.example,Eugene,store,completed,5,67.39
+O01005,07-Jan-2024,C0005,john.bishop005@thistlewoodmail.example,Charleston,web,completed,11,331.62
+O01069,2024-01-07,C0067,emma.ingram067@thistlewoodmail.example,Providence,web,completed,9,240.04
+O02555,2024-01-07,C0058,david.vance058@thistlewoodmail.example,Petaluma,web,completed,8,135.33
+O02795,2024-01-07,C0123,zoey.gallo123@thistlewoodmail.example,Santa Fe,web,completed,10,130.09
+O03860,2024-01-07,C0043,benjamin.osei043@thistlewoodmail.example,Traverse City,phone,pending,5,95.84
+O00374,2024-01-08,C0010,elizabeth.carter010@thistlewoodmail.example,Lancaster,web,completed,5,358.05
+O01846,2024-01-08,C0092,jack.zimmerman092@thistlewoodmail.example,Fort Collins,web,completed,10,282.24
+O02230,2024-01-08,C0033,ella.parrish033@thistlewoodmail.example,Northampton,store,completed,7,283.32
+O02426,2024-01-08,C0106,chloe.osei106@thistlewoodmail.example,Eugene,web,completed,10,373.7
+O02494,2024-01-08,C0103,john.quintero103@thistlewoodmail.example,Missoula,web,completed,6,140.49
+O02811,2024-01-08,C0171,emma.diaz171@thistlewoodmail.example,Asbury Park,web,completed,13,268.15
+O03471,2024-01-08,C0074,ava.quintero074@thistlewoodmail.example,Yellow Springs,web,completed,3,143.79
+O03810,2024-01-08,C0059,benjamin.holloway059@thistlewoodmail.example,Fort Collins,web,completed,1,356.11
+O04197,2024-01-08,C0122,chloe.ellison122@thistlewoodmail.example,Duluth,web,completed,6,299.46
+O04578,2024-01-08,C0175,carter.holloway175@thistlewoodmail.example,Ann Arbor,web,completed,9,220.74
+O05210,2024-01-08,C0070,olivia.dunmore070@thistlewoodmail.example,Yellow Springs,store,completed,3,68.48
+O05511,2024-01-08,C0128,julian.norwood128@thistlewoodmail.example,Chattanooga,web,completed,1,447.66
+O05903,2024-01-08,C0158,gabriel.thatcher158@thistlewoodmail.example,Boulder,web,completed,6,87.26
+O00473,2024-01-09,C0013,owen.grant013@thistlewoodmail.example,,web,completed,6,147.47
+O00766,2024-01-09,C0164,michael.yates164@thistlewoodmail.example,Bend,web,completed,12,165.18
+O02390,2024-01-09,C0075,sebastian.chandler075@thistlewoodmail.example,,web,completed,4,237.36
+O02524,2024-01-09,C0010,elizabeth.carter010@thistlewoodmail.example,Lancaster,phone,completed,4,235.13
+O02778,2024-01-09,C0066,wyatt.ingram066@thistlewoodmail.example,Boise,web,completed,9,256.28
+O03787,01/09/2024,C0149,olivia.lambert149@thistlewoodmail.example,Madison,store,completed,5,407.27
+O05055,2024-01-09,C0046,amelia.bennett046@thistlewoodmail.example,Burlington,store,completed,1,116.76
+O05474,2024-01-09,C0164,michael.yates164@thistlewoodmail.example,Bend,store,completed,9,327.6
+O01274,2024-01-10,C0072,isaac.iversen072@thistlewoodmail.example,Portland,web,cancelled,6,258.99
+O01734,2024-01-10,C0120,zoey.hensley120@thistlewoodmail.example,Fort Collins,web,completed,4,364.88
+O01917,2024-01-10,C0093,luke.nolan093@thistlewoodmail.example,Yellow Springs,web,completed,14,206.1
+O02573,2024-01-10,C0029,harper.bennett029@thistlewoodmail.example,Boulder,phone,completed,6,67.21
+O02624,2024-01-10,C0117,chloe.zimmerman117@thistlewoodmail.example,Asheville,web,cancelled,6,171.01
+O03024,2024-01-10,C0007,aria.jasper007@thistlewoodmail.example,Providence,web,completed,15,308.74
+O05203,2024-01-10,C0037,noah.ellison037@thistlewoodmail.example,Eugene,web,completed,6,137.75
+O05370,2024-01-10,C0162,ella.nolan162@thistlewoodmail.example,Petaluma,web,completed,12,264.02
+O05750,2024-01-10,C0032,isabella.quintero032@thistlewoodmail.example,Ann Arbor,web,completed,8,356.8
+O05802,2024-01-10,C0150,wyatt.abbott150@thistlewoodmail.example,Fort Collins,web,completed,12,125.64
+O00258,2024-01-11,C0079,benjamin.norwood079@thistlewoodmail.example,Ithaca,web,completed,9,181.22
+O00989,2024-01-11,C0017,lucas.dunmore017@thistlewoodmail.example,Traverse City,store,completed,9,178.19
+O01934,2024-01-11,C0173,chloe.nolan173@thistlewoodmail.example,Asheville,store,completed,14,173.52
+O02856,2024-01-11,C0104,noah.grant104@thistlewoodmail.example,Eugene,web,completed,7,357.81
+O02950,2024-01-11,C0065,liam.foster065@thistlewoodmail.example,Madison,phone,completed,5,384.93
+O03635,2024-01-11,C0157,james.grant157@thistlewoodmail.example,Eugene,phone,completed,7,247.38
+O04389,2024-01-11,C0011,zoey.fairweather011@thistlewoodmail.example,Chattanooga,store,completed,4,207.76
+O05534,2024-01-11,C0088,benjamin.iversen088@thistlewoodmail.example,Spokane,phone,completed,8,199.82
+O00930,2024-01-12,C0087,lily.diaz087@thistlewoodmail.example,Duluth,store,completed,5,345.2
+O01159,2024-01-12,C0153,evelyn.pemberton153@thistlewoodmail.example,Bend,web,completed,7,280.19
+O02239,2024-01-12,C0162,ella.nolan162@thistlewoodmail.example,Petaluma,store,completed,11,272.95
+O02548,2024-01-12,C0152,abigail.holloway152@thistlewoodmail.example,Boise,store,cancelled,4,280.2
+O03209,2024-01-12,C0038,carter.jennings038@thistlewoodmail.example,Athens,web,completed,9,176.38
+O03954,2024-01-12,C0089,gabriel.marsh089@thistlewoodmail.example,Bend,web,completed,15,120.78
+O03970,2024-01-12,C0054,zoey.gallo054@thistlewoodmail.example,Spokane,web,completed,4,296.82
+O04738,2024-01-12,C0027,,Fort Collins,web,completed,3,91.24
+O05394,2024-01-12,C0032,isabella.quintero032@thistlewoodmail.example,Ann Arbor,phone,completed,11,354.14
+O05530,2024-01-12,C0004,luke.thatcher004@thistlewoodmail.example,Fort Collins,web,completed,12,244.76
+O00325,2024-01-13,C0160,john.abbott160@thistlewoodmail.example,Charleston,store,completed,3,29.64
+O01332,2024-01-13,C0081,amelia.jasper081@thistlewoodmail.example,Ann Arbor,web,completed,5,103.47
+O01438,2024-01-13,C0137,emma.foster137@thistlewoodmail.example,Traverse City,web,completed,3,417.94
+O01467,2024-01-13,C0091,carter.diaz091@thistlewoodmail.example,Savannah,web,completed,5,245.16
+O02276,2024-01-13,C0178,james.everhart178@thistlewoodmail.example,Ithaca,store,completed,7,204.88
+O02912,2024-01-13,C0146,emily.jennings146@thistlewoodmail.example,Boulder,web,cancelled,3,62.75
+O03695,2024-01-13,C0151,olivia.carter151@thistlewoodmail.example,Santa Fe,store,completed,9,137.88
+O04972,2024-01-13,C0142,james.diaz142@thistlewoodmail.example,Bozeman,store,completed,7,71.88
+O05996,2024-01-13,C0095,lily.keller095@thistlewoodmail.example,Santa Fe,web,completed,7,35.77
+O00427,2024-01-14,C0024,michael.sawyer024@thistlewoodmail.example,Yellow Springs,web,cancelled,3,138.33
+O01188,2024-01-14,C0023,ava.yates023@thistlewoodmail.example,Sedona,web,completed,5,116.76
+O01560,2024-01-14,C0117,chloe.zimmerman117@thistlewoodmail.example,Asheville,web,completed,4,277.03
+O02377,2024-01-14,C0092,jack.zimmerman092@thistlewoodmail.example,Fort Collins,web,pending,9,204.71
+O03057,2024-01-14,C0114,sofia.norwood114@thistlewoodmail.example,Athens,web,completed,7,173.62
+O01253,2024-01-15,C0120,zoey.hensley120@thistlewoodmail.example,Fort Collins,store,completed,8,109.46
+O02053,2024-01-15,C0163,owen.thatcher163@thistlewoodmail.example,Burlington,web,completed,10,224.68
+O02088,2024-01-15,C0036,henry.everhart036@thistlewoodmail.example,Sedona,web,completed,12,20.84
+O00580,2024-01-16,C0041,james.zimmerman041@thistlewoodmail.example,Madison,web,completed,10,319.69
+O01803,2024-01-16,C0130,aria.ostrander130@thistlewoodmail.example,Charleston,web,completed,4,155.03
+O02009,2024-01-16,C0160,john.abbott160@thistlewoodmail.example,Charleston,store,completed,14,259.14
+O02129,2024-01-16,C0168,matthew.lindqvist168@thistlewoodmail.example,Boulder,web,completed,4,437.56
+O02272,2024-01-16,C0147,sofia.fairweather147@thistlewoodmail.example,Lancaster,web,completed,10,171.41
+O02338,2024-01-16,C0091,carter.diaz091@thistlewoodmail.example,Savannah,web,completed,9,21.39
+O02959,2024-01-16,C0155,charlotte.norwood155@thistlewoodmail.example,Lancaster,store,completed,2,397.37
+O02995,2024-01-16,C0133,chloe.jasper133@thistlewoodmail.example,Charleston,web,completed,10,255.1
+O03073,2024-01-16,C0056,matthew.parrish056@thistlewoodmail.example,Spokane,web,completed,5,407.27
+O04703,2024-01-16,C0102,harper.vance102@thistlewoodmail.example,Yellow Springs,store,completed,2,443.61
+O05278,2024-01-16,C0062,owen.nolan062@thistlewoodmail.example,Portland,web,completed,4,146.16
+O00375,2024-01-17,C0153,evelyn.pemberton153@thistlewoodmail.example,Bend,web,completed,10,390.88
+O01801,2024-01-17,C0007,aria.jasper007@thistlewoodmail.example,Providence,web,completed,5,349.64
+O02235,2024-01-17,C0100,harper.iversen100@thistlewoodmail.example,Bend,store,completed,5,185.4
+O02563,2024-01-17,C0071,zoey.dunmore071@thistlewoodmail.example,Ithaca,web,completed,12,261.34
+O03162,2024-01-17,C0044,isabella.zimmerman044@thistlewoodmail.example,Sedona,web,completed,10,28.68
+O03868,2024-01-17,C0076,hannah.marsh076@thistlewoodmail.example,Duluth,store,completed,9,157.51
+O04187,2024-01-17,C0127,chloe.quintero127@thistlewoodmail.example,Boulder,web,completed,11,313.27
+O04405,2024-01-17,C0101,ella.hensley101@thistlewoodmail.example,Ithaca,web,completed,5,214.49
+O00038,2024-01-18,C0172,noah.mercer172@thistlewoodmail.example,Lancaster,web,completed,7,116.95
+O01240,2024-01-18,C0089,gabriel.marsh089@thistlewoodmail.example,Bend,store,completed,10,292.62
+O01303,2024-01-18,C0052,alexander.yates052@thistlewoodmail.example,Spokane,web,completed,7,190.64
+O01551,2024-01-18,C0065,liam.foster065@thistlewoodmail.example,Madison,web,completed,13,203.72
+O02852,2024-01-18,C0111,isabella.fairweather111@thistlewoodmail.example,Asheville,store,completed,8,286.54
+O03043,2024-01-18,C0099,,Bozeman,store,completed,9,225.5
+O03343,2024-01-18,C0053,elijah.mercer053@thistlewoodmail.example,Ann Arbor,web,completed,11,82.66
+O03628,2024-01-18,C0076,hannah.marsh076@thistlewoodmail.example,Duluth,web,completed,5,136.37
+O04168,2024-01-18,C0001,ava.gallo001@thistlewoodmail.example,Traverse City,phone,completed,9,280.17
+O04884,2024-01-18,C0143,hannah.keller143@thistlewoodmail.example,Providence,store,completed,11,191.73
+O05641,2024-01-18,C0140,aria.hensley140@thistlewoodmail.example,Bozeman,phone,completed,4,295.1
+O00407,2024-01-19,C0153,evelyn.pemberton153@thistlewoodmail.example,Bend,web,completed,11,261.6
+O01446,2024-01-19,C0167,sofia.parrish167@thistlewoodmail.example,Northampton,web,completed,8,130.29
+O02014,2024-01-19,C0175,carter.holloway175@thistlewoodmail.example,Ann Arbor,store,cancelled,9,157.67
+O02026,2024-01-19,C0061,aria.lindqvist061@thistlewoodmail.example,Santa Fe,web,completed,3,272.34
+O02119,2024-01-19,C0056,matthew.parrish056@thistlewoodmail.example,Spokane,store,completed,8,-264.52
+O02180,2024-01-19,C0175,carter.holloway175@thistlewoodmail.example,Ann Arbor,web,completed,6,27.71
+O03019,2024-01-19,C0153,evelyn.pemberton153@thistlewoodmail.example,Bend,web,completed,16,178.84
+O03197,2024-01-19,C0090,avery.holloway090@thistlewoodmail.example,Eugene,phone,completed,14,202.09
+O04096,2024-01-19,C0001,ava.gallo001@thistlewoodmail.example,Traverse City,store,completed,5,185.4
+O05104,2024-01-19,C0053,elijah.mercer053@thistlewoodmail.example,,web,pending,7,63.51
+O00129,2024-01-20,C0027,sophia.yates027@thistlewoodmail.example,Fort Collins,store,completed,14,254.56
+O00515,2024-01-20,C0073,luke.grant073@thistlewoodmail.example,Eugene,web,completed,14,240.54
+O02313,2024-01-20,C0098,elijah.diaz098@thistlewoodmail.example,Charleston,store,completed,8,375.81
+O02809,2024-01-20,C0006,emily.keller006@thistlewoodmail.example,Madison,store,completed,6,189.7
+O04041,2024-01-20,C0044,isabella.zimmerman044@thistlewoodmail.example,Sedona,store,completed,5,327.71
+O04136,2024-01-20,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,web,completed,8,140.07
+O04342,2024-01-20,C0101,ella.hensley101@thistlewoodmail.example,Ithaca,web,completed,3,9.99
+O01164,2024-01-21,C0137,emma.foster137@thistlewoodmail.example,Traverse City,phone,completed,13,146.81
+O02431,2024-01-21,C0077,james.bishop077@thistlewoodmail.example,Taos,web,completed,8,418.28
+O02489,2024-01-21,C0170,sebastian.jasper170@thistlewoodmail.example,Boise,web,completed,11,306.04
+O04167,2024-01-21,C0056,matthew.parrish056@thistlewoodmail.example,Spokane,web,completed,7,134.9
+O05546,2024-01-21,C0079,benjamin.norwood079@thistlewoodmail.example,Ithaca,web,completed,7,172.69
+O05900,2024-01-21,C0103,john.quintero103@thistlewoodmail.example,Missoula,store,completed,2,296.59
+O00892,2024-01-22,C0007,aria.jasper007@thistlewoodmail.example,Providence,phone,completed,1,67.39
+O01325,2024-01-22,C0066,wyatt.ingram066@thistlewoodmail.example,Boise,web,cancelled,3,417.94
+O01346,2024-01-22,C0003,chloe.gallo003@thistlewoodmail.example,Athens,web,completed,13,114.49
+O02125,2024-01-22,C0180,owen.holloway180@thistlewoodmail.example,Athens,web,completed,4,355.05
+O02750,2024-01-22,C0149,olivia.lambert149@thistlewoodmail.example,Madison,web,completed,1,349.64
+O02785,2024-01-22,C0076,hannah.marsh076@thistlewoodmail.example,Duluth,web,completed,15,115.4
+O03190,22-Jan-2024,C0102,harper.vance102@thistlewoodmail.example,Yellow Springs,web,completed,4,417.94
+O03658,2024-01-22,C0021,jack.chandler021@thistlewoodmail.example,Traverse City,web,completed,7,206.11
+O04558,2024-01-22,C0165,samuel.chandler165@thistlewoodmail.example,Hudson,web,completed,2,193.81
+O04936,2024-01-22,C0113,david.ellison113@thistlewoodmail.example,Hudson,web,completed,2,229.71
+O00496,2024-01-23,C0023,ava.yates023@thistlewoodmail.example,Sedona,store,completed,3,192.25
+O01528,2024-01-23,C0014,avery.chandler014@thistlewoodmail.example,Northampton,web,completed,13,314.31
+O01569,2024-01-23,C0160,john.abbott160@thistlewoodmail.example,Charleston,phone,completed,11,422.86
+O02187,2024-01-23,C0024,michael.sawyer024@thistlewoodmail.example,Yellow Springs,phone,completed,12,115.0
+O02244,2024-01-23,C0106,chloe.osei106@thistlewoodmail.example,Eugene,web,completed,4,28.94
+O03618,2024-01-23,C0093,luke.nolan093@thistlewoodmail.example,Yellow Springs,web,completed,3,86.46
+O03648,2024-01-23,C0099,luke.jasper099@thistlewoodmail.example,Bozeman,web,completed,6,72.2
+O05042,2024-01-23,C0171,emma.diaz171@thistlewoodmail.example,Asbury Park,store,completed,5,151.37
+O00118,2024-01-24,C0093,luke.nolan093@thistlewoodmail.example,Yellow Springs,web,completed,11,352.25
+O02309,2024-01-24,C0077,james.bishop077@thistlewoodmail.example,Taos,web,completed,1,345.2
+O02488,2024-01-24,C0173,chloe.nolan173@thistlewoodmail.example,Asheville,phone,completed,12,124.13
+O02788,2024-01-24,C0170,sebastian.jasper170@thistlewoodmail.example,Boise,web,completed,15,230.71
+O03619,2024-01-24,C0088,benjamin.iversen088@thistlewoodmail.example,Spokane,web,completed,7,246.09
+O04092,2024-01-24,C0069,zoey.bennett069@thistlewoodmail.example,Savannah,web,completed,4,383.82
+O05536,2024-01-24,C0009,joseph.hensley009@thistlewoodmail.example,Ithaca,store,completed,11,193.42
+O00652,2024-01-25,C0061,aria.lindqvist061@thistlewoodmail.example,Santa Fe,web,completed,13,269.61
+O00815,2024-01-25,C0137,emma.foster137@thistlewoodmail.example,Traverse City,store,completed,2,135.4
+O02392,2024-01-25,C0011,zoey.fairweather011@thistlewoodmail.example,Chattanooga,store,completed,3,380.87
+O03668,2024-01-25,C0096,julian.rowan096@thistlewoodmail.example,Providence,web,completed,13,261.64
+O04004,2024-01-25,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,store,completed,10,126.73
+O04222,2024-01-25,C0151,olivia.carter151@thistlewoodmail.example,Santa Fe,web,completed,5,29.47
+O04670,2024-01-25,C0160,john.abbott160@thistlewoodmail.example,Charleston,web,completed,4,356.11
+O05096,2024-01-25,C0171,emma.diaz171@thistlewoodmail.example,Asbury Park,web,completed,9,162.96
+O05105,2024-01-25,C0032,isabella.quintero032@thistlewoodmail.example,Ann Arbor,web,cancelled,7,262.22
+O00408,2024-01-26,C0081,amelia.jasper081@thistlewoodmail.example,Ann Arbor,phone,completed,8,387.69
+O00658,2024-01-26,C0131,isaac.bishop131@thistlewoodmail.example,Boulder,store,completed,10,168.34
+O00835,2024-01-26,C0050,matthew.vance050@thistlewoodmail.example,Taos,web,completed,4,153.76
+O01272,2024-01-26,C0037,noah.ellison037@thistlewoodmail.example,Eugene,web,pending,11,262.33
+O01844,2024-01-26,C0128,julian.norwood128@thistlewoodmail.example,Chattanooga,web,completed,9,168.83
+O02106,2024-01-26,C0048,joseph.underwood048@thistlewoodmail.example,Eugene,web,completed,6,172.83
+O02275,2024-01-26,C0093,luke.nolan093@thistlewoodmail.example,Yellow Springs,web,completed,11,391.74
+O02561,2024-01-26,C0166,michael.whitfield166@thistlewoodmail.example,Savannah,store,completed,13,149.64
+O02610,2024-01-26,C0135,chloe.hensley135@thistlewoodmail.example,Lancaster,web,completed,5,29.52
+O02633,2024-01-26,C0140,aria.hensley140@thistlewoodmail.example,Bozeman,store,completed,9,239.98
+O03305,2024-01-26,C0013,owen.grant013@thistlewoodmail.example,Missoula,web,completed,3,193.81
+O04432,2024-01-26,C0103,john.quintero103@thistlewoodmail.example,Missoula,web,completed,16,133.2
+O04812,01/26/2024,C0122,chloe.ellison122@thistlewoodmail.example,Duluth,web,completed,9,198.45
+O05113,2024-01-26,C0037,noah.ellison037@thistlewoodmail.example,Eugene,phone,cancelled,3,157.6
+O05128,2024-01-26,C0045,levi.zimmerman045@thistlewoodmail.example,Eugene,web,completed,8,60.28
+O05159,2024-01-26,C0032,isabella.quintero032@thistlewoodmail.example,Ann Arbor,web,completed,5,23.84
+O00059,2024-01-27,C0170,sebastian.jasper170@thistlewoodmail.example,Boise,store,completed,1,296.59
+O00565,2024-01-27,C0131,isaac.bishop131@thistlewoodmail.example,Boulder,web,completed,3,224.8
+O01299,2024-01-27,C0119,owen.thatcher119@thistlewoodmail.example,Missoula,web,completed,6,237.7
+O02442,2024-01-27,C0131,isaac.bishop131@thistlewoodmail.example,Boulder,store,completed,9,156.59
+O04348,2024-01-27,C0164,michael.yates164@thistlewoodmail.example,Bend,web,completed,7,222.94
+O04978,2024-01-27,C0075,sebastian.chandler075@thistlewoodmail.example,Spokane,web,completed,1,443.61
+O05622,2024-01-27,C0160,john.abbott160@thistlewoodmail.example,Charleston,web,completed,3,15.81
+O00569,2024-01-28,C0147,sofia.fairweather147@thistlewoodmail.example,Lancaster,web,completed,7,382.24
+O00837,2024-01-28,C0017,lucas.dunmore017@thistlewoodmail.example,Traverse City,web,completed,1,91.24
+O00891,2024-01-28,C0125,john.parrish125@thistlewoodmail.example,Fort Collins,web,completed,6,326.42
+O01040,2024-01-28,C0073,luke.grant073@thistlewoodmail.example,Eugene,web,completed,10,209.43
+O01784,2024-01-28,C0021,jack.chandler021@thistlewoodmail.example,Traverse City,web,completed,6,326.48
+O02136,2024-01-28,C0073,luke.grant073@thistlewoodmail.example,Eugene,web,completed,8,252.69
+O02583,2024-01-28,C0148,emily.holloway148@thistlewoodmail.example,Bozeman,store,completed,2,193.81
+O02627,2024-01-28,C0102,harper.vance102@thistlewoodmail.example,Yellow Springs,web,completed,10,257.03
+O02869,2024-01-28,C0087,lily.diaz087@thistlewoodmail.example,Duluth,web,completed,3,447.66
+O03187,2024-01-28,C0056,matthew.parrish056@thistlewoodmail.example,Spokane,store,completed,1,76.71
+O03391,2024-01-28,C0070,olivia.dunmore070@thistlewoodmail.example,Yellow Springs,phone,completed,9,372.98
+O04090,2024-01-28,C0110,matthew.whitfield110@thistlewoodmail.example,Ithaca,phone,completed,4,380.87
+O04774,2024-01-28,C0040,elizabeth.everhart040@thistlewoodmail.example,Traverse City,web,completed,2,15.81
+O05887,2024-01-28,C0039,matthew.ingram039@thistlewoodmail.example,Eugene,web,pending,6,27.78
+O00108,2024-01-29,C0061,aria.lindqvist061@thistlewoodmail.example,Santa Fe,store,completed,4,28.94
+O00926,2024-01-29,C0144,joseph.iversen144@thistlewoodmail.example,Yellow Springs,web,cancelled,8,110.24
+O00974,2024-01-29,C0078,wyatt.rowan078@thistlewoodmail.example,Portland,store,completed,8,175.49
+O01492,2024-01-29,C0145,aria.dunmore145@thistlewoodmail.example,Bozeman,store,completed,16,123.08
+O01558,2024-01-29,C0104,noah.grant104@thistlewoodmail.example,Eugene,store,completed,4,340.76
+O01979,2024-01-29,C0113,david.ellison113@thistlewoodmail.example,Hudson,store,completed,13,212.62
+O02271,2024-01-29,C0067,emma.ingram067@thistlewoodmail.example,Providence,phone,completed,7,320.78
+O02367,2024-01-29,C0175,carter.holloway175@thistlewoodmail.example,Ann Arbor,phone,completed,11,219.46
+O02408,2024-01-29,C0162,ella.nolan162@thistlewoodmail.example,Petaluma,web,completed,17,283.79
+O02864,2024-01-29,C0139,isaac.carter139@thistlewoodmail.example,Ann Arbor,store,completed,13,256.46
+O03143,2024-01-29,C0093,luke.nolan093@thistlewoodmail.example,Yellow Springs,web,completed,4,167.92
+O03406,2024-01-29,C0150,wyatt.abbott150@thistlewoodmail.example,Fort Collins,web,completed,11,311.3
+O03847,2024-01-29,C0085,henry.thatcher085@thistlewoodmail.example,Fort Collins,store,completed,3,417.94
+O00221,2024-01-30,C0043,benjamin.osei043@thistlewoodmail.example,Traverse City,web,completed,6,375.54
+O01169,2024-01-30,C0162,ella.nolan162@thistlewoodmail.example,Petaluma,web,completed,5,267.65
+O01589,2024-01-30,C0100,harper.iversen100@thistlewoodmail.example,Bend,web,pending,12,113.83
+O02233,2024-01-30,C0087,lily.diaz087@thistlewoodmail.example,Duluth,web,completed,9,252.21
+O02359,2024-01-30,C0048,joseph.underwood048@thistlewoodmail.example,Eugene,store,completed,6,276.97
+O02739,2024-01-30,C0078,wyatt.rowan078@thistlewoodmail.example,Portland,phone,completed,7,154.98
+O03447,2024-01-30,C0080,david.hensley080@thistlewoodmail.example,Taos,store,completed,9,377.45
+O05102,2024-01-30,C0156,sofia.dunmore156@thistlewoodmail.example,Ann Arbor,store,completed,10,321.87
+O05276,2024-01-30,C0020,sebastian.yates020@thistlewoodmail.example,Asheville,phone,completed,1,91.24
+O05293,2024-01-30,C0074,ava.quintero074@thistlewoodmail.example,Yellow Springs,web,completed,9,222.35
+O00439,2024-01-31,C0163,owen.thatcher163@thistlewoodmail.example,Burlington,web,completed,11,71.54
+O01430,2024-01-31,C0065,liam.foster065@thistlewoodmail.example,Madison,web,completed,1,364.88
+O01845,2024-01-31,C0172,noah.mercer172@thistlewoodmail.example,Lancaster,web,completed,5,107.51
+O04407,2024-01-31,C0045,levi.zimmerman045@thistlewoodmail.example,Eugene,web,completed,6,167.55
+O04440,2024-01-31,C0047,owen.hensley047@thistlewoodmail.example,Asheville,phone,completed,2,90.92
+O04450,2024-01-31,C0106,chloe.osei106@thistlewoodmail.example,Eugene,phone,completed,4,409.81
+O05964,2024-01-31,C0100,harper.iversen100@thistlewoodmail.example,Bend,phone,completed,15,200.41
+O01777,2024-02-01,C0067,emma.ingram067@thistlewoodmail.example,Providence,web,completed,10,378.93
+O01966,2024-02-01,C0025,levi.kirkland025@thistlewoodmail.example,Asheville,web,completed,2,416.72
+O02068,2024-02-01,C0174,jack.jasper174@thistlewoodmail.example,Athens,web,completed,5,447.66
+O02308,2024-02-01,C0096,julian.rowan096@thistlewoodmail.example,Providence,web,completed,12,170.71
+O02387,2024-02-01,C0039,matthew.ingram039@thistlewoodmail.example,Eugene,web,completed,11,267.08
+O03189,2024-02-01,C0071,zoey.dunmore071@thistlewoodmail.example,Ithaca,store,completed,8,29.47
+O03800,2024-02-01,C0160,john.abbott160@thistlewoodmail.example,Charleston,web,completed,3,126.08
+O03879,2024-02-01,C0114,sofia.norwood114@thistlewoodmail.example,Athens,phone,completed,3,114.8
+O04626,2024-02-01,C0021,jack.chandler021@thistlewoodmail.example,Traverse City,phone,completed,10,137.26
+O04671,2024-02-01,C0138,sophia.chandler138@thistlewoodmail.example,Hudson,store,completed,7,71.89
+O05019,2024-02-01,C0005,john.bishop005@thistlewoodmail.example,Charleston,store,completed,9,293.01
+O05627,2024-02-01,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,web,completed,11,137.41
+O05823,2024-02-01,C0127,chloe.quintero127@thistlewoodmail.example,Boulder,web,cancelled,-2,181.52
+O00136,2024-02-02,C0149,olivia.lambert149@thistlewoodmail.example,Madison,web,pending,9,343.62
+O01331,2024-02-02,C0116,levi.hensley116@thistlewoodmail.example,Petaluma,web,completed,3,9.99
+O02198,2024-02-02,C0152,abigail.holloway152@thistlewoodmail.example,Boise,web,completed,13,316.86
+O02420,2024-02-02,C0089,gabriel.marsh089@thistlewoodmail.example,Bend,web,completed,9,260.11
+O03329,2024-02-02,C0115,isabella.iversen115@thistlewoodmail.example,Charleston,web,completed,2,441.96
+O03351,2024-02-02,C0137,emma.foster137@thistlewoodmail.example,Traverse City,web,completed,2,262.37
+O03638,2024-02-02,C0135,,Lancaster,web,completed,9,270.58
+O03931,2024-02-02,C0123,zoey.gallo123@thistlewoodmail.example,Santa Fe,phone,completed,5,188.47
+O05041,2024-02-02,C0025,levi.kirkland025@thistlewoodmail.example,Asheville,web,completed,3,23.05
+O05281,2024-02-02,C0126,hannah.grant126@thistlewoodmail.example,Madison,web,completed,15,200.14
+O05811,2024-02-02,C0029,harper.bennett029@thistlewoodmail.example,Boulder,store,completed,4,389.34
+O00243,2024-02-03,C0133,chloe.jasper133@thistlewoodmail.example,Charleston,web,completed,11,201.03
+O00386,2024-02-03,C0019,owen.everhart019@thistlewoodmail.example,Providence,web,completed,9,258.05
+O00793,2024-02-03,C0013,owen.grant013@thistlewoodmail.example,Missoula,web,completed,13,169.82
+O01629,2024-02-03,C0038,carter.jennings038@thistlewoodmail.example,Athens,store,completed,6,158.28
+O02326,2024-02-03,C0164,michael.yates164@thistlewoodmail.example,Bend,web,completed,5,9.99
+O02800,2024-02-03,C0090,avery.holloway090@thistlewoodmail.example,Eugene,store,completed,6,116.45
+O04223,2024-02-03,C0171,emma.diaz171@thistlewoodmail.example,Asbury Park,web,completed,3,349.64
+O04247,2024-02-03,C0075,sebastian.chandler075@thistlewoodmail.example,Spokane,web,completed,4,409.81
+O05412,2024-02-03,C0113,david.ellison113@thistlewoodmail.example,Hudson,store,completed,4,170.92
+O05480,2024-02-03,C0149,olivia.lambert149@thistlewoodmail.example,Madison,web,completed,9,68.7
+O02851,2024-02-04,C0113,david.ellison113@thistlewoodmail.example,Hudson,web,completed,3,209.42
+O04355,2024-02-04,C0130,aria.ostrander130@thistlewoodmail.example,Charleston,web,completed,1,54.4
+O05165,2024-02-04,C0014,avery.chandler014@thistlewoodmail.example,Northampton,store,completed,3,151.88
+O05875,2024-02-04,C0019,owen.everhart019@thistlewoodmail.example,Providence,web,completed,5,389.34
+O02683,2024-02-05,C0130,aria.ostrander130@thistlewoodmail.example,Charleston,phone,completed,5,112.68
+O02700,2024-02-05,C0125,john.parrish125@thistlewoodmail.example,Fort Collins,web,completed,8,340.44
+O02982,2024-02-05,C0067,emma.ingram067@thistlewoodmail.example,Providence,web,completed,5,310.0
+O03732,2024-02-05,C0058,david.vance058@thistlewoodmail.example,Petaluma,web,completed,5,183.96
+O05079,2024-02-05,C0095,lily.keller095@thistlewoodmail.example,Santa Fe,web,completed,4,332.63
+O05575,2024-02-05,C0020,sebastian.yates020@thistlewoodmail.example,Asheville,web,completed,8,368.48
+O05745,2024-02-05,C0083,wyatt.abbott083@thistlewoodmail.example,Providence,web,completed,7,151.96
+O01110,2024-02-06,C0132,liam.dunmore132@thistlewoodmail.example,Lancaster,phone,completed,1,271.08
+O02168,2024-02-06,C0016,jack.iversen016@thistlewoodmail.example,Taos,web,completed,6,115.34
+O03215,2024-02-06,C0077,james.bishop077@thistlewoodmail.example,Taos,web,completed,10,294.71
+O03957,2024-02-06,C0035,emily.lambert035@thistlewoodmail.example,Ithaca,web,completed,4,24.42
+O04385,2024-02-06,C0105,ella.keller105@thistlewoodmail.example,Chattanooga,web,completed,10,168.57
+O04574,2024-02-06,C0164,michael.yates164@thistlewoodmail.example,Bend,web,cancelled,7,273.57
+O05205,2024-02-06,C0087,lily.diaz087@thistlewoodmail.example,Duluth,phone,completed,9,388.37
+O05434,2024-02-06,C0039,matthew.ingram039@thistlewoodmail.example,Eugene,store,completed,8,142.52
+O02386,2024-02-07,C0056,matthew.parrish056@thistlewoodmail.example,Spokane,web,completed,12,180.41
+O05192,2024-02-07,C0161,james.rowan161@thistlewoodmail.example,Taos,store,completed,3,23.84
+O05688,2024-02-07,C0074,ava.quintero074@thistlewoodmail.example,Yellow Springs,store,completed,11,55.0
+O05904,2024-02-07,C0028,abigail.rowan028@thistlewoodmail.example,Charleston,web,completed,10,353.2
+O01122,2024-02-08,C0069,zoey.bennett069@thistlewoodmail.example,Savannah,web,completed,7,129.13
+O01622,2024-02-08,C0068,harper.ostrander068@thistlewoodmail.example,Duluth,web,completed,8,123.58
+O02262,2024-02-08,C0080,david.hensley080@thistlewoodmail.example,Taos,web,completed,3,155.23
+O04233,2024-02-08,C0082,harper.whitfield082@thistlewoodmail.example,Ithaca,web,completed,12,264.51
+O00775,2024-02-09,C0173,chloe.nolan173@thistlewoodmail.example,Asheville,store,completed,5,387.52
+O01126,2024-02-09,C0002,ava.dunmore002@thistlewoodmail.example,Santa Fe,phone,completed,3,240.77
+O01954,2024-02-09,C0070,olivia.dunmore070@thistlewoodmail.example,Yellow Springs,web,completed,10,346.28
+O01999,2024-02-09,C0093,luke.nolan093@thistlewoodmail.example,Yellow Springs,web,completed,4,133.77
+O04649,2024-02-09,C0030,grace.thatcher030@thistlewoodmail.example,Athens,store,completed,13,110.91
+O05462,2024-02-09,C0011,zoey.fairweather011@thistlewoodmail.example,Chattanooga,store,completed,8,232.9
+O00550,2024-02-10,C0125,john.parrish125@thistlewoodmail.example,,web,completed,10,39.12
+O01536,2024-02-10,C0141,amelia.chandler141@thistlewoodmail.example,Petaluma,web,completed,7,130.5
+O02000,2024-02-10,C0099,luke.jasper099@thistlewoodmail.example,Bozeman,web,completed,5,356.11
+O03221,2024-02-10,C0055,hannah.keller055@thistlewoodmail.example,Ann Arbor,web,pending,12,180.64
+O03267,2024-02-10,C0048,joseph.underwood048@thistlewoodmail.example,,web,completed,10,322.37
+O03341,2024-02-10,C0019,owen.everhart019@thistlewoodmail.example,Providence,web,completed,9,166.66
+O03473,2024-02-10,C0004,luke.thatcher004@thistlewoodmail.example,Fort Collins,web,completed,9,188.45
+O03494,10-Feb-2024,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,web,completed,3,172.02
+O03545,2024-02-10,C0148,emily.holloway148@thistlewoodmail.example,Bozeman,web,cancelled,8,124.17
+O04195,2024-02-10,C0055,hannah.keller055@thistlewoodmail.example,Ann Arbor,phone,completed,2,146.16
+O04839,2024-02-10,C0163,owen.thatcher163@thistlewoodmail.example,Burlington,web,completed,8,364.35
+O05613,2024-02-10,C0166,michael.whitfield166@thistlewoodmail.example,Savannah,web,cancelled,4,116.76
+O05697,02/10/2024,C0124,chloe.lindqvist124@thistlewoodmail.example,Bozeman,store,completed,6,192.96
+O00041,2024-02-11,C0085,henry.thatcher085@thistlewoodmail.example,Fort Collins,web,completed,2,116.76
+O00371,2024-02-11,C0042,,Sedona,store,completed,3,62.75
+O00577,2024-02-11,C0096,julian.rowan096@thistlewoodmail.example,Providence,web,completed,12,184.82
+O00683,2024-02-11,C0084,zoey.sawyer084@thistlewoodmail.example,Boulder,web,completed,13,202.75
+O01373,2024-02-11,C0040,elizabeth.everhart040@thistlewoodmail.example,Traverse City,web,completed,6,278.13
+O01566,2024-02-11,C0024,michael.sawyer024@thistlewoodmail.example,Yellow Springs,web,completed,2,138.6
+O03144,2024-02-11,C0065,liam.foster065@thistlewoodmail.example,Madison,web,completed,7,214.18
+O03534,2024-02-11,C0052,alexander.yates052@thistlewoodmail.example,Spokane,web,completed,5,443.61
+O03761,2024-02-11,C0021,jack.chandler021@thistlewoodmail.example,Traverse City,store,completed,11,154.33
+O04133,2024-02-11,C0091,carter.diaz091@thistlewoodmail.example,Savannah,web,completed,2,349.64
+O04524,2024-02-11,C0156,sofia.dunmore156@thistlewoodmail.example,Ann Arbor,web,completed,11,281.93
+O05018,2024-02-11,C0061,aria.lindqvist061@thistlewoodmail.example,Santa Fe,phone,completed,7,55.64
+O05058,2024-02-11,C0033,ella.parrish033@thistlewoodmail.example,Northampton,web,completed,6,395.19
+O05202,2024-02-11,C0016,jack.iversen016@thistlewoodmail.example,Taos,web,completed,8,113.48
+O05656,2024-02-11,C0115,isabella.iversen115@thistlewoodmail.example,Charleston,phone,completed,9,230.48
+O02236,2024-02-12,C0143,hannah.keller143@thistlewoodmail.example,Providence,web,completed,3,264.5
+O02681,2024-02-12,C0070,olivia.dunmore070@thistlewoodmail.example,Yellow Springs,web,completed,8,149.0
+O02971,2024-02-12,C0081,amelia.jasper081@thistlewoodmail.example,Ann Arbor,web,completed,9,-237.18
+O02996,2024-02-12,C0096,julian.rowan096@thistlewoodmail.example,Providence,web,completed,6,93.57
+O03966,2024-02-12,C0033,ella.parrish033@thistlewoodmail.example,Northampton,web,completed,3,303.22
+O04289,2024-02-12,C0042,wyatt.rowan042@thistlewoodmail.example,Sedona,store,completed,1,91.24
+O05393,2024-02-12,C0030,grace.thatcher030@thistlewoodmail.example,Athens,web,completed,15,313.71
+O05614,2024-02-12,C0037,noah.ellison037@thistlewoodmail.example,Eugene,web,completed,3,100.87
+O00551,2024-02-13,C0150,wyatt.abbott150@thistlewoodmail.example,Fort Collins,store,completed,5,358.81
+O00553,2024-02-13,C0106,chloe.osei106@thistlewoodmail.example,Eugene,store,completed,2,323.23
+O00617,2024-02-13,C0052,alexander.yates052@thistlewoodmail.example,Spokane,web,completed,7,415.62
+O00776,2024-02-13,C0122,chloe.ellison122@thistlewoodmail.example,Duluth,web,completed,16,207.47
+O01123,2024-02-13,C0006,emily.keller006@thistlewoodmail.example,Madison,store,completed,12,278.14
+O01317,2024-02-13,C0109,hannah.jasper109@thistlewoodmail.example,Duluth,web,completed,7,126.37
+O02278,2024-02-13,C0134,alexander.sawyer134@thistlewoodmail.example,Portland,store,completed,7,331.43
+O02567,2024-02-13,C0051,evelyn.jasper051@thistlewoodmail.example,Portland,store,completed,1,10.1
+O04566,2024-02-13,C0144,joseph.iversen144@thistlewoodmail.example,Yellow Springs,web,completed,1,68.48
+O04793,2024-02-13,C0058,david.vance058@thistlewoodmail.example,Petaluma,web,completed,1,193.81
+O05493,2024-02-13,C0089,gabriel.marsh089@thistlewoodmail.example,Bend,web,completed,7,414.92
+O00010,2024-02-14,C0032,isabella.quintero032@thistlewoodmail.example,Ann Arbor,web,pending,4,207.81
+O00394,2024-02-14,C0111,isabella.fairweather111@thistlewoodmail.example,Asheville,web,completed,7,110.2
+O00938,2024-02-14,C0060,hannah.pemberton060@thistlewoodmail.example,Burlington,store,completed,9,55.13
+O02981,2024-02-14,C0132,liam.dunmore132@thistlewoodmail.example,Lancaster,phone,completed,5,110.47
+O04615,2024-02-14,C0177,emily.gallo177@thistlewoodmail.example,Charleston,store,pending,10,260.68
+O04823,2024-02-14,C0146,emily.jennings146@thistlewoodmail.example,Boulder,web,completed,2,356.11
+O01086,2024-02-15,C0071,zoey.dunmore071@thistlewoodmail.example,Ithaca,web,completed,14,234.44
+O01898,2024-02-15,C0110,,Ithaca,phone,completed,6,248.82
+O02112,2024-02-15,C0096,julian.rowan096@thistlewoodmail.example,Providence,store,completed,-8,139.59
+O03444,2024-02-15,C0066,wyatt.ingram066@thistlewoodmail.example,Boise,web,completed,2,345.2
+O03454,2024-02-15,C0031,zoey.holloway031@thistlewoodmail.example,Duluth,web,completed,8,375.84
+O04036,2024-02-15,C0153,evelyn.pemberton153@thistlewoodmail.example,Bend,web,completed,9,402.1
+O04091,2024-02-15,C0027,sophia.yates027@thistlewoodmail.example,Fort Collins,store,completed,8,203.21
+O04518,2024-02-15,C0112,sebastian.kirkland112@thistlewoodmail.example,Petaluma,web,completed,11,156.48
+O04875,2024-02-15,C0030,grace.thatcher030@thistlewoodmail.example,Athens,store,completed,5,356.11
+O05420,2024-02-15,C0027,sophia.yates027@thistlewoodmail.example,Fort Collins,web,completed,3,114.8
+O05712,2024-02-15,C0179,harper.bennett179@thistlewoodmail.example,Missoula,web,completed,19,158.8
+O00880,2024-02-16,C0142,james.diaz142@thistlewoodmail.example,Bozeman,web,completed,9,152.53
+O01395,2024-02-16,C0088,benjamin.iversen088@thistlewoodmail.example,Spokane,web,completed,2,123.07
+O02983,2024-02-16,C0044,isabella.zimmerman044@thistlewoodmail.example,Sedona,web,completed,8,128.91
+O03082,2024-02-16,C0180,owen.holloway180@thistlewoodmail.example,Athens,web,completed,8,53.38
+O04506,2024-02-16,C0160,john.abbott160@thistlewoodmail.example,Charleston,web,completed,8,386.37
+O04684,2024-02-16,C0161,james.rowan161@thistlewoodmail.example,Taos,web,completed,3,296.59
+O05270,2024-02-16,C0180,owen.holloway180@thistlewoodmail.example,Athens,store,completed,14,292.06
+O05574,2024-02-16,C0044,isabella.zimmerman044@thistlewoodmail.example,Sedona,web,cancelled,3,383.82
+O00796,2024-02-17,C0125,john.parrish125@thistlewoodmail.example,Fort Collins,web,completed,10,168.85
+O01049,2024-02-17,C0038,carter.jennings038@thistlewoodmail.example,Athens,web,completed,3,206.82
+O02779,2024-02-17,C0079,benjamin.norwood079@thistlewoodmail.example,Ithaca,store,completed,12,194.72
+O02860,2024-02-17,C0117,chloe.zimmerman117@thistlewoodmail.example,Asheville,web,completed,3,182.2
+O03067,2024-02-17,C0019,owen.everhart019@thistlewoodmail.example,Providence,web,completed,8,321.65
+O03681,2024-02-17,C0142,james.diaz142@thistlewoodmail.example,Bozeman,web,completed,9,360.41
+O00634,2024-02-18,C0062,owen.nolan062@thistlewoodmail.example,Portland,store,completed,8,191.38
+O00764,2024-02-18,C0081,amelia.jasper081@thistlewoodmail.example,Ann Arbor,web,cancelled,2,90.92
+O01145,2024-02-18,C0081,amelia.jasper081@thistlewoodmail.example,Ann Arbor,web,completed,8,140.1
+O02666,2024-02-18,C0033,ella.parrish033@thistlewoodmail.example,Northampton,web,completed,3,155.23
+O02881,2024-02-18,C0010,elizabeth.carter010@thistlewoodmail.example,Lancaster,web,completed,11,367.05
+O03102,2024-02-18,C0173,chloe.nolan173@thistlewoodmail.example,Asheville,store,completed,8,55.81
+O03523,2024-02-18,C0133,chloe.jasper133@thistlewoodmail.example,Charleston,web,completed,12,209.59
+O04862,2024-02-18,C0160,john.abbott160@thistlewoodmail.example,Charleston,store,completed,13,93.39
+O04981,02/18/2024,C0155,charlotte.norwood155@thistlewoodmail.example,Lancaster,web,completed,10,128.0
+O05084,2024-02-18,C0090,avery.holloway090@thistlewoodmail.example,Eugene,phone,completed,3,349.98
+O05717,2024-02-18,C0114,sofia.norwood114@thistlewoodmail.example,Athens,store,completed,9,231.26
+O05962,2024-02-18,C0120,zoey.hensley120@thistlewoodmail.example,Fort Collins,web,completed,2,116.76
+O05965,2024-02-18,C0051,evelyn.jasper051@thistlewoodmail.example,Portland,web,cancelled,3,356.11
+O00456,2024-02-19,C0168,matthew.lindqvist168@thistlewoodmail.example,Boulder,web,pending,1,356.11
+O00790,2024-02-19,C0129,sophia.quintero129@thistlewoodmail.example,Traverse City,store,completed,9,311.06
+O00851,2024-02-19,C0170,sebastian.jasper170@thistlewoodmail.example,Boise,web,completed,3,345.2
+O01908,2024-02-19,C0059,benjamin.holloway059@thistlewoodmail.example,Fort Collins,web,completed,9,156.8
+O03610,2024-02-19,C0071,zoey.dunmore071@thistlewoodmail.example,Ithaca,web,completed,11,116.46
+O04968,02/19/2024,C0074,ava.quintero074@thistlewoodmail.example,Yellow Springs,web,completed,15,141.15
+O05164,2024-02-19,C0152,abigail.holloway152@thistlewoodmail.example,Boise,phone,pending,11,175.21
+O05298,2024-02-19,C0164,michael.yates164@thistlewoodmail.example,Bend,web,completed,6,114.09
+O05917,2024-02-19,C0115,isabella.iversen115@thistlewoodmail.example,Charleston,web,cancelled,2,443.61
+O00765,2024-02-20,C0147,sofia.fairweather147@thistlewoodmail.example,Lancaster,store,completed,11,267.72
+O01064,2024-02-20,C0026,aria.mercer026@thistlewoodmail.example,Petaluma,phone,completed,11,302.21
+O02095,2024-02-20,C0050,matthew.vance050@thistlewoodmail.example,Taos,web,completed,7,190.31
+O02926,2024-02-20,C0004,luke.thatcher004@thistlewoodmail.example,Fort Collins,web,completed,12,304.69
+O03337,2024-02-20,C0006,emily.keller006@thistlewoodmail.example,Madison,web,cancelled,10,131.71
+O03401,2024-02-20,C0061,aria.lindqvist061@thistlewoodmail.example,Santa Fe,web,completed,2,146.16
+O03934,2024-02-20,C0085,henry.thatcher085@thistlewoodmail.example,Fort Collins,web,completed,8,254.87
+O04094,2024-02-20,C0100,harper.iversen100@thistlewoodmail.example,Bend,web,cancelled,13,332.54
+O05774,2024-02-20,C0076,hannah.marsh076@thistlewoodmail.example,Duluth,web,completed,4,28.94
+O00474,2024-02-21,C0120,zoey.hensley120@thistlewoodmail.example,Fort Collins,web,cancelled,8,279.66
+O01022,2024-02-21,C0110,matthew.whitfield110@thistlewoodmail.example,Ithaca,phone,completed,11,77.99
+O01982,2024-02-21,C0024,michael.sawyer024@thistlewoodmail.example,Yellow Springs,web,completed,7,308.57
+O02319,2024-02-21,C0149,olivia.lambert149@thistlewoodmail.example,Madison,web,completed,10,245.83
+O02737,2024-02-21,C0006,emily.keller006@thistlewoodmail.example,Madison,web,completed,9,231.03
+O04397,2024-02-21,C0041,james.zimmerman041@thistlewoodmail.example,Madison,store,completed,3,148.35
+O05617,2024-02-21,C0173,chloe.nolan173@thistlewoodmail.example,Asheville,store,completed,6,182.02
+O05824,2024-02-21,C0052,alexander.yates052@thistlewoodmail.example,Spokane,web,completed,5,150.94
+O05851,2024-02-21,C0015,david.everhart015@thistlewoodmail.example,Madison,store,completed,9,208.63
+O00287,2024-02-22,C0045,levi.zimmerman045@thistlewoodmail.example,Eugene,store,completed,12,140.8
+O00787,2024-02-22,C0140,aria.hensley140@thistlewoodmail.example,Bozeman,web,completed,8,210.38
+O01984,2024-02-22,C0105,ella.keller105@thistlewoodmail.example,Chattanooga,store,completed,10,109.91
+O05064,2024-02-22,C0111,isabella.fairweather111@thistlewoodmail.example,Asheville,web,completed,14,243.74
+O05919,2024-02-22,C0060,hannah.pemberton060@thistlewoodmail.example,Burlington,web,completed,2,67.39
+O00446,2024-02-23,C0167,sofia.parrish167@thistlewoodmail.example,Northampton,web,completed,3,256.32
+O01024,2024-02-23,C0051,evelyn.jasper051@thistlewoodmail.example,Portland,web,completed,9,368.55
+O01508,2024-02-23,C0111,isabella.fairweather111@thistlewoodmail.example,Asheville,store,completed,14,208.44
+O03422,2024-02-23,C0052,alexander.yates052@thistlewoodmail.example,Spokane,web,completed,9,201.42
+O03886,2024-02-23,C0091,carter.diaz091@thistlewoodmail.example,Savannah,web,completed,3,134.86
+O04759,2024-02-23,C0155,charlotte.norwood155@thistlewoodmail.example,Lancaster,store,completed,1,29.47
+O05010,2024-02-23,C0004,luke.thatcher004@thistlewoodmail.example,Fort Collins,web,completed,16,156.41
+O05126,2024-02-23,C0150,wyatt.abbott150@thistlewoodmail.example,Fort Collins,web,completed,2,10.1
+O05388,2024-02-23,C0107,lucas.mercer107@thistlewoodmail.example,Sedona,web,pending,8,83.05
+O05497,2024-02-23,C0141,amelia.chandler141@thistlewoodmail.example,Petaluma,store,completed,3,441.96
+O00814,2024-02-24,C0060,hannah.pemberton060@thistlewoodmail.example,Burlington,web,completed,15,373.44
+O02005,2024-02-24,C0129,sophia.quintero129@thistlewoodmail.example,Traverse City,web,completed,1,417.94
+O02241,2024-02-24,C0091,carter.diaz091@thistlewoodmail.example,Savannah,store,completed,13,354.71
+O02745,2024-02-24,C0161,james.rowan161@thistlewoodmail.example,Taos,web,pending,9,155.93
+O02815,2024-02-24,C0061,aria.lindqvist061@thistlewoodmail.example,Santa Fe,store,completed,12,170.04
+O03052,2024-02-24,C0037,noah.ellison037@thistlewoodmail.example,Eugene,store,completed,8,177.19
+O05605,2024-02-24,C0020,sebastian.yates020@thistlewoodmail.example,Asheville,web,completed,5,71.13
+O05793,2024-02-24,C0134,alexander.sawyer134@thistlewoodmail.example,Portland,store,pending,10,245.89
+O05871,2024-02-24,C0018,riley.bennett018@thistlewoodmail.example,Sedona,web,completed,3,399.45
+O01232,2024-02-25,C0008,carter.parrish008@thistlewoodmail.example,Madison,web,completed,15,320.99
+O03544,2024-02-25,C0034,harper.ostrander034@thistlewoodmail.example,Chattanooga,web,completed,4,114.8
+O04181,2024-02-25,C0036,henry.everhart036@thistlewoodmail.example,Sedona,web,completed,8,71.19
+O04623,2024-02-25,C0052,alexander.yates052@thistlewoodmail.example,Spokane,store,completed,16,215.4
+O05636,2024-02-25,C0081,amelia.jasper081@thistlewoodmail.example,Ann Arbor,web,completed,4,441.96
+O00154,2024-02-26,C0025,levi.kirkland025@thistlewoodmail.example,Asheville,store,completed,14,252.32
+O00425,2024-02-26,C0082,harper.whitfield082@thistlewoodmail.example,Ithaca,store,completed,5,81.63
+O01124,2024-02-26,C0075,sebastian.chandler075@thistlewoodmail.example,Spokane,web,completed,4,345.2
+O01699,2024-02-26,C0030,grace.thatcher030@thistlewoodmail.example,Athens,web,completed,3,268.92
+O01843,2024-02-26,C0125,john.parrish125@thistlewoodmail.example,Fort Collins,store,completed,10,211.98
+O03063,2024-02-26,C0068,harper.ostrander068@thistlewoodmail.example,Duluth,web,completed,4,9.99
+O00894,2024-02-27,C0143,hannah.keller143@thistlewoodmail.example,Providence,web,completed,12,130.28
+O01120,2024-02-27,C0155,charlotte.norwood155@thistlewoodmail.example,Lancaster,store,completed,5,193.81
+O01810,2024-02-27,C0053,elijah.mercer053@thistlewoodmail.example,Ann Arbor,web,completed,7,367.42
+O02107,2024-02-27,C0043,benjamin.osei043@thistlewoodmail.example,Traverse City,web,completed,5,262.6
+O02371,2024-02-27,C0097,zoey.vance097@thistlewoodmail.example,Asbury Park,phone,completed,1,133.77
+O03078,2024-02-27,C0092,jack.zimmerman092@thistlewoodmail.example,Fort Collins,web,completed,6,316.01
+O03744,02/27/2024,C0083,wyatt.abbott083@thistlewoodmail.example,Providence,phone,completed,4,345.2
+O04597,2024-02-27,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,phone,pending,4,391.13
+O04606,2024-02-27,C0118,isabella.holloway118@thistlewoodmail.example,Boulder,web,completed,6,355.91
+O04726,2024-02-27,C0067,emma.ingram067@thistlewoodmail.example,Providence,web,completed,3,443.61
+O04784,2024-02-27,C0076,hannah.marsh076@thistlewoodmail.example,Duluth,store,completed,3,215.44
+O05769,2024-02-27,C0173,chloe.nolan173@thistlewoodmail.example,Asheville,web,completed,7,344.32
+O05906,2024-02-27,C0126,hannah.grant126@thistlewoodmail.example,Madison,web,completed,4,447.66
+O00852,2024-02-28,C0044,isabella.zimmerman044@thistlewoodmail.example,Sedona,web,completed,5,171.28
+O01343,2024-02-28,C0074,ava.quintero074@thistlewoodmail.example,Yellow Springs,web,completed,9,203.46
+O01728,2024-02-28,C0029,harper.bennett029@thistlewoodmail.example,Boulder,web,completed,11,114.34
+O02710,2024-02-28,C0147,sofia.fairweather147@thistlewoodmail.example,Lancaster,web,completed,8,104.2
+O04129,2024-02-28,C0052,alexander.yates052@thistlewoodmail.example,Spokane,web,completed,11,161.08
+O00497,2024-02-29,C0131,isaac.bishop131@thistlewoodmail.example,Boulder,store,completed,10,398.56
+O00976,2024-02-29,C0028,abigail.rowan028@thistlewoodmail.example,Charleston,web,completed,5,155.23
+O01436,2024-02-29,C0075,sebastian.chandler075@thistlewoodmail.example,,store,completed,4,358.05
+O01617,2024-02-29,C0011,zoey.fairweather011@thistlewoodmail.example,Chattanooga,web,completed,7,328.18
+O02191,2024-02-29,C0007,aria.jasper007@thistlewoodmail.example,Providence,web,cancelled,4,311.18
+O02919,2024-02-29,C0166,michael.whitfield166@thistlewoodmail.example,Savannah,web,completed,5,142.14
+O03372,2024-02-29,C0084,zoey.sawyer084@thistlewoodmail.example,Boulder,store,cancelled,12,337.65
+O04534,2024-02-29,C0089,gabriel.marsh089@thistlewoodmail.example,Bend,web,completed,12,211.92
+O05784,2024-02-29,C0097,zoey.vance097@thistlewoodmail.example,Asbury Park,web,completed,10,215.73
+O05826,2024-02-29,C0055,hannah.keller055@thistlewoodmail.example,Ann Arbor,web,completed,14,371.73
+O00180,2024-03-01,C0005,john.bishop005@thistlewoodmail.example,Charleston,store,completed,6,172.6
+O02670,2024-03-01,C0119,owen.thatcher119@thistlewoodmail.example,Missoula,web,completed,12,252.89
+O02733,2024-03-01,C0006,emily.keller006@thistlewoodmail.example,Madison,phone,completed,8,306.11
+O04990,2024-03-01,C0126,hannah.grant126@thistlewoodmail.example,Madison,web,completed,7,139.29
+O05286,2024-03-01,C0073,luke.grant073@thistlewoodmail.example,Eugene,phone,completed,11,223.81
+O05396,2024-03-01,C0132,liam.dunmore132@thistlewoodmail.example,Lancaster,web,completed,3,252.47
+O05616,2024-03-01,C0128,julian.norwood128@thistlewoodmail.example,Chattanooga,web,completed,6,269.21
+O01925,2024-03-02,C0152,abigail.holloway152@thistlewoodmail.example,Boise,web,completed,15,145.12
+O02631,2024-03-02,C0013,owen.grant013@thistlewoodmail.example,Missoula,web,pending,7,221.45
+O03448,2024-03-02,C0100,harper.iversen100@thistlewoodmail.example,Bend,store,completed,9,71.07
+O03756,2024-03-02,C0127,chloe.quintero127@thistlewoodmail.example,Boulder,web,completed,15,385.4
+O04292,2024-03-02,C0069,zoey.bennett069@thistlewoodmail.example,Savannah,web,completed,11,191.81
+O01146,2024-03-03,C0034,harper.ostrander034@thistlewoodmail.example,Chattanooga,store,completed,5,247.71
+O01330,2024-03-03,C0103,john.quintero103@thistlewoodmail.example,Missoula,web,completed,16,61.93
+O01638,2024-03-03,C0020,sebastian.yates020@thistlewoodmail.example,Asheville,web,completed,11,277.41
+O04596,2024-03-03,C0095,lily.keller095@thistlewoodmail.example,Santa Fe,store,completed,10,253.72
+O05065,2024-03-03,C0127,chloe.quintero127@thistlewoodmail.example,Boulder,web,completed,5,255.48
+O05247,2024-03-03,C0088,benjamin.iversen088@thistlewoodmail.example,Spokane,store,completed,4,220.0
+O00127,2024-03-04,C0079,benjamin.norwood079@thistlewoodmail.example,Ithaca,store,completed,7,348.95
+O00604,2024-03-04,C0073,luke.grant073@thistlewoodmail.example,Eugene,store,completed,7,78.75
+O00767,2024-03-04,C0110,matthew.whitfield110@thistlewoodmail.example,Ithaca,web,completed,11,307.42
+O01990,2024-03-04,C0095,lily.keller095@thistlewoodmail.example,Santa Fe,web,completed,3,383.82
+O02369,2024-03-04,C0011,zoey.fairweather011@thistlewoodmail.example,Chattanooga,web,completed,2,364.88
+O04065,2024-03-04,C0150,wyatt.abbott150@thistlewoodmail.example,Fort Collins,store,completed,11,68.85
+O04653,2024-03-04,C0135,chloe.hensley135@thistlewoodmail.example,Lancaster,web,completed,12,267.43
+O05191,2024-03-04,C0004,luke.thatcher004@thistlewoodmail.example,Fort Collins,web,completed,10,345.68
+O00330,2024-03-05,C0014,avery.chandler014@thistlewoodmail.example,Northampton,web,completed,5,383.82
+O01568,2024-03-05,C0001,ava.gallo001@thistlewoodmail.example,Traverse City,web,completed,8,321.54
+O01998,2024-03-05,C0105,ella.keller105@thistlewoodmail.example,Chattanooga,web,pending,7,312.51
+O02010,2024-03-05,C0172,noah.mercer172@thistlewoodmail.example,,web,completed,5,175.25
+O03687,2024-03-05,C0115,isabella.iversen115@thistlewoodmail.example,Charleston,web,completed,16,251.39
+O03838,2024-03-05,C0129,sophia.quintero129@thistlewoodmail.example,Traverse City,web,completed,6,180.8
+O04873,2024-03-05,C0149,olivia.lambert149@thistlewoodmail.example,Madison,web,cancelled,12,118.14
+O05509,2024-03-05,C0159,julian.mercer159@thistlewoodmail.example,Madison,phone,completed,5,86.46
+O05588,2024-03-05,C0033,ella.parrish033@thistlewoodmail.example,Northampton,web,completed,4,447.66
+O05666,2024-03-05,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,web,completed,6,268.4
+O01906,2024-03-06,C0003,chloe.gallo003@thistlewoodmail.example,Athens,web,completed,3,76.71
+O02047,2024-03-06,C0051,evelyn.jasper051@thistlewoodmail.example,Portland,web,completed,4,364.91
+O02518,2024-03-06,C0116,levi.hensley116@thistlewoodmail.example,Petaluma,web,completed,7,126.55
+O03936,2024-03-06,C0060,hannah.pemberton060@thistlewoodmail.example,Burlington,web,completed,9,390.16
+O05408,2024-03-06,C0023,ava.yates023@thistlewoodmail.example,Sedona,web,cancelled,7,140.83
+O05537,2024-03-06,C0109,hannah.jasper109@thistlewoodmail.example,Duluth,phone,completed,7,176.23
+O00013,2024-03-07,C0159,julian.mercer159@thistlewoodmail.example,Madison,web,completed,10,203.3
+O00969,2024-03-07,C0034,harper.ostrander034@thistlewoodmail.example,Chattanooga,web,completed,14,134.27
+O01484,2024-03-07,C0043,benjamin.osei043@thistlewoodmail.example,Traverse City,store,completed,4,380.87
+O01894,2024-03-07,C0129,sophia.quintero129@thistlewoodmail.example,Traverse City,web,completed,8,346.1
+O02141,2024-03-07,C0068,harper.ostrander068@thistlewoodmail.example,Duluth,web,completed,3,155.23
+O02647,2024-03-07,C0096,julian.rowan096@thistlewoodmail.example,Providence,web,completed,2,364.88
+O03126,2024-03-07,C0062,owen.nolan062@thistlewoodmail.example,Portland,web,completed,11,241.87
+O04859,2024-03-07,C0018,riley.bennett018@thistlewoodmail.example,Sedona,web,completed,1,91.24
+O05263,2024-03-07,C0029,harper.bennett029@thistlewoodmail.example,Boulder,web,completed,10,425.89
+O00850,2024-03-08,C0153,evelyn.pemberton153@thistlewoodmail.example,Bend,web,completed,6,306.83
+O00896,2024-03-08,C0143,hannah.keller143@thistlewoodmail.example,Providence,web,completed,5,447.66
+O01491,2024-03-08,C0087,lily.diaz087@thistlewoodmail.example,Duluth,web,completed,5,358.05
+O01855,2024-03-08,C0159,julian.mercer159@thistlewoodmail.example,Madison,web,completed,5,407.27
+O02752,2024-03-08,C0160,john.abbott160@thistlewoodmail.example,Charleston,web,completed,5,15.81
+O04376,2024-03-08,C0169,chloe.vance169@thistlewoodmail.example,Providence,web,completed,5,248.54
+O04446,2024-03-08,C0012,gabriel.parrish012@thistlewoodmail.example,Madison,store,completed,6,28.67
+O04642,2024-03-08,C0004,luke.thatcher004@thistlewoodmail.example,Fort Collins,web,completed,7,41.46
+O05595,2024-03-08,C0159,julian.mercer159@thistlewoodmail.example,Madison,web,completed,5,185.4
+O00654,2024-03-09,C0104,noah.grant104@thistlewoodmail.example,Eugene,web,completed,5,185.4
+O01142,2024-03-09,C0111,isabella.fairweather111@thistlewoodmail.example,Asheville,store,completed,4,98.6
+O01231,2024-03-09,C0164,michael.yates164@thistlewoodmail.example,Bend,web,completed,6,73.2
+O01956,2024-03-09,C0018,riley.bennett018@thistlewoodmail.example,Sedona,web,completed,4,358.05
+O03041,2024-03-09,C0041,james.zimmerman041@thistlewoodmail.example,Madison,web,completed,9,135.3
+O03393,2024-03-09,C0171,emma.diaz171@thistlewoodmail.example,Asbury Park,web,completed,4,11.23
+O03935,2024-03-09,C0109,hannah.jasper109@thistlewoodmail.example,Duluth,store,completed,8,138.12
+O01719,2024-03-10,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,web,completed,2,135.4
+O01744,2024-03-10,C0155,charlotte.norwood155@thistlewoodmail.example,Lancaster,store,completed,5,391.13
+O02003,2024-03-10,C0082,harper.whitfield082@thistlewoodmail.example,Ithaca,store,completed,7,346.67
+O03014,2024-03-10,C0160,john.abbott160@thistlewoodmail.example,Charleston,store,completed,7,231.63
+O03581,2024-03-10,C0073,luke.grant073@thistlewoodmail.example,Eugene,web,completed,8,251.58
+O03878,2024-03-10,C0141,amelia.chandler141@thistlewoodmail.example,Petaluma,phone,cancelled,7,318.49
+O05066,2024-03-10,C0113,david.ellison113@thistlewoodmail.example,Hudson,web,completed,2,114.8
+O05375,2024-03-10,C0096,julian.rowan096@thistlewoodmail.example,Providence,store,completed,3,15.81
+O05970,2024-03-10,C0130,aria.ostrander130@thistlewoodmail.example,Charleston,web,completed,8,233.19
+O00847,2024-03-11,C0016,jack.iversen016@thistlewoodmail.example,Taos,web,completed,8,398.3
+O01043,2024-03-11,C0147,sofia.fairweather147@thistlewoodmail.example,Lancaster,store,completed,4,206.12
+O01099,2024-03-11,C0006,emily.keller006@thistlewoodmail.example,Madison,web,completed,11,269.28
+O04213,2024-03-11,C0159,julian.mercer159@thistlewoodmail.example,Madison,web,completed,5,88.24
+O04724,2024-03-11,C0078,wyatt.rowan078@thistlewoodmail.example,Portland,store,completed,5,380.87
+O04883,2024-03-11,C0159,julian.mercer159@thistlewoodmail.example,Madison,store,completed,6,282.61
+O05780,2024-03-11,C0025,levi.kirkland025@thistlewoodmail.example,Asheville,web,completed,14,300.43
+O05888,2024-03-11,C0039,matthew.ingram039@thistlewoodmail.example,Eugene,web,completed,7,397.39
+O00548,2024-03-12,C0036,henry.everhart036@thistlewoodmail.example,Sedona,store,completed,8,158.3
+O01140,2024-03-12,C0160,john.abbott160@thistlewoodmail.example,,web,completed,1,116.76
+O05007,2024-03-12,C0001,ava.gallo001@thistlewoodmail.example,Traverse City,phone,completed,6,373.62
+O05601,2024-03-12,C0035,emily.lambert035@thistlewoodmail.example,Ithaca,phone,completed,12,177.2
+O00298,2024-03-13,C0112,sebastian.kirkland112@thistlewoodmail.example,Petaluma,store,completed,3,349.98
+O02089,2024-03-13,C0174,jack.jasper174@thistlewoodmail.example,Athens,phone,completed,5,411.82
+O02865,2024-03-13,C0126,hannah.grant126@thistlewoodmail.example,Madison,phone,completed,7,148.66
+O03049,2024-03-13,C0018,riley.bennett018@thistlewoodmail.example,Sedona,phone,completed,9,300.38
+O04490,2024-03-13,C0074,ava.quintero074@thistlewoodmail.example,Yellow Springs,web,completed,11,338.78
+O05726,2024-03-13,C0042,wyatt.rowan042@thistlewoodmail.example,Sedona,store,cancelled,10,216.82
+O00438,2024-03-14,C0154,charlotte.bishop154@thistlewoodmail.example,Asbury Park,web,completed,3,162.0
+O00984,2024-03-14,C0137,emma.foster137@thistlewoodmail.example,Traverse City,phone,completed,9,96.64
+O01254,2024-03-14,C0066,wyatt.ingram066@thistlewoodmail.example,Boise,web,completed,9,263.49
+O02412,2024-03-14,C0066,wyatt.ingram066@thistlewoodmail.example,Boise,web,completed,5,296.82
+O03561,2024-03-14,C0089,gabriel.marsh089@thistlewoodmail.example,Bend,web,completed,13,150.16
+O03885,2024-03-14,C0021,jack.chandler021@thistlewoodmail.example,Traverse City,phone,completed,8,391.34
+O04251,2024-03-14,C0142,james.diaz142@thistlewoodmail.example,Bozeman,web,completed,8,74.64
+O04491,2024-03-14,C0133,chloe.jasper133@thistlewoodmail.example,Charleston,web,completed,5,335.62
+O04631,2024-03-14,C0083,wyatt.abbott083@thistlewoodmail.example,Providence,web,completed,8,175.6
+O05183,2024-03-14,C0106,chloe.osei106@thistlewoodmail.example,Eugene,web,completed,7,219.72
+O05184,2024-03-14,C0018,riley.bennett018@thistlewoodmail.example,Sedona,web,completed,12,291.09
+O05289,2024-03-14,C0116,levi.hensley116@thistlewoodmail.example,Petaluma,web,completed,8,185.89
+O05604,2024-03-14,C0027,sophia.yates027@thistlewoodmail.example,Fort Collins,store,completed,9,217.29
+O05607,2024-03-14,C0026,aria.mercer026@thistlewoodmail.example,Petaluma,web,completed,13,210.24
+O00667,2024-03-15,C0047,owen.hensley047@thistlewoodmail.example,Asheville,web,completed,6,208.63
+O00889,2024-03-15,C0159,julian.mercer159@thistlewoodmail.example,Madison,web,completed,9,247.63
+O01459,2024-03-15,C0012,gabriel.parrish012@thistlewoodmail.example,Madison,web,completed,5,389.34
+O02832,2024-03-15,C0112,sebastian.kirkland112@thistlewoodmail.example,Petaluma,web,completed,7,186.08
+O03854,2024-03-15,C0112,sebastian.kirkland112@thistlewoodmail.example,Petaluma,web,cancelled,5,86.46
+O04040,2024-03-15,C0106,chloe.osei106@thistlewoodmail.example,Eugene,store,completed,12,161.72
+O04361,2024-03-15,C0082,harper.whitfield082@thistlewoodmail.example,Ithaca,store,completed,1,29.52
+O05053,2024-03-15,C0163,owen.thatcher163@thistlewoodmail.example,Burlington,web,completed,8,174.18
+O05133,2024-03-15,C0124,chloe.lindqvist124@thistlewoodmail.example,Bozeman,store,completed,14,231.26
+O05579,2024-03-15,C0110,matthew.whitfield110@thistlewoodmail.example,Ithaca,web,completed,12,212.29
+O05779,2024-03-15,C0042,wyatt.rowan042@thistlewoodmail.example,Sedona,web,completed,9,77.59
+O05838,2024-03-15,C0064,evelyn.lambert064@thistlewoodmail.example,Portland,phone,completed,5,86.46
+O00160,2024-03-16,C0148,emily.holloway148@thistlewoodmail.example,Bozeman,web,pending,10,306.56
+O00178,2024-03-16,C0167,sofia.parrish167@thistlewoodmail.example,Northampton,web,completed,7,365.09
+O03163,2024-03-16,C0086,levi.fairweather086@thistlewoodmail.example,Taos,web,completed,1,384.93
+O04207,2024-03-16,C0110,matthew.whitfield110@thistlewoodmail.example,Ithaca,web,completed,1,133.77
+O04237,2024-03-16,C0095,lily.keller095@thistlewoodmail.example,Santa Fe,phone,completed,9,52.02
+O04844,2024-03-16,C0052,alexander.yates052@thistlewoodmail.example,Spokane,web,completed,3,277.62
+O04886,2024-03-16,C0069,zoey.bennett069@thistlewoodmail.example,Savannah,web,completed,13,100.82
+O00383,2024-03-17,C0064,evelyn.lambert064@thistlewoodmail.example,Portland,store,completed,11,127.92
+O01296,2024-03-17,C0074,ava.quintero074@thistlewoodmail.example,Yellow Springs,store,completed,1,28.94
+O02012,2024-03-17,C0020,sebastian.yates020@thistlewoodmail.example,Asheville,web,completed,6,332.3
+O02639,2024-03-17,C0143,hannah.keller143@thistlewoodmail.example,Providence,web,completed,11,245.35
+O02838,2024-03-17,C0156,sofia.dunmore156@thistlewoodmail.example,Ann Arbor,store,completed,10,260.7
+O02845,03/17/2024,C0046,amelia.bennett046@thistlewoodmail.example,Burlington,web,completed,6,352.89
+O03483,2024-03-17,C0053,elijah.mercer053@thistlewoodmail.example,Ann Arbor,store,completed,13,237.72
+O04637,2024-03-17,C0138,sophia.chandler138@thistlewoodmail.example,Hudson,store,completed,7,212.85
+O04748,2024-03-17,C0163,owen.thatcher163@thistlewoodmail.example,Burlington,store,completed,8,71.92
+O05455,2024-03-17,C0096,julian.rowan096@thistlewoodmail.example,Providence,web,completed,7,223.95
+O00050,2024-03-18,C0154,charlotte.bishop154@thistlewoodmail.example,Asbury Park,web,completed,6,348.16
+O01806,2024-03-18,C0075,sebastian.chandler075@thistlewoodmail.example,Spokane,store,completed,5,226.02
+O03089,2024-03-18,C0060,,Burlington,web,completed,6,174.52
+O04183,2024-03-18,C0164,michael.yates164@thistlewoodmail.example,Bend,web,completed,11,59.22
+O04261,2024-03-18,C0005,john.bishop005@thistlewoodmail.example,Charleston,web,completed,15,197.45
+O04330,2024-03-18,C0068,harper.ostrander068@thistlewoodmail.example,Duluth,web,completed,8,100.52
+O04366,2024-03-18,C0050,matthew.vance050@thistlewoodmail.example,Taos,web,completed,5,122.39
+O04398,2024-03-18,C0054,zoey.gallo054@thistlewoodmail.example,Spokane,web,completed,3,175.17
+O05558,2024-03-18,C0004,luke.thatcher004@thistlewoodmail.example,Fort Collins,phone,completed,6,179.49
+O05843,2024-03-18,C0110,matthew.whitfield110@thistlewoodmail.example,Ithaca,web,completed,1,86.46
+O00964,2024-03-19,C0104,noah.grant104@thistlewoodmail.example,Eugene,web,completed,9,132.79
+O01015,2024-03-19,C0097,zoey.vance097@thistlewoodmail.example,Asbury Park,web,completed,5,190.88
+O01102,2024-03-19,C0056,matthew.parrish056@thistlewoodmail.example,Spokane,web,cancelled,9,106.51
+O01401,2024-03-19,C0164,michael.yates164@thistlewoodmail.example,Bend,web,completed,5,393.67
+O01620,2024-03-19,C0129,sophia.quintero129@thistlewoodmail.example,Traverse City,web,completed,9,370.92
+O01875,2024-03-19,C0001,ava.gallo001@thistlewoodmail.example,Traverse City,web,completed,8,88.54
+O02482,2024-03-19,C0166,michael.whitfield166@thistlewoodmail.example,Savannah,web,completed,9,81.66
+O03203,2024-03-19,C0115,isabella.iversen115@thistlewoodmail.example,Charleston,web,completed,11,323.79
+O03360,2024-03-19,C0124,chloe.lindqvist124@thistlewoodmail.example,,store,completed,11,328.12
+O03643,2024-03-19,C0094,john.kirkland094@thistlewoodmail.example,Lancaster,web,completed,6,371.87
+O03932,19-Mar-2024,C0045,levi.zimmerman045@thistlewoodmail.example,Eugene,web,completed,8,169.53
+O04725,2024-03-19,C0083,wyatt.abbott083@thistlewoodmail.example,Providence,web,completed,7,84.59
+O04795,2024-03-19,C0134,alexander.sawyer134@thistlewoodmail.example,Portland,web,completed,8,145.93
+O05162,2024-03-19,C0008,carter.parrish008@thistlewoodmail.example,Madison,phone,completed,3,185.4
+O00362,2024-03-20,C0095,lily.keller095@thistlewoodmail.example,Santa Fe,web,completed,4,248.06
+O01370,2024-03-20,C0126,hannah.grant126@thistlewoodmail.example,Madison,web,pending,3,276.95
+O01770,2024-03-20,C0044,isabella.zimmerman044@thistlewoodmail.example,Sedona,web,completed,5,123.07
+O02505,2024-03-20,C0083,wyatt.abbott083@thistlewoodmail.example,Providence,web,completed,11,80.45
+O02663,2024-03-20,C0144,joseph.iversen144@thistlewoodmail.example,Yellow Springs,phone,completed,3,345.2
+O04868,2024-03-20,C0050,matthew.vance050@thistlewoodmail.example,Taos,store,completed,8,148.28
+O04980,2024-03-20,C0149,olivia.lambert149@thistlewoodmail.example,Madison,web,completed,13,394.21
+O05649,2024-03-20,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,store,completed,3,364.88
+O05992,2024-03-20,C0004,luke.thatcher004@thistlewoodmail.example,Fort Collins,web,completed,12,102.28
+O00882,2024-03-21,C0073,luke.grant073@thistlewoodmail.example,Eugene,web,completed,6,104.73
+O02502,2024-03-21,C0091,carter.diaz091@thistlewoodmail.example,Savannah,web,completed,4,375.28
+O02651,2024-03-21,C0041,james.zimmerman041@thistlewoodmail.example,Madison,web,completed,10,188.58
+O02895,2024-03-21,C0050,matthew.vance050@thistlewoodmail.example,Taos,web,pending,10,228.14
+O03323,2024-03-21,C0090,avery.holloway090@thistlewoodmail.example,Eugene,store,completed,3,416.72
+O03837,2024-03-21,C0170,sebastian.jasper170@thistlewoodmail.example,Boise,web,completed,7,156.74
+O04974,2024-03-21,C0021,jack.chandler021@thistlewoodmail.example,Traverse City,phone,cancelled,10,283.05
+O00052,2024-03-22,C0137,emma.foster137@thistlewoodmail.example,Traverse City,store,completed,1,271.08
+O00529,03/22/2024,C0120,zoey.hensley120@thistlewoodmail.example,Fort Collins,store,completed,7,301.3
+O01059,2024-03-22,C0013,owen.grant013@thistlewoodmail.example,Missoula,web,pending,14,353.48
+O04257,2024-03-22,C0059,benjamin.holloway059@thistlewoodmail.example,Fort Collins,web,completed,4,196.48
+O04301,2024-03-22,C0032,isabella.quintero032@thistlewoodmail.example,Ann Arbor,web,completed,9,214.7
+O04421,2024-03-22,C0100,harper.iversen100@thistlewoodmail.example,Bend,store,completed,8,366.9
+O04477,2024-03-22,C0009,joseph.hensley009@thistlewoodmail.example,Ithaca,web,completed,5,379.56
+O05896,2024-03-22,C0088,benjamin.iversen088@thistlewoodmail.example,Spokane,web,completed,14,225.8
+O00004,2024-03-23,C0109,hannah.jasper109@thistlewoodmail.example,Duluth,web,completed,10,197.32
+O00226,2024-03-23,C0017,lucas.dunmore017@thistlewoodmail.example,Traverse City,web,completed,3,11.23
+O00729,2024-03-23,C0047,owen.hensley047@thistlewoodmail.example,Asheville,web,completed,7,73.41
+O01891,2024-03-23,C0054,zoey.gallo054@thistlewoodmail.example,Spokane,web,completed,4,323.4
+O03062,2024-03-23,C0176,sebastian.parrish176@thistlewoodmail.example,Fort Collins,web,completed,5,252.47
+O03960,2024-03-23,C0132,liam.dunmore132@thistlewoodmail.example,Lancaster,phone,completed,18,180.86
+O04480,2024-03-23,C0120,zoey.hensley120@thistlewoodmail.example,Fort Collins,store,completed,13,225.38
+O04680,2024-03-23,C0170,sebastian.jasper170@thistlewoodmail.example,Boise,web,completed,4,389.6
+O04776,2024-03-23,C0118,isabella.holloway118@thistlewoodmail.example,Boulder,web,completed,6,137.18
+O05381,2024-03-23,C0030,grace.thatcher030@thistlewoodmail.example,Athens,store,completed,13,180.05
+O00955,2024-03-24,C0147,sofia.fairweather147@thistlewoodmail.example,Lancaster,web,completed,15,264.54
+O01682,2024-03-24,C0032,isabella.quintero032@thistlewoodmail.example,Ann Arbor,web,completed,7,258.63
+O02007,2024-03-24,C0101,ella.hensley101@thistlewoodmail.example,Ithaca,web,completed,9,235.84
+O02175,2024-03-24,C0159,julian.mercer159@thistlewoodmail.example,Madison,web,completed,11,133.66
+O02538,2024-03-24,C0079,benjamin.norwood079@thistlewoodmail.example,Ithaca,web,completed,6,145.69
+O03158,2024-03-24,C0177,emily.gallo177@thistlewoodmail.example,Charleston,phone,completed,6,340.2
+O03882,2024-03-24,C0002,ava.dunmore002@thistlewoodmail.example,Santa Fe,web,completed,8,193.87
+O03959,2024-03-24,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,web,completed,13,210.47
+O03962,2024-03-24,C0127,chloe.quintero127@thistlewoodmail.example,Boulder,web,completed,13,234.66
+O03969,2024-03-24,C0022,noah.gallo022@thistlewoodmail.example,Bend,web,completed,6,361.6
+O04702,2024-03-24,C0020,sebastian.yates020@thistlewoodmail.example,Asheville,store,completed,9,207.56
+O05806,2024-03-24,C0074,ava.quintero074@thistlewoodmail.example,Yellow Springs,web,completed,2,296.59
+O00110,2024-03-25,C0071,zoey.dunmore071@thistlewoodmail.example,Ithaca,phone,completed,6,278.22
+O00595,2024-03-25,C0135,chloe.hensley135@thistlewoodmail.example,Lancaster,web,completed,4,68.48
+O03297,2024-03-25,C0033,ella.parrish033@thistlewoodmail.example,Northampton,web,completed,9,109.74
+O03595,2024-03-25,C0080,david.hensley080@thistlewoodmail.example,Taos,web,completed,5,181.52
+O04755,2024-03-25,C0019,owen.everhart019@thistlewoodmail.example,Providence,web,completed,3,349.98
+O00484,2024-03-26,C0118,isabella.holloway118@thistlewoodmail.example,Boulder,web,completed,3,380.87
+O01439,2024-03-26,C0180,owen.holloway180@thistlewoodmail.example,Athens,web,completed,1,67.39
+O03313,2024-03-26,C0092,jack.zimmerman092@thistlewoodmail.example,Fort Collins,store,completed,1,417.94
+O04616,2024-03-26,C0034,harper.ostrander034@thistlewoodmail.example,Chattanooga,store,completed,13,199.62
+O05677,2024-03-26,C0039,matthew.ingram039@thistlewoodmail.example,Eugene,store,completed,6,63.38
+O00119,2024-03-27,C0176,sebastian.parrish176@thistlewoodmail.example,Fort Collins,web,completed,10,327.57
+O01006,2024-03-27,C0118,isabella.holloway118@thistlewoodmail.example,Boulder,web,completed,6,243.25
+O01876,2024-03-27,C0131,isaac.bishop131@thistlewoodmail.example,Boulder,phone,completed,2,358.81
+O01881,2024-03-27,C0062,owen.nolan062@thistlewoodmail.example,Portland,web,completed,10,330.09
+O04313,2024-03-27,C0116,levi.hensley116@thistlewoodmail.example,Petaluma,web,completed,1,28.94
+O04521,2024-03-27,C0109,hannah.jasper109@thistlewoodmail.example,Duluth,web,completed,14,249.08
+O04527,2024-03-27,C0023,ava.yates023@thistlewoodmail.example,Sedona,web,completed,5,252.47
+O04555,2024-03-27,C0023,ava.yates023@thistlewoodmail.example,Sedona,web,completed,10,180.99
+O04560,2024-03-27,C0049,matthew.thatcher049@thistlewoodmail.example,Bozeman,web,completed,4,236.95
+O05918,2024-03-27,C0164,michael.yates164@thistlewoodmail.example,Bend,web,completed,9,166.73
+O01380,2024-03-28,C0121,sophia.norwood121@thistlewoodmail.example,Taos,phone,completed,10,367.49
+O01539,2024-03-28,C0079,benjamin.norwood079@thistlewoodmail.example,Ithaca,web,completed,10,223.7
+O02406,2024-03-28,C0062,owen.nolan062@thistlewoodmail.example,Portland,web,completed,3,170.23
+O02702,2024-03-28,C0005,john.bishop005@thistlewoodmail.example,Charleston,web,completed,11,249.81
+O03533,2024-03-28,C0162,ella.nolan162@thistlewoodmail.example,Petaluma,web,completed,5,271.08
+O03771,2024-03-28,C0091,carter.diaz091@thistlewoodmail.example,Savannah,web,completed,12,193.62
+O03889,2024-03-28,C0087,lily.diaz087@thistlewoodmail.example,Duluth,web,completed,4,359.8
+O03906,2024-03-28,C0166,michael.whitfield166@thistlewoodmail.example,Savannah,web,completed,10,177.55
+O03909,2024-03-28,C0104,noah.grant104@thistlewoodmail.example,Eugene,web,completed,7,200.29
+O03920,2024-03-28,C0098,elijah.diaz098@thistlewoodmail.example,Charleston,store,completed,10,153.34
+O04349,2024-03-28,C0018,riley.bennett018@thistlewoodmail.example,Sedona,store,completed,11,128.63
+O04918,2024-03-28,C0170,sebastian.jasper170@thistlewoodmail.example,Boise,web,cancelled,9,55.74
+O05027,2024-03-28,C0127,chloe.quintero127@thistlewoodmail.example,Boulder,phone,completed,1,345.2
+O05640,2024-03-28,C0144,joseph.iversen144@thistlewoodmail.example,Yellow Springs,store,completed,7,212.64
+O05868,2024-03-28,C0015,david.everhart015@thistlewoodmail.example,Madison,web,completed,9,243.17
+O00476,2024-03-29,C0106,chloe.osei106@thistlewoodmail.example,Eugene,store,completed,7,119.6
+O00633,2024-03-29,C0085,henry.thatcher085@thistlewoodmail.example,Fort Collins,store,completed,2,34.75
+O03347,2024-03-29,C0048,joseph.underwood048@thistlewoodmail.example,Eugene,web,cancelled,13,154.83
+O04215,2024-03-29,C0179,harper.bennett179@thistlewoodmail.example,Missoula,web,completed,9,372.13
+O04230,2024-03-29,C0133,chloe.jasper133@thistlewoodmail.example,Charleston,web,completed,6,169.66
+O05523,2024-03-29,C0119,owen.thatcher119@thistlewoodmail.example,Missoula,web,completed,5,29.64
+O00299,2024-03-30,C0141,amelia.chandler141@thistlewoodmail.example,Petaluma,phone,completed,5,29.64
+O00324,2024-03-30,C0081,amelia.jasper081@thistlewoodmail.example,Ann Arbor,web,completed,5,443.61
+O00455,2024-03-30,C0139,isaac.carter139@thistlewoodmail.example,Ann Arbor,store,completed,8,38.11
+O00493,2024-03-30,C0164,michael.yates164@thistlewoodmail.example,Bend,store,completed,8,15.96
+O01766,2024-03-30,C0095,lily.keller095@thistlewoodmail.example,Santa Fe,web,completed,7,308.58
+O01864,2024-03-30,C0127,chloe.quintero127@thistlewoodmail.example,Boulder,store,completed,4,329.03
+O02902,2024-03-30,C0115,isabella.iversen115@thistlewoodmail.example,Charleston,store,completed,10,200.22
+O03794,2024-03-30,C0177,emily.gallo177@thistlewoodmail.example,Charleston,web,completed,6,209.43
+O04048,2024-03-30,C0167,sofia.parrish167@thistlewoodmail.example,Northampton,web,completed,4,235.67
+O05134,2024-03-30,C0169,chloe.vance169@thistlewoodmail.example,Providence,phone,completed,11,146.85
+O00228,2024-03-31,C0098,elijah.diaz098@thistlewoodmail.example,Charleston,web,completed,12,76.55
+O00403,2024-03-31,C0047,owen.hensley047@thistlewoodmail.example,Asheville,store,pending,7,263.0
+O01244,2024-03-31,C0058,david.vance058@thistlewoodmail.example,Petaluma,web,completed,3,99.75
+O01288,2024-03-31,C0001,ava.gallo001@thistlewoodmail.example,Traverse City,web,completed,9,286.18
+O01450,2024-03-31,C0039,matthew.ingram039@thistlewoodmail.example,Eugene,phone,pending,6,194.5
+O01697,2024-03-31,C0024,michael.sawyer024@thistlewoodmail.example,Yellow Springs,web,completed,13,196.75
+O02032,2024-03-31,C0064,evelyn.lambert064@thistlewoodmail.example,Portland,web,completed,12,169.99
+O02330,2024-03-31,C0068,harper.ostrander068@thistlewoodmail.example,Duluth,phone,completed,2,29.52
+O03704,2024-03-31,C0003,chloe.gallo003@thistlewoodmail.example,Athens,web,completed,7,283.98
+O04341,2024-03-31,C0058,david.vance058@thistlewoodmail.example,Petaluma,store,completed,3,162.07
+O04586,2024-03-31,C0111,isabella.fairweather111@thistlewoodmail.example,Asheville,web,pending,16,220.19
+O05598,2024-03-31,C0032,isabella.quintero032@thistlewoodmail.example,Ann Arbor,web,completed,4,211.23
+O02003,2024-03-10,C0082,harper.whitfield082@thistlewoodmail.example,Ithaca,store,completed,7,346.67
+O03297,2024-03-25,C0033,ella.parrish033@thistlewoodmail.example,Northampton,web,completed,9,109.74
+O02420,2024-02-02,C0089,gabriel.marsh089@thistlewoodmail.example,Bend,web,completed,9,260.11

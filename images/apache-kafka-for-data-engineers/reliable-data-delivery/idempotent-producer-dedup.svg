@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>420 physical messages for 60 logical sends, without dedup -- exactly 60 with it</title>
+  <desc>A producer sends 60 logical messages under an absurdly tight request.timeout.ms, causing repeated retries even though the broker is actually succeeding within its real replication time. Without enable.idempotence, the topic receives 420 physical messages for 60 logical sends -- every retry becomes a real duplicate, invisible to the application since every delivery callback still reports success. With enable.idempotence=True, the broker tracks a producer ID and per-partition sequence number for every message, recognizes each retry as a repeat of one already appended, and the topic ends up with exactly 60 messages -- an exact match, every run.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Same 60 Sends, Same Tight Timeout, Opposite Result on the Topic</text>
+
+  <!-- Without idempotence -->
+  <rect x="40" y="55" width="490" height="230" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="285" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#742a2a">WITHOUT enable.idempotence</text>
+  <text x="285" y="100" text-anchor="middle" font-size="10" fill="#742a2a">request.timeout.ms=1 -- gives up before the ack arrives</text>
+
+  <text x="285" y="126" text-anchor="middle" font-size="10.5" fill="#742a2a">60 delivery callbacks: all report success</text>
+  <text x="285" y="144" text-anchor="middle" font-size="10.5" fill="#742a2a">broker has no way to recognize a retry as a repeat</text>
+
+  <rect x="70" y="162" width="430" height="70" rx="6" fill="#742a2a" />
+  <text x="285" y="192" text-anchor="middle" font-size="20" font-weight="700" font-family="Menlo, monospace" fill="#fed7d7">420 messages</text>
+  <text x="285" y="216" text-anchor="middle" font-size="10.5" fill="#fed7d7">landed on the topic, for 60 logical sends</text>
+
+  <text x="285" y="256" text-anchor="middle" font-size="10.5" fill="#742a2a">a different run measured 540 instead --</text>
+  <text x="285" y="272" text-anchor="middle" font-size="10.5" fill="#742a2a">always dramatically more than 60</text>
+
+  <!-- With idempotence -->
+  <rect x="570" y="55" width="490" height="230" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="815" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#22543d">WITH enable.idempotence=True</text>
+  <text x="815" y="100" text-anchor="middle" font-size="10" fill="#22543d">identical timeout, identical retries</text>
+
+  <text x="815" y="126" text-anchor="middle" font-size="10.5" fill="#22543d">producer ID + per-partition sequence number</text>
+  <text x="815" y="144" text-anchor="middle" font-size="10.5" fill="#22543d">on every message, checked by the broker</text>
+
+  <rect x="600" y="162" width="430" height="70" rx="6" fill="#22543d" />
+  <text x="815" y="192" text-anchor="middle" font-size="20" font-weight="700" font-family="Menlo, monospace" fill="#c6f6d5">60 messages</text>
+  <text x="815" y="216" text-anchor="middle" font-size="10.5" fill="#c6f6d5">landed on the topic, for 60 logical sends</text>
+
+  <text x="815" y="256" text-anchor="middle" font-size="10.5" fill="#22543d">every retry recognized and dropped --</text>
+  <text x="815" y="272" text-anchor="middle" font-size="10.5" fill="#22543d">an exact match, every single run</text>
+
+  <text x="550" y="325" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">enable.idempotence prevents duplicate writes from producer retries -- nothing more</text>
+  <text x="550" y="350" text-anchor="middle" font-size="11" fill="#4a5568">It says nothing about consumer-side processing, which is still governed by the commit-timing</text>
+  <text x="550" y="368" text-anchor="middle" font-size="11" fill="#4a5568">choice Lesson 1 proved directly -- "idempotent" here means the write path only.</text>
+</svg>

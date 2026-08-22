@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="480" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">The Same File, Two Real Outcomes</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">zone_check.py, run without changing one character of it</text>
+
+<!-- Panel A: host python -->
+<rect x="40" y="90" width="420" height="330" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="250" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#c53030">Teammate's laptop</text>
+<text x="250" y="142" text-anchor="middle" font-size="12" fill="#742a2a">whatever Python happened to ship with macOS</text>
+
+<rect x="70" y="164" width="360" height="30" rx="6" fill="#fed7d7" stroke="#c53030" stroke-width="1"/>
+<text x="250" y="184" text-anchor="middle" font-size="12" font-weight="700" fill="#742a2a">/usr/bin/python3 &#8594; Python 3.9.6</text>
+
+<rect x="70" y="210" width="360" height="150" rx="6" fill="#1a202c"/>
+<text x="88" y="232" font-size="11" fill="#f7fafc" font-family="Menlo, monospace">$ /usr/bin/python3 zone_check.py</text>
+<text x="88" y="252" font-size="10.5" fill="#feb2b2" font-family="Menlo, monospace">Traceback (most recent call last):</text>
+<text x="88" y="270" font-size="10.5" fill="#feb2b2" font-family="Menlo, monospace">  File "zone_check.py", line 10, in</text>
+<text x="88" y="288" font-size="10.5" fill="#feb2b2" font-family="Menlo, monospace">    is_valid_zone</text>
+<text x="88" y="306" font-size="10.5" fill="#feb2b2" font-family="Menlo, monospace">TypeError: unsupported operand</text>
+<text x="88" y="324" font-size="10.5" fill="#feb2b2" font-family="Menlo, monospace">type(s) for |: 'type' and 'type'</text>
+<text x="88" y="344" font-size="10.5" fill="#fc8181" font-weight="700" font-family="Menlo, monospace">exit code 1</text>
+
+<text x="250" y="392" text-anchor="middle" font-size="12" fill="#742a2a">int | str inside isinstance() needs Python 3.10+</text>
+<text x="250" y="410" text-anchor="middle" font-size="11" fill="#742a2a">the script was written and tested on a newer machine</text>
+
+<!-- Panel B: container -->
+<rect x="500" y="90" width="420" height="330" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="710" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">Same laptop, one extra step</text>
+<text x="710" y="142" text-anchor="middle" font-size="12" fill="#22543d">the exact runtime the author used, shipped in the image</text>
+
+<rect x="530" y="164" width="360" height="30" rx="6" fill="#c6f6d5" stroke="#276749" stroke-width="1"/>
+<text x="710" y="184" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">python:3.13-slim &#8594; Python 3.13.2 (in the image)</text>
+
+<rect x="530" y="210" width="360" height="150" rx="6" fill="#1a202c"/>
+<text x="548" y="232" font-size="10.5" fill="#f7fafc" font-family="Menlo, monospace">$ docker run --rm -v "$(pwd)":/app \</text>
+<text x="548" y="250" font-size="10.5" fill="#f7fafc" font-family="Menlo, monospace">    -w /app python:3.13-slim \</text>
+<text x="548" y="268" font-size="10.5" fill="#f7fafc" font-family="Menlo, monospace">    python zone_check.py</text>
+<text x="548" y="296" font-size="10.5" fill="#9ae6b4" font-family="Menlo, monospace">zone 142 valid: True</text>
+<text x="548" y="314" font-size="10.5" fill="#9ae6b4" font-family="Menlo, monospace">zone 'JFK' valid: True</text>
+<text x="548" y="344" font-size="10.5" fill="#68d391" font-weight="700" font-family="Menlo, monospace">exit code 0</text>
+
+<text x="710" y="392" text-anchor="middle" font-size="12" fill="#22543d">the container carries its own Python &#8212; the host's</text>
+<text x="710" y="410" text-anchor="middle" font-size="11" fill="#22543d">version never enters the picture</text>
+
+<text x="480" y="450" text-anchor="middle" font-size="12" fill="#718096">Neither run touched zone_check.py. The only thing that changed was which Python read it &#8212; that gap is the whole "works on my machine" problem.</text>
+</svg>

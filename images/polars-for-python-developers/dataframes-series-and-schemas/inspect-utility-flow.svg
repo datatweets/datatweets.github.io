@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Function, Two Real Tables, Two Real Reports</text>
+
+  <rect x="40" y="56" width="180" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="130" y="78" text-anchor="middle" font-size="10.5" fill="#2b6cb0">thistlewood_customers.csv</text>
+  <text x="130" y="94" text-anchor="middle" font-size="9" fill="#4a5568">180 rows, 8 columns</text>
+
+  <rect x="40" y="118" width="180" height="46" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.3" />
+  <text x="130" y="140" text-anchor="middle" font-size="10.5" fill="#6b46c1">thistlewood_orders.csv</text>
+  <text x="130" y="156" text-anchor="middle" font-size="9" fill="#4a5568">6,000 rows, 5 columns</text>
+
+  <line x1="220" y1="79" x2="290" y2="120" stroke="#4299e1" stroke-width="1.3" marker-end="url(#i1)" />
+  <line x1="220" y1="141" x2="290" y2="130" stroke="#9f7aea" stroke-width="1.3" marker-end="url(#i2)" />
+  <defs>
+    <marker id="i1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4299e1"/></marker>
+    <marker id="i2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#9f7aea"/></marker>
+  </defs>
+
+  <rect x="292" y="96" width="150" height="60" rx="10" fill="#f7fafc" stroke="#1a202c" stroke-width="1.5" />
+  <text x="367" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">inspect(df)</text>
+  <text x="367" y="138" text-anchor="middle" font-size="9" fill="#4a5568">same function, no edits</text>
+
+  <line x1="442" y1="126" x2="500" y2="126" stroke="#1a202c" stroke-width="1.3" marker-end="url(#i3)" />
+  <defs>
+    <marker id="i3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#1a202c"/></marker>
+  </defs>
+
+  <rect x="500" y="56" width="180" height="140" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="590" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">printed report</text>
+  <text x="514" y="96" font-size="9.5" fill="#2d3748">shape: rows x columns</text>
+  <text x="514" y="114" font-size="9.5" fill="#2d3748">schema: column -&gt; dtype</text>
+  <text x="514" y="132" font-size="9.5" fill="#2d3748">nulls: total + per column</text>
+  <text x="514" y="150" font-size="9.5" fill="#2d3748">sample: first N rows</text>
+  <text x="514" y="176" font-size="9" fill="#718096">same four sections,</text>
+  <text x="514" y="190" font-size="9" fill="#718096">real values every time</text>
+
+  <rect x="60" y="220" width="290" height="150" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="205" y="242" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">customers report</text>
+  <text x="76" y="262" font-size="9.5" fill="#2d3748">shape: 180 rows x 8 columns</text>
+  <text x="76" y="280" font-size="9.5" fill="#2d3748">nulls: 0 total</text>
+  <text x="76" y="298" font-size="9.5" fill="#2d3748">columns: customer_id, first_name,</text>
+  <text x="76" y="314" font-size="9.5" fill="#2d3748">  email, city, state, segment, …</text>
+  <text x="76" y="340" font-size="9.5" fill="#4a5568">sample shows customer rows</text>
+  <text x="76" y="356" font-size="9.5" fill="#4a5568">and retail/wholesale segments</text>
+
+  <rect x="370" y="220" width="290" height="150" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.3" />
+  <text x="515" y="242" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">orders report</text>
+  <text x="386" y="262" font-size="9.5" fill="#2d3748">shape: 6,000 rows x 5 columns</text>
+  <text x="386" y="280" font-size="9.5" fill="#2d3748">nulls: 0 total</text>
+  <text x="386" y="298" font-size="9.5" fill="#2d3748">columns: order_id, order_date,</text>
+  <text x="386" y="314" font-size="9.5" fill="#2d3748">  customer_id, channel, status</text>
+  <text x="386" y="340" font-size="9.5" fill="#4a5568">sample shows order rows and</text>
+  <text x="386" y="356" font-size="9.5" fill="#4a5568">web/store/phone channels</text>
+
+  <text x="360" y="400" text-anchor="middle" font-size="10.5" fill="#718096">Same call, genuinely different real output -- proof the utility reads the DataFrame it's given, not a hardcoded shape.</text>
+</svg>

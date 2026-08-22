@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="titleq descq">
+  <title id="titleq">The RAG quality quartet as a two-by-two</title>
+  <desc id="descq">A two-by-two grid of the four RAG evaluation signals, split into a retriever side and a generator side. The left blue column is the retriever, answering "did we fetch the right context?" and holds two cards: Context precision, defined as relevant retrieved divided by total retrieved (did we pull junk alongside the good page?), and Context recall, defined as relevant retrieved divided by total relevant (did we miss a needed page?). The right green column is the generator, answering "did we use the context well?" and holds two cards: Faithfulness, meaning every claim is supported by the retrieved context with nothing invented, and Answer relevance, meaning the answer actually addresses the question and is not evasive or off topic. A footer band explains that whichever quadrant drops localizes the fix: context recall of zero points to fixing retrieval, while low faithfulness points to fixing the prompt.</desc>
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="440" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">The RAG quality quartet: a 2&#215;2 that localizes the failure</text>
+  <text x="440" y="62" text-anchor="middle" font-size="14" fill="#4a5568">Four signals, split by which half of the pipeline they score</text>
+
+  <!-- Retriever column -->
+  <rect x="40" y="88" width="380" height="60" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="230" y="118" text-anchor="middle" font-size="17" font-weight="700" fill="#2b6cb0">RETRIEVER</text>
+  <text x="230" y="138" text-anchor="middle" font-size="13" fill="#2b6cb0">Did we fetch the right context?</text>
+
+  <!-- Context precision card -->
+  <rect x="40" y="164" width="380" height="150" rx="8" fill="#ffffff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="60" y="194" font-size="16" font-weight="700" fill="#2b6cb0">Context precision</text>
+  <text x="60" y="222" font-size="13" fill="#4a5568">relevant retrieved &#247; total retrieved</text>
+  <text x="60" y="248" font-size="13" fill="#718096">Of the chunks we pulled, how many were</text>
+  <text x="60" y="266" font-size="13" fill="#718096">actually useful &#8212; or is there junk</text>
+  <text x="60" y="284" font-size="13" fill="#718096">alongside the good page?</text>
+  <text x="60" y="306" font-size="12" font-style="italic" fill="#c05621">low = noisy retrieval</text>
+
+  <!-- Context recall card -->
+  <rect x="40" y="330" width="380" height="150" rx="8" fill="#ffffff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="60" y="360" font-size="16" font-weight="700" fill="#2b6cb0">Context recall</text>
+  <text x="60" y="388" font-size="13" fill="#4a5568">relevant retrieved &#247; total relevant</text>
+  <text x="60" y="414" font-size="13" fill="#718096">Of the chunks we needed, did we get</text>
+  <text x="60" y="432" font-size="13" fill="#718096">them all &#8212; or did we miss a page the</text>
+  <text x="60" y="450" font-size="13" fill="#718096">answer depended on?</text>
+  <text x="60" y="472" font-size="12" font-style="italic" fill="#c53030">0 = the answer is doomed before the LLM runs</text>
+
+  <!-- Generator column -->
+  <rect x="460" y="88" width="380" height="60" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="650" y="118" text-anchor="middle" font-size="17" font-weight="700" fill="#276749">GENERATOR</text>
+  <text x="650" y="138" text-anchor="middle" font-size="13" fill="#276749">Did we use the context well?</text>
+
+  <!-- Faithfulness card -->
+  <rect x="460" y="164" width="380" height="150" rx="8" fill="#ffffff" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="480" y="194" font-size="16" font-weight="700" fill="#276749">Faithfulness</text>
+  <text x="480" y="222" font-size="13" fill="#4a5568">every claim supported by the context</text>
+  <text x="480" y="248" font-size="13" fill="#718096">Does the answer stick to the retrieved</text>
+  <text x="480" y="266" font-size="13" fill="#718096">pages, or does it invent facts the</text>
+  <text x="480" y="284" font-size="13" fill="#718096">context never stated?</text>
+  <text x="480" y="306" font-size="12" font-style="italic" fill="#c05621">low = hallucination</text>
+
+  <!-- Answer relevance card -->
+  <rect x="460" y="330" width="380" height="150" rx="8" fill="#ffffff" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="480" y="360" font-size="16" font-weight="700" fill="#276749">Answer relevance</text>
+  <text x="480" y="388" font-size="13" fill="#4a5568">does the answer address the question?</text>
+  <text x="480" y="414" font-size="13" fill="#718096">A grounded, faithful answer can still</text>
+  <text x="480" y="432" font-size="13" fill="#718096">be off-topic or evasive and never</text>
+  <text x="480" y="450" font-size="13" fill="#718096">actually answer what was asked.</text>
+  <text x="480" y="472" font-size="12" font-style="italic" fill="#c05621">low = evasive / off-topic</text>
+
+  <!-- Footer band -->
+  <rect x="40" y="500" width="800" height="44" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5"/>
+  <text x="440" y="520" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">Whichever quadrant drops localizes the fix</text>
+  <text x="440" y="538" text-anchor="middle" font-size="12.5" fill="#4a5568">context recall = 0 &#8594; fix retrieval &#160;&#160;&#8226;&#160;&#160; faithfulness low &#8594; fix the prompt &#160;&#160;&#8226;&#160;&#160; relevance low &#8594; the answer dodged the question</text>
+</svg>

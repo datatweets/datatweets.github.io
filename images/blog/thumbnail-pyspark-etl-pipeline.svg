@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">PySpark ETL pipeline thumbnail</title>
+  <desc id="desc">A minimal thumbnail for an article on building a PySpark ETL pipeline: a CSV source and a JSON source both pass through a schema check, are unioned into one shape, and land in a partitioned Parquet warehouse marked safe to rerun.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">TWO SOURCES, ONE SCHEMA</text>
+    <text x="90" y="392" font-size="150" font-weight="700" fill="#1b1f24">Union</text>
+    <rect x="100" y="424" width="340" height="12" rx="6" fill="#0067c0"/>
+    <text x="98" y="506" font-size="35" font-weight="500" fill="#59636e">csv &#183; json &#183; parquet</text>
+  </g>
+  <g transform="translate(672 168)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <g fill="#e3f0fa" stroke="#0067c0" stroke-width="2">
+      <rect x="0" y="0" width="88" height="48" rx="10"/>
+      <rect x="0" y="68" width="88" height="48" rx="10"/>
+    </g>
+    <g font-size="16" font-weight="700" fill="#0067c0" text-anchor="middle" font-family="'SFMono-Regular', Consolas, Menlo, monospace">
+      <text x="44" y="30">CSV</text>
+      <text x="44" y="98">{ }</text>
+    </g>
+    <path d="M92 24H130C148 24 148 58 166 58" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+    <path d="M92 92H130C148 92 148 58 166 58" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+    <rect x="166" y="26" width="118" height="64" rx="14" fill="#fdeede" stroke="#59636e" stroke-width="3"/>
+    <text x="225" y="54" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1f24">SCHEMA</text>
+    <text x="225" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1f24">CHECK</text>
+    <path d="M284 58H332" fill="none" stroke="#0067c0" stroke-width="6" stroke-linecap="round"/>
+    <g transform="translate(332 8)">
+      <path d="M0 20 A55 14 0 0 1 110 20 V96 A55 14 0 0 1 0 96 Z" fill="#e6f4e6" stroke="#0067c0" stroke-width="3"/>
+      <ellipse cx="55" cy="20" rx="55" ry="14" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+      <text x="55" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#1b1f24">PARQUET</text>
+      <line x1="10" y1="70" x2="100" y2="70" stroke="#0067c0" stroke-width="2" stroke-dasharray="3 5"/>
+      <text x="30" y="90" text-anchor="middle" font-size="13" font-weight="600" fill="#59636e">A</text>
+      <text x="80" y="90" text-anchor="middle" font-size="13" font-weight="600" fill="#59636e">B</text>
+    </g>
+    <g transform="translate(340 130)">
+      <rect x="0" y="0" width="118" height="34" rx="17" fill="#0067c0"/>
+      <text x="59" y="23" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">IDEMPOTENT</text>
+    </g>
+  </g>
+</svg>

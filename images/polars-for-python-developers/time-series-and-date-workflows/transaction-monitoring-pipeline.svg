@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="440" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">build_transaction_report() -- Full Pipeline</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">Every tool this module built, combined into one function</text>
+
+  <rect x="20" y="66" width="150" height="52" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="95" y="88" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">1. Convert to local</text>
+  <text x="95" y="104" text-anchor="middle" font-size="8" fill="#1a202c">Lesson 5: per-tz groups</text>
+
+  <rect x="190" y="66" width="150" height="52" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="265" y="88" text-anchor="middle" font-size="9.5" font-weight="700" fill="#6b46c1">2. Bucket by local day</text>
+  <text x="265" y="104" text-anchor="middle" font-size="8" fill="#1a202c">Lesson 3: dt.truncate("1d")</text>
+
+  <rect x="360" y="66" width="150" height="52" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="435" y="88" text-anchor="middle" font-size="9.5" font-weight="700" fill="#9c4221">3. Roll a 30d baseline</text>
+  <text x="435" y="104" text-anchor="middle" font-size="8" fill="#1a202c">Lesson 4: .rolling(period=)</text>
+
+  <rect x="530" y="66" width="170" height="52" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="615" y="88" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">4. Flag vs. baseline</text>
+  <text x="615" y="104" text-anchor="middle" font-size="8" fill="#1a202c">revenue / baseline &gt;= 1.5</text>
+
+  <line x1="170" y1="92" x2="190" y2="92" stroke="#a0aec0" stroke-width="1.4" />
+  <line x1="340" y1="92" x2="360" y2="92" stroke="#a0aec0" stroke-width="1.4" />
+  <line x1="510" y1="92" x2="530" y2="92" stroke="#a0aec0" stroke-width="1.4" />
+
+  <rect x="60" y="140" width="600" height="60" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">731 local-day buckets, revenue sums to $9,195,043.62</text>
+  <text x="360" y="182" text-anchor="middle" font-size="9.5" fill="#22543d">91 of 731 days (12.4%) flagged at 1.5x or more their own 30-day rolling baseline</text>
+
+  <rect x="60" y="216" width="600" height="66" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="360" y="238" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">Local-time bucketing changes which day tops the list</text>
+  <text x="360" y="256" text-anchor="middle" font-size="9.5" fill="#2c5282">Top flagged day: 2024-09-05 local ($31,721.92, 2.36x) -- not the same day Lesson 4's</text>
+  <text x="360" y="272" text-anchor="middle" font-size="9.5" fill="#2c5282">UTC-only rolling analysis found, since local time shifts orders across day boundaries</text>
+
+  <rect x="60" y="298" width="600" height="70" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="320" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">Revenue by channel, same $9,195,043.62 total</text>
+  <text x="360" y="340" text-anchor="middle" font-size="9.5" fill="#7b341e">web $5,999,098.18 (3,895 orders) -- store $2,287,108.72 (1,516) -- phone $908,836.72 (589)</text>
+  <text x="360" y="356" text-anchor="middle" font-size="9.5" fill="#7b341e">three independent breakdowns, each reconciled on its own</text>
+
+  <rect x="60" y="384" width="600" height="40" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="408" text-anchor="middle" font-size="9.5" fill="#c53030">Every function argument (rolling_period, flag_threshold) is verified with a real value before shipping the default.</text>
+</svg>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Certificate of Completion — Jordan Rivera — DATATWEETS</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:        #14625e;
+    --primary-hover:  #0d4341;
+    --primary-border: #a1c0bf;
+    --paper:          #ffffff;
+    --text:           #1d2d35;
+    --muted:          rgba(29,45,53,.75);
+    --faint:          rgba(29,45,53,.5);
+    --border:         #dee2e6;
+    --page-bg:        #f8f9fa;
+    --heading-font:   'Archivo',"IBM Plex Sans",system-ui,sans-serif;
+    --body-font:      "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:           "IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    background:var(--page-bg);
+    font-family:var(--body-font);
+    color:var(--text);
+    display:grid; place-items:center;
+    padding:4vmin;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .cert{
+    container-type:inline-size;
+    width:min(1140px,100%);
+    aspect-ratio:297/210;
+    background:var(--paper);
+    position:relative;
+    border-radius:.5rem;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,.08), 0 18px 50px -12px rgba(29,45,53,.22);
+  }
+  .frame{
+    position:absolute;
+    inset:2.6cqw;
+    border:1px solid var(--primary);
+    outline:1px solid var(--primary-border);
+    outline-offset:.42cqw;
+    border-radius:.5cqw;
+    display:flex; flex-direction:column;
+    padding:2.3cqw 3.4cqw 2cqw;
+  }
+  .sample-tag{
+    position:absolute;
+    top:2cqw; right:-5.2cqw;
+    transform:rotate(38deg);
+    background:var(--primary);
+    color:#fff;
+    font-family:var(--mono);
+    font-size:.95cqw;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    padding:.55cqw 7cqw .5cqw;
+  }
+  .masthead{
+    display:flex; align-items:baseline; justify-content:space-between;
+    padding-bottom:1.1cqw;
+    border-bottom:1px solid var(--border);
+  }
+  .wordmark{
+    font-family:var(--heading-font);
+    font-weight:700; font-size:1.6cqw;
+    letter-spacing:.18em; text-transform:uppercase;
+  }
+  .wordmark span{ color:var(--faint); font-family:var(--body-font); font-weight:400; letter-spacing:.04em; text-transform:none; font-size:1.1cqw; }
+  .cert-no{ font-family:var(--mono); font-size:1.05cqw; color:var(--muted); letter-spacing:.05em; white-space:nowrap; }
+  .body{
+    flex:1;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center;
+    gap:1.05cqw;
+    padding:.5cqw 0;
+    min-height:0;
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:1.15cqw; font-weight:500;
+    letter-spacing:.4em; text-transform:uppercase;
+    color:var(--primary);
+  }
+  .eyebrow::after{ content:""; display:block; width:3.6cqw; height:2px; background:var(--primary); border-radius:2px; margin:1cqw auto 0; }
+  .certifies{ font-size:1.45cqw; font-style:italic; color:var(--muted); }
+  .recipient{
+    font-family:var(--heading-font);
+    font-weight:700;
+    font-size:clamp(28px, 6.2cqw, 74px);
+    line-height:1.08;
+    letter-spacing:-.015em;
+    padding:0 2.2cqw .9cqw;
+    border-bottom:1px solid var(--primary-border);
+    max-width:88cqw;
+    word-break:break-word;
+  }
+  .completed{ font-size:1.22cqw; color:var(--muted); max-width:60cqw; line-height:1.55; margin-top:.35cqw; }
+  .course{
+    font-family:var(--heading-font);
+    font-weight:600;
+    font-size:clamp(16px, 2.65cqw, 32px);
+    line-height:1.2;
+    max-width:76cqw;
+  }
+  .issuance{ font-size:1.02cqw; color:var(--faint); max-width:62cqw; line-height:1.5; }
+  .meta{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:2.2cqw; align-items:end; padding:1.3cqw 1cqw 1.45cqw; }
+  .meta-cell{ text-align:center; }
+  .meta-label{ font-family:var(--mono); font-size:.82cqw; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--faint); margin-top:.55cqw; }
+  .meta-value{ font-size:1.4cqw; font-weight:600; padding-bottom:.55cqw; border-bottom:1px solid var(--border); }
+  .meta-value.signature{ font-family:var(--heading-font); font-style:italic; font-weight:500; font-size:1.75cqw; color:var(--primary-hover); }
+  .fineprint{ margin-top:1.1cqw; padding-top:1.05cqw; border-top:1px solid var(--primary); font-size:.85cqw; line-height:1.55; color:var(--faint); text-align:left; }
+  .fineprint strong{ color:var(--muted); font-weight:600; }
+  @media print{
+    @page{ size:A4 landscape; margin:0; }
+    body{ background:#fff; padding:0; display:block; }
+    .cert{ width:297mm; height:210mm; aspect-ratio:auto; box-shadow:none; border-radius:0; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none!important; transition:none!important; } }
+</style>
+</head>
+<body>
+<main class="cert" aria-label="DATATWEETS certificate of completion">
+  <div class="frame">
+    <header class="masthead">
+      <div class="wordmark">Datatweets <span>· datatweets.com</span></div>
+      <div class="cert-no">CERT&nbsp;NO.&nbsp;DT-7C4B1A9E</div>
+    </header>
+    <section class="body">
+      <p class="eyebrow">Certificate of Completion</p>
+      <p class="certifies">This certifies that</p>
+      <h1 class="recipient">Jordan Rivera</h1>
+      <p class="completed">has completed all 14 lessons — each marked done on the site itself, not merely delivered by email — and produced the pilot dossier artifacts of the free course</p>
+      <h2 class="course">Agentic AI Organizational Transformation</h2>
+      <p class="issuance">Issued automatically by DATATWEETS upon confirmation of the final lesson.</p>
+    </section>
+    <section class="meta" aria-label="Certificate details">
+      <div class="meta-cell">
+        <div class="meta-value">February 9, 2026</div>
+        <div class="meta-label">Issue date</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-value">14 / 14 lessons · 8 modules</div>
+        <div class="meta-label">Completion</div>
+      </div>
+      <div class="meta-cell">
+        <div class="meta-value signature">Mehdi Lotfinejad</div>
+        <div class="meta-label">Instructor, DATATWEETS</div>
+      </div>
+    </section>
+    <footer>
+      <p class="fineprint">
+        This is a <strong>DATATWEETS certificate of completion</strong> — evidence that the named person finished the course and produced the dossier artifacts. It is <strong>not</strong> academic credit, a CEU, a licensing credential, an accredited professional certification, a university or institutional credential of any kind, or an ISO/IEC 42001 certification.
+      </p>
+    </footer>
+  </div>
+  <div class="sample-tag">Sample</div>
+</main>
+</body></html>

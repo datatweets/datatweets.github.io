@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Calculate Tail Probabilities with SciPy in Python</title>
+  <desc id="desc">A DataTweets tutorial thumbnail with the words Tail Probabilities beside a right-skewed density curve. The area beyond a cutoff is shaded and labeled as the survival probability P(T greater than x).</desc>
+
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="36" font-weight="600" letter-spacing="1.2" fill="#59636e">SCIPY PROBABILITY</text>
+    <text x="90" y="292" font-size="92" font-weight="700" fill="#1b1f24">TAIL</text>
+    <text x="90" y="392" font-size="72" font-weight="700" fill="#1b1f24">PROBABILITIES</text>
+    <rect x="96" y="429" width="366" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="504" font-size="32" font-weight="500" fill="#59636e">CDF &#183; SF &#183; PPF</text>
+  </g>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="708" y="112" width="402" height="442" rx="24" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+    <text x="746" y="166" font-size="24" font-weight="600" letter-spacing="1" fill="#59636e">UPPER-TAIL AREA</text>
+
+    <line x1="752" y1="464" x2="1066" y2="464" stroke="#59636e" stroke-width="2"/>
+    <line x1="752" y1="464" x2="752" y2="224" stroke="#59636e" stroke-width="2"/>
+
+    <path d="M752 459 C770 456 777 401 795 333 C813 266 839 232 870 238 C910 246 929 298 947 350 C970 413 1007 448 1066 457"
+          fill="none" stroke="#0067c0" stroke-width="7" stroke-linecap="round"/>
+
+    <path d="M947 350 C970 413 1007 448 1066 457 L1066 464 L947 464 Z"
+          fill="#f6c98d" opacity="0.82"/>
+    <path d="M947 350 C970 413 1007 448 1066 457"
+          fill="none" stroke="#0067c0" stroke-width="7" stroke-linecap="round"/>
+
+    <line x1="947" y1="232" x2="947" y2="464" stroke="#c26700" stroke-width="3" stroke-dasharray="9 8"/>
+    <circle cx="947" cy="350" r="7" fill="#c26700"/>
+
+    <rect x="972" y="255" width="108" height="76" rx="14" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+    <text x="992" y="286" font-size="24" font-weight="700" fill="#c26700">SF(x)</text>
+    <text x="986" y="315" font-size="19" font-weight="600" fill="#59636e">P(T &gt; x)</text>
+
+    <text x="927" y="505" font-size="21" font-weight="600" fill="#59636e">cutoff x</text>
+    <text x="762" y="212" font-size="19" font-weight="500" fill="#59636e">density</text>
+  </g>
+</svg>

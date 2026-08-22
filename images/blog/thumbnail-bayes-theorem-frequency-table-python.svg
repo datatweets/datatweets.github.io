@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Bayes theorem from a frequency table in Python</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail. On the left, the words From Counts to Confidence introduce priors, evidence, and Python. On the right, a compact frequency table highlights 150 dry-soil alerts among 230 total alerts, leading to a 65.2 percent posterior probability.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="36" font-weight="600" letter-spacing="1" fill="#59636e">BAYES THEOREM</text>
+    <text x="90" y="275" font-size="82" font-weight="700" fill="#1b1f24">FROM COUNTS</text>
+    <text x="90" y="374" font-size="82" font-weight="700" fill="#1b1f24">TO CONFIDENCE</text>
+    <rect x="100" y="407" width="420" height="12" rx="6" fill="#0067c0"/>
+    <text x="98" y="486" font-size="31" font-weight="500" fill="#59636e">priors · evidence · Python</text>
+
+    <g transform="translate(700 137)">
+      <rect width="390" height="330" rx="20" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="26" y="42" font-size="22" font-weight="600" fill="#59636e">FREQUENCY TABLE</text>
+      <rect x="24" y="60" width="342" height="2" fill="#c7ccd2"/>
+      <text x="178" y="91" font-size="20" font-weight="600" fill="#59636e">ALERT</text>
+      <text x="290" y="91" font-size="20" font-weight="600" fill="#59636e">TOTAL</text>
+      <rect x="18" y="106" width="354" height="62" rx="10" fill="#e3f0fa"/>
+      <text x="34" y="145" font-size="24" font-weight="600" fill="#1b1f24">Dry</text>
+      <text x="196" y="145" font-size="27" font-weight="700" fill="#0067c0">150</text>
+      <text x="310" y="145" font-size="24" font-weight="600" fill="#1b1f24">200</text>
+      <text x="34" y="207" font-size="22" font-weight="500" fill="#59636e">Not dry</text>
+      <text x="204" y="207" font-size="24" font-weight="600" fill="#1b1f24">80</text>
+      <text x="310" y="207" font-size="24" font-weight="600" fill="#1b1f24">800</text>
+      <rect x="24" y="227" width="342" height="2" fill="#c7ccd2"/>
+      <text x="34" y="269" font-size="22" font-weight="600" fill="#59636e">All</text>
+      <text x="196" y="269" font-size="26" font-weight="700" fill="#0067c0">230</text>
+      <text x="298" y="269" font-size="24" font-weight="600" fill="#1b1f24">1000</text>
+      <text x="96" y="311" font-size="23" font-weight="700" fill="#0067c0">150 ÷ 230 = 65.2%</text>
+    </g>
+    <rect x="893" y="486" width="4" height="42" rx="2" fill="#0067c0"/>
+    <rect x="752" y="535" width="286" height="58" rx="29" fill="#0067c0"/>
+    <text x="895" y="573" text-anchor="middle" font-size="25" font-weight="700" fill="#ffffff">P(DRY | ALERT)</text>
+  </g>
+</svg>

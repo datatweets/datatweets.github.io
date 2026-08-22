@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>dbt Core compiles and runs SQL locally; dbt Cloud manages the same engine</title>
+  <desc>dbt Core is an open-source command-line compiler: it turns SQL and Jinja files into warehouse-native SQL and runs it in dependency order, with no storage of its own. dbt Cloud is dbt Labs' own managed product wrapping the identical compilation engine with a browser IDE, a managed scheduler, and the full Semantic Layer serving layer. dbt Core 2.0, announced at Snowflake Summit in June 2026, rebuilds dbt Core on the same Rust-based Fusion engine dbt Cloud already uses -- currently in beta, not yet recommended for production by dbt Labs' own documentation. This course installs dbt Core 1.12.2, the current actively-supported stable release, confirmed live against PyPI.</desc>
+  <rect width="1100" height="440" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">dbt Core, dbt Cloud, and Where Fusion Fits</text>
+
+  <rect x="60" y="55" width="480" height="150" rx="10" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.8" />
+  <text x="300" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#22543d">dbt Core -- This Course</text>
+  <text x="300" y="102" text-anchor="middle" font-size="9.5" fill="#22543d">Open-source CLI, pip-installed</text>
+  <text x="300" y="120" text-anchor="middle" font-size="9.5" fill="#22543d">SQL + Jinja in -&gt; warehouse-native SQL out</text>
+  <text x="300" y="138" text-anchor="middle" font-size="9.5" fill="#22543d">No storage of its own -- runs against Postgres</text>
+  <rect x="90" y="150" width="420" height="35" rx="6" fill="#2c5282" />
+  <text x="300" y="172" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">1.12.2 -- confirmed current via PyPI</text>
+
+  <rect x="560" y="55" width="480" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="800" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#2c5282">dbt Cloud -- Not Required Here</text>
+  <text x="800" y="102" text-anchor="middle" font-size="9.5" fill="#2c5282">Same compilation engine, managed</text>
+  <text x="800" y="120" text-anchor="middle" font-size="9.5" fill="#2c5282">Browser IDE + scheduler + hosted docs</text>
+  <text x="800" y="138" text-anchor="middle" font-size="9.5" fill="#2c5282">Full Semantic Layer serving lives here only</text>
+  <rect x="590" y="150" width="420" height="35" rx="6" fill="#7b8ca8" />
+  <text x="800" y="172" text-anchor="middle" font-size="10" fill="#ffffff">signup + subscription required -- skipped in this course</text>
+
+  <path d="M300,205 L300,235" stroke="#a0aec0" stroke-width="2" marker-end="url(#f1)" />
+  <path d="M800,205 L800,235 L600,235" stroke="#a0aec0" stroke-width="2" fill="none" marker-end="url(#f1)" />
+
+  <rect x="300" y="245" width="500" height="130" rx="10" fill="#feebc8" stroke="#ed8936" stroke-width="1.8" />
+  <text x="550" y="270" text-anchor="middle" font-size="13" font-weight="700" fill="#7b341e">dbt Core 2.0 / Fusion Engine</text>
+  <text x="550" y="292" text-anchor="middle" font-size="9.5" fill="#7b341e">Announced Snowflake Summit, June 2026</text>
+  <text x="550" y="310" text-anchor="middle" font-size="9.5" fill="#7b341e">Rust-based -- the engine dbt Cloud already used</text>
+  <text x="550" y="328" text-anchor="middle" font-size="9.5" font-weight="700" fill="#975a16">Currently beta -- not yet recommended for production</text>
+  <text x="550" y="350" text-anchor="middle" font-size="9" fill="#7b341e">(dbt Labs' own documentation, checked live)</text>
+
+  <text x="550" y="410" text-anchor="middle" font-size="10.5" fill="#4a5568">This course builds on the stable, current 1.12 line -- a dated, stated choice, not an omission.</text>
+
+  <defs>
+    <marker id="f1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

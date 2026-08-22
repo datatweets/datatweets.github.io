@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="620" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Airflow Submits a Real PySpark Job to Kubernetes</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">one DAG, one real kubectl subprocess, one real Job/Pod, polled to completion</text>
+
+<!-- Airflow task: submit_job -->
+<rect x="40" y="100" width="200" height="110" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+<text x="140" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">Airflow @task</text>
+<text x="140" y="146" text-anchor="middle" font-size="11" fill="#4a5568">submit_job()</text>
+<text x="140" y="166" text-anchor="middle" font-size="10" fill="#4a5568">builds a real Job</text>
+<text x="140" y="180" text-anchor="middle" font-size="10" fill="#4a5568">manifest, deletes any</text>
+<text x="140" y="194" text-anchor="middle" font-size="10" fill="#4a5568">prior Job of that name</text>
+
+<!-- subprocess/kubectl -->
+<rect x="300" y="100" width="200" height="110" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+<text x="400" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#4a5568">subprocess.run()</text>
+<text x="400" y="150" text-anchor="middle" font-size="11" fill="#4a5568">kubectl apply -f -</text>
+<text x="400" y="168" text-anchor="middle" font-size="10" fill="#718096">the real kubectl binary +</text>
+<text x="400" y="182" text-anchor="middle" font-size="10" fill="#718096">kubeconfig host-mounted</text>
+<text x="400" y="196" text-anchor="middle" font-size="10" fill="#718096">into the Airflow container</text>
+
+<!-- Kind API server -->
+<rect x="560" y="100" width="220" height="110" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+<text x="670" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">Kind API Server</text>
+<text x="670" y="150" text-anchor="middle" font-size="10" fill="#4a5568">https://host.docker.internal</text>
+<text x="670" y="166" text-anchor="middle" font-size="10" fill="#4a5568">datatweets-docker-k8s</text>
+<text x="670" y="186" text-anchor="middle" font-size="10" font-weight="700" fill="#c05621">creates the real Job object</text>
+
+<line x1="240" y1="155" x2="298" y2="155" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowh)"/>
+<line x1="500" y1="155" x2="558" y2="155" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowh)"/>
+
+<!-- Job -> Pod -->
+<rect x="620" y="260" width="240" height="120" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+<text x="740" y="286" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">Kubernetes Job</text>
+<text x="740" y="308" text-anchor="middle" font-size="11" fill="#4a5568">schedules one real Pod</text>
+<text x="740" y="328" text-anchor="middle" font-size="11" fill="#4a5568">image: cityflow-pyspark-job:1.0</text>
+<text x="740" y="348" text-anchor="middle" font-size="11" fill="#4a5568">(python:3.13-slim + JDK 21 JRE + PySpark)</text>
+<text x="740" y="365" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">loaded via kind load, no registry</text>
+
+<line x1="700" y1="210" x2="720" y2="258" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowh)"/>
+
+<!-- Real work box -->
+<rect x="620" y="420" width="240" height="120" rx="10" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+<text x="740" y="446" text-anchor="middle" font-size="14" font-weight="700" fill="#6b46c1">Real Work, In-Pod</text>
+<text x="740" y="468" text-anchor="middle" font-size="10" fill="#4a5568">reads a baked-in real CityFlow</text>
+<text x="740" y="484" text-anchor="middle" font-size="10" fill="#4a5568">parquet slice (81,013 rows),</text>
+<text x="740" y="500" text-anchor="middle" font-size="10" fill="#4a5568">joins zones, groupBy borough</text>
+<text x="740" y="520" text-anchor="middle" font-size="10" font-weight="700" fill="#6b46c1">prints result, exits 0</text>
+
+<line x1="740" y1="380" x2="740" y2="418" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowh)"/>
+
+<!-- Pod exits -->
+<rect x="340" y="420" width="220" height="120" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+<text x="450" y="446" text-anchor="middle" font-size="14" font-weight="700" fill="#c53030">Pod Exits</text>
+<text x="450" y="468" text-anchor="middle" font-size="11" fill="#4a5568">container exit code 0</text>
+<text x="450" y="486" text-anchor="middle" font-size="11" fill="#4a5568">Pod phase -&gt; Succeeded</text>
+<text x="450" y="504" text-anchor="middle" font-size="11" fill="#4a5568">Job.status.succeeded -&gt; 1</text>
+
+<line x1="618" y1="480" x2="562" y2="480" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowh)"/>
+
+<!-- Airflow poll task -->
+<rect x="40" y="420" width="220" height="120" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+<text x="150" y="446" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">Airflow @task</text>
+<text x="150" y="468" text-anchor="middle" font-size="11" fill="#4a5568">poll_job_completion()</text>
+<text x="150" y="486" text-anchor="middle" font-size="10" fill="#4a5568">kubectl get job -o jsonpath</text>
+<text x="150" y="502" text-anchor="middle" font-size="10" fill="#4a5568">'{.status.succeeded}' every 2s</text>
+<text x="150" y="518" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0">until 1, failed, or timeout</text>
+
+<line x1="338" y1="480" x2="262" y2="480" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowh)"/>
+<text x="300" y="470" text-anchor="middle" font-size="9" fill="#718096">polls</text>
+
+<!-- feedback loop: poll -> subprocess -> API server, dashed, routed through the
+     left margin (x=18) so it never crosses another box's fill -->
+<path d="M 40 480 L 18 480 L 18 155 L 298 155" fill="none" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowh)"/>
+<text x="14" y="320" font-size="9" fill="#718096" transform="rotate(-90 14 320)">same subprocess pattern, repeated</text>
+
+<!-- report_job_logs -->
+<rect x="40" y="260" width="200" height="120" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+<text x="140" y="286" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">Airflow @task</text>
+<text x="140" y="308" text-anchor="middle" font-size="11" fill="#4a5568">report_job_logs()</text>
+<text x="140" y="328" text-anchor="middle" font-size="10" fill="#4a5568">kubectl logs &lt;pod&gt;</text>
+<text x="140" y="344" text-anchor="middle" font-size="10" fill="#4a5568">reads the real Spark</text>
+<text x="140" y="358" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0">job's printed result</text>
+
+<line x1="150" y1="418" x2="150" y2="382" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowh)"/>
+
+<line x1="40" y1="560" x2="920" y2="560" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="576" text-anchor="middle" font-size="11" fill="#4a5568">No apache-airflow-providers-cncf-kubernetes is installed -- every arrow into or out of Kubernetes is a real</text>
+<text x="480" y="592" text-anchor="middle" font-size="11" fill="#4a5568">subprocess call to the same kubectl binary + kubeconfig, the honest equivalent to KubernetesPodOperator.</text>
+<text x="480" y="610" text-anchor="middle" font-size="11" fill="#4a5568">insecure-skip-tls-verify: true is a real, stated local-dev trade-off -- Kind's cert has no host.docker.internal SAN.</text>
+
+<defs>
+<marker id="arrowh" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L8,3 z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

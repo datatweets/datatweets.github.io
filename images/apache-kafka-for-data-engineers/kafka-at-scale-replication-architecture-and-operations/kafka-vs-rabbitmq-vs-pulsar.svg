@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Three real architectures, three genuinely different problems solved best</title>
+  <desc>A three-way honest comparison. Kafka: a partitioned, durable, replayable log, winning on ecosystem breadth and raw throughput -- this course's own Connect, Schema Registry, and stream-processing work as direct evidence. RabbitMQ: a smart broker with content-based routing exchanges and per-message priority, winning on complex routing and operational simplicity at modest scale -- problems this course's own producer/consumer model has no built-in answer for. Apache Pulsar: separated compute (stateless brokers) and storage (BookKeeper), winning on built-in geo-replication (a direct, structural answer to the real MirrorMaker 2 rough edges Lesson 2 hit) and unified queue/stream subscription semantics.</desc>
+  <rect width="1100" height="480" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Three Architectures, Three Different Problems Solved Best</text>
+
+  <!-- Kafka -->
+  <rect x="40" y="60" width="330" height="230" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="205" y="85" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2c5282">Kafka</text>
+  <text x="205" y="105" text-anchor="middle" font-size="9" fill="#2c5282">partitioned, durable, replayable log</text>
+  <rect x="60" y="118" width="290" height="1" fill="#4299e1"/>
+  <text x="205" y="138" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2c5282">Wins on:</text>
+  <text x="205" y="156" text-anchor="middle" font-size="9" fill="#2c5282">Ecosystem breadth (Connect,</text>
+  <text x="205" y="171" text-anchor="middle" font-size="9" fill="#2c5282">Schema Registry, stream processors)</text>
+  <text x="205" y="189" text-anchor="middle" font-size="9" fill="#2c5282">Raw log-structured throughput</text>
+  <text x="205" y="204" text-anchor="middle" font-size="9" fill="#2c5282">Replay -- this course's own</text>
+  <text x="205" y="219" text-anchor="middle" font-size="9" fill="#2c5282">Module 9 reconciliation depends on it</text>
+  <rect x="60" y="235" width="290" height="40" rx="5" fill="#c6f6d5" stroke="#48bb78"/>
+  <text x="205" y="259" text-anchor="middle" font-size="8.5" fill="#22543d">this course's own choice -- for real reasons</text>
+
+  <!-- RabbitMQ -->
+  <rect x="385" y="60" width="330" height="230" rx="10" fill="#feebc8" stroke="#ed8936" stroke-width="1.6" />
+  <text x="550" y="85" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7b341e">RabbitMQ</text>
+  <text x="550" y="105" text-anchor="middle" font-size="9" fill="#7b341e">smart broker, routes then deletes</text>
+  <rect x="405" y="118" width="290" height="1" fill="#ed8936"/>
+  <text x="550" y="138" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7b341e">Wins on:</text>
+  <text x="550" y="156" text-anchor="middle" font-size="9" fill="#7b341e">Content-based routing (exchanges,</text>
+  <text x="550" y="171" text-anchor="middle" font-size="9" fill="#7b341e">bindings) -- no Kafka equivalent</text>
+  <text x="550" y="189" text-anchor="middle" font-size="9" fill="#7b341e">Per-message priority queues</text>
+  <text x="550" y="204" text-anchor="middle" font-size="9" fill="#7b341e">Simpler ops at modest scale --</text>
+  <text x="550" y="219" text-anchor="middle" font-size="9" fill="#7b341e">no quorum, no partitions to tune</text>
+  <rect x="405" y="235" width="290" height="40" rx="5" fill="#fed7d7" stroke="#e53e3e"/>
+  <text x="550" y="259" text-anchor="middle" font-size="8.5" fill="#822727">no built-in replay -- not its job</text>
+
+  <!-- Pulsar -->
+  <rect x="730" y="60" width="330" height="230" rx="10" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="895" y="85" text-anchor="middle" font-size="12.5" font-weight="700" fill="#553c9a">Apache Pulsar</text>
+  <text x="895" y="105" text-anchor="middle" font-size="9" fill="#553c9a">compute/storage separated (BookKeeper)</text>
+  <rect x="750" y="118" width="290" height="1" fill="#9f7aea"/>
+  <text x="895" y="138" text-anchor="middle" font-size="9.5" font-weight="700" fill="#553c9a">Wins on:</text>
+  <text x="895" y="156" text-anchor="middle" font-size="9" fill="#553c9a">Native geo-replication -- built in,</text>
+  <text x="895" y="171" text-anchor="middle" font-size="9" fill="#553c9a">not a bolted-on separate tool</text>
+  <text x="895" y="189" text-anchor="middle" font-size="9" fill="#553c9a">Unified queue + stream semantics</text>
+  <text x="895" y="204" text-anchor="middle" font-size="9" fill="#553c9a">Stateless brokers -- no data</text>
+  <text x="895" y="219" text-anchor="middle" font-size="9" fill="#553c9a">movement on broker failure</text>
+  <rect x="750" y="235" width="290" height="40" rx="5" fill="#fed7d7" stroke="#e53e3e"/>
+  <text x="895" y="253" text-anchor="middle" font-size="8.5" fill="#822727">a direct answer to Lesson 2's own</text>
+  <text x="895" y="267" text-anchor="middle" font-size="8.5" fill="#822727">real MirrorMaker 2 rough edges</text>
+
+  <text x="550" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">No universal winner -- the right tool depends on the actual problem</text>
+
+  <rect x="150" y="355" width="800" height="90" rx="6" fill="#f7fafc" stroke="#cbd5e0" />
+  <text x="550" y="378" text-anchor="middle" font-size="10" fill="#4a5568">Complex routing + priority -&gt; RabbitMQ.  Native multi-region + unified queue/stream -&gt; Pulsar.</text>
+  <text x="550" y="396" text-anchor="middle" font-size="10" fill="#4a5568">Replay, huge ecosystem, raw throughput -&gt; Kafka -- CityFlow's own real requirements.</text>
+  <text x="550" y="418" text-anchor="middle" font-size="9.5" fill="#718096">Managed services (MSK, Confluent Cloud, Redpanda) trade operational burden for cost -- a real, two-sided decision.</text>
+</svg>

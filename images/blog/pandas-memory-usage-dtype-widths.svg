@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Pandas default storage next to sized storage, for numbers and text</title>
+  <desc id="desc">Diagram comparing pandas default storage to optimized storage: an int64 column using 8 bytes per row shrinks to an int16 column using 2 bytes per row when the values are small, and an object column storing a separate full string per cell shrinks to a category column storing a small integer code per cell plus one shared list of unique values.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0067c0"/>
+    </marker>
+    <style>
+      .heading { font: 700 30px Jost, system-ui, sans-serif; }
+      .label { font: 700 22px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .detail { font: 18px Jost, system-ui, sans-serif; fill: #59636e; }
+      .mono { font: 17px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #1b1f24; }
+      .flow { fill: none; stroke: #0067c0; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="640" fill="#f7f8fa"/>
+  <rect x="28" y="24" width="1144" height="592" rx="24" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <text x="62" y="70" class="heading" fill="#1b1f24">Stop paying for the widest possible size</text>
+
+  <!-- Numeric half -->
+  <text x="62" y="118" class="label">Numeric column</text>
+
+  <rect x="62" y="140" width="230" height="90" rx="10" fill="#eef1f4" stroke="#c7ccd2" stroke-width="2"/>
+  <text x="177" y="172" class="mono" text-anchor="middle">int64</text>
+  <text x="177" y="200" class="detail" text-anchor="middle">8 bytes / row</text>
+
+  <path d="M292 185 L360 185" class="flow"/>
+
+  <rect x="362" y="160" width="90" height="50" rx="10" fill="#0067c0"/>
+  <text x="407" y="192" class="mono" text-anchor="middle" fill="#ffffff">int16</text>
+
+  <text x="62" y="256" class="detail">2 bytes / row when values stay small</text>
+  <rect x="62" y="270" width="380" height="8" rx="4" fill="#e3e6ea"/>
+  <rect x="62" y="270" width="95" height="8" rx="4" fill="#0067c0"/>
+
+  <line x1="472" y1="118" x2="472" y2="300" stroke="#e3e6ea" stroke-width="2"/>
+
+  <!-- Text half -->
+  <text x="524" y="118" class="label">Text column</text>
+
+  <rect x="524" y="140" width="290" height="120" rx="10" fill="#eef1f4" stroke="#c7ccd2" stroke-width="2"/>
+  <text x="669" y="168" class="mono" text-anchor="middle">object</text>
+  <g class="mono" fill="#59636e" font-size="15" text-anchor="middle">
+    <text x="669" y="196">"UA" "UA" "DL"</text>
+    <text x="669" y="218">"AA" "UA" "DL"</text>
+  </g>
+  <text x="669" y="244" class="detail" text-anchor="middle">a full string, every cell</text>
+
+  <path d="M814 200 L880 200" class="flow"/>
+
+  <rect x="882" y="150" width="270" height="120" rx="10" fill="#0067c0"/>
+  <g class="mono" fill="#ffffff" font-size="15" text-anchor="middle">
+    <text x="1017" y="178">codes: 0 0 1 2 0 1</text>
+  </g>
+  <rect x="912" y="196" width="210" height="50" rx="8" fill="#ffffff" opacity="0.15"/>
+  <g class="mono" fill="#ffffff" font-size="14" text-anchor="middle">
+    <text x="1017" y="216">shared list</text>
+    <text x="1017" y="234">0=UA 1=DL 2=AA</text>
+  </g>
+
+  <text x="524" y="296" class="detail">one code + one shared list of uniques, not one string each</text>
+
+  <line x1="62" y1="330" x2="1152" y2="330" stroke="#e3e6ea" stroke-width="2"/>
+
+  <text x="62" y="374" class="label">Same idea, two mechanisms</text>
+  <text x="62" y="408" class="detail">Numbers: shrink the byte width to what the min/max actually need.</text>
+  <text x="62" y="436" class="detail">Text: store each distinct value once, then point to it with a small code.</text>
+  <text x="62" y="470" class="detail">Both only pay off when the data repeats — a downcast that still barely fits,</text>
+  <text x="62" y="498" class="detail">or a column where almost every value is unique, gains little or nothing.</text>
+
+  <g transform="translate(62 528)">
+    <rect x="0" y="0" width="14" height="14" rx="3" fill="#0067c0"/>
+    <text x="24" y="12" class="detail" font-size="16">optimized width</text>
+    <rect x="200" y="0" width="14" height="14" rx="3" fill="#e3e6ea"/>
+    <text x="224" y="12" class="detail" font-size="16">default (int64 / object) width</text>
+  </g>
+</svg>

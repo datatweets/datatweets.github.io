@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="410" viewBox="0 0 1100 410" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Adding a field needs a default to pass. Removing one doesn't need anything.</title>
+  <desc>Backward compatibility checks. Adding a field with a default value is accepted -- a new reader has a default to use for old data missing the field. Adding a field with no default is rejected with a real 409 and a READER_FIELD_MISSING_DEFAULT_VALUE error -- a new reader has nothing to use. Removing a field entirely is also accepted under backward compatibility, since a new reader simply stops looking for it -- an outcome that overturns the naive assumption that removing a field is always the risky change.</desc>
+  <rect width="1100" height="410" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">BACKWARD Compatibility, Tested Directly Against the Registry</text>
+
+  <!-- Add with default -->
+  <rect x="40" y="55" width="330" height="150" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="205" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Add field WITH a default</text>
+  <text x="205" y="102" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#22543d">surge_multiplier: double = 1.0</text>
+  <rect x="70" y="120" width="270" height="34" rx="6" fill="#22543d" />
+  <text x="205" y="142" text-anchor="middle" font-size="12" font-weight="700" fill="#c6f6d5">ACCEPTED</text>
+  <text x="205" y="175" text-anchor="middle" font-size="9.5" fill="#22543d">a new reader has a value to use</text>
+  <text x="205" y="190" text-anchor="middle" font-size="9.5" fill="#22543d">for old data that lacks the field</text>
+
+  <!-- Add without default -->
+  <rect x="385" y="55" width="330" height="150" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="550" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#742a2a">Add field, NO default</text>
+  <text x="550" y="102" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#742a2a">payment_method: string</text>
+  <rect x="415" y="120" width="270" height="34" rx="6" fill="#742a2a" />
+  <text x="550" y="142" text-anchor="middle" font-size="12" font-weight="700" fill="#fed7d7">REJECTED -- 409</text>
+  <text x="550" y="175" text-anchor="middle" font-size="9.5" fill="#742a2a">READER_FIELD_MISSING_DEFAULT_VALUE --</text>
+  <text x="550" y="190" text-anchor="middle" font-size="9.5" fill="#742a2a">a new reader has nothing to use</text>
+
+  <!-- Remove field -->
+  <rect x="730" y="55" width="330" height="150" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="895" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Remove a field entirely</text>
+  <text x="895" y="102" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#22543d">pickup_zone removed</text>
+  <rect x="760" y="120" width="270" height="34" rx="6" fill="#22543d" />
+  <text x="895" y="142" text-anchor="middle" font-size="12" font-weight="700" fill="#c6f6d5">ACCEPTED</text>
+  <text x="895" y="175" text-anchor="middle" font-size="9.5" fill="#22543d">the naive assumption says this should</text>
+  <text x="895" y="190" text-anchor="middle" font-size="9.5" fill="#22543d">fail -- it doesn't. A new reader just stops looking for it.</text>
+
+  <!-- Summary strip -->
+  <rect x="140" y="230" width="820" height="100" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="550" y="258" text-anchor="middle" font-size="13" font-weight="700" fill="#2c5282">BACKWARD only ever asks one question:</text>
+  <text x="550" y="282" text-anchor="middle" font-size="12" fill="#2c5282">"can a NEW reader schema make sense of OLD data?"</text>
+  <text x="550" y="306" text-anchor="middle" font-size="10.5" fill="#2c5282">FORWARD asks the exact opposite question -- and flips both of these outcomes precisely.</text>
+
+  <text x="550" y="365" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">The risk was never symmetrical the way it feels</text>
+  <text x="550" y="388" text-anchor="middle" font-size="11" fill="#4a5568">BACKWARD punishes adding a required field -- not removing one.</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Measure XGBoost Regression Error with Repeated Cross-Validation</title>
+  <desc id="desc">A DataTweets tutorial thumbnail. Three rows of five fold markers represent 15 validation errors, which flow into a mean-and-spread summary while a final test set remains separate.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="145" font-size="31" font-weight="600" letter-spacing="1" fill="#59636e">REPEATED MODEL EVALUATION</text>
+    <text x="90" y="281" font-size="91" font-weight="700" fill="#1b1f24">ERROR</text>
+    <text x="90" y="371" font-size="68" font-weight="700" fill="#1b1f24">ACROSS FOLDS</text>
+    <rect x="96" y="405" width="420" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="477" font-size="28" font-weight="500" fill="#59636e">MAE &#183; BASELINE &#183; FINAL TEST</text>
+
+    <g transform="translate(710 112)">
+      <text x="20" y="28" font-size="23" font-weight="700" letter-spacing="0.8" fill="#59636e">3 REPEATS x 5 FOLDS</text>
+
+      <g transform="translate(0 58)">
+        <text x="0" y="26" font-size="18" font-weight="600" fill="#59636e">R1</text>
+        <rect x="42" y="0" width="48" height="38" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <rect x="100" y="0" width="48" height="38" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <rect x="158" y="0" width="48" height="38" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <rect x="216" y="0" width="48" height="38" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <rect x="274" y="0" width="48" height="38" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      </g>
+      <g transform="translate(0 112)">
+        <text x="0" y="26" font-size="18" font-weight="600" fill="#59636e">R2</text>
+        <rect x="42" y="0" width="48" height="38" rx="8" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+        <rect x="100" y="0" width="48" height="38" rx="8" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+        <rect x="158" y="0" width="48" height="38" rx="8" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+        <rect x="216" y="0" width="48" height="38" rx="8" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+        <rect x="274" y="0" width="48" height="38" rx="8" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+      </g>
+      <g transform="translate(0 166)">
+        <text x="0" y="26" font-size="18" font-weight="600" fill="#59636e">R3</text>
+        <rect x="42" y="0" width="48" height="38" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <rect x="100" y="0" width="48" height="38" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <rect x="158" y="0" width="48" height="38" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <rect x="216" y="0" width="48" height="38" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <rect x="274" y="0" width="48" height="38" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      </g>
+
+      <path d="M203 225 V257" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+      <path d="M194 249 L203 258 L212 249" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="61" y="270" width="284" height="82" rx="16" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="203" y="305" text-anchor="middle" font-size="20" font-weight="600" fill="#59636e">15 VALIDATION ERRORS</text>
+      <text x="203" y="334" text-anchor="middle" font-size="23" font-weight="700" fill="#0067c0">MEAN + SPREAD</text>
+
+      <line x1="32" y1="392" x2="374" y2="392" stroke="#e3e6ea" stroke-width="2"/>
+      <rect x="61" y="416" width="284" height="61" rx="14" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+      <circle cx="91" cy="446" r="11" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <path d="M86 445 L90 449 L97 441" fill="none" stroke="#0067c0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="116" y="454" font-size="21" font-weight="700" fill="#1b1f24">FINAL TEST KEPT ASIDE</text>
+    </g>
+  </g>
+</svg>

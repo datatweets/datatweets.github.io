@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="760" height="430" fill="#ffffff"/>
+  <text x="380" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Same result, two ways: .apply() vs .agg()</text>
+  <text x="380" y="68" text-anchor="middle" font-size="14" fill="#4a5568">Trips, revenue and average fare per pickup zone &#8212; 200,000 real taxi trips</text>
+
+  <!-- axis baseline -->
+  <line x1="150" y1="330" x2="700" y2="330" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- apply bar -->
+  <text x="140" y="150" text-anchor="end" font-size="15" font-weight="600" fill="#1a202c">.groupby().apply(lambda)</text>
+  <rect x="150" y="128" width="560" height="40" rx="4" fill="#ed8936"/>
+  <rect x="150" y="128" width="560" height="40" rx="4" fill="none" stroke="#c05621" stroke-width="1.5"/>
+  <text x="700" y="153" text-anchor="end" font-size="16" font-weight="700" fill="#ffffff">62.7 ms</text>
+  <text x="160" y="153" text-anchor="start" font-size="13" fill="#fffaf0">runs Python once per group</text>
+
+  <!-- agg bar -->
+  <text x="140" y="240" text-anchor="end" font-size="15" font-weight="600" fill="#1a202c">.groupby().agg(named)</text>
+  <rect x="150" y="218" width="53" height="40" rx="4" fill="#48bb78"/>
+  <rect x="150" y="218" width="53" height="40" rx="4" fill="none" stroke="#276749" stroke-width="1.5"/>
+  <text x="213" y="243" text-anchor="start" font-size="16" font-weight="700" fill="#276749">5.9 ms</text>
+  <text x="160" y="243" text-anchor="start" font-size="12" fill="#f0fff4">C</text>
+
+  <!-- scale ticks -->
+  <text x="150" y="352" text-anchor="middle" font-size="12" fill="#718096">0</text>
+  <text x="430" y="352" text-anchor="middle" font-size="12" fill="#718096">~31 ms</text>
+  <text x="710" y="352" text-anchor="middle" font-size="12" fill="#718096">~63 ms</text>
+
+  <!-- speedup banner -->
+  <rect x="230" y="378" width="300" height="38" rx="19" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="380" y="403" text-anchor="middle" font-size="17" font-weight="700" fill="#2b6cb0">about 11x faster &#8212; identical numbers</text>
+</svg>

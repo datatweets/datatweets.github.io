@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="390" viewBox="0 0 1050 390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>python app.py vs streamlit run app.py</title>
+<desc>A two-column comparison diagram. Left column, labeled python app.py: the script executes top to bottom, every st. call runs without error, but a warning is printed and nothing appears in a browser, because no script run context exists to send updates anywhere. Right column, labeled streamlit run app.py: a local web server starts on port 8501, the script gets a real script run context, and each st. call sends a real update to a connected browser tab, producing the actual visible app.</desc>
+<rect width="1050" height="390" fill="#ffffff" />
+<text x="525" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">python app.py vs streamlit run app.py</text>
+<rect x="30" y="60" width="483" height="210" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.6" />
+<text x="271" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">python app.py</text>
+<text x="271" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Script runs top to bottom.</text>
+<text x="271" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Every st. call executes.</text>
+<text x="271" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">No script run context exists.</text>
+<text x="271" y="176" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Warning printed.</text>
+<text x="271" y="198" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Nothing appears in a browser.</text>
+<path d="M517,165 L533,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="537" y="60" width="483" height="210" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+<text x="778" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">streamlit run app.py</text>
+<text x="778" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Local server starts on :8501.</text>
+<text x="778" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Script gets a real</text>
+<text x="778" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">script run context.</text>
+<text x="778" y="176" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Each st. call sends a real</text>
+<text x="778" y="198" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">update to your browser tab.</text>
+<rect x="30" y="286" width="990" height="88" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="525" y="310" text-anchor="middle" font-size="10.5" fill="#7b341e">The identical Python file, two different outcomes -- streamlit run is what actually connects the script to a</text>
+<text x="525" y="330" text-anchor="middle" font-size="10.5" fill="#7b341e">browser.</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

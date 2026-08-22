@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff"/>
+  <text x="360" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#1a202c">A trained mini-GPT, end to end</text>
+
+  <!-- loss panel -->
+  <text x="60" y="60" font-size="13" font-weight="600" fill="#2b6cb0">train &amp; validation loss (27 s, 154,456 params)</text>
+  <line x1="70" y1="230" x2="360" y2="230" stroke="#4a5568" stroke-width="1.5"/>
+  <line x1="70" y1="80" x2="70" y2="230" stroke="#4a5568" stroke-width="1.5"/>
+  <g font-size="10" fill="#718096" text-anchor="end">
+    <text x="64" y="84">3.2</text><text x="64" y="150">1.5</text><text x="64" y="233">0</text>
+  </g>
+  <g font-size="10" fill="#718096" text-anchor="middle">
+    <text x="70" y="245">0</text><text x="215" y="245">600</text><text x="360" y="245">1200</text>
+  </g>
+  <!-- train (green) 3.2026->0.11 ; map x=70+step/1200*290 ; y=230-loss/3.2*150 -->
+  <polyline fill="none" stroke="#276749" stroke-width="2.5"
+    points="70,80 118,221 167,223 215,224 263,224 312,224 360,225"/>
+  <!-- val (blue dashed) 2.9107->0.1254 -->
+  <polyline fill="none" stroke="#4299e1" stroke-width="2" stroke-dasharray="5 3"
+    points="70,94 118,222 167,224 215,224 263,224 312,224 360,224"/>
+  <text x="150" y="110" font-size="11" fill="#276749">train &#8595; 0.11</text>
+  <text x="200" y="215" font-size="11" fill="#2b6cb0">val 0.13 (tracks train)</text>
+
+  <!-- generation panel -->
+  <text x="400" y="60" font-size="13" font-weight="600" fill="#6b46c1">greedy generation from seed "the "</text>
+  <rect x="400" y="72" width="290" height="150" fill="#faf5ff" stroke="#9f7aea" rx="4"/>
+  <text x="412" y="98" font-size="12" fill="#4a5568">prompt:</text>
+  <text x="470" y="98" font-size="12" fill="#1a202c" font-weight="600">the</text>
+  <text x="412" y="128" font-size="12" fill="#6b46c1">the bay when the tide is</text>
+  <text x="412" y="150" font-size="12" fill="#6b46c1">low. the keeper counts the</text>
+  <text x="412" y="172" font-size="12" fill="#6b46c1">boats and wr</text>
+  <text x="412" y="204" font-size="11" fill="#718096" font-style="italic">coherent, grammatical English</text>
+
+  <!-- save/reload -->
+  <rect x="70" y="280" width="620" height="90" fill="#f7fafc" stroke="#e2e8f0" rx="6"/>
+  <text x="380" y="308" text-anchor="middle" font-size="13" font-weight="600" fill="#1a202c">save &#8594; reload &#8594; reproduce exactly</text>
+  <g font-size="12" text-anchor="middle" fill="#4a5568">
+    <text x="180" y="338">model.P  &#8594;  np.savez(.npz)</text>
+    <text x="380" y="338">&#8594;  reload into fresh model  &#8594;</text>
+    <text x="590" y="338">loss 0.1216 == 0.1216</text>
+  </g>
+  <text x="380" y="360" text-anchor="middle" font-size="12" fill="#276749" font-weight="600">round-trip lossless: exact match True</text>
+
+  <text x="360" y="402" text-anchor="middle" font-size="12" fill="#1a202c">Built, trained, generated, and checkpointed &#8212; entirely by hand in NumPy.</text>
+</svg>

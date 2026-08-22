@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Use Multi-Head Attention with Padding Masks in PyTorch</title>
+  <desc id="desc">A PyTorch attention thumbnail with two attention-head rows. Four key columns remain active while two padded key columns are crossed out, and two padded query outputs are cleared to zero.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="145" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">PYTORCH ATTENTION</text>
+    <text x="90" y="270" font-size="82" font-weight="700" fill="#1b1f24">MASK KEYS</text>
+    <text x="90" y="370" font-size="72" font-weight="700" fill="#1b1f24">CLEAR QUERIES</text>
+    <rect x="94" y="408" width="410" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="486" font-size="30" font-weight="500" fill="#59636e">MASKS &#183; HEADS &#183; SHAPES</text>
+
+    <g transform="translate(680 126)">
+      <text x="64" y="26" font-size="23" font-weight="600" fill="#59636e">PER-HEAD KEY WEIGHTS</text>
+      <text x="0" y="85" font-size="20" font-weight="700" fill="#59636e">H0</text>
+      <text x="0" y="155" font-size="20" font-weight="700" fill="#59636e">H1</text>
+
+      <g transform="translate(48 50)">
+        <rect x="0" y="0" width="54" height="54" rx="8" fill="#d9ebf8" stroke="#0067c0" stroke-width="2"/>
+        <rect x="64" y="0" width="54" height="54" rx="8" fill="#9dc9e9" stroke="#0067c0" stroke-width="2"/>
+        <rect x="128" y="0" width="54" height="54" rx="8" fill="#4f9bd3" stroke="#0067c0" stroke-width="2"/>
+        <rect x="192" y="0" width="54" height="54" rx="8" fill="#e8f3fb" stroke="#0067c0" stroke-width="2"/>
+        <rect x="256" y="0" width="54" height="54" rx="8" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="320" y="0" width="54" height="54" rx="8" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2" stroke-dasharray="5 4"/>
+        <path d="M269 13 L297 41 M297 13 L269 41 M333 13 L361 41 M361 13 L333 41" fill="none" stroke="#59636e" stroke-width="3" stroke-linecap="round"/>
+
+        <rect x="0" y="70" width="54" height="54" rx="8" fill="#e5f1fa" stroke="#0067c0" stroke-width="2"/>
+        <rect x="64" y="70" width="54" height="54" rx="8" fill="#dfedf8" stroke="#0067c0" stroke-width="2"/>
+        <rect x="128" y="70" width="54" height="54" rx="8" fill="#579fd5" stroke="#0067c0" stroke-width="2"/>
+        <rect x="192" y="70" width="54" height="54" rx="8" fill="#79b3dd" stroke="#0067c0" stroke-width="2"/>
+        <rect x="256" y="70" width="54" height="54" rx="8" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2" stroke-dasharray="5 4"/>
+        <rect x="320" y="70" width="54" height="54" rx="8" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2" stroke-dasharray="5 4"/>
+        <path d="M269 83 L297 111 M297 83 L269 111 M333 83 L361 111 M361 83 L333 111" fill="none" stroke="#59636e" stroke-width="3" stroke-linecap="round"/>
+
+        <text x="10" y="150" font-size="17" font-weight="600" fill="#59636e">K1</text>
+        <text x="74" y="150" font-size="17" font-weight="600" fill="#59636e">K2</text>
+        <text x="138" y="150" font-size="17" font-weight="600" fill="#59636e">K3</text>
+        <text x="202" y="150" font-size="17" font-weight="600" fill="#59636e">K4</text>
+        <text x="263" y="150" font-size="15" font-weight="600" fill="#59636e">PAD</text>
+        <text x="327" y="150" font-size="15" font-weight="600" fill="#59636e">PAD</text>
+      </g>
+
+      <path d="M235 232 L235 268" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+      <path d="M227 260 L235 270 L243 260" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <text x="88" y="309" font-size="22" font-weight="600" fill="#59636e">OUTPUT QUERY ROWS</text>
+      <g transform="translate(48 332)">
+        <rect x="0" y="0" width="54" height="54" rx="8" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+        <rect x="64" y="0" width="54" height="54" rx="8" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+        <rect x="128" y="0" width="54" height="54" rx="8" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+        <rect x="192" y="0" width="54" height="54" rx="8" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+        <rect x="256" y="0" width="54" height="54" rx="8" fill="#f7f8fa" stroke="#59636e" stroke-width="2"/>
+        <rect x="320" y="0" width="54" height="54" rx="8" fill="#f7f8fa" stroke="#59636e" stroke-width="2"/>
+        <text x="274" y="37" font-size="28" font-weight="700" fill="#59636e">0</text>
+        <text x="338" y="37" font-size="28" font-weight="700" fill="#59636e">0</text>
+      </g>
+      <text x="185" y="420" font-size="19" font-weight="600" fill="#0067c0">PADDED ROWS CLEARED</text>
+    </g>
+  </g>
+</svg>

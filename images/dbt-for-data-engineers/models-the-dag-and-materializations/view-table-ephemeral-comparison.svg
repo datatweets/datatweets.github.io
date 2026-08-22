@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Three materializations, the same stg_trips.sql, three different objects in Postgres</title>
+  <desc>The same stg_trips.sql model, run three times with only its config(materialized=...) value changed. As a view, Postgres stores no data, only a query definition, and querying it costs nothing on disk. As a table, dbt swaps in a real 5,128-kilobyte object, confirmed by pg_total_relation_size, holding a physical copy of the data. As ephemeral, dbt creates no database object at all -- the model's SQL is inlined as a common table expression directly into whatever model references it, confirmed by reading the compiled SQL of zone_revenue, which contains a full copy of stg_trips's own query wrapped in a WITH clause. Switching to ephemeral leaves the previous table object orphaned in Postgres, since dbt never drops an object for a model that no longer materializes to one -- confirmed by querying information_schema.tables after the switch and finding stg_trips still listed as a table.</desc>
+  <rect width="1100" height="480" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Same Model, Three Materializations</text>
+  <text x="550" y="50" text-anchor="middle" font-size="11" fill="#718096">stg_trips.sql, unchanged except for one config() value, run against Postgres</text>
+
+  <!-- view -->
+  <rect x="40" y="75" width="330" height="180" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="205" y="100" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2c5282">view</text>
+  <text x="205" y="122" text-anchor="middle" font-size="9.5" fill="#2c5282">CREATE VIEW public.stg_trips</text>
+  <text x="205" y="140" text-anchor="middle" font-size="9.5" fill="#2c5282">no data stored -- a query definition</text>
+  <rect x="65" y="155" width="280" height="80" rx="6" fill="#2c5282" />
+  <text x="205" y="177" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#ebf8ff">\d+ stg_trips</text>
+  <text x="205" y="193" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#ebf8ff">View definition: SELECT ...</text>
+  <text x="205" y="211" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#ebf8ff">re-runs the SELECT on every query</text>
+
+  <!-- table -->
+  <rect x="385" y="75" width="330" height="180" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="550" y="100" text-anchor="middle" font-size="12.5" font-weight="700" fill="#553c9a">table</text>
+  <text x="550" y="122" text-anchor="middle" font-size="9.5" fill="#553c9a">CREATE TABLE ... __dbt_tmp, then swap</text>
+  <text x="550" y="140" text-anchor="middle" font-size="9.5" fill="#553c9a">a physical copy, stored on disk</text>
+  <rect x="410" y="155" width="280" height="80" rx="6" fill="#553c9a" />
+  <text x="550" y="177" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#faf5ff">pg_total_relation_size(...)</text>
+  <text x="550" y="197" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#faf5ff">5128 kB</text>
+  <text x="550" y="215" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#faf5ff">reads are fast; storage is not free</text>
+
+  <!-- ephemeral -->
+  <rect x="730" y="75" width="330" height="180" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="895" y="100" text-anchor="middle" font-size="12.5" font-weight="700" fill="#22543d">ephemeral</text>
+  <text x="895" y="122" text-anchor="middle" font-size="9.5" fill="#22543d">no CREATE statement at all</text>
+  <text x="895" y="140" text-anchor="middle" font-size="9.5" fill="#22543d">inlined as a CTE into its own callers</text>
+  <rect x="755" y="155" width="280" height="80" rx="6" fill="#22543d" />
+  <text x="895" y="175" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">with __dbt__cte__stg_trips as (</text>
+  <text x="895" y="191" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">  select ... from raw.trips</text>
+  <text x="895" y="207" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">) select ... from __dbt__cte__stg_trips</text>
+  <text x="895" y="223" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#f0fff4">no public.stg_trips object exists</text>
+
+  <!-- gotcha strip -->
+  <rect x="60" y="280" width="980" height="130" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="550" y="305" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7b341e">The Gotcha: Switching to Ephemeral Orphans the Old Object</text>
+  <text x="550" y="328" text-anchor="middle" font-size="10" fill="#7b341e">stg_trips was a table (5,128 kB). Its config changes to ephemeral. dbt run creates nothing for stg_trips at all --</text>
+  <text x="550" y="346" text-anchor="middle" font-size="10" fill="#7b341e">it has no database object to build or drop. The 5,128 kB table from the previous run is never touched.</text>
+  <rect x="130" y="358" width="840" height="38" rx="6" fill="#7b341e" />
+  <text x="550" y="382" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#fffaf0">\dt public.* still lists stg_trips as a table -- dbt run alone will not clean it up</text>
+
+  <text x="550" y="440" text-anchor="middle" font-size="11" fill="#4a5568">A stale materialization has to be dropped by hand -- dbt only ever manages the object its current config asks for.</text>
+  <text x="550" y="460" text-anchor="middle" font-size="10" fill="#718096">This module keeps stg_trips a view: staging models read a warehouse only once, so there is nothing a table would speed up.</text>
+</svg>

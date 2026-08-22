@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">How to Audit Multi-Agent Research Evidence Coverage in Python</title>
+<desc id="desc">A DataTweets tutorial thumbnail. The left side reads Audit Evidence Gaps. The right shows a five-facet checklist with four covered facets, all three critical facets covered, and a ready-for-synthesis decision.</desc>
+<rect width="1200" height="675" fill="#f7f8fa"/>
+<rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+<g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <text x="92" y="145" font-size="30" font-weight="600" fill="#59636e">MULTI-AGENT RESEARCH</text>
+  <text x="90" y="274" font-size="82" font-weight="700" fill="#1b1f24">AUDIT</text>
+  <text x="90" y="369" font-size="82" font-weight="700" fill="#1b1f24">EVIDENCE</text>
+  <text x="90" y="464" font-size="82" font-weight="700" fill="#1b1f24">GAPS</text>
+  <rect x="94" y="493" width="350" height="12" rx="6" fill="#0067c0"/>
+  <text x="94" y="560" font-size="28" font-weight="500" fill="#59636e">FACETS &#183; SOURCES &#183; PYTHON</text>
+
+  <rect x="670" y="94" width="442" height="500" rx="22" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+  <text x="700" y="140" font-size="22" font-weight="700" fill="#1b1f24">FACET CHECKLIST</text>
+
+  <g font-size="16" font-weight="600">
+    <rect x="700" y="160" width="382" height="44" rx="10" fill="#ffffff" stroke="#e3e6ea"/>
+    <circle cx="724" cy="182" r="11" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <path d="M718 182l4 4 8-9" fill="none" stroke="#0067c0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="744" y="188" fill="#1b1f24">ACCURACY</text>
+    <rect x="944" y="169" width="118" height="26" rx="13" fill="#e3f0fa"/>
+    <text x="961" y="188" font-size="13" fill="#0067c0">CRITICAL</text>
+
+    <rect x="700" y="212" width="382" height="44" rx="10" fill="#ffffff" stroke="#e3e6ea"/>
+    <circle cx="724" cy="234" r="11" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <path d="M718 234l4 4 8-9" fill="none" stroke="#0067c0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="744" y="240" fill="#1b1f24">CALIBRATION</text>
+    <rect x="944" y="221" width="118" height="26" rx="13" fill="#e3f0fa"/>
+    <text x="961" y="240" font-size="13" fill="#0067c0">CRITICAL</text>
+
+    <rect x="700" y="264" width="382" height="44" rx="10" fill="#ffffff" stroke="#e3e6ea"/>
+    <circle cx="724" cy="286" r="11" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <path d="M718 286l4 4 8-9" fill="none" stroke="#0067c0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="744" y="292" fill="#1b1f24">OPERATING RANGE</text>
+    <rect x="944" y="273" width="118" height="26" rx="13" fill="#e3f0fa"/>
+    <text x="961" y="292" font-size="13" fill="#0067c0">CRITICAL</text>
+
+    <rect x="700" y="316" width="382" height="44" rx="10" fill="#ffffff" stroke="#e3e6ea"/>
+    <circle cx="724" cy="338" r="11" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <path d="M718 338l4 4 8-9" fill="none" stroke="#0067c0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="744" y="344" fill="#1b1f24">DATA EXPORT</text>
+
+    <rect x="700" y="368" width="382" height="44" rx="10" fill="#ffffff" stroke="#e3e6ea"/>
+    <circle cx="724" cy="390" r="11" fill="#ffffff" stroke="#8a949e" stroke-width="2"/>
+    <path d="M719 390h10" fill="none" stroke="#8a949e" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="744" y="396" fill="#59636e">MAINTENANCE</text>
+  </g>
+
+  <rect x="700" y="438" width="180" height="64" rx="12" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+  <text x="720" y="462" font-size="13" font-weight="600" fill="#59636e">COVERAGE</text>
+  <text x="720" y="490" font-size="25" font-weight="700" fill="#1b1f24">4 / 5</text>
+  <rect x="902" y="438" width="180" height="64" rx="12" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+  <text x="922" y="462" font-size="13" font-weight="600" fill="#59636e">CRITICAL</text>
+  <text x="922" y="490" font-size="25" font-weight="700" fill="#1b1f24">3 / 3</text>
+  <path d="M790 502v14h101v12M992 502v14H891v12" fill="none" stroke="#8a949e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="760" y="528" width="262" height="44" rx="22" fill="#0067c0"/>
+  <text x="891" y="556" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">READY FOR SYNTHESIS</text>
+</g>
+</svg>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Detect AI Agent Loops in JSONL Traces with Python</title>
+  <desc id="desc">A DataTweets tutorial thumbnail. On the left, the words Repeat Without Progress summarize agent loops. On the right, three ordered compare_columns tool calls leave state A unchanged, and the third reaches the detection limit.</desc>
+
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1.2" fill="#59636e">AGENT TRACE DIAGNOSTICS</text>
+    <text x="90" y="286" font-size="92" font-weight="700" fill="#1b1f24">REPEAT</text>
+    <text x="90" y="390" font-size="75" font-weight="700" fill="#1b1f24">NO PROGRESS</text>
+    <rect x="96" y="429" width="410" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="505" font-size="30" font-weight="500" fill="#59636e">JSONL &#183; STATE &#183; LIMITS</text>
+  </g>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="705" y="122" font-size="25" font-weight="700" letter-spacing="1" fill="#59636e">ORDERED TRACE</text>
+
+    <line x1="704" y1="185" x2="704" y2="465" stroke="#c7ccd2" stroke-width="4" stroke-linecap="round"/>
+
+    <circle cx="704" cy="200" r="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+    <text x="704" y="207" text-anchor="middle" font-size="19" font-weight="700" fill="#0067c0">3</text>
+    <rect x="744" y="158" width="354" height="84" rx="16" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="770" y="191" font-size="23" font-weight="700" fill="#1b1f24">compare_columns()</text>
+    <text x="770" y="224" font-size="20" font-weight="500" fill="#59636e">state A &#8594; state A</text>
+
+    <circle cx="704" cy="320" r="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+    <text x="704" y="327" text-anchor="middle" font-size="19" font-weight="700" fill="#0067c0">4</text>
+    <rect x="744" y="278" width="354" height="84" rx="16" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="770" y="311" font-size="23" font-weight="700" fill="#1b1f24">compare_columns()</text>
+    <text x="770" y="344" font-size="20" font-weight="500" fill="#59636e">state A &#8594; state A</text>
+
+    <circle cx="704" cy="440" r="18" fill="#0067c0" stroke="#0067c0" stroke-width="3"/>
+    <text x="704" y="447" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">5</text>
+    <rect x="744" y="398" width="354" height="84" rx="16" fill="#eaf3fb" stroke="#0067c0" stroke-width="3"/>
+    <text x="770" y="431" font-size="23" font-weight="700" fill="#1b1f24">compare_columns()</text>
+    <text x="770" y="464" font-size="20" font-weight="500" fill="#59636e">state A &#8594; state A</text>
+
+    <rect x="856" y="510" width="242" height="54" rx="27" fill="#0067c0"/>
+    <text x="977" y="545" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">FLAG AT STREAK 3</text>
+    <line x1="977" y1="482" x2="977" y2="510" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

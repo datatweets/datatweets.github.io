@@ -1,0 +1,6 @@
+width_dk,sqrt_dk,raw_score_std,scaled_score_std,mean_max_weight_raw,mean_max_weight_scaled,mean_entropy_raw,mean_entropy_scaled,raw_rows_over_90_pct,scaled_rows_over_90_pct
+4,2.0,1.99,0.995,0.46,0.272,1.575,2.121,4.0,0.2
+16,4.0,3.997,0.999,0.71,0.285,0.806,2.099,26.8,0.0
+64,8.0,8.015,1.002,0.857,0.289,0.371,2.092,58.2,0.0
+256,16.0,15.967,0.998,0.925,0.288,0.184,2.093,77.2,0.0
+1024,32.0,31.774,0.993,0.962,0.288,0.092,2.093,88.1,0.0

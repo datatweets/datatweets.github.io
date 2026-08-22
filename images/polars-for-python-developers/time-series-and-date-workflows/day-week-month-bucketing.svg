@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Bucketing Two Years of Revenue by Day, Week, and Month</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">dt.truncate() and group_by_dynamic() against order_timestamp_utc</text>
+
+  <rect x="30" y="70" width="200" height="86" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="130" y="92" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">dt.truncate("1d")</text>
+  <text x="130" y="112" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">731 daily buckets</text>
+  <text x="130" y="130" text-anchor="middle" font-size="9" fill="#4a5568">2024-01-01 .. 2025-12-31</text>
+  <text x="130" y="146" text-anchor="middle" font-size="9" fill="#4a5568">2024 is a leap year</text>
+
+  <rect x="260" y="70" width="200" height="86" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="360" y="92" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b46c1">dt.truncate("1w")</text>
+  <text x="360" y="112" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">105 weekly buckets</text>
+  <text x="360" y="130" text-anchor="middle" font-size="9" fill="#4a5568">Monday-anchored (ISO week)</text>
+  <text x="360" y="146" text-anchor="middle" font-size="9" fill="#4a5568">first/last weeks partial</text>
+
+  <rect x="490" y="70" width="200" height="86" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="590" y="92" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">dt.truncate("1mo")</text>
+  <text x="590" y="112" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#1a202c">24 monthly buckets</text>
+  <text x="590" y="130" text-anchor="middle" font-size="9" fill="#4a5568">group_by_dynamic() gives</text>
+  <text x="590" y="146" text-anchor="middle" font-size="9" fill="#4a5568">the identical 24 totals</text>
+
+  <line x1="130" y1="156" x2="360" y2="200" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="360" y1="156" x2="360" y2="200" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="590" y1="156" x2="360" y2="200" stroke="#a0aec0" stroke-width="1.2" />
+
+  <rect x="60" y="200" width="600" height="60" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="224" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">All three granularities sum to $9,195,043.62</text>
+  <text x="360" y="244" text-anchor="middle" font-size="9.5" fill="#22543d">Same 14,054 line items, three different bucket sizes -- every total reconciles independently</text>
+
+  <rect x="40" y="278" width="640" height="66" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="300" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">ISO week numbers can cross calendar years</text>
+  <text x="360" y="320" text-anchor="middle" font-size="9.5" fill="#742a2a">2024-12-30 (a Monday) is ISO week 1 -- of 2025, not 2024. dt.year() alone on a date</text>
+  <text x="360" y="336" text-anchor="middle" font-size="9.5" fill="#742a2a">can disagree with dt.week() for a handful of late-December/early-January dates.</text>
+
+  <rect x="40" y="360" width="640" height="42" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="360" y="386" text-anchor="middle" font-size="9.5" fill="#2b6cb0">group_by_dynamic() reaches the same result as truncate()+group_by(), with a group_by= option for per-channel windows.</text>
+</svg>

@@ -1,0 +1,5 @@
+rank,preparation,derived_features,cv_mae_minutes,fold_std_minutes
+1,Ratio + log,2,3.7352,0.1813
+2,Workload ratio,1,4.6732,0.3408
+3,Log SKU count,1,18.5748,0.8132
+4,Raw columns,0,18.862,0.8308

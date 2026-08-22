@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Three producer settings, three measured tradeoffs</title>
+  <desc>Left panel: acks bar chart -- acks=0 measured at 4442 messages per second (waits for nothing), acks=1 at 4182 messages per second (waits for the leader broker), acks=all at 3405 messages per second (waits for every in-sync replica) -- throughput drops as the durability guarantee gets stronger. Right panel: batching bar chart -- a tiny batch size of 200 bytes with no linger measured at 3369 messages per second, versus a large batch size of 1 megabyte with 20 milliseconds of linger measured at 17911 messages per second, a 5.3x gap. A note below states compression traded CPU time for an 89.6% reduction in bytes on a real batch of trip events.</desc>
+  <rect width="1100" height="420" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Three Settings, Three Measured Tradeoffs</text>
+
+  <!-- acks panel -->
+  <text x="40" y="65" font-size="13" font-weight="700" fill="#2d3748">acks: durability guarantee vs. throughput</text>
+
+  <text x="40" y="95" font-size="10" font-family="Menlo, monospace" fill="#4a5568">acks=0</text>
+  <rect x="120" y="82" width="380" height="22" rx="3" fill="#48bb78" />
+  <text x="510" y="98" font-size="10" fill="#2d3748">4442 msg/s -- waits for nothing</text>
+
+  <text x="40" y="127" font-size="10" font-family="Menlo, monospace" fill="#4a5568">acks=1</text>
+  <rect x="120" y="114" width="358" height="22" rx="3" fill="#68d391" />
+  <text x="488" y="130" font-size="10" fill="#2d3748">4182 msg/s -- waits for the leader</text>
+
+  <text x="40" y="159" font-size="10" font-family="Menlo, monospace" fill="#4a5568">acks='all'</text>
+  <rect x="120" y="146" width="292" height="22" rx="3" fill="#9ae6b4" />
+  <text x="422" y="162" font-size="10" fill="#2d3748">3405 msg/s -- waits for every in-sync replica</text>
+
+  <text x="40" y="192" font-size="9.5" fill="#4a5568">23% less throughput for acks='all' -- the only one that survives a broker failing right after the write.</text>
+
+  <line x1="40" y1="215" x2="1060" y2="215" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <!-- batching panel -->
+  <text x="40" y="245" font-size="13" font-weight="700" fill="#2d3748">Batching: linger.ms and batch.size vs. throughput</text>
+
+  <text x="40" y="280" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">batch_size=200</text>
+  <text x="40" y="293" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">linger_ms=0</text>
+  <rect x="160" y="270" width="90" height="22" rx="3" fill="#fc8181" />
+  <text x="260" y="286" font-size="10" fill="#2d3748">3369 msg/s -- near one request per message</text>
+
+  <text x="40" y="330" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">batch_size=1MB</text>
+  <text x="40" y="343" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">linger_ms=20</text>
+  <rect x="160" y="320" width="478" height="22" rx="3" fill="#48bb78" />
+  <text x="648" y="336" font-size="10" fill="#2d3748">17911 msg/s -- 5.3x more</text>
+
+  <text x="40" y="370" font-size="9.5" fill="#4a5568">Bigger batches, a short wait to fill them -- far fewer network requests for the same 3000 messages.</text>
+
+  <rect x="40" y="385" width="1020" height="25" rx="5" fill="#feebc8" stroke="#ed8936" stroke-width="1.2" />
+  <text x="550" y="402" text-anchor="middle" font-size="10" fill="#7b341e">Compression traded CPU time for an 89.6% reduction in bytes sent, measured on a real batch of 150 trip events (gzip).</text>
+</svg>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-label="One input sequence X of shape B by T by C is copied three ways into three separate learned matrices Wq, Wk, and Wv, producing query, key, and value tensors that all have shape B by T by hs and then feed scaled dot-product attention.">
+  <rect x="0" y="0" width="860" height="460" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#1a202c">Self-Attention: one input X, three learned projections</text>
+
+  <!-- Input X -->
+  <rect x="40" y="180" width="120" height="100" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="100" y="218" text-anchor="middle" font-size="22" font-weight="700" fill="#2b6cb0">X</text>
+  <text x="100" y="244" text-anchor="middle" font-size="13" fill="#4a5568">the same input</text>
+  <text x="100" y="262" text-anchor="middle" font-size="13" fill="#4a5568">sequence</text>
+  <text x="100" y="308" text-anchor="middle" font-size="13" font-weight="600" fill="#1a202c">(B, T, C)</text>
+
+  <!-- copy arrows fan-out -->
+  <path d="M160 210 C 210 210, 210 110, 260 110" fill="none" stroke="#a0aec0" stroke-width="2"/>
+  <path d="M160 230 C 210 230, 210 230, 260 230" fill="none" stroke="#a0aec0" stroke-width="2"/>
+  <path d="M160 250 C 210 250, 210 350, 260 350" fill="none" stroke="#a0aec0" stroke-width="2"/>
+  <text x="205" y="150" text-anchor="middle" font-size="11" fill="#718096">copied 3&#215;</text>
+
+  <!-- Wq -->
+  <rect x="260" y="78" width="110" height="64" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="315" y="106" text-anchor="middle" font-size="16" font-weight="700" fill="#6b46c1">W&#8320;q</text>
+  <text x="315" y="128" text-anchor="middle" font-size="12" fill="#4a5568">(C, hs)</text>
+  <text x="315" y="66" text-anchor="middle" font-size="11" fill="#718096">what to look for</text>
+
+  <!-- Wk -->
+  <rect x="260" y="198" width="110" height="64" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="315" y="226" text-anchor="middle" font-size="16" font-weight="700" fill="#276749">W&#8320;k</text>
+  <text x="315" y="248" text-anchor="middle" font-size="12" fill="#4a5568">(C, hs)</text>
+  <text x="315" y="186" text-anchor="middle" font-size="11" fill="#718096">what it offers</text>
+
+  <!-- Wv -->
+  <rect x="260" y="318" width="110" height="64" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="315" y="346" text-anchor="middle" font-size="16" font-weight="700" fill="#c05621">W&#8320;v</text>
+  <text x="315" y="368" text-anchor="middle" font-size="12" fill="#4a5568">(C, hs)</text>
+  <text x="315" y="306" text-anchor="middle" font-size="11" fill="#718096">what it contributes</text>
+
+  <!-- arrows W -> QKV -->
+  <path d="M370 110 L 442 110" fill="none" stroke="#6b46c1" stroke-width="2" marker-end="url(#ap)"/>
+  <path d="M370 230 L 442 230" fill="none" stroke="#276749" stroke-width="2" marker-end="url(#ag)"/>
+  <path d="M370 350 L 442 350" fill="none" stroke="#c05621" stroke-width="2" marker-end="url(#ao)"/>
+
+  <!-- Q -->
+  <rect x="446" y="82" width="104" height="56" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="498" y="108" text-anchor="middle" font-size="18" font-weight="700" fill="#6b46c1">Q</text>
+  <text x="498" y="127" text-anchor="middle" font-size="12" fill="#4a5568">(B, T, hs)</text>
+  <!-- K -->
+  <rect x="446" y="202" width="104" height="56" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="498" y="228" text-anchor="middle" font-size="18" font-weight="700" fill="#276749">K</text>
+  <text x="498" y="247" text-anchor="middle" font-size="12" fill="#4a5568">(B, T, hs)</text>
+  <!-- V -->
+  <rect x="446" y="322" width="104" height="56" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="498" y="348" text-anchor="middle" font-size="18" font-weight="700" fill="#c05621">V</text>
+  <text x="498" y="367" text-anchor="middle" font-size="12" fill="#4a5568">(B, T, hs)</text>
+
+  <!-- Q,K -> scores -->
+  <path d="M550 110 C 600 110, 600 200, 646 200" fill="none" stroke="#4299e1" stroke-width="2" marker-end="url(#ab)"/>
+  <path d="M550 230 C 600 230, 600 210, 646 210" fill="none" stroke="#4299e1" stroke-width="2" marker-end="url(#ab)"/>
+
+  <!-- scores box -->
+  <rect x="650" y="168" width="160" height="78" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="730" y="196" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">softmax(QK&#8868; / &#8730;hs)</text>
+  <text x="730" y="216" text-anchor="middle" font-size="12" fill="#4a5568">attention weights</text>
+  <text x="730" y="234" text-anchor="middle" font-size="12" font-weight="600" fill="#1a202c">(B, T, T)</text>
+
+  <!-- V + weights -> out -->
+  <path d="M550 350 C 640 350, 730 330, 730 250" fill="none" stroke="#c05621" stroke-width="2" marker-end="url(#ao)"/>
+  <path d="M730 246 L 730 300" fill="none" stroke="#2b6cb0" stroke-width="2" marker-end="url(#ab)"/>
+  <rect x="650" y="304" width="160" height="66" rx="8" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+  <text x="730" y="332" text-anchor="middle" font-size="15" font-weight="700" fill="#1a202c">out = weights @ V</text>
+  <text x="730" y="352" text-anchor="middle" font-size="12" font-weight="600" fill="#4a5568">(B, T, hs)</text>
+
+  <text x="430" y="426" text-anchor="middle" font-size="12" fill="#718096">Because W&#8320;q &#8800; W&#8320;k, the query and key spaces differ, so QK&#8868; is not symmetric &#8212; attention has a direction.</text>
+
+  <defs>
+    <marker id="ap" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#6b46c1"/></marker>
+    <marker id="ag" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#276749"/></marker>
+    <marker id="ao" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#c05621"/></marker>
+    <marker id="ab" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#4299e1"/></marker>
+  </defs>
+</svg>

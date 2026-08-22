@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="600" fill="#ffffff"/>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#a0aec0"/>
+</marker>
+</defs>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Two Kinds of Container, Two Kinds of "Failed Correctly"</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">A batch job reports failure by exiting; a long-running service reports failure while still running</text>
+
+<text x="240" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#2c5282">BATCH JOB (runs once, then exits)</text>
+<text x="240" y="112" text-anchor="middle" font-size="12" fill="#718096">cityflow-trip-validator</text>
+
+<rect x="60" y="128" width="360" height="42" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="80" y="153" font-size="12" font-weight="700" fill="#276749">exit 0 &#8212; 5 trips validated, $95.66 revenue</text>
+
+<rect x="60" y="178" width="360" height="42" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="80" y="203" font-size="12" font-weight="700" fill="#c05621">exit 2 &#8212; no input file mounted</text>
+
+<rect x="60" y="228" width="360" height="42" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="80" y="253" font-size="12" font-weight="700" fill="#c53030">exit 3 &#8212; file present, zero rows (validation failed)</text>
+
+<rect x="60" y="282" width="360" height="60" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="80" y="302" font-size="11" font-weight="700" fill="#2d3748">docker inspect --format '{{.State.ExitCode}}'</text>
+<text x="80" y="320" font-size="10.5" fill="#4a5568">the one signal a scheduler needs to tell success,</text>
+<text x="80" y="335" font-size="10.5" fill="#4a5568">missing input, and bad data apart</text>
+
+<line x1="480" y1="80" x2="480" y2="530" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+
+<text x="720" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#2c5282">LONG-RUNNING SERVICE (never exits)</text>
+<text x="720" y="112" text-anchor="middle" font-size="12" fill="#718096">cityflow-status-api</text>
+
+<rect x="540" y="128" width="360" height="36" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+<text x="560" y="150" font-size="11" font-weight="700" fill="#4a5568">Up 3s (health: starting)</text>
+
+<path d="M 720 164 L 720 178" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="540" y="180" width="360" height="36" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="560" y="202" font-size="11" font-weight="700" fill="#276749">Up 7s (healthy) &#8212; curl /health returns 200</text>
+
+<path d="M 720 216 L 720 230" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="540" y="232" width="360" height="36" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="560" y="254" font-size="11" font-weight="700" fill="#c53030">Up 15s (unhealthy) &#8212; curl: (22) error 500</text>
+
+<rect x="540" y="282" width="360" height="60" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="560" y="302" font-size="11" font-weight="700" fill="#2d3748">HEALTHCHECK CMD curl -f localhost:8000/health</text>
+<text x="560" y="320" font-size="10.5" fill="#4a5568">the process never exits &#8212; Docker has to ask</text>
+<text x="560" y="335" font-size="10.5" fill="#4a5568">it, repeatedly, whether it's still good</text>
+
+<line x1="40" y1="368" x2="920" y2="368" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="394" font-size="13" font-weight="700" fill="#4a5568">RESTART POLICY: cityflow-flaky-worker, --restart=on-failure:3</text>
+<rect x="40" y="410" width="880" height="150" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="60" y="436" font-size="12" fill="#4a5568">starts &#8594; runs 3s &#8594; exits 1 &#8594; Docker restarts it &#8594; starts &#8594; runs 3s &#8594; exits 1 &#8594; restarts again &#8230;</text>
+<text x="60" y="460" font-size="12" fill="#4a5568">up to the declared limit of 3 restarts, then Docker gives up and leaves it Exited(1) for a human to see.</text>
+<text x="60" y="486" font-size="13" font-weight="700" fill="#2d3748">docker inspect --format '{{.RestartCount}}' &#8594; RestartCount=3, real, measured on this exact container</text>
+<text x="60" y="512" font-size="12" fill="#4a5568">A restart policy is the service-side equivalent of an exit code: it's how Docker decides to act on a failure</text>
+<text x="60" y="534" font-size="12" fill="#4a5568">automatically, without a human watching the logs at 3 a.m. &#8212; but it only ever applies to something that RUNS again.</text>
+</svg>

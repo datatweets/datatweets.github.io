@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="900" height="540" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1a202c">A process Pool spreads 6 partition-tasks across worker processes &#8212; and the speedup curve bends below ideal</text>
+
+  <!-- ================= LEFT: pool dispatch diagram ================= -->
+  <text x="40" y="74" font-size="15" font-weight="700" fill="#2b6cb0">pool.map(process_partition, tasks)</text>
+
+  <!-- 6 tiny task tuples -->
+  <text x="40" y="104" font-size="13" fill="#4a5568">6 tasks &#8212; tiny (path, row&#8209;group) tuples:</text>
+  <g font-size="12" fill="#c05621" font-weight="700">
+    <rect x="40"  y="114" width="70" height="30" rx="5" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <text x="75"  y="133" text-anchor="middle">Jan,0</text>
+    <rect x="118" y="114" width="70" height="30" rx="5" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <text x="153" y="133" text-anchor="middle">Jan,1</text>
+    <rect x="196" y="114" width="70" height="30" rx="5" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <text x="231" y="133" text-anchor="middle">Jan,2</text>
+    <rect x="274" y="114" width="70" height="30" rx="5" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <text x="309" y="133" text-anchor="middle">Feb,0</text>
+    <rect x="352" y="114" width="70" height="30" rx="5" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <text x="387" y="133" text-anchor="middle">Feb,1</text>
+    <rect x="430" y="114" width="70" height="30" rx="5" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <text x="465" y="133" text-anchor="middle">Feb,2</text>
+  </g>
+
+  <!-- Pool dispatcher -->
+  <rect x="150" y="176" width="240" height="44" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="270" y="204" text-anchor="middle" font-size="16" font-weight="700" fill="#2b6cb0">mp.Pool( hands out tasks )</text>
+
+  <!-- arrows tasks -> pool -->
+  <g stroke="#a0aec0" stroke-width="1.5" fill="none">
+    <path d="M75 144 L 220 174"/>
+    <path d="M153 144 L 245 174"/>
+    <path d="M231 144 L 268 174"/>
+    <path d="M309 144 L 292 174"/>
+    <path d="M387 144 L 316 174"/>
+    <path d="M465 144 L 340 174"/>
+  </g>
+
+  <!-- worker processes on cores -->
+  <text x="40" y="256" font-size="13" fill="#4a5568">N worker processes, one per core &#8212; each reads its own row group:</text>
+  <g>
+    <rect x="40"  y="272" width="128" height="66" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="104" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">worker 1</text>
+    <text x="104" y="316" text-anchor="middle" font-size="11" fill="#4a5568">core 1</text>
+    <text x="104" y="331" text-anchor="middle" font-size="11" fill="#c05621">reads Jan,0</text>
+
+    <rect x="178" y="272" width="128" height="66" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="242" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">worker 2</text>
+    <text x="242" y="316" text-anchor="middle" font-size="11" fill="#4a5568">core 2</text>
+    <text x="242" y="331" text-anchor="middle" font-size="11" fill="#c05621">reads Jan,1</text>
+
+    <rect x="316" y="272" width="128" height="66" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="380" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">worker 3</text>
+    <text x="380" y="316" text-anchor="middle" font-size="11" fill="#4a5568">core 3</text>
+    <text x="380" y="331" text-anchor="middle" font-size="11" fill="#c05621">reads Jan,2</text>
+  </g>
+  <text x="242" y="360" text-anchor="middle" font-size="12" fill="#718096">&#8230; up to 6 workers, one per partition &#8230;</text>
+
+  <!-- arrows pool -> workers -->
+  <g stroke="#2b6cb0" stroke-width="1.6" fill="none" marker-end="url(#arrow)">
+    <path d="M225 220 L 120 268"/>
+    <path d="M262 220 L 242 268"/>
+    <path d="M312 220 L 372 268"/>
+  </g>
+
+  <!-- returns -->
+  <rect x="40" y="386" width="404" height="40" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="242" y="411" text-anchor="middle" font-size="13" fill="#6b46c1">each worker returns a small result: <tspan font-weight="700">(n_trips, anomalies)</tspan> &#8212; never the DataFrame</text>
+
+  <text x="242" y="462" text-anchor="middle" font-size="12.5" fill="#4a5568">pool.map collects the 6 partial results, in task order</text>
+
+  <!-- ================= RIGHT: speedup curve ================= -->
+  <text x="710" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#2b6cb0">Measured speedup vs. workers</text>
+
+  <!-- axes -->
+  <line x1="560" y1="100" x2="560" y2="400" stroke="#4a5568" stroke-width="1.5"/>
+  <line x1="560" y1="400" x2="880" y2="400" stroke="#4a5568" stroke-width="1.5"/>
+  <text x="524" y="106" text-anchor="middle" font-size="11" fill="#4a5568">speedup</text>
+  <text x="820" y="428" text-anchor="middle" font-size="11" fill="#4a5568">worker processes</text>
+
+  <!-- y gridlines/labels (speedup 0..10), sy = 400 - 30*s -->
+  <g font-size="10" fill="#718096">
+    <line x1="556" y1="370" x2="880" y2="370" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="552" y="374" text-anchor="end">1x</text>
+    <line x1="556" y1="310" x2="880" y2="310" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="552" y="314" text-anchor="end">3x</text>
+    <line x1="556" y1="250" x2="880" y2="250" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="552" y="254" text-anchor="end">5x</text>
+    <line x1="556" y1="190" x2="880" y2="190" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="552" y="194" text-anchor="end">7x</text>
+    <line x1="556" y1="130" x2="880" y2="130" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="552" y="134" text-anchor="end">9x</text>
+  </g>
+  <!-- x labels, sx = 560 + 30*w -->
+  <g font-size="10" fill="#718096" text-anchor="middle">
+    <text x="590" y="414">1</text>
+    <text x="620" y="414">2</text>
+    <text x="680" y="414">4</text>
+    <text x="740" y="414">6</text>
+    <text x="800" y="414">8</text>
+    <text x="860" y="414">10</text>
+  </g>
+
+  <!-- ideal linear line y = x : (560,400)->(860,100) -->
+  <line x1="560" y1="400" x2="860" y2="100" stroke="#a0aec0" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="852" y="118" text-anchor="end" font-size="11" fill="#a0aec0" font-style="italic">ideal (linear)</text>
+
+  <!-- measured polyline: RUN A speedups 1.00,1.83,2.58,4.05,4.19,4.01 -->
+  <polyline points="590,370 620,345 680,323 740,279 800,274 860,280" fill="none" stroke="#2b6cb0" stroke-width="2.5"/>
+  <g fill="#4299e1" stroke="#2b6cb0" stroke-width="1.5">
+    <circle cx="590" cy="370" r="4.5"/>
+    <circle cx="620" cy="345" r="4.5"/>
+    <circle cx="680" cy="323" r="4.5"/>
+    <circle cx="740" cy="279" r="4.5"/>
+    <circle cx="800" cy="274" r="4.5"/>
+    <circle cx="860" cy="280" r="4.5"/>
+  </g>
+  <!-- value labels -->
+  <g font-size="10" font-weight="700" fill="#2b6cb0">
+    <text x="628" y="340">1.83x</text>
+    <text x="672" y="316" text-anchor="end">2.58x</text>
+    <text x="738" y="270" text-anchor="middle">4.05x</text>
+    <text x="800" y="264" text-anchor="middle">4.19x</text>
+    <text x="858" y="272" text-anchor="end">4.01x</text>
+  </g>
+  <text x="710" y="456" text-anchor="middle" font-size="11.5" fill="#c53030">6 workers buy ~4x, not 6x; past 6 (only 6 tasks) it flattens</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#2b6cb0"/>
+    </marker>
+  </defs>
+</svg>

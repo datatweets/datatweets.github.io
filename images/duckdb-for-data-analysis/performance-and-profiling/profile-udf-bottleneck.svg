@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="400" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Node, Almost All the Time</text>
+
+  <rect x="60" y="54" width="180" height="46" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="150" y="74" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#2d3748">TABLE_SCAN</text>
+  <text x="150" y="90" text-anchor="middle" font-size="9" fill="#718096">0.00s</text>
+
+  <rect x="620" y="54" width="120" height="46" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="680" y="74" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#2d3748">AGGREGATE</text>
+  <text x="680" y="90" text-anchor="middle" font-size="9" fill="#718096">0.01s</text>
+
+  <rect x="200" y="130" width="400" height="90" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="400" y="158" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#742a2a">PROJECTION</text>
+  <text x="400" y="176" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#9c4221">price_per_mile_udf(...)</text>
+  <text x="400" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="#742a2a">10.83s</text>
+
+  <line x1="150" y1="100" x2="330" y2="130" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowB)" />
+  <line x1="680" y1="100" x2="470" y2="130" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowB)" />
+
+  <line x1="400" y1="220" x2="400" y2="252" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowB)" />
+
+  <rect x="200" y="252" width="400" height="56" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="400" y="276" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">the bottleneck isn't a guess</text>
+  <text x="400" y="294" text-anchor="middle" font-size="9.5" fill="#2c5282">it's a specific, named node</text>
+
+  <line x1="400" y1="308" x2="400" y2="330" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowB)" />
+
+  <rect x="230" y="330" width="340" height="46" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="400" y="358" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">fix: native SQL, 157x faster, same result</text>
+
+  <defs>
+    <marker id="arrowB" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

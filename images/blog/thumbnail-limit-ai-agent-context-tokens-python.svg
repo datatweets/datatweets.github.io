@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Limit AI Agent Context Size with a Python Budget</title>
+  <desc id="desc">DataTweets tutorial thumbnail. The words Keep State and Trim History appear beside a bounded-request diagram containing stable instructions, a structured checkpoint, four recent events, and a byte-budget gate.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">AI AGENT MEMORY</text>
+    <text x="90" y="283" font-size="82" font-weight="700" fill="#1b1f24">KEEP STATE</text>
+    <text x="90" y="382" font-size="82" font-weight="700" fill="#1b1f24">TRIM HISTORY</text>
+    <rect x="96" y="420" width="410" height="12" rx="6" fill="#0067c0"/>
+    <text x="96" y="492" font-size="27" font-weight="500" fill="#59636e">CHECKPOINTS &#183; RECENT WINDOW</text>
+    <text x="96" y="535" font-size="27" font-weight="500" fill="#59636e">MEASURE &#183; GATE &#183; CALL</text>
+
+    <g transform="translate(708 103)">
+      <text x="0" y="28" font-size="24" font-weight="600" letter-spacing="1" fill="#59636e">BOUNDED REQUEST</text>
+      <rect x="0" y="50" width="396" height="452" rx="24" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+
+      <rect x="28" y="80" width="340" height="66" rx="12" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <rect x="44" y="97" width="32" height="32" rx="7" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <path d="M53 113h14M60 106v14" fill="none" stroke="#0067c0" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="92" y="121" font-size="23" font-weight="600" fill="#1b1f24">STABLE INSTRUCTIONS</text>
+
+      <rect x="28" y="164" width="340" height="112" rx="12" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="48" y="198" font-size="22" font-weight="600" fill="#1b1f24">STRUCTURED CHECKPOINT</text>
+      <rect x="48" y="216" width="148" height="38" rx="19" fill="#e3f0fa"/>
+      <text x="63" y="242" font-size="19" font-weight="600" fill="#0067c0">24 INSPECTED</text>
+      <rect x="210" y="216" width="106" height="38" rx="19" fill="#fdeede"/>
+      <text x="230" y="242" font-size="19" font-weight="600" fill="#8a4a37">1 OPEN</text>
+
+      <rect x="28" y="294" width="340" height="86" rx="12" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="48" y="326" font-size="20" font-weight="600" fill="#59636e">RECENT 4</text>
+      <rect x="168" y="312" width="34" height="46" rx="7" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <rect x="215" y="312" width="34" height="46" rx="7" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <rect x="262" y="312" width="34" height="46" rx="7" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <rect x="309" y="312" width="34" height="46" rx="7" fill="#0067c0" stroke="#0067c0" stroke-width="2"/>
+
+      <path d="M198 391v21" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round"/>
+      <path d="M190 405l8 9 8-9" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="42" y="425" width="312" height="54" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <text x="65" y="460" font-size="23" font-weight="700" fill="#0067c0">1,121 B &#8804; 1,900 B</text>
+    </g>
+  </g>
+</svg>

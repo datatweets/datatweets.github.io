@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="520" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">One Image, Many Containers</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">An image is a read-only template on disk; a container is a running (or stopped) instance of it</text>
+
+<!-- image -->
+<rect x="380" y="86" width="200" height="76" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+<text x="480" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">nginx:alpine</text>
+<text x="480" y="134" text-anchor="middle" font-size="11" fill="#4a5568">the image (61.8 MB)</text>
+<text x="480" y="150" text-anchor="middle" font-size="10" fill="#718096">stored once, never changes</text>
+
+<line x1="440" y1="162" x2="260" y2="220" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrow2)"/>
+<line x1="480" y1="162" x2="480" y2="220" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrow2)"/>
+<line x1="520" y1="162" x2="700" y2="220" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrow2)"/>
+<text x="480" y="196" text-anchor="middle" font-size="11" fill="#718096">docker run (three separate times)</text>
+
+<!-- containers -->
+<rect x="140" y="220" width="240" height="90" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="260" y="246" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">cityflow-web-demo</text>
+<text x="260" y="264" text-anchor="middle" font-size="11" fill="#4a5568">a running process</text>
+<text x="260" y="280" text-anchor="middle" font-size="10" fill="#718096">own filesystem layer, own PID</text>
+<text x="260" y="296" text-anchor="middle" font-size="10" fill="#718096">-p 8088:80</text>
+
+<rect x="360" y="220" width="240" height="90" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="480" y="246" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">a second container</text>
+<text x="480" y="264" text-anchor="middle" font-size="11" fill="#4a5568">from the identical image</text>
+<text x="480" y="280" text-anchor="middle" font-size="10" fill="#718096">its own writable layer</text>
+<text x="480" y="296" text-anchor="middle" font-size="10" fill="#718096">changes here never touch the image</text>
+
+<rect x="580" y="220" width="240" height="90" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="700" y="246" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">a stopped container</text>
+<text x="700" y="264" text-anchor="middle" font-size="11" fill="#4a5568">Exited (0), still on disk</text>
+<text x="700" y="280" text-anchor="middle" font-size="10" fill="#718096">docker ps -a shows it</text>
+<text x="700" y="296" text-anchor="middle" font-size="10" fill="#718096">docker rm removes it for good</text>
+
+<line x1="40" y1="340" x2="920" y2="340" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="40" y="368" font-size="13" font-weight="700" fill="#4a5568">THE COMMANDS THAT MOVE BETWEEN THEM</text>
+
+<rect x="40" y="384" width="150" height="46" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="115" y="405" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">docker pull</text>
+<text x="115" y="420" text-anchor="middle" font-size="10" fill="#4a5568">image &#8594; local disk</text>
+
+<line x1="190" y1="407" x2="220" y2="407" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+<rect x="220" y="384" width="150" height="46" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1"/>
+<text x="295" y="405" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">docker run</text>
+<text x="295" y="420" text-anchor="middle" font-size="10" fill="#4a5568">image &#8594; new container</text>
+
+<line x1="370" y1="407" x2="400" y2="407" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+<rect x="400" y="384" width="150" height="46" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1"/>
+<text x="475" y="405" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">docker ps</text>
+<text x="475" y="420" text-anchor="middle" font-size="10" fill="#4a5568">list running containers</text>
+
+<line x1="550" y1="407" x2="580" y2="407" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+<rect x="580" y="384" width="150" height="46" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1"/>
+<text x="655" y="405" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">docker stop</text>
+<text x="655" y="420" text-anchor="middle" font-size="10" fill="#4a5568">running &#8594; exited</text>
+
+<line x1="730" y1="407" x2="760" y2="407" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrow2)"/>
+
+<rect x="760" y="384" width="150" height="46" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1"/>
+<text x="835" y="405" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">docker rm</text>
+<text x="835" y="420" text-anchor="middle" font-size="10" fill="#4a5568">container gone for good</text>
+
+<text x="480" y="470" text-anchor="middle" font-size="12" fill="#718096">The image never moves through this chain &#8212; only containers do. Delete every container built from nginx:alpine</text>
+<text x="480" y="488" text-anchor="middle" font-size="12" fill="#718096">and the image (and the 61.8 MB it cost to pull) is still sitting on disk, ready for the next docker run.</text>
+<defs>
+<marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

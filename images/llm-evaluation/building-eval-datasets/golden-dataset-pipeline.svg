@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="gdTitle gdDesc">
+  <title id="gdTitle">Docent golden-dataset pipeline: schema, author, audit, persist</title>
+  <desc id="gdDesc">A four-stage left-to-right pipeline. Stage 1 defines a pydantic TestCase schema with seven fields. Stage 2 authors 14 validated cases spanning all eight Meridian doc pages, including two paraphrase pairs, one out-of-scope refusal, and one adversarial false-premise case. Stage 3 audits coverage: 8 of 8 pages covered, counts per category and difficulty, and a passing dedup check. Stage 4 persists the set to JSONL in a temp directory and reads it back with an identical round-trip. A footer strip shows the finished coverage counts.</desc>
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+
+  <text x="440" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">Building Docent&#8217;s Golden Dataset</text>
+  <text x="440" y="56" text-anchor="middle" font-size="13" fill="#718096">One reusable, versioned artifact &#8212; assembled in four stages</text>
+
+  <!-- Stage 1: schema -->
+  <rect x="24" y="82" width="196" height="250" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="122" y="108" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">STAGE 1 &#183; SCHEMA</text>
+  <text x="122" y="130" text-anchor="middle" font-size="12" fill="#2b6cb0">pydantic TestCase</text>
+  <g font-size="11.5" fill="#4a5568">
+    <rect x="40" y="144" width="164" height="24" rx="5" fill="#ffffff" stroke="#4299e1" stroke-width="1"/>
+    <text x="50" y="160">id &#183; input &#183; reference</text>
+    <rect x="40" y="174" width="164" height="24" rx="5" fill="#ffffff" stroke="#4299e1" stroke-width="1"/>
+    <text x="50" y="190">category &#183; difficulty</text>
+    <rect x="40" y="204" width="164" height="24" rx="5" fill="#ffffff" stroke="#4299e1" stroke-width="1"/>
+    <text x="50" y="220">type &#183; source_doc</text>
+  </g>
+  <text x="122" y="258" text-anchor="middle" font-size="11.5" fill="#4a5568">Each field typed and</text>
+  <text x="122" y="274" text-anchor="middle" font-size="11.5" fill="#4a5568">constrained; a bad</text>
+  <text x="122" y="290" text-anchor="middle" font-size="11.5" fill="#4a5568">case is rejected</text>
+  <text x="122" y="314" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c05621">on construction</text>
+
+  <!-- Stage 2: author -->
+  <rect x="244" y="82" width="196" height="250" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <text x="342" y="108" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">STAGE 2 &#183; AUTHOR</text>
+  <text x="342" y="132" text-anchor="middle" font-size="30" font-weight="700" fill="#6b46c1">14 cases</text>
+  <g font-size="11.5" fill="#4a5568">
+    <text x="342" y="164" text-anchor="middle">10 lookup &#183; 2 paraphrase</text>
+    <text x="342" y="184" text-anchor="middle">1 out-of-scope refusal</text>
+    <text x="342" y="204" text-anchor="middle">1 adversarial false-premise</text>
+  </g>
+  <rect x="260" y="222" width="164" height="90" rx="6" fill="#ffffff" stroke="#9f7aea" stroke-width="1"/>
+  <text x="342" y="242" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">covers all 8 doc pages</text>
+  <g font-size="10.5" fill="#4a5568">
+    <text x="342" y="262" text-anchor="middle">auth &#183; ratelimits &#183; plans</text>
+    <text x="342" y="280" text-anchor="middle">regions &#183; errors &#183; backups</text>
+    <text x="342" y="298" text-anchor="middle">sdks &#183; deletion</text>
+  </g>
+
+  <!-- Stage 3: audit -->
+  <rect x="464" y="82" width="196" height="250" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="562" y="108" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">STAGE 3 &#183; AUDIT</text>
+  <g font-size="11.5" fill="#4a5568">
+    <rect x="480" y="122" width="164" height="26" rx="5" fill="#ffffff" stroke="#48bb78" stroke-width="1"/>
+    <text x="490" y="139">pages covered &#8594; <tspan font-weight="700" fill="#276749">8 / 8</tspan></text>
+    <rect x="480" y="154" width="164" height="26" rx="5" fill="#ffffff" stroke="#48bb78" stroke-width="1"/>
+    <text x="490" y="171">duplicate ids &#8594; <tspan font-weight="700" fill="#276749">none</tspan></text>
+    <rect x="480" y="186" width="164" height="26" rx="5" fill="#ffffff" stroke="#48bb78" stroke-width="1"/>
+    <text x="490" y="203">duplicate inputs &#8594; <tspan font-weight="700" fill="#276749">none</tspan></text>
+  </g>
+  <text x="562" y="238" text-anchor="middle" font-size="11.5" fill="#4a5568">by category / difficulty /</text>
+  <text x="562" y="254" text-anchor="middle" font-size="11.5" fill="#4a5568">type counted; no gaps</text>
+  <rect x="480" y="272" width="164" height="44" rx="6" fill="#48bb78"/>
+  <text x="562" y="290" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">coverage audit</text>
+  <text x="562" y="307" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">PASSED</text>
+
+  <!-- Stage 4: persist -->
+  <rect x="684" y="82" width="172" height="250" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <text x="770" y="108" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">STAGE 4 &#183; PERSIST</text>
+  <rect x="700" y="122" width="140" height="30" rx="5" fill="#ffffff" stroke="#ed8936" stroke-width="1"/>
+  <text x="770" y="142" text-anchor="middle" font-size="12" fill="#c05621">golden_v1.jsonl</text>
+  <text x="770" y="172" text-anchor="middle" font-size="11.5" fill="#4a5568">written to a temp dir</text>
+  <text x="770" y="188" text-anchor="middle" font-size="11.5" fill="#4a5568">(never the repo)</text>
+  <text x="770" y="216" text-anchor="middle" font-size="22" fill="#c05621">&#8595;&#8593;</text>
+  <text x="770" y="242" text-anchor="middle" font-size="11.5" fill="#4a5568">read back &#38; re-validate</text>
+  <rect x="700" y="256" width="140" height="60" rx="6" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+  <text x="770" y="278" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c05621">round-trip identical</text>
+  <text x="770" y="298" text-anchor="middle" font-size="11.5" fill="#4a5568">14 = 14 cases</text>
+
+  <!-- arrows between stages -->
+  <g fill="#a0aec0">
+    <polygon points="222,207 240,199 240,215"/>
+    <polygon points="442,207 460,199 460,215"/>
+    <polygon points="662,207 680,199 680,215"/>
+  </g>
+
+  <!-- footer: finished coverage strip -->
+  <rect x="24" y="352" width="832" height="94" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="40" y="378" font-size="12" font-weight="700" fill="#1a202c">Finished golden set &#8212; reused by every metric in the modules ahead</text>
+  <g font-size="11.5" fill="#4a5568">
+    <text x="40" y="404">category: factual 8 &#183; procedural 3 &#183; comparison 1 &#183; refusal 1 &#183; adversarial 1</text>
+    <text x="40" y="426">difficulty: easy 7 &#183; medium 5 &#183; hard 2</text>
+    <text x="470" y="426">type: lookup 10 &#183; paraphrase 2 &#183; out_of_scope 1 &#183; false_premise 1</text>
+  </g>
+</svg>

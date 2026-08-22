@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" viewBox="0 0 1000 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>NOT IN never matches NULL -- accepted_values alone lets a NULL borough through</title>
+  <desc>stg_cityflow__zones has one real row, zone_id 265, Outside of NYC, with a NULL borough -- not an empty string, a genuine SQL NULL, confirmed with IS NULL. accepted_values compiles to a WHERE clause checking value_field NOT IN a list of seven boroughs. In SQL's own three-valued logic, NULL NOT IN (...) evaluates to NULL, neither true nor false, so the WHERE clause never selects that row -- accepted_values reports PASS with the NULL borough still sitting there unflagged. Adding a separate not_null test on the same column catches it directly: FAIL 1 (or WARN 1 with severity configured), Got 1 result. The fix is not a different accepted_values list -- it is pairing accepted_values with not_null, since the two tests check genuinely different things and neither substitutes for the other.</desc>
+  <rect width="1000" height="400" fill="#ffffff" />
+  <text x="500" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Why accepted_values Alone Missed a Real Row</text>
+
+  <rect x="60" y="55" width="880" height="80" rx="8" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.4" />
+  <text x="500" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3748">zone_id 265, "Outside of NYC" -- borough is NULL, confirmed with IS NULL, not an empty string</text>
+  <text x="500" y="98" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#4a5568">select value_field from all_values where value_field not in ('Manhattan', 'Brooklyn', ...)</text>
+  <text x="500" y="118" text-anchor="middle" font-size="10" fill="#718096">NULL not in (...) evaluates to NULL in SQL's own three-valued logic -- not TRUE, so the row is never selected</text>
+
+  <path d="M500,140 L500,165" stroke="#a0aec0" stroke-width="2" fill="none" marker-end="url(#nl1)" />
+
+  <rect x="120" y="170" width="340" height="90" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="290" y="195" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7b341e">accepted_values alone</text>
+  <text x="290" y="218" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#7b341e">PASS</text>
+  <text x="290" y="238" text-anchor="middle" font-size="9" fill="#7b341e">the NULL row is never checked</text>
+  <text x="290" y="252" text-anchor="middle" font-size="9" fill="#7b341e">against the values list at all</text>
+
+  <rect x="540" y="170" width="340" height="90" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="710" y="195" text-anchor="middle" font-size="11.5" font-weight="700" fill="#22543d">not_null, added separately</text>
+  <text x="710" y="218" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#22543d">WARN 1 (or FAIL 1)</text>
+  <text x="710" y="238" text-anchor="middle" font-size="9" fill="#22543d">Got 1 result -- the exact</text>
+  <text x="710" y="252" text-anchor="middle" font-size="9" fill="#22543d">NULL row, caught directly</text>
+
+  <rect x="150" y="290" width="700" height="80" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="500" y="315" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2c5282">The fix isn't a different values list</text>
+  <text x="500" y="338" text-anchor="middle" font-size="10" fill="#2c5282">accepted_values and not_null check genuinely different things --</text>
+  <text x="500" y="356" text-anchor="middle" font-size="10" fill="#2c5282">pair them whenever a column's own completeness actually matters.</text>
+
+  <defs>
+    <marker id="nl1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

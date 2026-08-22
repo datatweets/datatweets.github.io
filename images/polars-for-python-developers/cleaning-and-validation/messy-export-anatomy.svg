@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">thistlewood_orders_raw.csv -- Four Real Problems</text>
+
+  <rect x="210" y="46" width="300" height="46" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="360" y="68" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a202c">795 rows -- 792 real Q1 2024 orders</text>
+  <text x="360" y="84" text-anchor="middle" font-size="9" fill="#4a5568">real Thistlewood order, customer, and order-line data</text>
+
+  <line x1="290" y1="92" x2="180" y2="120" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="330" y1="92" x2="300" y2="120" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="390" y1="92" x2="420" y2="120" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="430" y1="92" x2="540" y2="120" stroke="#a0aec0" stroke-width="1.2" />
+
+  <rect x="60" y="120" width="270" height="100" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="195" y="144" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">Duplicate order_id</text>
+  <text x="195" y="164" text-anchor="middle" font-size="9.5" fill="#2d3748">3 order IDs appear twice --</text>
+  <text x="195" y="180" text-anchor="middle" font-size="9.5" fill="#2d3748">795 rows for 792 real orders</text>
+  <text x="195" y="202" text-anchor="middle" font-size="9.5" font-weight="600" fill="#2b6cb0">O02003, O02420, O03297</text>
+
+  <rect x="390" y="120" width="270" height="100" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="525" y="144" text-anchor="middle" font-size="12" font-weight="700" fill="#9c4221">Missing contact info</text>
+  <text x="525" y="164" text-anchor="middle" font-size="9.5" fill="#2d3748">9 rows -- null city</text>
+  <text x="525" y="180" text-anchor="middle" font-size="9.5" fill="#2d3748">6 rows -- null email</text>
+  <text x="525" y="202" text-anchor="middle" font-size="9.5" font-weight="600" fill="#9c4221">recoverable from thistlewood_customers.csv</text>
+
+  <rect x="60" y="240" width="270" height="100" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="195" y="264" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">Inconsistent order_date</text>
+  <text x="195" y="284" text-anchor="middle" font-size="9.5" fill="#2d3748">12 rows in a non-ISO format</text>
+  <text x="195" y="304" text-anchor="middle" font-size="9.5" font-weight="600" fill="#6b46c1">8 MM/DD/YYYY, 4 DD-Mon-YYYY</text>
+
+  <rect x="390" y="240" width="270" height="100" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="525" y="264" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">Negative values</text>
+  <text x="525" y="284" text-anchor="middle" font-size="9.5" fill="#2d3748">5 rows -- 3 negative quantity,</text>
+  <text x="525" y="300" text-anchor="middle" font-size="9.5" fill="#2d3748">2 negative unit_price</text>
+  <text x="525" y="322" text-anchor="middle" font-size="9.5" font-weight="600" fill="#c53030">a real sign-flip data-entry error</text>
+
+  <rect x="120" y="364" width="480" height="72" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="390" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">"Clean" = matches the real canonical thistlewood_orders.csv</text>
+  <text x="360" y="410" text-anchor="middle" font-size="9.5" fill="#2d3748">A checkable target, not a vague goal -- every later lesson verifies against it.</text>
+
+  <text x="360" y="452" text-anchor="middle" font-size="10.5" fill="#718096">Four real, exactly-counted problems, each with its own fix in this module.</text>
+</svg>

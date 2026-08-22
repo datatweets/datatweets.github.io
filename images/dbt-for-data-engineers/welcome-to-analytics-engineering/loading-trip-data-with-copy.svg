@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="460" viewBox="0 0 1100 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>81,013 rows, one COPY, 0.21 seconds -- confirmed against the warehouse</title>
+  <desc>load_trips.py reads yellow_tripdata_2024-01.parquet, filters it to January 1st, 2024, and loads all 81,013 matching rows into a raw.trips table in the Postgres warehouse using a single psycopg2 COPY statement, completing in 0.21 seconds rather than the many round trips 81,013 individual INSERT statements would need. A direct SQL query against raw.trips, independent of the loader script's own printed output, confirms 81,013 rows spanning 2024-01-01 00:00:00 to 2024-01-01 23:59:55 with $2,442,843.25 in total revenue -- the starting facts every later module's dbt models get checked against.</desc>
+  <rect width="1100" height="460" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Loading CityFlow's Trip Data: The EL Half of ELT</text>
+
+  <rect x="40" y="55" width="260" height="80" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="170" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7b341e">yellow_tripdata_2024-01.parquet</text>
+  <text x="170" y="100" text-anchor="middle" font-size="9" fill="#7b341e">19 columns, 2,964,624 rows</text>
+  <text x="170" y="116" text-anchor="middle" font-size="9" fill="#7b341e">filtered to Jan 1, 2024 only</text>
+
+  <path d="M300,95 L350,95" stroke="#a0aec0" stroke-width="2" marker-end="url(#l1)" />
+  <text x="325" y="85" text-anchor="middle" font-size="8" fill="#4a5568">pandas</text>
+
+  <rect x="350" y="55" width="260" height="80" rx="8" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="480" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#553c9a">4 columns kept</text>
+  <text x="480" y="100" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#553c9a">pickup_time, pickup_zone,</text>
+  <text x="480" y="115" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#553c9a">fare_amount, total_amount</text>
+
+  <path d="M610,95 L660,95" stroke="#a0aec0" stroke-width="2" marker-end="url(#l1)" />
+  <text x="635" y="85" text-anchor="middle" font-size="8" fill="#4a5568">COPY</text>
+
+  <rect x="660" y="55" width="260" height="80" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="790" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">raw.trips (Postgres)</text>
+  <text x="790" y="100" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">81,013 rows loaded</text>
+  <text x="790" y="115" text-anchor="middle" font-size="9" fill="#22543d">in 0.21 seconds</text>
+
+  <text x="960" y="90" text-anchor="middle" font-size="9" fill="#718096">not dbt --</text>
+  <text x="960" y="104" text-anchor="middle" font-size="9" fill="#718096">psycopg2 +</text>
+  <text x="960" y="118" text-anchor="middle" font-size="9" fill="#718096">plain Python</text>
+
+  <path d="M790,135 L790,180" stroke="#a0aec0" stroke-width="2" marker-end="url(#l1)" />
+
+  <rect x="300" y="190" width="500" height="130" rx="10" fill="#2c5282" />
+  <text x="550" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="#ebf8ff">Confirmed independently, against Postgres directly</text>
+  <text x="550" y="242" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#bee3f8">row count: 81013</text>
+  <text x="550" y="262" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#bee3f8">time range: 00:00:00 to 23:59:55</text>
+  <text x="550" y="282" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">total revenue: $2,442,843.25</text>
+  <text x="550" y="304" text-anchor="middle" font-size="8.5" fill="#bee3f8">not trusted from the loader's own printed output alone</text>
+
+  <text x="550" y="360" text-anchor="middle" font-size="11.5" fill="#4a5568">One real day of CityFlow's data -- the starting fact every later module's</text>
+  <text x="550" y="380" text-anchor="middle" font-size="11.5" fill="#4a5568">dbt models get checked against, all the way through the capstone.</text>
+
+  <defs>
+    <marker id="l1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

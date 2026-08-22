@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="430" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Detecting and Parsing Four Raw Timestamp Formats</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">thistlewood_orders_timestamps_raw.csv -- 792 real Q1-2024 rows</text>
+
+  <rect x="30" y="70" width="160" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="110" y="90" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">iso_z</text>
+  <text x="110" y="106" text-anchor="middle" font-size="8" font-family="monospace" fill="#1a202c">2024-01-15T14:23:07Z</text>
+  <text x="110" y="124" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0">283 rows</text>
+
+  <rect x="200" y="70" width="160" height="70" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="280" y="90" text-anchor="middle" font-size="9.5" font-weight="700" fill="#6b46c1">iso_offset</text>
+  <text x="280" y="106" text-anchor="middle" font-size="8" font-family="monospace" fill="#1a202c">...T14:23:07+00:00</text>
+  <text x="280" y="124" text-anchor="middle" font-size="10" font-weight="700" fill="#6b46c1">193 rows</text>
+
+  <rect x="370" y="70" width="160" height="70" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="450" y="90" text-anchor="middle" font-size="9.5" font-weight="700" fill="#9c4221">mm_dd_yyyy_ampm</text>
+  <text x="450" y="106" text-anchor="middle" font-size="8" font-family="monospace" fill="#1a202c">01/15/2024 02:23 PM</text>
+  <text x="450" y="124" text-anchor="middle" font-size="10" font-weight="700" fill="#9c4221">204 rows</text>
+
+  <rect x="540" y="70" width="150" height="70" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="615" y="90" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c53030">iso_no_seconds</text>
+  <text x="615" y="106" text-anchor="middle" font-size="8" font-family="monospace" fill="#1a202c">2024-01-15T14:23</text>
+  <text x="615" y="124" text-anchor="middle" font-size="10" font-weight="700" fill="#c53030">112 rows</text>
+
+  <line x1="110" y1="140" x2="360" y2="182" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="280" y1="140" x2="360" y2="182" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="450" y1="140" x2="360" y2="182" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="615" y1="140" x2="360" y2="182" stroke="#a0aec0" stroke-width="1.2" />
+
+  <rect x="140" y="182" width="440" height="52" rx="10" fill="#f7fafc" stroke="#718096" stroke-width="1.4" />
+  <text x="360" y="203" text-anchor="middle" font-size="9.5" font-weight="700" font-family="monospace" fill="#2d3748">classify by regex -&gt; str.to_datetime(format=..., time_zone="UTC")</text>
+  <text x="360" y="221" text-anchor="middle" font-size="9" fill="#4a5568">a different explicit format string per detected group</text>
+
+  <line x1="360" y1="234" x2="360" y2="260" stroke="#a0aec0" stroke-width="1.4" />
+
+  <rect x="40" y="260" width="640" height="58" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="284" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">One clean parsed_ts column: 792 rows, 0 nulls</text>
+  <text x="360" y="302" text-anchor="middle" font-size="9.5" fill="#22543d">datetime[us, UTC] for every row, regardless of which raw string format it started as</text>
+
+  <rect x="40" y="336" width="640" height="76" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="358" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">A single no-format str.to_datetime() call fails on 316 of 792 rows</text>
+  <text x="360" y="378" text-anchor="middle" font-size="9.5" fill="#742a2a">Auto-detection only catches iso_z + iso_offset (476 rows) -- the AM/PM and seconds-omitted</text>
+  <text x="360" y="396" text-anchor="middle" font-size="9.5" fill="#742a2a">rows (204 + 112 = 316) need an explicit format string; mixed formats can't be guessed reliably.</text>
+</svg>

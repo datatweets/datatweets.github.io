@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="780" height="470" fill="#ffffff"/>
+  <text x="390" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#1a202c">Top-k sampling: keep k, cut the tail, renormalize</text>
+  <text x="390" y="56" text-anchor="middle" font-size="13" fill="#4a5568">Real next-token distribution after the context &#8220;the boats &#8221; (k = 3, temperature = 1)</text>
+
+  <!-- LEFT PANEL: full distribution -->
+  <text x="40" y="92" font-size="14" font-weight="700" fill="#2b6cb0">1. Full distribution (24 tokens)</text>
+
+  <!-- baseline -->
+  <line x1="60" y1="330" x2="360" y2="330" stroke="#a0aec0" stroke-width="1.5"/>
+
+  <!-- kept bars (blue) -->
+  <rect x="70" y="145" width="34" height="185" fill="#4299e1" stroke="#2b6cb0" stroke-width="1"/>
+  <text x="87" y="345" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">w</text>
+  <text x="87" y="138" text-anchor="middle" font-size="11" fill="#2b6cb0">.42</text>
+
+  <rect x="112" y="148" width="34" height="182" fill="#4299e1" stroke="#2b6cb0" stroke-width="1"/>
+  <text x="129" y="345" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">c</text>
+  <text x="129" y="141" text-anchor="middle" font-size="11" fill="#2b6cb0">.41</text>
+
+  <rect x="154" y="256" width="34" height="74" fill="#4299e1" stroke="#2b6cb0" stroke-width="1"/>
+  <text x="171" y="345" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">a</text>
+  <text x="171" y="249" text-anchor="middle" font-size="11" fill="#2b6cb0">.17</text>
+
+  <!-- cutoff line after k=3 -->
+  <line x1="198" y1="120" x2="198" y2="360" stroke="#c53030" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="205" y="132" font-size="11" font-weight="700" fill="#c53030">k = 3 cutoff</text>
+
+  <!-- tail bars (gray, tiny) -->
+  <rect x="206" y="322" width="20" height="8" fill="#e2e8f0" stroke="#a0aec0" stroke-width="0.8"/>
+  <rect x="230" y="324" width="20" height="6" fill="#e2e8f0" stroke="#a0aec0" stroke-width="0.8"/>
+  <rect x="254" y="325" width="20" height="5" fill="#e2e8f0" stroke="#a0aec0" stroke-width="0.8"/>
+  <rect x="278" y="326" width="20" height="4" fill="#e2e8f0" stroke="#a0aec0" stroke-width="0.8"/>
+  <rect x="302" y="327" width="20" height="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="0.8"/>
+  <rect x="326" y="328" width="20" height="2" fill="#e2e8f0" stroke="#a0aec0" stroke-width="0.8"/>
+  <text x="276" y="360" text-anchor="middle" font-size="11" fill="#718096">t r n b l g h &#8230; (21-token tail)</text>
+  <text x="276" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">discarded &#8594; set to &#8722;&#8734;</text>
+
+  <!-- arrow to right panel -->
+  <line x1="390" y1="240" x2="450" y2="240" stroke="#276749" stroke-width="2.5"/>
+  <polygon points="450,240 440,234 440,246" fill="#276749"/>
+  <text x="420" y="228" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">softmax over</text>
+  <text x="420" y="262" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">the kept 3</text>
+
+  <!-- RIGHT PANEL: renormalized -->
+  <text x="470" y="92" font-size="14" font-weight="700" fill="#276749">2. Renormalized top-3</text>
+
+  <line x1="480" y1="330" x2="720" y2="330" stroke="#a0aec0" stroke-width="1.5"/>
+
+  <rect x="500" y="141" width="40" height="189" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+  <text x="520" y="345" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">w</text>
+  <text x="520" y="134" text-anchor="middle" font-size="11" fill="#276749">.4201</text>
+
+  <rect x="556" y="144" width="40" height="186" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+  <text x="576" y="345" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">c</text>
+  <text x="576" y="137" text-anchor="middle" font-size="11" fill="#276749">.4129</text>
+
+  <rect x="612" y="255" width="40" height="75" fill="#48bb78" stroke="#276749" stroke-width="1"/>
+  <text x="632" y="345" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">a</text>
+  <text x="632" y="248" text-anchor="middle" font-size="11" fill="#276749">.1670</text>
+
+  <text x="600" y="372" text-anchor="middle" font-size="11" fill="#276749">sums to 1.0 &#8212; sample only from these</text>
+
+  <!-- bottom note -->
+  <rect x="60" y="398" width="660" height="52" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1"/>
+  <text x="76" y="420" font-size="12.5" fill="#276749">The 21-token tail together held only ~0.012 probability, but at high temperature that mass grows and a</text>
+  <text x="76" y="438" font-size="12.5" fill="#276749">nonsense character can slip through. Top-k makes it impossible: no token outside the top k can ever be drawn.</text>
+</svg>

@@ -1,0 +1,1001 @@
+reading_id,soil_condition,sensor_result
+GH-0001,not dry,alert
+GH-0002,not dry,no alert
+GH-0003,not dry,no alert
+GH-0004,not dry,no alert
+GH-0005,not dry,no alert
+GH-0006,not dry,no alert
+GH-0007,not dry,no alert
+GH-0008,not dry,no alert
+GH-0009,not dry,no alert
+GH-0010,not dry,no alert
+GH-0011,not dry,no alert
+GH-0012,not dry,no alert
+GH-0013,not dry,no alert
+GH-0014,dry,no alert
+GH-0015,not dry,no alert
+GH-0016,not dry,no alert
+GH-0017,not dry,no alert
+GH-0018,not dry,no alert
+GH-0019,not dry,no alert
+GH-0020,dry,alert
+GH-0021,not dry,no alert
+GH-0022,dry,alert
+GH-0023,not dry,no alert
+GH-0024,not dry,no alert
+GH-0025,not dry,no alert
+GH-0026,not dry,no alert
+GH-0027,not dry,no alert
+GH-0028,not dry,no alert
+GH-0029,not dry,no alert
+GH-0030,dry,alert
+GH-0031,not dry,no alert
+GH-0032,not dry,no alert
+GH-0033,dry,alert
+GH-0034,dry,no alert
+GH-0035,not dry,no alert
+GH-0036,not dry,no alert
+GH-0037,not dry,no alert
+GH-0038,not dry,no alert
+GH-0039,not dry,no alert
+GH-0040,not dry,no alert
+GH-0041,not dry,no alert
+GH-0042,not dry,no alert
+GH-0043,not dry,no alert
+GH-0044,not dry,no alert
+GH-0045,not dry,no alert
+GH-0046,not dry,no alert
+GH-0047,dry,alert
+GH-0048,not dry,alert
+GH-0049,not dry,no alert
+GH-0050,not dry,no alert
+GH-0051,not dry,no alert
+GH-0052,not dry,no alert
+GH-0053,not dry,no alert
+GH-0054,not dry,no alert
+GH-0055,not dry,no alert
+GH-0056,not dry,no alert
+GH-0057,not dry,no alert
+GH-0058,not dry,no alert
+GH-0059,not dry,no alert
+GH-0060,dry,no alert
+GH-0061,not dry,no alert
+GH-0062,not dry,no alert
+GH-0063,not dry,no alert
+GH-0064,not dry,no alert
+GH-0065,not dry,no alert
+GH-0066,not dry,no alert
+GH-0067,not dry,alert
+GH-0068,not dry,no alert
+GH-0069,not dry,no alert
+GH-0070,not dry,no alert
+GH-0071,not dry,no alert
+GH-0072,not dry,no alert
+GH-0073,not dry,no alert
+GH-0074,not dry,no alert
+GH-0075,not dry,no alert
+GH-0076,not dry,no alert
+GH-0077,not dry,no alert
+GH-0078,not dry,no alert
+GH-0079,not dry,no alert
+GH-0080,dry,alert
+GH-0081,not dry,no alert
+GH-0082,not dry,no alert
+GH-0083,not dry,alert
+GH-0084,dry,alert
+GH-0085,dry,no alert
+GH-0086,not dry,no alert
+GH-0087,dry,alert
+GH-0088,dry,alert
+GH-0089,dry,no alert
+GH-0090,not dry,no alert
+GH-0091,not dry,no alert
+GH-0092,dry,alert
+GH-0093,not dry,no alert
+GH-0094,not dry,no alert
+GH-0095,not dry,no alert
+GH-0096,dry,alert
+GH-0097,not dry,no alert
+GH-0098,not dry,no alert
+GH-0099,not dry,no alert
+GH-0100,not dry,no alert
+GH-0101,not dry,no alert
+GH-0102,dry,no alert
+GH-0103,not dry,alert
+GH-0104,not dry,no alert
+GH-0105,not dry,no alert
+GH-0106,not dry,no alert
+GH-0107,not dry,no alert
+GH-0108,not dry,no alert
+GH-0109,dry,alert
+GH-0110,not dry,no alert
+GH-0111,not dry,no alert
+GH-0112,not dry,no alert
+GH-0113,dry,alert
+GH-0114,not dry,no alert
+GH-0115,not dry,no alert
+GH-0116,not dry,no alert
+GH-0117,not dry,no alert
+GH-0118,not dry,no alert
+GH-0119,dry,alert
+GH-0120,not dry,no alert
+GH-0121,not dry,no alert
+GH-0122,dry,no alert
+GH-0123,not dry,no alert
+GH-0124,not dry,no alert
+GH-0125,not dry,no alert
+GH-0126,not dry,no alert
+GH-0127,not dry,alert
+GH-0128,not dry,no alert
+GH-0129,dry,alert
+GH-0130,not dry,no alert
+GH-0131,dry,no alert
+GH-0132,not dry,no alert
+GH-0133,not dry,no alert
+GH-0134,dry,alert
+GH-0135,not dry,no alert
+GH-0136,dry,alert
+GH-0137,not dry,no alert
+GH-0138,not dry,no alert
+GH-0139,not dry,no alert
+GH-0140,not dry,no alert
+GH-0141,not dry,no alert
+GH-0142,not dry,no alert
+GH-0143,not dry,no alert
+GH-0144,not dry,alert
+GH-0145,not dry,no alert
+GH-0146,not dry,no alert
+GH-0147,not dry,no alert
+GH-0148,not dry,no alert
+GH-0149,not dry,no alert
+GH-0150,not dry,no alert
+GH-0151,not dry,no alert
+GH-0152,not dry,no alert
+GH-0153,not dry,no alert
+GH-0154,not dry,no alert
+GH-0155,not dry,no alert
+GH-0156,not dry,no alert
+GH-0157,not dry,no alert
+GH-0158,not dry,no alert
+GH-0159,not dry,no alert
+GH-0160,not dry,no alert
+GH-0161,not dry,no alert
+GH-0162,dry,no alert
+GH-0163,not dry,no alert
+GH-0164,dry,alert
+GH-0165,not dry,no alert
+GH-0166,not dry,no alert
+GH-0167,dry,alert
+GH-0168,not dry,no alert
+GH-0169,not dry,no alert
+GH-0170,not dry,no alert
+GH-0171,not dry,no alert
+GH-0172,not dry,alert
+GH-0173,not dry,no alert
+GH-0174,not dry,no alert
+GH-0175,not dry,no alert
+GH-0176,not dry,no alert
+GH-0177,not dry,no alert
+GH-0178,not dry,no alert
+GH-0179,not dry,no alert
+GH-0180,not dry,no alert
+GH-0181,not dry,no alert
+GH-0182,not dry,no alert
+GH-0183,not dry,no alert
+GH-0184,not dry,no alert
+GH-0185,not dry,no alert
+GH-0186,dry,alert
+GH-0187,not dry,no alert
+GH-0188,not dry,no alert
+GH-0189,not dry,no alert
+GH-0190,dry,no alert
+GH-0191,not dry,no alert
+GH-0192,not dry,no alert
+GH-0193,not dry,no alert
+GH-0194,not dry,no alert
+GH-0195,dry,no alert
+GH-0196,not dry,no alert
+GH-0197,not dry,no alert
+GH-0198,not dry,no alert
+GH-0199,not dry,no alert
+GH-0200,not dry,no alert
+GH-0201,not dry,no alert
+GH-0202,not dry,no alert
+GH-0203,not dry,no alert
+GH-0204,not dry,no alert
+GH-0205,dry,alert
+GH-0206,not dry,no alert
+GH-0207,not dry,no alert
+GH-0208,not dry,no alert
+GH-0209,not dry,no alert
+GH-0210,not dry,no alert
+GH-0211,not dry,no alert
+GH-0212,not dry,no alert
+GH-0213,not dry,no alert
+GH-0214,not dry,no alert
+GH-0215,not dry,alert
+GH-0216,dry,alert
+GH-0217,not dry,no alert
+GH-0218,not dry,no alert
+GH-0219,not dry,no alert
+GH-0220,not dry,no alert
+GH-0221,not dry,no alert
+GH-0222,not dry,no alert
+GH-0223,not dry,no alert
+GH-0224,not dry,no alert
+GH-0225,not dry,no alert
+GH-0226,not dry,no alert
+GH-0227,not dry,alert
+GH-0228,not dry,no alert
+GH-0229,not dry,no alert
+GH-0230,not dry,no alert
+GH-0231,not dry,no alert
+GH-0232,not dry,alert
+GH-0233,not dry,no alert
+GH-0234,not dry,no alert
+GH-0235,not dry,no alert
+GH-0236,not dry,alert
+GH-0237,dry,no alert
+GH-0238,not dry,no alert
+GH-0239,not dry,no alert
+GH-0240,not dry,no alert
+GH-0241,not dry,alert
+GH-0242,not dry,no alert
+GH-0243,not dry,no alert
+GH-0244,not dry,no alert
+GH-0245,dry,alert
+GH-0246,not dry,alert
+GH-0247,not dry,no alert
+GH-0248,not dry,no alert
+GH-0249,not dry,no alert
+GH-0250,not dry,no alert
+GH-0251,dry,alert
+GH-0252,dry,alert
+GH-0253,not dry,no alert
+GH-0254,not dry,no alert
+GH-0255,not dry,no alert
+GH-0256,not dry,no alert
+GH-0257,not dry,no alert
+GH-0258,not dry,no alert
+GH-0259,not dry,no alert
+GH-0260,not dry,no alert
+GH-0261,not dry,no alert
+GH-0262,dry,no alert
+GH-0263,not dry,no alert
+GH-0264,not dry,no alert
+GH-0265,not dry,no alert
+GH-0266,dry,alert
+GH-0267,not dry,no alert
+GH-0268,dry,alert
+GH-0269,not dry,no alert
+GH-0270,not dry,alert
+GH-0271,not dry,no alert
+GH-0272,not dry,no alert
+GH-0273,not dry,no alert
+GH-0274,not dry,alert
+GH-0275,not dry,no alert
+GH-0276,not dry,no alert
+GH-0277,not dry,no alert
+GH-0278,not dry,no alert
+GH-0279,not dry,no alert
+GH-0280,dry,alert
+GH-0281,dry,alert
+GH-0282,not dry,no alert
+GH-0283,not dry,no alert
+GH-0284,not dry,no alert
+GH-0285,not dry,no alert
+GH-0286,not dry,no alert
+GH-0287,not dry,no alert
+GH-0288,dry,no alert
+GH-0289,not dry,no alert
+GH-0290,not dry,no alert
+GH-0291,not dry,no alert
+GH-0292,not dry,no alert
+GH-0293,dry,alert
+GH-0294,dry,alert
+GH-0295,not dry,no alert
+GH-0296,not dry,no alert
+GH-0297,not dry,no alert
+GH-0298,not dry,no alert
+GH-0299,not dry,no alert
+GH-0300,dry,no alert
+GH-0301,not dry,no alert
+GH-0302,not dry,no alert
+GH-0303,not dry,no alert
+GH-0304,not dry,no alert
+GH-0305,not dry,no alert
+GH-0306,not dry,no alert
+GH-0307,not dry,no alert
+GH-0308,not dry,no alert
+GH-0309,not dry,no alert
+GH-0310,not dry,no alert
+GH-0311,not dry,no alert
+GH-0312,not dry,no alert
+GH-0313,not dry,no alert
+GH-0314,dry,alert
+GH-0315,not dry,no alert
+GH-0316,not dry,no alert
+GH-0317,not dry,no alert
+GH-0318,not dry,alert
+GH-0319,not dry,no alert
+GH-0320,not dry,no alert
+GH-0321,not dry,no alert
+GH-0322,not dry,no alert
+GH-0323,not dry,no alert
+GH-0324,not dry,no alert
+GH-0325,not dry,no alert
+GH-0326,not dry,no alert
+GH-0327,not dry,no alert
+GH-0328,not dry,no alert
+GH-0329,not dry,no alert
+GH-0330,not dry,no alert
+GH-0331,not dry,no alert
+GH-0332,not dry,no alert
+GH-0333,not dry,no alert
+GH-0334,not dry,no alert
+GH-0335,dry,alert
+GH-0336,not dry,no alert
+GH-0337,not dry,no alert
+GH-0338,not dry,no alert
+GH-0339,dry,alert
+GH-0340,dry,alert
+GH-0341,not dry,no alert
+GH-0342,not dry,no alert
+GH-0343,dry,no alert
+GH-0344,dry,alert
+GH-0345,not dry,no alert
+GH-0346,not dry,no alert
+GH-0347,not dry,no alert
+GH-0348,not dry,no alert
+GH-0349,dry,no alert
+GH-0350,not dry,no alert
+GH-0351,not dry,no alert
+GH-0352,not dry,alert
+GH-0353,not dry,no alert
+GH-0354,not dry,alert
+GH-0355,dry,no alert
+GH-0356,not dry,no alert
+GH-0357,not dry,no alert
+GH-0358,not dry,no alert
+GH-0359,not dry,no alert
+GH-0360,not dry,no alert
+GH-0361,not dry,no alert
+GH-0362,not dry,no alert
+GH-0363,not dry,no alert
+GH-0364,not dry,no alert
+GH-0365,dry,alert
+GH-0366,dry,no alert
+GH-0367,not dry,no alert
+GH-0368,dry,no alert
+GH-0369,not dry,no alert
+GH-0370,not dry,no alert
+GH-0371,not dry,no alert
+GH-0372,not dry,alert
+GH-0373,not dry,no alert
+GH-0374,not dry,alert
+GH-0375,not dry,no alert
+GH-0376,not dry,no alert
+GH-0377,not dry,no alert
+GH-0378,not dry,no alert
+GH-0379,dry,alert
+GH-0380,not dry,no alert
+GH-0381,not dry,no alert
+GH-0382,not dry,no alert
+GH-0383,not dry,no alert
+GH-0384,not dry,no alert
+GH-0385,not dry,no alert
+GH-0386,dry,no alert
+GH-0387,dry,alert
+GH-0388,dry,alert
+GH-0389,not dry,no alert
+GH-0390,not dry,no alert
+GH-0391,not dry,no alert
+GH-0392,not dry,no alert
+GH-0393,not dry,alert
+GH-0394,not dry,no alert
+GH-0395,dry,no alert
+GH-0396,not dry,no alert
+GH-0397,not dry,alert
+GH-0398,dry,alert
+GH-0399,not dry,no alert
+GH-0400,not dry,no alert
+GH-0401,dry,alert
+GH-0402,not dry,no alert
+GH-0403,not dry,alert
+GH-0404,not dry,no alert
+GH-0405,not dry,no alert
+GH-0406,not dry,no alert
+GH-0407,not dry,no alert
+GH-0408,dry,alert
+GH-0409,not dry,alert
+GH-0410,dry,alert
+GH-0411,not dry,no alert
+GH-0412,not dry,no alert
+GH-0413,dry,alert
+GH-0414,not dry,alert
+GH-0415,not dry,no alert
+GH-0416,dry,alert
+GH-0417,not dry,no alert
+GH-0418,not dry,no alert
+GH-0419,not dry,no alert
+GH-0420,not dry,no alert
+GH-0421,dry,alert
+GH-0422,not dry,no alert
+GH-0423,not dry,no alert
+GH-0424,dry,alert
+GH-0425,not dry,no alert
+GH-0426,not dry,no alert
+GH-0427,not dry,no alert
+GH-0428,dry,alert
+GH-0429,not dry,no alert
+GH-0430,not dry,no alert
+GH-0431,not dry,no alert
+GH-0432,dry,alert
+GH-0433,not dry,no alert
+GH-0434,dry,alert
+GH-0435,not dry,no alert
+GH-0436,not dry,no alert
+GH-0437,dry,alert
+GH-0438,not dry,alert
+GH-0439,dry,no alert
+GH-0440,not dry,alert
+GH-0441,not dry,alert
+GH-0442,not dry,no alert
+GH-0443,not dry,no alert
+GH-0444,not dry,no alert
+GH-0445,not dry,no alert
+GH-0446,not dry,no alert
+GH-0447,not dry,alert
+GH-0448,not dry,no alert
+GH-0449,dry,alert
+GH-0450,not dry,no alert
+GH-0451,not dry,alert
+GH-0452,not dry,no alert
+GH-0453,not dry,no alert
+GH-0454,not dry,no alert
+GH-0455,dry,alert
+GH-0456,not dry,no alert
+GH-0457,not dry,no alert
+GH-0458,dry,no alert
+GH-0459,dry,no alert
+GH-0460,dry,alert
+GH-0461,not dry,alert
+GH-0462,not dry,no alert
+GH-0463,not dry,no alert
+GH-0464,not dry,no alert
+GH-0465,not dry,no alert
+GH-0466,not dry,no alert
+GH-0467,not dry,no alert
+GH-0468,dry,no alert
+GH-0469,not dry,no alert
+GH-0470,not dry,no alert
+GH-0471,not dry,no alert
+GH-0472,not dry,no alert
+GH-0473,not dry,no alert
+GH-0474,not dry,no alert
+GH-0475,dry,no alert
+GH-0476,not dry,no alert
+GH-0477,dry,alert
+GH-0478,not dry,no alert
+GH-0479,not dry,no alert
+GH-0480,dry,no alert
+GH-0481,not dry,no alert
+GH-0482,dry,alert
+GH-0483,not dry,no alert
+GH-0484,not dry,no alert
+GH-0485,not dry,no alert
+GH-0486,not dry,alert
+GH-0487,not dry,alert
+GH-0488,not dry,no alert
+GH-0489,not dry,no alert
+GH-0490,not dry,no alert
+GH-0491,not dry,no alert
+GH-0492,not dry,no alert
+GH-0493,not dry,no alert
+GH-0494,not dry,no alert
+GH-0495,not dry,alert
+GH-0496,not dry,no alert
+GH-0497,not dry,alert
+GH-0498,not dry,alert
+GH-0499,not dry,no alert
+GH-0500,not dry,no alert
+GH-0501,not dry,no alert
+GH-0502,dry,alert
+GH-0503,not dry,no alert
+GH-0504,dry,alert
+GH-0505,not dry,alert
+GH-0506,not dry,no alert
+GH-0507,dry,alert
+GH-0508,dry,alert
+GH-0509,not dry,no alert
+GH-0510,dry,no alert
+GH-0511,dry,alert
+GH-0512,not dry,no alert
+GH-0513,dry,alert
+GH-0514,not dry,no alert
+GH-0515,not dry,no alert
+GH-0516,not dry,no alert
+GH-0517,not dry,no alert
+GH-0518,not dry,no alert
+GH-0519,not dry,no alert
+GH-0520,dry,alert
+GH-0521,not dry,no alert
+GH-0522,not dry,no alert
+GH-0523,not dry,no alert
+GH-0524,dry,alert
+GH-0525,not dry,no alert
+GH-0526,not dry,no alert
+GH-0527,not dry,no alert
+GH-0528,not dry,no alert
+GH-0529,not dry,no alert
+GH-0530,not dry,no alert
+GH-0531,not dry,no alert
+GH-0532,not dry,no alert
+GH-0533,dry,alert
+GH-0534,dry,no alert
+GH-0535,not dry,no alert
+GH-0536,not dry,alert
+GH-0537,not dry,no alert
+GH-0538,dry,alert
+GH-0539,dry,alert
+GH-0540,not dry,no alert
+GH-0541,dry,alert
+GH-0542,not dry,no alert
+GH-0543,not dry,no alert
+GH-0544,not dry,no alert
+GH-0545,not dry,alert
+GH-0546,not dry,no alert
+GH-0547,not dry,no alert
+GH-0548,not dry,no alert
+GH-0549,not dry,no alert
+GH-0550,not dry,no alert
+GH-0551,not dry,no alert
+GH-0552,not dry,no alert
+GH-0553,not dry,alert
+GH-0554,not dry,alert
+GH-0555,not dry,no alert
+GH-0556,not dry,no alert
+GH-0557,not dry,no alert
+GH-0558,dry,alert
+GH-0559,not dry,alert
+GH-0560,not dry,no alert
+GH-0561,not dry,no alert
+GH-0562,not dry,no alert
+GH-0563,dry,alert
+GH-0564,not dry,no alert
+GH-0565,not dry,alert
+GH-0566,not dry,no alert
+GH-0567,not dry,alert
+GH-0568,not dry,no alert
+GH-0569,dry,no alert
+GH-0570,not dry,no alert
+GH-0571,dry,alert
+GH-0572,not dry,no alert
+GH-0573,not dry,no alert
+GH-0574,not dry,alert
+GH-0575,not dry,no alert
+GH-0576,dry,alert
+GH-0577,not dry,no alert
+GH-0578,not dry,no alert
+GH-0579,dry,alert
+GH-0580,not dry,no alert
+GH-0581,not dry,no alert
+GH-0582,not dry,no alert
+GH-0583,not dry,no alert
+GH-0584,not dry,no alert
+GH-0585,not dry,no alert
+GH-0586,not dry,no alert
+GH-0587,dry,alert
+GH-0588,dry,no alert
+GH-0589,not dry,no alert
+GH-0590,not dry,no alert
+GH-0591,not dry,no alert
+GH-0592,not dry,alert
+GH-0593,not dry,no alert
+GH-0594,not dry,no alert
+GH-0595,not dry,no alert
+GH-0596,dry,alert
+GH-0597,dry,alert
+GH-0598,not dry,no alert
+GH-0599,not dry,no alert
+GH-0600,not dry,no alert
+GH-0601,not dry,no alert
+GH-0602,not dry,no alert
+GH-0603,not dry,alert
+GH-0604,not dry,no alert
+GH-0605,not dry,no alert
+GH-0606,not dry,no alert
+GH-0607,not dry,no alert
+GH-0608,not dry,alert
+GH-0609,not dry,no alert
+GH-0610,not dry,alert
+GH-0611,dry,alert
+GH-0612,not dry,no alert
+GH-0613,not dry,alert
+GH-0614,not dry,no alert
+GH-0615,not dry,no alert
+GH-0616,not dry,no alert
+GH-0617,not dry,no alert
+GH-0618,not dry,no alert
+GH-0619,dry,alert
+GH-0620,not dry,no alert
+GH-0621,dry,alert
+GH-0622,not dry,no alert
+GH-0623,not dry,no alert
+GH-0624,not dry,no alert
+GH-0625,not dry,no alert
+GH-0626,not dry,no alert
+GH-0627,not dry,no alert
+GH-0628,not dry,no alert
+GH-0629,not dry,no alert
+GH-0630,dry,alert
+GH-0631,dry,alert
+GH-0632,not dry,no alert
+GH-0633,not dry,no alert
+GH-0634,not dry,no alert
+GH-0635,not dry,no alert
+GH-0636,not dry,no alert
+GH-0637,not dry,no alert
+GH-0638,not dry,no alert
+GH-0639,not dry,no alert
+GH-0640,not dry,no alert
+GH-0641,dry,alert
+GH-0642,not dry,no alert
+GH-0643,not dry,no alert
+GH-0644,not dry,no alert
+GH-0645,not dry,no alert
+GH-0646,not dry,no alert
+GH-0647,not dry,no alert
+GH-0648,dry,alert
+GH-0649,dry,no alert
+GH-0650,not dry,no alert
+GH-0651,dry,alert
+GH-0652,not dry,alert
+GH-0653,not dry,no alert
+GH-0654,not dry,alert
+GH-0655,not dry,no alert
+GH-0656,not dry,no alert
+GH-0657,not dry,no alert
+GH-0658,not dry,no alert
+GH-0659,not dry,no alert
+GH-0660,dry,alert
+GH-0661,dry,alert
+GH-0662,not dry,no alert
+GH-0663,not dry,no alert
+GH-0664,not dry,no alert
+GH-0665,not dry,no alert
+GH-0666,not dry,no alert
+GH-0667,not dry,no alert
+GH-0668,not dry,no alert
+GH-0669,not dry,no alert
+GH-0670,not dry,no alert
+GH-0671,not dry,no alert
+GH-0672,not dry,no alert
+GH-0673,dry,alert
+GH-0674,not dry,no alert
+GH-0675,not dry,no alert
+GH-0676,not dry,no alert
+GH-0677,not dry,no alert
+GH-0678,not dry,no alert
+GH-0679,not dry,alert
+GH-0680,dry,alert
+GH-0681,not dry,no alert
+GH-0682,not dry,no alert
+GH-0683,not dry,no alert
+GH-0684,not dry,no alert
+GH-0685,dry,alert
+GH-0686,not dry,alert
+GH-0687,not dry,no alert
+GH-0688,dry,alert
+GH-0689,not dry,no alert
+GH-0690,dry,alert
+GH-0691,not dry,no alert
+GH-0692,not dry,no alert
+GH-0693,dry,alert
+GH-0694,not dry,no alert
+GH-0695,not dry,no alert
+GH-0696,not dry,no alert
+GH-0697,not dry,no alert
+GH-0698,not dry,no alert
+GH-0699,not dry,no alert
+GH-0700,not dry,no alert
+GH-0701,not dry,no alert
+GH-0702,not dry,no alert
+GH-0703,dry,alert
+GH-0704,not dry,no alert
+GH-0705,dry,alert
+GH-0706,dry,alert
+GH-0707,not dry,no alert
+GH-0708,not dry,no alert
+GH-0709,not dry,alert
+GH-0710,not dry,no alert
+GH-0711,not dry,no alert
+GH-0712,dry,no alert
+GH-0713,not dry,no alert
+GH-0714,not dry,no alert
+GH-0715,not dry,no alert
+GH-0716,not dry,no alert
+GH-0717,not dry,alert
+GH-0718,not dry,no alert
+GH-0719,not dry,no alert
+GH-0720,not dry,no alert
+GH-0721,not dry,no alert
+GH-0722,not dry,no alert
+GH-0723,not dry,no alert
+GH-0724,not dry,no alert
+GH-0725,not dry,no alert
+GH-0726,not dry,no alert
+GH-0727,dry,alert
+GH-0728,not dry,alert
+GH-0729,dry,alert
+GH-0730,not dry,no alert
+GH-0731,dry,alert
+GH-0732,not dry,no alert
+GH-0733,not dry,alert
+GH-0734,not dry,no alert
+GH-0735,dry,alert
+GH-0736,not dry,no alert
+GH-0737,not dry,no alert
+GH-0738,not dry,no alert
+GH-0739,not dry,no alert
+GH-0740,dry,alert
+GH-0741,dry,alert
+GH-0742,not dry,no alert
+GH-0743,not dry,no alert
+GH-0744,not dry,no alert
+GH-0745,not dry,no alert
+GH-0746,dry,no alert
+GH-0747,not dry,alert
+GH-0748,dry,no alert
+GH-0749,not dry,no alert
+GH-0750,not dry,no alert
+GH-0751,not dry,no alert
+GH-0752,not dry,alert
+GH-0753,dry,alert
+GH-0754,dry,alert
+GH-0755,not dry,no alert
+GH-0756,not dry,no alert
+GH-0757,dry,alert
+GH-0758,dry,alert
+GH-0759,not dry,no alert
+GH-0760,not dry,no alert
+GH-0761,not dry,no alert
+GH-0762,not dry,no alert
+GH-0763,not dry,no alert
+GH-0764,not dry,no alert
+GH-0765,not dry,no alert
+GH-0766,not dry,alert
+GH-0767,not dry,no alert
+GH-0768,not dry,no alert
+GH-0769,not dry,no alert
+GH-0770,not dry,no alert
+GH-0771,not dry,no alert
+GH-0772,not dry,no alert
+GH-0773,not dry,no alert
+GH-0774,not dry,no alert
+GH-0775,not dry,alert
+GH-0776,not dry,no alert
+GH-0777,not dry,no alert
+GH-0778,not dry,no alert
+GH-0779,not dry,no alert
+GH-0780,not dry,alert
+GH-0781,not dry,no alert
+GH-0782,not dry,no alert
+GH-0783,not dry,no alert
+GH-0784,not dry,alert
+GH-0785,not dry,no alert
+GH-0786,not dry,no alert
+GH-0787,dry,no alert
+GH-0788,not dry,no alert
+GH-0789,not dry,no alert
+GH-0790,not dry,no alert
+GH-0791,dry,alert
+GH-0792,dry,no alert
+GH-0793,dry,alert
+GH-0794,not dry,no alert
+GH-0795,dry,alert
+GH-0796,not dry,no alert
+GH-0797,not dry,alert
+GH-0798,dry,no alert
+GH-0799,dry,alert
+GH-0800,dry,alert
+GH-0801,not dry,no alert
+GH-0802,dry,alert
+GH-0803,dry,alert
+GH-0804,not dry,no alert
+GH-0805,not dry,no alert
+GH-0806,not dry,no alert
+GH-0807,not dry,no alert
+GH-0808,not dry,no alert
+GH-0809,not dry,no alert
+GH-0810,not dry,no alert
+GH-0811,dry,alert
+GH-0812,dry,alert
+GH-0813,not dry,no alert
+GH-0814,not dry,no alert
+GH-0815,dry,alert
+GH-0816,not dry,no alert
+GH-0817,dry,no alert
+GH-0818,not dry,no alert
+GH-0819,dry,no alert
+GH-0820,not dry,no alert
+GH-0821,not dry,no alert
+GH-0822,not dry,no alert
+GH-0823,not dry,no alert
+GH-0824,not dry,no alert
+GH-0825,not dry,no alert
+GH-0826,not dry,alert
+GH-0827,dry,alert
+GH-0828,not dry,no alert
+GH-0829,not dry,no alert
+GH-0830,not dry,no alert
+GH-0831,not dry,no alert
+GH-0832,dry,alert
+GH-0833,not dry,no alert
+GH-0834,not dry,no alert
+GH-0835,not dry,no alert
+GH-0836,dry,alert
+GH-0837,not dry,no alert
+GH-0838,not dry,alert
+GH-0839,not dry,no alert
+GH-0840,not dry,no alert
+GH-0841,not dry,no alert
+GH-0842,not dry,no alert
+GH-0843,not dry,alert
+GH-0844,dry,no alert
+GH-0845,not dry,no alert
+GH-0846,not dry,no alert
+GH-0847,not dry,no alert
+GH-0848,not dry,no alert
+GH-0849,dry,alert
+GH-0850,not dry,no alert
+GH-0851,not dry,no alert
+GH-0852,not dry,no alert
+GH-0853,not dry,no alert
+GH-0854,not dry,no alert
+GH-0855,not dry,no alert
+GH-0856,not dry,no alert
+GH-0857,dry,alert
+GH-0858,not dry,no alert
+GH-0859,not dry,no alert
+GH-0860,dry,alert
+GH-0861,not dry,no alert
+GH-0862,not dry,no alert
+GH-0863,not dry,no alert
+GH-0864,not dry,alert
+GH-0865,not dry,no alert
+GH-0866,not dry,no alert
+GH-0867,not dry,no alert
+GH-0868,not dry,no alert
+GH-0869,dry,alert
+GH-0870,not dry,no alert
+GH-0871,not dry,no alert
+GH-0872,not dry,no alert
+GH-0873,dry,alert
+GH-0874,not dry,alert
+GH-0875,not dry,no alert
+GH-0876,not dry,no alert
+GH-0877,not dry,no alert
+GH-0878,dry,alert
+GH-0879,not dry,no alert
+GH-0880,not dry,alert
+GH-0881,dry,alert
+GH-0882,not dry,no alert
+GH-0883,not dry,no alert
+GH-0884,not dry,no alert
+GH-0885,dry,alert
+GH-0886,not dry,no alert
+GH-0887,not dry,no alert
+GH-0888,not dry,no alert
+GH-0889,not dry,no alert
+GH-0890,not dry,no alert
+GH-0891,not dry,no alert
+GH-0892,dry,alert
+GH-0893,not dry,no alert
+GH-0894,not dry,no alert
+GH-0895,not dry,no alert
+GH-0896,not dry,no alert
+GH-0897,not dry,no alert
+GH-0898,dry,alert
+GH-0899,dry,alert
+GH-0900,not dry,no alert
+GH-0901,dry,alert
+GH-0902,not dry,no alert
+GH-0903,not dry,no alert
+GH-0904,dry,no alert
+GH-0905,not dry,no alert
+GH-0906,dry,alert
+GH-0907,not dry,no alert
+GH-0908,not dry,no alert
+GH-0909,not dry,no alert
+GH-0910,not dry,no alert
+GH-0911,not dry,no alert
+GH-0912,not dry,no alert
+GH-0913,not dry,no alert
+GH-0914,not dry,no alert
+GH-0915,not dry,no alert
+GH-0916,not dry,no alert
+GH-0917,not dry,no alert
+GH-0918,dry,alert
+GH-0919,not dry,no alert
+GH-0920,dry,alert
+GH-0921,not dry,no alert
+GH-0922,not dry,alert
+GH-0923,not dry,alert
+GH-0924,dry,alert
+GH-0925,not dry,no alert
+GH-0926,not dry,alert
+GH-0927,dry,alert
+GH-0928,not dry,no alert
+GH-0929,not dry,no alert
+GH-0930,not dry,no alert
+GH-0931,dry,alert
+GH-0932,dry,alert
+GH-0933,dry,no alert
+GH-0934,not dry,no alert
+GH-0935,not dry,no alert
+GH-0936,not dry,no alert
+GH-0937,not dry,alert
+GH-0938,dry,no alert
+GH-0939,not dry,no alert
+GH-0940,not dry,no alert
+GH-0941,not dry,alert
+GH-0942,not dry,no alert
+GH-0943,not dry,no alert
+GH-0944,not dry,no alert
+GH-0945,not dry,no alert
+GH-0946,dry,no alert
+GH-0947,not dry,no alert
+GH-0948,dry,alert
+GH-0949,dry,alert
+GH-0950,not dry,no alert
+GH-0951,dry,alert
+GH-0952,dry,no alert
+GH-0953,not dry,no alert
+GH-0954,dry,alert
+GH-0955,dry,alert
+GH-0956,not dry,no alert
+GH-0957,not dry,no alert
+GH-0958,not dry,no alert
+GH-0959,not dry,no alert
+GH-0960,not dry,no alert
+GH-0961,not dry,no alert
+GH-0962,not dry,no alert
+GH-0963,not dry,no alert
+GH-0964,not dry,no alert
+GH-0965,not dry,no alert
+GH-0966,not dry,no alert
+GH-0967,not dry,no alert
+GH-0968,not dry,no alert
+GH-0969,dry,alert
+GH-0970,not dry,alert
+GH-0971,dry,alert
+GH-0972,not dry,no alert
+GH-0973,not dry,no alert
+GH-0974,dry,alert
+GH-0975,not dry,no alert
+GH-0976,not dry,no alert
+GH-0977,not dry,no alert
+GH-0978,dry,no alert
+GH-0979,dry,alert
+GH-0980,not dry,no alert
+GH-0981,not dry,no alert
+GH-0982,dry,alert
+GH-0983,dry,no alert
+GH-0984,dry,no alert
+GH-0985,not dry,no alert
+GH-0986,dry,alert
+GH-0987,not dry,no alert
+GH-0988,not dry,alert
+GH-0989,not dry,no alert
+GH-0990,not dry,no alert
+GH-0991,not dry,no alert
+GH-0992,not dry,no alert
+GH-0993,not dry,no alert
+GH-0994,not dry,alert
+GH-0995,not dry,no alert
+GH-0996,dry,alert
+GH-0997,not dry,no alert
+GH-0998,not dry,no alert
+GH-0999,not dry,no alert
+GH-1000,not dry,no alert

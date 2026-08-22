@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="480" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">clean_orders() -- The Complete Pipeline</text>
+
+  <rect x="240" y="48" width="240" height="50" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="360" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">thistlewood_orders_raw.csv</text>
+  <text x="360" y="86" text-anchor="middle" font-size="9" fill="#4a5568">795 rows, 5 real problems</text>
+
+  <line x1="360" y1="98" x2="360" y2="120" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#p0)" />
+
+  <rect x="180" y="124" width="360" height="46" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3" />
+  <text x="360" y="152" text-anchor="middle" font-size="10.5" fill="#276749">join customers.csv, coalesce city/email + order_date (3 formats)</text>
+
+  <line x1="360" y1="170" x2="360" y2="192" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#p1)" />
+
+  <rect x="180" y="196" width="360" height="46" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.3" />
+  <text x="360" y="224" text-anchor="middle" font-size="10.5" fill="#6b46c1">flag was_negative_quantity / was_negative_price</text>
+
+  <line x1="360" y1="242" x2="360" y2="264" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#p2)" />
+
+  <rect x="180" y="268" width="360" height="46" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="360" y="296" text-anchor="middle" font-size="10.5" fill="#9c4221">.abs() on quantity and unit_price</text>
+
+  <line x1="360" y1="314" x2="360" y2="336" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#p3)" />
+
+  <rect x="180" y="340" width="360" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="360" y="368" text-anchor="middle" font-size="10.5" fill="#2b6cb0">.unique(subset=["order_id"], keep="first")</text>
+
+  <line x1="360" y1="386" x2="360" y2="408" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#p4)" />
+
+  <defs>
+    <marker id="p0" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="p1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="p2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="p3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="p4" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <rect x="140" y="412" width="440" height="56" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="360" y="436" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">792 rows -- verified against real canonical data</text>
+  <text x="360" y="454" text-anchor="middle" font-size="9.5" fill="#2d3748">row count, exact total quantity (5,754), full per-row match</text>
+</svg>

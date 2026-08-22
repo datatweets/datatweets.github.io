@@ -1,0 +1,10 @@
+case_id,question,mode,expected
+T01,Where can I reset my password?,good,ok
+T02,When does a new invoice appear?,good,ok
+T03,Which export formats can I use?,good,ok
+T04,Who can invite a new member?,good,ok
+T05,Can I change the dashboard colors?,good,no_context
+T06,Where can I reset my password?,bad_json,invalid_json
+T07,When does a new invoice appear?,bad_citation,invalid_citation
+T08,Which export formats can I use?,wrong_shape,invalid_shape
+T09,Who can invite a new member?,empty_answer,invalid_answer

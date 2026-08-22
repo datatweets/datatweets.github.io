@@ -1,0 +1,43 @@
+case_id,request,case_type,expected_tool
+C01,What time is reservation R-104?,clear,room_booking_lookup
+C02,Who booked room Cedar tomorrow?,clear,room_booking_lookup
+C03,Show the details for booking B-77.,clear,room_booking_lookup
+C04,Reserve room Birch for 45 minutes at 10:00.,clear,room_booking_create
+C05,I need to book a meeting space next Tuesday.,clear,room_booking_create
+C06,Schedule a new room reservation for the design review.,clear,room_booking_create
+C07,Release booking B-77.,clear,room_booking_cancel
+C08,Cancel tomorrow's room reservation.,clear,room_booking_cancel
+C09,Make room Cedar available by removing reservation R-104.,clear,room_booking_cancel
+C10,Is pass P-18 still active?,clear,access_pass_status
+C11,Check the status of my building badge.,clear,access_pass_status
+C12,Has employee E-42's access expired?,clear,access_pass_status
+C13,Grant employee E-42 access to the lab.,clear,access_pass_request
+C14,Remove warehouse door access for P-18.,clear,access_pass_request
+C15,Request a new building pass for the intern.,clear,access_pass_request
+C16,Who is assigned to repair job M-19?,clear,maintenance_job_lookup
+C17,Check progress on work order M-44.,clear,maintenance_job_lookup
+C18,Has maintenance ticket M-08 been completed?,clear,maintenance_job_lookup
+C19,Report a leaking tap on floor 3.,clear,maintenance_job_create
+C20,Open a repair job for a broken window.,clear,maintenance_job_create
+C21,The lift display is blank; create a maintenance ticket.,clear,maintenance_job_create
+C22,Are there any lift closure notices today?,clear,building_notice_list
+C23,Show current building announcements.,clear,building_notice_list
+C24,What safety notices are active?,clear,building_notice_list
+C25,Publish a notice about Friday's water shutdown.,clear,building_notice_publish
+C26,Send a building-wide announcement about the fire drill.,clear,building_notice_publish
+C27,Post a new closure message for occupants.,clear,building_notice_publish
+C28,Find the reset instructions for the air sensor.,clear,equipment_manual_search
+C29,How do I calibrate this thermostat?,clear,equipment_manual_search
+C30,Search the equipment guide for error E12.,clear,equipment_manual_search
+C31,Report asset AHU-09 as making a grinding noise.,clear,equipment_fault_report
+C32,This pump is unsafe; open a fault record.,clear,equipment_fault_report
+C33,Log a broken temperature sensor.,clear,equipment_fault_report
+C34,Register Ana as my guest for Monday.,clear,visitor_invitation_create
+C35,Create a reception invitation for visitor Chen.,clear,visitor_invitation_create
+C36,Tell reception that Omar is expected tomorrow.,clear,visitor_invitation_create
+A01,Deal with room Cedar tomorrow.,ambiguous,needs_clarification
+A02,Handle badge P-18.,ambiguous,needs_clarification
+A03,Maintenance job M-44 needs attention.,ambiguous,needs_clarification
+A04,There is a message about the lift.,ambiguous,needs_clarification
+A05,I need help with sensor AHU-09.,ambiguous,needs_clarification
+A06,Can Sam enter the building tomorrow?,ambiguous,needs_clarification

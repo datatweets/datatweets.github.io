@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="560" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Anatomy of a Dockerfile</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Every instruction becomes its own layer &#8212; docker history shows the real proof</text>
+
+<text x="60" y="92" font-size="13" font-weight="700" fill="#4a5568">THE DOCKERFILE</text>
+<text x="620" y="92" font-size="13" font-weight="700" fill="#4a5568">THE IMAGE, ONE LAYER PER INSTRUCTION</text>
+
+<!-- Dockerfile instruction boxes -->
+<rect x="40" y="104" width="360" height="56" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="60" y="128" font-size="13" font-weight="700" fill="#2b6cb0">FROM python:3.13-slim</text>
+<text x="60" y="146" font-size="11" fill="#4a5568">pick the base image</text>
+
+<rect x="40" y="172" width="360" height="56" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+<text x="60" y="196" font-size="13" font-weight="700" fill="#4a5568">WORKDIR /app</text>
+<text x="60" y="214" font-size="11" fill="#718096">set the working directory for what follows</text>
+
+<rect x="40" y="240" width="360" height="56" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="60" y="264" font-size="13" font-weight="700" fill="#276749">COPY fare_estimate.py .</text>
+<text x="60" y="282" font-size="11" fill="#4a5568">copy a file from the host into the image</text>
+
+<rect x="40" y="308" width="360" height="56" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="60" y="332" font-size="13" font-weight="700" fill="#c05621">RUN echo "..." &gt; BUILD_INFO.txt</text>
+<text x="60" y="350" font-size="11" fill="#4a5568">execute a command at build time</text>
+
+<rect x="40" y="376" width="360" height="56" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+<text x="60" y="400" font-size="13" font-weight="700" fill="#6b46c1">CMD ["python", "fare_estimate.py"]</text>
+<text x="60" y="418" font-size="11" fill="#4a5568">the default command docker run will use</text>
+
+<!-- arrows to layer stack -->
+<line x1="400" y1="132" x2="600" y2="132" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowA)"/>
+<line x1="400" y1="200" x2="600" y2="180" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowA)"/>
+<line x1="400" y1="268" x2="600" y2="228" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowA)"/>
+<line x1="400" y1="336" x2="600" y2="276" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowA)"/>
+<line x1="400" y1="404" x2="600" y2="316" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowA)"/>
+
+<!-- layer stack (bottom to top like docker history) -->
+<rect x="600" y="290" width="320" height="46" rx="4" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="760" y="311" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">base layers (python:3.13-slim)</text>
+<text x="760" y="327" text-anchor="middle" font-size="10" fill="#4a5568">~127 MB, already on disk after one pull</text>
+
+<rect x="600" y="240" width="320" height="42" rx="4" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="760" y="266" text-anchor="middle" font-size="11" fill="#4a5568">WORKDIR layer &#8212; 0 B (metadata only)</text>
+
+<rect x="600" y="192" width="320" height="42" rx="4" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="760" y="218" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">COPY layer &#8212; 1.03 kB (fare_estimate.py)</text>
+
+<rect x="600" y="144" width="320" height="42" rx="4" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="760" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">RUN layer &#8212; 33 B (BUILD_INFO.txt)</text>
+
+<rect x="600" y="96" width="320" height="42" rx="4" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+<text x="760" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">CMD layer &#8212; 0 B, metadata only</text>
+
+<line x1="640" y1="96" x2="640" y2="336" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="920" y="356" text-anchor="end" font-size="10" fill="#718096">top of stack &#8593;</text>
+
+<line x1="40" y1="452" x2="920" y2="452" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="484" text-anchor="middle" font-size="13" fill="#4a5568">docker history cityflow-fare-estimator:1.0 shows this exact stack, oldest layer at the bottom:</text>
+<text x="480" y="506" text-anchor="middle" font-size="11" font-family="Menlo, Consolas, monospace" fill="#2d3748">CMD 0B &#8226; RUN 33B &#8226; COPY 1.03kB &#8226; WORKDIR 0B &#8226; &#8230; base layers &#8230; 127MB</text>
+<text x="480" y="534" text-anchor="middle" font-size="12" fill="#718096">Every FROM, RUN, and COPY adds a new, independently cacheable layer &#8212; CMD only records metadata, it adds nothing to image size.</text>
+
+<defs>
+<marker id="arrowA" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

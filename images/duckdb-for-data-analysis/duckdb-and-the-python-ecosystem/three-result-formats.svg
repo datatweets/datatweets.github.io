@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Query, Three Result Formats</text>
+
+  <rect x="290" y="50" width="220" height="50" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="400" y="72" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">con.execute(query)</text>
+  <text x="400" y="88" text-anchor="middle" font-size="9" fill="#718096">8 rows, category + revenue</text>
+
+  <line x1="360" y1="100" x2="200" y2="140" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowT)" />
+  <line x1="400" y1="100" x2="400" y2="140" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowT)" />
+  <line x1="440" y1="100" x2="600" y2="140" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowT)" />
+
+  <rect x="60" y="140" width="220" height="56" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="170" y="164" text-anchor="middle" font-size="10.5" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">.df()</text>
+  <text x="170" y="182" text-anchor="middle" font-size="9" fill="#2c5282">pandas DataFrame</text>
+
+  <rect x="290" y="140" width="220" height="56" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="400" y="164" text-anchor="middle" font-size="10.5" font-weight="700" font-family="Menlo, monospace" fill="#9c4221">.pl()</text>
+  <text x="400" y="182" text-anchor="middle" font-size="9" fill="#9c4221">Polars DataFrame</text>
+
+  <rect x="520" y="140" width="220" height="56" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.3" />
+  <text x="630" y="164" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#742a2a">.to_arrow_table()</text>
+  <text x="630" y="182" text-anchor="middle" font-size="9" fill="#742a2a">PyArrow Table</text>
+
+  <line x1="170" y1="196" x2="330" y2="228" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowT)" />
+  <line x1="400" y1="196" x2="400" y2="228" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowT)" />
+  <line x1="630" y1="196" x2="470" y2="228" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowT)" />
+
+  <rect x="230" y="228" width="340" height="46" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="400" y="256" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">confirmed identical, row for row</text>
+
+  <rect x="60" y="296" width="220" height="46" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="170" y="314" text-anchor="middle" font-size="9" fill="#2d3748">broad ecosystem</text>
+  <text x="170" y="330" text-anchor="middle" font-size="9" fill="#2d3748">compatibility</text>
+
+  <rect x="290" y="296" width="220" height="46" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="400" y="314" text-anchor="middle" font-size="9" fill="#2d3748">native Polars</text>
+  <text x="400" y="330" text-anchor="middle" font-size="9" fill="#2d3748">transformations</text>
+
+  <rect x="520" y="296" width="220" height="46" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="630" y="314" text-anchor="middle" font-size="9" fill="#2d3748">cross-tool</text>
+  <text x="630" y="330" text-anchor="middle" font-size="9" fill="#2d3748">Arrow interop</text>
+
+  <defs>
+    <marker id="arrowT" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

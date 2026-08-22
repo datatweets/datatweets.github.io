@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Set Naive Bayes Class Priors After Rebalancing Data</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail showing a balanced 50-50 training sample corrected to a 95-5 operating class prior before Gaussian Naive Bayes makes predictions.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="145" font-size="29" font-weight="600" letter-spacing="1.2" fill="#59636e">REBALANCED TRAINING DATA</text>
+    <text x="90" y="278" font-size="83" font-weight="700" fill="#1b1f24">USE THE</text>
+    <text x="90" y="371" font-size="83" font-weight="700" fill="#1b1f24">REAL PRIOR</text>
+    <rect x="94" y="406" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="475" font-size="27" font-weight="500" fill="#59636e">CLASS PRIORS &#183; GAUSSIANNB</text>
+  </g>
+
+  <g transform="translate(728 112)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="0" y="0" width="368" height="176" rx="20" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+    <text x="24" y="38" font-size="21" font-weight="600" fill="#59636e">TRAINING SAMPLE</text>
+    <text x="24" y="76" font-size="19" font-weight="500" fill="#1b1f24">ROUTINE</text>
+    <rect x="132" y="59" width="180" height="22" rx="11" fill="#e3f0fa"/>
+    <rect x="132" y="59" width="90" height="22" rx="11" fill="#0067c0"/>
+    <text x="326" y="77" font-size="19" font-weight="600" fill="#1b1f24">50%</text>
+    <text x="24" y="126" font-size="19" font-weight="500" fill="#1b1f24">REVIEW</text>
+    <rect x="132" y="109" width="180" height="22" rx="11" fill="#f1f3f5"/>
+    <rect x="132" y="109" width="90" height="22" rx="11" fill="#59636e"/>
+    <text x="326" y="127" font-size="19" font-weight="600" fill="#1b1f24">50%</text>
+
+    <path d="M184 192 V226" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round"/>
+    <path d="M174 218 L184 230 L194 218" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="107" y="183" width="154" height="31" rx="15.5" fill="#ffffff" stroke="#0067c0" stroke-width="2"/>
+    <text x="184" y="205" text-anchor="middle" font-size="17" font-weight="600" fill="#0067c0">SET PRIORS</text>
+
+    <rect x="0" y="240" width="368" height="176" rx="20" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+    <text x="24" y="278" font-size="21" font-weight="600" fill="#59636e">OPERATING RATE</text>
+    <text x="24" y="316" font-size="19" font-weight="500" fill="#1b1f24">ROUTINE</text>
+    <rect x="132" y="299" width="180" height="22" rx="11" fill="#e3f0fa"/>
+    <rect x="132" y="299" width="171" height="22" rx="11" fill="#0067c0"/>
+    <text x="326" y="317" font-size="19" font-weight="600" fill="#1b1f24">95%</text>
+    <text x="24" y="366" font-size="19" font-weight="500" fill="#1b1f24">REVIEW</text>
+    <rect x="132" y="349" width="180" height="22" rx="11" fill="#f1f3f5"/>
+    <rect x="132" y="349" width="9" height="22" rx="4.5" fill="#59636e"/>
+    <text x="326" y="367" font-size="19" font-weight="600" fill="#1b1f24">5%</text>
+  </g>
+</svg>

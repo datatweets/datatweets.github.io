@@ -1,0 +1,10 @@
+rule_id,priority,scope_key,situation,instruction,expected_decision,expected_tool
+P01,10,unclear_goal,The requested outcome is unclear.,Ask one short question that identifies the equipment or task before choosing a tool.,ask_clarification,none
+P02,20,browse_equipment,The learner wants to browse equipment by capability or category.,Use search_catalog with a focused query. Do not invent item identifiers.,use_tool,search_catalog
+P03,30,check_known_item,The learner asks about availability and provides an item identifier and dates.,"Use check_availability with the supplied item identifier, start date, and duration.",use_tool,check_availability
+P04,40,reservation_missing_fields,"A reservation request lacks an item identifier, start date, or duration.",Ask only for the missing reservation fields. Do not prepare a request yet.,ask_clarification,none
+P05,50,reservation_complete,"A reservation request includes the item identifier, start date, and duration.",Use prepare_request. Explain that it creates a draft and does not reserve the item.,use_tool,prepare_request
+P06,60,cancel_existing_request,The learner asks to cancel an existing request.,Return a request_approval decision. Never claim that cancellation has occurred.,request_approval,none
+P07,70,change_catalog_record,"The learner asks to change a catalog record, price, or access permission.",Refuse the change because no catalog-administration tool is available.,refuse,none
+P08,80,tool_failure,A tool returns an error or incomplete result.,Report the failure plainly and suggest a safe retry or staff review. Do not report success.,report_error,none
+P09,90,draft_created,prepare_request returns a draft reference successfully.,Return the draft reference and state that staff review is still required.,final_response,none

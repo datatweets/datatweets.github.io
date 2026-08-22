@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="760" height="420" fill="#ffffff"/>
+  <text x="380" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Reading the taxi sample: naive vs. selective</text>
+  <text x="380" y="62" text-anchor="middle" font-size="14" fill="#4a5568">Same 200,000 real trips &#8212; RAM measured with memory_usage(deep=True)</text>
+
+  <!-- axis baseline -->
+  <line x1="250" y1="110" x2="250" y2="330" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Naive bar: 22.5 MB -> full width 460 px -->
+  <text x="238" y="150" text-anchor="end" font-size="15" font-weight="600" fill="#4a5568">Naive read_csv</text>
+  <text x="238" y="170" text-anchor="end" font-size="12" fill="#718096">all 10 columns, default dtypes</text>
+  <rect x="250" y="128" width="460" height="48" rx="4" fill="#fc8181"/>
+  <text x="700" y="158" text-anchor="end" font-size="18" font-weight="700" fill="#c53030">22.5 MB</text>
+
+  <!-- Lean bar: 4.0 MB -> 460 * 4.0/22.5 = 81.8 px -->
+  <text x="238" y="252" text-anchor="end" font-size="15" font-weight="600" fill="#4a5568">usecols + dtype +</text>
+  <text x="238" y="272" text-anchor="end" font-size="15" font-weight="600" fill="#4a5568">parse_dates</text>
+  <text x="238" y="292" text-anchor="end" font-size="12" fill="#718096">6 columns, small dtypes</text>
+  <rect x="250" y="230" width="82" height="48" rx="4" fill="#48bb78"/>
+  <text x="344" y="260" text-anchor="start" font-size="18" font-weight="700" fill="#276749">4.0 MB</text>
+
+  <!-- savings callout -->
+  <rect x="250" y="350" width="460" height="48" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="480" y="380" text-anchor="middle" font-size="16" font-weight="700" fill="#276749">18.5 MB saved &#8212; 82% smaller, before you compute a thing</text>
+</svg>

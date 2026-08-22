@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="480" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">normalize_catalog() -- The Complete Pipeline</text>
+
+  <rect x="240" y="48" width="240" height="50" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="360" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">thistlewood_products_raw.csv</text>
+  <text x="360" y="86" text-anchor="middle" font-size="9" fill="#4a5568">61 rows, 3 real problem categories</text>
+
+  <line x1="360" y1="98" x2="360" y2="120" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#q0)" />
+
+  <rect x="180" y="124" width="360" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="360" y="152" text-anchor="middle" font-size="10.5" fill="#2b6cb0">category: strip_chars().to_titlecase()</text>
+
+  <line x1="360" y1="170" x2="360" y2="192" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#q1)" />
+
+  <rect x="180" y="196" width="360" height="46" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.3" />
+  <text x="360" y="224" text-anchor="middle" font-size="10.5" fill="#6b46c1">product_name: strip, collapse \s+, to_titlecase</text>
+
+  <line x1="360" y1="242" x2="360" y2="264" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#q2)" />
+
+  <rect x="180" y="268" width="360" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="360" y="296" text-anchor="middle" font-size="10.5" fill="#2b6cb0">.unique(subset=["product_id"], keep="first")</text>
+
+  <line x1="360" y1="314" x2="360" y2="336" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#q3)" />
+
+  <defs>
+    <marker id="q0" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="q1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="q2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="q3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <rect x="140" y="340" width="440" height="90" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="360" y="366" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">60 rows -- equals canonical thistlewood_products.csv exactly</text>
+  <text x="360" y="386" text-anchor="middle" font-size="9.5" fill="#2d3748">row count, 8 categories, per-category counts, per-category avg unit_price,</text>
+  <text x="360" y="404" text-anchor="middle" font-size="9.5" fill="#2d3748">and a full table match -- every column, every row, no residual gap</text>
+
+  <text x="360" y="452" text-anchor="middle" font-size="10.5" fill="#718096">category and product_name normalize independently in one with_columns();</text>
+  <text x="360" y="468" text-anchor="middle" font-size="10.5" fill="#718096">dedup runs last since it needs both columns' final state.</text>
+</svg>

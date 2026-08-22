@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Python ETL pipeline thumbnail</title>
+  <desc id="desc">A minimal thumbnail for an article on building a Python ETL pipeline: three differently formatted CSV sources flow through extract and transform into a database, with a badge marking the load step as safe to rerun.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">SURVIVES A RERUN</text>
+    <text x="90" y="392" font-size="160" font-weight="700" fill="#1b1f24">ETL</text>
+    <rect x="94" y="424" width="330" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="500" font-size="32" font-weight="500" fill="#59636e">extract &#183; transform &#183; load</text>
+  </g>
+  <g transform="translate(660 130)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <g fill="#e3f0fa" stroke="#0067c0" stroke-width="2">
+      <rect x="0" y="0" width="92" height="52" rx="10"/>
+      <rect x="0" y="68" width="92" height="52" rx="10"/>
+      <rect x="0" y="136" width="92" height="52" rx="10"/>
+    </g>
+    <g font-size="17" font-weight="700" fill="#0067c0" text-anchor="middle">
+      <text x="46" y="33">CSV</text>
+      <text x="46" y="101">CSV</text>
+      <text x="46" y="169">CSV</text>
+    </g>
+    <path d="M96 26H150" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+    <path d="M96 94H150" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+    <path d="M96 162H150" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+    <path d="M150 26C186 26 186 94 216 94" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+    <path d="M150 162C186 162 186 94 216 94" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+    <path d="M150 94H216" fill="none" stroke="#c7ccd2" stroke-width="5" stroke-linecap="round"/>
+    <rect x="216" y="46" width="130" height="96" rx="14" fill="#fdeede" stroke="#59636e" stroke-width="3"/>
+    <text x="281" y="88" text-anchor="middle" font-size="17" font-weight="700" fill="#1b1f24">CLEAN</text>
+    <text x="281" y="112" text-anchor="middle" font-size="17" font-weight="700" fill="#1b1f24">ROWS</text>
+    <path d="M350 94H404" fill="none" stroke="#0067c0" stroke-width="6" stroke-linecap="round"/>
+    <g transform="translate(404 30)">
+      <path d="M0 20 A64 16 0 0 1 128 20 V116 A64 16 0 0 1 0 116 Z" fill="#e6f4e6" stroke="#0067c0" stroke-width="3"/>
+      <ellipse cx="64" cy="20" rx="64" ry="16" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+      <text x="64" y="76" text-anchor="middle" font-size="16" font-weight="700" fill="#1b1f24">SQLITE</text>
+    </g>
+    <g transform="translate(432 150)">
+      <rect x="0" y="0" width="100" height="34" rx="17" fill="#0067c0"/>
+      <text x="50" y="23" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">UNIQUE</text>
+    </g>
+  </g>
+</svg>

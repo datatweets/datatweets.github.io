@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A REST registration, a schema ID on the wire, and a round trip back to the exact record</title>
+  <desc>A real Avro produce-to-consume round trip through a live Schema Registry. A schema is registered over the REST API and receives schema ID 1. AvroSerializer encodes the record, embedding a 5-byte header (magic byte plus schema ID 1) before the Avro payload, and sends it to the topic. AvroDeserializer reads the header off the consumed message, looks up schema ID 1 from the registry, and decodes the payload back into the exact original record -- confirmed with a direct equality check.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Register Once, Reference Everywhere</text>
+
+  <!-- Schema Registry -->
+  <rect x="440" y="50" width="220" height="70" rx="8" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="550" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#553c9a">Schema Registry</text>
+  <text x="550" y="93" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#553c9a">localhost:8081</text>
+  <text x="550" y="108" text-anchor="middle" font-size="9.5" fill="#553c9a">POST .../versions -&gt; {"id": 1}</text>
+
+  <!-- Producer -->
+  <rect x="60" y="170" width="380" height="120" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="250" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">AvroSerializer</text>
+  <text x="250" y="215" text-anchor="middle" font-size="10" fill="#2c5282">record = {"trip_id": "trip-00042", ...}</text>
+  <rect x="90" y="228" width="320" height="42" rx="6" fill="#2c5282" />
+  <text x="250" y="246" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#ebf8ff">[magic byte][schema id: 1][avro bytes]</text>
+  <text x="250" y="262" text-anchor="middle" font-size="9" fill="#ebf8ff">sent to cityflow-avro-check</text>
+
+  <!-- Consumer -->
+  <rect x="660" y="170" width="380" height="120" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="850" y="195" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">AvroDeserializer</text>
+  <text x="850" y="215" text-anchor="middle" font-size="10" fill="#22543d">reads schema id 1 from the header,</text>
+  <text x="850" y="230" text-anchor="middle" font-size="10" fill="#22543d">looks it up, decodes the payload</text>
+  <rect x="690" y="240" width="320" height="34" rx="6" fill="#22543d" />
+  <text x="850" y="262" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#c6f6d5">value == record  -&gt;  True</text>
+
+  <!-- arrows -->
+  <path d="M480,110 L280,225" stroke="#a0aec0" stroke-width="2" marker-end="url(#a2)" />
+  <path d="M620,110 L820,225" stroke="#a0aec0" stroke-width="2" marker-end="url(#a2)" />
+  <path d="M440,240 L660,240" stroke="#a0aec0" stroke-width="2.5" marker-end="url(#a2)" />
+  <defs>
+    <marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <text x="550" y="335" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">The schema is registered once -- every message only ever carries its 4-byte ID</text>
+  <text x="550" y="360" text-anchor="middle" font-size="11" fill="#4a5568">A consumer never needs a subject name or version -- the ID off the wire is a complete,</text>
+  <text x="550" y="378" text-anchor="middle" font-size="11" fill="#4a5568">self-sufficient key into the registry's entire schema history.</text>
+</svg>

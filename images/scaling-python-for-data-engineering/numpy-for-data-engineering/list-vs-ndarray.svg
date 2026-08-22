@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="860" height="520" fill="#ffffff"/>
+  <text x="430" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">200,000 taxi &#8220;total_amount&#8221; values, two ways</text>
+  <text x="430" y="64" text-anchor="middle" font-size="14" fill="#4a5568">The same numbers as a Python list of float objects versus one contiguous NumPy float64 array</text>
+
+  <!-- ===================== LEFT: Python list ===================== -->
+  <rect x="30" y="92" width="380" height="380" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+  <text x="220" y="120" text-anchor="middle" font-size="17" font-weight="700" fill="#c53030">Python list of floats</text>
+  <text x="220" y="142" text-anchor="middle" font-size="12.5" fill="#4a5568">pointers to scattered objects &#183; 32 bytes / value</text>
+
+  <!-- pointer array (contiguous slots holding addresses) -->
+  <text x="56" y="172" font-size="12" fill="#4a5568">list holds pointers:</text>
+  <g fill="#ffffff" stroke="#c53030" stroke-width="1.5">
+    <rect x="56" y="182" width="42" height="30"/>
+    <rect x="98" y="182" width="42" height="30"/>
+    <rect x="140" y="182" width="42" height="30"/>
+    <rect x="182" y="182" width="42" height="30"/>
+    <rect x="224" y="182" width="42" height="30"/>
+  </g>
+  <g fill="#c53030" font-size="12" text-anchor="middle">
+    <text x="77" y="202">&#8226;</text>
+    <text x="119" y="202">&#8226;</text>
+    <text x="161" y="202">&#8226;</text>
+    <text x="203" y="202">&#8226;</text>
+    <text x="245" y="202">&#8226;</text>
+  </g>
+  <text x="288" y="202" font-size="20" fill="#a0aec0">&#8230;</text>
+
+  <!-- scattered float objects with overhead -->
+  <g font-size="11.5" text-anchor="middle">
+    <rect x="60" y="258" width="90" height="46" rx="6" fill="#ffffff" stroke="#fc8181" stroke-width="1.5"/>
+    <text x="105" y="277" fill="#1a202c" font-weight="600">90.96</text>
+    <text x="105" y="294" fill="#718096">+ 16B header</text>
+
+    <rect x="170" y="300" width="90" height="46" rx="6" fill="#ffffff" stroke="#fc8181" stroke-width="1.5"/>
+    <text x="215" y="319" fill="#1a202c" font-weight="600">22.50</text>
+    <text x="215" y="336" fill="#718096">+ 16B header</text>
+
+    <rect x="280" y="252" width="90" height="46" rx="6" fill="#ffffff" stroke="#fc8181" stroke-width="1.5"/>
+    <text x="325" y="271" fill="#1a202c" font-weight="600">12.50</text>
+    <text x="325" y="288" fill="#718096">+ 16B header</text>
+
+    <rect x="96" y="352" width="90" height="46" rx="6" fill="#ffffff" stroke="#fc8181" stroke-width="1.5"/>
+    <text x="141" y="371" fill="#1a202c" font-weight="600">18.00</text>
+    <text x="141" y="388" fill="#718096">+ 16B header</text>
+
+    <rect x="248" y="356" width="90" height="46" rx="6" fill="#ffffff" stroke="#fc8181" stroke-width="1.5"/>
+    <text x="293" y="375" fill="#1a202c" font-weight="600">31.30</text>
+    <text x="293" y="392" fill="#718096">+ 16B header</text>
+  </g>
+
+  <!-- pointer arrows -->
+  <g stroke="#a0aec0" stroke-width="1.2" fill="none">
+    <path d="M77 212 L100 258"/>
+    <path d="M119 212 L205 300"/>
+    <path d="M161 212 L318 252"/>
+    <path d="M203 212 L145 352"/>
+    <path d="M245 212 L290 356"/>
+  </g>
+
+  <rect x="56" y="420" width="308" height="38" rx="6" fill="#ffffff" stroke="#c53030" stroke-width="1.5"/>
+  <text x="210" y="444" text-anchor="middle" font-size="15" font-weight="700" fill="#c53030">6.1 MB total in RAM</text>
+
+  <!-- ===================== RIGHT: NumPy ndarray ===================== -->
+  <rect x="450" y="92" width="380" height="380" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="640" y="120" text-anchor="middle" font-size="17" font-weight="700" fill="#276749">NumPy float64 ndarray</text>
+  <text x="640" y="142" text-anchor="middle" font-size="12.5" fill="#4a5568">raw values, one dtype, contiguous &#183; 8 bytes / value</text>
+
+  <text x="476" y="188" font-size="12" fill="#4a5568">one unbroken block of memory:</text>
+  <g font-size="11.5" text-anchor="middle">
+    <rect x="476" y="200" width="60" height="40" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+    <text x="506" y="224" fill="#1a202c" font-weight="600">90.96</text>
+    <rect x="536" y="200" width="60" height="40" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+    <text x="566" y="224" fill="#1a202c" font-weight="600">22.50</text>
+    <rect x="596" y="200" width="60" height="40" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+    <text x="626" y="224" fill="#1a202c" font-weight="600">12.50</text>
+    <rect x="656" y="200" width="60" height="40" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+    <text x="686" y="224" fill="#1a202c" font-weight="600">18.00</text>
+    <rect x="716" y="200" width="60" height="40" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+    <text x="746" y="224" fill="#1a202c" font-weight="600">31.30</text>
+    <rect x="776" y="200" width="30" height="40" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+    <text x="791" y="224" fill="#a0aec0" font-size="16">&#8230;</text>
+  </g>
+  <text x="640" y="264" text-anchor="middle" font-size="12" fill="#276749">8 bytes each, side by side &#8212; the CPU walks them in one cache-friendly sweep</text>
+
+  <rect x="490" y="292" width="300" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="640" y="316" text-anchor="middle" font-size="13" fill="#2b6cb0">one dtype known ahead of time &#8594;</text>
+  <text x="640" y="338" text-anchor="middle" font-size="13" fill="#2b6cb0">a tight C loop, no per-value Python work</text>
+
+  <rect x="490" y="420" width="300" height="38" rx="6" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+  <text x="640" y="444" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">1.5 MB total in RAM</text>
+
+  <!-- ===================== center verdict ===================== -->
+  <text x="430" y="392" text-anchor="middle" font-size="15" font-weight="700" fill="#c05621">4.0&#215; smaller</text>
+  <text x="430" y="410" text-anchor="middle" font-size="13" fill="#c05621">~50&#215; faster to sum</text>
+</svg>

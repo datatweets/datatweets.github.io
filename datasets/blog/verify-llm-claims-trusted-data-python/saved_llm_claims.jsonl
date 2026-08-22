@@ -1,0 +1,15 @@
+{"case_id": "K01", "expected_status": "verified", "model_output": "{\"workshop_code\":\"WS101\",\"attribute\":\"format\",\"value\":\"In person\",\"citation\":\"CAT-001\"}"}
+{"case_id": "K02", "expected_status": "verified", "model_output": "{\"workshop_code\":\"WS102\",\"attribute\":\"weekday\",\"value\":\"thursday\",\"citation\":\"CAT-002\"}"}
+{"case_id": "K03", "expected_status": "verified", "model_output": "{\"workshop_code\":\"WS103\",\"attribute\":\"start_time\",\"value\":\"10:00\",\"citation\":\"CAT-003\"}"}
+{"case_id": "K04", "expected_status": "verified", "model_output": "{\"workshop_code\":\"WS104\",\"attribute\":\"fee_eur\",\"value\":27.5,\"citation\":\"CAT-004\"}"}
+{"case_id": "K05", "expected_status": "verified", "model_output": "{\"workshop_code\":\"WS105\",\"attribute\":\"step_free_access\",\"value\":\"YES\",\"citation\":\"CAT-005\"}"}
+{"case_id": "K06", "expected_status": "verified", "model_output": "{\"workshop_code\":\"WS106\",\"attribute\":\"language\",\"value\":\" English \",\"citation\":\"CAT-006\"}"}
+{"case_id": "K07", "expected_status": "value_mismatch", "model_output": "{\"workshop_code\":\"WS103\",\"attribute\":\"format\",\"value\":\"online\",\"citation\":\"CAT-003\"}"}
+{"case_id": "K08", "expected_status": "value_mismatch", "model_output": "{\"workshop_code\":\"WS108\",\"attribute\":\"weekday\",\"value\":\"Friday\",\"citation\":\"CAT-008\"}"}
+{"case_id": "K09", "expected_status": "value_mismatch", "model_output": "{\"workshop_code\":\"WS102\",\"attribute\":\"fee_eur\",\"value\":25,\"citation\":\"CAT-002\"}"}
+{"case_id": "K10", "expected_status": "unknown_workshop", "model_output": "{\"workshop_code\":\"WS999\",\"attribute\":\"language\",\"value\":\"English\",\"citation\":\"CAT-999\"}"}
+{"case_id": "K11", "expected_status": "unsupported_attribute", "model_output": "{\"workshop_code\":\"WS107\",\"attribute\":\"duration_minutes\",\"value\":90,\"citation\":\"CAT-007\"}"}
+{"case_id": "K12", "expected_status": "citation_mismatch", "model_output": "{\"workshop_code\":\"WS101\",\"attribute\":\"weekday\",\"value\":\"Tuesday\",\"citation\":\"CAT-002\"}"}
+{"case_id": "K13", "expected_status": "invalid_value", "model_output": "{\"workshop_code\":\"WS106\",\"attribute\":\"fee_eur\",\"value\":\"free\",\"citation\":\"CAT-006\"}"}
+{"case_id": "K14", "expected_status": "invalid_shape", "model_output": "{\"workshop_code\": \"WS105\", \"attribute\": \"format\", \"value\": \"online\"}"}
+{"case_id": "K15", "expected_status": "invalid_json", "model_output": "{\"workshop_code\":\"WS108\",\"attribute\":\"format\",\"value\":\"online\",\"citation\":\"CAT-008\""}

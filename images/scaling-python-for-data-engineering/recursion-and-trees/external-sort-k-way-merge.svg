@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 800" width="960" height="800" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="800" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">External sort: 2,964,624 timestamps ordered in 22.1&#160;MB instead of 166.1&#160;MB</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">January 2024 yellow-taxi pickup times, 23.72&#160;MB of 8-byte records &#183; 250,000-row chunks &#8594; 12 sorted runs &#183; merged with heapq.merge</text>
+
+<text x="40" y="94" font-size="13" font-weight="700" fill="#4a5568">THE PIPELINE &#8212; sort pieces that fit, then merge streams that don&#8217;t</text>
+<line x1="40" y1="104" x2="920" y2="104" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- PANEL 1: runs on disk -->
+<text x="44" y="126" font-size="11" font-weight="700" fill="#2b6cb0">12 SORTED RUNS ON DISK</text>
+<rect x="40" y="134" width="176" height="30" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="50" y="153" font-size="10.5" font-weight="600" fill="#2b6cb0">run_00.bin</text>
+<text x="208" y="153" text-anchor="end" font-size="10" fill="#718096">250,000 sorted</text>
+<rect x="40" y="168" width="176" height="30" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="50" y="187" font-size="10.5" font-weight="600" fill="#2b6cb0">run_01.bin</text>
+<text x="208" y="187" text-anchor="end" font-size="10" fill="#718096">250,000 sorted</text>
+<rect x="40" y="202" width="176" height="30" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="50" y="221" font-size="10.5" font-weight="600" fill="#2b6cb0">run_02.bin</text>
+<text x="208" y="221" text-anchor="end" font-size="10" fill="#718096">250,000 sorted</text>
+<text x="128" y="248" text-anchor="middle" font-size="15" fill="#718096">&#183;&#183;&#183;</text>
+<rect x="40" y="256" width="176" height="30" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="50" y="275" font-size="10.5" font-weight="600" fill="#2b6cb0">run_11.bin</text>
+<text x="208" y="275" text-anchor="end" font-size="10" fill="#718096">214,624 sorted</text>
+<text x="128" y="302" text-anchor="middle" font-size="10" fill="#718096">23.72&#160;MB total &#8212; on disk, not in RAM</text>
+
+<text x="245" y="212" text-anchor="middle" font-size="20" fill="#4a5568">&#8594;</text>
+
+<!-- PANEL 1: heap box -->
+<rect x="276" y="134" width="240" height="152" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="396" y="156" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">min-heap of the 12 heads</text>
+<text x="396" y="176" text-anchor="middle" font-size="10.5" fill="#4a5568">&#8220;which of these 12 is smallest?&#8221;</text>
+<rect x="296" y="188" width="200" height="26" rx="5" fill="#c6f6d5" stroke="#276749" stroke-width="1"/>
+<text x="396" y="206" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">answered in log&#8322;(12) = 3.58 steps</text>
+<text x="396" y="234" text-anchor="middle" font-size="10.5" fill="#4a5568">pop the root &#183; yield it &#183; pull the next</text>
+<text x="396" y="249" text-anchor="middle" font-size="10.5" fill="#4a5568">value from that run &#183; sift down</text>
+<text x="396" y="272" text-anchor="middle" font-size="10" fill="#276749">holds 12 values &#43; one 8,192-value buffer per run</text>
+
+<text x="545" y="212" text-anchor="middle" font-size="20" fill="#4a5568">&#8594;</text>
+
+<!-- PANEL 1: output -->
+<text x="580" y="126" font-size="11" font-weight="700" fill="#c05621">ONE SORTED STREAM OUT</text>
+<rect x="576" y="134" width="344" height="152" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="590" y="155" font-size="10.5" font-weight="600" fill="#c05621">sorted_out.bin</text>
+<text x="906" y="155" text-anchor="end" font-size="10" fill="#718096">2,964,624 values &#183; 23.72&#160;MB</text>
+<line x1="590" y1="163" x2="906" y2="163" stroke="#fbd38d" stroke-width="1"/>
+<text x="590" y="182" font-size="10.5" fill="#4a5568">2002-12-31 22:59:39</text>
+<text x="590" y="199" font-size="10.5" fill="#4a5568">2002-12-31 22:59:39</text>
+<text x="590" y="216" font-size="10.5" fill="#4a5568">2009-01-01 00:24:09</text>
+<text x="590" y="233" font-size="10.5" fill="#4a5568">2009-01-01 23:30:39</text>
+<text x="590" y="250" font-size="10.5" fill="#4a5568">2009-01-01 23:58:40</text>
+<text x="590" y="270" font-size="10.5" fill="#718096">&#183;&#183;&#183; through to 2024-02-01 00:01:15</text>
+<text x="906" y="199" text-anchor="end" font-size="10" fill="#c05621">the first four are real,</text>
+<text x="906" y="215" text-anchor="end" font-size="10" fill="#c05621">and really out of range &#8212;</text>
+<text x="906" y="231" text-anchor="end" font-size="10" fill="#c05621">sorting a column is how</text>
+<text x="906" y="247" text-anchor="end" font-size="10" fill="#c05621">its dirt reaches the top.</text>
+<text x="906" y="270" text-anchor="end" font-size="10" fill="#718096">identical to sorted(): True</text>
+
+<line x1="40" y1="308" x2="920" y2="308" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- PANEL 2: the real heap tree -->
+<text x="40" y="330" font-size="13" font-weight="700" fill="#4a5568">THE HEAP, FOR REAL &#8212; the 12 run heads after heapify(), drawn as the tree it is</text>
+<text x="40" y="348" font-size="11" fill="#718096">Every node is smaller than both of its children, so the global minimum can only be at the root. Nothing else is sorted &#8212; and nothing else needs to be.</text>
+
+<!-- edges -->
+<line x1="480" y1="398" x2="290" y2="436" stroke="#a0aec0" stroke-width="1.2"/>
+<line x1="480" y1="398" x2="670" y2="436" stroke="#a0aec0" stroke-width="1.2"/>
+<line x1="290" y1="468" x2="200" y2="506" stroke="#a0aec0" stroke-width="1.2"/>
+<line x1="290" y1="468" x2="380" y2="506" stroke="#a0aec0" stroke-width="1.2"/>
+<line x1="670" y1="468" x2="580" y2="506" stroke="#a0aec0" stroke-width="1.2"/>
+<line x1="670" y1="468" x2="760" y2="506" stroke="#a0aec0" stroke-width="1.2"/>
+<line x1="200" y1="538" x2="110" y2="576" stroke="#a0aec0" stroke-width="1.2"/>
+<line x1="200" y1="538" x2="245" y2="576" stroke="#a0aec0" stroke-width="1.2"/>
+<line x1="380" y1="538" x2="335" y2="576" stroke="#a0aec0" stroke-width="1.2"/>
+<line x1="380" y1="538" x2="425" y2="576" stroke="#a0aec0" stroke-width="1.2"/>
+<line x1="580" y1="538" x2="545" y2="576" stroke="#a0aec0" stroke-width="1.2"/>
+
+<!-- root [0] -->
+<rect x="436" y="366" width="88" height="32" rx="6" fill="#c6f6d5" stroke="#276749" stroke-width="1.5"/>
+<text x="480" y="381" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">2002-12-31</text>
+<text x="480" y="393" text-anchor="middle" font-size="9" fill="#276749">run_00 &#183; 22:59:39</text>
+<text x="540" y="378" font-size="10.5" font-weight="700" fill="#276749">&#8592; the smallest of all 12 heads,</text>
+<text x="540" y="392" font-size="10.5" fill="#4a5568">found without comparing all 12</text>
+
+<!-- level 1 -->
+<rect x="250" y="436" width="80" height="32" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="290" y="451" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0">2009-01-01</text>
+<text x="290" y="463" text-anchor="middle" font-size="9" fill="#718096">run_10</text>
+<rect x="630" y="436" width="80" height="32" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="670" y="451" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0">2024-01-01</text>
+<text x="670" y="463" text-anchor="middle" font-size="9" fill="#718096">run_11</text>
+
+<!-- level 2 -->
+<rect x="160" y="506" width="80" height="32" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="200" y="521" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0">2024-01-10</text>
+<text x="200" y="533" text-anchor="middle" font-size="9" fill="#718096">run_03</text>
+<rect x="340" y="506" width="80" height="32" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="380" y="521" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0">2009-01-01</text>
+<text x="380" y="533" text-anchor="middle" font-size="9" fill="#718096">run_04</text>
+<rect x="540" y="506" width="80" height="32" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="580" y="521" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0">2024-01-06</text>
+<text x="580" y="533" text-anchor="middle" font-size="9" fill="#718096">run_02</text>
+<rect x="720" y="506" width="80" height="32" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="760" y="521" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0">2024-01-18</text>
+<text x="760" y="533" text-anchor="middle" font-size="9" fill="#718096">run_06</text>
+
+<!-- level 3 -->
+<rect x="70" y="576" width="80" height="32" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="110" y="591" text-anchor="middle" font-size="10" font-weight="600" fill="#4a5568">2024-01-20</text>
+<text x="110" y="603" text-anchor="middle" font-size="9" fill="#718096">run_07</text>
+<rect x="205" y="576" width="80" height="32" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="245" y="591" text-anchor="middle" font-size="10" font-weight="600" fill="#4a5568">2024-01-23</text>
+<text x="245" y="603" text-anchor="middle" font-size="9" fill="#718096">run_08</text>
+<rect x="295" y="576" width="80" height="32" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="335" y="591" text-anchor="middle" font-size="10" font-weight="600" fill="#4a5568">2024-01-25</text>
+<text x="335" y="603" text-anchor="middle" font-size="9" fill="#718096">run_09</text>
+<rect x="385" y="576" width="80" height="32" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="425" y="591" text-anchor="middle" font-size="10" font-weight="600" fill="#4a5568">2024-01-04</text>
+<text x="425" y="603" text-anchor="middle" font-size="9" fill="#718096">run_01</text>
+<rect x="505" y="576" width="80" height="32" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="545" y="591" text-anchor="middle" font-size="10" font-weight="600" fill="#4a5568">2024-01-15</text>
+<text x="545" y="603" text-anchor="middle" font-size="9" fill="#718096">run_05</text>
+
+<text x="640" y="588" font-size="10.5" fill="#718096">Note run_04 (2009-01-01) sits <tspan font-weight="700" fill="#4a5568">below</tspan> run_11</text>
+<text x="640" y="603" font-size="10.5" fill="#718096">(2024-01-01) in the drawing but is smaller.</text>
+<text x="640" y="618" font-size="10.5" fill="#718096">A heap only orders parent vs child &#8212; never</text>
+<text x="640" y="633" font-size="10.5" fill="#718096">left vs right, never across branches.</text>
+
+<text x="40" y="638" font-size="10.5" fill="#718096">Popping the root and refilling from run_00 touches at most 4 levels &#8212; not 12 runs. That is the whole difference between O(log k) and O(k).</text>
+
+<line x1="40" y1="656" x2="920" y2="656" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- PANEL 3: measured -->
+<text x="40" y="678" font-size="13" font-weight="700" fill="#4a5568">MEASURED &#8212; same 2,964,624 timestamps, same machine, same answer</text>
+
+<rect x="40" y="690" width="282" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="54" y="710" font-size="11" font-weight="700" fill="#276749">PEAK MEMORY &#8212; the headline</text>
+<text x="54" y="730" font-size="11" fill="#4a5568">in-memory sorted() 166.1&#160;MB</text>
+<text x="54" y="748" font-size="11" font-weight="700" fill="#276749">external sort 22.1&#160;MB &#8212; 7.5&#215; less</text>
+
+<rect x="338" y="690" width="282" height="70" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="352" y="710" font-size="11" font-weight="700" fill="#c05621">TIME &#8212; the honest price</text>
+<text x="352" y="730" font-size="11" fill="#4a5568">in-memory read &#43; sort 0.56&#160;s</text>
+<text x="352" y="748" font-size="11" font-weight="700" fill="#c05621">external sort 1.55&#160;s &#8212; 2.7&#215; slower</text>
+
+<rect x="636" y="690" width="284" height="70" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="650" y="710" font-size="11" font-weight="700" fill="#2b6cb0">CAPABILITY &#8212; what you bought</text>
+<text x="650" y="730" font-size="11" fill="#4a5568">RAM needed is set by chunk size,</text>
+<text x="650" y="748" font-size="11" font-weight="700" fill="#2b6cb0">not by how big the file is</text>
+
+<text x="40" y="782" font-size="10.5" fill="#718096">Peak memory is tracemalloc&#8217;s traced total for Python objects only &#8212; it does not count the OS file cache or allocations inside C extensions. Chunk size has a real optimum: 250,000 rows peaks at 22.1&#160;MB, 50,000 rows at 5.0&#160;MB, but 10,000 rows climbs back to 22.5&#160;MB because 297 merge buffers cost more than one sort chunk. Exact seconds vary by machine and run; the memory ratio is the point.</text>
+</svg>

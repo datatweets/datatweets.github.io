@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="trajTitle trajDesc">
+  <title id="trajTitle">Clean single-step trajectory versus a wasteful looping trajectory, both reaching the same answer.</title>
+  <desc id="trajDesc">Two agent trajectories for the same task are shown side by side. On the left, a green CLEAN path: one search_docs call returning the errors and ratelimits pages, then a final answer of HTTP 429. Its metrics read tool_calls equals 1, redundant equals False, matches_reference equals True, and the trajectory judge scores it 5 out of 5. On the right, a red WASTEFUL path: three near-identical search_docs calls in a row, the middle two flagged as redundant loops, then the same final answer of HTTP 429. Its metrics read tool_calls equals 3, redundant equals True, matches_reference equals False, and the judge scores it 3 out of 5. Both reach the same outcome, but only the process reveals the difference.</desc>
+  <rect x="0" y="0" width="820" height="470" fill="#ffffff"/>
+  <text x="410" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#1a202c">Same answer, different process</text>
+  <text x="410" y="50" text-anchor="middle" font-size="13" fill="#4a5568">Task: what HTTP status code does Meridian return when you exceed the rate limit?</text>
+
+  <!-- LEFT: CLEAN -->
+  <rect x="30" y="70" width="360" height="330" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="210" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">CLEAN trajectory</text>
+
+  <rect x="70" y="112" width="280" height="46" rx="8" fill="#ffffff" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="210" y="132" text-anchor="middle" font-size="12.5" font-weight="600" fill="#276749">step 1: search_docs</text>
+  <text x="210" y="149" text-anchor="middle" font-size="11.5" fill="#4a5568">query "rate limit HTTP status code" &#8594; [errors, ratelimits]</text>
+
+  <line x1="210" y1="158" x2="210" y2="184" stroke="#48bb78" stroke-width="2"/>
+  <polygon points="210,190 205,180 215,180" fill="#48bb78"/>
+
+  <rect x="70" y="190" width="280" height="46" rx="8" fill="#ffffff" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="210" y="210" text-anchor="middle" font-size="12.5" font-weight="600" fill="#276749">step 2: final answer</text>
+  <text x="210" y="227" text-anchor="middle" font-size="11.5" fill="#4a5568">"Meridian returns HTTP 429 ..."</text>
+
+  <rect x="70" y="256" width="280" height="86" rx="8" fill="#ffffff" stroke="#a0aec0" stroke-width="1"/>
+  <text x="84" y="277" font-size="12" fill="#4a5568">num_tool_calls = <tspan font-weight="700" fill="#276749">1</tspan></text>
+  <text x="84" y="297" font-size="12" fill="#4a5568">has_redundant_call = <tspan font-weight="700" fill="#276749">False</tspan></text>
+  <text x="84" y="317" font-size="12" fill="#4a5568">matches_reference = <tspan font-weight="700" fill="#276749">True</tspan></text>
+
+  <rect x="70" y="356" width="280" height="34" rx="8" fill="#276749"/>
+  <text x="210" y="378" text-anchor="middle" font-size="13.5" font-weight="700" fill="#ffffff">judge process score: 5 / 5</text>
+
+  <!-- RIGHT: WASTEFUL -->
+  <rect x="430" y="70" width="360" height="330" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+  <text x="610" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#c53030">WASTEFUL trajectory</text>
+
+  <rect x="470" y="108" width="280" height="30" rx="7" fill="#ffffff" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="610" y="127" text-anchor="middle" font-size="11.5" fill="#4a5568">step 1: search "rate limit status code"</text>
+
+  <line x1="610" y1="138" x2="610" y2="150" stroke="#fc8181" stroke-width="2"/>
+  <polygon points="610,156 605,146 615,146" fill="#fc8181"/>
+
+  <rect x="470" y="156" width="280" height="30" rx="7" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+  <text x="610" y="175" text-anchor="middle" font-size="11.5" fill="#c05621">step 2: search "rate limit HTTP status code"</text>
+
+  <line x1="610" y1="186" x2="610" y2="198" stroke="#fc8181" stroke-width="2"/>
+  <polygon points="610,204 605,194 615,194" fill="#fc8181"/>
+
+  <rect x="470" y="204" width="280" height="30" rx="7" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+  <text x="610" y="223" text-anchor="middle" font-size="11.5" fill="#c05621">step 3: search "what code for rate limit"</text>
+
+  <text x="762" y="197" font-size="11" font-weight="700" fill="#c05621" transform="rotate(90 762 197)">redundant loop</text>
+
+  <line x1="610" y1="234" x2="610" y2="246" stroke="#fc8181" stroke-width="2"/>
+  <polygon points="610,252 605,242 615,242" fill="#fc8181"/>
+
+  <rect x="470" y="252" width="280" height="30" rx="7" fill="#ffffff" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="610" y="271" text-anchor="middle" font-size="11.5" fill="#4a5568">step 4: final "Meridian returns HTTP 429 ..."</text>
+
+  <rect x="470" y="296" width="280" height="52" rx="8" fill="#ffffff" stroke="#a0aec0" stroke-width="1"/>
+  <text x="484" y="314" font-size="11.5" fill="#4a5568">tool_calls = <tspan font-weight="700" fill="#c53030">3</tspan>   redundant = <tspan font-weight="700" fill="#c53030">True</tspan></text>
+  <text x="484" y="334" font-size="11.5" fill="#4a5568">matches_reference = <tspan font-weight="700" fill="#c53030">False</tspan></text>
+
+  <rect x="470" y="356" width="280" height="34" rx="8" fill="#c53030"/>
+  <text x="610" y="378" text-anchor="middle" font-size="13.5" font-weight="700" fill="#ffffff">judge process score: 3 / 5</text>
+
+  <text x="410" y="428" text-anchor="middle" font-size="13" font-weight="600" fill="#1a202c">Both end at "HTTP 429" &#8212; only the trajectory shows one wandered.</text>
+  <text x="410" y="450" text-anchor="middle" font-size="12" fill="#718096">Outcome checks (Lesson 2) and per-call checks (Lesson 3) miss the wasted loop; trajectory evaluation catches it.</text>
+</svg>

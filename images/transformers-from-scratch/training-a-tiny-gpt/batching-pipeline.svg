@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="760" height="380" fill="#ffffff"/>
+  <text x="380" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#1a202c">From token stream to a training batch</text>
+
+  <!-- corpus stream -->
+  <text x="40" y="66" font-size="13" fill="#4a5568">corpus (token ids)</text>
+  <g font-size="12" fill="#2b6cb0" text-anchor="middle">
+    <rect x="40" y="76" width="680" height="30" fill="#ebf8ff" stroke="#4299e1"/>
+    <text x="380" y="96" fill="#2b6cb0">t h e   l a m p   k e e p e r   w a l k s   t h e   s h o r e   . . .   (10020 tokens)</text>
+  </g>
+
+  <!-- random chunks -->
+  <g stroke="#ed8936" fill="none" stroke-width="2">
+    <rect x="120" y="76" width="90" height="30"/>
+    <rect x="330" y="76" width="90" height="30"/>
+    <rect x="560" y="76" width="90" height="30"/>
+  </g>
+  <text x="380" y="132" text-anchor="middle" font-size="12" fill="#c05621">3 random chunks of length block_size sampled at random starts</text>
+
+  <!-- arrows down -->
+  <g stroke="#a0aec0" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M165 106 L165 160"/><path d="M375 106 L300 160"/><path d="M605 106 L435 160"/>
+  </g>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#a0aec0"/></marker></defs>
+
+  <!-- batch x -->
+  <text x="120" y="178" font-size="13" fill="#276749">x = (batch_size, block_size)</text>
+  <g font-size="12" text-anchor="middle">
+    <rect x="120" y="188" width="240" height="72" fill="#f0fff4" stroke="#48bb78"/>
+    <text x="240" y="212" fill="#276749">.  space t  h  e  space k  e</text>
+    <text x="240" y="236" fill="#276749">chunk rows stacked into a batch</text>
+  </g>
+  <!-- batch y -->
+  <text x="400" y="178" font-size="13" fill="#6b46c1">y = x shifted by one (targets)</text>
+  <g font-size="12" text-anchor="middle">
+    <rect x="400" y="188" width="240" height="72" fill="#faf5ff" stroke="#9f7aea"/>
+    <text x="520" y="212" fill="#6b46c1">space t  h  e  space k  e  e</text>
+    <text x="520" y="236" fill="#6b46c1">each target = the next character</text>
+  </g>
+
+  <!-- shift note -->
+  <text x="380" y="300" text-anchor="middle" font-size="13" fill="#1a202c">position t predicts token t+1  &#8594;  x[:, 1:] == y[:, :-1]  is True</text>
+
+  <!-- split -->
+  <g font-size="12">
+    <rect x="120" y="322" width="430" height="30" fill="#ebf8ff" stroke="#4299e1"/>
+    <text x="335" y="342" text-anchor="middle" fill="#2b6cb0">train (9018 tokens) &#8212; sampled every step</text>
+    <rect x="558" y="322" width="82" height="30" fill="#fff5f5" stroke="#fc8181"/>
+    <text x="599" y="342" text-anchor="middle" fill="#c53030">val (1002)</text>
+  </g>
+</svg>

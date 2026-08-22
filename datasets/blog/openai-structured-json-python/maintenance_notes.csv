@@ -1,0 +1,16 @@
+report_id,raw_note,issue_area,urgency,blocks_service,next_action
+R001,"R001: The east reading-room lamp flickers, but the room remains open. Replace the lamp during this week's routine visit.",electrical,low,False,Replace the lamp during the routine visit.
+R002,R002: Water is dripping through the archive-room ceiling. The area is closed and the stored boxes were moved. Inspect the pipe now.,water,high,True,Inspect the pipe and stop the leak now.
+R003,"R003: The staff entrance card reader rejects every card. Staff can use the main door, but deliveries cannot use this entrance. Check it today.",access,medium,True,Test the card reader and restore delivery access.
+R004,R004: The community-kitchen refrigerator reads 11 C. Food was moved to another unit and the kitchen is closed. Repair or replace the unit today.,temperature,high,True,Repair or replace the refrigerator today.
+R005,R005: One meeting-room chair has a loose backrest. It is labelled and stored away. Tighten the fittings before next month.,other,low,False,Tighten the chair fittings before next month.
+R006,"R006: Two sockets in the computer room have no power. Other sockets work, so six desks remain available. Test the circuit this afternoon.",electrical,medium,False,Test the affected circuit this afternoon.
+R007,R007: The ground-floor tap keeps running after it is closed. The sink still drains and the washroom is open. Replace the valve within two days.,water,medium,False,Replace the tap valve within two days.
+R008,"R008: The storeroom key is difficult to turn, although it still opens the lock. Lubricate the lock during the next weekly check.",access,low,False,Lubricate the lock during the weekly check.
+R009,R009: The training room feels unusually warm and the wall display shows 29 C. Move this evening's class and inspect the ventilation today.,temperature,medium,True,Inspect the ventilation before the next class.
+R010,R010: A ceiling panel above the reception desk is hanging at one corner. Reception is closed. Secure the panel before anyone returns.,other,high,True,Secure the ceiling panel before reopening reception.
+R011,R011: There is a burning smell beside the first-floor distribution board. Power to that floor is off and the floor is closed. Call an electrician immediately.,electrical,high,True,Call an electrician and inspect the board immediately.
+R012,R012: The garden hose connector leaks only while the hose is in use. Indoor services are unaffected. Fit a new washer next week.,water,low,False,Fit a new hose washer next week.
+R013,R013: The emergency exit door will not unlatch from inside. The hall is closed. Keep it closed until the latch is repaired and tested.,access,high,True,Repair and test the exit latch before reopening.
+R014,R014: The office thermostat shows 18 C instead of the 20 C setting. Staff are working normally. Check its calibration this week.,temperature,low,False,Check the thermostat calibration this week.
+R015,R015: Rainwater reached the cable cover beside the entrance. The entrance is closed and power there is isolated. Inspect both before reopening.,electrical,high,True,Inspect the cable cover before reopening the entrance.

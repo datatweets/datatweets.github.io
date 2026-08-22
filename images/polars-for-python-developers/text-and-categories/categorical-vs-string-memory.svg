@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">category Column -- Real Measured Memory, Three Dtypes</text>
+  <text x="360" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">Series.estimated_size(), 61 rows, 8 real distinct values</text>
+
+  <text x="120" y="106" font-size="11" font-weight="700" fill="#1a202c">String</text>
+  <rect x="120" y="114" width="480" height="34" rx="6" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.2" />
+  <text x="614" y="136" font-size="11" font-weight="700" fill="#c53030">411 bytes</text>
+
+  <text x="120" y="180" font-size="11" font-weight="700" fill="#1a202c">Categorical</text>
+  <rect x="120" y="188" width="285" height="34" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.2" />
+  <text x="419" y="210" font-size="11" font-weight="700" fill="#2b6cb0">244 bytes</text>
+
+  <text x="120" y="254" font-size="11" font-weight="700" fill="#1a202c">Enum</text>
+  <rect x="120" y="262" width="71" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2" />
+  <text x="205" y="284" font-size="11" font-weight="700" fill="#276749">61 bytes</text>
+
+  <line x1="120" y1="308" x2="620" y2="308" stroke="#cbd5e0" stroke-width="1" />
+
+  <rect x="70" y="322" width="580" height="80" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="360" y="346" text-anchor="middle" font-size="10.5" fill="#2d3748">Categorical dictionary-encodes each distinct string once; Enum goes further with a</text>
+  <text x="360" y="364" text-anchor="middle" font-size="10.5" fill="#2d3748">fixed, declared 8-category set -- and raises InvalidOperationError on any value</text>
+  <text x="360" y="382" text-anchor="middle" font-size="10.5" fill="#2d3748">outside that set, where Categorical would silently accept it as a new category.</text>
+</svg>

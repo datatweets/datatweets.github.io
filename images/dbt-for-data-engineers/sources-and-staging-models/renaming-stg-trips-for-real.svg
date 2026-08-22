@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A real rename: three files edited by hand, one graph resolved automatically</title>
+  <desc>Renaming stg_trips to stg_cityflow__trips touches three files, each edited directly, not by dbt itself. __sources.yml changes name: raw to name: cityflow. The model file itself is renamed from stg_trips.sql to stg_cityflow__trips.sql, and its own source() call updated to source('cityflow', 'trips'). Two downstream models, zone_revenue.sql and int_hourly_pattern.sql, each have their ref('stg_trips') call changed to ref('stg_cityflow__trips') by hand -- dbt does not rewrite a ref() call automatically when a model is renamed. Once all three edits are made, dbt run rebuilds the entire five-model graph correctly, producing the identical 81,013-trip, $2,442,843.25 figures as before the rename, confirming dbt's own name resolution is automatic even though the text edits that make renaming possible are not.</desc>
+  <rect width="1100" height="420" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Real Rename: Edited by Hand, Resolved Automatically</text>
+  <text x="550" y="49" text-anchor="middle" font-size="11" fill="#718096">dbt never rewrites a ref() call for you -- three files, edited directly, make the rename possible</text>
+
+  <rect x="50" y="70" width="310" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="205" y="95" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2c5282">__sources.yml</text>
+  <rect x="70" y="108" width="270" height="30" rx="5" fill="#fed7d7" />
+  <text x="205" y="127" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#822727">name: raw</text>
+  <text x="205" y="145" text-anchor="middle" font-size="14" fill="#a0aec0">&#8595;</text>
+  <rect x="70" y="152" width="270" height="30" rx="5" fill="#c6f6d5" />
+  <text x="205" y="171" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#22543d">name: cityflow</text>
+  <text x="205" y="200" text-anchor="middle" font-size="9" fill="#4a5568">schema: raw unchanged</text>
+
+  <rect x="395" y="70" width="310" height="150" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="550" y="95" text-anchor="middle" font-size="11.5" font-weight="700" fill="#22543d">the model file itself</text>
+  <rect x="415" y="108" width="270" height="30" rx="5" fill="#fed7d7" />
+  <text x="550" y="127" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#822727">stg_trips.sql</text>
+  <text x="550" y="145" text-anchor="middle" font-size="14" fill="#a0aec0">&#8595;</text>
+  <rect x="415" y="152" width="270" height="30" rx="5" fill="#c6f6d5" />
+  <text x="550" y="171" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#22543d">stg_cityflow__trips.sql</text>
+  <text x="550" y="200" text-anchor="middle" font-size="9" fill="#4a5568">source('cityflow', 'trips')</text>
+
+  <rect x="740" y="70" width="310" height="150" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="895" y="95" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7b341e">two downstream models</text>
+  <rect x="760" y="108" width="270" height="30" rx="5" fill="#fed7d7" />
+  <text x="895" y="127" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#822727">ref('stg_trips')</text>
+  <text x="895" y="145" text-anchor="middle" font-size="14" fill="#a0aec0">&#8595;</text>
+  <rect x="760" y="152" width="270" height="30" rx="5" fill="#c6f6d5" />
+  <text x="895" y="171" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#22543d">ref('stg_cityflow__trips')</text>
+  <text x="895" y="200" text-anchor="middle" font-size="9" fill="#4a5568">zone_revenue.sql &amp; int_hourly_pattern.sql</text>
+
+  <text x="550" y="250" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">Three edits, made by hand -- dbt does not rewrite a ref() call for you.</text>
+
+  <path d="M550,265 L550,290" stroke="#a0aec0" stroke-width="2" fill="none" marker-end="url(#rn1)" />
+
+  <rect x="200" y="295" width="700" height="90" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.8" />
+  <text x="550" y="320" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">dbt run rebuilds the entire graph correctly</text>
+  <text x="550" y="342" text-anchor="middle" font-size="10" fill="#22543d">daily_summary: 81,013 trips, $2,442,843.25 -- identical to before the rename,</text>
+  <text x="550" y="360" text-anchor="middle" font-size="10" fill="#22543d">in both the Postgres and DuckDB targets, resolved from the edited files alone.</text>
+
+  <defs>
+    <marker id="rn1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

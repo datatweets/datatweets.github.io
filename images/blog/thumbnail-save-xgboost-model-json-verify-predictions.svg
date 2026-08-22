@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Save XGBoost models as JSON and verify reloaded predictions</title>
+  <desc id="desc">DataTweets tutorial thumbnail. A native XGBoost model file and a separate prediction contract feed a fresh classifier. Two aligned probability markers show that predictions before saving and after reloading match.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0067c0"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="30" font-weight="600" letter-spacing="1.2" fill="#59636e">XGBOOST MODEL I/O</text>
+    <text x="90" y="286" font-size="70" font-weight="700" fill="#1b1f24">SAVE &#183; RELOAD</text>
+    <text x="90" y="370" font-size="78" font-weight="700" fill="#1b1f24">VERIFY</text>
+    <rect x="96" y="403" width="330" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="477" font-size="27" font-weight="500" fill="#59636e">JSON &#183; CONTRACT &#183; SHA-256</text>
+  </g>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="706" y="126" width="170" height="158" rx="18" fill="#f7fbff" stroke="#0067c0" stroke-width="2"/>
+    <text x="791" y="163" text-anchor="middle" font-size="18" font-weight="700" fill="#1b1f24">MODEL.JSON</text>
+    <path d="M791 197 V220 M791 220 L752 248 M791 220 L830 248" fill="none" stroke="#59636e" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="791" cy="195" r="11" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+    <circle cx="752" cy="250" r="11" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+    <circle cx="830" cy="250" r="11" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+
+    <rect x="906" y="126" width="170" height="158" rx="18" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="991" y="163" text-anchor="middle" font-size="16" font-weight="700" fill="#1b1f24">CONTRACT.JSON</text>
+    <g font-family="SFMono-Regular, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#59636e">
+      <text x="927" y="201">features[]</text>
+      <text x="927" y="231">threshold</text>
+      <text x="927" y="261">sha256</text>
+    </g>
+    <circle cx="1051" cy="196" r="5" fill="#0067c0"/>
+    <circle cx="1051" cy="226" r="5" fill="#0067c0"/>
+    <circle cx="1051" cy="256" r="5" fill="#0067c0"/>
+
+    <path d="M791 284 V314 H864 V333" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+    <path d="M991 284 V314 H936 V333" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+
+    <rect x="760" y="342" width="280" height="86" rx="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <text x="900" y="379" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">FRESH CLASSIFIER</text>
+    <text x="900" y="407" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">CHECK + LOAD</text>
+
+    <path d="M900 428 V466" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+    <rect x="706" y="477" width="370" height="113" rx="18" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+    <text x="730" y="518" font-size="16" font-weight="600" fill="#59636e">BEFORE SAVE</text>
+    <line x1="844" y1="512" x2="1035" y2="512" stroke="#c7ccd2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="992" cy="512" r="10" fill="#0067c0"/>
+    <text x="730" y="553" font-size="16" font-weight="600" fill="#59636e">AFTER RELOAD</text>
+    <line x1="844" y1="547" x2="1035" y2="547" stroke="#c7ccd2" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="992" cy="547" r="13" fill="#ffffff" stroke="#d97706" stroke-width="4"/>
+    <line x1="992" y1="496" x2="992" y2="563" stroke="#59636e" stroke-width="1.5" stroke-dasharray="4 5"/>
+    <rect x="858" y="560" width="104" height="24" rx="12" fill="#0067c0"/>
+    <text x="910" y="577" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">EXACT MATCH</text>
+  </g>
+</svg>
