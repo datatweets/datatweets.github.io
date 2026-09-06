@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="370" viewBox="0 0 800 370" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect width="800" height="370" fill="#ffffff" />
+<text x="400" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">How the five pieces of tool_agent.py fit together</text>
+
+<rect x="290" y="44" width="220" height="48" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.7" />
+<text x="400" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">REPL: main()</text>
+<text x="400" y="80" text-anchor="middle" font-size="8.5" fill="#805ad5">input() &#8226; print reply &#8226; /exit</text>
+
+<line x1="370" y1="92" x2="370" y2="132" stroke="#a0aec0" stroke-width="1.5" />
+<polygon points="370 136 365 126 375 126" fill="#a0aec0" />
+<text x="350" y="114" text-anchor="end" font-size="8.5" fill="#718096">question</text>
+
+<line x1="430" y1="132" x2="430" y2="92" stroke="#a0aec0" stroke-width="1.5" />
+<polygon points="430 88 425 98 435 98" fill="#a0aec0" />
+<text x="450" y="114" text-anchor="start" font-size="8.5" fill="#718096">final answer</text>
+
+<rect x="300" y="138" width="200" height="58" rx="8" fill="#ebf4ff" stroke="#4299e1" stroke-width="1.7" />
+<text x="400" y="162" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">answer(): the loop</text>
+<text x="400" y="178" text-anchor="middle" font-size="8.5" fill="#3182ce">while stop_reason == tool_use</text>
+
+<line x1="300" y1="161" x2="232" y2="161" stroke="#a0aec0" stroke-width="1.5" />
+<polygon points="228 161 237 156.5 237 165.5" fill="#a0aec0" />
+<text x="265" y="153" text-anchor="middle" font-size="8" fill="#718096">prompt + tools</text>
+
+<line x1="232" y1="181" x2="300" y2="181" stroke="#a0aec0" stroke-width="1.5" />
+<polygon points="304 181 295 176.5 295 185.5" fill="#a0aec0" />
+<text x="265" y="198" text-anchor="middle" font-size="8" fill="#718096">tool_use / end_turn</text>
+
+<rect x="40" y="150" width="190" height="48" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+<text x="135" y="170" text-anchor="middle" font-size="10" font-weight="700" fill="#2d3748">client.messages.create()</text>
+<text x="135" y="186" text-anchor="middle" font-size="8.5" fill="#718096">the model</text>
+
+<line x1="500" y1="161" x2="568" y2="161" stroke="#a0aec0" stroke-width="1.5" />
+<polygon points="572 161 563 156.5 563 165.5" fill="#a0aec0" />
+<text x="535" y="153" text-anchor="middle" font-size="8" fill="#718096">name, input</text>
+
+<line x1="568" y1="181" x2="500" y2="181" stroke="#a0aec0" stroke-width="1.5" />
+<polygon points="496 181 505 176.5 505 185.5" fill="#a0aec0" />
+<text x="535" y="198" text-anchor="middle" font-size="8" fill="#718096">result, is_error</text>
+
+<rect x="570" y="150" width="190" height="48" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+<text x="665" y="170" text-anchor="middle" font-size="10" font-weight="700" fill="#2d3748">run_tool(name, input)</text>
+<text x="665" y="186" text-anchor="middle" font-size="8.5" fill="#718096">runs one function safely</text>
+
+<rect x="20" y="234" width="95" height="34" rx="7" fill="#fffaf0" stroke="#dd6b20" stroke-width="1.5" />
+<text x="67" y="255" text-anchor="middle" font-size="9" font-weight="700" fill="#c05621">SYSTEM prompt</text>
+<line x1="67" y1="234" x2="67" y2="200" stroke="#a0aec0" stroke-width="1.4" />
+<polygon points="67 196 62 206 72 206" fill="#a0aec0" />
+
+<rect x="125" y="234" width="95" height="34" rx="7" fill="#fffaf0" stroke="#dd6b20" stroke-width="1.5" />
+<text x="172" y="255" text-anchor="middle" font-size="9" font-weight="700" fill="#c05621">tools schemas</text>
+<line x1="172" y1="234" x2="172" y2="200" stroke="#a0aec0" stroke-width="1.4" />
+<polygon points="172 196 167 206 177 206" fill="#a0aec0" />
+
+<rect x="560" y="228" width="210" height="32" rx="7" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5" />
+<text x="665" y="249" text-anchor="middle" font-size="9" font-weight="700" fill="#2f855a">DISPATCH = {name &#8594; function}</text>
+<line x1="665" y1="228" x2="665" y2="200" stroke="#a0aec0" stroke-width="1.4" />
+<polygon points="665 196 660 206 670 206" fill="#a0aec0" />
+
+<rect x="555" y="270" width="220" height="70" rx="8" fill="none" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="4,3" />
+<text x="665" y="284" text-anchor="middle" font-size="8" font-weight="700" fill="#718096">THE FOUR REAL TOOLS</text>
+
+<rect x="565" y="290" width="95" height="24" rx="12" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1.2" />
+<text x="612" y="306" text-anchor="middle" font-size="8" fill="#2f855a">calculator</text>
+
+<rect x="670" y="290" width="95" height="24" rx="12" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1.2" />
+<text x="717" y="306" text-anchor="middle" font-size="7.3" fill="#2f855a">current_datetime</text>
+
+<rect x="565" y="317" width="95" height="24" rx="12" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1.2" />
+<text x="612" y="333" text-anchor="middle" font-size="7.6" fill="#2f855a">convert_units</text>
+
+<rect x="670" y="317" width="95" height="24" rx="12" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1.2" />
+<text x="717" y="333" text-anchor="middle" font-size="7.8" fill="#2f855a">lookup_fact</text>
+
+<text x="400" y="360" text-anchor="middle" font-size="9.5" fill="#a0aec0">Every piece from Lessons 1&#8211;4 plugs into this one loop.</text>
+</svg>

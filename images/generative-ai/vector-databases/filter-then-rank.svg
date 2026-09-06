@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300" viewBox="0 0 640 300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect width="640" height="300" fill="#ffffff" />
+<text x="320" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Filter First, Then Rank</text>
+
+<rect x="16" y="70" width="130" height="80" rx="8" fill="#f7fafc" stroke="#cbd5e0" />
+<text x="81" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">All documents</text>
+<text x="81" y="114" text-anchor="middle" font-size="10" fill="#718096">5 stored items</text>
+<text x="81" y="130" text-anchor="middle" font-size="9" fill="#a0aec0">returns, shipping ×2,</text>
+<text x="81" y="142" text-anchor="middle" font-size="9" fill="#a0aec0">account, support</text>
+
+<line x1="146" y1="110" x2="182" y2="110" stroke="#a0aec0" stroke-width="1.6" />
+<polygon points="182 110 174 106 174 114" fill="#a0aec0" />
+
+<rect x="184" y="70" width="150" height="80" rx="8" fill="#fffaf0" stroke="#ed8936" />
+<text x="259" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">1. Filter</text>
+<text x="259" y="110" text-anchor="middle" font-size="9" fill="#9c4221">where={"topic":</text>
+<text x="259" y="122" text-anchor="middle" font-size="9" fill="#9c4221">"shipping"}</text>
+<text x="259" y="140" text-anchor="middle" font-size="9" fill="#9c4221">no similarity used yet</text>
+
+<line x1="334" y1="110" x2="370" y2="110" stroke="#a0aec0" stroke-width="1.6" />
+<polygon points="370 110 362 106 362 114" fill="#a0aec0" />
+
+<rect x="372" y="70" width="130" height="80" rx="8" fill="#ebf4ff" stroke="#4299e1" />
+<text x="437" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">Eligible subset</text>
+<text x="437" y="112" text-anchor="middle" font-size="10" fill="#2d3748">2 shipping docs</text>
+<text x="437" y="128" text-anchor="middle" font-size="9" fill="#718096">everything else is</text>
+<text x="437" y="140" text-anchor="middle" font-size="9" fill="#718096">already excluded</text>
+
+<line x1="502" y1="110" x2="538" y2="110" stroke="#a0aec0" stroke-width="1.6" />
+<polygon points="538 110 530 106 530 114" fill="#a0aec0" />
+
+<rect x="540" y="70" width="84" height="80" rx="8" fill="#f0fff4" stroke="#48bb78" />
+<text x="582" y="94" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">2. Rank</text>
+<text x="582" y="112" text-anchor="middle" font-size="9" fill="#2f855a">by distance</text>
+<text x="582" y="128" text-anchor="middle" font-size="9" fill="#2f855a">closest</text>
+<text x="582" y="140" text-anchor="middle" font-size="9" fill="#2f855a">first</text>
+
+<rect x="184" y="188" width="440" height="60" rx="8" fill="#f7fafc" stroke="#cbd5e0" />
+<text x="204" y="210" font-size="10" fill="#2d3748">(0.9359) Standard shipping takes 3-5 business days...</text>
+<text x="204" y="228" font-size="10" fill="#2d3748">(1.3711) We ship to over 60 countries worldwide.</text>
+
+<text x="320" y="278" text-anchor="middle" font-size="11" fill="#718096">A filtered query never ranks-then-discards — the where clause narrows the field first,</text>
+<text x="320" y="293" text-anchor="middle" font-size="11" fill="#718096">so similarity only ever competes inside the allowed set.</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"><rect width="640" height="360" fill="#ffffff" /><text x="320" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">From zero to a running API in four steps</text>
+
+<rect x="30" y="130" width="130" height="110" rx="10" fill="#ebf4ff" stroke="#4299e1" stroke-width="1.6" /><text x="95" y="158" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">1. Install</text><text x="95" y="182" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">pip install</text><text x="95" y="197" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">"fastapi</text><text x="95" y="212" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">[standard]"</text>
+
+<line x1="160" y1="185" x2="184" y2="185" stroke="#a0aec0" stroke-width="1.8" /><polygon points="184 185 175 181 175 189" fill="#a0aec0" />
+
+<rect x="184" y="130" width="130" height="110" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" /><text x="249" y="158" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">2. Write main.py</text><text x="249" y="182" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">app = FastAPI()</text><text x="249" y="199" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">@app.get("/")</text><text x="249" y="216" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">def read_root():</text>
+
+<line x1="314" y1="185" x2="338" y2="185" stroke="#a0aec0" stroke-width="1.8" /><polygon points="338 185 329 181 329 189" fill="#a0aec0" />
+
+<rect x="338" y="130" width="130" height="110" rx="10" fill="#e6fffa" stroke="#319795" stroke-width="1.6" /><text x="403" y="158" text-anchor="middle" font-size="12" font-weight="700" fill="#234e52">3. Run it</text><text x="403" y="182" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">uvicorn</text><text x="403" y="199" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">main:app</text><text x="403" y="216" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">--reload</text>
+
+<line x1="468" y1="185" x2="492" y2="185" stroke="#a0aec0" stroke-width="1.8" /><polygon points="492 185 483 181 483 189" fill="#a0aec0" />
+
+<rect x="492" y="130" width="130" height="110" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" /><text x="557" y="158" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">4. Explore /docs</text><text x="557" y="182" text-anchor="middle" font-size="9.5" fill="#2d3748">interactive docs</text><text x="557" y="197" text-anchor="middle" font-size="9.5" fill="#2d3748">generated for you,</text><text x="557" y="212" text-anchor="middle" font-size="9.5" fill="#2d3748">live in the browser</text>
+
+<text x="320" y="270" text-anchor="middle" font-size="10.5" fill="#718096">Each step depends only on the one before it &#8212; a fresh terminal can restart from any step.</text>
+<text x="320" y="332" text-anchor="middle" font-size="11" fill="#718096">One package install, one small file, one command, and FastAPI's own docs page is live.</text></svg>

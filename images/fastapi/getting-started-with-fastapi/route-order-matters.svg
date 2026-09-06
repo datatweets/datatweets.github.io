@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"><rect width="640" height="360" fill="#ffffff" /><text x="320" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Why route order matters: first match wins</text>
+
+<rect x="25" y="70" width="270" height="215" rx="12" fill="#fff5f5" stroke="#fc8181" stroke-width="1.8" /><text x="160" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">&#10007; Wrong order</text>
+<text x="40" y="122" font-size="10" font-family="monospace" fill="#742a2a">1  @app.get("/users/{user_id}")</text>
+<text x="40" y="140" font-size="10" font-family="monospace" fill="#742a2a">2  @app.get("/users/me")</text>
+<line x1="40" y1="152" x2="280" y2="152" stroke="#feb2b2" stroke-width="1.2" />
+<text x="40" y="174" font-size="10.5" font-weight="700" fill="#742a2a">GET /users/me &#8594;</text>
+<text x="40" y="192" font-size="9.5" font-family="monospace" fill="#742a2a">user_id = "me" (matched by #1)</text>
+<text x="40" y="212" font-size="9.5" fill="#9b2c2c">read_me() never runs</text>
+
+<rect x="345" y="70" width="270" height="215" rx="12" fill="#f0fff4" stroke="#68d391" stroke-width="1.8" /><text x="480" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">&#10003; Right order</text>
+<text x="360" y="122" font-size="10" font-family="monospace" fill="#22543d">1  @app.get("/users/me")</text>
+<text x="360" y="140" font-size="10" font-family="monospace" fill="#22543d">2  @app.get("/users/{user_id}")</text>
+<line x1="360" y1="152" x2="600" y2="152" stroke="#9ae6b4" stroke-width="1.2" />
+<text x="360" y="174" font-size="10.5" font-weight="700" fill="#22543d">GET /users/me &#8594;</text>
+<text x="360" y="192" font-size="9.5" font-family="monospace" fill="#22543d">matches route #1 directly</text>
+<text x="360" y="212" font-size="9.5" fill="#276749">read_me() runs as expected</text>
+
+<text x="320" y="308" text-anchor="middle" font-size="10.5" fill="#718096">FastAPI checks routes in the order you define them and uses the first match.</text>
+<text x="320" y="326" text-anchor="middle" font-size="10.5" fill="#718096">Define fixed paths like /users/me before variable ones like /users/{user_id}.</text></svg>

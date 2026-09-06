@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="330" viewBox="0 0 640 330" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect width="640" height="330" fill="#ffffff" />
+<text x="320" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Searchable Knowledge Base Pipeline</text>
+
+<rect x="16" y="60" width="136" height="86" rx="8" fill="#f7fafc" stroke="#cbd5e0" />
+<text x="84" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">1. Load</text>
+<text x="84" y="102" text-anchor="middle" font-size="9" fill="#718096">support-faqs.csv</text>
+<text x="84" y="116" text-anchor="middle" font-size="9" fill="#718096">15 rows, pandas</text>
+<text x="84" y="132" text-anchor="middle" font-size="9" fill="#718096">+ topic label</text>
+
+<line x1="152" y1="103" x2="188" y2="103" stroke="#a0aec0" stroke-width="1.6" />
+<polygon points="188 103 180 99 180 107" fill="#a0aec0" />
+
+<rect x="190" y="60" width="136" height="86" rx="8" fill="#ebf4ff" stroke="#4299e1" />
+<text x="258" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">2. Embed once</text>
+<text x="258" y="102" text-anchor="middle" font-size="9" fill="#2c5282">if collection.count()</text>
+<text x="258" y="116" text-anchor="middle" font-size="9" fill="#2c5282">== 0: add(...)</text>
+<text x="258" y="132" text-anchor="middle" font-size="9" fill="#2c5282">runs on first run only</text>
+
+<line x1="326" y1="103" x2="362" y2="103" stroke="#a0aec0" stroke-width="1.6" />
+<polygon points="362 103 354 99 354 107" fill="#a0aec0" />
+
+<rect x="364" y="60" width="136" height="86" rx="8" fill="#f0fff4" stroke="#48bb78" />
+<text x="432" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">3. Persist</text>
+<text x="432" y="102" text-anchor="middle" font-size="9" fill="#2f855a">PersistentClient</text>
+<text x="432" y="116" text-anchor="middle" font-size="9" fill="#2f855a">saved to chroma_db/</text>
+<text x="432" y="132" text-anchor="middle" font-size="9" fill="#2f855a">survives a restart</text>
+
+<line x1="500" y1="103" x2="536" y2="103" stroke="#a0aec0" stroke-width="1.6" />
+<polygon points="536 103 528 99 528 107" fill="#a0aec0" />
+
+<rect x="538" y="60" width="86" height="86" rx="8" fill="#fffaf0" stroke="#ed8936" />
+<text x="581" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">4. Search</text>
+<text x="581" y="102" text-anchor="middle" font-size="9" fill="#9c4221">query +</text>
+<text x="581" y="116" text-anchor="middle" font-size="9" fill="#9c4221">where</text>
+<text x="581" y="132" text-anchor="middle" font-size="9" fill="#9c4221">filter</text>
+
+<line x1="258" y1="146" x2="258" y2="180" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="3,3" />
+
+<rect x="78" y="182" width="360" height="34" rx="6" fill="#fff5f5" stroke="#feb2b2" />
+<text x="258" y="203" text-anchor="middle" font-size="10" font-weight="600" fill="#c53030">count() == 0 guard — skips only the embedding on later runs</text>
+
+<text x="320" y="228" text-anchor="middle" font-size="10" fill="#718096">Every run still loads the CSV, opens the persistent client, and searches — only re-embedding is avoided.</text>
+
+<text x="320" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">search("I can't sign into my account")</text>
+<rect x="60" y="260" width="520" height="52" rx="8" fill="#f7fafc" stroke="#cbd5e0" />
+<text x="80" y="280" font-size="10" fill="#2d3748">distance=0.9020  [account]  How do I reset my password?</text>
+<text x="80" y="298" font-size="10" fill="#718096">the query shares no words with the match — it matched on meaning, not keywords</text>
+</svg>
