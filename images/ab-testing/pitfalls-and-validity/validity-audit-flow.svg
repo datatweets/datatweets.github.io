@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="560" viewBox="0 0 700 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="700" height="560" fill="#ffffff" />
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#1a202c">The validity audit: check the plumbing before the p-value</text>
+  <text x="350" y="50" text-anchor="middle" font-size="10" fill="#718096">run top to bottom — the earlier a check fails, the more it invalidates</text>
+
+  <!-- Check 1 -->
+  <rect x="50" y="72" width="430" height="58" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <circle cx="76" cy="101" r="13" fill="#4299e1" />
+  <text x="76" y="106" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+  <text x="100" y="96" font-size="12" font-weight="700" fill="#2c5282">SRM check</text>
+  <text x="100" y="114" font-size="8.8" fill="#4a5568">Did users split the way you designed? Chi-squared test on the group counts.</text>
+
+  <line x1="265" y1="130" x2="265" y2="153" stroke="#a0aec0" stroke-width="1.4" />
+  <polygon points="260,153 270,153 265,160" fill="#a0aec0" />
+
+  <!-- Check 2 -->
+  <rect x="50" y="160" width="430" height="58" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <circle cx="76" cy="189" r="13" fill="#4299e1" />
+  <text x="76" y="194" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+  <text x="100" y="184" font-size="12" font-weight="700" fill="#2c5282">Stopping rule</text>
+  <text x="100" y="202" font-size="8.8" fill="#4a5568">Was the sample size fixed in advance and analyzed once? No dashboard peeking.</text>
+
+  <line x1="265" y1="218" x2="265" y2="241" stroke="#a0aec0" stroke-width="1.4" />
+  <polygon points="260,241 270,241 265,248" fill="#a0aec0" />
+
+  <!-- Check 3 -->
+  <rect x="50" y="248" width="430" height="58" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <circle cx="76" cy="277" r="13" fill="#4299e1" />
+  <text x="76" y="282" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+  <text x="100" y="272" font-size="12" font-weight="700" fill="#2c5282">Primary metric only</text>
+  <text x="100" y="290" font-size="8.8" fill="#4a5568">Read the one pre-declared metric, not a slice found among many.</text>
+
+  <line x1="265" y1="306" x2="265" y2="329" stroke="#a0aec0" stroke-width="1.4" />
+  <polygon points="260,329 270,329 265,336" fill="#a0aec0" />
+
+  <!-- Check 4 -->
+  <rect x="50" y="336" width="430" height="58" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <circle cx="76" cy="365" r="13" fill="#4299e1" />
+  <text x="76" y="370" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">4</text>
+  <text x="100" y="360" font-size="12" font-weight="700" fill="#2c5282">Segment sanity</text>
+  <text x="100" y="378" font-size="8.8" fill="#4a5568">Do the segments agree with the aggregate? Watch for a Simpson's reversal.</text>
+
+  <line x1="60" y1="414" x2="470" y2="414" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="4 3" />
+  <text x="265" y="410" text-anchor="middle" font-size="9" fill="#718096">all four checks pass</text>
+
+  <line x1="265" y1="420" x2="265" y2="441" stroke="#a0aec0" stroke-width="1.4" />
+  <polygon points="260,441 270,441 265,448" fill="#a0aec0" />
+
+  <!-- Payoff -->
+  <rect x="50" y="448" width="430" height="58" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.8" />
+  <circle cx="76" cy="477" r="13" fill="#48bb78" />
+  <text x="76" y="482" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">5</text>
+  <text x="100" y="472" font-size="12" font-weight="700" fill="#276749">Read the result</text>
+  <text x="100" y="490" font-size="8.8" fill="#2f855a">Only now is the p-value worth interpreting.</text>
+
+  <!-- Stop-on-fail note -->
+  <rect x="500" y="108" width="150" height="150" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.6" />
+  <text x="575" y="130" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c53030">First hard fail on</text>
+  <text x="575" y="144" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c53030">checks 1&#8211;4</text>
+  <line x1="516" y1="156" x2="634" y2="156" stroke="#fc8181" stroke-width="1" />
+  <text x="575" y="176" text-anchor="middle" font-size="8.8" fill="#9b2c2c">Stop. Fix the</text>
+  <text x="575" y="190" text-anchor="middle" font-size="8.8" fill="#9b2c2c">pipeline. Re-run</text>
+  <text x="575" y="204" text-anchor="middle" font-size="8.8" fill="#9b2c2c">the experiment.</text>
+  <text x="575" y="222" text-anchor="middle" font-size="8.8" fill="#9b2c2c">Don't analyze</text>
+  <text x="575" y="236" text-anchor="middle" font-size="8.8" fill="#9b2c2c">around it.</text>
+
+  <text x="350" y="536" text-anchor="middle" font-size="9.5" fill="#718096">Validity is a gate, not a footnote — the p-value is the last thing you look at.</text>
+</svg>

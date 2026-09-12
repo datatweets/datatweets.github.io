@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="860" height="380" fill="#ffffff" />
+  <text x="30" y="34" font-size="19" font-weight="700" fill="#1a202c">Two penalty shapes on a leaf weight</text>
+  <text x="30" y="56" font-size="13" fill="#718096">The penalty as a function of one leaf weight w. The shape near w = 0 is what makes L1 and L2 behave differently.</text>
+
+  <!-- left panel: L2 -->
+  <text x="70" y="92" font-size="14" font-weight="700" fill="#2b6cb0">L2 — reg_lambda</text>
+  <text x="70" y="110" font-size="12" fill="#4a5568">penalty proportional to w squared</text>
+  <line x1="70" y1="300" x2="390" y2="300" stroke="#4a5568" stroke-width="1.5" />
+  <line x1="230" y1="130" x2="230" y2="310" stroke="#a0aec0" stroke-width="1" />
+  <text x="234" y="322" font-size="11" fill="#718096">w = 0</text>
+  <path d="M 90 140 Q 230 460 370 140" fill="none" stroke="#2b6cb0" stroke-width="2.5" />
+  <circle cx="230" cy="300" r="4" fill="#2b6cb0" />
+  <text x="70" y="345" font-size="12" fill="#4a5568">Smooth bottom: shrinks every weight in</text>
+  <text x="70" y="361" font-size="12" fill="#4a5568">proportion, but rarely to exactly zero.</text>
+
+  <!-- right panel: L1 -->
+  <text x="490" y="92" font-size="14" font-weight="700" fill="#c05621">L1 — reg_alpha</text>
+  <text x="490" y="110" font-size="12" fill="#4a5568">penalty proportional to the absolute value of w</text>
+  <line x1="490" y1="300" x2="810" y2="300" stroke="#4a5568" stroke-width="1.5" />
+  <line x1="650" y1="130" x2="650" y2="310" stroke="#a0aec0" stroke-width="1" />
+  <text x="654" y="322" font-size="11" fill="#718096">w = 0</text>
+  <path d="M 510 140 L 650 300 L 790 140" fill="none" stroke="#c05621" stroke-width="2.5" />
+  <circle cx="650" cy="300" r="4" fill="#c05621" />
+  <text x="490" y="345" font-size="12" fill="#4a5568">Sharp corner at zero: a constant pull that</text>
+  <text x="490" y="361" font-size="12" fill="#4a5568">snaps small weights to exactly 0 (sparsity).</text>
+</svg>

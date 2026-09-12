@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="432" viewBox="0 0 700 432" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="700" height="432" fill="#ffffff" />
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#1a202c">Which advanced tool fits the situation?</text>
+  <text x="350" y="50" text-anchor="middle" font-size="10" fill="#718096">match the question on the left to the tool on the right &#8212; and know when to use none of them</text>
+
+  <!-- Row 1: CUPED -->
+  <rect x="40" y="70" width="400" height="52" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="60" y="92" font-size="10" fill="#4a5568">Have a pre-experiment covariate</text>
+  <text x="60" y="108" font-size="10" fill="#4a5568">correlated with your outcome? (almost always)</text>
+  <line x1="444" y1="96" x2="488" y2="96" stroke="#a0aec0" stroke-width="1.4" />
+  <polygon points="488,91 488,101 496,96" fill="#a0aec0" />
+  <rect x="500" y="74" width="164" height="44" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="582" y="101" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">CUPED</text>
+
+  <!-- Row 2: Sequential -->
+  <rect x="40" y="132" width="400" height="52" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="60" y="154" font-size="10" fill="#4a5568">Need to monitor a running test</text>
+  <text x="60" y="170" font-size="10" fill="#4a5568">and keep the option to stop early?</text>
+  <line x1="444" y1="158" x2="488" y2="158" stroke="#a0aec0" stroke-width="1.4" />
+  <polygon points="488,153 488,163 496,158" fill="#a0aec0" />
+  <rect x="500" y="136" width="164" height="44" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="582" y="157" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">Sequential</text>
+  <text x="582" y="170" text-anchor="middle" font-size="8.5" fill="#805ad5">group-sequential boundary</text>
+
+  <!-- Row 3: Bayesian -->
+  <rect x="40" y="194" width="400" height="52" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="60" y="216" font-size="10" fill="#4a5568">Stakeholders need a probability,</text>
+  <text x="60" y="232" font-size="10" fill="#4a5568">or you want an expected-loss decision?</text>
+  <line x1="444" y1="220" x2="488" y2="220" stroke="#a0aec0" stroke-width="1.4" />
+  <polygon points="488,215 488,225 496,220" fill="#a0aec0" />
+  <rect x="500" y="198" width="164" height="44" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="582" y="219" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Bayesian</text>
+  <text x="582" y="232" text-anchor="middle" font-size="8.5" fill="#2f855a">P(better) + credible interval</text>
+
+  <!-- Row 4: Bandit -->
+  <rect x="40" y="256" width="400" height="52" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="60" y="278" font-size="10" fill="#4a5568">Many short-lived variants, and you</text>
+  <text x="60" y="294" font-size="10" fill="#4a5568">care more about total reward than a clean read?</text>
+  <line x1="444" y1="282" x2="488" y2="282" stroke="#a0aec0" stroke-width="1.4" />
+  <polygon points="488,277 488,287 496,282" fill="#a0aec0" />
+  <rect x="500" y="260" width="164" height="44" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="582" y="281" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">Bandit</text>
+  <text x="582" y="294" text-anchor="middle" font-size="8.5" fill="#dd6b20">Thompson sampling</text>
+
+  <!-- Divider -->
+  <line x1="40" y1="326" x2="664" y2="326" stroke="#e2e8f0" stroke-width="1.2" stroke-dasharray="4 3" />
+
+  <!-- Row 5: fallback -->
+  <rect x="40" y="338" width="400" height="52" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="60" y="360" font-size="10" fill="#9b2c2c">Need an unbiased effect size for a lasting</text>
+  <text x="60" y="376" font-size="10" fill="#9b2c2c">decision, or novelty / long-term effects in play?</text>
+  <line x1="444" y1="364" x2="488" y2="364" stroke="#fc8181" stroke-width="1.4" />
+  <polygon points="488,359 488,369 496,364" fill="#fc8181" />
+  <rect x="500" y="342" width="164" height="44" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.6" />
+  <text x="582" y="363" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">Plain A/B test</text>
+  <text x="582" y="376" text-anchor="middle" font-size="8.5" fill="#9b2c2c">patient, fixed sample</text>
+
+  <text x="350" y="414" text-anchor="middle" font-size="9.5" fill="#718096">All four sit on top of a sound A/B foundation &#8212; trustworthy randomization, a good metric, honest stopping.</text>
+</svg>

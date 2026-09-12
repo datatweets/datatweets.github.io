@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="900" height="430" fill="#ffffff" />
+  <text x="30" y="34" font-size="19" font-weight="700" fill="#1a202c">Five core knobs and the train-test gap</text>
+  <text x="30" y="56" font-size="13" fill="#718096">Each knob changes model complexity in one direction; watch the gap between train and test RMSE to see the effect.</text>
+
+  <!-- header row -->
+  <rect x="30" y="74" width="200" height="40" rx="6" fill="#edf2f7" stroke="#cbd5e0" stroke-width="1" />
+  <rect x="234" y="74" width="240" height="40" rx="6" fill="#edf2f7" stroke="#cbd5e0" stroke-width="1" />
+  <rect x="478" y="74" width="240" height="40" rx="6" fill="#edf2f7" stroke="#cbd5e0" stroke-width="1" />
+  <rect x="722" y="74" width="148" height="40" rx="6" fill="#edf2f7" stroke="#cbd5e0" stroke-width="1" />
+  <text x="40" y="99" font-size="13" font-weight="700" fill="#4a5568">Knob</text>
+  <text x="244" y="99" font-size="13" font-weight="700" fill="#4a5568">What it controls</text>
+  <text x="488" y="99" font-size="13" font-weight="700" fill="#4a5568">Turn it up to...</text>
+  <text x="732" y="99" font-size="13" font-weight="700" fill="#4a5568">Effect on gap</text>
+
+  <!-- row 1: n_estimators -->
+  <text x="40" y="146" font-size="13" font-weight="700" fill="#2b6cb0">n_estimators</text>
+  <text x="244" y="146" font-size="12" fill="#4a5568">how many trees are built</text>
+  <text x="488" y="146" font-size="12" fill="#4a5568">add capacity with more rounds</text>
+  <text x="732" y="146" font-size="12" font-weight="700" fill="#c05621">widens (past the floor)</text>
+
+  <!-- row 2: learning_rate -->
+  <line x1="30" y1="160" x2="870" y2="160" stroke="#e2e8f0" stroke-width="1" />
+  <text x="40" y="188" font-size="13" font-weight="700" fill="#2b6cb0">learning_rate</text>
+  <text x="244" y="188" font-size="12" fill="#4a5568">step size per tree</text>
+  <text x="488" y="188" font-size="12" fill="#4a5568">take bolder steps</text>
+  <text x="732" y="188" font-size="12" font-weight="700" fill="#c05621">widens if too high</text>
+
+  <!-- row 3: max_depth -->
+  <line x1="30" y1="202" x2="870" y2="202" stroke="#e2e8f0" stroke-width="1" />
+  <text x="40" y="230" font-size="13" font-weight="700" fill="#2b6cb0">max_depth</text>
+  <text x="244" y="230" font-size="12" fill="#4a5568">tree complexity per level</text>
+  <text x="488" y="230" font-size="12" fill="#4a5568">capture more interactions</text>
+  <text x="732" y="230" font-size="12" font-weight="700" fill="#c05621">widens</text>
+
+  <!-- row 4: min_child_weight -->
+  <line x1="30" y1="244" x2="870" y2="244" stroke="#e2e8f0" stroke-width="1" />
+  <text x="40" y="272" font-size="13" font-weight="700" fill="#276749">min_child_weight</text>
+  <text x="244" y="272" font-size="12" fill="#4a5568">evidence (summed hessian) per leaf</text>
+  <text x="488" y="272" font-size="12" fill="#4a5568">force more conservative splits</text>
+  <text x="732" y="272" font-size="12" font-weight="700" fill="#276749">narrows</text>
+
+  <!-- row 5: gamma -->
+  <line x1="30" y1="286" x2="870" y2="286" stroke="#e2e8f0" stroke-width="1" />
+  <text x="40" y="314" font-size="13" font-weight="700" fill="#276749">gamma</text>
+  <text x="244" y="314" font-size="12" fill="#4a5568">minimum gain a split must earn</text>
+  <text x="488" y="314" font-size="12" fill="#4a5568">prune marginal splits</text>
+  <text x="732" y="314" font-size="12" font-weight="700" fill="#276749">narrows</text>
+
+  <rect x="30" y="126" width="840" height="202" rx="8" fill="none" stroke="#cbd5e0" stroke-width="1" />
+
+  <text x="30" y="366" font-size="12" fill="#4a5568"><tspan font-weight="700" fill="#c05621">Widens</tspan> = more capacity, more overfitting risk.  <tspan font-weight="700" fill="#276749">Narrows</tspan> = a complexity brake.</text>
+  <text x="30" y="388" font-size="12" fill="#718096">A narrower gap is only good news when the test RMSE falls with it, so judge every knob by the test column.</text>
+  <text x="30" y="414" font-size="12" fill="#718096">n_estimators and learning_rate move together: a smaller rate needs more trees to reach the same fit.</text>
+</svg>
