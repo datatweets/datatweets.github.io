@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="380" viewBox="0 0 1000 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The same rebuild cost, paid again on every single run</title>
+  <desc>A bar chart comparing two real table-build times against the same underlying trip data. A short bar for 81,013 rows, single day, at 126 milliseconds. A tall bar for 9,554,778 rows, three months, at 5 to 8 seconds across three repeated runs -- every run paying the identical cost, since materialized equals table always rebuilds from nothing. A caption states 118 times more rows costs roughly 50 to 60 times more wall-clock time, and that cost repeats on every single dbt run regardless of whether the underlying data changed at all.</desc>
+  <rect width="1000" height="380" fill="#ffffff" />
+  <text x="500" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Same Rebuild Cost, Paid Again on Every Run</text>
+
+  <line x1="120" y1="290" x2="880" y2="290" stroke="#a0aec0" stroke-width="1.5" />
+
+  <rect x="180" y="286" width="70" height="4" fill="#48bb78" />
+  <text x="215" y="270" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">126ms</text>
+  <text x="215" y="310" text-anchor="middle" font-size="10" fill="#2d3748">81,013 rows</text>
+  <text x="215" y="325" text-anchor="middle" font-size="9" fill="#4a5568">single day</text>
+
+  <rect x="500" y="90" width="120" height="200" fill="#e53e3e" fill-opacity="0.85" rx="4" />
+  <text x="560" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">5-8 seconds</text>
+  <text x="560" y="310" text-anchor="middle" font-size="10" fill="#2d3748">9,554,778 rows</text>
+  <text x="560" y="325" text-anchor="middle" font-size="9" fill="#4a5568">three months</text>
+
+  <rect x="660" y="70" width="270" height="220" rx="8" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="795" y="95" text-anchor="middle" font-size="10.5" font-weight="700" fill="#822727">3 runs, same cost every time</text>
+  <text x="795" y="125" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#822727">run 1: 6.22s</text>
+  <text x="795" y="150" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#822727">run 2: 7.64s</text>
+  <text x="795" y="175" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#822727">run 3: 5.35s</text>
+  <text x="795" y="205" text-anchor="middle" font-size="9" fill="#822727">no run gets cheaper --</text>
+  <text x="795" y="222" text-anchor="middle" font-size="9" fill="#822727">materialized='table' rebuilds</text>
+  <text x="795" y="239" text-anchor="middle" font-size="9" fill="#822727">from nothing, every single time</text>
+  <text x="795" y="260" text-anchor="middle" font-size="8.5" fill="#822727">regardless of what changed</text>
+
+  <rect x="130" y="325" width="740" height="45" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="500" y="345" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7b341e">118x more rows costs roughly 50-60x more wall-clock time --</text>
+  <text x="500" y="362" text-anchor="middle" font-size="10.5" fill="#7b341e">and that cost repeats on every run, whether the data changed or not.</text>
+
+</svg>

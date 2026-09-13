@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-labelledby="title desc">
+  <title id="title">Most requested skills in 88 German Data Scientist role profiles</title>
+  <desc id="desc">Horizontal bar chart. Python 87.5 percent, machine learning 61.4 percent, SQL 50 percent, cloud 42 percent, statistics 30.7 percent, large language models 29.5 percent, AWS 27.3 percent, and PyTorch 20.5 percent.</desc>
+  <rect width="1200" height="690" rx="18" fill="#f7f8fa"/>
+  <text x="64" y="66" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#1b1f24">Skills in German Data Scientist job profiles</text>
+  <text x="64" y="102" font-family="Arial, sans-serif" font-size="17" fill="#59636e">Share of 88 cleaned role profiles · reviewed July 2026</text>
+  <g font-family="Arial, sans-serif" font-size="18" fill="#1b1f24">
+    <text x="64" y="166">Python</text>
+    <text x="64" y="231">Machine learning</text>
+    <text x="64" y="296">SQL</text>
+    <text x="64" y="361">Cloud</text>
+    <text x="64" y="426">Statistics</text>
+    <text x="64" y="491">Large language models</text>
+    <text x="64" y="556">AWS</text>
+    <text x="64" y="621">PyTorch</text>
+  </g>
+  <g fill="#e3e6ea">
+    <rect x="300" y="142" width="770" height="30" rx="4"/>
+    <rect x="300" y="207" width="770" height="30" rx="4"/>
+    <rect x="300" y="272" width="770" height="30" rx="4"/>
+    <rect x="300" y="337" width="770" height="30" rx="4"/>
+    <rect x="300" y="402" width="770" height="30" rx="4"/>
+    <rect x="300" y="467" width="770" height="30" rx="4"/>
+    <rect x="300" y="532" width="770" height="30" rx="4"/>
+    <rect x="300" y="597" width="770" height="30" rx="4"/>
+  </g>
+  <g fill="#0067c0">
+    <rect x="300" y="142" width="674" height="30" rx="4"/>
+    <rect x="300" y="207" width="473" height="30" rx="4"/>
+    <rect x="300" y="272" width="385" height="30" rx="4"/>
+    <rect x="300" y="337" width="323" height="30" rx="4"/>
+    <rect x="300" y="402" width="236" height="30" rx="4"/>
+    <rect x="300" y="467" width="227" height="30" rx="4"/>
+    <rect x="300" y="532" width="210" height="30" rx="4"/>
+    <rect x="300" y="597" width="158" height="30" rx="4"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#1b1f24">
+    <text x="990" y="165">87.5%</text>
+    <text x="789" y="230">61.4%</text>
+    <text x="701" y="295">50.0%</text>
+    <text x="639" y="360">42.0%</text>
+    <text x="552" y="425">30.7%</text>
+    <text x="543" y="490">29.5%</text>
+    <text x="526" y="555">27.3%</text>
+    <text x="474" y="620">20.5%</text>
+  </g>
+  <text x="64" y="664" font-family="Arial, sans-serif" font-size="14" fill="#59636e">Source: selected active job-ad export; duplicates and geographical mismatches removed.</text>
+</svg>

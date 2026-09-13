@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Five call sites, one macro, a whole project rebuilt to confirm nothing moved</title>
+  <desc>Five round of dot dot dot comma 2 call sites spread across four files -- zone_revenue.sql with two call sites (sum and avg), daily_summary.sql, int_trips_summed_to_hour.sql, and zone_hour_report.sql -- all converge on one shared round_money macro. A verification band below confirms the whole project rebuilds clean on Postgres, 10 view models and 25 tests, every established figure unchanged: 2,814 zone-hours, 81,013 trips, $2,442,843.25. On DuckDB, Module 5's own 240,917-bucket, 9,554,757-trip, $256,692,373.14 anchor is reproduced a third time, through a version of the model now carrying two macros it didn't have when the anchor was first computed.</desc>
+  <rect width="1080" height="420" fill="#ffffff" />
+  <text x="540" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Five Call Sites, One Macro, a Whole Project Reconfirmed</text>
+
+  <rect x="30" y="55" width="1020" height="130" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="540" y="78" text-anchor="middle" font-size="11.5" font-weight="700" fill="#553c9a">5 round(..., 2) call sites across 4 files -- all converge on round_money(expression)</text>
+  <rect x="55" y="92" width="230" height="75" rx="6" fill="#553c9a" />
+  <text x="170" y="112" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#faf5ff">zone_revenue.sql</text>
+  <text x="170" y="128" text-anchor="middle" font-size="7.5" font-family="Menlo, monospace" fill="#faf5ff">round_money('sum(total_amount)')</text>
+  <text x="170" y="142" text-anchor="middle" font-size="7.5" font-family="Menlo, monospace" fill="#faf5ff">round_money('avg(tip_and_fees)')</text>
+  <rect x="300" y="92" width="220" height="75" rx="6" fill="#553c9a" />
+  <text x="410" y="118" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#faf5ff">daily_summary.sql</text>
+  <text x="410" y="138" text-anchor="middle" font-size="7.5" font-family="Menlo, monospace" fill="#faf5ff">round_money('sum(hourly_revenue)')</text>
+  <rect x="535" y="92" width="240" height="75" rx="6" fill="#553c9a" />
+  <text x="655" y="118" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#faf5ff">int_trips_summed_to_hour.sql</text>
+  <text x="655" y="138" text-anchor="middle" font-size="7.5" font-family="Menlo, monospace" fill="#faf5ff">round_money('sum(total_amount)')</text>
+  <text x="655" y="152" text-anchor="middle" font-size="7" fill="#faf5ff">(+ generate_surrogate_key, hour_bucket)</text>
+  <rect x="790" y="92" width="235" height="75" rx="6" fill="#553c9a" />
+  <text x="907" y="118" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#faf5ff">zone_hour_report.sql</text>
+  <text x="907" y="138" text-anchor="middle" font-size="7.5" font-family="Menlo, monospace" fill="#faf5ff">round_money('sum(total_amount)')</text>
+  <text x="907" y="152" text-anchor="middle" font-size="7" fill="#faf5ff">(DuckDB only, + hour_bucket)</text>
+
+  <path d="M540,167 L540,200" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#dr1)" />
+
+  <rect x="30" y="205" width="1020" height="170" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="540" y="228" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2c5282">Whole-project rebuild confirms nothing moved</text>
+
+  <rect x="60" y="245" width="460" height="110" rx="8" fill="#2c5282" />
+  <text x="290" y="268" text-anchor="middle" font-size="10" font-weight="700" fill="#ebf8ff">Postgres: dbt build</text>
+  <text x="290" y="290" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#ebf8ff">10 view models, 25 tests, 0 errors</text>
+  <text x="290" y="310" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">2,814 zone-hours -- 81,013 trips</text>
+  <text x="290" y="328" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">$2,442,843.25 -- unchanged</text>
+  <text x="290" y="345" text-anchor="middle" font-size="8" fill="#ebf8ff">across zone_revenue, daily_summary, int_trips_summed_to_hour</text>
+
+  <rect x="560" y="245" width="460" height="110" rx="8" fill="#2c5282" />
+  <text x="790" y="268" text-anchor="middle" font-size="10" font-weight="700" fill="#ebf8ff">DuckDB: zone_hour_report</text>
+  <text x="790" y="290" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">240,917 buckets -- 9,554,757 trips</text>
+  <text x="790" y="310" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">$256,692,373.14</text>
+  <text x="790" y="330" text-anchor="middle" font-size="8.5" fill="#ebf8ff">Module 5's own anchor, reproduced a third time --</text>
+  <text x="790" y="345" text-anchor="middle" font-size="8.5" fill="#ebf8ff">now through a model carrying two macros it didn't have before</text>
+
+  <text x="540" y="400" text-anchor="middle" font-size="10" font-weight="700" fill="#2d3748">The SQL text changed in every file. Not one downstream number did.</text>
+
+  <defs>
+    <marker id="dr1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

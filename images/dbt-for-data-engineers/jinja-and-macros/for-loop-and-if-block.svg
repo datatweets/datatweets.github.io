@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="420" viewBox="0 0 1080 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A for-loop's own blind spot, closed by an if-block</title>
+  <desc>Top panel: a for loop over 7 named boroughs generates 7 count filter columns -- Bronx, Brooklyn, EWR, Manhattan, Queens, Staten Island, and the Unknown zone-name string -- but 106 trips whose borough is a true SQL NULL fall through every one of them. The 7 columns sum to 80,907 while trips_total reports 81,013, an 18-trip-per-borough-average gap that is really 106 real trips landing nowhere. Bottom panel: an if block guarding an eighth trips_unassigned column, toggled true and false and recompiled each time. True adds the column to the compiled SQL text itself; false removes it from the compiled text entirely, not merely filtering it out of a result set. A caption states for loops generate SQL from a list and the list is only as complete as whoever wrote it, while if blocks decide what SQL exists at all, before a query ever runs.</desc>
+  <rect width="1080" height="420" fill="#ffffff" />
+  <text x="540" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A For-Loop's Blind Spot, Closed by an If-Block</text>
+
+  <rect x="30" y="55" width="1020" height="150" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="540" y="78" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">{% for b in boroughs %} -- 7-item list, 7 columns, no more</text>
+  <rect x="50" y="90" width="105" height="30" rx="4" fill="#822727" /><text x="102" y="110" text-anchor="middle" font-size="8" fill="#fff5f5" font-family="Menlo, monospace">trips_bronx</text>
+  <rect x="163" y="90" width="105" height="30" rx="4" fill="#822727" /><text x="215" y="110" text-anchor="middle" font-size="8" fill="#fff5f5" font-family="Menlo, monospace">trips_brooklyn</text>
+  <rect x="276" y="90" width="90" height="30" rx="4" fill="#822727" /><text x="321" y="110" text-anchor="middle" font-size="8" fill="#fff5f5" font-family="Menlo, monospace">trips_ewr</text>
+  <rect x="374" y="90" width="115" height="30" rx="4" fill="#822727" /><text x="431" y="110" text-anchor="middle" font-size="8" fill="#fff5f5" font-family="Menlo, monospace">trips_manhattan</text>
+  <rect x="497" y="90" width="105" height="30" rx="4" fill="#822727" /><text x="549" y="110" text-anchor="middle" font-size="8" fill="#fff5f5" font-family="Menlo, monospace">trips_queens</text>
+  <rect x="610" y="90" width="140" height="30" rx="4" fill="#822727" /><text x="680" y="110" text-anchor="middle" font-size="8" fill="#fff5f5" font-family="Menlo, monospace">trips_staten_island</text>
+  <rect x="758" y="90" width="105" height="30" rx="4" fill="#822727" /><text x="810" y="110" text-anchor="middle" font-size="8" fill="#fff5f5" font-family="Menlo, monospace">trips_unknown</text>
+  <rect x="875" y="90" width="160" height="30" rx="4" fill="#4a5568" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="3,3" /><text x="955" y="110" text-anchor="middle" font-size="8" fill="#fff5f5" font-family="Menlo, monospace">106 NULL-borough trips</text>
+  <text x="955" y="128" text-anchor="middle" font-size="7.5" fill="#822727">no matching list item</text>
+
+  <text x="540" y="155" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#822727">7 named columns sum to 80,907 -- trips_total reports 81,013</text>
+  <text x="540" y="175" text-anchor="middle" font-size="10.5" fill="#822727">Caught only because the totals don't match, not because the loop raised any error.</text>
+  <text x="540" y="192" text-anchor="middle" font-size="9.5" fill="#4a5568">A for-loop faithfully builds SQL from a list -- it has no way to know what the list left out.</text>
+
+  <path d="M540,205 L540,240" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#fi1)" />
+
+  <rect x="30" y="245" width="1020" height="150" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="540" y="268" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">{% if include_unassigned %} -- decides what SQL exists, before compilation finishes</text>
+
+  <rect x="90" y="285" width="400" height="85" rx="8" fill="#22543d" />
+  <text x="290" y="308" text-anchor="middle" font-size="10" font-weight="700" fill="#f0fff4">include_unassigned = true</text>
+  <text x="290" y="328" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#f0fff4">trips_unassigned column IS in</text>
+  <text x="290" y="345" text-anchor="middle" font-size="9" fill="#f0fff4">the compiled SQL text itself</text>
+  <text x="290" y="361" text-anchor="middle" font-size="9" font-weight="700" fill="#f0fff4">106 + 80,907 = 81,013 -- matches</text>
+
+  <rect x="590" y="285" width="400" height="85" rx="8" fill="#742a2a" />
+  <text x="790" y="308" text-anchor="middle" font-size="10" font-weight="700" fill="#fff5f5">include_unassigned = false</text>
+  <text x="790" y="328" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#fff5f5">trips_unassigned column is GONE</text>
+  <text x="790" y="345" text-anchor="middle" font-size="9" fill="#fff5f5">from the compiled SQL, not just filtered</text>
+  <text x="790" y="361" text-anchor="middle" font-size="9" fill="#fff5f5">confirmed by recompiling, not re-querying</text>
+
+  <rect x="130" y="400" width="820" height="18" fill="none" />
+  <text x="540" y="412" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2d3748">For-loops generate SQL from a list; if-blocks decide what SQL exists at all -- both settled before a query ever runs.</text>
+
+  <defs>
+    <marker id="fi1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

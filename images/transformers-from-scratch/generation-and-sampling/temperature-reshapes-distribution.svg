@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="860" height="470" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">Temperature reshapes one next-token distribution</text>
+  <text x="430" y="58" text-anchor="middle" font-size="14" fill="#4a5568">Same logits after &#8220;the boats &#8221;, rescaled by T before softmax: probs = softmax(logits / T)</text>
+
+  <!-- ============ Panel T=0.5 (sharp) ============ -->
+  <g>
+    <rect x="24" y="82" width="256" height="300" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="152" y="108" text-anchor="middle" font-size="16" font-weight="700" fill="#276749">T = 0.5  (sharper)</text>
+    <text x="152" y="128" text-anchor="middle" font-size="12.5" fill="#276749">entropy = 0.854 bits</text>
+    <!-- baseline -->
+    <line x1="48" y1="300" x2="256" y2="300" stroke="#a0aec0" stroke-width="1"/>
+    <!-- bars: max prob 1.0 -> 150px -->
+    <rect x="60"  y="180.6" width="34" height="119.4" fill="#48bb78"/>
+    <rect x="108" y="273.9" width="34" height="26.1"  fill="#48bb78"/>
+    <rect x="156" y="295.5" width="34" height="4.5"   fill="#48bb78"/>
+    <rect x="204" y="299.9" width="34" height="0.1"   fill="#a0aec0"/>
+    <text x="77"  y="172" text-anchor="middle" font-size="11" fill="#276749">0.796</text>
+    <text x="125" y="266" text-anchor="middle" font-size="11" fill="#276749">0.174</text>
+    <text x="173" y="288" text-anchor="middle" font-size="11" fill="#276749">0.030</text>
+    <text x="221" y="292" text-anchor="middle" font-size="11" fill="#718096">0.000</text>
+    <text x="77"  y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">w</text>
+    <text x="125" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">a</text>
+    <text x="173" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">c</text>
+    <text x="221" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">t</text>
+    <text x="152" y="352" text-anchor="middle" font-size="12" fill="#4a5568">nearly greedy: mass on one char</text>
+    <text x="152" y="371" text-anchor="middle" font-size="11.5" font-style="italic" fill="#276749">coherent, repetitive text</text>
+  </g>
+
+  <!-- ============ Panel T=1.0 (raw) ============ -->
+  <g>
+    <rect x="302" y="82" width="256" height="300" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+    <text x="430" y="108" text-anchor="middle" font-size="16" font-weight="700" fill="#2b6cb0">T = 1.0  (raw)</text>
+    <text x="430" y="128" text-anchor="middle" font-size="12.5" fill="#2b6cb0">entropy = 1.392 bits</text>
+    <line x1="326" y1="300" x2="534" y2="300" stroke="#a0aec0" stroke-width="1"/>
+    <rect x="338" y="210.4" width="34" height="89.6" fill="#4299e1"/>
+    <rect x="386" y="258.1" width="34" height="41.9" fill="#4299e1"/>
+    <rect x="434" y="282.6" width="34" height="17.4" fill="#4299e1"/>
+    <rect x="482" y="299.5" width="34" height="0.5"  fill="#a0aec0"/>
+    <text x="355" y="202" text-anchor="middle" font-size="11" fill="#2b6cb0">0.597</text>
+    <text x="403" y="250" text-anchor="middle" font-size="11" fill="#2b6cb0">0.279</text>
+    <text x="451" y="275" text-anchor="middle" font-size="11" fill="#2b6cb0">0.116</text>
+    <text x="499" y="292" text-anchor="middle" font-size="11" fill="#718096">0.003</text>
+    <text x="355" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">w</text>
+    <text x="403" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">a</text>
+    <text x="451" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">c</text>
+    <text x="499" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">t</text>
+    <text x="430" y="352" text-anchor="middle" font-size="12" fill="#4a5568">the model&#8217;s own distribution</text>
+    <text x="430" y="371" text-anchor="middle" font-size="11.5" font-style="italic" fill="#2b6cb0">varied but mostly coherent</text>
+  </g>
+
+  <!-- ============ Panel T=2.0 (flat) ============ -->
+  <g>
+    <rect x="580" y="82" width="256" height="300" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <text x="708" y="108" text-anchor="middle" font-size="16" font-weight="700" fill="#c05621">T = 2.0  (flatter)</text>
+    <text x="708" y="128" text-anchor="middle" font-size="12.5" fill="#c05621">entropy = 2.474 bits</text>
+    <line x1="604" y1="300" x2="812" y2="300" stroke="#a0aec0" stroke-width="1"/>
+    <rect x="616" y="240.0" width="34" height="60.0" fill="#ed8936"/>
+    <rect x="664" y="258.9" width="34" height="41.1" fill="#ed8936"/>
+    <rect x="712" y="273.6" width="34" height="26.4" fill="#ed8936"/>
+    <rect x="760" y="295.8" width="34" height="4.2"  fill="#ed8936"/>
+    <text x="633" y="232" text-anchor="middle" font-size="11" fill="#c05621">0.400</text>
+    <text x="681" y="251" text-anchor="middle" font-size="11" fill="#c05621">0.274</text>
+    <text x="729" y="266" text-anchor="middle" font-size="11" fill="#c05621">0.176</text>
+    <text x="777" y="288" text-anchor="middle" font-size="11" fill="#c05621">0.028</text>
+    <text x="633" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">w</text>
+    <text x="681" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">a</text>
+    <text x="729" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">c</text>
+    <text x="777" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">t</text>
+    <text x="708" y="352" text-anchor="middle" font-size="12" fill="#4a5568">drifting toward uniform (4.585)</text>
+    <text x="708" y="371" text-anchor="middle" font-size="11.5" font-style="italic" fill="#c05621">diverse but more gibberish</text>
+  </g>
+
+  <!-- footer arrow strip -->
+  <text x="430" y="416" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">T &#8594; 0  sharpens to greedy (argmax)   &#8226;   raise T   &#8594;   flattens toward uniform random</text>
+  <text x="430" y="446" text-anchor="middle" font-size="12.5" fill="#6b46c1">Sample the next id from probs with rng.choice(vocab_size, p=probs) &#8212; higher entropy means a more random draw</text>
+</svg>

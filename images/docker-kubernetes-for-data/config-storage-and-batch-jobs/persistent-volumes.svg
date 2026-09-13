@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="640" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Persistent Volumes: Storage That Outlives a Pod</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">A checkpoint file written by one pod, read back by a completely different one</text>
+
+<rect x="60" y="84" width="220" height="70" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="170" y="106" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">PVC created</text>
+<text x="170" y="124" text-anchor="middle" font-size="10.5" fill="#4a5568">STATUS: Pending</text>
+<text x="170" y="140" text-anchor="middle" font-size="9.5" fill="#718096">WaitForFirstConsumer</text>
+
+<line x1="280" y1="119" x2="320" y2="119" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="324" y="84" width="260" height="70" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="454" y="106" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2b6cb0">checkpoint-writer pod</text>
+<text x="454" y="124" text-anchor="middle" font-size="10.5" fill="#4a5568">mounts the PVC at /data</text>
+<text x="454" y="140" text-anchor="middle" font-size="9.5" fill="#718096">PV provisioned &amp; Bound now</text>
+
+<line x1="584" y1="119" x2="624" y2="119" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="628" y="84" width="270" height="70" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="763" y="106" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">checkpoint.txt written</text>
+<text x="763" y="124" text-anchor="middle" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">written before recreate</text>
+<text x="763" y="140" text-anchor="middle" font-size="9.5" fill="#718096">pvc-08551135... 100Mi RWO</text>
+
+<line x1="763" y1="154" x2="763" y2="190" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="628" y="194" width="270" height="66" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="763" y="216" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">kubectl delete pod checkpoint-writer</text>
+<text x="763" y="236" text-anchor="middle" font-size="10.5" fill="#4a5568">pod gone; PVC + PV stay Bound</text>
+<text x="763" y="252" text-anchor="middle" font-size="9.5" fill="#718096">reclaim policy: Delete (tied to the claim, not the pod)</text>
+
+<line x1="628" y1="227" x2="480" y2="227" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="184" y="194" width="270" height="66" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="319" y="216" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2b6cb0">checkpoint-reader pod</text>
+<text x="319" y="236" text-anchor="middle" font-size="10.5" fill="#4a5568">new pod, same PVC claim</text>
+<text x="319" y="252" text-anchor="middle" font-size="9.5" fill="#718096">never ran the writer's code</text>
+
+<line x1="319" y1="260" x2="319" y2="296" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="140" y="300" width="360" height="60" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="320" y="325" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">cat /data/checkpoint.txt</text>
+<text x="320" y="345" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">written before recreate &#8212; still there</text>
+
+<line x1="60" y1="392" x2="900" y2="392" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="420" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">three Kubernetes objects vs one Compose line</text>
+
+<rect x="60" y="434" width="260" height="98" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="190" y="456" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">StorageClass: standard</text>
+<text x="190" y="476" text-anchor="middle" font-size="10.5" fill="#4a5568">provisioner: rancher.io/local-path</text>
+<text x="190" y="494" text-anchor="middle" font-size="10.5" fill="#4a5568">already running on this cluster</text>
+<text x="190" y="512" text-anchor="middle" font-size="9.5" fill="#718096">describes HOW to provision</text>
+
+<rect x="350" y="434" width="260" height="98" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="480" y="456" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">PersistentVolumeClaim</text>
+<text x="480" y="476" text-anchor="middle" font-size="10.5" fill="#4a5568">cityflow-data-pvc, 100Mi, RWO</text>
+<text x="480" y="494" text-anchor="middle" font-size="10.5" fill="#4a5568">namespaced request for storage</text>
+<text x="480" y="512" text-anchor="middle" font-size="9.5" fill="#718096">what the pod spec mounts</text>
+
+<rect x="640" y="434" width="260" height="98" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="770" y="456" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">PersistentVolume</text>
+<text x="770" y="476" text-anchor="middle" font-size="10.5" fill="#4a5568">pvc-08551135-127d... 100Mi</text>
+<text x="770" y="494" text-anchor="middle" font-size="10.5" fill="#4a5568">the real, provisioned storage</text>
+<text x="770" y="512" text-anchor="middle" font-size="9.5" fill="#718096">created automatically, on demand</text>
+
+<text x="480" y="562" text-anchor="middle" font-size="11.5" fill="#4a5568">Compare: Module 4 got this durability from one docker-compose volumes: mapping.</text>
+<text x="480" y="582" text-anchor="middle" font-size="11.5" fill="#4a5568">Kubernetes needs a StorageClass, a PVC, and a PV working together for the same guarantee.</text>
+<text x="480" y="612" text-anchor="middle" font-size="10.5" fill="#a0aec0">All pod names, PVC/PV names, and file contents above are from real kubectl output captured for this lesson.</text>
+
+<defs>
+<marker id="arrows" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

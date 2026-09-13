@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 712" width="960" height="712" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="712" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Cleaning that deletes real accounting is the bug this lesson prevents</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Jan&#8211;Mar 2024 yellow taxi, window 2024-01-01 &#8804; pickup &lt; 2024-04-01 &#8212; 9,554,757 trips kept, all numbers measured in Spark 4.2.0</text>
+<line x1="40" y1="78" x2="920" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- THE REVERSAL TRAP -->
+<text x="480" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="#1a202c">The reversal trap &#8212; 115,894 negative <tspan font-style="italic">total_amount</tspan> rows are voided-and-rebilled charges</text>
+
+<!-- KEEP card -->
+<rect x="55" y="120" width="400" height="170" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="255" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">KEEP them &#8212; let SUM cancel the pairs</text>
+<text x="255" y="168" text-anchor="middle" font-size="11" fill="#4a5568">a &#8722;$18.50 reversal offsets the +$18.50 rebill</text>
+<rect x="80" y="184" width="350" height="40" rx="6" fill="#ffffff" stroke="#48bb78" stroke-width="1.5"/>
+<text x="255" y="210" text-anchor="middle" font-size="19" font-weight="700" fill="#276749">$256,692,373.14</text>
+<text x="255" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">matches Course 1's report to the cent</text>
+<text x="255" y="264" text-anchor="middle" font-size="11" fill="#718096">115,894 negatives &#183; 9,437,571 positives &#183; 1,292 zero</text>
+<text x="255" y="280" text-anchor="middle" font-size="11" fill="#718096">the accounting balances because both signs stayed</text>
+
+<!-- DROP card -->
+<rect x="505" y="120" width="400" height="170" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="705" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#c53030">DROP them &#8212; the &#8220;filter out bad rows&#8221; instinct</text>
+<text x="705" y="168" text-anchor="middle" font-size="11" fill="#4a5568">filter(total_amount &#8805; 0) deletes every reversal</text>
+<rect x="530" y="184" width="350" height="40" rx="6" fill="#ffffff" stroke="#fc8181" stroke-width="1.5"/>
+<text x="705" y="210" text-anchor="middle" font-size="19" font-weight="700" fill="#c53030">$259,679,181.90</text>
+<text x="705" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">&#43;$2,986,808.76 of phantom revenue</text>
+<text x="705" y="264" text-anchor="middle" font-size="11" fill="#718096">the rebills stay, the offsetting reversals vanish</text>
+<text x="705" y="280" text-anchor="middle" font-size="11" fill="#718096">Jan &#43;$0.89M &#183; Feb &#43;$0.92M &#183; Mar &#43;$1.17M</text>
+
+<line x1="40" y1="308" x2="920" y2="308" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="332" text-anchor="middle" font-size="15" font-weight="700" fill="#1a202c">Everywhere else, cleaning means FLAG or WINDOW &#8212; never a silent delete</text>
+
+<!-- THREE mini-cards -->
+<!-- window -->
+<rect x="55" y="348" width="272" height="230" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="191" y="372" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">1 &#183; The window, measured</text>
+<line x1="75" y1="382" x2="307" y2="382" stroke="#bee3f8" stroke-width="1"/>
+<text x="75" y="404" font-size="11" fill="#4a5568">raw three-file quarter</text>
+<text x="307" y="404" text-anchor="end" font-size="11" font-weight="700" fill="#1a202c">9,554,778</text>
+<text x="75" y="426" font-size="11" fill="#4a5568">after window filter</text>
+<text x="307" y="426" text-anchor="end" font-size="11" font-weight="700" fill="#276749">9,554,757</text>
+<text x="75" y="448" font-size="11" fill="#4a5568">quarantined strays</text>
+<text x="307" y="448" text-anchor="end" font-size="11" font-weight="700" fill="#c53030">21</text>
+<rect x="75" y="462" width="232" height="58" rx="6" fill="#ffffff" stroke="#90cdf4" stroke-width="1"/>
+<text x="191" y="482" text-anchor="middle" font-size="10.5" fill="#2b6cb0">56 per-file strays (18&#183;15&#183;23)</text>
+<text x="191" y="500" text-anchor="middle" font-size="10.5" fill="#2b6cb0">21 quarantined &#43; 35 month spill</text>
+<text x="191" y="514" text-anchor="middle" font-size="10" fill="#718096">spill = a Jan pickup in the Feb file</text>
+<text x="191" y="540" text-anchor="middle" font-size="10.5" fill="#4a5568">earliest stray a filter surfaced:</text>
+<text x="191" y="558" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">2002-12-31 22:17:10</text>
+<text x="191" y="572" text-anchor="middle" font-size="10" fill="#718096">hiding in the MARCH file</text>
+
+<!-- distance -->
+<rect x="343" y="348" width="272" height="230" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="479" y="372" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">2 &#183; Dirty distance, flagged</text>
+<line x1="363" y1="382" x2="595" y2="382" stroke="#feebc8" stroke-width="1"/>
+<text x="479" y="404" text-anchor="middle" font-size="11" fill="#4a5568">max trip_distance</text>
+<text x="479" y="426" text-anchor="middle" font-size="18" font-weight="700" fill="#c05621">312,722.3 mi</text>
+<text x="479" y="444" text-anchor="middle" font-size="10" fill="#718096">a taxi ride to the Moon and back &#8212; wrong</text>
+<text x="479" y="470" text-anchor="middle" font-size="11" fill="#4a5568">when / otherwise adds a label, keeps the row:</text>
+<rect x="363" y="480" width="232" height="24" rx="4" fill="#ffffff" stroke="#f6ad55" stroke-width="1"/>
+<text x="373" y="497" font-size="10.5" fill="#4a5568">ok (&#8804;100 mi)</text>
+<text x="585" y="497" text-anchor="end" font-size="10.5" font-weight="700" fill="#276749">9,338,741</text>
+<rect x="363" y="508" width="232" height="24" rx="4" fill="#ffffff" stroke="#f6ad55" stroke-width="1"/>
+<text x="373" y="525" font-size="10.5" fill="#4a5568">zero (0 mi)</text>
+<text x="585" y="525" text-anchor="end" font-size="10.5" font-weight="700" fill="#c05621">215,764</text>
+<rect x="363" y="536" width="232" height="24" rx="4" fill="#ffffff" stroke="#f6ad55" stroke-width="1"/>
+<text x="373" y="553" font-size="10.5" fill="#4a5568">suspect (&gt;100 mi)</text>
+<text x="585" y="553" text-anchor="end" font-size="10.5" font-weight="700" fill="#c53030">252</text>
+<text x="479" y="573" text-anchor="middle" font-size="10" fill="#718096">analysts choose per query; the data stays whole</text>
+
+<!-- nulls -->
+<rect x="631" y="348" width="274" height="230" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="1.5"/>
+<text x="768" y="372" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">3 &#183; Nulls, filled not dropped</text>
+<line x1="651" y1="382" x2="885" y2="382" stroke="#e2e8f0" stroke-width="1"/>
+<text x="768" y="404" text-anchor="middle" font-size="11" fill="#4a5568">5 columns carry nulls, the same rows:</text>
+<text x="768" y="422" text-anchor="middle" font-size="9.5" fill="#718096">passenger_count &#183; RatecodeID &#183; store_and_fwd</text>
+<text x="768" y="436" text-anchor="middle" font-size="9.5" fill="#718096">congestion_surcharge &#183; Airport_fee</text>
+<rect x="651" y="446" width="234" height="34" rx="6" fill="#ffffff" stroke="#cbd5e0" stroke-width="1"/>
+<text x="768" y="468" text-anchor="middle" font-size="15" font-weight="700" fill="#4a5568">751,962 rows &#8212; all five null</text>
+<text x="768" y="498" text-anchor="middle" font-size="11" fill="#c53030" font-weight="700">na.drop() would delete all 751,962</text>
+<text x="768" y="514" text-anchor="middle" font-size="10.5" fill="#718096">7.9% of trips, revenue intact &#8212; count ruined</text>
+<rect x="651" y="524" width="234" height="24" rx="4" fill="#f0fff4" stroke="#48bb78" stroke-width="1"/>
+<text x="768" y="541" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">na.fill keeps the row, flags the gap</text>
+<text x="768" y="565" text-anchor="middle" font-size="10" fill="#718096">a missing passenger count is not a missing trip</text>
+
+<line x1="40" y1="600" x2="920" y2="600" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="626" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">The window is the only true delete. Reversals, dirty distances, and nulls are real records &#8212; keep, flag, or fill.</text>
+<text x="480" y="650" text-anchor="middle" font-size="12" fill="#4a5568">A negative charge is accounting, not corruption; dropping the 115,894 of them invents $2,986,808.76 that CityFlow never earned.</text>
+<text x="480" y="674" text-anchor="middle" font-size="12" fill="#4a5568">filter narrows the population you meant to study; it must never quietly rewrite the ledger for the rows that remain.</text>
+<text x="480" y="697" text-anchor="middle" font-size="11" fill="#718096">Same data, same $256,692,373.14 as Course 1 &#8212; because nothing real was thrown away.</text>
+</svg>

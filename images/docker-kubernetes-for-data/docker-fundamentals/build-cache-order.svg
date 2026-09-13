@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="560" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Instruction Order Decides What the Cache Can Save</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Same two instructions, reordered &#8212; measured on this machine after a one-line code edit</text>
+
+<!-- cache-friendly column -->
+<text x="240" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">CACHE-FRIENDLY</text>
+<rect x="80" y="104" width="320" height="44" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="240" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">COPY requirements.txt .</text>
+
+<rect x="80" y="156" width="320" height="44" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="240" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">RUN pip install -r requirements.txt</text>
+
+<rect x="80" y="208" width="320" height="44" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="240" y="234" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">COPY cityflow_report.py .</text>
+
+<text x="240" y="272" text-anchor="middle" font-size="11" fill="#4a5568">app code changes here &#8212; only this layer, and</text>
+<text x="240" y="288" text-anchor="middle" font-size="11" fill="#4a5568">nothing above it, needs to be redone</text>
+
+<!-- cache-hostile column -->
+<text x="720" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">CACHE-HOSTILE</text>
+<rect x="560" y="104" width="320" height="44" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="720" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">COPY . .</text>
+
+<rect x="560" y="156" width="320" height="44" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="720" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">RUN pip install -r requirements.txt</text>
+
+<text x="720" y="272" text-anchor="middle" font-size="11" fill="#4a5568">app code is copied in ONE step with everything</text>
+<text x="720" y="288" text-anchor="middle" font-size="11" fill="#4a5568">else &#8212; any code edit invalidates this layer too,</text>
+<text x="720" y="304" text-anchor="middle" font-size="11" fill="#4a5568">and pip install must rerun in full</text>
+
+<line x1="480" y1="96" x2="480" y2="330" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+
+<line x1="40" y1="340" x2="920" y2="340" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="366" font-size="13" font-weight="700" fill="#4a5568">REAL BUILD TIMES, MEASURED ON THIS MACHINE</text>
+
+<rect x="40" y="382" width="420" height="70" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="60" y="404" font-size="12" font-weight="700" fill="#2d3748">First build, no cache (both orders)</text>
+<text x="60" y="424" font-size="12" fill="#4a5568">friendly: 36.8s &#8226; hostile: 34.2s &#8212; about the same</text>
+<text x="60" y="442" font-size="11" fill="#718096">nothing to reuse yet, both pay the full pip install cost</text>
+
+<rect x="500" y="382" width="420" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="520" y="404" font-size="12" font-weight="700" fill="#276749">Rebuild after editing cityflow_report.py only</text>
+<text x="520" y="424" font-size="13" font-weight="700" fill="#276749">friendly: 0.6s &#160;&#160;vs&#160;&#160; hostile: 31.4s</text>
+<text x="520" y="442" font-size="11" fill="#4a5568">the friendly order was about 52x faster on this exact edit</text>
+
+<text x="480" y="490" text-anchor="middle" font-size="12" fill="#718096">Docker's cache is a chain: once one layer misses, every layer built after it misses too, no matter what it actually depends on.</text>
+<text x="480" y="510" text-anchor="middle" font-size="12" fill="#718096">Put instructions that change rarely (dependencies) before instructions that change often (your own code).</text>
+</svg>

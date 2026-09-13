@@ -1,0 +1,13 @@
+sequence_id,position,token,is_padding,asset_feature,signal_feature,alert_feature,action_feature
+alert_a,0,pump,False,2.0,0.1,0.0,0.0
+alert_a,1,pressure,False,1.7,1.4,0.2,0.0
+alert_a,2,rising,False,0.3,2.0,2.0,0.4
+alert_a,3,inspect,False,0.1,0.3,1.5,2.0
+alert_a,4,<pad>,True,0.0,0.0,0.0,0.0
+alert_a,5,<pad>,True,0.0,0.0,0.0,0.0
+alert_b,0,fan,False,2.0,0.1,0.0,0.0
+alert_b,1,vibration,False,1.5,1.6,0.3,0.0
+alert_b,2,stable,False,0.2,1.5,0.0,0.2
+alert_b,3,monitor,False,0.1,0.3,0.8,1.6
+alert_b,4,recalibrate,False,0.2,0.6,1.4,2.0
+alert_b,5,<pad>,True,0.0,0.0,0.0,0.0

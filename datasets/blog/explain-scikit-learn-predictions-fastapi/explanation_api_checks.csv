@@ -1,0 +1,7 @@
+check,expected,observed,passed
+health reports model version,200 and matching version,200 and matching version,True
+valid explanation response,200 with five contributions,200 with five contributions,True
+displayed values reconstruct prediction,185.05,185.05,True
+unknown field is rejected,422 extra_forbidden,422 extra_forbidden,True
+numeric string is rejected,422 int_type,422 int_type,True
+endpoint appears in OpenAPI,path present,path present,True

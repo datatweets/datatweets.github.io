@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">The Streamlit rerun cycle for a chat interface</title>
+  <desc id="desc">Diagram showing the Streamlit rerun cycle: a chat input event triggers the whole script to run again from the top, the script reads the conversation list from session_state, redraws every past message, appends the new turn, and waits for the next event, while a plain local variable resets to empty on every pass.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0067c0"/>
+    </marker>
+    <style>
+      .heading { font: 700 26px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .step { font: 700 17px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .detail { font: 15px Jost, system-ui, sans-serif; fill: #59636e; }
+      .mono { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #1b1f24; }
+      .caps { font: 700 13px Jost, system-ui, sans-serif; fill: #0067c0; letter-spacing: 1px; }
+      .flow { fill: none; stroke: #0067c0; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="620" fill="#f7f8fa"/>
+  <rect x="28" y="24" width="1144" height="572" rx="24" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <text x="62" y="66" class="heading">Every interaction reruns the whole script</text>
+
+  <!-- 5 boxes across, cyclic -->
+  <g>
+    <rect x="62" y="100" width="190" height="86" rx="12" fill="#0067c0"/>
+    <text x="157" y="132" class="step" fill="#ffffff" text-anchor="middle">1. Event</text>
+    <text x="157" y="158" class="detail" fill="#e3f0fa" text-anchor="middle" font-size="13">chat_input submitted</text>
+  </g>
+
+  <path d="M252 143 L292 143" class="flow"/>
+
+  <g>
+    <rect x="294" y="100" width="190" height="86" rx="12" fill="#eef1f4" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="389" y="132" class="step" text-anchor="middle">2. Full rerun</text>
+    <text x="389" y="158" class="detail" text-anchor="middle" font-size="13">script runs top to bottom</text>
+  </g>
+
+  <path d="M484 143 L524 143" class="flow"/>
+
+  <g>
+    <rect x="526" y="100" width="220" height="86" rx="12" fill="#eef1f4" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="636" y="126" class="step" text-anchor="middle" font-size="15">3. Read session_state</text>
+    <text x="636" y="150" class="detail" text-anchor="middle" font-size="13">conversation list survives</text>
+    <text x="636" y="168" class="detail" text-anchor="middle" font-size="13">the rerun</text>
+  </g>
+
+  <path d="M746 143 L786 143" class="flow"/>
+
+  <g>
+    <rect x="788" y="100" width="200" height="86" rx="12" fill="#eef1f4" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="888" y="126" class="step" text-anchor="middle" font-size="15">4. Redraw + append</text>
+    <text x="888" y="150" class="detail" text-anchor="middle" font-size="13">past turns redrawn,</text>
+    <text x="888" y="168" class="detail" text-anchor="middle" font-size="13">new turn appended</text>
+  </g>
+
+  <path d="M988 143 L1028 143" class="flow"/>
+
+  <g>
+    <rect x="1030" y="100" width="120" height="86" rx="12" fill="#eef1f4" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="1090" y="132" class="step" text-anchor="middle" font-size="15">5. Wait</text>
+    <text x="1090" y="158" class="detail" text-anchor="middle" font-size="12">for next event</text>
+  </g>
+
+  <!-- loop back -->
+  <path d="M1090 186 C1090 216 157 216 157 186" class="flow"/>
+  <text x="620" y="252" class="caps" text-anchor="middle">EVERY REPEAT PASSES THROUGH SESSION_STATE, NOT A LOCAL VARIABLE</text>
+
+  <line x1="62" y1="290" x2="1150" y2="290" stroke="#e3e6ea" stroke-width="2"/>
+
+  <text x="62" y="330" class="caps">WITHOUT session_state</text>
+  <rect x="62" y="350" width="1026" height="72" rx="12" fill="#fdeced" stroke="#c8515b" stroke-width="2"/>
+  <text x="86" y="380" class="mono" font-size="15">messages = []</text>
+  <text x="86" y="404" class="detail" font-size="14">A plain local variable is recreated empty on step 2 of every single rerun — turn 1's message is gone before turn 2 ever draws.</text>
+
+  <text x="62" y="460" class="caps">WITH st.session_state</text>
+  <rect x="62" y="480" width="1026" height="72" rx="12" fill="#eaf6ef" stroke="#4d9870" stroke-width="2"/>
+  <text x="86" y="510" class="mono" font-size="15">if "messages" not in st.session_state: st.session_state.messages = [...]</text>
+  <text x="86" y="534" class="detail" font-size="14">Created once, on the first run only — every later rerun in step 3 finds the same list and keeps building on it.</text>
+</svg>

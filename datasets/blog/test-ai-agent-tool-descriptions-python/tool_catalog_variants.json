@@ -1,0 +1,548 @@
+{
+  "vague": [
+    {
+      "name": "room_booking_lookup",
+      "domain": "meeting_rooms",
+      "description": "Handle meeting-room reservation information.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "booking_reference": {
+            "type": "string",
+            "description": "Identifier."
+          }
+        },
+        "required": [
+          "booking_reference"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "room_booking_create",
+      "domain": "meeting_rooms",
+      "description": "Handle meeting-room reservation information.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "description": "Room."
+          },
+          "date": {
+            "type": "string",
+            "description": "Date."
+          },
+          "start_time": {
+            "type": "string",
+            "description": "Time."
+          },
+          "duration_minutes": {
+            "type": "integer",
+            "description": "Length."
+          }
+        },
+        "required": [
+          "room",
+          "date",
+          "start_time",
+          "duration_minutes"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "room_booking_cancel",
+      "domain": "meeting_rooms",
+      "description": "Handle meeting-room reservation information.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "booking_reference": {
+            "type": "string",
+            "description": "Identifier."
+          }
+        },
+        "required": [
+          "booking_reference"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "access_pass_status",
+      "domain": "access",
+      "description": "Handle staff access-pass information.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pass_id": {
+            "type": "string",
+            "description": "Identifier."
+          }
+        },
+        "required": [
+          "pass_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "access_pass_request",
+      "domain": "access",
+      "description": "Handle staff access-pass information.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "person_id": {
+            "type": "string",
+            "description": "Person."
+          },
+          "door_zone": {
+            "type": "string",
+            "description": "Zone."
+          },
+          "action": {
+            "type": "string",
+            "description": "Action."
+          }
+        },
+        "required": [
+          "person_id",
+          "door_zone",
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "maintenance_job_lookup",
+      "domain": "maintenance",
+      "description": "Handle building-maintenance job information.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "job_number": {
+            "type": "string",
+            "description": "Identifier."
+          }
+        },
+        "required": [
+          "job_number"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "maintenance_job_create",
+      "domain": "maintenance",
+      "description": "Handle building-maintenance job information.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "Place."
+          },
+          "problem": {
+            "type": "string",
+            "description": "Details."
+          }
+        },
+        "required": [
+          "location",
+          "problem"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "building_notice_list",
+      "domain": "notices",
+      "description": "Handle building notices and announcements.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date."
+          }
+        },
+        "required": [
+          "date"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "building_notice_publish",
+      "domain": "notices",
+      "description": "Handle building notices and announcements.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "headline": {
+            "type": "string",
+            "description": "Title."
+          },
+          "message": {
+            "type": "string",
+            "description": "Text."
+          }
+        },
+        "required": [
+          "headline",
+          "message"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "equipment_manual_search",
+      "domain": "equipment",
+      "description": "Handle equipment help and faults.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "equipment_type": {
+            "type": "string",
+            "description": "Equipment."
+          },
+          "question": {
+            "type": "string",
+            "description": "Question."
+          }
+        },
+        "required": [
+          "equipment_type",
+          "question"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "equipment_fault_report",
+      "domain": "equipment",
+      "description": "Handle equipment help and faults.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "asset_tag": {
+            "type": "string",
+            "description": "Identifier."
+          },
+          "symptom": {
+            "type": "string",
+            "description": "Details."
+          }
+        },
+        "required": [
+          "asset_tag",
+          "symptom"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "visitor_invitation_create",
+      "domain": "visitors",
+      "description": "Handle visitor information.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "visitor_name": {
+            "type": "string",
+            "description": "Name."
+          },
+          "host": {
+            "type": "string",
+            "description": "Person."
+          },
+          "date": {
+            "type": "string",
+            "description": "Date."
+          }
+        },
+        "required": [
+          "visitor_name",
+          "host",
+          "date"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "specific": [
+    {
+      "name": "room_booking_lookup",
+      "domain": "meeting_rooms",
+      "description": "Look up an existing meeting-room reservation by booking reference. Return its room, organizer, date, and start time.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "booking_reference": {
+            "type": "string",
+            "description": "Existing reservation reference, such as R-104."
+          }
+        },
+        "required": [
+          "booking_reference"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "room_booking_create",
+      "domain": "meeting_rooms",
+      "description": "Reserve an available meeting room for a new meeting. Use the requested room, meeting date, start time, and duration.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "room": {
+            "type": "string",
+            "description": "Meeting-room name."
+          },
+          "date": {
+            "type": "string",
+            "description": "Meeting date in YYYY-MM-DD format."
+          },
+          "start_time": {
+            "type": "string",
+            "description": "Meeting start time."
+          },
+          "duration_minutes": {
+            "type": "integer",
+            "description": "Reservation length in minutes."
+          }
+        },
+        "required": [
+          "room",
+          "date",
+          "start_time",
+          "duration_minutes"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "room_booking_cancel",
+      "domain": "meeting_rooms",
+      "description": "Release an existing meeting-room reservation so the room becomes available. Use its booking reference.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "booking_reference": {
+            "type": "string",
+            "description": "Reservation reference to cancel, such as R-104."
+          }
+        },
+        "required": [
+          "booking_reference"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "access_pass_status",
+      "domain": "access",
+      "description": "Check whether an existing staff access pass is active, expired, suspended, or pending. Use the pass identifier.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pass_id": {
+            "type": "string",
+            "description": "Existing access-pass identifier, such as P-18."
+          }
+        },
+        "required": [
+          "pass_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "access_pass_request",
+      "domain": "access",
+      "description": "Submit a request to grant, change, or remove a person's building access. Use the person, door zone, and requested action.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "person_id": {
+            "type": "string",
+            "description": "Employee or contractor identifier."
+          },
+          "door_zone": {
+            "type": "string",
+            "description": "Building area whose access should change."
+          },
+          "action": {
+            "type": "string",
+            "description": "Access change: grant, change, or remove."
+          }
+        },
+        "required": [
+          "person_id",
+          "door_zone",
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "maintenance_job_lookup",
+      "domain": "maintenance",
+      "description": "Read the current status and assigned technician for an existing maintenance job. Use the job number.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "job_number": {
+            "type": "string",
+            "description": "Existing maintenance job number, such as M-19."
+          }
+        },
+        "required": [
+          "job_number"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "maintenance_job_create",
+      "domain": "maintenance",
+      "description": "Report a new building repair issue and open a maintenance job. Use the problem location and a short fault description.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "Floor, room, or building area with the problem."
+          },
+          "problem": {
+            "type": "string",
+            "description": "Observed repair problem, such as a leak or broken window."
+          }
+        },
+        "required": [
+          "location",
+          "problem"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "building_notice_list",
+      "domain": "notices",
+      "description": "Read current building closure, safety, and service notices. Return notices that have already been published.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date for which current notices are needed."
+          }
+        },
+        "required": [
+          "date"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "building_notice_publish",
+      "domain": "notices",
+      "description": "Publish a new building-wide notice for occupants. Use a headline and the message that should be posted.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "headline": {
+            "type": "string",
+            "description": "Short heading shown to building occupants."
+          },
+          "message": {
+            "type": "string",
+            "description": "New announcement text to publish."
+          }
+        },
+        "required": [
+          "headline",
+          "message"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "equipment_manual_search",
+      "domain": "equipment",
+      "description": "Find operating, reset, calibration, or troubleshooting instructions in an equipment manual. Use the equipment type and question.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "equipment_type": {
+            "type": "string",
+            "description": "Kind of device whose manual should be searched."
+          },
+          "question": {
+            "type": "string",
+            "description": "Instruction, error code, or procedure to find."
+          }
+        },
+        "required": [
+          "equipment_type",
+          "question"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "equipment_fault_report",
+      "domain": "equipment",
+      "description": "Report a broken or unsafe device and open an equipment fault record. Use the asset tag and observed symptom.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "asset_tag": {
+            "type": "string",
+            "description": "Label attached to the broken equipment."
+          },
+          "symptom": {
+            "type": "string",
+            "description": "Observed failure, damage, noise, or safety problem."
+          }
+        },
+        "required": [
+          "asset_tag",
+          "symptom"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "visitor_invitation_create",
+      "domain": "visitors",
+      "description": "Register an expected guest for reception and create a visitor invitation. Use the visitor name, host, and visit date.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "visitor_name": {
+            "type": "string",
+            "description": "Full name of the expected guest."
+          },
+          "host": {
+            "type": "string",
+            "description": "Staff member meeting the guest."
+          },
+          "date": {
+            "type": "string",
+            "description": "Expected visit date."
+          }
+        },
+        "required": [
+          "visitor_name",
+          "host",
+          "date"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

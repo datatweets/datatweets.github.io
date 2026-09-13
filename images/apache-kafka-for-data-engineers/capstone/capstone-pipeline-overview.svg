@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="560" viewBox="0 0 1160 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Every module's own piece, wired into one pipeline</title>
+  <desc>CityFlow's capstone pipeline, end to end. cityflow-trip-events (9,555,045 messages) feeds two paths: a 20,000-event slice validated against a live Avro schema (cityflow-capstone-trip-value) and re-published to cityflow-capstone-validated, and the full topic reserved for the closing Spark reconciliation. The validated slice is processed by a live Faust table computing revenue-by-zone, whose results are published as schema-enveloped JSON to cityflow-capstone-zone-revenue. Two Kafka Connect sink connectors read that topic: a JDBC sink writing 45 rows to a MySQL table, and an Elasticsearch sink writing 45 documents to a search index. An Airflow DAG (cityflow_capstone_health_check) checks consumer lag, the MySQL row count, and the Elasticsearch document count, all in a single run under five seconds. Separately, a Spark Structured Streaming job reconciles the entire 9,555,045-message topic, filtered to real January-March 2024 timestamps, to 240,917 buckets, 9,554,757 trips, and $256,692,373.14 -- the exact anchor Courses 1 and 2 of the Data Engineering path established.</desc>
+  <rect width="1160" height="560" fill="#ffffff" />
+  <text x="580" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#1a202c">CityFlow's Capstone Pipeline, End to End</text>
+
+  <!-- source topic -->
+  <rect x="30" y="55" width="200" height="60" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="130" y="78" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">cityflow-trip-events</text>
+  <text x="130" y="95" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">9,555,045 messages</text>
+
+  <!-- branch to slice -->
+  <path d="M230,75 L280,75" stroke="#a0aec0" stroke-width="1.8" marker-end="url(#c1)" />
+  <text x="255" y="68" text-anchor="middle" font-size="8" fill="#4a5568">20,000</text>
+
+  <rect x="280" y="45" width="210" height="60" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="385" y="66" text-anchor="middle" font-size="10" font-weight="700" fill="#2c5282">Avro validation</text>
+  <text x="385" y="82" text-anchor="middle" font-size="8.5" fill="#2c5282">cityflow-capstone-trip-value</text>
+  <text x="385" y="96" text-anchor="middle" font-size="8" fill="#2c5282">schema id=33</text>
+
+  <path d="M490,75 L540,75" stroke="#a0aec0" stroke-width="1.8" marker-end="url(#c1)" />
+
+  <rect x="540" y="45" width="220" height="60" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="650" y="66" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">cityflow-capstone-validated</text>
+  <text x="650" y="82" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#22543d">Avro-encoded, 20,000 msgs</text>
+  <text x="650" y="96" text-anchor="middle" font-size="8" fill="#22543d">decode round-trip: exact</text>
+
+  <!-- branch to full corpus (bottom) -->
+  <path d="M130,115 L130,470" stroke="#a0aec0" stroke-width="1.8" stroke-dasharray="4,3" fill="none" marker-end="url(#c1)" />
+  <text x="145" y="300" font-size="8.5" fill="#718096" transform="rotate(90 145 300)">full topic, reserved for Step 7</text>
+
+  <path d="M760,75 L810,75" stroke="#a0aec0" stroke-width="1.8" marker-end="url(#c1)" />
+
+  <rect x="810" y="45" width="220" height="60" rx="8" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="920" y="66" text-anchor="middle" font-size="10" font-weight="700" fill="#553c9a">Faust: revenue-by-zone</text>
+  <text x="920" y="82" text-anchor="middle" font-size="8.5" fill="#553c9a">live table, cross-checked</text>
+  <text x="920" y="96" text-anchor="middle" font-size="8" font-family="Menlo, monospace" fill="#553c9a">zone 137 = $58,469.17</text>
+
+  <path d="M920,105 L920,140" stroke="#a0aec0" stroke-width="1.8" marker-end="url(#c1)" />
+
+  <rect x="810" y="140" width="220" height="55" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="920" y="161" text-anchor="middle" font-size="10" font-weight="700" fill="#7b341e">cityflow-capstone-zone-revenue</text>
+  <text x="920" y="178" text-anchor="middle" font-size="8.5" fill="#7b341e">schema-enveloped JSON, 45 zones</text>
+
+  <!-- two sinks -->
+  <path d="M870,195 L720,240" stroke="#a0aec0" stroke-width="1.6" fill="none" marker-end="url(#c1)" />
+  <path d="M970,195 L1050,240" stroke="#a0aec0" stroke-width="1.6" fill="none" marker-end="url(#c1)" />
+
+  <rect x="590" y="240" width="230" height="65" rx="8" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="705" y="262" text-anchor="middle" font-size="10" font-weight="700" fill="#822727">JDBC sink -&gt; MySQL</text>
+  <text x="705" y="278" text-anchor="middle" font-size="8.5" fill="#822727">cityflow_capstone_zone_revenue</text>
+  <text x="705" y="293" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#822727">45 rows, exact</text>
+
+  <rect x="935" y="240" width="200" height="65" rx="8" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="1035" y="262" text-anchor="middle" font-size="10" font-weight="700" fill="#822727">ES sink -&gt; index</text>
+  <text x="1035" y="278" text-anchor="middle" font-size="8.5" fill="#822727">cityflow-capstone-zone-revenue</text>
+  <text x="1035" y="293" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#822727">45 docs, exact</text>
+
+  <!-- airflow orchestration -->
+  <rect x="590" y="335" width="545" height="90" rx="8" fill="#2c5282" />
+  <text x="862" y="360" text-anchor="middle" font-size="11" font-weight="700" fill="#ebf8ff">Airflow: cityflow_capstone_health_check</text>
+  <text x="862" y="380" text-anchor="middle" font-size="9" fill="#bee3f8">check_capstone_lag -&gt; verify_mysql_sink -&gt; verify_elasticsearch_sink</text>
+  <text x="862" y="397" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#bee3f8">lag=0, 45 rows, 45 docs -- 2-5 seconds</text>
+
+  <path d="M705,305 L780,335" stroke="#a0aec0" stroke-width="1.4" fill="none" />
+  <path d="M1035,305 L950,335" stroke="#a0aec0" stroke-width="1.4" fill="none" />
+
+  <!-- closing reconciliation -->
+  <rect x="30" y="470" width="1090" height="70" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.8" />
+  <text x="575" y="493" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">Step 7 -- Spark Structured Streaming reconciles the FULL 9,555,045-message topic</text>
+  <text x="575" y="513" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#22543d">288 quarantined -&gt; 240,917 buckets, 9,554,757 trips, $256,692,373.14 -- Courses 1 &amp; 2's exact anchor</text>
+
+  <path d="M130,470 L575,470" stroke="#a0aec0" stroke-width="1.8" fill="none" marker-end="url(#c1)" />
+
+  <defs>
+    <marker id="c1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

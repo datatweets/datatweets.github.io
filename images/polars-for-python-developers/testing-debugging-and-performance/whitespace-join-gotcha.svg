@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="380" viewBox="0 0 720 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="380" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Invisible Whitespace Breaking a Join</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">Two strings that print identically can still be different strings</text>
+
+  <rect x="60" y="70" width="260" height="110" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="190" y="94" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">Canonical reference</text>
+  <text x="190" y="122" text-anchor="middle" font-size="14" font-family="monospace" fill="#1a202c">"Bath"</text>
+  <text x="190" y="142" text-anchor="middle" font-size="9" fill="#4a5568">4 characters</text>
+  <text x="190" y="160" text-anchor="middle" font-size="8.5" fill="#718096">category_ref table</text>
+
+  <rect x="400" y="70" width="260" height="110" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="530" y="94" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">Raw products row</text>
+  <text x="530" y="122" text-anchor="middle" font-size="14" font-family="monospace" fill="#1a202c">"Bath "</text>
+  <text x="530" y="142" text-anchor="middle" font-size="9" fill="#742a2a">5 characters (trailing space)</text>
+  <text x="530" y="160" text-anchor="middle" font-size="8.5" fill="#718096">thistlewood_products_raw.csv</text>
+
+  <text x="360" y="130" text-anchor="middle" font-size="20" fill="#a0aec0">≠</text>
+  <text x="360" y="150" text-anchor="middle" font-size="8" fill="#718096">prints the same</text>
+
+  <rect x="60" y="204" width="600" height="60" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="228" text-anchor="middle" font-size="10" font-weight="700" fill="#9c4221">A left join on category matches "Bath" but misses "Bath "</text>
+  <text x="360" y="248" text-anchor="middle" font-size="9" fill="#9c4221">14 of 61 rows end up with a null category_group -- silently, no error</text>
+
+  <rect x="60" y="284" width="600" height="80" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="308" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">Diagnosed with an anti join + .str.len_chars(), fixed with .str.strip_chars().str.to_titlecase()</text>
+  <text x="360" y="330" text-anchor="middle" font-size="9" fill="#22543d">char_length reveals what a printed comparison can't -- after normalizing, 0 of 61 rows are unmatched</text>
+  <text x="360" y="348" text-anchor="middle" font-size="8.5" fill="#4a5568">"Bath" and "Bath " both normalize to the same 4-character value</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="380" viewBox="0 0 1050 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Why zones.zone_id being unique is what keeps trips at one row per trip</title>
+  <desc>Left panel, green: zones.zone_id unique, confirmed by Module 4's own not_null and unique tests. LEFT JOIN zones on zone_id = pickup_zone produces exactly 81,013 rows in trips, matching stg_cityflow__trips row for row -- the join enriches without changing the grain. Right panel, red: a duplicate zone_id 1 row inserted directly into raw.zones on purpose. The identical join now produces 81,034 rows -- 21 extra, one for every trip whose pickup_zone is 1, each one now matched twice. The duplicate is removed and the count returns to 81,013. A caption states that a LEFT JOIN's own row count is only as safe as the uniqueness of the column being joined on -- confirmed here by breaking it on purpose, not merely trusted.</desc>
+  <rect width="1050" height="380" fill="#ffffff" />
+  <text x="525" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Join's Row Count Is Only as Safe as Its Key</text>
+
+  <rect x="40" y="60" width="460" height="230" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="270" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">zone_id unique (the real state)</text>
+  <rect x="65" y="98" width="410" height="55" rx="6" fill="#22543d" />
+  <text x="270" y="118" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">zones.zone_id: unique + not_null,</text>
+  <text x="270" y="136" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">confirmed by Module 4's own tests</text>
+  <text x="270" y="175" text-anchor="middle" font-size="10" fill="#22543d">LEFT JOIN zones ON zone_id = pickup_zone</text>
+  <rect x="90" y="188" width="360" height="40" rx="6" fill="#22543d" />
+  <text x="270" y="213" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#f0fff4">trips: 81,013 rows</text>
+  <text x="270" y="250" text-anchor="middle" font-size="10" fill="#22543d">Matches stg_cityflow__trips exactly --</text>
+  <text x="270" y="266" text-anchor="middle" font-size="10" fill="#22543d">enriched, not multiplied.</text>
+
+  <rect x="555" y="60" width="460" height="230" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="785" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">zone_id duplicated (broken on purpose)</text>
+  <rect x="580" y="98" width="410" height="55" rx="6" fill="#822727" />
+  <text x="785" y="118" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#fff5f5">a second row inserted with</text>
+  <text x="785" y="136" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#fff5f5">zone_id = 1, directly into raw.zones</text>
+  <text x="785" y="175" text-anchor="middle" font-size="10" fill="#822727">the identical join, unchanged</text>
+  <rect x="605" y="188" width="360" height="40" rx="6" fill="#822727" />
+  <text x="785" y="213" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#fff5f5">trips: 81,034 rows</text>
+  <text x="785" y="250" text-anchor="middle" font-size="10" fill="#822727">21 extra -- one per trip whose</text>
+  <text x="785" y="266" text-anchor="middle" font-size="10" fill="#822727">pickup_zone is 1, now matched twice.</text>
+
+  <rect x="130" y="310" width="790" height="55" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="525" y="335" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7b341e">A LEFT JOIN's own row count is only as safe as the uniqueness of the column joined on --</text>
+  <text x="525" y="352" text-anchor="middle" font-size="10.5" fill="#7b341e">confirmed here by breaking it on purpose, not merely trusted.</text>
+</svg>

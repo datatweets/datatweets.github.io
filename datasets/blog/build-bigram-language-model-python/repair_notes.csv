@@ -1,0 +1,45 @@
+note_id,split,text
+R001,train,printer needs new paper
+R002,train,printer needs new toner
+R003,train,printer is ready
+R004,train,printer is offline
+R005,train,scanner needs quick cleaning
+R006,train,scanner needs careful calibration
+R007,train,scanner is ready
+R008,train,scanner is offline
+R009,train,router needs quick restart
+R010,train,router needs careful inspection
+R011,train,router is stable
+R012,train,router is offline
+R013,train,projector needs new cable
+R014,train,projector needs careful alignment
+R015,train,projector is ready
+R016,train,projector is dim
+R017,train,sensor needs new battery
+R018,train,sensor needs quick calibration
+R019,train,sensor is stable
+R020,train,sensor is offline
+R021,train,tablet needs new battery
+R022,train,tablet needs quick restart
+R023,train,tablet is ready
+R024,train,tablet is offline
+R025,train,camera needs careful cleaning
+R026,train,camera needs new cable
+R027,train,camera is stable
+R028,train,camera is offline
+R029,train,printer reports low toner
+R030,train,scanner reports dust warning
+R031,train,router reports weak signal
+R032,train,projector reports low light
+R033,train,sensor reports low battery
+R034,train,tablet reports weak signal
+R035,train,camera reports low light
+R036,train,camera needs quick inspection
+T001,test,printer needs quick paper
+T002,test,scanner reports low battery
+T003,test,router needs new cable
+T004,test,projector is offline
+T005,test,sensor needs careful cleaning
+T006,test,tablet reports low toner
+T007,test,camera is ready
+T008,test,printer reports weak signal

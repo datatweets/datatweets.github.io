@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Choose KDE Bandwidth with Cross-Validation in Python</title>
+  <desc id="desc">A DataTweets tutorial thumbnail. A validation-score curve rises from narrow KDE bandwidths to a selected peak at 8 milliseconds, then falls toward wide bandwidths.</desc>
+
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="146" font-size="34" font-weight="600" letter-spacing="1.5" fill="#59636e">KDE BANDWIDTH</text>
+    <text x="90" y="284" font-size="88" font-weight="700" fill="#1b1f24">CHOOSE BY</text>
+    <text x="90" y="380" font-size="88" font-weight="700" fill="#1b1f24">VALIDATION</text>
+    <rect x="96" y="414" width="410" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="492" font-size="29" font-weight="500" letter-spacing="0.6" fill="#59636e">SEARCH &#183; SCORE &#183; REFIT</text>
+
+    <g transform="translate(688 126)">
+      <rect width="408" height="424" rx="24" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="30" y="55" font-size="24" font-weight="600" letter-spacing="1" fill="#59636e">VALIDATION SCORE</text>
+
+      <line x1="48" y1="312" x2="366" y2="312" stroke="#aeb6bf" stroke-width="2"/>
+      <line x1="48" y1="94" x2="48" y2="312" stroke="#aeb6bf" stroke-width="2"/>
+      <line x1="48" y1="238" x2="366" y2="238" stroke="#e3e6ea" stroke-width="2"/>
+      <line x1="48" y1="166" x2="366" y2="166" stroke="#e3e6ea" stroke-width="2"/>
+
+      <path d="M62 277 C92 252 116 218 145 184 C169 156 191 138 216 134 C247 130 266 147 291 178 C318 210 338 244 358 273" fill="none" stroke="#0067c0" stroke-width="7" stroke-linecap="round"/>
+      <line x1="216" y1="134" x2="216" y2="312" stroke="#0067c0" stroke-width="2" stroke-dasharray="7 7"/>
+      <circle cx="216" cy="134" r="13" fill="#ffffff" stroke="#0067c0" stroke-width="5"/>
+      <rect x="166" y="80" width="100" height="38" rx="19" fill="#0067c0"/>
+      <text x="216" y="107" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff">8 ms</text>
+
+      <text x="48" y="354" font-size="20" font-weight="500" fill="#59636e">NARROW</text>
+      <text x="366" y="354" text-anchor="end" font-size="20" font-weight="500" fill="#59636e">WIDE</text>
+      <text x="207" y="397" text-anchor="middle" font-size="22" font-weight="600" letter-spacing="0.5" fill="#1b1f24">BANDWIDTH</text>
+    </g>
+  </g>
+</svg>

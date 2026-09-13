@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="440" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Real Python Precedence Trap in .filter()</text>
+
+  <text x="60" y="58" font-size="11.5" font-weight="700" fill="#1a202c">Goal: Kitchen or Bath products</text>
+
+  <rect x="40" y="70" width="300" height="110" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="190" y="94" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">Without parentheses</text>
+  <text x="190" y="114" text-anchor="middle" font-size="9" fill="#2d3748">pl.col("category")=="Kitchen"</text>
+  <text x="190" y="128" text-anchor="middle" font-size="9" fill="#2d3748">| pl.col("category")=="Bath"</text>
+  <rect x="60" y="140" width="260" height="26" rx="5" fill="#ffffff" stroke="#e53e3e" stroke-width="1" />
+  <text x="190" y="157" text-anchor="middle" font-size="8.5" fill="#c53030">TypeError: truth value of Expr</text>
+
+  <rect x="380" y="70" width="300" height="110" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="530" y="94" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">With parentheses</text>
+  <text x="530" y="114" text-anchor="middle" font-size="9" fill="#2d3748">(pl.col("category")=="Kitchen")</text>
+  <text x="530" y="128" text-anchor="middle" font-size="9" fill="#2d3748">| (pl.col("category")=="Bath")</text>
+  <rect x="400" y="140" width="260" height="26" rx="5" fill="#ffffff" stroke="#48bb78" stroke-width="1" />
+  <text x="530" y="157" text-anchor="middle" font-size="9" fill="#276749">16 rows -- correct real result</text>
+
+  <text x="60" y="212" font-size="11.5" font-weight="700" fill="#1a202c">Why: Python's own operator precedence</text>
+  <rect x="40" y="222" width="640" height="50" rx="8" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.3" />
+  <text x="360" y="242" text-anchor="middle" font-size="9.5" fill="#744210">&amp; and | bind TIGHTER than == in Python -- so an unwrapped comparison next to</text>
+  <text x="360" y="260" text-anchor="middle" font-size="9.5" fill="#744210">&amp; / | becomes an invalid chained comparison, not the intended "and" / "or".</text>
+
+  <text x="60" y="300" font-size="11.5" font-weight="700" fill="#1a202c">A second, subtler version: &amp; also binds tighter than |</text>
+
+  <rect x="40" y="312" width="300" height="70" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="190" y="332" text-anchor="middle" font-size="9" fill="#2d3748">A | B &amp; C, no outer parens</text>
+  <text x="190" y="352" text-anchor="middle" font-size="9" fill="#2d3748">parses as A | (B &amp; C)</text>
+  <text x="190" y="368" text-anchor="middle" font-size="9" fill="#c53030" font-weight="700">11 rows -- wrong answer</text>
+
+  <rect x="380" y="312" width="300" height="70" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="530" y="332" text-anchor="middle" font-size="9" fill="#2d3748">(A | B) &amp; C, outer parens added</text>
+  <text x="530" y="352" text-anchor="middle" font-size="9" fill="#2d3748">groups the | before combining</text>
+  <text x="530" y="368" text-anchor="middle" font-size="9" fill="#276749" font-weight="700">6 rows -- correct answer</text>
+
+  <text x="360" y="414" text-anchor="middle" font-size="10.5" fill="#718096">Habit, not memory: parenthesize every comparison, and every | group, before combining with &amp;.</text>
+</svg>

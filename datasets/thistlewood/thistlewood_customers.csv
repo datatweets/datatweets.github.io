@@ -1,0 +1,181 @@
+customer_id,first_name,last_name,email,city,state,signup_date,segment
+C0001,Ava,Gallo,ava.gallo001@thistlewoodmail.example,Traverse City,MI,2023-10-04,wholesale
+C0002,Ava,Dunmore,ava.dunmore002@thistlewoodmail.example,Santa Fe,NM,2022-05-18,wholesale
+C0003,Chloe,Gallo,chloe.gallo003@thistlewoodmail.example,Athens,GA,2025-02-22,retail
+C0004,Luke,Thatcher,luke.thatcher004@thistlewoodmail.example,Fort Collins,CO,2023-06-26,wholesale
+C0005,John,Bishop,john.bishop005@thistlewoodmail.example,Charleston,SC,2025-04-17,retail
+C0006,Emily,Keller,emily.keller006@thistlewoodmail.example,Madison,WI,2024-03-21,retail
+C0007,Aria,Jasper,aria.jasper007@thistlewoodmail.example,Providence,RI,2024-07-11,retail
+C0008,Carter,Parrish,carter.parrish008@thistlewoodmail.example,Madison,WI,2025-11-19,wholesale
+C0009,Joseph,Hensley,joseph.hensley009@thistlewoodmail.example,Ithaca,NY,2022-10-12,retail
+C0010,Elizabeth,Carter,elizabeth.carter010@thistlewoodmail.example,Lancaster,PA,2022-08-14,retail
+C0011,Zoey,Fairweather,zoey.fairweather011@thistlewoodmail.example,Chattanooga,TN,2025-11-14,retail
+C0012,Gabriel,Parrish,gabriel.parrish012@thistlewoodmail.example,Madison,WI,2023-11-18,retail
+C0013,Owen,Grant,owen.grant013@thistlewoodmail.example,Missoula,MT,2023-11-27,retail
+C0014,Avery,Chandler,avery.chandler014@thistlewoodmail.example,Northampton,MA,2023-10-01,retail
+C0015,David,Everhart,david.everhart015@thistlewoodmail.example,Madison,WI,2023-04-02,retail
+C0016,Jack,Iversen,jack.iversen016@thistlewoodmail.example,Taos,NM,2023-07-21,retail
+C0017,Lucas,Dunmore,lucas.dunmore017@thistlewoodmail.example,Traverse City,MI,2022-07-24,retail
+C0018,Riley,Bennett,riley.bennett018@thistlewoodmail.example,Sedona,AZ,2025-02-23,retail
+C0019,Owen,Everhart,owen.everhart019@thistlewoodmail.example,Providence,RI,2025-02-14,retail
+C0020,Sebastian,Yates,sebastian.yates020@thistlewoodmail.example,Asheville,NC,2022-07-24,retail
+C0021,Jack,Chandler,jack.chandler021@thistlewoodmail.example,Traverse City,MI,2023-11-20,retail
+C0022,Noah,Gallo,noah.gallo022@thistlewoodmail.example,Bend,OR,2024-07-16,retail
+C0023,Ava,Yates,ava.yates023@thistlewoodmail.example,Sedona,AZ,2023-03-21,retail
+C0024,Michael,Sawyer,michael.sawyer024@thistlewoodmail.example,Yellow Springs,OH,2022-11-10,retail
+C0025,Levi,Kirkland,levi.kirkland025@thistlewoodmail.example,Asheville,NC,2022-12-08,retail
+C0026,Aria,Mercer,aria.mercer026@thistlewoodmail.example,Petaluma,CA,2023-03-05,retail
+C0027,Sophia,Yates,sophia.yates027@thistlewoodmail.example,Fort Collins,CO,2025-02-19,retail
+C0028,Abigail,Rowan,abigail.rowan028@thistlewoodmail.example,Charleston,SC,2025-04-04,retail
+C0029,Harper,Bennett,harper.bennett029@thistlewoodmail.example,Boulder,CO,2022-05-12,retail
+C0030,Grace,Thatcher,grace.thatcher030@thistlewoodmail.example,Athens,GA,2022-08-24,retail
+C0031,Zoey,Holloway,zoey.holloway031@thistlewoodmail.example,Duluth,MN,2024-10-14,retail
+C0032,Isabella,Quintero,isabella.quintero032@thistlewoodmail.example,Ann Arbor,MI,2023-03-17,retail
+C0033,Ella,Parrish,ella.parrish033@thistlewoodmail.example,Northampton,MA,2022-05-09,retail
+C0034,Harper,Ostrander,harper.ostrander034@thistlewoodmail.example,Chattanooga,TN,2025-08-20,retail
+C0035,Emily,Lambert,emily.lambert035@thistlewoodmail.example,Ithaca,NY,2025-11-16,retail
+C0036,Henry,Everhart,henry.everhart036@thistlewoodmail.example,Sedona,AZ,2023-10-19,retail
+C0037,Noah,Ellison,noah.ellison037@thistlewoodmail.example,Eugene,OR,2025-08-11,retail
+C0038,Carter,Jennings,carter.jennings038@thistlewoodmail.example,Athens,GA,2023-03-24,retail
+C0039,Matthew,Ingram,matthew.ingram039@thistlewoodmail.example,Eugene,OR,2025-06-05,retail
+C0040,Elizabeth,Everhart,elizabeth.everhart040@thistlewoodmail.example,Traverse City,MI,2023-09-24,retail
+C0041,James,Zimmerman,james.zimmerman041@thistlewoodmail.example,Madison,WI,2024-08-07,retail
+C0042,Wyatt,Rowan,wyatt.rowan042@thistlewoodmail.example,Sedona,AZ,2022-03-02,retail
+C0043,Benjamin,Osei,benjamin.osei043@thistlewoodmail.example,Traverse City,MI,2022-07-31,retail
+C0044,Isabella,Zimmerman,isabella.zimmerman044@thistlewoodmail.example,Sedona,AZ,2022-09-07,wholesale
+C0045,Levi,Zimmerman,levi.zimmerman045@thistlewoodmail.example,Eugene,OR,2023-05-22,retail
+C0046,Amelia,Bennett,amelia.bennett046@thistlewoodmail.example,Burlington,VT,2025-11-01,retail
+C0047,Owen,Hensley,owen.hensley047@thistlewoodmail.example,Asheville,NC,2022-05-01,retail
+C0048,Joseph,Underwood,joseph.underwood048@thistlewoodmail.example,Eugene,OR,2025-10-02,retail
+C0049,Matthew,Thatcher,matthew.thatcher049@thistlewoodmail.example,Bozeman,MT,2023-01-26,retail
+C0050,Matthew,Vance,matthew.vance050@thistlewoodmail.example,Taos,NM,2023-10-04,retail
+C0051,Evelyn,Jasper,evelyn.jasper051@thistlewoodmail.example,Portland,OR,2025-08-02,retail
+C0052,Alexander,Yates,alexander.yates052@thistlewoodmail.example,Spokane,WA,2022-06-08,retail
+C0053,Elijah,Mercer,elijah.mercer053@thistlewoodmail.example,Ann Arbor,MI,2024-08-21,retail
+C0054,Zoey,Gallo,zoey.gallo054@thistlewoodmail.example,Spokane,WA,2022-06-07,wholesale
+C0055,Hannah,Keller,hannah.keller055@thistlewoodmail.example,Ann Arbor,MI,2022-02-24,retail
+C0056,Matthew,Parrish,matthew.parrish056@thistlewoodmail.example,Spokane,WA,2025-04-27,retail
+C0057,Hannah,Nolan,hannah.nolan057@thistlewoodmail.example,Santa Fe,NM,2025-10-24,retail
+C0058,David,Vance,david.vance058@thistlewoodmail.example,Petaluma,CA,2023-01-09,wholesale
+C0059,Benjamin,Holloway,benjamin.holloway059@thistlewoodmail.example,Fort Collins,CO,2022-03-07,retail
+C0060,Hannah,Pemberton,hannah.pemberton060@thistlewoodmail.example,Burlington,VT,2025-07-26,retail
+C0061,Aria,Lindqvist,aria.lindqvist061@thistlewoodmail.example,Santa Fe,NM,2025-07-29,retail
+C0062,Owen,Nolan,owen.nolan062@thistlewoodmail.example,Portland,OR,2025-02-01,retail
+C0063,Abigail,Parrish,abigail.parrish063@thistlewoodmail.example,Asbury Park,NJ,2022-05-19,retail
+C0064,Evelyn,Lambert,evelyn.lambert064@thistlewoodmail.example,Portland,OR,2025-09-30,retail
+C0065,Liam,Foster,liam.foster065@thistlewoodmail.example,Madison,WI,2025-04-29,retail
+C0066,Wyatt,Ingram,wyatt.ingram066@thistlewoodmail.example,Boise,ID,2024-05-25,wholesale
+C0067,Emma,Ingram,emma.ingram067@thistlewoodmail.example,Providence,RI,2023-03-30,retail
+C0068,Harper,Ostrander,harper.ostrander068@thistlewoodmail.example,Duluth,MN,2024-01-02,retail
+C0069,Zoey,Bennett,zoey.bennett069@thistlewoodmail.example,Savannah,GA,2022-12-02,retail
+C0070,Olivia,Dunmore,olivia.dunmore070@thistlewoodmail.example,Yellow Springs,OH,2022-06-27,retail
+C0071,Zoey,Dunmore,zoey.dunmore071@thistlewoodmail.example,Ithaca,NY,2024-04-29,retail
+C0072,Isaac,Iversen,isaac.iversen072@thistlewoodmail.example,Portland,OR,2024-11-11,retail
+C0073,Luke,Grant,luke.grant073@thistlewoodmail.example,Eugene,OR,2022-06-30,wholesale
+C0074,Ava,Quintero,ava.quintero074@thistlewoodmail.example,Yellow Springs,OH,2023-03-16,retail
+C0075,Sebastian,Chandler,sebastian.chandler075@thistlewoodmail.example,Spokane,WA,2025-10-28,retail
+C0076,Hannah,Marsh,hannah.marsh076@thistlewoodmail.example,Duluth,MN,2022-02-06,retail
+C0077,James,Bishop,james.bishop077@thistlewoodmail.example,Taos,NM,2022-06-04,retail
+C0078,Wyatt,Rowan,wyatt.rowan078@thistlewoodmail.example,Portland,OR,2025-11-12,retail
+C0079,Benjamin,Norwood,benjamin.norwood079@thistlewoodmail.example,Ithaca,NY,2025-03-21,retail
+C0080,David,Hensley,david.hensley080@thistlewoodmail.example,Taos,NM,2022-01-27,retail
+C0081,Amelia,Jasper,amelia.jasper081@thistlewoodmail.example,Ann Arbor,MI,2025-03-10,retail
+C0082,Harper,Whitfield,harper.whitfield082@thistlewoodmail.example,Ithaca,NY,2024-06-04,wholesale
+C0083,Wyatt,Abbott,wyatt.abbott083@thistlewoodmail.example,Providence,RI,2023-08-26,retail
+C0084,Zoey,Sawyer,zoey.sawyer084@thistlewoodmail.example,Boulder,CO,2024-08-10,wholesale
+C0085,Henry,Thatcher,henry.thatcher085@thistlewoodmail.example,Fort Collins,CO,2022-12-29,retail
+C0086,Levi,Fairweather,levi.fairweather086@thistlewoodmail.example,Taos,NM,2025-04-08,retail
+C0087,Lily,Diaz,lily.diaz087@thistlewoodmail.example,Duluth,MN,2024-05-18,retail
+C0088,Benjamin,Iversen,benjamin.iversen088@thistlewoodmail.example,Spokane,WA,2023-03-30,retail
+C0089,Gabriel,Marsh,gabriel.marsh089@thistlewoodmail.example,Bend,OR,2022-08-30,retail
+C0090,Avery,Holloway,avery.holloway090@thistlewoodmail.example,Eugene,OR,2022-06-18,retail
+C0091,Carter,Diaz,carter.diaz091@thistlewoodmail.example,Savannah,GA,2022-09-13,retail
+C0092,Jack,Zimmerman,jack.zimmerman092@thistlewoodmail.example,Fort Collins,CO,2024-09-21,retail
+C0093,Luke,Nolan,luke.nolan093@thistlewoodmail.example,Yellow Springs,OH,2024-01-08,wholesale
+C0094,John,Kirkland,john.kirkland094@thistlewoodmail.example,Lancaster,PA,2022-03-05,retail
+C0095,Lily,Keller,lily.keller095@thistlewoodmail.example,Santa Fe,NM,2022-12-31,retail
+C0096,Julian,Rowan,julian.rowan096@thistlewoodmail.example,Providence,RI,2022-03-13,retail
+C0097,Zoey,Vance,zoey.vance097@thistlewoodmail.example,Asbury Park,NJ,2022-05-29,retail
+C0098,Elijah,Diaz,elijah.diaz098@thistlewoodmail.example,Charleston,SC,2025-09-13,retail
+C0099,Luke,Jasper,luke.jasper099@thistlewoodmail.example,Bozeman,MT,2025-08-11,wholesale
+C0100,Harper,Iversen,harper.iversen100@thistlewoodmail.example,Bend,OR,2025-02-12,retail
+C0101,Ella,Hensley,ella.hensley101@thistlewoodmail.example,Ithaca,NY,2022-07-16,retail
+C0102,Harper,Vance,harper.vance102@thistlewoodmail.example,Yellow Springs,OH,2025-06-06,retail
+C0103,John,Quintero,john.quintero103@thistlewoodmail.example,Missoula,MT,2024-07-23,retail
+C0104,Noah,Grant,noah.grant104@thistlewoodmail.example,Eugene,OR,2023-11-30,retail
+C0105,Ella,Keller,ella.keller105@thistlewoodmail.example,Chattanooga,TN,2023-06-21,retail
+C0106,Chloe,Osei,chloe.osei106@thistlewoodmail.example,Eugene,OR,2023-07-09,retail
+C0107,Lucas,Mercer,lucas.mercer107@thistlewoodmail.example,Sedona,AZ,2025-10-18,wholesale
+C0108,Aria,Underwood,aria.underwood108@thistlewoodmail.example,Sedona,AZ,2023-04-25,retail
+C0109,Hannah,Jasper,hannah.jasper109@thistlewoodmail.example,Duluth,MN,2024-08-11,retail
+C0110,Matthew,Whitfield,matthew.whitfield110@thistlewoodmail.example,Ithaca,NY,2024-07-13,retail
+C0111,Isabella,Fairweather,isabella.fairweather111@thistlewoodmail.example,Asheville,NC,2022-10-23,retail
+C0112,Sebastian,Kirkland,sebastian.kirkland112@thistlewoodmail.example,Petaluma,CA,2022-07-13,retail
+C0113,David,Ellison,david.ellison113@thistlewoodmail.example,Hudson,NY,2024-11-26,retail
+C0114,Sofia,Norwood,sofia.norwood114@thistlewoodmail.example,Athens,GA,2022-07-20,wholesale
+C0115,Isabella,Iversen,isabella.iversen115@thistlewoodmail.example,Charleston,SC,2024-05-17,retail
+C0116,Levi,Hensley,levi.hensley116@thistlewoodmail.example,Petaluma,CA,2025-10-14,retail
+C0117,Chloe,Zimmerman,chloe.zimmerman117@thistlewoodmail.example,Asheville,NC,2022-05-19,retail
+C0118,Isabella,Holloway,isabella.holloway118@thistlewoodmail.example,Boulder,CO,2024-04-05,retail
+C0119,Owen,Thatcher,owen.thatcher119@thistlewoodmail.example,Missoula,MT,2024-02-03,retail
+C0120,Zoey,Hensley,zoey.hensley120@thistlewoodmail.example,Fort Collins,CO,2023-12-21,retail
+C0121,Sophia,Norwood,sophia.norwood121@thistlewoodmail.example,Taos,NM,2022-06-24,retail
+C0122,Chloe,Ellison,chloe.ellison122@thistlewoodmail.example,Duluth,MN,2024-08-19,retail
+C0123,Zoey,Gallo,zoey.gallo123@thistlewoodmail.example,Santa Fe,NM,2024-09-07,retail
+C0124,Chloe,Lindqvist,chloe.lindqvist124@thistlewoodmail.example,Bozeman,MT,2025-01-19,retail
+C0125,John,Parrish,john.parrish125@thistlewoodmail.example,Fort Collins,CO,2023-04-05,retail
+C0126,Hannah,Grant,hannah.grant126@thistlewoodmail.example,Madison,WI,2025-09-29,retail
+C0127,Chloe,Quintero,chloe.quintero127@thistlewoodmail.example,Boulder,CO,2024-12-02,retail
+C0128,Julian,Norwood,julian.norwood128@thistlewoodmail.example,Chattanooga,TN,2025-02-14,retail
+C0129,Sophia,Quintero,sophia.quintero129@thistlewoodmail.example,Traverse City,MI,2025-12-12,retail
+C0130,Aria,Ostrander,aria.ostrander130@thistlewoodmail.example,Charleston,SC,2022-06-23,wholesale
+C0131,Isaac,Bishop,isaac.bishop131@thistlewoodmail.example,Boulder,CO,2022-06-28,retail
+C0132,Liam,Dunmore,liam.dunmore132@thistlewoodmail.example,Lancaster,PA,2022-01-18,retail
+C0133,Chloe,Jasper,chloe.jasper133@thistlewoodmail.example,Charleston,SC,2023-03-08,retail
+C0134,Alexander,Sawyer,alexander.sawyer134@thistlewoodmail.example,Portland,OR,2023-03-18,wholesale
+C0135,Chloe,Hensley,chloe.hensley135@thistlewoodmail.example,Lancaster,PA,2022-06-11,wholesale
+C0136,Emma,Lindqvist,emma.lindqvist136@thistlewoodmail.example,Missoula,MT,2023-02-19,retail
+C0137,Emma,Foster,emma.foster137@thistlewoodmail.example,Traverse City,MI,2025-12-30,retail
+C0138,Sophia,Chandler,sophia.chandler138@thistlewoodmail.example,Hudson,NY,2022-05-13,wholesale
+C0139,Isaac,Carter,isaac.carter139@thistlewoodmail.example,Ann Arbor,MI,2022-12-18,retail
+C0140,Aria,Hensley,aria.hensley140@thistlewoodmail.example,Bozeman,MT,2022-10-17,wholesale
+C0141,Amelia,Chandler,amelia.chandler141@thistlewoodmail.example,Petaluma,CA,2022-02-22,retail
+C0142,James,Diaz,james.diaz142@thistlewoodmail.example,Bozeman,MT,2024-06-04,retail
+C0143,Hannah,Keller,hannah.keller143@thistlewoodmail.example,Providence,RI,2025-05-25,retail
+C0144,Joseph,Iversen,joseph.iversen144@thistlewoodmail.example,Yellow Springs,OH,2025-09-17,retail
+C0145,Aria,Dunmore,aria.dunmore145@thistlewoodmail.example,Bozeman,MT,2025-05-09,retail
+C0146,Emily,Jennings,emily.jennings146@thistlewoodmail.example,Boulder,CO,2022-07-02,retail
+C0147,Sofia,Fairweather,sofia.fairweather147@thistlewoodmail.example,Lancaster,PA,2024-07-09,wholesale
+C0148,Emily,Holloway,emily.holloway148@thistlewoodmail.example,Bozeman,MT,2024-12-09,retail
+C0149,Olivia,Lambert,olivia.lambert149@thistlewoodmail.example,Madison,WI,2024-11-03,wholesale
+C0150,Wyatt,Abbott,wyatt.abbott150@thistlewoodmail.example,Fort Collins,CO,2022-03-21,retail
+C0151,Olivia,Carter,olivia.carter151@thistlewoodmail.example,Santa Fe,NM,2025-07-15,retail
+C0152,Abigail,Holloway,abigail.holloway152@thistlewoodmail.example,Boise,ID,2022-05-15,retail
+C0153,Evelyn,Pemberton,evelyn.pemberton153@thistlewoodmail.example,Bend,OR,2023-11-01,retail
+C0154,Charlotte,Bishop,charlotte.bishop154@thistlewoodmail.example,Asbury Park,NJ,2024-04-16,retail
+C0155,Charlotte,Norwood,charlotte.norwood155@thistlewoodmail.example,Lancaster,PA,2023-03-17,retail
+C0156,Sofia,Dunmore,sofia.dunmore156@thistlewoodmail.example,Ann Arbor,MI,2024-08-06,wholesale
+C0157,James,Grant,james.grant157@thistlewoodmail.example,Eugene,OR,2024-01-13,retail
+C0158,Gabriel,Thatcher,gabriel.thatcher158@thistlewoodmail.example,Boulder,CO,2022-06-24,retail
+C0159,Julian,Mercer,julian.mercer159@thistlewoodmail.example,Madison,WI,2023-03-22,retail
+C0160,John,Abbott,john.abbott160@thistlewoodmail.example,Charleston,SC,2024-07-16,retail
+C0161,James,Rowan,james.rowan161@thistlewoodmail.example,Taos,NM,2022-11-14,retail
+C0162,Ella,Nolan,ella.nolan162@thistlewoodmail.example,Petaluma,CA,2022-02-22,retail
+C0163,Owen,Thatcher,owen.thatcher163@thistlewoodmail.example,Burlington,VT,2022-11-26,retail
+C0164,Michael,Yates,michael.yates164@thistlewoodmail.example,Bend,OR,2024-10-22,retail
+C0165,Samuel,Chandler,samuel.chandler165@thistlewoodmail.example,Hudson,NY,2023-04-07,retail
+C0166,Michael,Whitfield,michael.whitfield166@thistlewoodmail.example,Savannah,GA,2023-09-23,retail
+C0167,Sofia,Parrish,sofia.parrish167@thistlewoodmail.example,Northampton,MA,2024-01-20,retail
+C0168,Matthew,Lindqvist,matthew.lindqvist168@thistlewoodmail.example,Boulder,CO,2025-09-07,retail
+C0169,Chloe,Vance,chloe.vance169@thistlewoodmail.example,Providence,RI,2025-03-14,retail
+C0170,Sebastian,Jasper,sebastian.jasper170@thistlewoodmail.example,Boise,ID,2023-12-23,retail
+C0171,Emma,Diaz,emma.diaz171@thistlewoodmail.example,Asbury Park,NJ,2025-05-15,retail
+C0172,Noah,Mercer,noah.mercer172@thistlewoodmail.example,Lancaster,PA,2023-05-04,retail
+C0173,Chloe,Nolan,chloe.nolan173@thistlewoodmail.example,Asheville,NC,2024-12-21,retail
+C0174,Jack,Jasper,jack.jasper174@thistlewoodmail.example,Athens,GA,2025-06-05,retail
+C0175,Carter,Holloway,carter.holloway175@thistlewoodmail.example,Ann Arbor,MI,2024-05-27,retail
+C0176,Sebastian,Parrish,sebastian.parrish176@thistlewoodmail.example,Fort Collins,CO,2025-11-01,wholesale
+C0177,Emily,Gallo,emily.gallo177@thistlewoodmail.example,Charleston,SC,2023-03-31,retail
+C0178,James,Everhart,james.everhart178@thistlewoodmail.example,Ithaca,NY,2023-07-21,retail
+C0179,Harper,Bennett,harper.bennett179@thistlewoodmail.example,Missoula,MT,2022-11-02,retail
+C0180,Owen,Holloway,owen.holloway180@thistlewoodmail.example,Athens,GA,2022-08-31,retail

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="348" viewBox="0 0 1000 348" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>From Interactive Checks to a Real Test Suite</title>
+<desc>A three-row stack showing the shift this lesson makes. Row 1: every earlier lesson ran AppTest interactively, one script at a time, in a scratch bash session. Row 2: test_app.py wraps the identical checks as real pytest functions, each with a plain assert. Row 3: one pytest command runs all of them at once, reporting a real pass or fail per test -- confirmed here with 3 passing tests and one deliberately broken test shown failing for real before its removal.</desc>
+<rect width="1000" height="348" fill="#ffffff" />
+<text x="500" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">From Interactive Checks to a Real Test Suite</text>
+<rect x="60" y="60" width="880" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5" />
+<text x="500" y="86" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">Every earlier lesson: AppTest run interactively, one script at a time</text>
+<path d="M500,107 L500,123" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="126" width="880" height="44" rx="7" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5" />
+<text x="500" y="152" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">test_app.py: the same checks, as real pytest functions with assert</text>
+<path d="M500,173 L500,189" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="192" width="880" height="44" rx="7" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5" />
+<text x="500" y="218" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">pytest test_app.py -- one command, every test, a real pass/fail per test</text>
+<rect x="40" y="260" width="920" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="500" y="284" text-anchor="middle" font-size="10.5" fill="#7b341e">Confirmed for real: 3 tests passing, and one deliberately wrong assertion shown failing with a</text>
+<text x="500" y="304" text-anchor="middle" font-size="10.5" fill="#7b341e">genuine pytest AssertionError before it was removed.</text>
+<defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

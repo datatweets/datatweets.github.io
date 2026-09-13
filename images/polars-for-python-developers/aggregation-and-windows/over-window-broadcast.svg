@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">group_by().agg() vs .over() -- Collapse vs Broadcast</text>
+  <text x="360" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">The same real per-category sum, used two different ways</text>
+
+  <rect x="30" y="70" width="300" height="168" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="180" y="94" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">group_by("category").agg(...)</text>
+  <text x="50" y="118" font-size="9.5" fill="#1a202c">14,054 real line items in</text>
+  <text x="50" y="138" font-size="9.5" fill="#1a202c">-&gt; collapses to 8 real rows</text>
+  <text x="50" y="158" font-size="9.5" font-family="monospace" fill="#1a202c">Storage: sum = $795,376.21</text>
+  <text x="50" y="178" font-size="9.5" font-family="monospace" fill="#1a202c">(one row, no per-item detail)</text>
+  <line x1="50" y1="192" x2="310" y2="192" stroke="#bee3f8" stroke-width="1" />
+  <text x="50" y="214" font-size="9.5" fill="#2b6cb0">Row count: 14,054 -&gt; 8</text>
+  <text x="50" y="230" font-size="9.5" fill="#2b6cb0">Real per-line-item detail is gone</text>
+
+  <rect x="390" y="70" width="300" height="168" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="540" y="94" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">.over("category")</text>
+  <text x="410" y="118" font-size="9.5" fill="#1a202c">14,054 real line items in</text>
+  <text x="410" y="138" font-size="9.5" fill="#1a202c">-&gt; broadcasts the same sum back</text>
+  <text x="410" y="158" font-size="9.5" font-family="monospace" fill="#1a202c">O00588/P034: pct_of_category</text>
+  <text x="410" y="178" font-size="9.5" font-family="monospace" fill="#1a202c">= 271.08 / 795,376.21 * 100</text>
+  <line x1="410" y1="192" x2="670" y2="192" stroke="#e9d8fd" stroke-width="1" />
+  <text x="410" y="214" font-size="9.5" fill="#6b46c1">Row count: 14,054 -&gt; 14,054</text>
+  <text x="410" y="230" font-size="9.5" fill="#6b46c1">Real per-row detail is kept</text>
+
+  <rect x="70" y="264" width="580" height="76" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="288" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">Verified: every real category's per-row percentages sum to 100</text>
+  <text x="360" y="308" text-anchor="middle" font-size="9.5" fill="#2d3748">All 8 real categories -- Bath, Bedding, Decor, Furniture, Kitchen,</text>
+  <text x="360" y="326" text-anchor="middle" font-size="9.5" fill="#2d3748">Lighting, Outdoor, Storage -- each round to exactly 100 (rounded to 6dp).</text>
+
+  <rect x="130" y="360" width="460" height="76" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="384" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">The aggregation is identical -- only the output shape differs</text>
+  <text x="360" y="404" text-anchor="middle" font-size="9.5" fill="#7b341e">pl.col("line_total").sum() means the same thing inside .agg()</text>
+  <text x="360" y="420" text-anchor="middle" font-size="9.5" fill="#7b341e">or followed by .over() -- only what happens to the result changes.</text>
+</svg>

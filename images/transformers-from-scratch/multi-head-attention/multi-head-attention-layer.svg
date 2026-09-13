@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="940" height="560" fill="#ffffff"/>
+  <text x="470" y="32" text-anchor="middle" font-size="19" font-weight="700" fill="#1a202c">The MultiHeadAttention class: one forward cache, one backward pass</text>
+  <text x="470" y="54" text-anchor="middle" font-size="13" fill="#718096">C = 8, h = 4, hs = C / h = 2 &#183; params Wq, Wk, Wv, Wo each (C, C)</text>
+
+  <!-- forward box -->
+  <rect x="40" y="76" width="410" height="252" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="245" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#2b6cb0">forward(X)  &#8594;  out (B, T, C)</text>
+  <text x="60" y="130" font-size="12.5" fill="#4a5568">Q, K, V = X @ Wq, X @ Wk, X @ Wv</text>
+  <text x="60" y="130" font-size="12.5" fill="#a0aec0" dx="292">(B, T, C)</text>
+  <text x="60" y="154" font-size="12.5" fill="#4a5568">split each into heads</text>
+  <text x="60" y="154" font-size="12.5" fill="#c05621" dx="152">(B, h, T, hs)</text>
+  <text x="60" y="178" font-size="12.5" fill="#4a5568">scores = Qh @ Kh&#7488; / sqrt(hs)</text>
+  <text x="60" y="178" font-size="12.5" fill="#a0aec0" dx="252">(B, h, T, T)</text>
+  <text x="60" y="202" font-size="12.5" fill="#4a5568">A = softmax(scores, axis=-1)</text>
+  <text x="60" y="226" font-size="12.5" fill="#4a5568">Oh = A @ Vh</text>
+  <text x="60" y="226" font-size="12.5" fill="#c05621" dx="252">(B, h, T, hs)</text>
+  <text x="60" y="250" font-size="12.5" fill="#4a5568">concat heads &#8594; (B, T, C)</text>
+  <text x="60" y="274" font-size="12.5" fill="#4a5568">out = concat @ Wo</text>
+  <rect x="56" y="288" width="378" height="28" rx="6" fill="#ffffff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="245" y="307" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">cache = (X, Qh, Kh, Vh, A, concat)</text>
+
+  <!-- arrows between forward and backward -->
+  <text x="470" y="150" text-anchor="middle" font-size="11" fill="#718096">out</text>
+  <line x1="452" y1="160" x2="488" y2="160" stroke="#4a5568" stroke-width="2"/>
+  <polygon points="488,160 478,155 478,165" fill="#4a5568"/>
+  <text x="470" y="262" text-anchor="middle" font-size="11" fill="#718096">cache</text>
+  <line x1="488" y1="248" x2="452" y2="248" stroke="#9f7aea" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="452,248 462,243 462,253" fill="#9f7aea"/>
+
+  <!-- backward box -->
+  <rect x="490" y="76" width="410" height="252" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+  <text x="695" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#c53030">backward(dout)  &#8594;  dX (B, T, C)</text>
+  <text x="510" y="130" font-size="12.5" fill="#4a5568">dWo = concat&#7488; dout;  dconcat = dout @ Wo&#7488;</text>
+  <text x="510" y="154" font-size="12.5" fill="#4a5568">split dconcat &#8594; dOh (B, h, T, hs)</text>
+  <text x="510" y="178" font-size="12.5" fill="#4a5568">dA = dOh @ Vh&#7488;;  dValueH = A&#7488; @ dOh</text>
+  <text x="510" y="202" font-size="12.5" fill="#4a5568">dS = A * (dA - sum(dA*A))  &#183; softmax back</text>
+  <text x="510" y="226" font-size="12.5" fill="#4a5568">dQueryH = dscores @ Kh;  dKeyH = dscores&#7488; @ Qh</text>
+  <text x="510" y="250" font-size="12.5" fill="#4a5568">merge heads &#8594; dQuery, dKey, dValue (B, T, C)</text>
+  <text x="510" y="274" font-size="12.5" fill="#4a5568">dWq, dWk, dWv = X&#7488; dQuery / dKey / dValue</text>
+  <rect x="506" y="288" width="378" height="28" rx="6" fill="#ffffff" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="695" y="307" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">dX = dQuery @ Wq&#7488; + dKey @ Wk&#7488; + dValue @ Wv&#7488;</text>
+
+  <!-- proof panels -->
+  <rect x="40" y="348" width="410" height="176" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="245" y="374" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">Proof 1: gradient check (float64)</text>
+  <text x="60" y="400" font-size="12.5" fill="#4a5568">max relative error vs. central differences</text>
+  <text x="70" y="426" font-size="12.5" fill="#276749">Wq</text><text x="200" y="426" font-size="12.5" fill="#4a5568">2.5e-07</text>
+  <text x="70" y="448" font-size="12.5" fill="#276749">Wk</text><text x="200" y="448" font-size="12.5" fill="#4a5568">7.9e-07</text>
+  <text x="70" y="470" font-size="12.5" fill="#276749">Wv</text><text x="200" y="470" font-size="12.5" fill="#4a5568">3.2e-10</text>
+  <text x="70" y="492" font-size="12.5" fill="#276749">Wo</text><text x="200" y="492" font-size="12.5" fill="#4a5568">8.4e-09</text>
+  <text x="70" y="514" font-size="12.5" fill="#276749">X</text><text x="200" y="514" font-size="12.5" fill="#4a5568">1.2e-08</text>
+  <text x="290" y="470" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">all &#8804; 1e-5</text>
+  <text x="290" y="490" text-anchor="middle" font-size="11" fill="#718096">backward is</text>
+  <text x="290" y="504" text-anchor="middle" font-size="11" fill="#718096">correct</text>
+
+  <!-- loss descent panel -->
+  <rect x="490" y="348" width="410" height="176" rx="10" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="695" y="374" text-anchor="middle" font-size="14" font-weight="700" fill="#6b46c1">Proof 2: it learns (10 GD steps)</text>
+  <!-- axes -->
+  <line x1="540" y1="500" x2="870" y2="500" stroke="#a0aec0" stroke-width="1.5"/>
+  <line x1="540" y1="392" x2="540" y2="500" stroke="#a0aec0" stroke-width="1.5"/>
+  <!-- polyline: loss 0.6508 -> 0.3840 mapped; x 540..870 (10 pts), y 500(=0.35)..392(=0.66) -->
+  <polyline points="540,494 577,442 613,420 650,405 687,393 723,382 760,373 796,364 833,355 870,345"
+            fill="none" stroke="#6b46c1" stroke-width="2.5"/>
+  <circle cx="540" cy="494" r="3" fill="#6b46c1"/>
+  <circle cx="870" cy="345" r="3" fill="#6b46c1"/>
+  <text x="540" y="486" text-anchor="start" font-size="11" font-weight="700" fill="#6b46c1">0.6508</text>
+  <text x="870" y="338" text-anchor="end" font-size="11" font-weight="700" fill="#6b46c1">0.3840</text>
+  <text x="705" y="518" text-anchor="middle" font-size="11" fill="#718096">MSE loss falls every step &#8594; gradients point downhill</text>
+
+  <text x="470" y="548" text-anchor="middle" font-size="11" fill="#a0aec0">One reusable NumPy class &#183; seeded &#183; byte-for-byte reproducible &#183; the building block for the Module 5 transformer block</text>
+</svg>

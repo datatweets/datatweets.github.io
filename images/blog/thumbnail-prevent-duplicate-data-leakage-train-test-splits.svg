@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Prevent duplicate data leakage in train-test splits</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail. The words Groups Stay Together appear beside a diagram in which three uploads from inspection A remain in training and three uploads from inspection B remain in testing, with zero group overlap.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="32" font-weight="600" letter-spacing="0.6" fill="#59636e">LEAKAGE-SAFE EVALUATION</text>
+    <text x="90" y="272" font-size="82" font-weight="700" fill="#1b1f24">Groups Stay</text>
+    <text x="90" y="368" font-size="82" font-weight="700" fill="#1b1f24">Together</text>
+    <rect x="96" y="404" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="480" font-size="28" font-weight="500" fill="#59636e">pandas &#183; group splits &#183; scikit-learn</text>
+
+    <g transform="translate(674 132)">
+      <text x="90" y="28" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">TRAIN</text>
+      <text x="350" y="28" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">TEST</text>
+
+      <rect x="0" y="55" width="180" height="320" rx="20" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <rect x="260" y="55" width="180" height="320" rx="20" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <line x1="220" y1="68" x2="220" y2="362" stroke="#0067c0" stroke-width="4" stroke-dasharray="10 10"/>
+
+      <text x="90" y="102" text-anchor="middle" font-size="20" font-weight="700" fill="#0067c0">INSPECTION A</text>
+      <text x="350" y="102" text-anchor="middle" font-size="20" font-weight="700" fill="#0067c0">INSPECTION B</text>
+
+      <g fill="#ffffff" stroke="#0067c0" stroke-width="2">
+        <rect x="26" y="128" width="128" height="48" rx="10"/>
+        <rect x="26" y="192" width="128" height="48" rx="10"/>
+        <rect x="26" y="256" width="128" height="48" rx="10"/>
+        <rect x="286" y="128" width="128" height="48" rx="10"/>
+        <rect x="286" y="192" width="128" height="48" rx="10"/>
+        <rect x="286" y="256" width="128" height="48" rx="10"/>
+      </g>
+
+      <g text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">
+        <text x="90" y="159">UPLOAD 1</text>
+        <text x="90" y="223">UPLOAD 2</text>
+        <text x="90" y="287">UPLOAD 3</text>
+        <text x="350" y="159">UPLOAD 1</text>
+        <text x="350" y="223">UPLOAD 2</text>
+        <text x="350" y="287">UPLOAD 3</text>
+      </g>
+
+      <rect x="145" y="394" width="150" height="48" rx="24" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <text x="220" y="426" text-anchor="middle" font-size="20" font-weight="700" fill="#0067c0">0 OVERLAP</text>
+    </g>
+  </g>
+</svg>

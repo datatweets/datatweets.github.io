@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="390" viewBox="0 0 1050 390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>What Survives a Rerun</title>
+<desc>A comparison showing what survives a rerun. Left panel, plain variable: count = 0 runs fresh every rerun, previous value discarded, stuck at 1 after any number of clicks. Right panel, st.session_state.count: initialized once on the very first rerun only, then every later rerun finds it already set and skips initialization, so += 1 accumulates correctly across clicks -- 3 after three clicks, confirmed with AppTest.</desc>
+<rect width="1050" height="390" fill="#ffffff" />
+<text x="525" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">What Survives a Rerun</text>
+<rect x="30" y="60" width="483" height="210" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.6" />
+<text x="271" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">count = 0 (plain variable)</text>
+<text x="271" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Runs fresh every rerun.</text>
+<text x="271" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Previous value discarded.</text>
+<text x="271" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">3 clicks -&gt; stuck at 1.</text>
+<path d="M517,165 L533,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="537" y="60" width="483" height="210" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+<text x="778" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">st.session_state.count</text>
+<text x="778" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Initialized once, first rerun.</text>
+<text x="778" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Later reruns skip init.</text>
+<text x="778" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">+= 1 accumulates.</text>
+<text x="778" y="176" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">3 clicks -&gt; 3, confirmed.</text>
+<rect x="30" y="286" width="990" height="88" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="525" y="310" text-anchor="middle" font-size="10.5" fill="#7b341e">A plain variable resets every rerun; st.session_state is the one thing Streamlit deliberately keeps alive</text>
+<text x="525" y="330" text-anchor="middle" font-size="10.5" fill="#7b341e">between them.</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A DataFrame Is Same-Length Series, Side by Side</text>
+
+  <text x="60" y="62" font-size="12" fill="#4a5568">Three Series, each already 3 values long:</text>
+
+  <rect x="60" y="72" width="180" height="26" rx="5" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="150" y="89" text-anchor="middle" font-size="10.5" fill="#2b6cb0">product_id: Series (len 3)</text>
+  <rect x="260" y="72" width="200" height="26" rx="5" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.3" />
+  <text x="360" y="89" text-anchor="middle" font-size="10.5" fill="#6b46c1">product_name: Series (len 3)</text>
+  <rect x="480" y="72" width="180" height="26" rx="5" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3" />
+  <text x="570" y="89" text-anchor="middle" font-size="10.5" fill="#276749">price: Series (len 3)</text>
+
+  <line x1="150" y1="98" x2="270" y2="140" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="360" y1="98" x2="345" y2="140" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="570" y1="98" x2="420" y2="140" stroke="#a0aec0" stroke-width="1.2" />
+
+  <text x="360" y="128" text-anchor="middle" font-size="11" fill="#718096">pl.DataFrame([product_id, product_name, price])</text>
+
+  <rect x="120" y="145" width="480" height="130" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <rect x="132" y="157" width="150" height="24" rx="5" fill="#ebf8ff" stroke="#4299e1" stroke-width="1" />
+  <text x="207" y="173" text-anchor="middle" font-size="10" fill="#2b6cb0">product_id</text>
+  <rect x="282" y="157" width="180" height="24" rx="5" fill="#faf5ff" stroke="#9f7aea" stroke-width="1" />
+  <text x="372" y="173" text-anchor="middle" font-size="10" fill="#6b46c1">product_name</text>
+  <rect x="462" y="157" width="130" height="24" rx="5" fill="#f0fff4" stroke="#48bb78" stroke-width="1" />
+  <text x="527" y="173" text-anchor="middle" font-size="10" fill="#276749">price</text>
+
+  <g font-size="9.5" fill="#2d3748">
+    <text x="207" y="200" text-anchor="middle">P001</text>
+    <text x="372" y="200" text-anchor="middle">Copper Skillet</text>
+    <text x="527" y="200" text-anchor="middle">64.0</text>
+    <text x="207" y="223" text-anchor="middle">P002</text>
+    <text x="372" y="223" text-anchor="middle">Linen Towel Set</text>
+    <text x="527" y="223" text-anchor="middle">38.0</text>
+    <text x="207" y="246" text-anchor="middle">P003</text>
+    <text x="372" y="246" text-anchor="middle">Cast Iron Griddle</text>
+    <text x="527" y="246" text-anchor="middle">72.0</text>
+  </g>
+
+  <text x="360" y="292" text-anchor="middle" font-size="11" fill="#718096">Rows are identified only by position (0, 1, 2, …) -- there is no separate label column here.</text>
+
+  <rect x="90" y="310" width="540" height="66" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="360" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="#9c4221">If the Series aren't all the same length</text>
+  <text x="360" y="350" text-anchor="middle" font-size="10.5" fill="#2d3748">pl.DataFrame([...]) raises a ShapeError immediately -- there is no</text>
+  <text x="360" y="366" text-anchor="middle" font-size="10.5" fill="#2d3748">silent padding or truncation to hide the mismatch.</text>
+
+  <text x="360" y="405" text-anchor="middle" font-size="10.5" fill="#718096">shape, .columns, and .dtypes all describe this same structure: same-length columns, position-based rows.</text>
+</svg>

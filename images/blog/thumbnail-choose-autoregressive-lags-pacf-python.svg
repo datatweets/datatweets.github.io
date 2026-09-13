@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Choose Autoregressive Lags with PACF Plots in Python</title>
+  <desc id="desc">A DataTweets tutorial thumbnail with the words Choose Useful Lags and a PACF diagram. Only lags 1 and 7 cross the confidence band, leading to a validation box that selects lags 1 and 7 by the lowest mean absolute error.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#0067c0"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="151" font-size="31" font-weight="600" letter-spacing="1" fill="#59636e">PACF + BACKTEST</text>
+    <text x="90" y="281" font-size="82" font-weight="700" fill="#1b1f24">CHOOSE</text>
+    <text x="90" y="378" font-size="82" font-weight="700" fill="#1b1f24">USEFUL LAGS</text>
+    <rect x="94" y="423" width="452" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="502" font-size="29" font-weight="500" fill="#59636e">TRAIN &#183; PROPOSE &#183; VALIDATE</text>
+
+    <g>
+      <rect x="704" y="112" width="400" height="331" rx="20" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="742" y="159" font-size="24" font-weight="600" letter-spacing="0.8" fill="#59636e">TRAINING PACF</text>
+      <rect x="756" y="283" width="306" height="42" rx="8" fill="#e3f0fa"/>
+      <line x1="756" y1="304" x2="1062" y2="304" stroke="#59636e" stroke-width="2"/>
+
+      <line x1="782" y1="304" x2="782" y2="194" stroke="#0067c0" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="782" cy="194" r="8" fill="#ffffff" stroke="#0067c0" stroke-width="4"/>
+      <line x1="826" y1="304" x2="826" y2="318" stroke="#9aa5b1" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="826" cy="318" r="5" fill="#9aa5b1"/>
+      <line x1="870" y1="304" x2="870" y2="298" stroke="#9aa5b1" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="870" cy="298" r="5" fill="#9aa5b1"/>
+      <line x1="914" y1="304" x2="914" y2="309" stroke="#9aa5b1" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="914" cy="309" r="5" fill="#9aa5b1"/>
+      <line x1="958" y1="304" x2="958" y2="291" stroke="#9aa5b1" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="958" cy="291" r="5" fill="#9aa5b1"/>
+      <line x1="1002" y1="304" x2="1002" y2="290" stroke="#9aa5b1" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="1002" cy="290" r="5" fill="#9aa5b1"/>
+      <line x1="1046" y1="304" x2="1046" y2="218" stroke="#0067c0" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="1046" cy="218" r="8" fill="#ffffff" stroke="#0067c0" stroke-width="4"/>
+
+      <text x="775" y="362" font-size="22" font-weight="700" fill="#0067c0">1</text>
+      <text x="819" y="362" font-size="22" font-weight="500" fill="#59636e">2</text>
+      <text x="863" y="362" font-size="22" font-weight="500" fill="#59636e">3</text>
+      <text x="907" y="362" font-size="22" font-weight="500" fill="#59636e">4</text>
+      <text x="951" y="362" font-size="22" font-weight="500" fill="#59636e">5</text>
+      <text x="995" y="362" font-size="22" font-weight="500" fill="#59636e">6</text>
+      <text x="1039" y="362" font-size="22" font-weight="700" fill="#0067c0">7</text>
+      <text x="1006" y="407" font-size="19" font-weight="500" fill="#59636e">LAG (DAYS)</text>
+
+      <path d="M 904 444 L 904 482" fill="none" stroke="#0067c0" stroke-width="4" marker-end="url(#arrow)"/>
+      <rect x="730" y="483" width="350" height="99" rx="18" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+      <text x="758" y="519" font-size="20" font-weight="600" letter-spacing="0.7" fill="#59636e">VALIDATION CHOICE</text>
+      <text x="758" y="560" font-size="28" font-weight="700" fill="#1b1f24">[1, 7] &#183; LOWEST MAE</text>
+    </g>
+  </g>
+</svg>

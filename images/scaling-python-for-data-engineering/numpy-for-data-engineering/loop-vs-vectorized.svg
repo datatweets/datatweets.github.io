@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="780" height="470" fill="#ffffff"/>
+  <text x="390" y="38" text-anchor="middle" font-size="21" font-weight="700" fill="#1a202c">Trip duration for 200,000 taxi trips</text>
+  <text x="390" y="62" text-anchor="middle" font-size="14" fill="#4a5568">The same computation, two ways &#8212; a Python loop over rows vs one NumPy array op</text>
+
+  <!-- baseline -->
+  <line x1="70" y1="392" x2="710" y2="392" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- vectorized bar: 0.31 ms, far too small to draw to scale -->
+  <rect x="150" y="386" width="140" height="6" rx="2" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="220" y="376" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">0.31 ms</text>
+  <text x="220" y="418" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">Vectorized</text>
+  <text x="220" y="437" text-anchor="middle" font-size="12" fill="#4a5568">(dropoff &#8722; pickup)</text>
+  <text x="220" y="454" text-anchor="middle" font-size="12" fill="#718096">one op, runs in C</text>
+
+  <!-- loop bar: 531 ms scaled to 300px tall -->
+  <rect x="490" y="92" width="140" height="300" rx="4" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <text x="560" y="250" text-anchor="middle" font-size="16" font-weight="700" fill="#c05621">531 ms</text>
+  <text x="560" y="418" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">Python loop</text>
+  <text x="560" y="437" text-anchor="middle" font-size="12" fill="#4a5568">200,000 iterations</text>
+  <text x="560" y="454" text-anchor="middle" font-size="12" fill="#718096">one row at a time</text>
+
+  <!-- speedup arrow -->
+  <line x1="300" y1="238" x2="470" y2="238" stroke="#a0aec0" stroke-width="2.5" marker-end="url(#ar)"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#a0aec0"/>
+    </marker>
+  </defs>
+  <rect x="322" y="212" width="128" height="30" rx="15" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="386" y="232" text-anchor="middle" font-size="15" font-weight="700" fill="#2b6cb0">&#8776; 1700&#215; faster</text>
+  <text x="386" y="196" text-anchor="middle" font-size="13" fill="#4a5568">same result, same data</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">PIVOT and UNPIVOT: Lossless Both Ways</text>
+
+  <text x="150" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#742a2a">Long form</text>
+  <rect x="40" y="72" width="220" height="30" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.2" />
+  <text x="150" y="92" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#742a2a">Bath, phone, 168229.18</text>
+  <rect x="40" y="106" width="220" height="30" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.2" />
+  <text x="150" y="126" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#742a2a">Bath, store, 377946.95</text>
+  <rect x="40" y="140" width="220" height="30" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.2" />
+  <text x="150" y="160" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#742a2a">... 24 rows total</text>
+
+  <line x1="270" y1="110" x2="330" y2="110" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowP)" />
+  <text x="300" y="100" text-anchor="middle" font-size="9" font-weight="700" fill="#2c5282">PIVOT</text>
+
+  <line x1="530" y1="150" x2="470" y2="150" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowP)" />
+  <text x="500" y="168" text-anchor="middle" font-size="9" font-weight="700" fill="#2c5282">UNPIVOT</text>
+
+  <text x="600" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#22543d">Wide form</text>
+  <rect x="470" y="72" width="260" height="40" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.2" />
+  <text x="600" y="88" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#22543d">category | phone | store | web</text>
+  <text x="600" y="104" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#22543d">Bath | 168229 | 377946 | 1002169</text>
+  <rect x="470" y="118" width="260" height="24" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.2" />
+  <text x="600" y="134" text-anchor="middle" font-size="8.5" fill="#276749">... 8 rows total</text>
+
+  <rect x="90" y="220" width="620" height="70" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="400" y="248" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">Both directions: total stays $9,195,043.62</text>
+  <text x="400" y="268" text-anchor="middle" font-size="10" fill="#276749">24 rows -&gt; 8 rows -&gt; 24 rows, every dollar accounted for</text>
+
+  <rect x="90" y="308" width="620" height="46" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="400" y="336" text-anchor="middle" font-size="10" fill="#2d3748">Long form for querying and joining -- wide form for a human reader or spreadsheet</text>
+
+  <defs>
+    <marker id="arrowP" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

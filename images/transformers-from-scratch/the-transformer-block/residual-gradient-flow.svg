@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="820" height="520" fill="#ffffff"/>
+
+  <text x="410" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">Gradient flow through a 20-layer stack</text>
+  <text x="410" y="56" text-anchor="middle" font-size="13" fill="#4a5568">Upstream gradient enters at the top with norm 8.0; we track its norm as it reaches the input</text>
+
+  <!-- ================= LEFT: no residual ================= -->
+  <text x="205" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#c53030">Plain stack: out = f(x)</text>
+
+  <!-- sublayer boxes -->
+  <g>
+    <rect x="140" y="108" width="130" height="34" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+    <text x="205" y="130" text-anchor="middle" font-size="12" fill="#c53030">sublayer  (N=1)</text>
+
+    <rect x="140" y="184" width="130" height="34" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+    <text x="205" y="206" text-anchor="middle" font-size="12" fill="#c53030">sublayer  (N=5)</text>
+
+    <rect x="140" y="260" width="130" height="34" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+    <text x="205" y="282" text-anchor="middle" font-size="12" fill="#c53030">sublayer  (N=10)</text>
+
+    <rect x="140" y="336" width="130" height="34" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+    <text x="205" y="358" text-anchor="middle" font-size="12" fill="#c53030">sublayer  (N=20)</text>
+  </g>
+
+  <!-- shrinking gradient arrow (top to bottom) -->
+  <line x1="95" y1="108" x2="95" y2="380" stroke="#c53030" stroke-width="2"/>
+  <polygon points="95,388 90,376 100,376" fill="#c53030"/>
+  <text x="86" y="104" text-anchor="end" font-size="11" fill="#c53030">grad</text>
+
+  <!-- decaying norm labels -->
+  <text x="300" y="130" font-size="12" font-weight="700" fill="#c53030">2.78e+00</text>
+  <text x="300" y="206" font-size="12" font-weight="700" fill="#c53030">7.58e-02</text>
+  <text x="300" y="282" font-size="12" font-weight="700" fill="#c53030">1.86e-03</text>
+  <text x="300" y="358" font-size="12" font-weight="700" fill="#c53030">8.26e-07</text>
+  <text x="205" y="410" text-anchor="middle" font-size="12" fill="#c53030">gradient vanishes &#8594; deep layers never learn</text>
+
+  <!-- ================= RIGHT: residual ================= -->
+  <text x="615" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">Residual: out = x + f(x)</text>
+
+  <g>
+    <rect x="550" y="108" width="130" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="615" y="130" text-anchor="middle" font-size="12" fill="#276749">sublayer  (N=1)</text>
+
+    <rect x="550" y="184" width="130" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="615" y="206" text-anchor="middle" font-size="12" fill="#276749">sublayer  (N=5)</text>
+
+    <rect x="550" y="260" width="130" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="615" y="282" text-anchor="middle" font-size="12" fill="#276749">sublayer  (N=10)</text>
+
+    <rect x="550" y="336" width="130" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="615" y="358" text-anchor="middle" font-size="12" fill="#276749">sublayer  (N=20)</text>
+  </g>
+
+  <!-- straight-through gradient path (thick, constant) -->
+  <line x1="505" y1="108" x2="505" y2="380" stroke="#276749" stroke-width="5"/>
+  <polygon points="505,390 498,375 512,375" fill="#276749"/>
+  <text x="496" y="104" text-anchor="end" font-size="11" fill="#276749">grad</text>
+
+  <!-- skip arcs feeding the straight-through path -->
+  <path d="M 550 125 Q 520 125 505 145" fill="none" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M 550 201 Q 520 201 505 221" fill="none" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M 550 277 Q 520 277 505 297" fill="none" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M 550 353 Q 520 353 505 373" fill="none" stroke="#48bb78" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- healthy norm labels -->
+  <text x="700" y="130" font-size="12" font-weight="700" fill="#276749">8.671</text>
+  <text x="700" y="206" font-size="12" font-weight="700" fill="#276749">14.545</text>
+  <text x="700" y="282" font-size="12" font-weight="700" fill="#276749">18.982</text>
+  <text x="700" y="358" font-size="12" font-weight="700" fill="#276749">25.643</text>
+  <text x="615" y="410" text-anchor="middle" font-size="12" fill="#276749">gradient stays strong &#8594; every layer learns</text>
+
+  <!-- key equation strip -->
+  <rect x="150" y="440" width="520" height="56" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="410" y="466" text-anchor="middle" font-size="14" fill="#2b6cb0" font-weight="700">out = x + f(x)   &#8594;   dx = dout + df</text>
+  <text x="410" y="486" text-anchor="middle" font-size="12" fill="#2b6cb0">the + x path carries dout straight through with a local derivative of 1</text>
+</svg>

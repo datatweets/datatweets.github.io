@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Test LLM API Calls Offline by Mocking Python Requests</title>
+  <desc id="desc">A DataTweets tutorial thumbnail showing a Python Requests call redirected to three controlled offline outcomes: a 200 response, a 429 response, and a timeout exception.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="148" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">OFFLINE LLM TESTING</text>
+    <text x="90" y="272" font-size="88" font-weight="700" fill="#1b1f24">MOCK THE</text>
+    <text x="90" y="372" font-size="88" font-weight="700" fill="#1b1f24">CALL</text>
+    <rect x="96" y="408" width="360" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="493" font-size="30" font-weight="500" fill="#59636e">RESPONSES &#183; ERRORS &#183; TIMEOUTS</text>
+
+    <g transform="translate(620 142)">
+      <text x="0" y="24" font-size="22" font-weight="600" letter-spacing="1" fill="#59636e">CLIENT CODE</text>
+      <rect x="0" y="48" width="180" height="104" rx="18" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="16" y="91" font-size="22" font-weight="600" fill="#1b1f24">requests.post</text>
+      <text x="16" y="124" font-size="18" font-weight="500" fill="#59636e">attempted call</text>
+
+      <line x1="180" y1="100" x2="226" y2="100" stroke="#0067c0" stroke-width="4"/>
+      <path d="M 216 91 L 228 100 L 216 109" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="236" y="57" width="100" height="86" rx="43" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+      <text x="286" y="93" text-anchor="middle" font-size="18" font-weight="700" fill="#0067c0">PATCHED</text>
+      <text x="286" y="119" text-anchor="middle" font-size="16" font-weight="600" fill="#59636e">OFFLINE</text>
+
+      <line x1="336" y1="100" x2="358" y2="100" stroke="#c7ccd2" stroke-width="3"/>
+      <line x1="358" y1="100" x2="358" y2="334" stroke="#c7ccd2" stroke-width="3"/>
+      <line x1="358" y1="100" x2="378" y2="100" stroke="#c7ccd2" stroke-width="3"/>
+      <line x1="358" y1="217" x2="378" y2="217" stroke="#c7ccd2" stroke-width="3"/>
+      <line x1="358" y1="334" x2="378" y2="334" stroke="#c7ccd2" stroke-width="3"/>
+
+      <rect x="378" y="54" width="150" height="92" rx="18" fill="#f3faf8" stroke="#2a9d8f" stroke-width="3"/>
+      <text x="453" y="91" text-anchor="middle" font-size="23" font-weight="700" fill="#1b1f24">200</text>
+      <text x="453" y="121" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">Response</text>
+
+      <rect x="378" y="171" width="150" height="92" rx="18" fill="#fff7ed" stroke="#f4a261" stroke-width="3"/>
+      <text x="453" y="208" text-anchor="middle" font-size="23" font-weight="700" fill="#1b1f24">429</text>
+      <text x="453" y="238" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">Response</text>
+
+      <rect x="378" y="288" width="150" height="92" rx="18" fill="#fff3f1" stroke="#e76f51" stroke-width="3"/>
+      <text x="453" y="325" text-anchor="middle" font-size="21" font-weight="700" fill="#1b1f24">Timeout</text>
+      <text x="453" y="355" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">exception</text>
+
+      <text x="0" y="444" font-size="20" font-weight="600" fill="#59636e">NO LIVE REQUEST LEAVES THE TEST</text>
+    </g>
+  </g>
+</svg>

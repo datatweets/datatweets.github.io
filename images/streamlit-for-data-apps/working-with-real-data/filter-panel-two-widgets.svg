@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="348" viewBox="0 0 1000 348" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>Two Filters Combining Correctly</title>
+<desc>A diagram showing two filters combining. st.multiselect, starting at Africa alone (52 rows for 2007), has Europe added, bringing the total to 82 rows -- 52 plus Europes 30 countries. st.slider is then changed from 2007 to 1952 while the multiselect stays at Africa and Europe, and the row count stays at 82, since every country in this dataset has a row for every year.</desc>
+<rect width="1000" height="348" fill="#ffffff" />
+<text x="500" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Two Filters Combining Correctly</text>
+<rect x="60" y="60" width="880" height="44" rx="7" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5" />
+<text x="500" y="86" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">multiselect = [Africa], slider = 2007 -&gt; 52 rows</text>
+<path d="M500,107 L500,123" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="126" width="880" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5" />
+<text x="500" y="152" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">multiselect = [Africa, Europe], slider = 2007 -&gt; 82 rows (52 + 30)</text>
+<path d="M500,173 L500,189" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="192" width="880" height="44" rx="7" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5" />
+<text x="500" y="218" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">multiselect = [Africa, Europe], slider = 1952 -&gt; 82 rows (same countries, every year)</text>
+<rect x="40" y="260" width="920" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="500" y="284" text-anchor="middle" font-size="10.5" fill="#7b341e">Two filters, confirmed to combine correctly -- 52 rows for Africa, 82 once Europe joins it,</text>
+<text x="500" y="304" text-anchor="middle" font-size="10.5" fill="#7b341e">unaffected by which year is selected.</text>
+<defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

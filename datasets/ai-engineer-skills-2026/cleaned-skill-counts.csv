@@ -1,0 +1,13 @@
+skill,roles_mentioning,cleaned_sample_size,share_percent
+Cloud-related skills,18,21,85.7
+Python,16,21,76.2
+Large language models,15,21,71.4
+AI agents,13,21,61.9
+AWS,11,21,52.4
+RAG,9,21,42.9
+Google Cloud,7,21,33.3
+Azure,6,21,28.6
+Docker,5,21,23.8
+Distributed computing,5,21,23.8
+Machine learning,4,21,19.0
+SQL,4,21,19.0

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Python Loop vs group_by() -- Median of 7 Runs</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">Same channel-revenue rollup, 14,054 order-item rows, both verified to agree first</text>
+
+  <!-- chart area -->
+  <line x1="120" y1="330" x2="640" y2="330" stroke="#a0aec0" stroke-width="1.4" />
+  <line x1="120" y1="90" x2="120" y2="330" stroke="#a0aec0" stroke-width="1.4" />
+  <text x="112" y="334" text-anchor="end" font-size="8.5" fill="#718096">0 ms</text>
+  <text x="112" y="220" text-anchor="end" font-size="8.5" fill="#718096">11 ms</text>
+  <text x="112" y="98" text-anchor="end" font-size="8.5" fill="#718096">22 ms</text>
+  <line x1="118" y1="220" x2="640" y2="220" stroke="#edf2f7" stroke-width="1" />
+
+  <!-- loop bar: 21.5ms of 22ms max -> height ~ (21.5/22)*230 = 224.7 -->
+  <rect x="220" y="97" width="120" height="233" fill="#fc8181" stroke="#c53030" stroke-width="1.4" rx="4" />
+  <text x="280" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">21.5 ms</text>
+  <text x="280" y="352" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a202c">Python loop</text>
+  <text x="280" y="366" text-anchor="middle" font-size="8" fill="#718096">csv.reader, dict accumulation</text>
+
+  <!-- polars bar: 3.0ms -->
+  <rect x="440" y="298" width="120" height="32" fill="#68d391" stroke="#276749" stroke-width="1.4" rx="4" />
+  <text x="500" y="288" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">3.0 ms</text>
+  <text x="500" y="352" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1a202c">Polars group_by()</text>
+  <text x="500" y="366" text-anchor="middle" font-size="8" fill="#718096">columnar, expression-based</text>
+
+  <rect x="140" y="384" width="440" height="26" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2" />
+  <text x="360" y="401" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">Roughly 7.1x faster (median) -- both approaches verified identical results first</text>
+</svg>

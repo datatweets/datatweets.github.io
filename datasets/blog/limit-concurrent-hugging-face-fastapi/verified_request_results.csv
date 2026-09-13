@@ -1,0 +1,14 @@
+test_group,request_id,http_status,outcome,label,score,elapsed_ms,queue_ms
+burst,B01,200,success,POSITIVE,0.9821,92.5,0.0
+burst,B02,200,success,NEGATIVE,0.9714,91.6,0.0
+burst,B03,200,success,POSITIVE,0.9821,91.2,0.0
+burst,B04,503,local_capacity,,,36.7,36.1
+burst,B05,503,local_capacity,,,36.7,36.5
+burst,B06,503,local_capacity,,,36.7,36.5
+burst,B07,503,local_capacity,,,36.7,36.5
+burst,B08,503,local_capacity,,,36.6,36.5
+error_paths,E01,200,success,POSITIVE,0.9821,13.7,0.0
+error_paths,E02,504,upstream_timeout,,,13.7,0.0
+error_paths,E03,503,upstream_rate_limited,,,13.7,0.0
+error_paths,E04,502,upstream_failed,,,13.7,0.0
+error_paths,E05,502,upstream_payload,,,13.6,0.0

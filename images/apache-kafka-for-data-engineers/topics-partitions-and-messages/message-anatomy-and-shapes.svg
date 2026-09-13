@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A Kafka record's four fields, and the three shapes its value usually takes</title>
+  <desc>Top: one Kafka record broken into four labelled fields -- Key (taxi-042, used for routing and compaction), Value (the JSON payload), Timestamp (a broker-assigned millisecond Unix time), and Headers (a list of small metadata pairs like event-type and schema-version, separate from the value). Bottom: three example CityFlow messages showing the three common value shapes -- Event (trip_completed, a permanent historical fact), State (a taxi's current_zone, where only the latest value matters), and Command (dispatch_taxi, an instruction for one consumer to act on).</desc>
+  <rect width="1100" height="420" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Record, Four Fields -- Three Shapes of Value</text>
+
+  <!-- record fields -->
+  <rect x="40" y="55" width="230" height="90" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="155" y="78" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2c5282">Key</text>
+  <text x="155" y="97" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#2c5282">b"taxi-042"</text>
+  <text x="155" y="115" text-anchor="middle" font-size="8.5" fill="#2c5282">routing (this module)</text>
+  <text x="155" y="129" text-anchor="middle" font-size="8.5" fill="#2c5282">+ compaction (below)</text>
+
+  <rect x="280" y="55" width="230" height="90" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="395" y="78" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2c5282">Value</text>
+  <text x="395" y="97" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#2c5282">{"event": "trip_completed",</text>
+  <text x="395" y="112" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#2c5282">"taxi_id": "taxi-042",</text>
+  <text x="395" y="127" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#2c5282">"fare": 24.50}</text>
+
+  <rect x="520" y="55" width="230" height="90" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="635" y="78" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2c5282">Timestamp</text>
+  <text x="635" y="97" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#2c5282">1786784479796</text>
+  <text x="635" y="115" text-anchor="middle" font-size="8.5" fill="#2c5282">broker-assigned,</text>
+  <text x="635" y="129" text-anchor="middle" font-size="8.5" fill="#2c5282">millisecond Unix time</text>
+
+  <rect x="760" y="55" width="300" height="90" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="910" y="78" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2c5282">Headers</text>
+  <text x="910" y="97" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#2c5282">[("event-type", b"trip_completed"),</text>
+  <text x="910" y="112" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#2c5282">("schema-version", b"1")]</text>
+  <text x="910" y="129" text-anchor="middle" font-size="8.5" fill="#2c5282">metadata, separate from the value</text>
+
+  <text x="550" y="172" text-anchor="middle" font-size="10.5" fill="#4a5568">Every field confirmed by sending one message and reading every one of these back exactly as sent.</text>
+
+  <line x1="40" y1="195" x2="1060" y2="195" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <text x="40" y="225" font-size="13" font-weight="700" fill="#2d3748">Three shapes a message's value usually takes</text>
+
+  <!-- event -->
+  <rect x="40" y="245" width="320" height="130" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.5" />
+  <text x="200" y="270" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Event</text>
+  <text x="200" y="290" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">trip_completed, taxi-042, $24.50</text>
+  <text x="60" y="312" font-size="9" fill="#22543d">Something that happened, at a</text>
+  <text x="60" y="326" font-size="9" fill="#22543d">specific moment, permanently true.</text>
+  <text x="60" y="345" font-size="9" fill="#22543d">Most of what this course produces --</text>
+  <text x="60" y="359" font-size="9" fill="#22543d">safe to fan out to any number of</text>
+  <text x="60" y="373" font-size="9" fill="#22543d">new consumers later.</text>
+
+  <!-- state -->
+  <rect x="390" y="245" width="320" height="130" rx="6" fill="#bee3f8" stroke="#4299e1" stroke-width="1.5" />
+  <text x="550" y="270" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">State</text>
+  <text x="550" y="290" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#2c5282">taxi-042, current_zone: 132</text>
+  <text x="410" y="312" font-size="9" fill="#2c5282">The current value of something</text>
+  <text x="410" y="326" font-size="9" fill="#2c5282">that changes -- only the latest</text>
+  <text x="410" y="345" font-size="9" fill="#2c5282">value usually matters. What</text>
+  <text x="410" y="359" font-size="9" fill="#2c5282">cleanup.policy=compact keeps:</text>
+  <text x="410" y="373" font-size="9" fill="#2c5282">one record per key, forever.</text>
+
+  <!-- command -->
+  <rect x="740" y="245" width="320" height="130" rx="6" fill="#feebc8" stroke="#ed8936" stroke-width="1.5" />
+  <text x="900" y="270" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">Command</text>
+  <text x="900" y="290" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#7b341e">dispatch_taxi, taxi-042, zone 132</text>
+  <text x="760" y="312" font-size="9" fill="#7b341e">A request for something to</text>
+  <text x="760" y="326" font-size="9" fill="#7b341e">happen, not a record of what</text>
+  <text x="760" y="345" font-size="9" fill="#7b341e">already did. Usually expects</text>
+  <text x="760" y="359" font-size="9" fill="#7b341e">exactly one consumer to act on</text>
+  <text x="760" y="373" font-size="9" fill="#7b341e">it, not many independent ones.</text>
+</svg>

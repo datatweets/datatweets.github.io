@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="24" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">check_join() -- The Real Join-Quality Diagnostic</text>
+  <text x="360" y="42" text-anchor="middle" font-size="10.5" fill="#4a5568">Five real joins, each checked before and after, across all six Thistlewood tables</text>
+
+  <rect x="40" y="54" width="640" height="32" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="55" y="75" text-anchor="start" font-size="9.5" font-weight="700" fill="#1a202c">1. orders + customers</text>
+  <text x="430" y="75" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">6,000 -&gt; 6,000 (unchanged)</text>
+  <rect x="615" y="58" width="50" height="24" rx="5" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2" />
+  <text x="640" y="74" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">OK</text>
+
+  <rect x="40" y="94" width="640" height="32" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="55" y="115" text-anchor="start" font-size="9.5" font-weight="700" fill="#1a202c">2. + order_items</text>
+  <text x="430" y="115" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">6,000 -&gt; 14,054 (grew -- expected fan-out)</text>
+  <rect x="615" y="98" width="50" height="24" rx="5" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2" />
+  <text x="640" y="114" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">OK</text>
+
+  <rect x="40" y="134" width="640" height="32" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="55" y="155" text-anchor="start" font-size="9.5" font-weight="700" fill="#1a202c">3. + products</text>
+  <text x="430" y="155" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">14,054 -&gt; 14,054 (unchanged)</text>
+  <rect x="615" y="138" width="50" height="24" rx="5" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2" />
+  <text x="640" y="154" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">OK</text>
+
+  <rect x="40" y="174" width="640" height="32" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="55" y="195" text-anchor="start" font-size="9.5" font-weight="700" fill="#1a202c">4. + returns (order_id, product_id)</text>
+  <text x="450" y="195" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">14,054 -&gt; 14,054 (unchanged)</text>
+  <rect x="615" y="178" width="50" height="24" rx="5" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2" />
+  <text x="640" y="194" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">OK</text>
+
+  <rect x="40" y="214" width="640" height="32" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="55" y="235" text-anchor="start" font-size="9.5" font-weight="700" fill="#1a202c">5. + active promotions (join_where)</text>
+  <text x="460" y="235" text-anchor="middle" font-size="9.5" font-family="monospace" fill="#2d3748">14,054 -&gt; 14,054 (unchanged)</text>
+  <rect x="615" y="218" width="50" height="24" rx="5" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2" />
+  <text x="640" y="234" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">OK</text>
+
+  <line x1="360" y1="246" x2="360" y2="264" stroke="#a0aec0" stroke-width="1.4" />
+
+  <rect x="210" y="264" width="300" height="42" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="290" text-anchor="middle" font-size="10" font-family="monospace" fill="#276749">unified: 14,054 rows -- exactly order_items.csv</text>
+
+  <rect x="60" y="328" width="290" height="90" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="205" y="350" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">gross revenue</text>
+  <text x="205" y="374" text-anchor="middle" font-size="13" font-family="monospace" fill="#1a202c">$9,195,043.62</text>
+  <text x="205" y="394" text-anchor="middle" font-size="8" fill="#276749">matches the real grand total exactly</text>
+
+  <rect x="370" y="328" width="290" height="90" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="515" y="350" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">net of returns</text>
+  <text x="515" y="374" text-anchor="middle" font-size="13" font-family="monospace" fill="#1a202c">$8,994,811.59</text>
+  <text x="515" y="394" text-anchor="middle" font-size="8" fill="#7b341e">$200,232.03 refunded (2.18%) -- a different question</text>
+</svg>

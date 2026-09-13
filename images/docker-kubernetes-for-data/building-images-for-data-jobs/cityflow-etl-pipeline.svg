@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="620" fill="#ffffff"/>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/>
+</marker>
+</defs>
+<text x="480" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">CityFlow's First Dockerfile: the Zone-Hour ETL Job</text>
+<text x="480" y="55" text-anchor="middle" font-size="14" fill="#718096">Same shape as Course 1's out-of-core pipeline, containerized &#8212; the real January 2024 file, mounted, never baked in</text>
+
+<rect x="40" y="76" width="150" height="54" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+<text x="115" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3748">docker run -v</text>
+<text x="115" y="116" text-anchor="middle" font-size="10" fill="#4a5568">trips.parquet mounted</text>
+
+<path d="M 190 103 L 230 103" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="234" y="76" width="150" height="54" rx="8" fill="#ebf8ff" stroke="#2c5282" stroke-width="1.5"/>
+<text x="309" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">chunked read</text>
+<text x="309" y="116" text-anchor="middle" font-size="10" fill="#2a4365">one row group at a time</text>
+
+<path d="M 384 103 L 424 103" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="428" y="76" width="150" height="54" rx="8" fill="#ebf8ff" stroke="#2c5282" stroke-width="1.5"/>
+<text x="503" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">3 of 19 columns</text>
+<text x="503" y="116" text-anchor="middle" font-size="10" fill="#2a4365">dtype-reduced, in-window</text>
+
+<path d="M 578 103 L 618 103" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="622" y="76" width="150" height="54" rx="8" fill="#ebf8ff" stroke="#2c5282" stroke-width="1.5"/>
+<text x="697" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">zone x hour</text>
+<text x="697" y="116" text-anchor="middle" font-size="10" fill="#2a4365">groupby + aggregate</text>
+
+<path d="M 772 103 L 812 103" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+<rect x="816" y="76" width="104" height="54" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="868" y="98" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">exit 0</text>
+<text x="868" y="116" text-anchor="middle" font-size="10" fill="#22543d">report printed</text>
+
+<rect x="40" y="150" width="880" height="110" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="60" y="174" font-size="12" font-weight="700" fill="#2d3748">Real January 2024 output, mounted data, unchanged whether it comes from the "before" or "after" image:</text>
+<text x="60" y="198" font-size="12" fill="#4a5568">source rows: 2,964,624  &#8226;  zone-hour buckets: 77,530  &#8226;  trips kept: 2,964,606  &#8226;  quarantined: 18</text>
+<text x="60" y="220" font-size="12" fill="#4a5568">total revenue: $79,455,941.50  &#8226;  busiest zone-hour: zone 161 at 2024-01-24T18, 726 trips</text>
+<text x="60" y="244" font-size="11" fill="#718096">exit 2 if nothing is mounted and the fallback fetch fails &#8226; exit 3 if the file parses but has zero in-window trips</text>
+
+<line x1="40" y1="284" x2="920" y2="284" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="310" font-size="13" font-weight="700" fill="#4a5568">IMAGE SIZE, BEFORE AND AFTER SLIMMING (SAME JOB, SAME OUTPUT)</text>
+
+<rect x="40" y="326" width="420" height="90" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="60" y="350" font-size="12" font-weight="700" fill="#c53030">before &#8212; python:3.13, no .dockerignore</text>
+<text x="60" y="374" font-size="18" font-weight="700" fill="#c53030">1.43 GB</text>
+<text x="60" y="396" font-size="11" fill="#4a5568">dev files (.git, notebooks, tests) all copied in</text>
+
+<rect x="500" y="326" width="420" height="90" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="520" y="350" font-size="12" font-weight="700" fill="#276749">after &#8212; python:3.13-slim, .dockerignore, 1 RUN</text>
+<text x="520" y="374" font-size="18" font-weight="700" fill="#276749">438 MB</text>
+<text x="520" y="396" font-size="11" fill="#4a5568">992 MB saved &#8212; 3.3x smaller, identical report</text>
+
+<line x1="40" y1="438" x2="920" y2="438" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="464" font-size="13" font-weight="700" fill="#4a5568">TWO JUDGMENT CALLS THIS PROJECT ACTUALLY MAKES</text>
+<rect x="40" y="480" width="880" height="120" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="60" y="504" font-size="12" font-weight="700" fill="#2d3748">No multi-stage build. pandas and pyarrow both installed from prebuilt wheels here (verified in the build log &#8212;</text>
+<text x="60" y="524" font-size="12" fill="#4a5568">no gcc ran), unlike Lesson 2's psycopg2. Multi-stage has nothing to leave behind when there's nothing to compile.</text>
+<text x="60" y="552" font-size="12" font-weight="700" fill="#2d3748">No HEALTHCHECK. This is a batch job, not a service &#8212; Lesson 4's distinction. It reports success or failure by</text>
+<text x="60" y="572" font-size="12" fill="#4a5568">exiting with a real code, and a HEALTHCHECK on a process that's supposed to exit would be a category error.</text>
+</svg>

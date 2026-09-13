@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Deterministic key routing, and what a resize changes</title>
+  <desc>Top: the key "taxi-042" sent five times, each time hashed and taken modulo the partition count (3), landing on partition 1 every single time -- proof of determinism. Bottom: after the topic is resized from 3 partitions to 5, the same key "taxi-042" is hashed again -- the hash itself is unchanged, but modulo 5 instead of modulo 3 now produces partition 4 instead of partition 1, so every message produced after the resize lands somewhere different from every message produced before it.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Same Key, Same Hash -- But Not the Same Partition Count</text>
+
+  <!-- top: deterministic -->
+  <text x="40" y="62" font-size="13" font-weight="700" fill="#22543d">Five sends, same key, 3-partition topic</text>
+
+  <rect x="40" y="75" width="140" height="44" rx="5" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="110" y="102" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#2d3748">key="taxi-042"</text>
+
+  <line x1="180" y1="97" x2="215" y2="97" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKH)" />
+
+  <rect x="220" y="75" width="150" height="44" rx="5" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="295" y="93" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#2c5282">murmur2(key)</text>
+  <text x="295" y="108" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#2c5282">% 3 partitions</text>
+
+  <line x1="370" y1="97" x2="405" y2="97" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKH)" />
+
+  <rect x="410" y="75" width="170" height="44" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="495" y="103" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#22543d">partition 1</text>
+
+  <text x="620" y="90" font-size="10" fill="#22543d">sent 5 times --</text>
+  <text x="620" y="106" font-size="10" fill="#22543d">partition 1, every single time</text>
+
+  <text x="40" y="145" font-size="10.5" fill="#22543d">Deterministic: same key bytes, same hash, same modulo, same partition -- proven with 5 repeated sends.</text>
+
+  <line x1="40" y1="170" x2="1060" y2="170" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <!-- bottom: resize changes mapping -->
+  <text x="40" y="202" font-size="13" font-weight="700" fill="#7b341e">After --alter --partitions 5, same key, same hash</text>
+
+  <rect x="40" y="215" width="140" height="44" rx="5" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="110" y="242" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#2d3748">key="taxi-042"</text>
+
+  <line x1="180" y1="237" x2="215" y2="237" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKH)" />
+
+  <rect x="220" y="215" width="150" height="44" rx="5" fill="#feebc8" stroke="#ed8936" stroke-width="1.3" />
+  <text x="295" y="233" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#7b341e">murmur2(key)</text>
+  <text x="295" y="248" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#7b341e" font-weight="700">% 5 partitions</text>
+
+  <line x1="370" y1="237" x2="405" y2="237" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKH)" />
+
+  <rect x="410" y="215" width="170" height="44" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="495" y="243" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#742a2a">partition 4</text>
+
+  <text x="620" y="230" font-size="10" fill="#7b341e">same hash value --</text>
+  <text x="620" y="246" font-size="10" fill="#7b341e">different modulo, different partition</text>
+
+  <text x="40" y="285" font-size="10.5" fill="#7b341e">The hash of "taxi-042" never changed. hash % 3 and hash % 5 are different numbers -- every message before the resize</text>
+  <text x="40" y="302" font-size="10.5" fill="#7b341e">stays on partition 1; every message after it goes to partition 4. No error anywhere flags this -- it's the expected result of the math.</text>
+
+  <line x1="40" y1="330" x2="1060" y2="330" stroke="#e2e8f0" stroke-width="1.2" />
+  <text x="550" y="358" text-anchor="middle" font-size="12" fill="#4a5568">This is exactly why partition count is a decision to get close to right upfront, not a number to bump casually later.</text>
+
+  <defs>
+    <marker id="arrowKH" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

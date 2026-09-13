@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Two measured gaps, one real infrastructure detail already sitting there unused</title>
+  <desc>A measured decision framework for Kafka Connect versus a hand-written producer or consumer. Latency: a JDBC source connector took just over 10 seconds for a new row to reach Kafka under poll.interval.ms=5000, against a hand-written producer's 0.17 seconds -- roughly 60 times slower. Deletes: a row deleted from MySQL under incrementing mode never disappeared from Kafka at all -- Kafka kept reporting a message for it long after MySQL no longer had the row, a confirmed gap, not a hypothetical one. Change-data-capture: this course's MySQL container already runs with log_bin=ON, real infrastructure for a tool like Debezium that reads the replication log directly instead of polling, seeing every insert, update, and delete with no polling delay -- not deployed in this course but genuinely available.</desc>
+  <rect width="1100" height="420" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Two Measured Gaps, One Unused Real Capability</text>
+
+  <!-- Latency -->
+  <rect x="40" y="55" width="320" height="160" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="200" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">LATENCY</text>
+  <text x="200" y="110" text-anchor="middle" font-size="18" font-weight="700" font-family="Menlo, monospace" fill="#7b341e">10.31s</text>
+  <text x="200" y="128" text-anchor="middle" font-size="9" fill="#7b341e">JDBC source, poll=5000ms</text>
+  <text x="200" y="155" text-anchor="middle" font-size="18" font-weight="700" font-family="Menlo, monospace" fill="#7b341e">0.17s</text>
+  <text x="200" y="173" text-anchor="middle" font-size="9" fill="#7b341e">hand-written producer</text>
+  <text x="200" y="197" text-anchor="middle" font-size="10" font-weight="700" fill="#7b341e">~60x slower, measured</text>
+
+  <!-- Deletes -->
+  <rect x="390" y="55" width="320" height="160" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="550" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#742a2a">DELETES</text>
+  <text x="550" y="106" text-anchor="middle" font-size="10" fill="#742a2a">MySQL: row deleted, count drops</text>
+  <text x="550" y="130" text-anchor="middle" font-size="10" fill="#742a2a">Kafka: message still there --</text>
+  <text x="550" y="150" text-anchor="middle" font-size="10" fill="#742a2a">incrementing mode never sees it</text>
+  <text x="550" y="180" text-anchor="middle" font-size="10.5" font-weight="700" fill="#742a2a">a real, confirmed gap --</text>
+  <text x="550" y="198" text-anchor="middle" font-size="10.5" font-weight="700" fill="#742a2a">not a hypothetical one</text>
+
+  <!-- CDC -->
+  <rect x="740" y="55" width="320" height="160" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="900" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">CDC -- ALREADY POSSIBLE</text>
+  <text x="900" y="105" text-anchor="middle" font-size="11" font-family="Menlo, monospace" fill="#22543d">log_bin = ON</text>
+  <text x="900" y="128" text-anchor="middle" font-size="9.5" fill="#22543d">confirmed on this course's own</text>
+  <text x="900" y="144" text-anchor="middle" font-size="9.5" fill="#22543d">MySQL container</text>
+  <text x="900" y="170" text-anchor="middle" font-size="9.5" fill="#22543d">Debezium would read this log directly --</text>
+  <text x="900" y="186" text-anchor="middle" font-size="9.5" fill="#22543d">no polling, sees every delete</text>
+  <text x="900" y="203" text-anchor="middle" font-size="9" font-weight="700" fill="#22543d">not deployed here, but real</text>
+
+  <rect x="140" y="245" width="820" height="90" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="550" y="275" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">Neither column is the universal right answer</text>
+  <text x="550" y="298" text-anchor="middle" font-size="11" fill="#2c5282">CityFlow's append-only trips table is Connect's strong case -- a pipeline needing deletes,</text>
+  <text x="550" y="316" text-anchor="middle" font-size="11" fill="#2c5282">custom logic, or sub-second latency is where hand-written code stays the right tool.</text>
+
+  <text x="550" y="370" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">The right choice depends on what the data actually does</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Add Human Approval Gates to AI Agent Tools in Python</title>
+  <desc id="desc">A DataTweets tutorial thumbnail showing an AI tool proposal with exact arguments passing through human review before one approved execution.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="151" font-size="34" font-weight="600" letter-spacing="1.2" fill="#59636e">AGENT TOOL SAFETY</text>
+    <text x="90" y="282" font-size="86" font-weight="700" fill="#1b1f24">APPROVE</text>
+    <text x="90" y="380" font-size="68" font-weight="700" fill="#1b1f24">EXACT ACTIONS</text>
+    <rect x="96" y="418" width="400" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="497" font-size="29" font-weight="500" fill="#59636e">identity &#183; expiry &#183; execute once</text>
+
+    <g transform="translate(697 112)">
+      <rect x="0" y="0" width="394" height="116" rx="18" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+      <rect x="0" y="0" width="10" height="116" rx="5" fill="#0067c0"/>
+      <text x="34" y="39" font-size="19" font-weight="700" letter-spacing="1" fill="#59636e">TOOL PROPOSAL</text>
+      <text x="34" y="74" font-size="25" font-weight="700" fill="#1b1f24">name + exact arguments</text>
+      <text x="34" y="100" font-size="17" font-weight="500" fill="#59636e">fingerprint stored</text>
+
+      <line x1="197" y1="116" x2="197" y2="154" stroke="#59636e" stroke-width="3"/>
+      <path d="M 189 146 L 197 158 L 205 146" fill="none" stroke="#59636e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <rect x="0" y="160" width="394" height="116" rx="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="2.5"/>
+      <circle cx="47" cy="218" r="25" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+      <path d="M 35 218 L 43 226 L 59 208" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="88" y="205" font-size="19" font-weight="700" letter-spacing="1" fill="#0067c0">HUMAN REVIEW</text>
+      <text x="88" y="240" font-size="24" font-weight="700" fill="#1b1f24">identity + time checked</text>
+
+      <line x1="197" y1="276" x2="197" y2="314" stroke="#59636e" stroke-width="3"/>
+      <path d="M 189 306 L 197 318 L 205 306" fill="none" stroke="#59636e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <rect x="0" y="320" width="394" height="116" rx="18" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <circle cx="47" cy="378" r="25" fill="#0067c0"/>
+      <text x="47" y="386" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">1&#215;</text>
+      <text x="88" y="365" font-size="19" font-weight="700" letter-spacing="1" fill="#59636e">FINAL CHECK</text>
+      <text x="88" y="400" font-size="25" font-weight="700" fill="#1b1f24">execute once</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Choose a PyTorch Batch Size with a Controlled Test</title>
+  <desc id="desc">A DataTweets tutorial thumbnail. The left side says Batch Size Changes the Path. A controlled-test diagram on the right compares batches of 8, 512, and 1,800 rows, which produce 225, 4, and 1 optimizer updates per epoch.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1.2" fill="#59636e">PYTORCH TRAINING</text>
+    <text x="90" y="286" font-size="78" font-weight="700" fill="#1b1f24">BATCH SIZE</text>
+    <text x="90" y="374" font-size="58" font-weight="700" fill="#1b1f24">CHANGES THE PATH</text>
+    <rect x="96" y="411" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="488" font-size="29" font-weight="500" fill="#59636e">NOISE &#183; UPDATES &#183; VALIDATION</text>
+
+    <g transform="translate(724 116)">
+      <rect width="386" height="444" rx="22" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="30" y="49" font-size="23" font-weight="700" letter-spacing="0.8" fill="#1b1f24">ONE EPOCH &#183; 1,800 ROWS</text>
+      <text x="30" y="82" font-size="17" font-weight="600" letter-spacing="0.7" fill="#59636e">ONLY BATCH SIZE CHANGES</text>
+
+      <line x1="30" y1="104" x2="356" y2="104" stroke="#e3e6ea" stroke-width="2"/>
+
+      <text x="30" y="141" font-size="18" font-weight="700" fill="#59636e">BATCH 8</text>
+      <g fill="#dcecf8" stroke="#0067c0" stroke-width="1.5">
+        <rect x="30" y="155" width="12" height="24" rx="3"/>
+        <rect x="48" y="155" width="12" height="24" rx="3"/>
+        <rect x="66" y="155" width="12" height="24" rx="3"/>
+        <rect x="84" y="155" width="12" height="24" rx="3"/>
+        <rect x="102" y="155" width="12" height="24" rx="3"/>
+        <rect x="120" y="155" width="12" height="24" rx="3"/>
+        <rect x="138" y="155" width="12" height="24" rx="3"/>
+        <rect x="156" y="155" width="12" height="24" rx="3"/>
+      </g>
+      <path d="M187 168 H223" fill="none" stroke="#59636e" stroke-width="2.5"/>
+      <path d="M218 162 L227 168 L218 174" fill="none" stroke="#59636e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="242" y="174" font-size="22" font-weight="700" fill="#0067c0">225 UPDATES</text>
+
+      <text x="30" y="226" font-size="18" font-weight="700" fill="#59636e">BATCH 512</text>
+      <g fill="#dcecf8" stroke="#0067c0" stroke-width="1.5">
+        <rect x="30" y="241" width="30" height="24" rx="4"/>
+        <rect x="66" y="241" width="30" height="24" rx="4"/>
+        <rect x="102" y="241" width="30" height="24" rx="4"/>
+        <rect x="138" y="241" width="30" height="24" rx="4"/>
+      </g>
+      <path d="M187 254 H223" fill="none" stroke="#59636e" stroke-width="2.5"/>
+      <path d="M218 248 L227 254 L218 260" fill="none" stroke="#59636e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="242" y="260" font-size="22" font-weight="700" fill="#0067c0">4 UPDATES</text>
+
+      <text x="30" y="312" font-size="18" font-weight="700" fill="#59636e">FULL BATCH 1,800</text>
+      <rect x="30" y="327" width="138" height="24" rx="5" fill="#dcecf8" stroke="#0067c0" stroke-width="1.5"/>
+      <path d="M187 340 H223" fill="none" stroke="#59636e" stroke-width="2.5"/>
+      <path d="M218 334 L227 340 L218 346" fill="none" stroke="#59636e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="242" y="346" font-size="22" font-weight="700" fill="#0067c0">1 UPDATE</text>
+
+      <rect x="30" y="382" width="326" height="40" rx="20" fill="#0067c0"/>
+      <text x="193" y="409" text-anchor="middle" font-size="18" font-weight="700" letter-spacing="0.6" fill="#ffffff">SELECT ON VALIDATION LOSS</text>
+    </g>
+  </g>
+</svg>

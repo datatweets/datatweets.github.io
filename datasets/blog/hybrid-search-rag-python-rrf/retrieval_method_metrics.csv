@@ -1,0 +1,4 @@
+method,hit_at_1,hit_at_3,mean_reciprocal_rank
+keyword,0.666667,1.000000,0.833333
+semantic,0.916667,0.916667,0.933333
+hybrid_rrf,1.000000,1.000000,1.000000

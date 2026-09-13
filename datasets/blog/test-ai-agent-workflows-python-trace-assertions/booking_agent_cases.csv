@@ -1,0 +1,13 @@
+case_id,request,attendees,expected_room_id,expected_start_utc,expected_duration_min,expected_booking_id
+B01,Book a four-person room at 09:00 UTC for 45 minutes.,4,ROOM-N201,2026-08-03T09:00:00Z,45,BK-B01
+B02,Reserve a room for six people at 11:00 UTC for one hour.,6,ROOM-E105,2026-08-03T11:00:00Z,60,BK-B02
+B03,Find a two-person room at 13:30 UTC for 30 minutes.,2,ROOM-S310,2026-08-03T13:30:00Z,30,BK-B03
+B04,Book a room for eight people at 15:00 UTC for 45 minutes.,8,ROOM-W220,2026-08-03T15:00:00Z,45,BK-B04
+B05,Reserve a four-person room at 16:30 UTC for 30 minutes.,4,ROOM-N201,2026-08-03T16:30:00Z,30,BK-B05
+B06,Book a two-person room at 10:30 UTC for 60 minutes.,2,ROOM-S310,2026-08-04T10:30:00Z,60,BK-B06
+B07,Reserve a room for six people at 12:00 UTC for 45 minutes.,6,ROOM-E105,2026-08-04T12:00:00Z,45,BK-B07
+B08,Book a room for eight people at 14:00 UTC for 30 minutes.,8,ROOM-W220,2026-08-04T14:00:00Z,30,BK-B08
+B09,Reserve a four-person room at 17:00 UTC for 45 minutes.,4,ROOM-N201,2026-08-04T17:00:00Z,45,BK-B09
+B10,Book a two-person room at 08:30 UTC for 30 minutes.,2,ROOM-S310,2026-08-05T08:30:00Z,30,BK-B10
+B11,Reserve a room for six people at 10:00 UTC for one hour.,6,ROOM-E105,2026-08-05T10:00:00Z,60,BK-B11
+B12,Book a room for eight people at 13:00 UTC for 45 minutes.,8,ROOM-W220,2026-08-05T13:00:00Z,45,BK-B12

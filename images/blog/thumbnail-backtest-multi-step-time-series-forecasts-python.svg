@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Backtest Multi-Step Time Series Forecasts in Python</title>
+  <desc id="desc">DATATWEETS tutorial thumbnail. The left side reads Honest Backtests. On the right, a timeline separates known history from seven hidden forecast targets, followed by three later rolling origins.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="31" font-weight="600" letter-spacing="1" fill="#59636e">TIME SERIES VALIDATION</text>
+    <text x="90" y="298" font-size="82" font-weight="700" fill="#1b1f24">HONEST</text>
+    <text x="90" y="395" font-size="82" font-weight="700" fill="#1b1f24">BACKTESTS</text>
+    <rect x="94" y="437" width="330" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="510" font-size="26" font-weight="500" fill="#59636e">ROLLING ORIGINS &#183; HORIZON MAE</text>
+
+    <g transform="translate(680 116)">
+      <rect x="0" y="0" width="430" height="450" rx="22" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+
+      <text x="30" y="48" font-size="18" font-weight="600" letter-spacing="0.8" fill="#59636e">ONE FIXED PLAN</text>
+      <text x="30" y="86" font-size="16" font-weight="500" fill="#59636e">KNOWN HISTORY</text>
+      <text x="196" y="86" font-size="16" font-weight="500" fill="#59636e">HIDDEN TARGETS</text>
+
+      <path d="M34 136 C62 116, 86 150, 112 125 S150 118, 164 132" fill="none" stroke="#59636e" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="34" cy="136" r="6" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+      <circle cx="76" cy="128" r="6" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+      <circle cx="118" cy="125" r="6" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+      <circle cx="164" cy="132" r="6" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+
+      <line x1="181" y1="96" x2="181" y2="184" stroke="#0067c0" stroke-width="4" stroke-linecap="round"/>
+      <text x="181" y="205" text-anchor="middle" font-size="14" font-weight="600" fill="#0067c0">ORIGIN</text>
+
+      <g fill="#e3f0fa" stroke="#0067c0" stroke-width="2">
+        <circle cx="215" cy="132" r="14"/>
+        <circle cx="247" cy="132" r="14"/>
+        <circle cx="279" cy="132" r="14"/>
+        <circle cx="311" cy="132" r="14"/>
+        <circle cx="343" cy="132" r="14"/>
+        <circle cx="375" cy="132" r="14"/>
+        <circle cx="407" cy="132" r="14"/>
+      </g>
+      <g text-anchor="middle" font-size="13" font-weight="700" fill="#1b1f24">
+        <text x="215" y="137">1</text>
+        <text x="247" y="137">2</text>
+        <text x="279" y="137">3</text>
+        <text x="311" y="137">4</text>
+        <text x="343" y="137">5</text>
+        <text x="375" y="137">6</text>
+        <text x="407" y="137">7</text>
+      </g>
+
+      <line x1="30" y1="236" x2="400" y2="236" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="30" y="277" font-size="18" font-weight="600" letter-spacing="0.8" fill="#59636e">REPEAT AT LATER ORIGINS</text>
+
+      <g font-size="15" font-weight="600" fill="#59636e">
+        <text x="30" y="325">O1</text>
+        <text x="30" y="368">O2</text>
+        <text x="30" y="411">O3</text>
+      </g>
+      <g stroke="#c7ccd2" stroke-width="6" stroke-linecap="round">
+        <line x1="72" y1="319" x2="147" y2="319"/>
+        <line x1="72" y1="362" x2="147" y2="362"/>
+        <line x1="72" y1="405" x2="147" y2="405"/>
+      </g>
+      <g stroke="#0067c0" stroke-width="3">
+        <line x1="160" y1="302" x2="160" y2="336"/>
+        <line x1="160" y1="345" x2="160" y2="379"/>
+        <line x1="160" y1="388" x2="160" y2="422"/>
+      </g>
+      <g fill="#e3f0fa" stroke="#0067c0" stroke-width="1.5">
+        <rect x="176" y="309" width="26" height="20" rx="5"/>
+        <rect x="208" y="309" width="26" height="20" rx="5"/>
+        <rect x="240" y="309" width="26" height="20" rx="5"/>
+        <rect x="272" y="309" width="26" height="20" rx="5"/>
+        <rect x="304" y="309" width="26" height="20" rx="5"/>
+        <rect x="336" y="309" width="26" height="20" rx="5"/>
+        <rect x="368" y="309" width="26" height="20" rx="5"/>
+
+        <rect x="176" y="352" width="26" height="20" rx="5"/>
+        <rect x="208" y="352" width="26" height="20" rx="5"/>
+        <rect x="240" y="352" width="26" height="20" rx="5"/>
+        <rect x="272" y="352" width="26" height="20" rx="5"/>
+        <rect x="304" y="352" width="26" height="20" rx="5"/>
+        <rect x="336" y="352" width="26" height="20" rx="5"/>
+        <rect x="368" y="352" width="26" height="20" rx="5"/>
+
+        <rect x="176" y="395" width="26" height="20" rx="5"/>
+        <rect x="208" y="395" width="26" height="20" rx="5"/>
+        <rect x="240" y="395" width="26" height="20" rx="5"/>
+        <rect x="272" y="395" width="26" height="20" rx="5"/>
+        <rect x="304" y="395" width="26" height="20" rx="5"/>
+        <rect x="336" y="395" width="26" height="20" rx="5"/>
+        <rect x="368" y="395" width="26" height="20" rx="5"/>
+      </g>
+    </g>
+  </g>
+</svg>

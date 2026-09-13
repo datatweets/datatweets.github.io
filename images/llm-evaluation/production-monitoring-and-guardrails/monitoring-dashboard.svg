@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Docent production monitoring dashboard snapshot at 09:08 during an incident. Five metric tiles show a rolling 15-minute sparkline each: Requests/min 46 (steady, blue), Error rate 4.1% (orange, warning), p95 latency 4.88s (red, alerting, above its 3.0s threshold line), Refusal rate 40.1% (red, alerting, far above its 20% threshold line), and Cost/min 0.0124 dollars (steady, blue). A vertical marker on every sparkline points at the current minute where p95 and refusal rate spike. Below, an alerts panel lists the four alerts firing at 09:08: static p95 latency, static error rate, static refusal rate, and a relative refusal-rate alert firing at three times its rolling baseline.</title>
+  <rect x="0" y="0" width="900" height="440" fill="#ffffff"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="900" height="56" fill="#1a202c"/>
+  <circle cx="26" cy="28" r="7" fill="#fc8181"/>
+  <text x="44" y="27" font-size="15" font-weight="700" fill="#ffffff">Docent &#8212; production monitor</text>
+  <text x="44" y="44" font-size="11" fill="#a0aec0">rolling 15-minute window &#183; snapshot at 09:08</text>
+  <rect x="742" y="16" width="140" height="24" rx="12" fill="#c53030"/>
+  <circle cx="759" cy="28" r="5" fill="#fff5f5"/>
+  <text x="770" y="32" font-size="12" font-weight="700" fill="#ffffff">INCIDENT &#183; 4 alerts</text>
+
+  <!-- ===== Metric tiles (x = 24,196,368,540,712 ; w=160 ; y=72 ; h=150) ===== -->
+
+  <!-- Tile 1: Requests/min (normal) -->
+  <rect x="24" y="72" width="160" height="150" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="38" y="96" font-size="11" font-weight="600" fill="#718096">REQUESTS / MIN</text>
+  <text x="38" y="128" font-size="26" font-weight="700" fill="#1a202c">46</text>
+  <text x="38" y="146" font-size="10" fill="#a0aec0">steady &#183; leading (volume)</text>
+  <g transform="translate(44,166)">
+    <polyline fill="none" stroke="#4299e1" stroke-width="2" stroke-linejoin="round"
+      points="0.0,9.3 8.4,21.6 16.9,0.0 25.3,15.5 33.7,6.2 42.1,24.7 50.6,12.4 59.0,18.5 67.4,27.8 75.9,34.0 84.3,15.5 92.7,9.3 101.1,21.6 109.6,3.1 118.0,12.4"/>
+    <line x1="67.4" y1="-4" x2="67.4" y2="40" stroke="#a0aec0" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+
+  <!-- Tile 2: Error rate (warning) -->
+  <rect x="196" y="72" width="160" height="150" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <text x="210" y="96" font-size="11" font-weight="600" fill="#c05621">ERROR RATE</text>
+  <text x="210" y="128" font-size="26" font-weight="700" fill="#c05621">4.1%</text>
+  <text x="210" y="146" font-size="10" fill="#c05621">above 3.0% &#183; lagging</text>
+  <g transform="translate(216,166)">
+    <polyline fill="none" stroke="#ed8936" stroke-width="2" stroke-linejoin="round"
+      points="0.0,31.9 8.4,34.0 16.9,30.9 25.3,33.0 33.7,31.9 42.1,29.9 50.6,33.0 59.0,30.9 67.4,0.0 75.9,3.1 84.3,28.8 92.7,31.9 101.1,33.0 109.6,30.9 118.0,31.9"/>
+    <line x1="67.4" y1="-4" x2="67.4" y2="40" stroke="#a0aec0" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+
+  <!-- Tile 3: p95 latency (ALERT) -->
+  <rect x="368" y="72" width="160" height="150" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="2.5"/>
+  <rect x="490" y="82" width="30" height="16" rx="8" fill="#c53030"/>
+  <text x="497" y="94" font-size="9" font-weight="700" fill="#ffffff">ALERT</text>
+  <text x="382" y="96" font-size="11" font-weight="600" fill="#c53030">p95 LATENCY</text>
+  <text x="382" y="128" font-size="26" font-weight="700" fill="#c53030">4.88<tspan font-size="14">s</tspan></text>
+  <text x="382" y="146" font-size="10" fill="#c53030">above 3.0s threshold</text>
+  <g transform="translate(388,166)">
+    <line x1="0" y1="19.2" x2="118" y2="19.2" stroke="#fc8181" stroke-width="1.2" stroke-dasharray="4,3"/>
+    <polyline fill="none" stroke="#c53030" stroke-width="2.2" stroke-linejoin="round"
+      points="0.0,33.3 8.4,34.0 16.9,32.4 25.3,33.5 33.7,32.9 42.1,33.7 50.6,33.2 59.0,4.7 67.4,0.0 75.9,11.9 84.3,30.0 92.7,32.7 101.1,33.4 109.6,32.6 118.0,33.1"/>
+    <line x1="67.4" y1="-4" x2="67.4" y2="40" stroke="#4a5568" stroke-width="1" stroke-dasharray="2,2"/>
+    <circle cx="67.4" cy="0.0" r="3" fill="#c53030"/>
+  </g>
+
+  <!-- Tile 4: Refusal rate (ALERT) -->
+  <rect x="540" y="72" width="160" height="150" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="2.5"/>
+  <rect x="662" y="82" width="30" height="16" rx="8" fill="#c53030"/>
+  <text x="669" y="94" font-size="9" font-weight="700" fill="#ffffff">ALERT</text>
+  <text x="554" y="96" font-size="11" font-weight="600" fill="#c53030">REFUSAL RATE</text>
+  <text x="554" y="128" font-size="26" font-weight="700" fill="#c53030">40.1%</text>
+  <text x="554" y="146" font-size="10" fill="#c53030">3x baseline &#183; leading</text>
+  <g transform="translate(560,166)">
+    <line x1="0" y1="19.4" x2="118" y2="19.4" stroke="#fc8181" stroke-width="1.2" stroke-dasharray="4,3"/>
+    <polyline fill="none" stroke="#c53030" stroke-width="2.2" stroke-linejoin="round"
+      points="0.0,33.1 8.4,33.7 16.9,32.8 25.3,33.4 33.7,34.0 42.1,32.9 50.6,33.5 59.0,8.0 67.4,0.0 75.9,4.7 84.3,27.0 92.7,33.2 101.1,33.8 109.6,33.0 118.0,33.6"/>
+    <line x1="67.4" y1="-4" x2="67.4" y2="40" stroke="#4a5568" stroke-width="1" stroke-dasharray="2,2"/>
+    <circle cx="67.4" cy="0.0" r="3" fill="#c53030"/>
+  </g>
+
+  <!-- Tile 5: Cost/min (normal) -->
+  <rect x="712" y="72" width="160" height="150" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="726" y="96" font-size="11" font-weight="600" fill="#718096">COST / MIN (USD)</text>
+  <text x="726" y="128" font-size="24" font-weight="700" fill="#1a202c">0.0124</text>
+  <text x="726" y="146" font-size="10" fill="#a0aec0">steady &#183; lagging</text>
+  <g transform="translate(732,166)">
+    <polyline fill="none" stroke="#48bb78" stroke-width="2" stroke-linejoin="round"
+      points="0.0,8.2 8.4,22.3 16.9,0.0 25.3,15.2 33.7,5.9 42.1,24.6 50.6,11.7 59.0,18.8 67.4,28.1 75.9,34.0 84.3,15.2 92.7,8.2 101.1,22.3 109.6,2.3 118.0,11.7"/>
+    <line x1="67.4" y1="-4" x2="67.4" y2="40" stroke="#a0aec0" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+
+  <!-- x-axis note under tiles -->
+  <text x="24" y="238" font-size="10" fill="#a0aec0">09:00</text>
+  <text x="827" y="238" font-size="10" fill="#a0aec0">09:14</text>
+  <text x="392" y="238" font-size="10" fill="#4a5568">&#9650; current minute (09:08): p95 and refusal spike together</text>
+
+  <!-- ===== Alerts panel ===== -->
+  <rect x="24" y="256" width="848" height="160" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="24" y="256" width="848" height="30" rx="8" fill="#faf5ff"/>
+  <rect x="24" y="272" width="848" height="14" fill="#faf5ff"/>
+  <text x="40" y="276" font-size="12" font-weight="700" fill="#6b46c1">ALERTS FIRING &#8212; 09:08</text>
+  <text x="740" y="276" font-size="11" fill="#718096">page the on-call engineer</text>
+
+  <!-- alert row 1 -->
+  <rect x="40" y="298" width="58" height="18" rx="4" fill="#fff5f5" stroke="#c53030" stroke-width="1"/>
+  <text x="48" y="311" font-size="10" font-weight="700" fill="#c53030">STATIC</text>
+  <text x="110" y="311" font-size="12" fill="#1a202c">p95 latency (s)</text>
+  <text x="300" y="311" font-size="12" fill="#4a5568">4.880 &gt; 3.000</text>
+
+  <!-- alert row 2 -->
+  <rect x="40" y="324" width="58" height="18" rx="4" fill="#fff5f5" stroke="#c53030" stroke-width="1"/>
+  <text x="48" y="337" font-size="10" font-weight="700" fill="#c53030">STATIC</text>
+  <text x="110" y="337" font-size="12" fill="#1a202c">refusal rate</text>
+  <text x="300" y="337" font-size="12" fill="#4a5568">0.401 &gt; 0.200</text>
+
+  <!-- alert row 3 -->
+  <rect x="40" y="350" width="58" height="18" rx="4" fill="#fffaf0" stroke="#c05621" stroke-width="1"/>
+  <text x="48" y="363" font-size="10" font-weight="700" fill="#c05621">STATIC</text>
+  <text x="110" y="363" font-size="12" fill="#1a202c">error rate</text>
+  <text x="300" y="363" font-size="12" fill="#4a5568">0.041 &gt; 0.030</text>
+
+  <!-- alert row 4 -->
+  <rect x="40" y="376" width="70" height="18" rx="4" fill="#faf5ff" stroke="#6b46c1" stroke-width="1"/>
+  <text x="48" y="389" font-size="10" font-weight="700" fill="#6b46c1">RELATIVE</text>
+  <text x="122" y="389" font-size="12" fill="#1a202c">refusal rate</text>
+  <text x="300" y="389" font-size="12" fill="#4a5568">0.401 &gt; 3x baseline (0.107)</text>
+
+  <text x="40" y="410" font-size="10" fill="#a0aec0">A refusal spike often means retrieval broke &#8212; Docent can&#8217;t find context, so it falls back to &#8220;I don&#8217;t have that in the docs.&#8221;</text>
+</svg>

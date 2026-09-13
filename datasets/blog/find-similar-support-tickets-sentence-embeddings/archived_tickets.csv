@@ -1,0 +1,9 @@
+archive_id,summary
+A-101,Downloaded invoice PDF opens as a blank page with no billing lines.
+A-102,Password reset link reports that it has expired before it can be used.
+A-103,Each account alert email is delivered twice to the same inbox.
+A-104,Calendar synchronization stopped after the connected account password changed.
+A-105,Refunded orders are missing from the revenue total shown on the dashboard.
+A-106,Mobile app closes when a user attaches a receipt photo to an expense.
+A-107,CSV export places all fields in one spreadsheet column.
+A-108,Dark theme hides the Save button label in account settings.

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A single bad row, invisible to code review, caught immediately by a real test</title>
+  <desc>stg_cityflow__trips.sql, reviewed by eye, has nothing wrong with it -- clean SQL, no typos, dbt run succeeds and produces a Postgres view exactly as expected. One row is inserted directly into raw.trips with pickup_zone 9999, a zone that does not exist anywhere in the 265-row zone lookup. dbt run still succeeds -- the view compiles and builds with no error, because nothing about the SQL itself is wrong. Only a relationships test, checking pickup_zone against stg_cityflow__zones's own zone_id column, catches it: Got 1 result, configured to fail if != 0. Neither the code nor dbt run's own success message reveals the problem -- only a test that checks the data itself does.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Bad Row, Invisible to Everything Except a Test</text>
+
+  <rect x="50" y="60" width="480" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="290" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">Code review</text>
+  <rect x="70" y="98" width="440" height="45" rx="6" fill="#2c5282" />
+  <text x="290" y="118" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#ebf8ff">select pickup_time, pickup_zone, ...</text>
+  <text x="290" y="134" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#ebf8ff">from source('cityflow', 'trips')</text>
+  <text x="290" y="160" text-anchor="middle" font-size="10" font-weight="700" fill="#2c5282">Nothing wrong with this SQL.</text>
+  <text x="290" y="178" text-anchor="middle" font-size="10" fill="#4a5568">A person reading it has no way to</text>
+  <text x="290" y="194" text-anchor="middle" font-size="10" fill="#4a5568">see that one row's zone doesn't exist.</text>
+
+  <rect x="570" y="60" width="480" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="810" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">dbt run</text>
+  <rect x="590" y="98" width="440" height="45" rx="6" fill="#2c5282" />
+  <text x="810" y="118" text-anchor="middle" font-size="9" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">OK created sql view model</text>
+  <text x="810" y="134" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#ebf8ff">stg_cityflow__trips [CREATE VIEW]</text>
+  <text x="810" y="160" text-anchor="middle" font-size="10" font-weight="700" fill="#2c5282">Also succeeds, with the bad row in it.</text>
+  <text x="810" y="178" text-anchor="middle" font-size="10" fill="#4a5568">dbt run only checks that SQL compiles</text>
+  <text x="810" y="194" text-anchor="middle" font-size="10" fill="#4a5568">and executes -- never what it returns.</text>
+
+  <text x="550" y="240" text-anchor="middle" font-size="11" fill="#718096">One row inserted directly: pickup_zone = 9999, a zone that does not exist</text>
+
+  <rect x="250" y="255" width="600" height="120" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.8" />
+  <text x="550" y="280" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">A real dbt test catches it immediately</text>
+  <rect x="280" y="292" width="540" height="60" rx="6" fill="#822727" />
+  <text x="550" y="312" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#fff5f5">relationships test: pickup_zone must exist in stg_cityflow__zones</text>
+  <text x="550" y="330" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#fed7d7">FAIL -- Got 1 result, configured to fail if != 0</text>
+  <text x="550" y="346" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#fed7d7">the exact test Lesson 2 covers next</text>
+</svg>

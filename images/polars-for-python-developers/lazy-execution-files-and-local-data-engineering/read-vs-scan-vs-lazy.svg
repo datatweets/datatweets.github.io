@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">read_csv() vs scan_csv() vs .lazy()</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">Three routes to a LazyFrame, verified against thistlewood_orders_timestamped.csv</text>
+
+  <rect x="24" y="68" width="210" height="86" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="129" y="90" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">pl.read_csv()</text>
+  <text x="129" y="108" text-anchor="middle" font-size="9" fill="#1a202c">DataFrame, all 6 columns</text>
+  <text x="129" y="122" text-anchor="middle" font-size="9" fill="#1a202c">and 6,000 rows loaded now</text>
+  <text x="129" y="140" text-anchor="middle" font-size="8.5" fill="#4a5568">nothing to prune later</text>
+
+  <rect x="255" y="68" width="210" height="86" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="360" y="90" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b46c1">pl.scan_csv()</text>
+  <text x="360" y="108" text-anchor="middle" font-size="9" fill="#1a202c">LazyFrame describing the</text>
+  <text x="360" y="122" text-anchor="middle" font-size="9" fill="#1a202c">read -- nothing loaded yet</text>
+  <text x="360" y="140" text-anchor="middle" font-size="8.5" fill="#4a5568">can be optimized before running</text>
+
+  <rect x="486" y="68" width="210" height="86" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="591" y="90" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">df.lazy()</text>
+  <text x="591" y="108" text-anchor="middle" font-size="9" fill="#1a202c">starts lazy from a DataFrame</text>
+  <text x="591" y="122" text-anchor="middle" font-size="9" fill="#1a202c">already loaded in memory</text>
+  <text x="591" y="140" text-anchor="middle" font-size="8.5" fill="#4a5568">for chaining further steps</text>
+
+  <text x="360" y="180" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">.explain() before and after chaining select() + filter()</text>
+
+  <rect x="40" y="196" width="300" height="90" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.2" />
+  <text x="52" y="214" font-size="9" font-weight="700" fill="#4a5568">plain scan_csv(), nothing chained</text>
+  <text x="52" y="232" font-size="8.5" font-family="monospace" fill="#1a202c">Csv SCAN [...]</text>
+  <text x="52" y="248" font-size="8.5" font-family="monospace" fill="#c53030">PROJECT */6 COLUMNS</text>
+  <text x="52" y="264" font-size="8.5" font-family="monospace" fill="#1a202c">ESTIMATED ROWS: 6066</text>
+
+  <rect x="380" y="196" width="300" height="90" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2" />
+  <text x="392" y="214" font-size="9" font-weight="700" fill="#276749">+ .select() and .filter() chained</text>
+  <text x="392" y="232" font-size="8.5" font-family="monospace" fill="#1a202c">Csv SCAN [...]</text>
+  <text x="392" y="248" font-size="8.5" font-family="monospace" fill="#276749">PROJECT 3/6 COLUMNS</text>
+  <text x="392" y="264" font-size="8.5" font-family="monospace" fill="#276749">SELECTION: channel == "web"</text>
+
+  <rect x="40" y="312" width="640" height="70" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="360" y="334" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">Both routes verified identical: 3,895 web orders</text>
+  <text x="360" y="352" text-anchor="middle" font-size="9" fill="#2b6cb0">naive read_csv().select().filter() == scan_csv().select().filter().collect()</text>
+  <text x="360" y="368" text-anchor="middle" font-size="8.5" fill="#4a5568">The plan proves pushdown happened; the matching result proves it didn't change the answer.</text>
+
+  <rect x="40" y="396" width="640" height="46" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="418" text-anchor="middle" font-size="9.5" fill="#9c4221">A CSV scan still tokenizes every row -- pushdown mainly cuts what gets materialized, not raw disk I/O.</text>
+  <text x="360" y="432" text-anchor="middle" font-size="8.5" fill="#4a5568">Lesson 4's Parquet lake shows a stronger version: whole files and column chunks skipped entirely.</text>
+</svg>

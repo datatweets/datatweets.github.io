@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="470" viewBox="0 0 1100 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>In-cluster replication survives a broker. A second cluster exists for what it doesn't.</title>
+  <desc>Module 6's 3-broker cluster tolerates losing one broker through in-cluster replication, but a second broker failure during that window loses the controller quorum's majority -- a real, confirmed boundary. Three distinct real reasons exist to run a second, fully independent Kafka cluster instead: disaster recovery (an idle target cluster to fail over to if the whole primary cluster becomes unreachable), multi-region deployment (two actively-written regional clusters, each serving local traffic with low latency, mirroring the data each needs into the other), and cluster migration (backfilling a new cluster live before cutover). All three share cross-cluster replication as their mechanism but solve different problems.</desc>
+  <rect width="1100" height="470" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">In-Cluster Replication Survives a Broker -- Not These Three</text>
+
+  <!-- in-cluster box -->
+  <rect x="40" y="55" width="1020" height="110" rx="10" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="550" y="78" text-anchor="middle" font-size="12.5" font-weight="700" fill="#22543d">Inside One Cluster -- Module 6, Proven</text>
+  <rect x="70" y="95" width="220" height="55" rx="6" fill="#ffffff" stroke="#48bb78" />
+  <text x="180" y="118" text-anchor="middle" font-size="10" fill="#22543d">Lose 1 broker</text>
+  <text x="180" y="135" text-anchor="middle" font-size="9" fill="#22543d">leader moves, no data lost</text>
+  <text x="330" y="128" font-size="16" fill="#22543d">&#8594;</text>
+  <rect x="360" y="95" width="330" height="55" rx="6" fill="#fefcbf" stroke="#d69e2e" />
+  <text x="525" y="118" text-anchor="middle" font-size="10" fill="#744210">Lose a 2nd broker mid-outage</text>
+  <text x="525" y="135" text-anchor="middle" font-size="9" fill="#744210">controller quorum loses its majority</text>
+  <text x="720" y="128" font-size="16" fill="#22543d">&#8594;</text>
+  <rect x="750" y="95" width="290" height="55" rx="6" fill="#ffffff" stroke="#48bb78" />
+  <text x="895" y="118" text-anchor="middle" font-size="10" fill="#22543d">Boundary of what 3 replicas</text>
+  <text x="895" y="135" text-anchor="middle" font-size="9" fill="#22543d">on ONE cluster protect against</text>
+
+  <!-- three reasons -->
+  <text x="550" y="195" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2d3748">Three Real Reasons for a Second, Independent Cluster</text>
+
+  <rect x="40" y="215" width="320" height="120" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="200" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">Disaster Recovery</text>
+  <text x="200" y="262" text-anchor="middle" font-size="9.5" fill="#2c5282">Whole primary cluster/region</text>
+  <text x="200" y="278" text-anchor="middle" font-size="9.5" fill="#2c5282">unreachable -- fail over to a</text>
+  <text x="200" y="294" text-anchor="middle" font-size="9.5" fill="#2c5282">kept-current, mostly-idle target.</text>
+  <text x="200" y="318" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#4299e1">Lesson 2's kafka-dr</text>
+
+  <rect x="390" y="215" width="320" height="120" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="550" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#7b341e">Multi-Region</text>
+  <text x="550" y="262" text-anchor="middle" font-size="9.5" fill="#7b341e">Two clusters, BOTH actively</text>
+  <text x="550" y="278" text-anchor="middle" font-size="9.5" fill="#7b341e">written -- local latency for each</text>
+  <text x="550" y="294" text-anchor="middle" font-size="9.5" fill="#7b341e">region, mirroring what each needs.</text>
+  <text x="550" y="318" text-anchor="middle" font-size="8.5" fill="#975a16">not demonstrable on 1 machine</text>
+
+  <rect x="740" y="215" width="320" height="120" rx="8" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="900" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#553c9a">Cluster Migration</text>
+  <text x="900" y="262" text-anchor="middle" font-size="9.5" fill="#553c9a">Backfill a new cluster live</text>
+  <text x="900" y="278" text-anchor="middle" font-size="9.5" fill="#553c9a">before cutover -- so switching</text>
+  <text x="900" y="294" text-anchor="middle" font-size="9.5" fill="#553c9a">is a config change, not a migration.</text>
+  <text x="900" y="318" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#805ad5">same MM2 mechanism</text>
+
+  <text x="550" y="375" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Same mechanism (cross-cluster replication) -- three different problems</text>
+
+  <rect x="200" y="400" width="700" height="50" rx="6" fill="#f7fafc" stroke="#cbd5e0" />
+  <text x="550" y="422" text-anchor="middle" font-size="10.5" fill="#4a5568">This lab proves the mechanism honestly -- real replication, real measured lag.</text>
+  <text x="550" y="440" text-anchor="middle" font-size="9.5" fill="#718096">It cannot prove real cross-region distance -- one machine, one Docker network.</text>
+</svg>

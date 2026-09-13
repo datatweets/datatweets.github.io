@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Filter Out Kitchen, Then Ask for "Row 0"</text>
+
+  <text x="180" y="58" text-anchor="middle" font-size="12.5" font-weight="700" fill="#9c4221">pandas: keeps the old labels</text>
+  <text x="540" y="58" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2b6cb0">Polars: no labels to keep</text>
+
+  <rect x="60" y="72" width="240" height="112" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="180" y="94" text-anchor="middle" font-size="10" fill="#4a5568">index   product_name</text>
+  <text x="180" y="116" text-anchor="middle" font-size="10" fill="#2d3748">1       Linen Towel Set</text>
+  <text x="180" y="136" text-anchor="middle" font-size="10" fill="#2d3748">3       Woven Planter</text>
+  <text x="180" y="164" text-anchor="middle" font-size="9.5" fill="#9c4221">label 0 was Kitchen -- it's gone</text>
+
+  <rect x="420" y="72" width="240" height="112" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="540" y="94" text-anchor="middle" font-size="10" fill="#4a5568">row    product_name</text>
+  <text x="540" y="116" text-anchor="middle" font-size="10" fill="#2d3748">0      Linen Towel Set</text>
+  <text x="540" y="136" text-anchor="middle" font-size="10" fill="#2d3748">1      Woven Planter</text>
+  <text x="540" y="164" text-anchor="middle" font-size="9.5" fill="#2b6cb0">rows renumber by position</text>
+
+  <rect x="50" y="204" width="270" height="76" rx="8" fill="#fdf2f2" stroke="#fc8181" stroke-width="1.3" />
+  <text x="185" y="226" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">.loc[0]</text>
+  <text x="185" y="246" text-anchor="middle" font-size="10" fill="#2d3748">KeyError: 0</text>
+  <text x="185" y="264" text-anchor="middle" font-size="9.5" fill="#4a5568">label 0 no longer exists</text>
+
+  <rect x="330" y="204" width="270" height="76" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3" />
+  <text x="465" y="226" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">.iloc[0]</text>
+  <text x="465" y="246" text-anchor="middle" font-size="10" fill="#2d3748">"Linen Towel Set"</text>
+  <text x="465" y="264" text-anchor="middle" font-size="9.5" fill="#4a5568">works -- but it's a second, separate API</text>
+
+  <rect x="420" y="298" width="240" height="66" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3" />
+  <text x="540" y="320" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">.row(0)</text>
+  <text x="540" y="340" text-anchor="middle" font-size="10" fill="#2d3748">('Linen Towel Set', ...)</text>
+  <text x="540" y="356" text-anchor="middle" font-size="9.5" fill="#4a5568">one API, always by position</text>
+
+  <text x="360" y="398" text-anchor="middle" font-size="10.5" fill="#718096">pandas needs a label/position split (.loc vs .iloc) because its index can drift from row order.</text>
+  <text x="360" y="414" text-anchor="middle" font-size="10.5" fill="#718096">Polars never has that split, because position is the only thing a row is ever identified by.</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The metadata quorum's real log, and how a broker registers into it</title>
+  <desc>Left: the __cluster_metadata-0 partition, shown as a real append-only log with .log, .index, .timeindex files and periodic .checkpoint snapshots, replicated via Raft consensus across all three controller-eligible brokers with one elected leader. Right: a broker restart sequence -- BrokerLifecycleManager attempts registration, briefly collides with its own still-clearing previous session and receives DUPLICATE_BROKER_REGISTRATION, retries automatically, then succeeds with a new monotonic broker epoch, after which isFenced flips from true to false once the broker has caught up and is trusted to lead partitions.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Metadata Is a Real Log; Joining It Is a Real Handshake</text>
+
+  <!-- left: metadata log -->
+  <text x="40" y="65" font-size="13" font-weight="700" fill="#2d3748">__cluster_metadata-0 (the controller's own partition)</text>
+
+  <rect x="40" y="80" width="470" height="130" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <rect x="60" y="98" width="120" height="36" rx="4" fill="#bee3f8" stroke="#4299e1" stroke-width="1.2" />
+  <text x="120" y="120" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#2c5282">00...0.log</text>
+  <rect x="190" y="98" width="120" height="36" rx="4" fill="#bee3f8" stroke="#4299e1" stroke-width="1.2" />
+  <text x="250" y="120" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#2c5282">.index</text>
+  <rect x="320" y="98" width="160" height="36" rx="4" fill="#bee3f8" stroke="#4299e1" stroke-width="1.2" />
+  <text x="400" y="120" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#2c5282">.timeindex</text>
+
+  <rect x="60" y="148" width="430" height="30" rx="4" fill="#fefcbf" stroke="#ecc94b" stroke-width="1.2" />
+  <text x="275" y="168" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#744210">periodic .checkpoint snapshots</text>
+
+  <text x="60" y="198" font-size="9.5" fill="#2c5282">Real files, on real disk -- replicated via Raft, one broker elected leader.</text>
+
+  <!-- right: registration sequence -->
+  <text x="560" y="65" font-size="13" font-weight="700" fill="#2d3748">A broker's registration sequence</text>
+
+  <rect x="560" y="80" width="500" height="40" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="810" y="105" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a">DUPLICATE_BROKER_REGISTRATION (retries automatically)</text>
+
+  <line x1="810" y1="120" x2="810" y2="135" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKR)" />
+
+  <rect x="560" y="137" width="500" height="40" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="810" y="162" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">Successfully registered -- new broker epoch assigned</text>
+
+  <line x1="810" y1="177" x2="810" y2="192" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKR)" />
+
+  <rect x="560" y="194" width="240" height="40" rx="5" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="680" y="219" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#7b341e">isFenced: true</text>
+
+  <line x1="800" y1="214" x2="830" y2="214" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKR)" />
+
+  <rect x="840" y="194" width="220" height="40" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="950" y="219" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">isFenced: false</text>
+
+  <text x="560" y="255" font-size="9.5" fill="#4a5568">Registered isn't the same as trusted -- fenced brokers</text>
+  <text x="560" y="270" font-size="9.5" fill="#4a5568">never lead partitions until fully caught up.</text>
+
+  <defs>
+    <marker id="arrowKR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <line x1="40" y1="300" x2="1060" y2="300" stroke="#e2e8f0" stroke-width="1.2" />
+  <text x="550" y="328" text-anchor="middle" font-size="11" fill="#4a5568">Stopping the active controller reproduces this on purpose: leadership moves, the epoch advances,</text>
+  <text x="550" y="346" text-anchor="middle" font-size="11" fill="#4a5568">and the returning broker earns back follower status only -- not automatically the controller role.</text>
+</svg>

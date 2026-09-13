@@ -1,0 +1,11 @@
+case_id,scenario,expected_status,observed_status,http_status,retry_after_s,output_text,matched
+C01,normal reply,ok,ok,200,,billing,True
+C02,reply with surrounding spaces,ok,ok,200,,account,True
+C03,empty prompt blocked by client,invalid_prompt,invalid_prompt,,,,True
+C04,rejected API key,http_401,http_401,401,,,True
+C05,rate limit with Retry-After,http_429,http_429,429,2,,True
+C06,temporary server failure,http_503,http_503,503,,,True
+C07,body is not JSON,invalid_json,invalid_json,200,,,True
+C08,required text field is missing,invalid_shape,invalid_shape,200,,,True
+C09,required text field is empty,invalid_shape,invalid_shape,200,,,True
+C10,response exceeds read timeout,timeout,timeout,,,,True

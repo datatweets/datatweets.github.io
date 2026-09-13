@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Unstructured print output versus one structured JSON log record per LLM call, with each field annotated by what you can query.</title>
+  <rect x="0" y="0" width="860" height="620" fill="#ffffff"/>
+
+  <text x="30" y="42" font-size="22" font-weight="700" fill="#1a202c">One LLM call &#8594; one structured log record</text>
+  <text x="30" y="66" font-size="14" fill="#4a5568">Free text you can only read, versus JSON fields you can filter, aggregate, and alert on.</text>
+
+  <!-- Unstructured column -->
+  <rect x="30" y="90" width="360" height="150" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="50" y="118" font-size="15" font-weight="700" fill="#c53030">Unstructured (print)</text>
+  <text x="50" y="146" font-size="12.5" fill="#4a5568" font-family="Menlo, monospace">print("Pro plan Q done, 14 tokens")</text>
+  <text x="50" y="168" font-size="12.5" fill="#4a5568" font-family="Menlo, monospace">print("took a while, cost tiny")</text>
+  <text x="50" y="200" font-size="12.5" fill="#c53030">&#10007; can't filter by model or user</text>
+  <text x="50" y="220" font-size="12.5" fill="#c53030">&#10007; can't sum tokens or alert on cost</text>
+
+  <!-- arrow -->
+  <text x="410" y="170" font-size="30" fill="#4a5568">&#8594;</text>
+
+  <!-- Structured record -->
+  <rect x="450" y="90" width="380" height="150" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="470" y="118" font-size="15" font-weight="700" fill="#276749">Structured (JSON)</text>
+  <text x="470" y="146" font-size="12.5" fill="#276749" font-family="Menlo, monospace">{"model": "claude-haiku-4-5",</text>
+  <text x="470" y="166" font-size="12.5" fill="#276749" font-family="Menlo, monospace"> "output_tokens": 14,</text>
+  <text x="470" y="186" font-size="12.5" fill="#276749" font-family="Menlo, monospace"> "latency_ms": 780.0,</text>
+  <text x="470" y="206" font-size="12.5" fill="#276749" font-family="Menlo, monospace"> "est_cost_usd": 0.00027, ...}</text>
+  <text x="470" y="230" font-size="12" fill="#276749">&#10003; every field is queryable</text>
+
+  <!-- The record, annotated -->
+  <text x="30" y="290" font-size="16" font-weight="700" fill="#1a202c">The fields to log on every call</text>
+
+  <rect x="30" y="308" width="800" height="256" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- column 1 -->
+  <g font-size="13">
+    <rect x="50" y="330" width="14" height="14" rx="3" fill="#4299e1"/>
+    <text x="74" y="342" fill="#2b6cb0" font-weight="600">timestamp</text>
+    <text x="74" y="360" fill="#4a5568" font-size="12">when the call happened</text>
+
+    <rect x="50" y="378" width="14" height="14" rx="3" fill="#4299e1"/>
+    <text x="74" y="390" fill="#2b6cb0" font-weight="600">trace_id</text>
+    <text x="74" y="408" fill="#4a5568" font-size="12">ties logs to one request</text>
+
+    <rect x="50" y="426" width="14" height="14" rx="3" fill="#9f7aea"/>
+    <text x="74" y="438" fill="#6b46c1" font-weight="600">model + params</text>
+    <text x="74" y="456" fill="#4a5568" font-size="12">max_tokens, temperature</text>
+
+    <rect x="50" y="474" width="14" height="14" rx="3" fill="#9f7aea"/>
+    <text x="74" y="486" fill="#6b46c1" font-weight="600">question / answer_preview</text>
+    <text x="74" y="504" fill="#4a5568" font-size="12">input and output (or a preview)</text>
+  </g>
+
+  <!-- column 2 -->
+  <g font-size="13">
+    <rect x="330" y="330" width="14" height="14" rx="3" fill="#48bb78"/>
+    <text x="354" y="342" fill="#276749" font-weight="600">input_tokens</text>
+    <text x="354" y="360" fill="#4a5568" font-size="12">from msg.usage</text>
+
+    <rect x="330" y="378" width="14" height="14" rx="3" fill="#48bb78"/>
+    <text x="354" y="390" fill="#276749" font-weight="600">output_tokens</text>
+    <text x="354" y="408" fill="#4a5568" font-size="12">from msg.usage</text>
+
+    <rect x="330" y="426" width="14" height="14" rx="3" fill="#ed8936"/>
+    <text x="354" y="438" fill="#c05621" font-weight="600">latency_ms</text>
+    <text x="354" y="456" fill="#4a5568" font-size="12">time.time() around the call</text>
+
+    <rect x="330" y="474" width="14" height="14" rx="3" fill="#ed8936"/>
+    <text x="354" y="486" fill="#c05621" font-weight="600">est_cost_usd</text>
+    <text x="354" y="504" fill="#4a5568" font-size="12">tokens &#215; illustrative price</text>
+  </g>
+
+  <!-- column 3 -->
+  <g font-size="13">
+    <rect x="600" y="330" width="14" height="14" rx="3" fill="#a0aec0"/>
+    <text x="624" y="342" fill="#4a5568" font-weight="600">success / error</text>
+    <text x="624" y="360" fill="#4a5568" font-size="12">did the call complete?</text>
+
+    <rect x="600" y="378" width="14" height="14" rx="3" fill="#a0aec0"/>
+    <text x="624" y="390" fill="#4a5568" font-weight="600">feature / user_id</text>
+    <text x="624" y="408" fill="#4a5568" font-size="12">app metadata to slice by</text>
+
+    <rect x="600" y="440" width="210" height="94" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+    <text x="614" y="462" fill="#c53030" font-weight="700" font-size="13">Never log</text>
+    <text x="614" y="483" fill="#c53030" font-size="12">&#10007; the API key</text>
+    <text x="614" y="503" fill="#c53030" font-size="12">&#10007; secrets / raw PII</text>
+    <text x="614" y="523" fill="#c53030" font-size="12">redact sensitive prompts</text>
+  </g>
+
+  <text x="30" y="596" font-size="12.5" fill="#718096">A logging wrapper emits this record automatically on every call &#8212; so logging stays consistent and the key stays out.</text>
+</svg>

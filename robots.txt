@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block admin areas if they exist
+Disallow: /admin/
+
+# Raw dataset files (csv/db) are referenced by absolute URL inside lesson
+# code blocks; they're not pages and shouldn't be crawled/indexed as such.
+Disallow: /datasets/
+
+# Sitemap location
+Sitemap: https://datatweets.com/sitemap.xml

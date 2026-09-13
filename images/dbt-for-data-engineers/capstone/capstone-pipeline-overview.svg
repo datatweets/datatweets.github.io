@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>CityFlow's warehouse, end to end -- eleven modules and this capstone, one pipeline</title>
+  <desc>Six stages left to right: raw (Postgres, loaded once by Module 1's own psycopg2/COPY loader, never regenerated), staging (three models, rename and cast only), intermediate and marts (nineteen models on a Postgres target, joined, tested, macro-built), snapshots (zones_snapshot and zones_snapshot_timestamp, SCD Type 2), orchestrated (a two-task Airflow DAG, cityflow_capstone_full_build, running an unrestricted dbt build then reconciling the result), and reconciled (capstone_zone_hour_report checked against the exact anchor five earlier courses in this path already established). A bottom callout states the final reconciled numbers: 240,917 zone-hour buckets, 9,554,757 trips, $256,692,373.14, exact.</desc>
+  <rect width="1200" height="420" fill="#ffffff" />
+  <text x="600" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">CityFlow's Warehouse, End to End</text>
+
+  <!-- raw -->
+  <rect x="20" y="60" width="170" height="180" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="105" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">raw</text>
+  <text x="105" y="115" text-anchor="middle" font-size="9" fill="#822727">Postgres, schema raw</text>
+  <text x="105" y="133" text-anchor="middle" font-size="9" fill="#822727">loaded once, Module 1</text>
+  <text x="105" y="151" text-anchor="middle" font-size="9" fill="#822727">psycopg2 + COPY</text>
+  <text x="105" y="179" text-anchor="middle" font-size="9" font-weight="700" fill="#822727">9,554,778 rows</text>
+  <text x="105" y="197" text-anchor="middle" font-size="9" fill="#822727">read-only, never</text>
+  <text x="105" y="212" text-anchor="middle" font-size="9" fill="#822727">regenerated since</text>
+
+  <path d="M190,150 L222,150" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#c1)" />
+
+  <!-- staging -->
+  <rect x="227" y="60" width="170" height="180" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="312" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">staging</text>
+  <text x="312" y="115" text-anchor="middle" font-size="9" fill="#2c5282">3 models</text>
+  <text x="312" y="133" text-anchor="middle" font-size="9" fill="#2c5282">rename &amp; cast only</text>
+  <text x="312" y="151" text-anchor="middle" font-size="9" fill="#2c5282">Module 3</text>
+
+  <path d="M397,150 L429,150" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#c1)" />
+
+  <!-- intermediate/marts -->
+  <rect x="434" y="60" width="180" height="180" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="524" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#553c9a">intermediate + marts</text>
+  <text x="524" y="115" text-anchor="middle" font-size="9" fill="#553c9a">19 models, Postgres target</text>
+  <text x="524" y="133" text-anchor="middle" font-size="9" fill="#553c9a">18 data tests, 3 unit tests</text>
+  <text x="524" y="151" text-anchor="middle" font-size="9" fill="#553c9a">Modules 2, 4-7</text>
+  <text x="524" y="179" text-anchor="middle" font-size="9" font-weight="700" fill="#553c9a">19 of 19 documented</text>
+  <text x="524" y="197" text-anchor="middle" font-size="9" fill="#553c9a">Module 9's own gap, closed</text>
+
+  <path d="M614,150 L646,150" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#c1)" />
+
+  <!-- snapshots -->
+  <rect x="651" y="60" width="150" height="180" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="726" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">snapshots</text>
+  <text x="726" y="115" text-anchor="middle" font-size="9" fill="#7b341e">zones_snapshot</text>
+  <text x="726" y="133" text-anchor="middle" font-size="9" fill="#7b341e">SCD Type 2</text>
+  <text x="726" y="151" text-anchor="middle" font-size="9" fill="#7b341e">Module 8</text>
+
+  <path d="M801,150 L833,150" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#c1)" />
+
+  <!-- orchestrated -->
+  <rect x="838" y="60" width="165" height="180" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="920" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">orchestrated</text>
+  <text x="920" y="115" text-anchor="middle" font-size="9" fill="#22543d">Airflow, cityflow_</text>
+  <text x="920" y="130" text-anchor="middle" font-size="9" fill="#22543d">capstone_full_build</text>
+  <text x="920" y="153" text-anchor="middle" font-size="9" fill="#22543d">unrestricted dbt build,</text>
+  <text x="920" y="168" text-anchor="middle" font-size="9" fill="#22543d">no --select, 2 tasks</text>
+  <text x="920" y="196" text-anchor="middle" font-size="9" font-weight="700" fill="#22543d">PASS=39 WARN=3 ERROR=0</text>
+
+  <path d="M1003,150 L1035,150" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#c1)" />
+
+  <!-- reconciled -->
+  <rect x="1040" y="60" width="140" height="180" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.8" />
+  <text x="1110" y="85" text-anchor="middle" font-size="12" font-weight="700" fill="#1a365d">reconciled</text>
+  <text x="1110" y="115" text-anchor="middle" font-size="9" fill="#1a365d">capstone_zone_</text>
+  <text x="1110" y="130" text-anchor="middle" font-size="9" fill="#1a365d">hour_report</text>
+  <text x="1110" y="153" text-anchor="middle" font-size="9" fill="#1a365d">checked by the</text>
+  <text x="1110" y="168" text-anchor="middle" font-size="9" fill="#1a365d">DAG itself</text>
+  <text x="1110" y="196" text-anchor="middle" font-size="9" font-weight="700" fill="#1a365d">exact match</text>
+
+  <rect x="90" y="270" width="1020" height="120" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="1.4" />
+  <text x="600" y="300" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">The Sixth Independent Reproduction of the Same Anchor</text>
+  <text x="600" y="330" text-anchor="middle" font-size="20" font-weight="700" fill="#2b6cb0">240,917 buckets · 9,554,757 trips · $256,692,373.14</text>
+  <text x="600" y="356" text-anchor="middle" font-size="10.5" fill="#4a5568">Scaling Python (pandas), PySpark, Docker &amp; Kubernetes, Airflow, and Apache Kafka already reproduced this figure --</text>
+  <text x="600" y="374" text-anchor="middle" font-size="10.5" fill="#4a5568">this capstone is the sixth, built entirely in SQL, on a Postgres schema built from nothing.</text>
+
+  <defs>
+    <marker id="c1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

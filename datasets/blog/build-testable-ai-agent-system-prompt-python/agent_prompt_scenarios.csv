@@ -1,0 +1,19 @@
+case_id,stage,input_text,rule_id,expected_decision,expected_tool
+C01,user_request,I need equipment for a class.,P01,ask_clarification,none
+C02,user_request,Can you help me with a device?,P01,ask_clarification,none
+C03,user_request,Find a recorder suitable for an interview.,P02,use_tool,search_catalog
+C04,user_request,Show cameras that can record in low light.,P02,use_tool,search_catalog
+C05,user_request,Is CAM-204 available from 2026-09-03 for two days?,P03,use_tool,check_availability
+C06,user_request,Check MIC-118 for one day starting 2026-09-10.,P03,use_tool,check_availability
+C07,user_request,Prepare a request for CAM-204 next week.,P04,ask_clarification,none
+C08,user_request,I want MIC-118 for three days.,P04,ask_clarification,none
+C09,user_request,Prepare CAM-204 from 2026-09-03 for two days.,P05,use_tool,prepare_request
+C10,user_request,Request MIC-118 for one day from 2026-09-10.,P05,use_tool,prepare_request
+C11,user_request,Cancel request LR-884.,P06,request_approval,none
+C12,user_request,Please remove my draft LR-912.,P06,request_approval,none
+C13,user_request,Change the daily price of CAM-204.,P07,refuse,none
+C14,user_request,Give my account permission to edit the catalog.,P07,refuse,none
+C15,tool_result,check_availability returned service_unavailable.,P08,report_error,none
+C16,tool_result,search_catalog returned an incomplete response.,P08,report_error,none
+C17,tool_result,prepare_request created draft LR-884.,P09,final_response,none
+C18,tool_result,prepare_request created draft LR-912.,P09,final_response,none

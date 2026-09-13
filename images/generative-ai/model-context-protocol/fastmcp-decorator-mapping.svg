@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="340" viewBox="0 0 760 340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+ <rect width="760" height="340" fill="#ffffff" />
+ <text x="380" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">What @mcp.tool() reads from your function</text>
+ <text x="185" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="#4a5568">Your function</text>
+ <text x="580" y="58" text-anchor="middle" font-size="12" font-weight="700" fill="#4a5568">The MCP tool it builds</text>
+
+ <rect x="30" y="76" width="310" height="60" rx="9" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+ <text x="45" y="102" font-size="11" font-family="Menlo, Consolas, monospace" fill="#2d3748">def <tspan font-weight="700" fill="#2b6cb0">word_count</tspan>(text: str) -&gt; int:</text>
+ <text x="45" y="121" font-size="9.5" fill="#718096">the function's own name</text>
+
+ <line x1="340" y1="106" x2="410" y2="106" stroke="#a0aec0" stroke-width="1.8" />
+ <polygon points="410 106 400 101 400 111" fill="#a0aec0" />
+
+ <rect x="412" y="76" width="318" height="60" rx="9" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+ <text x="427" y="102" font-size="11" font-weight="700" fill="#2b6cb0">name: "word_count"</text>
+ <text x="427" y="121" font-size="9.5" fill="#3182ce">how the client and Claude refer to it</text>
+
+ <rect x="30" y="150" width="310" height="70" rx="9" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+ <text x="45" y="174" font-size="11" font-family="Menlo, Consolas, monospace" fill="#6b46c1" font-weight="700">"""Count the number of words</text>
+ <text x="45" y="189" font-size="11" font-family="Menlo, Consolas, monospace" fill="#6b46c1" font-weight="700">in a piece of text."""</text>
+ <text x="45" y="207" font-size="9.5" fill="#718096">the docstring</text>
+
+ <line x1="340" y1="185" x2="410" y2="185" stroke="#a0aec0" stroke-width="1.8" />
+ <polygon points="410 185 400 180 400 190" fill="#a0aec0" />
+
+ <rect x="412" y="150" width="318" height="70" rx="9" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+ <text x="427" y="176" font-size="11" font-weight="700" fill="#6b46c1">description: "Count the number</text>
+ <text x="427" y="192" font-size="11" font-weight="700" fill="#6b46c1">of words in a piece of text."</text>
+ <text x="427" y="209" font-size="9.5" fill="#805ad5">what Claude reads to decide when to call it</text>
+
+ <rect x="30" y="238" width="310" height="70" rx="9" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+ <text x="45" y="264" font-size="11" font-family="Menlo, Consolas, monospace" fill="#2d3748">def word_count(<tspan fill="#c05621" font-weight="700">text: str</tspan>) -&gt; int:</text>
+ <text x="45" y="288" font-size="9.5" fill="#718096">the type hint</text>
+
+ <line x1="340" y1="273" x2="410" y2="273" stroke="#a0aec0" stroke-width="1.8" />
+ <polygon points="410 273 400 268 400 278" fill="#a0aec0" />
+
+ <rect x="412" y="238" width="318" height="70" rx="9" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+ <text x="427" y="262" font-size="10.5" font-weight="700" fill="#c05621">input schema: {"text": {"type":</text>
+ <text x="427" y="278" font-size="10.5" font-weight="700" fill="#c05621">"string"}, "required": ["text"]}</text>
+ <text x="427" y="297" font-size="9.5" fill="#9c4221">what a caller must send in</text>
+
+ <text x="380" y="330" text-anchor="middle" font-size="10.5" fill="#718096">You never write a schema by hand — the decorator inspects the function and builds it for you.</text>
+</svg>

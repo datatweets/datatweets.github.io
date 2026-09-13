@@ -1,0 +1,19 @@
+case_id,rule_id,shape_ok,policy_ok,status,detail
+C01,P01,True,True,pass,shape and expected policy match
+C02,P01,True,False,policy_failure,decision or tool does not match reviewed expectation
+C03,P02,False,False,schema_failure,'message' is a required property
+C04,P02,True,True,pass,shape and expected policy match
+C05,P03,True,True,pass,shape and expected policy match
+C06,P03,True,True,pass,shape and expected policy match
+C07,P04,True,True,pass,shape and expected policy match
+C08,P04,False,False,schema_failure,Additional properties are not allowed ('unexpected' was unexpected)
+C09,P05,True,False,policy_failure,decision or tool does not match reviewed expectation
+C10,P05,True,True,pass,shape and expected policy match
+C11,P06,True,True,pass,shape and expected policy match
+C12,P06,True,True,pass,shape and expected policy match
+C13,P07,True,True,pass,shape and expected policy match
+C14,P07,True,False,policy_failure,decision or tool does not match reviewed expectation
+C15,P08,True,True,pass,shape and expected policy match
+C16,P08,False,False,schema_failure,"'retry_forever' is not one of ['ask_clarification', 'use_tool', 'request_approval', 'refuse', 'report_error', 'final_response']"
+C17,P09,True,True,pass,shape and expected policy match
+C18,P09,True,True,pass,shape and expected policy match

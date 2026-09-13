@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Measure AI Agent Success Rates with Wilson Intervals in Python</title>
+  <desc id="desc">A DataTweets tutorial thumbnail with the headline Rate with a Range and a Wilson interval diagram. The diagram shows a 78.5 to 93.1 percent interval, an observed rate of 87.5 percent, and an 80 percent release target that the lower bound does not meet.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">AGENT EVALUATION</text>
+    <text x="90" y="286" font-size="88" font-weight="700" fill="#1b1f24">RATE WITH</text>
+    <text x="90" y="386" font-size="88" font-weight="700" fill="#1b1f24">A RANGE</text>
+    <rect x="96" y="424" width="322" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="500" font-size="27" font-weight="500" fill="#59636e">BOOLEAN PASSES &#183; WILSON INTERVAL</text>
+  </g>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="690" y="132" width="390" height="394" rx="24" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+    <text x="730" y="184" font-size="23" font-weight="600" letter-spacing="0.7" fill="#59636e">95% WILSON INTERVAL</text>
+
+    <line x1="742" y1="352" x2="1032" y2="352" stroke="#c7ccd2" stroke-width="4" stroke-linecap="round"/>
+    <line x1="824" y1="352" x2="969" y2="352" stroke="#0067c0" stroke-width="12" stroke-linecap="round"/>
+    <line x1="824" y1="330" x2="824" y2="374" stroke="#0067c0" stroke-width="5" stroke-linecap="round"/>
+    <line x1="969" y1="330" x2="969" y2="374" stroke="#0067c0" stroke-width="5" stroke-linecap="round"/>
+
+    <line x1="839" y1="254" x2="839" y2="409" stroke="#59636e" stroke-width="3" stroke-dasharray="8 7"/>
+    <text x="839" y="232" text-anchor="middle" font-size="21" font-weight="600" fill="#59636e">80% TARGET</text>
+
+    <circle cx="913" cy="352" r="15" fill="#ffffff" stroke="#0067c0" stroke-width="7"/>
+    <text x="913" y="300" text-anchor="middle" font-size="26" font-weight="700" fill="#1b1f24">87.5%</text>
+    <text x="913" y="326" text-anchor="middle" font-size="18" font-weight="500" fill="#59636e">OBSERVED</text>
+
+    <text x="824" y="420" text-anchor="middle" font-size="21" font-weight="600" fill="#1b1f24">78.5%</text>
+    <text x="969" y="420" text-anchor="middle" font-size="21" font-weight="600" fill="#1b1f24">93.1%</text>
+    <text x="885" y="476" text-anchor="middle" font-size="20" font-weight="500" fill="#59636e">LOWER BOUND &lt; TARGET</text>
+  </g>
+</svg>

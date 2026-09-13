@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="figtitle figdesc">
+  <title id="figtitle">The two-order test for position bias in pairwise judging</title>
+  <desc id="figdesc">Two panels each run the same pairwise comparison in both orders. Left panel, labelled consistent verdict trust it: order one presents Good then Worse and the judge picks Good; order two presents Worse then Good and the judge again picks Good. The same answer wins both orders, so a green check marks it as counted toward the win-rate. Right panel, labelled flipped verdict discard it: order one presents A then B and the judge picks the first slot; order two swaps to B then A and the judge again picks the first slot, so a different answer wins. A red cross marks it as position bias and it is dropped. The rule shown at the bottom is: count a verdict only when the same answer wins in both orders.</desc>
+  <rect width="780" height="470" fill="#ffffff"/>
+  <text x="390" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">The two-order test: run every pair both ways</text>
+  <text x="390" y="56" text-anchor="middle" font-size="13" fill="#4a5568">Swap the order and re-judge. Keep the verdict only if the same answer wins both times.</text>
+
+  <!-- LEFT PANEL: consistent -->
+  <rect x="28" y="80" width="340" height="300" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="198" y="106" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">Consistent verdict &#8594; trust it</text>
+
+  <!-- order 1 -->
+  <text x="48" y="134" font-size="12" font-weight="700" fill="#4a5568">Order 1</text>
+  <rect x="48" y="142" width="130" height="42" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="113" y="160" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">A: Good answer</text>
+  <text x="113" y="176" text-anchor="middle" font-size="10" fill="#4a5568">crisp, correct</text>
+  <rect x="216" y="142" width="130" height="42" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="2"/>
+  <text x="281" y="160" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">B: Worse answer</text>
+  <text x="281" y="176" text-anchor="middle" font-size="10" fill="#718096">vague</text>
+  <text x="198" y="205" text-anchor="middle" font-size="12" fill="#276749">judge picks &#8594; <tspan font-weight="700">Good (A)</tspan></text>
+
+  <!-- order 2 -->
+  <text x="48" y="238" font-size="12" font-weight="700" fill="#4a5568">Order 2 (swapped)</text>
+  <rect x="48" y="246" width="130" height="42" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="2"/>
+  <text x="113" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">A: Worse answer</text>
+  <text x="113" y="280" text-anchor="middle" font-size="10" fill="#718096">vague</text>
+  <rect x="216" y="246" width="130" height="42" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="281" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">B: Good answer</text>
+  <text x="281" y="280" text-anchor="middle" font-size="10" fill="#4a5568">crisp, correct</text>
+  <text x="198" y="309" text-anchor="middle" font-size="12" fill="#276749">judge picks &#8594; <tspan font-weight="700">Good (B)</tspan></text>
+
+  <circle cx="198" cy="345" r="15" fill="#48bb78"/>
+  <path d="M191 345 l5 5 l9 -11" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="222" y="350" font-size="12" font-weight="700" fill="#276749">Same answer wins &#8594; count it</text>
+
+  <!-- RIGHT PANEL: flipped -->
+  <rect x="412" y="80" width="340" height="300" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+  <text x="582" y="106" text-anchor="middle" font-size="14" font-weight="700" fill="#c53030">Flipped verdict &#8594; discard it</text>
+
+  <text x="432" y="134" font-size="12" font-weight="700" fill="#4a5568">Order 1</text>
+  <rect x="432" y="142" width="130" height="42" rx="6" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <text x="497" y="160" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">A: Answer X</text>
+  <text x="497" y="176" text-anchor="middle" font-size="10" fill="#4a5568">equal quality</text>
+  <rect x="600" y="142" width="130" height="42" rx="6" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <text x="665" y="160" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">B: Answer Y</text>
+  <text x="665" y="176" text-anchor="middle" font-size="10" fill="#4a5568">equal quality</text>
+  <text x="582" y="205" text-anchor="middle" font-size="12" fill="#c53030">judge picks &#8594; <tspan font-weight="700">slot A = X</tspan></text>
+
+  <text x="432" y="238" font-size="12" font-weight="700" fill="#4a5568">Order 2 (swapped)</text>
+  <rect x="432" y="246" width="130" height="42" rx="6" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <text x="497" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">A: Answer Y</text>
+  <text x="497" y="280" text-anchor="middle" font-size="10" fill="#4a5568">equal quality</text>
+  <rect x="600" y="246" width="130" height="42" rx="6" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <text x="665" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">B: Answer X</text>
+  <text x="665" y="280" text-anchor="middle" font-size="10" fill="#4a5568">equal quality</text>
+  <text x="582" y="309" text-anchor="middle" font-size="12" fill="#c53030">judge picks &#8594; <tspan font-weight="700">slot A = Y</tspan></text>
+
+  <circle cx="582" cy="345" r="15" fill="#fc8181"/>
+  <path d="M576 339 l12 12 M588 339 l-12 12" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  <text x="606" y="350" font-size="12" font-weight="700" fill="#c53030">Winner flipped with order &#8594; drop it</text>
+
+  <!-- bottom rule -->
+  <rect x="28" y="400" width="724" height="48" rx="8" fill="#1a202c"/>
+  <text x="390" y="422" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Rule: a pairwise verdict counts only when the same answer wins in BOTH orders.</text>
+  <text x="390" y="440" text-anchor="middle" font-size="12" fill="#e2e8f0">Order-dependent verdicts are position bias, not quality &#8212; treat them as ties.</text>
+</svg>

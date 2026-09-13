@@ -1,0 +1,17 @@
+pair_id,message,candidate_id,is_duplicate
+V-01,Invoice PDF is blank after I download it.,A-101,1
+V-02,The total on my invoice is incorrect.,A-101,0
+V-03,The password reset address expires immediately.,A-102,1
+V-04,The sign-in form rejects my new password.,A-102,0
+V-05,Every alert reaches my inbox two times.,A-103,1
+V-06,How do I stop all email alerts?,A-103,0
+V-07,Calendar sync failed after a password update.,A-104,1
+V-08,Calendar events display the wrong time zone.,A-104,0
+V-09,Refunds do not appear in the dashboard revenue.,A-105,1
+V-10,The refund action is unavailable for an order.,A-105,0
+V-11,The mobile app crashes while I add a receipt image.,A-106,1
+V-12,Receipt photos look blurred after upload.,A-106,0
+V-13,My CSV export opens in a single column.,A-107,1
+V-14,How can I rename a CSV file?,A-107,0
+V-15,I cannot see the name of one control on the dark settings screen.,A-108,1
+V-16,The settings page loads slowly at night.,A-108,0

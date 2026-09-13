@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Choose a classification threshold by cost in Python</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail with the headline Cost Sets the Cutoff. A validation-cost curve marks 0.20 as the lowest-cost threshold and shows the cost formula for false positives and false negatives.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="31" font-weight="600" fill="#59636e" letter-spacing="0.5">COST-SENSITIVE CLASSIFICATION</text>
+    <text x="90" y="280" font-size="76" font-weight="700" fill="#1b1f24">COST SETS</text>
+    <text x="90" y="370" font-size="76" font-weight="700" fill="#1b1f24">THE CUTOFF</text>
+    <rect x="96" y="406" width="375" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="484" font-size="27" font-weight="500" fill="#59636e">THRESHOLDS · ERRORS · VALIDATION</text>
+
+    <g transform="translate(690 115)">
+      <rect x="0" y="0" width="400" height="450" rx="22" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="28" y="48" font-size="22" font-weight="600" fill="#59636e">VALIDATION COST</text>
+      <text x="28" y="80" font-size="20" font-weight="600" fill="#0067c0">FP × 4 + FN × 16</text>
+
+      <line x1="54" y1="360" x2="360" y2="360" stroke="#aeb5bd" stroke-width="2"/>
+      <line x1="54" y1="116" x2="54" y2="360" stroke="#aeb5bd" stroke-width="2"/>
+      <line x1="54" y1="280" x2="360" y2="280" stroke="#e3e6ea" stroke-width="2"/>
+      <line x1="54" y1="200" x2="360" y2="200" stroke="#e3e6ea" stroke-width="2"/>
+      <line x1="207" y1="116" x2="207" y2="360" stroke="#aeb5bd" stroke-width="2" stroke-dasharray="7 7"/>
+
+      <path d="M54 156 L85 260 L115 324 L146 250 L176 180 L207 164 L238 125 L268 116 L299 106 L329 106 L360 106"
+            fill="none" stroke="#0067c0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="115" cy="324" r="11" fill="#ffffff" stroke="#0067c0" stroke-width="5"/>
+      <circle cx="207" cy="164" r="7" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+
+      <text x="115" y="302" text-anchor="middle" font-size="19" font-weight="700" fill="#0067c0">LOWEST COST</text>
+      <text x="115" y="388" text-anchor="middle" font-size="21" font-weight="700" fill="#0067c0">0.20</text>
+      <text x="207" y="140" text-anchor="middle" font-size="17" font-weight="600" fill="#59636e">DEFAULT 0.50</text>
+      <text x="54" y="388" text-anchor="middle" font-size="18" fill="#59636e">0.00</text>
+      <text x="360" y="388" text-anchor="middle" font-size="18" fill="#59636e">1.00</text>
+      <text x="207" y="427" text-anchor="middle" font-size="20" font-weight="600" fill="#59636e">PROBABILITY THRESHOLD</text>
+    </g>
+  </g>
+</svg>

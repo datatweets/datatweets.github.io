@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="470" viewBox="0 0 1100 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Eight healthy groups, one abandoned one at 9.28 million lag</title>
+  <desc>A cluster-wide consumer-lag sweep over CityFlow's nine real consumer groups finds eight with healthy, bounded lag and one, cityflow-faust-throughput-check, carrying 9,288,741 messages of real, abandoned lag from Module 9's throughput test. Separately, broker-health checks use describe_cluster() for real controller identity, describe_topics() to compute under-replicated partitions by comparing each partition's replica list to its in-sync-replica set, and describe_configs() to read a topic's live min.insync.replicas setting directly off a running broker.</desc>
+  <rect width="1100" height="470" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Cluster-Wide Sweep Finds What a Single Check Can't</text>
+
+  <!-- Lag sweep panel -->
+  <rect x="40" y="55" width="500" height="260" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="290" y="78" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2c5282">9 Real Consumer Groups, Swept</text>
+
+  <g font-size="9.5" font-family="Menlo, monospace">
+    <text x="60" y="100" fill="#22543d">cityflow-fields-demo</text>
+    <rect x="330" y="90" width="6" height="14" fill="#48bb78" />
+    <text x="345" y="101" fill="#22543d">lag=4</text>
+
+    <text x="60" y="120" fill="#22543d">cityflow-offset-demo</text>
+    <rect x="330" y="110" width="2" height="14" fill="#48bb78" />
+    <text x="345" y="121" fill="#22543d">lag=0</text>
+
+    <text x="60" y="140" fill="#22543d">cityflow-offset-demo-manual</text>
+    <rect x="330" y="130" width="2" height="14" fill="#48bb78" />
+    <text x="345" y="141" fill="#22543d">lag=0</text>
+
+    <text x="60" y="160" fill="#22543d">cityflow-orchestration-monitor</text>
+    <rect x="330" y="150" width="8" height="14" fill="#48bb78" />
+    <text x="345" y="161" fill="#22543d">lag=30</text>
+
+    <text x="60" y="180" fill="#22543d">cityflow-poll-demo</text>
+    <rect x="330" y="170" width="2" height="14" fill="#48bb78" />
+    <text x="345" y="181" fill="#22543d">lag=0</text>
+
+    <text x="60" y="200" fill="#22543d">cityflow-rebalance-demo</text>
+    <rect x="330" y="190" width="2" height="14" fill="#48bb78" />
+    <text x="345" y="201" fill="#22543d">lag=0</text>
+
+    <text x="60" y="220" fill="#22543d">cityflow-reconcile-... (x2)</text>
+    <rect x="330" y="210" width="12" height="14" fill="#48bb78" />
+    <text x="345" y="221" fill="#22543d">lag=288 each</text>
+
+    <text x="60" y="248" font-weight="700" fill="#822727">cityflow-faust-throughput-check</text>
+    <rect x="330" y="235" width="150" height="24" rx="4" fill="#fc8181" />
+    <text x="345" y="252" font-weight="700" fill="#742a2a">lag=9,288,741</text>
+  </g>
+
+  <text x="290" y="290" text-anchor="middle" font-size="9.5" fill="#2c5282">Module 9's throughput test group, never resumed -- Kafka never expires this on its own</text>
+
+  <!-- Broker health panel -->
+  <rect x="570" y="55" width="490" height="260" rx="10" fill="#feebc8" stroke="#ed8936" stroke-width="1.6" />
+  <text x="815" y="78" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7b341e">Broker Health, Read Directly</text>
+
+  <rect x="595" y="95" width="440" height="52" rx="6" fill="#ffffff" stroke="#ed8936" />
+  <text x="815" y="115" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#7b341e">describe_cluster()</text>
+  <text x="815" y="132" text-anchor="middle" font-size="9" fill="#7b341e">controller_id=3, 3 brokers listed</text>
+
+  <rect x="595" y="157" width="440" height="60" rx="6" fill="#ffffff" stroke="#ed8936" />
+  <text x="815" y="177" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#7b341e">describe_topics()</text>
+  <text x="815" y="193" text-anchor="middle" font-size="9" fill="#7b341e">cityflow-trip-events: 6/6 partitions OK</text>
+  <text x="815" y="207" text-anchor="middle" font-size="8.5" fill="#7b341e">under-replicated = len(isr) &lt; len(replicas)</text>
+
+  <rect x="595" y="227" width="440" height="52" rx="6" fill="#ffffff" stroke="#ed8936" />
+  <text x="815" y="247" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#7b341e">describe_configs()</text>
+  <text x="815" y="264" text-anchor="middle" font-size="9" fill="#7b341e">min.insync.replicas=2, live off the broker</text>
+
+  <text x="550" y="345" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Both scripts run standalone -- no Airflow, same kafka-python admin client Lesson 2's Hook wraps</text>
+  <text x="550" y="368" text-anchor="middle" font-size="10.5" fill="#4a5568">Lesson 4 turns from reading this state to changing it: offset resets and live broker config, always dry-run first.</text>
+
+  <rect x="330" y="395" width="440" height="46" rx="6" fill="#2c5282" />
+  <text x="550" y="423" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#ebf8ff">8 groups healthy -- 1 group needs a real decision</text>
+</svg>

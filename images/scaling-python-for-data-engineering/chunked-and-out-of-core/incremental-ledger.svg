@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="860" height="500" fill="#ffffff"/>
+
+  <!-- title -->
+  <text x="430" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#1a202c">A ledger gates ingestion: each month is loaded once</text>
+  <text x="430" y="56" text-anchor="middle" font-size="13" fill="#4a5568">A re-run checks the ledger, skips finished months, and only ingests new ones</text>
+
+  <!-- ===== incoming partitions ===== -->
+  <text x="130" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">Nightly run considers</text>
+  <g>
+    <rect x="40" y="106" width="180" height="42" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="130" y="132" text-anchor="middle" font-size="15" font-weight="600" fill="#2b6cb0">2024-01</text>
+  </g>
+  <g>
+    <rect x="40" y="158" width="180" height="42" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="130" y="184" text-anchor="middle" font-size="15" font-weight="600" fill="#2b6cb0">2024-02</text>
+  </g>
+  <g>
+    <rect x="40" y="210" width="180" height="42" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+    <text x="130" y="236" text-anchor="middle" font-size="15" font-weight="600" fill="#c05621">2024-03 (new)</text>
+  </g>
+
+  <!-- ===== gate ===== -->
+  <rect x="300" y="132" width="180" height="96" rx="10" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="390" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#6b46c1">Check the ledger</text>
+  <text x="390" y="192" text-anchor="middle" font-size="12.5" fill="#4a5568">Is this month</text>
+  <text x="390" y="209" text-anchor="middle" font-size="12.5" fill="#4a5568">already loaded?</text>
+
+  <!-- arrows into gate -->
+  <line x1="220" y1="127" x2="298" y2="150" stroke="#a0aec0" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="220" y1="179" x2="298" y2="180" stroke="#a0aec0" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="220" y1="231" x2="298" y2="210" stroke="#a0aec0" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- ===== ledger table (below the gate) ===== -->
+  <text x="390" y="300" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">loaded_months (the ledger)</text>
+  <rect x="286" y="312" width="208" height="112" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <line x1="286" y1="338" x2="494" y2="338" stroke="#276749" stroke-width="1"/>
+  <text x="300" y="331" font-size="12" font-weight="700" fill="#276749">month</text>
+  <text x="410" y="331" font-size="12" font-weight="700" fill="#276749">rows</text>
+  <text x="300" y="362" font-size="12.5" fill="#276749">2024-01</text>
+  <text x="410" y="362" font-size="12.5" fill="#276749">2,964,624</text>
+  <text x="300" y="388" font-size="12.5" fill="#276749">2024-02</text>
+  <text x="410" y="388" font-size="12.5" fill="#276749">3,007,526</text>
+  <text x="300" y="414" font-size="12.5" fill="#a0aec0" font-style="italic">2024-03  &#8212;  (not yet)</text>
+
+  <!-- gate consults ledger -->
+  <line x1="390" y1="228" x2="390" y2="308" stroke="#6b46c1" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#ap)"/>
+  <text x="400" y="272" font-size="11" fill="#6b46c1" font-style="italic">looks up</text>
+
+  <!-- ===== outcomes ===== -->
+  <!-- skip -->
+  <rect x="560" y="106" width="256" height="72" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+  <text x="688" y="134" text-anchor="middle" font-size="14" font-weight="700" fill="#c53030">In ledger &#8594; SKIP</text>
+  <text x="688" y="156" text-anchor="middle" font-size="12" fill="#4a5568">2024-01, 2024-02: touch nothing</text>
+  <line x1="480" y1="165" x2="558" y2="150" stroke="#c53030" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="512" y="138" font-size="11" font-weight="600" fill="#c53030">yes</text>
+
+  <!-- ingest -->
+  <rect x="560" y="210" width="256" height="86" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="688" y="240" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">Not in ledger &#8594; INGEST</text>
+  <text x="688" y="262" text-anchor="middle" font-size="12" fill="#4a5568">stream 2024-03 into trips,</text>
+  <text x="688" y="279" text-anchor="middle" font-size="12" fill="#4a5568">then record it in the ledger</text>
+  <line x1="480" y1="200" x2="558" y2="235" stroke="#276749" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="512" y="200" font-size="11" font-weight="600" fill="#276749">no</text>
+
+  <!-- mark done only after success -->
+  <path d="M 640 296 C 600 360, 520 372, 496 372" fill="none" stroke="#276749" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#ag2)"/>
+  <text x="612" y="356" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">mark done only after success</text>
+
+  <!-- ===== warehouse note ===== -->
+  <text x="688" y="330" text-anchor="middle" font-size="11.5" fill="#4a5568">trips warehouse grows by one</text>
+  <text x="688" y="346" text-anchor="middle" font-size="11.5" fill="#4a5568">month; re-runs never double-count</text>
+
+  <!-- markers -->
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#a0aec0"/></marker>
+    <marker id="ap" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#6b46c1"/></marker>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#c53030"/></marker>
+    <marker id="ag" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#276749"/></marker>
+    <marker id="ag2" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#276749"/></marker>
+  </defs>
+</svg>

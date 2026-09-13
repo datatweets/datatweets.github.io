@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 706" width="960" height="706" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="706" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">CityFlow&#8217;s Production Spark Pipeline &#8212; eight modules in one runnable job</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">nine stages, three proofs, and a plan you can read &#8212; measured on 9,554,778 real NYC yellow-taxi trips</text>
+
+<text x="32" y="92" font-size="15" font-weight="700" fill="#2b6cb0">THE JOB &#8212; NINE STAGES, EACH TRACED TO THE MODULE THAT TAUGHT IT</text>
+
+<!-- stage 1 -->
+<rect x="32" y="104" width="92" height="112" rx="7" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="32" y="104" width="92" height="20" rx="7" fill="#2b6cb0"/>
+<text x="78" y="118.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">1 &#183; SESSION</text>
+<text x="78" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#2b6cb0">M1 &#183; M5</text>
+<text x="78" y="158" text-anchor="middle" font-size="9.5" fill="#4a5568">local[*], AQE on</text>
+<text x="78" y="172" text-anchor="middle" font-size="9.5" fill="#4a5568">shuffle = 16</text>
+<text x="78" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">10</text>
+<text x="78" y="207" text-anchor="middle" font-size="8.5" fill="#718096">cores</text>
+
+<!-- stage 2 -->
+<rect x="132" y="104" width="92" height="112" rx="7" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="132" y="104" width="92" height="20" rx="7" fill="#2b6cb0"/>
+<text x="178" y="118.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">2 &#183; SCHEMA</text>
+<text x="178" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#2b6cb0">M6 L1</text>
+<text x="178" y="158" text-anchor="middle" font-size="9.5" fill="#4a5568">a contract,</text>
+<text x="178" y="172" text-anchor="middle" font-size="9.5" fill="#4a5568">not a guess</text>
+<text x="178" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">19</text>
+<text x="178" y="207" text-anchor="middle" font-size="8.5" fill="#718096">typed fields</text>
+
+<!-- stage 3 -->
+<rect x="232" y="104" width="92" height="112" rx="7" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="232" y="104" width="92" height="20" rx="7" fill="#2b6cb0"/>
+<text x="278" y="118.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">3 &#183; VALIDATE IN</text>
+<text x="278" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#2b6cb0">M7 L1</text>
+<text x="278" y="158" text-anchor="middle" font-size="9.5" fill="#4a5568">volume, range,</text>
+<text x="278" y="172" text-anchor="middle" font-size="9.5" fill="#4a5568">referential, nulls</text>
+<text x="278" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">5 rules</text>
+<text x="278" y="207" text-anchor="middle" font-size="8.5" fill="#718096">one pass, 2.1&#160;s</text>
+
+<!-- stage 4 -->
+<rect x="332" y="104" width="92" height="112" rx="7" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<rect x="332" y="104" width="92" height="20" rx="7" fill="#c05621"/>
+<text x="378" y="118.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">4 &#183; QUARANTINE</text>
+<text x="378" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#c05621">M6 L2 &#183; M7 L2</text>
+<text x="378" y="158" text-anchor="middle" font-size="9.5" fill="#4a5568">never drop;</text>
+<text x="378" y="172" text-anchor="middle" font-size="9.5" fill="#4a5568">hold with a reason</text>
+<text x="378" y="194" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a202c">9,554,757</text>
+<text x="378" y="207" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c05621">+ 21 held back</text>
+
+<!-- stage 5 -->
+<rect x="432" y="104" width="92" height="112" rx="7" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="432" y="104" width="92" height="20" rx="7" fill="#2b6cb0"/>
+<text x="478" y="118.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">5 &#183; TRANSFORM</text>
+<text x="478" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#2b6cb0">M3 &#183; M4</text>
+<text x="478" y="158" text-anchor="middle" font-size="9.5" fill="#4a5568">date_trunc hour</text>
+<text x="478" y="172" text-anchor="middle" font-size="9.5" fill="#4a5568">broadcast 265 zones</text>
+<text x="478" y="194" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a202c">0 UDFs</text>
+<text x="478" y="207" text-anchor="middle" font-size="8.5" fill="#718096">built-ins only</text>
+
+<!-- stage 6 -->
+<rect x="532" y="104" width="92" height="112" rx="7" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="532" y="104" width="92" height="20" rx="7" fill="#2b6cb0"/>
+<text x="578" y="118.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">6 &#183; VALIDATE OUT</text>
+<text x="578" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#2b6cb0">M7 L1</text>
+<text x="578" y="158" text-anchor="middle" font-size="9.5" fill="#4a5568">trips == cleaned</text>
+<text x="578" y="172" text-anchor="middle" font-size="9.5" fill="#4a5568">good + held == in</text>
+<text x="578" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">4 recon</text>
+<text x="578" y="207" text-anchor="middle" font-size="8.5" fill="#718096">arithmetic proof</text>
+
+<!-- stage 7 -->
+<rect x="632" y="104" width="92" height="112" rx="7" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<rect x="632" y="104" width="92" height="20" rx="7" fill="#c53030"/>
+<text x="678" y="118.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">7 &#183; THE GATE</text>
+<text x="678" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#c53030">M7 L4</text>
+<text x="678" y="158" text-anchor="middle" font-size="9.5" fill="#4a5568">warn &#8594; log and go</text>
+<text x="678" y="172" text-anchor="middle" font-size="9.5" fill="#c53030">critical &#8594; abort</text>
+<text x="678" y="194" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">BEFORE</text>
+<text x="678" y="207" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c53030">the write</text>
+
+<!-- stage 8 -->
+<rect x="732" y="104" width="92" height="112" rx="7" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<rect x="732" y="104" width="92" height="20" rx="7" fill="#276749"/>
+<text x="778" y="118.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">8 &#183; WRITE</text>
+<text x="778" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">M6 L3 &#183; L4</text>
+<text x="778" y="158" text-anchor="middle" font-size="9.5" fill="#4a5568">partitioned Parquet</text>
+<text x="778" y="172" text-anchor="middle" font-size="9.5" fill="#4a5568">dynamic overwrite</text>
+<text x="778" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">91</text>
+<text x="778" y="207" text-anchor="middle" font-size="8.5" fill="#718096">date partitions</text>
+
+<!-- stage 9 -->
+<rect x="832" y="104" width="92" height="112" rx="7" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<rect x="832" y="104" width="92" height="20" rx="7" fill="#276749"/>
+<text x="878" y="118.5" text-anchor="middle" font-size="10" font-weight="700" fill="#ffffff">9 &#183; SUMMARY</text>
+<text x="878" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">M7 L3 &#183; L4</text>
+<text x="878" y="158" text-anchor="middle" font-size="9.5" fill="#4a5568">one JSON line</text>
+<text x="878" y="172" text-anchor="middle" font-size="9.5" fill="#4a5568">per-stage seconds</text>
+<text x="878" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">exit code</text>
+<text x="878" y="207" text-anchor="middle" font-size="8.5" fill="#718096">0 or 2</text>
+
+<text x="480" y="238" text-anchor="middle" font-size="11.5" font-style="italic" fill="#718096">one process, 16.7&#160;seconds end to end &#8212; stages 3 and 7 are the only two that can stop it, and both sit upstream of the write</text>
+
+<line x1="32" y1="256" x2="928" y2="256" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="32" y="286" font-size="15" font-weight="700" fill="#1a202c">THREE PROOFS &#8212; MEASURED, NOT ASSERTED</text>
+
+<!-- proof 1 -->
+<rect x="32" y="298" width="288" height="168" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="50" y="320" font-size="12.5" font-weight="700" fill="#276749">1 &#183; CORRECTNESS</text>
+<text x="50" y="340" font-size="10.5" fill="#4a5568">read the published table back and compare</text>
+<text x="50" y="354" font-size="10.5" fill="#4a5568">against Course&#160;1&#8217;s pandas ground truth</text>
+<text x="50" y="376" font-size="11.5" font-weight="700" fill="#1a202c">240,917 buckets &#183; 9,554,757 trips</text>
+<text x="50" y="394" font-size="13" font-weight="700" fill="#276749">$256,692,373.14</text>
+<text x="50" y="414" font-size="10.5" fill="#4a5568">to the cent, from a different engine</text>
+<text x="50" y="432" font-size="10.5" fill="#4a5568">9,554,757&#160;+&#160;21&#160;=&#160;9,554,778 reconciles</text>
+<text x="50" y="452" font-size="10.5" fill="#1a202c">top zone: 161 Midtown Center, 453,825</text>
+
+<!-- proof 2 -->
+<rect x="336" y="298" width="288" height="168" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="354" y="320" font-size="12.5" font-weight="700" fill="#2b6cb0">2 &#183; IDEMPOTENCY</text>
+<text x="354" y="340" font-size="10.5" fill="#4a5568">run the identical job a second time</text>
+<text x="354" y="354" font-size="10.5" fill="#4a5568">dynamic partition overwrite, not append</text>
+<text x="354" y="378" font-size="10.5" fill="#718096">run 1 &#8594; exit 0 &#160;&#160;&#160;run 2 &#8594; exit 0</text>
+<text x="354" y="398" font-size="11.5" font-weight="700" fill="#1a202c">240,917 / 9,554,757 / $256,692,373.14</text>
+<text x="354" y="414" font-size="11.5" font-weight="700" fill="#1a202c">240,917 / 9,554,757 / $256,692,373.14</text>
+<text x="354" y="434" font-size="10.5" fill="#4a5568">91 partitions before, 91 after</text>
+<text x="354" y="452" font-size="11" font-weight="700" fill="#2b6cb0">nothing doubled &#8212; a retry is safe</text>
+
+<!-- proof 3 -->
+<rect x="640" y="298" width="288" height="168" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="658" y="320" font-size="12.5" font-weight="700" fill="#c53030">3 &#183; GUARDING</text>
+<text x="658" y="340" font-size="10.5" fill="#4a5568">hand it a half-failed March export</text>
+<text x="658" y="354" font-size="10.5" fill="#4a5568">(100,000 rows instead of 3,582,628)</text>
+<text x="658" y="376" font-size="10.5" fill="#1a202c">input.volume: 6,072,150 vs &#8805;&#160;9,000,000</text>
+<text x="658" y="394" font-size="11" font-weight="700" fill="#c53030">CRITICAL &#8594; abort at stage 3, exit 2</text>
+<text x="658" y="414" font-size="10.5" fill="#4a5568">nothing transformed, nothing written</text>
+<text x="658" y="432" font-size="10.5" fill="#1a202c">91 of 91 files md5-identical afterward</text>
+<text x="658" y="452" font-size="10.5" fill="#1a202c">last good table still $256,692,373.14</text>
+
+<line x1="32" y1="486" x2="928" y2="486" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="32" y="516" font-size="15" font-weight="700" fill="#1a202c">READING THE FINISHED JOB&#8217;S PLAN &#8212; EVERYTHING MODULES 4 AND 5 TAUGHT YOU TO LOOK FOR</text>
+
+<rect x="32" y="528" width="896" height="94" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="52" y="550" font-size="11" fill="#4a5568"><tspan font-weight="700" fill="#2b6cb0">ReadSchema</tspan> lists 3 columns of 19 &#8212; Catalyst pruned the projection before a byte was read</text>
+<text x="52" y="568" font-size="11" fill="#4a5568"><tspan font-weight="700" fill="#2b6cb0">PushedFilters</tspan> carries the whole reporting window into Parquet: row groups outside it are skipped</text>
+<text x="52" y="586" font-size="11" fill="#4a5568"><tspan font-weight="700" fill="#2b6cb0">BroadcastHashJoin BuildRight</tspan> &#8212; the 265-row dimension is shipped; the 9.5&#160;M-row side never moves</text>
+<text x="52" y="604" font-size="11" fill="#4a5568"><tspan font-weight="700" fill="#2b6cb0">one Exchange</tspan>, the group-by, sized to 16 &#8212; then <tspan font-weight="700" fill="#2b6cb0">AQEShuffleRead coalesced</tspan> lands the 240,917 buckets in 5</text>
+
+<rect x="32" y="634" width="896" height="56" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="480" y="656" text-anchor="middle" font-size="12" fill="#4a5568">The production checklist: pin the schema &#183; validate before you trust &#183; quarantine with a reason &#183; reconcile the arithmetic</text>
+<text x="480" y="676" text-anchor="middle" font-size="12" fill="#4a5568">gate before the write &#183; overwrite partitions, never append &#183; log one machine-readable line &#183; exit with a number a scheduler believes</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Query a File Repeatedly vs. Load It Once</text>
+
+  <text x="205" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#742a2a">FROM 'orders.csv' -- every query</text>
+  <rect x="50" y="74" width="120" height="52" rx="6" fill="#fed7d7" stroke="#fc8181" stroke-width="1.2" />
+  <text x="110" y="105" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a">query 1</text>
+  <rect x="180" y="74" width="120" height="52" rx="6" fill="#fed7d7" stroke="#fc8181" stroke-width="1.2" />
+  <text x="240" y="105" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a">query 2 ...</text>
+
+  <text x="110" y="140" text-anchor="middle" font-size="8.5" fill="#9c4221">read + parse</text>
+  <text x="240" y="140" text-anchor="middle" font-size="8.5" fill="#9c4221">read + parse again</text>
+
+  <rect x="50" y="170" width="250" height="46" rx="6" fill="#742a2a" />
+  <text x="175" y="198" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">file re-read on every single query</text>
+
+  <line x1="330" y1="150" x2="380" y2="150" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowL)" />
+
+  <text x="595" y="60" text-anchor="middle" font-size="11.5" font-weight="700" fill="#22543d">CREATE TABLE ... AS SELECT -- once</text>
+  <rect x="450" y="74" width="290" height="46" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="595" y="102" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#22543d">read + parse: paid one time</text>
+
+  <line x1="595" y1="120" x2="595" y2="150" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowL)" />
+
+  <rect x="450" y="150" width="130" height="46" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.2" />
+  <text x="515" y="178" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">query 1</text>
+  <rect x="600" y="150" width="140" height="46" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.2" />
+  <text x="670" y="178" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">query 2 ...</text>
+
+  <rect x="450" y="212" width="290" height="46" rx="6" fill="#22543d" />
+  <text x="595" y="240" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ffffff">every later query reads stored data</text>
+
+  <rect x="60" y="286" width="680" height="66" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="400" y="312" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">Measured locally: loaded tables answered the same 20 queries ~20x faster</text>
+  <text x="400" y="332" text-anchor="middle" font-size="10" fill="#2c5282">the exact multiplier varies by machine -- the direction and the reason don't</text>
+
+  <defs>
+    <marker id="arrowL" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

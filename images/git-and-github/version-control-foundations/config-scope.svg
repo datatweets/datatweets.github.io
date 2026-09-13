@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect width="640" height="320" fill="#ffffff" />
+<text x="320" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Global config applies everywhere — until a repo overrides it</text>
+
+<rect x="220" y="58" width="200" height="56" rx="10" fill="#ebf4ff" stroke="#4299e1" stroke-width="1.5" />
+<text x="320" y="82" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2b6cb0">Global config</text>
+<text x="320" y="99" text-anchor="middle" font-size="9.5" fill="#3182ce" font-family="monospace">~/.gitconfig (--global)</text>
+
+<line x1="280" y1="114" x2="130" y2="176" stroke="#90cdf4" stroke-width="1.6" />
+<polygon points="130 176 140 176 133 167" fill="#90cdf4" />
+<line x1="320" y1="114" x2="320" y2="176" stroke="#90cdf4" stroke-width="1.6" />
+<polygon points="320 176 315 167 325 167" fill="#90cdf4" />
+<line x1="360" y1="114" x2="510" y2="176" stroke="#ed8936" stroke-width="1.6" />
+<polygon points="510 176 500 176 507 167" fill="#ed8936" />
+
+<rect x="50" y="180" width="160" height="80" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5" />
+<text x="130" y="205" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Project A</text>
+<text x="130" y="223" text-anchor="middle" font-size="9.5" fill="#718096">uses the global</text>
+<text x="130" y="237" text-anchor="middle" font-size="9.5" fill="#718096">user.name / user.email</text>
+
+<rect x="240" y="180" width="160" height="80" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5" />
+<text x="320" y="205" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">Project B</text>
+<text x="320" y="223" text-anchor="middle" font-size="9.5" fill="#718096">uses the global</text>
+<text x="320" y="237" text-anchor="middle" font-size="9.5" fill="#718096">user.name / user.email</text>
+
+<rect x="430" y="180" width="160" height="80" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5" />
+<text x="510" y="205" text-anchor="middle" font-size="12" font-weight="700" fill="#9c4221">Project C (work repo)</text>
+<text x="510" y="223" text-anchor="middle" font-size="9.5" fill="#c05621">per-repo user.email</text>
+<text x="510" y="237" text-anchor="middle" font-size="9.5" fill="#c05621" font-family="monospace">git config user.email …</text>
+<text x="510" y="251" text-anchor="middle" font-size="8.5" fill="#c05621">(no --global) overrides it here</text>
+
+<text x="320" y="296" text-anchor="middle" font-size="11" fill="#718096">Set your identity once with --global; run git config without --global inside one repo to override it just there.</text>
+</svg>

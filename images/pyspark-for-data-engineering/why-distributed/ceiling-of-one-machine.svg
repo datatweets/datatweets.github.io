@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">One machine, used well, still has four ceilings</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Measured on the 10-core, 16 GB laptop that re-verified $256,692,373.14 across 9,554,778 trips (Jan&#8211;Mar 2024 NYC yellow taxi)</text>
+
+<!-- CARD 1: CORES -->
+<rect x="40" y="80" width="430" height="252" rx="8" fill="#ffffff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="56" y="106" font-size="13" font-weight="700" fill="#2b6cb0">1 &#183; CORES SATURATE</text>
+<text x="56" y="124" font-size="10" fill="#718096">parallel zone-hour aggregation, 9,554,778 trips, 30 tasks, workers 1 &#8594; 20</text>
+
+<!-- gridlines + y labels (speedup) -->
+<line x1="92" y1="278" x2="452" y2="278" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="92" y1="243.5" x2="452" y2="243.5" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="92" y1="209" x2="452" y2="209" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="92" y1="174.5" x2="452" y2="174.5" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="92" y1="140" x2="452" y2="140" stroke="#e2e8f0" stroke-width="1"/>
+<text x="86" y="281" text-anchor="end" font-size="9" fill="#718096">0&#215;</text>
+<text x="86" y="246" text-anchor="end" font-size="9" fill="#718096">2&#215;</text>
+<text x="86" y="212" text-anchor="end" font-size="9" fill="#718096">4&#215;</text>
+<text x="86" y="177" text-anchor="end" font-size="9" fill="#718096">6&#215;</text>
+<text x="86" y="143" text-anchor="end" font-size="9" fill="#718096">8&#215;</text>
+
+<!-- beyond-the-hardware shaded zone (past 10 workers) -->
+<rect x="355" y="136" width="97" height="142" fill="#fff5f5"/>
+<line x1="355" y1="136" x2="355" y2="278" stroke="#c53030" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="403" y="149" text-anchor="middle" font-size="9" font-weight="600" fill="#c53030">beyond the hardware</text>
+
+<!-- measured speedup curve -->
+<polyline points="100,263.7 157,244.7 213,212.8 270,176.1 327,159.7 383,168.0 440,177.8" fill="none" stroke="#2b6cb0" stroke-width="2.5"/>
+<circle cx="100" cy="263.7" r="3.5" fill="#2b6cb0"/>
+<circle cx="157" cy="244.7" r="3.5" fill="#2b6cb0"/>
+<circle cx="213" cy="212.8" r="3.5" fill="#2b6cb0"/>
+<circle cx="270" cy="176.1" r="3.5" fill="#2b6cb0"/>
+<circle cx="327" cy="159.7" r="4.5" fill="#276749"/>
+<circle cx="383" cy="168.0" r="3.5" fill="#c53030"/>
+<circle cx="440" cy="177.8" r="3.5" fill="#c53030"/>
+
+<text x="310" y="150" text-anchor="end" font-size="10.5" font-weight="700" fill="#276749">peak 6.86&#215; at 10 workers = 10 cores</text>
+<text x="436" y="196" text-anchor="end" font-size="10" font-weight="600" fill="#c53030">20 workers: 5.81&#215; &#8212; worse</text>
+
+<!-- x labels (workers) -->
+<text x="100" y="292" text-anchor="middle" font-size="9" fill="#4a5568">1</text>
+<text x="157" y="292" text-anchor="middle" font-size="9" fill="#4a5568">2</text>
+<text x="213" y="292" text-anchor="middle" font-size="9" fill="#4a5568">4</text>
+<text x="270" y="292" text-anchor="middle" font-size="9" fill="#4a5568">8</text>
+<text x="327" y="292" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">10</text>
+<text x="383" y="292" text-anchor="middle" font-size="9" fill="#c53030">16</text>
+<text x="440" y="292" text-anchor="middle" font-size="9" fill="#c53030">20</text>
+<text x="56" y="318" font-size="10.5" fill="#4a5568">30 tasks were waiting &#8212; the drop past 10 is oversubscription, not lack of work.</text>
+
+<!-- CARD 2: DISK -->
+<rect x="490" y="80" width="430" height="252" rx="8" fill="#ffffff" stroke="#c05621" stroke-width="1.5"/>
+<text x="506" y="106" font-size="13" font-weight="700" fill="#c05621">2 &#183; ONE DISK, ONE THROUGHPUT</text>
+<text x="506" y="124" font-size="10" fill="#718096">2 GiB incompressible scratch file, page cache bypassed (F_NOCACHE)</text>
+<text x="506" y="158" font-size="20" font-weight="700" fill="#c05621">&#8776;2.7 GB/s sequential read</text>
+<text x="770" y="158" font-size="10" fill="#718096">(964 MB/s write)</text>
+
+<text x="506" y="190" font-size="11" fill="#4a5568">one full pass over the quarter (160 MB)</text>
+<text x="880" y="190" text-anchor="end" font-size="12" font-weight="700" fill="#276749">0.06 s</text>
+<line x1="506" y1="198" x2="880" y2="198" stroke="#e2e8f0" stroke-width="1"/>
+<text x="506" y="216" font-size="11" fill="#4a5568">one full pass over 1 TB</text>
+<text x="880" y="216" text-anchor="end" font-size="12" font-weight="700" fill="#c05621">6.1 min</text>
+<line x1="506" y1="224" x2="880" y2="224" stroke="#e2e8f0" stroke-width="1"/>
+<text x="506" y="242" font-size="11" fill="#4a5568">one full pass over 100 TB &#8212; read only, best case</text>
+<text x="880" y="242" text-anchor="end" font-size="12" font-weight="700" fill="#c53030">10.2 h</text>
+
+<rect x="504" y="258" width="402" height="58" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1"/>
+<text x="518" y="280" font-size="10.5" font-weight="700" fill="#c53030">capacity is the second wall: this disk holds 0.49 TB in total &#8212;</text>
+<text x="518" y="298" font-size="10.5" fill="#c53030">100 TB is ~200 such disks before the scan can even start.</text>
+
+<!-- CARD 3: MEMORY -->
+<rect x="40" y="352" width="430" height="252" rx="8" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+<text x="56" y="378" font-size="13" font-weight="700" fill="#276749">3 &#183; MEMORY &#8212; DEFERRED, NOT REMOVED</text>
+<text x="56" y="396" font-size="10" fill="#718096">the distinct-trip-key answer, ~190 measured bytes/key (bar widths on a log scale)</text>
+
+<text x="60" y="426" font-size="10" fill="#4a5568">1 month (measured)</text>
+<rect x="190" y="414" width="15" height="18" rx="3" fill="#48bb78"/>
+<text x="212" y="427" font-size="10.5" font-weight="700" fill="#276749">557 MB</text>
+
+<text x="60" y="456" font-size="10" fill="#4a5568">the quarter</text>
+<rect x="190" y="444" width="68" height="18" rx="3" fill="#4299e1"/>
+<text x="265" y="457" font-size="10.5" font-weight="700" fill="#2b6cb0">~1.8 GB</text>
+
+<text x="60" y="486" font-size="10" fill="#4a5568">a year, 2024 pace</text>
+<rect x="190" y="474" width="131" height="18" rx="3" fill="#ed8936"/>
+<text x="328" y="487" font-size="10.5" font-weight="700" fill="#c05621">~7.3 GB</text>
+
+<text x="60" y="516" font-size="10" fill="#4a5568">ten years, 2024 pace</text>
+<rect x="190" y="504" width="235" height="18" rx="3" fill="#c53030"/>
+<text x="432" y="517" font-size="10.5" font-weight="700" fill="#c53030">~72.5 GB</text>
+
+<line x1="357" y1="406" x2="357" y2="530" stroke="#c53030" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="357" y="400" text-anchor="middle" font-size="10" font-weight="700" fill="#c53030">16 GB RAM</text>
+
+<text x="56" y="556" font-size="10.5" fill="#4a5568">Streaming lets the input flow through and be forgotten &#8212; but every chunk's keys</text>
+<text x="56" y="572" font-size="10.5" fill="#4a5568">pile up in the answer. An answer that grows with the data defeats streaming by definition.</text>
+
+<!-- CARD 4: FAILURE -->
+<rect x="490" y="352" width="430" height="252" rx="8" fill="#ffffff" stroke="#c53030" stroke-width="1.5"/>
+<text x="506" y="378" font-size="13" font-weight="700" fill="#c53030">4 &#183; ONE FAILURE DOMAIN</text>
+<text x="506" y="396" font-size="10" fill="#718096">a 10-hour job on one machine &#8212; and the 100 TB scan is already 10.2 h, read only</text>
+
+<rect x="510" y="430" width="351" height="26" rx="4" fill="#f0fff4" stroke="#276749" stroke-width="1.2"/>
+<text x="685" y="447" text-anchor="middle" font-size="10.5" fill="#276749">9 hours of finished work</text>
+<rect x="861" y="430" width="39" height="26" rx="4" fill="#fed7d7" stroke="#c53030" stroke-width="1.2"/>
+<text x="861" y="452" text-anchor="middle" font-size="22" font-weight="700" fill="#c53030">&#10005;</text>
+
+<text x="510" y="474" text-anchor="middle" font-size="9" fill="#4a5568">0 h</text>
+<text x="861" y="474" text-anchor="middle" font-size="9" font-weight="700" fill="#c53030">crash at 9 h</text>
+<text x="900" y="474" text-anchor="middle" font-size="9" fill="#4a5568">10 h</text>
+
+<path d="M 861 484 C 780 526, 600 526, 520 492" fill="none" stroke="#c53030" stroke-width="1.5" stroke-dasharray="5 3"/>
+<polygon points="520,492 532,494 526,502" fill="#c53030"/>
+<text x="690" y="540" text-anchor="middle" font-size="11" font-weight="600" fill="#c53030">restart from zero &#8212; on the same machine, after the repair</text>
+
+<text x="506" y="568" font-size="10.5" fill="#4a5568">Checkpoints shorten the replay, never the repair. No other machine exists to pick</text>
+<text x="506" y="584" font-size="10.5" fill="#4a5568">the job up &#8212; &#8220;the machine&#8221; and &#8220;the system&#8221; are the same thing.</text>
+
+<!-- BOTTOM STRIP -->
+<rect x="40" y="620" width="880" height="56" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="60" y="643" font-size="12" font-weight="700" fill="#276749">What an engine built past this line must do: pool many machines&#8217; cores, disks, and memory &#183; schedule work where the data lives &#183; move partials &#183; survive worker death.</text>
+<text x="60" y="662" font-size="11" fill="#4a5568">Apache Spark is such an engine &#8212; and local mode runs the real engine, not a simulation, on this same laptop. Lesson 2 opens it up.</text>
+</svg>

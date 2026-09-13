@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="390" viewBox="0 0 1050 390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>world_explorer.py Splits Into Three Real Pages</title>
+<desc>Three panels sharing one shared.py module with a single cached load_data function. Panel 1, Overview: year slider, three metrics, the bubble chart. Panel 2, Compare: a country multiselect and a real multi-line chart showing each selected country own life expectancy trend -- confirmed to reveal a real, striking pattern, Kenya life expectancy actually declining between 1987 and 2002. Panel 3, Data: a year slider and a raw filtered data table. All three import the identical cached load_data function from shared.py, so the dataset is only read from disk once no matter which pages a reader visits.</desc>
+<rect width="1050" height="390" fill="#ffffff" />
+<text x="525" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">world_explorer.py Splits Into Three Real Pages</text>
+<rect x="30" y="60" width="314" height="210" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+<text x="187" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">pages/overview.py</text>
+<text x="187" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Year slider</text>
+<text x="187" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">3 x st.metric</text>
+<text x="187" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Bubble chart (Plotly)</text>
+<path d="M348,165 L364,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="368" y="60" width="314" height="210" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+<text x="525" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">pages/compare.py</text>
+<text x="525" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Country multiselect</text>
+<text x="525" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Multi-line chart</text>
+<text x="525" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Real finding: Kenya</text>
+<text x="525" y="176" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">lifeExp fell 1987-2002</text>
+<path d="M686,165 L702,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="706" y="60" width="314" height="210" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+<text x="863" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">pages/data.py</text>
+<text x="863" y="110" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Year slider</text>
+<text x="863" y="132" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">Raw filtered</text>
+<text x="863" y="154" text-anchor="middle" font-size="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#4a5568">data table</text>
+<rect x="30" y="286" width="990" height="88" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="525" y="310" text-anchor="middle" font-size="10.5" fill="#7b341e">All three pages import the identical @st.cache_data load_data() from shared.py -- the dataset is read from</text>
+<text x="525" y="330" text-anchor="middle" font-size="10.5" fill="#7b341e">disk once, no matter how many pages a reader visits.</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

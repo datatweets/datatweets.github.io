@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Route Support Tickets with Naive Bayes in Python</title>
+  <desc id="desc">A support ticket becomes word counts, which a Naive Bayes classifier uses to route it to the account, billing, or technical queue.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">TEXT ROUTING</text>
+    <text x="90" y="278" font-size="82" font-weight="700" fill="#1b1f24">WORDS TO</text>
+    <text x="90" y="372" font-size="82" font-weight="700" fill="#1b1f24">QUEUES</text>
+    <rect x="96" y="405" width="350" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="482" font-size="29" font-weight="500" fill="#59636e">COUNTS &#183; PROBABILITY &#183; REVIEW</text>
+
+    <g transform="translate(650 132)">
+      <rect x="0" y="68" width="188" height="126" rx="18" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+      <rect x="24" y="95" width="112" height="10" rx="5" fill="#c7ccd2"/>
+      <rect x="24" y="123" width="140" height="10" rx="5" fill="#c7ccd2"/>
+      <rect x="24" y="151" width="92" height="10" rx="5" fill="#c7ccd2"/>
+      <text x="94" y="226" text-anchor="middle" font-size="22" font-weight="600" fill="#59636e">TICKET TEXT</text>
+
+      <text x="240" y="143" text-anchor="middle" font-size="38" font-weight="600" fill="#0067c0">&#8594;</text>
+
+      <rect x="288" y="34" width="112" height="194" rx="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+      <rect x="313" y="66" width="20" height="120" rx="6" fill="#0067c0" opacity=".35"/>
+      <rect x="340" y="105" width="20" height="81" rx="6" fill="#0067c0" opacity=".65"/>
+      <rect x="367" y="138" width="20" height="48" rx="6" fill="#0067c0"/>
+      <text x="344" y="260" text-anchor="middle" font-size="22" font-weight="600" fill="#59636e">WORD COUNTS</text>
+
+      <text x="449" y="143" text-anchor="middle" font-size="38" font-weight="600" fill="#0067c0">&#8594;</text>
+
+      <g transform="translate(494 0)">
+        <rect x="0" y="0" width="164" height="72" rx="16" fill="#ffffff" stroke="#e3e6ea" stroke-width="3"/>
+        <rect x="0" y="96" width="164" height="72" rx="16" fill="#e3f0fa" stroke="#0067c0" stroke-width="4"/>
+        <rect x="0" y="192" width="164" height="72" rx="16" fill="#ffffff" stroke="#e3e6ea" stroke-width="3"/>
+        <rect x="16" y="28" width="16" height="16" rx="4" fill="#59636e"/>
+        <rect x="16" y="124" width="16" height="16" rx="4" fill="#0067c0"/>
+        <rect x="16" y="220" width="16" height="16" rx="4" fill="#59636e"/>
+        <text x="45" y="44" font-size="22" font-weight="600" fill="#1b1f24">ACCOUNT</text>
+        <text x="45" y="140" font-size="22" font-weight="700" fill="#0067c0">BILLING</text>
+        <text x="45" y="236" font-size="22" font-weight="600" fill="#1b1f24">TECHNICAL</text>
+      </g>
+      <text x="576" y="301" text-anchor="middle" font-size="22" font-weight="600" fill="#59636e">PREDICTED QUEUE</text>
+    </g>
+  </g>
+</svg>

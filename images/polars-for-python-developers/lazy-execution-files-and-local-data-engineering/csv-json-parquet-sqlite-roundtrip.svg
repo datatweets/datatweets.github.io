@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Round-Tripping orders_export</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">6,000 rows, $9,195,043.62 revenue total -- through three formats</text>
+
+  <rect x="300" y="66" width="120" height="46" rx="8" fill="#edf2f7" stroke="#4a5568" stroke-width="1.4" />
+  <text x="360" y="86" text-anchor="middle" font-size="10" font-weight="700" fill="#1a202c">orders_export</text>
+  <text x="360" y="102" text-anchor="middle" font-size="8.5" fill="#4a5568">6,000 rows</text>
+
+  <rect x="24" y="140" width="210" height="128" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="129" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">Parquet</text>
+  <text x="129" y="180" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">write_parquet()</text>
+  <text x="129" y="194" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">read_parquet()</text>
+  <text x="129" y="214" text-anchor="middle" font-size="8.5" fill="#22543d">88 KB, all dtypes</text>
+  <text x="129" y="228" text-anchor="middle" font-size="8.5" fill="#22543d">preserved exactly</text>
+  <text x="129" y="250" text-anchor="middle" font-size="8.5" fill="#2b6cb0">6,000 rows, $9,195,043.62</text>
+
+  <rect x="255" y="140" width="210" height="128" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="360" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b46c1">NDJSON</text>
+  <text x="360" y="180" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">write_ndjson()</text>
+  <text x="360" y="194" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">read_ndjson()</text>
+  <text x="360" y="214" text-anchor="middle" font-size="8.5" fill="#c53030">Date/Datetime columns</text>
+  <text x="360" y="228" text-anchor="middle" font-size="8.5" fill="#c53030">come back as strings</text>
+  <text x="360" y="250" text-anchor="middle" font-size="8.5" fill="#6b46c1">6,000 rows, $9,195,043.62</text>
+
+  <rect x="486" y="140" width="210" height="128" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="591" y="162" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">SQLite</text>
+  <text x="591" y="180" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">write_database()</text>
+  <text x="591" y="194" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">sqlite3 + read_database()</text>
+  <text x="591" y="214" text-anchor="middle" font-size="8.5" fill="#c53030">Date/Datetime columns</text>
+  <text x="591" y="228" text-anchor="middle" font-size="8.5" fill="#c53030">come back as strings too</text>
+  <text x="591" y="250" text-anchor="middle" font-size="8.5" fill="#9c4221">6,000 rows, $9,195,043.62</text>
+
+  <rect x="40" y="292" width="640" height="66" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="314" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">read_database_uri() fails -- connectorx is not installed</text>
+  <text x="360" y="332" text-anchor="middle" font-size="9" fill="#742a2a">Use a plain sqlite3.connect(...) passed to pl.read_database() instead --</text>
+  <text x="360" y="346" text-anchor="middle" font-size="9" fill="#742a2a">only needs the standard library, confirmed working directly.</text>
+
+  <rect x="40" y="374" width="640" height="52" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="396" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">Every round trip: 6,000 rows, identical $9,195,043.62 revenue total</text>
+  <text x="360" y="412" text-anchor="middle" font-size="9" fill="#22543d">Only Parquet preserves every dtype exactly -- JSON and SQLite both lack a native date type.</text>
+</svg>

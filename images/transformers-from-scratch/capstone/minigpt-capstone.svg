@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="660" fill="#ffffff"/>
+  <text x="30" y="34" font-size="19" font-weight="700" fill="#1a202c">The complete mini-GPT: every block built by one module</text>
+  <text x="30" y="55" font-size="13" fill="#4a5568">154,456 parameters &#183; forward gives logits (32, 32, 24) &#183; init loss 3.20 &#8776; log(24) &#183; trained loss 0.13</text>
+
+  <!-- ============ LEFT: model pipeline ============ -->
+  <!-- idx -->
+  <rect x="70" y="82" width="230" height="34" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="185" y="104" font-size="13" fill="#1a202c" text-anchor="middle">idx (B, T) = (32, 32) char ids</text>
+  <text x="185" y="129" font-size="16" fill="#4a5568" text-anchor="middle">&#8595;</text>
+
+  <!-- embeddings : Module 4 -->
+  <rect x="70" y="136" width="230" height="48" rx="6" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5"/>
+  <text x="185" y="156" font-size="13" font-weight="600" fill="#6b46c1" text-anchor="middle">E[idx] + P[:T]  &#8594; (32, 32, 64)</text>
+  <text x="185" y="174" font-size="11" fill="#6b46c1" text-anchor="middle">Module 4 &#183; Positional Encoding &amp; Embeddings</text>
+  <text x="185" y="197" font-size="16" fill="#4a5568" text-anchor="middle">&#8595;</text>
+
+  <!-- block 1 : Modules 2-3-5-6 -->
+  <rect x="70" y="204" width="230" height="58" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="185" y="224" font-size="13" font-weight="600" fill="#2b6cb0" text-anchor="middle">Causal transformer block 1</text>
+  <text x="185" y="240" font-size="11" fill="#2b6cb0" text-anchor="middle">LN &#8594; masked MHA (4 heads) &#8594; LN &#8594; FFN</text>
+  <text x="185" y="255" font-size="11" fill="#2b6cb0" text-anchor="middle">Modules 2, 3, 5, 6</text>
+  <text x="185" y="275" font-size="16" fill="#4a5568" text-anchor="middle">&#8595;</text>
+
+  <rect x="70" y="282" width="230" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="185" y="304" font-size="13" font-weight="600" fill="#2b6cb0" text-anchor="middle">Causal transformer block 2</text>
+  <text x="185" y="329" font-size="16" fill="#4a5568" text-anchor="middle">&#8595;</text>
+
+  <rect x="70" y="336" width="230" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="185" y="358" font-size="13" font-weight="600" fill="#2b6cb0" text-anchor="middle">Causal transformer block 3</text>
+  <text x="185" y="383" font-size="16" fill="#4a5568" text-anchor="middle">&#8595;</text>
+
+  <!-- final LN + head : Module 6 -->
+  <rect x="70" y="390" width="230" height="48" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="185" y="410" font-size="13" font-weight="600" fill="#276749" text-anchor="middle">final LN &#8594; xf @ Wh + bh</text>
+  <text x="185" y="428" font-size="11" fill="#276749" text-anchor="middle">Module 6 &#183; LM head &#8594; logits (32, 32, 24)</text>
+  <text x="185" y="451" font-size="16" fill="#4a5568" text-anchor="middle">&#8595;</text>
+
+  <!-- loss : Module 7 -->
+  <rect x="70" y="458" width="230" height="48" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="185" y="478" font-size="13" font-weight="600" fill="#c05621" text-anchor="middle">next-token cross-entropy loss</text>
+  <text x="185" y="496" font-size="11" fill="#c05621" text-anchor="middle">Module 7 &#183; Adam training 3.20 &#8594; 0.13</text>
+
+  <!-- backward arrow -->
+  <line x1="44" y1="500" x2="44" y2="150" stroke="#c53030" stroke-width="2" stroke-dasharray="6 4"/>
+  <polygon points="44,140 39,154 49,154" fill="#c53030"/>
+  <text x="30" y="325" font-size="11" fill="#c53030" text-anchor="middle" transform="rotate(-90 30 325)">backward: dQuery / dKey / dValue, dWh, dE (scatter-add)</text>
+
+  <!-- ============ RIGHT TOP: loss curve ============ -->
+  <rect x="360" y="82" width="570" height="250" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="380" y="106" font-size="14" font-weight="700" fill="#1a202c">Training loss (Module 7)</text>
+  <!-- axes -->
+  <line x1="410" y1="120" x2="410" y2="300" stroke="#4a5568" stroke-width="1.5"/>
+  <line x1="410" y1="300" x2="900" y2="300" stroke="#4a5568" stroke-width="1.5"/>
+  <text x="398" y="128" font-size="10" fill="#718096" text-anchor="end">3.2</text>
+  <text x="398" y="215" font-size="10" fill="#718096" text-anchor="end">1.6</text>
+  <text x="398" y="303" font-size="10" fill="#718096" text-anchor="end">0.0</text>
+  <text x="410" y="318" font-size="10" fill="#718096" text-anchor="middle">0</text>
+  <text x="655" y="318" font-size="10" fill="#718096" text-anchor="middle">600 steps</text>
+  <text x="900" y="318" font-size="10" fill="#718096" text-anchor="middle">1200</text>
+  <!-- baseline log(24) -->
+  <line x1="410" y1="122" x2="900" y2="122" stroke="#a0aec0" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="895" y="118" font-size="10" fill="#718096" text-anchor="end">log(24) = 3.18</text>
+  <!-- train curve: steps 0..1200 mapped x=410+step/1200*490 ; y=300-loss/3.2*180 -->
+  <polyline fill="none" stroke="#2b6cb0" stroke-width="2.5"
+    points="410,120 451,274 492,288 532,291 573,292 614,291 655,291 696,293 737,292 777,293 818,288 859,292 900,292"/>
+  <circle cx="410" cy="120" r="3.5" fill="#2b6cb0"/>
+  <text x="424" y="115" font-size="10" fill="#2b6cb0">3.20</text>
+  <text x="880" y="286" font-size="10" fill="#2b6cb0" text-anchor="end">0.13</text>
+  <!-- val curve -->
+  <polyline fill="none" stroke="#ed8936" stroke-width="2" stroke-dasharray="5 3"
+    points="410,137 451,276 492,290 532,292 573,292 614,292 655,291 696,293 737,292 777,292 818,291 859,292 900,292"/>
+  <rect x="720" y="132" width="14" height="4" fill="#2b6cb0"/>
+  <text x="740" y="139" font-size="11" fill="#4a5568">train</text>
+  <rect x="790" y="132" width="14" height="4" fill="#ed8936"/>
+  <text x="810" y="139" font-size="11" fill="#4a5568">val</text>
+
+  <!-- ============ RIGHT BOTTOM: generated sample ============ -->
+  <rect x="360" y="350" width="570" height="156" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="380" y="374" font-size="14" font-weight="700" fill="#276749">Generation from "the " (Module 8)</text>
+  <text x="380" y="398" font-size="11" font-weight="600" fill="#276749">greedy:</text>
+  <text x="380" y="415" font-size="11.5" fill="#1a202c" font-family="ui-monospace, Menlo, monospace">the boats and writes the count in a booat</text>
+  <text x="380" y="431" font-size="11.5" fill="#1a202c" font-family="ui-monospace, Menlo, monospace">ide rise the bay when the fog is thick.</text>
+  <text x="380" y="459" font-size="11" font-weight="600" fill="#276749">temperature 0.8, top-k 10:</text>
+  <text x="380" y="476" font-size="11.5" fill="#1a202c" font-family="ui-monospace, Menlo, monospace">the lantern glows. the boats wait outside</text>
+  <text x="380" y="492" font-size="11.5" fill="#1a202c" font-family="ui-monospace, Menlo, monospace">the bay when the fog is thick. a small boa</text>
+</svg>

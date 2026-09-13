@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"><rect x="0" y="0" width="900" height="480" fill="#ffffff" /><text x="450" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1a202c">Three more pattern shapes, one Ledgerly problem each</text><line x1="300" y1="52" x2="300" y2="392" stroke="#e2e8f0" stroke-width="2" /><line x1="600" y1="52" x2="600" y2="392" stroke="#e2e8f0" stroke-width="2" />
+
+<text x="150" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#2b6cb0">Singleton</text>
+<text x="150" y="90" text-anchor="middle" font-size="11.5" fill="#718096">one shared instance, always</text>
+<rect x="20" y="102" width="120" height="40" rx="7" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5" /><text x="80" y="120" text-anchor="middle" font-size="10" fill="#2b6cb0">config_at_startup</text><text x="80" y="134" text-anchor="middle" font-size="10" fill="#2b6cb0">= AppConfig()</text>
+<rect x="160" y="102" width="120" height="40" rx="7" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5" /><text x="220" y="120" text-anchor="middle" font-size="9.5" fill="#2b6cb0">config_in_billing</text><text x="220" y="134" text-anchor="middle" font-size="10" fill="#2b6cb0">= AppConfig()</text>
+<line x1="90" y1="142" x2="145" y2="168" stroke="#4a5568" stroke-width="2" /><polygon points="145 168 132 165 139 155" fill="#4a5568" />
+<line x1="210" y1="142" x2="155" y2="168" stroke="#4a5568" stroke-width="2" /><polygon points="155 168 161 155 168 165" fill="#4a5568" />
+<rect x="40" y="170" width="220" height="56" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2" /><text x="150" y="194" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">AppConfig (the one)</text><text x="150" y="212" text-anchor="middle" font-size="10.5" fill="#276749">get() / set() shared settings</text>
+<text x="150" y="256" text-anchor="middle" font-size="11.5" fill="#4a5568">Both variables get the same</text>
+<text x="150" y="274" text-anchor="middle" font-size="11.5" fill="#4a5568">object back — __new__ returns</text>
+<text x="150" y="292" text-anchor="middle" font-size="11.5" fill="#4a5568">the existing instance instead</text>
+<text x="150" y="310" text-anchor="middle" font-size="11.5" fill="#4a5568">of building a second one.</text>
+
+<text x="450" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#c05621">Adapter</text>
+<text x="450" y="90" text-anchor="middle" font-size="11.5" fill="#718096">wraps a mismatched interface</text>
+<rect x="340" y="102" width="220" height="46" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="2" /><text x="450" y="122" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">VendorPaySDK</text><text x="450" y="140" text-anchor="middle" font-size="10.5" fill="#c05621">submit_transaction(cents, token)</text>
+<line x1="450" y1="148" x2="450" y2="176" stroke="#4a5568" stroke-width="2" /><polygon points="450 176 444 166 456 166" fill="#4a5568" />
+<rect x="340" y="176" width="220" height="46" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2" /><text x="450" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">VendorPayAdapter</text><text x="450" y="214" text-anchor="middle" font-size="10.5" fill="#276749">translates the call and result</text>
+<line x1="450" y1="222" x2="450" y2="250" stroke="#4a5568" stroke-width="2" /><polygon points="450 250 444 240 456 240" fill="#4a5568" />
+<rect x="340" y="250" width="220" height="40" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2" /><text x="450" y="274" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">PaymentGateway.charge()</text>
+<text x="450" y="316" text-anchor="middle" font-size="11.5" fill="#4a5568">VendorPayAdapter is the only</text>
+<text x="450" y="334" text-anchor="middle" font-size="11.5" fill="#4a5568">class that knows submit_transaction()</text>
+<text x="450" y="352" text-anchor="middle" font-size="11.5" fill="#4a5568">exists. Everything else calls charge().</text>
+
+<text x="750" y="72" text-anchor="middle" font-size="15" font-weight="700" fill="#6b46c1">Facade</text>
+<text x="750" y="90" text-anchor="middle" font-size="11.5" fill="#718096">one call hides three fixed steps</text>
+<rect x="640" y="102" width="220" height="40" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2" /><text x="750" y="127" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">facade.send_invoice()</text>
+<line x1="750" y1="142" x2="750" y2="156" stroke="#4a5568" stroke-width="2" /><polygon points="750 156 744 148 756 148" fill="#4a5568" />
+<rect x="640" y="156" width="220" height="34" rx="7" fill="#f0fff4" stroke="#276749" stroke-width="1.5" /><text x="750" y="177" text-anchor="middle" font-size="11" fill="#276749">1. repository.save()</text>
+<line x1="750" y1="190" x2="750" y2="204" stroke="#4a5568" stroke-width="2" /><polygon points="750 204 744 196 756 196" fill="#4a5568" />
+<rect x="640" y="204" width="220" height="34" rx="7" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5" /><text x="750" y="225" text-anchor="middle" font-size="11" fill="#2b6cb0">2. gateway.charge()</text>
+<line x1="750" y1="238" x2="750" y2="252" stroke="#4a5568" stroke-width="2" /><polygon points="750 252 744 244 756 244" fill="#4a5568" />
+<rect x="640" y="252" width="220" height="34" rx="7" fill="#fffaf0" stroke="#c05621" stroke-width="1.5" /><text x="750" y="273" text-anchor="middle" font-size="11" fill="#c05621">3. notifier.send_receipt()</text>
+<text x="750" y="310" text-anchor="middle" font-size="11.5" fill="#4a5568">Callers only call send_invoice().</text>
+<text x="750" y="328" text-anchor="middle" font-size="11.5" fill="#4a5568">The facade knows the order, and</text>
+<text x="750" y="346" text-anchor="middle" font-size="11.5" fill="#4a5568">that step 3 needs step 2 to succeed.</text>
+
+<rect x="40" y="404" width="820" height="60" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5" /><text x="450" y="428" text-anchor="middle" font-size="12.5" fill="#1a202c">Singleton guarantees one shared instance. Adapter fits a third-party interface to one your code expects.</text><text x="450" y="450" text-anchor="middle" font-size="12.5" fill="#1a202c">Facade hides a fixed, multi-step sequence behind one method call.</text></svg>

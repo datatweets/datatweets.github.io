@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="390" viewBox="0 0 1050 390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>.streamlit/config.toml Overrides the Default Theme</title>
+<desc>Two panels. Left, no config.toml: Streamlit renders its own default dark-gray text and colors. Right, a real [theme] section in .streamlit/config.toml sets primaryColor, backgroundColor, secondaryBackgroundColor, and textColor -- confirmed both by two real screenshots and by st.get_option(theme.primaryColor) returning the exact configured value, 0f766e, not the Streamlit default.</desc>
+<rect width="1050" height="390" fill="#ffffff" />
+<text x="525" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">.streamlit/config.toml Overrides the Default Theme</text>
+<rect x="30" y="60" width="483" height="210" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.6" />
+<text x="271" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">No config.toml</text>
+<text x="271" y="110" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">Streamlit default:</text>
+<text x="271" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">dark gray text,</text>
+<text x="271" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">default red accent</text>
+<path d="M517,165 L533,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="537" y="60" width="483" height="210" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6" />
+<text x="778" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">.streamlit/config.toml</text>
+<text x="778" y="110" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">[theme]</text>
+<text x="778" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">primaryColor = &quot;#0f766e&quot;</text>
+<text x="778" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">backgroundColor = &quot;#ffffff&quot;</text>
+<text x="778" y="176" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">secondaryBackgroundColor =</text>
+<text x="778" y="198" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">  &quot;#f0fdfa&quot;</text>
+<text x="778" y="220" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">textColor = &quot;#134e4a&quot;</text>
+<rect x="30" y="286" width="990" height="88" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="525" y="310" text-anchor="middle" font-size="10.5" fill="#7b341e">Confirmed two ways: two real screenshots showing the visual difference, and</text>
+<text x="525" y="330" text-anchor="middle" font-size="10.5" fill="#7b341e">st.get_option(&quot;theme.primaryColor&quot;) returning the exact configured value programmatically.</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

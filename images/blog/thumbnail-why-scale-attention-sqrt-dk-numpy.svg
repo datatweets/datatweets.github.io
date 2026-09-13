@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Scale Dot-Product Attention by sqrt(d_k) in NumPy</title>
+  <desc id="desc">DATATWEETS tutorial thumbnail. A diagram compares raw attention score spread at widths 4 and 1024, then shows that division by the square root of the width keeps the scaled standard deviation near 1.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1.5" fill="#59636e">ATTENTION SCALING</text>
+    <text x="90" y="285" font-size="72" font-weight="700" fill="#1b1f24">STABLE</text>
+    <text x="90" y="380" font-size="72" font-weight="700" fill="#1b1f24">SCORE SPREAD</text>
+    <rect x="94" y="414" width="350" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="492" font-size="30" font-weight="500" fill="#59636e">NUMPY · √d<tspan baseline-shift="sub" font-size="70%">k</tspan> · SOFTMAX</text>
+
+    <g transform="translate(700 118)">
+      <rect width="398" height="438" rx="22" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+      <text x="28" y="48" font-size="22" font-weight="600" letter-spacing="1" fill="#59636e">RAW SCORE SPREAD</text>
+
+      <text x="28" y="100" font-size="22" font-weight="600" fill="#1b1f24">d<tspan baseline-shift="sub" font-size="70%">k</tspan> = 4</text>
+      <line x1="178" y1="92" x2="228" y2="92" stroke="#c9503d" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="203" cy="92" r="8" fill="#ffffff" stroke="#c9503d" stroke-width="4"/>
+      <text x="254" y="100" font-size="21" font-weight="500" fill="#59636e">σ ≈ 2</text>
+
+      <text x="28" y="160" font-size="22" font-weight="600" fill="#1b1f24">d<tspan baseline-shift="sub" font-size="70%">k</tspan> = 1024</text>
+      <line x1="178" y1="152" x2="328" y2="152" stroke="#c9503d" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="253" cy="152" r="8" fill="#ffffff" stroke="#c9503d" stroke-width="4"/>
+      <text x="333" y="160" font-size="21" font-weight="500" fill="#59636e">σ ≈ 32</text>
+
+      <line x1="28" y1="200" x2="370" y2="200" stroke="#e3e6ea" stroke-width="2"/>
+      <rect x="129" y="224" width="140" height="54" rx="27" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <text x="199" y="259" text-anchor="middle" font-size="24" font-weight="700" fill="#0067c0">÷ √d<tspan baseline-shift="sub" font-size="70%">k</tspan></text>
+      <path d="M199 285 V316" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round"/>
+      <path d="M188 307 L199 320 L210 307" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <text x="28" y="355" font-size="22" font-weight="600" letter-spacing="1" fill="#59636e">SCALED SCORES</text>
+      <line x1="28" y1="392" x2="118" y2="392" stroke="#0067c0" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="73" cy="392" r="8" fill="#ffffff" stroke="#0067c0" stroke-width="4"/>
+      <text x="142" y="400" font-size="27" font-weight="700" fill="#1b1f24">σ ≈ 1</text>
+      <text x="244" y="400" font-size="19" font-weight="500" fill="#59636e">AT BOTH WIDTHS</text>
+    </g>
+  </g>
+</svg>

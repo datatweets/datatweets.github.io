@@ -1,0 +1,16 @@
+case_id,request,expected_tool
+R01,"The dashboard says my parcel arrived, but nothing is here.",track_delivery
+R02,Where is shipment PK-104?,track_delivery
+R03,Has my replacement package left the warehouse?,track_delivery
+R04,Please change the delivery street for order A19.,update_address
+R05,My flat number is missing from the shipping address.,update_address
+R06,Send order B72 to my office instead.,update_address
+R07,I was billed twice for the same purchase.,open_billing_case
+R08,The amount on my card is higher than the receipt.,open_billing_case
+R09,Can someone review an unexpected payment?,open_billing_case
+R10,What time does the help desk close?,no_tool
+R11,Thank you for solving my issue.,no_tool
+R12,Do you sell gift cards?,no_tool
+R13,My package is late and I also need a different address.,no_tool
+R14,Cancel everything and refund every charge.,no_tool
+R15,I forgot which email I used.,no_tool

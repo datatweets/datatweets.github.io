@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" width="960" height="580" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="580" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">One Compose File, Two Kinds of Service</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">docker compose up --build -d builds the image and starts both, together</text>
+
+<rect x="90" y="94" width="780" height="26" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="480" y="112" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">docker compose -p cf-data-stack up --build -d</text>
+
+<rect x="110" y="150" width="330" height="170" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="275" y="178" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">db</text>
+<text x="275" y="198" text-anchor="middle" font-size="11.5" fill="#4a5568">image: postgres:16-alpine</text>
+<text x="275" y="218" text-anchor="middle" font-size="11" fill="#4a5568">named volume: cf-data-stack-pgdata</text>
+<rect x="150" y="234" width="250" height="34" rx="6" fill="#ffffff" stroke="#276749" stroke-width="1.5"/>
+<text x="275" y="256" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">STATUS: Up (long-running)</text>
+<text x="275" y="292" text-anchor="middle" font-size="10.5" fill="#718096">a service that runs forever</text>
+<text x="275" y="306" text-anchor="middle" font-size="10.5" fill="#718096">by design</text>
+
+<rect x="520" y="150" width="330" height="170" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="685" y="178" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">loader</text>
+<text x="685" y="198" text-anchor="middle" font-size="11.5" fill="#4a5568">build: . (your own Dockerfile)</text>
+<text x="685" y="218" text-anchor="middle" font-size="11" fill="#4a5568">pandas + psycopg2-binary</text>
+<rect x="560" y="234" width="250" height="34" rx="6" fill="#ffffff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="685" y="256" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">STATUS: Exited (0)</text>
+<text x="685" y="292" text-anchor="middle" font-size="10.5" fill="#718096">a batch job that ran once</text>
+<text x="685" y="306" text-anchor="middle" font-size="10.5" fill="#718096">and finished, correctly</text>
+
+<line x1="520" y1="235" x2="440" y2="235" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrow2)"/>
+<text x="480" y="224" text-anchor="middle" font-size="9.5" fill="#2b6cb0">connect, retry</text>
+
+<defs>
+<marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#2b6cb0"/>
+</marker>
+</defs>
+
+<text x="480" y="350" text-anchor="middle" font-size="11.5" fill="#4a5568">attempt 1/10: db not ready yet &#8212; retrying in 2s &#8594; connected to db on attempt 2</text>
+
+<line x1="40" y1="374" x2="920" y2="374" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="400" font-size="13" font-weight="700" fill="#4a5568">REAL RESULT, LOADED INTO POSTGRES</text>
+
+<rect x="40" y="416" width="880" height="110" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="60" y="440" font-size="12.5" font-weight="700" fill="#2d3748">200,000 real trips aggregated into 235 zones</text>
+<text x="60" y="462" font-size="12" fill="#4a5568">busiest zone 132: 9,815 trips, $753,441.19 revenue</text>
+<text x="60" y="484" font-size="12" fill="#4a5568">total across all zones: $5,343,779.62</text>
+<text x="60" y="506" font-size="11" fill="#718096">confirmed independently by querying Postgres directly, not just trusting loader's own log</text>
+
+<text x="480" y="554" text-anchor="middle" font-size="12" fill="#718096">Compose tracks each service's success on its own terms: "still running" for db, "exited 0" for loader.</text>
+</svg>

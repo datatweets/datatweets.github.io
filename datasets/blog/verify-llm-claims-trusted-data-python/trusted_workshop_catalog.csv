@@ -1,0 +1,9 @@
+catalog_record_id,workshop_code,workshop_name,format,weekday,start_time,fee_eur,language,step_free_access
+CAT-001,WS101,Spreadsheet Data Basics,in_person,Tuesday,18:30,24.00,English,true
+CAT-002,WS102,First SQL Queries,online,Thursday,17:00,18.00,English,true
+CAT-003,WS103,Python Tables for Beginners,hybrid,Saturday,10:00,30.00,Spanish,true
+CAT-004,WS104,Clear Charts with Python,in_person,Wednesday,19:00,27.50,French,false
+CAT-005,WS105,Reading Public Data,online,Monday,16:30,12.00,Arabic,true
+CAT-006,WS106,Practical Data Cleaning,hybrid,Friday,15:00,35.00,English,false
+CAT-007,WS107,Ask Better Data Questions,in_person,Sunday,11:30,20.00,Persian,true
+CAT-008,WS108,CSV Files Without Surprises,online,Tuesday,20:00,15.00,German,true

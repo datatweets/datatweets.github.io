@@ -1,0 +1,51 @@
+event_id,event_date,date_precision,country,prison,num_escapees,outcome
+1,1971-08-19,day,Mexico,Santa Martha Acatitla,2,escaped
+2,1973-10-31,day,Ireland,Mountjoy Jail,3,escaped
+3,1978-05-24,day,United States,USP Marion,3,escape_failed
+4,1981-02-27,day,France,Fleury-Merogis,2,escaped
+5,1981-05-07,day,Canada,Orsainville Prison,2,escape_failed
+6,1983-01-01,month,Australia,HM Prison Pentridge,,escape_failed
+7,1985-12-19,day,United States,Perry Correctional Institution,3,recaptured
+8,1985-12-31,day,Brazil,Candido Mendes Penitentiary,1,recaptured
+9,1986-05-26,day,France,Prison de la Sante,1,escaped
+10,1986-11-05,day,United States,FCI Dublin,2,recaptured
+11,1986-11-23,day,Italy,Rebibbia Prison,3,recaptured
+12,1987-12-10,day,United Kingdom,HM Prison Gartree,2,recaptured
+13,1988-07-11,day,United States,Penitentiary of New Mexico,3,recaptured
+14,1988-08-02,day,Colombia,Carcel Bellavista,2,escaped
+15,1988-12-23,day,Colombia,Carcel Bellavista,5,escaped
+16,1989-04-17,day,United States,Federal Holding Facility Miami,1,escape_failed
+17,1989-08-19,day,United States,Arkansas Valley Correctional Facility,2,recaptured
+18,1990-06-19,day,Canada,Kent Penitentiary,2,recaptured
+19,1991-04-07,day,Puerto Rico,Rio Piedras State Penitentiary,,escaped
+20,1992-02-24,day,France,Lyon Prison,3,escaped
+21,1992-12-01,month,France,Touraine Central Prison,1,escape_failed
+22,1993-06-17,day,France,Touraine Central Prison,1,escape_failed
+23,1996-12-30,day,Chile,High Security Prison Santiago,4,escaped
+24,1997-09-18,day,Netherlands,De Geerhorst Prison,1,escape_failed
+25,1999-03-25,day,Australia,Metropolitan Remand and Reception Centre,1,recaptured
+26,2000-06-05,day,United States,Martin Treatment Center,1,recaptured
+27,2000-12-13,day,France,Lyon Prison,3,recaptured
+28,2001-01-19,day,France,Luynes Prison,1,escaped
+29,2001-03-24,day,France,Draguignan Prison,3,escaped
+30,2001-05-28,day,France,Fresnes Prison,2,escape_failed
+31,2002-01-17,day,Brazil,Parada Neto Penitentiary,2,escaped
+32,2002-12-30,day,Puerto Rico,Las Cucharas Prison,5,recaptured
+33,2003-04-04,day,France,Luynes Prison,3,recaptured
+34,2005-07-01,month,France,Undisclosed Prison,,escape_failed
+35,2005-12-10,day,France,Aiton Prison,3,escaped
+36,2006-06-06,day,Greece,Korydallos Prison,2,recaptured
+37,2007-04-15,day,Belgium,Lantin Prison,1,recaptured
+38,2007-07-15,day,France,Grasse Prison,1,escaped
+39,2007-10-28,day,Belgium,Ittre Prison,1,escape_failed
+40,2009-02-22,day,Greece,Korydallos Prison,2,recaptured
+41,2009-04-27,day,France,Domenjod Prison,3,recaptured
+42,2009-07-23,day,Belgium,Bruges Prison,4,recaptured
+43,2010-06-25,day,United Kingdom,HM Prison Isle of Wight,1,escape_failed
+44,2012-03-22,day,Russia,Sheksna Penal Colony,1,recaptured
+45,2013-02-24,day,Greece,Trikala Prison,1,escape_failed
+46,2013-03-17,day,Canada,Saint-Jerome Detention Facility,2,recaptured
+47,2014-06-07,day,Canada,Orsainville Detention Facility,3,recaptured
+48,2016-02-22,day,Greece,Thiva Prison,2,escape_failed
+49,2018-07-01,day,France,Reau Prison,1,escaped
+50,2020-09-25,day,Belgium,Forest Prison,1,escape_failed

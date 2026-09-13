@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="380" viewBox="0 0 1050 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A reversal negates fare and total together -- 111 of CityFlow's own rows don't</title>
+  <desc>A singular test checks whether fare_amount and total_amount agree in sign across all 81,013 rows of stg_cityflow__trips. A clean reversal has both fare_amount and total_amount negative together, matching the pattern the Scaling Python capstone documented on the full multi-month dataset: 1,200 of CityFlow's own rows fit this pattern exactly. 111 rows do not: 106 have a negative fare_amount but a total_amount that is zero or positive, and 5 have the reverse, a positive fare_amount with a negative total_amount -- internally inconsistent, not a clean reversal. The test flags exactly these 111 rows, configured with severity warn since CityFlow's own raw.trips, trimmed to four columns by Module 1's loader, has no trip key left to positively confirm whether these are genuine anomalies or an artifact of the columns that got dropped.</desc>
+  <rect width="1050" height="380" fill="#ffffff" />
+  <text x="525" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Reversal Negates Both Columns Together</text>
+  <text x="525" y="49" text-anchor="middle" font-size="11" fill="#718096">fare_amount and total_amount, checked for sign agreement across all 81,013 rows</text>
+
+  <rect x="40" y="70" width="330" height="230" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="205" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Clean reversal</text>
+  <rect x="65" y="110" width="280" height="55" rx="6" fill="#22543d" />
+  <text x="205" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">fare_amount: -12.50</text>
+  <text x="205" y="150" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">total_amount: -15.30</text>
+  <text x="205" y="185" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">1,200 rows -- both negative</text>
+  <text x="205" y="205" text-anchor="middle" font-size="9" fill="#4a5568">Matches the pattern the Scaling</text>
+  <text x="205" y="220" text-anchor="middle" font-size="9" fill="#4a5568">Python capstone documented on</text>
+  <text x="205" y="235" text-anchor="middle" font-size="9" fill="#4a5568">the full multi-month dataset.</text>
+  <text x="205" y="265" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">Test result: not flagged</text>
+
+  <rect x="380" y="70" width="330" height="230" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="545" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">Inconsistent signs</text>
+  <rect x="405" y="110" width="280" height="55" rx="6" fill="#822727" />
+  <text x="545" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#fff5f5">fare_amount: -8.00</text>
+  <text x="545" y="150" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#fff5f5">total_amount: +2.75</text>
+  <text x="545" y="185" text-anchor="middle" font-size="10" font-weight="700" fill="#822727">111 rows -- signs disagree</text>
+  <text x="545" y="205" text-anchor="middle" font-size="9" fill="#4a5568">106 negative fare / non-negative total,</text>
+  <text x="545" y="220" text-anchor="middle" font-size="9" fill="#4a5568">5 the reverse -- not a clean reversal</text>
+  <text x="545" y="235" text-anchor="middle" font-size="9" fill="#4a5568">by this rule's own definition.</text>
+  <text x="545" y="265" text-anchor="middle" font-size="10" font-weight="700" fill="#822727">Test result: WARN 111</text>
+
+  <rect x="750" y="70" width="260" height="230" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="880" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">Why severity: warn</text>
+  <text x="880" y="120" text-anchor="middle" font-size="9.5" fill="#7b341e">Module 1's loader kept only</text>
+  <text x="880" y="136" text-anchor="middle" font-size="9.5" fill="#7b341e">4 of 19 source columns --</text>
+  <text x="880" y="152" text-anchor="middle" font-size="9.5" fill="#7b341e">no trip key survives to</text>
+  <text x="880" y="168" text-anchor="middle" font-size="9.5" fill="#7b341e">positively confirm whether</text>
+  <text x="880" y="184" text-anchor="middle" font-size="9.5" fill="#7b341e">these 111 rows are errors</text>
+  <text x="880" y="200" text-anchor="middle" font-size="9.5" fill="#7b341e">or an artifact of the columns</text>
+  <text x="880" y="216" text-anchor="middle" font-size="9.5" fill="#7b341e">that got dropped.</text>
+  <text x="880" y="250" text-anchor="middle" font-size="10" font-weight="700" fill="#7b341e">Worth knowing.</text>
+  <text x="880" y="268" text-anchor="middle" font-size="10" font-weight="700" fill="#7b341e">Not worth blocking on.</text>
+
+  <text x="525" y="335" text-anchor="middle" font-size="10.5" fill="#718096">All figures confirmed directly against stg_cityflow__trips -- 1,311 total rows with a negative fare_amount or total_amount, 1,200 consistent, 111 not.</text>
+</svg>

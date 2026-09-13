@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">One action, read as a DAG: jobs, stages, tasks</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">quarter zone leaderboard: filter &#8594; groupBy &#8594; orderBy &#8594; collect() &#183; 9,554,757 trips kept &#183; pyspark 4.2.0, local[*], 10 partitions</text>
+
+<!-- LEFT: ON PAPER -->
+<text x="215" y="94" text-anchor="middle" font-size="15" font-weight="700" fill="#1a202c">THE PIPELINE, ON PAPER</text>
+
+<rect x="55" y="106" width="320" height="66" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="215" y="128" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">scan parquet &#183; filter window &#183; select zone</text>
+<text x="215" y="146" text-anchor="middle" font-size="11" fill="#4a5568">all NARROW &#8212; partition &#8594; partition, fused into ONE stage</text>
+<text x="215" y="163" text-anchor="middle" font-size="11" fill="#4a5568">10 partitions &#8594; 10 tasks</text>
+
+<line x1="55" y1="192" x2="375" y2="192" stroke="#c05621" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="215" y="187" text-anchor="middle" font-size="10" font-weight="600" fill="#c05621">SHUFFLE 1 &#8212; groupBy is WIDE: Exchange hashpartitioning(zone)</text>
+
+<rect x="55" y="204" width="320" height="52" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="215" y="226" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">HashAggregate &#8212; final zone counts</text>
+<text x="215" y="245" text-anchor="middle" font-size="11" fill="#4a5568">config says spark.sql.shuffle.partitions = 200 tasks</text>
+
+<line x1="55" y1="276" x2="375" y2="276" stroke="#c05621" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="215" y="271" text-anchor="middle" font-size="10" font-weight="600" fill="#c05621">SHUFFLE 2 &#8212; orderBy is WIDE: Exchange rangepartitioning(count)</text>
+
+<rect x="55" y="288" width="320" height="52" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="215" y="310" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">Sort &#8212; busiest zones first</text>
+<text x="215" y="329" text-anchor="middle" font-size="11" fill="#4a5568">config says 200 tasks &#8594; collect() to the driver</text>
+
+<rect x="55" y="360" width="320" height="88" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="215" y="383" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">The paper rule</text>
+<text x="215" y="403" text-anchor="middle" font-size="11" fill="#4a5568">2 wide transformations = 2 shuffles</text>
+<text x="215" y="420" text-anchor="middle" font-size="11" fill="#4a5568">stages = shuffles + 1 = 3</text>
+<text x="215" y="437" text-anchor="middle" font-size="11" fill="#4a5568">tasks: 10 + 200 + 200 &#8212; if the config had its way</text>
+
+<!-- RIGHT: WHAT RAN -->
+<text x="670" y="94" text-anchor="middle" font-size="15" font-weight="700" fill="#1a202c">WHAT ACTUALLY RAN &#8212; sc.statusTracker()</text>
+
+<rect x="420" y="106" width="500" height="76" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="436" y="128" font-size="12" font-weight="700" fill="#2b6cb0">JOB 7 &#8212; the scan stage</text>
+<text x="436" y="146" font-size="11" fill="#4a5568">stage 9: scan + filter + partial counts &#8212; 10 tasks, one per partition, all ran</text>
+<rect x="436" y="156" width="15" height="15" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="458" y="156" width="15" height="15" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="480" y="156" width="15" height="15" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="502" y="156" width="15" height="15" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="524" y="156" width="15" height="15" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="546" y="156" width="15" height="15" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="568" y="156" width="15" height="15" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="590" y="156" width="15" height="15" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="612" y="156" width="15" height="15" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="634" y="156" width="15" height="15" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<text x="668" y="169" font-size="10" fill="#718096">10 / 10 ran</text>
+
+<rect x="420" y="194" width="500" height="76" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="436" y="216" font-size="12" font-weight="700" fill="#276749">JOB 8 &#8212; AQE pauses at shuffle 1, re-plans, resumes</text>
+<rect x="436" y="226" width="290" height="30" rx="6" fill="#f7fafc" stroke="#cbd5e0"/>
+<text x="581" y="245" text-anchor="middle" font-size="10" fill="#718096">stage 10: 10 scheduled, 0 ran &#8212; SKIPPED (output reused)</text>
+<rect x="740" y="233" width="15" height="15" rx="3" fill="#48bb78" stroke="#276749"/>
+<text x="764" y="246" font-size="10" fill="#4a5568">stage 11: agg finish &#8212; 1 task (200&#8594;1)</text>
+
+<rect x="420" y="282" width="500" height="76" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="436" y="304" font-size="12" font-weight="700" fill="#276749">JOB 9 &#8212; the range sort&#8217;s preparation pass</text>
+<rect x="436" y="314" width="290" height="30" rx="6" fill="#f7fafc" stroke="#cbd5e0"/>
+<text x="581" y="333" text-anchor="middle" font-size="10" fill="#718096">stage 12: 10 scheduled, 0 ran &#8212; SKIPPED</text>
+<rect x="740" y="321" width="15" height="15" rx="3" fill="#48bb78" stroke="#276749"/>
+<text x="764" y="334" font-size="10" fill="#4a5568">stage 13: sample sort keys &#8212; 1 task</text>
+
+<rect x="420" y="370" width="500" height="94" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="436" y="392" font-size="12" font-weight="700" fill="#276749">JOB 10 &#8212; the sort itself</text>
+<rect x="436" y="402" width="220" height="30" rx="6" fill="#f7fafc" stroke="#cbd5e0"/>
+<text x="546" y="421" text-anchor="middle" font-size="10" fill="#718096">stage 14: 10 scheduled, 0 ran &#8212; SKIPPED</text>
+<rect x="668" y="402" width="160" height="30" rx="6" fill="#f7fafc" stroke="#cbd5e0"/>
+<text x="748" y="421" text-anchor="middle" font-size="10" fill="#718096">stage 15: 1, 0 ran &#8212; SKIPPED</text>
+<rect x="436" y="440" width="15" height="15" rx="3" fill="#48bb78" stroke="#276749"/>
+<text x="460" y="453" font-size="10" fill="#4a5568">stage 16: global sort &#8212; 1 task (200&#8594;1) &#8594; 262 zones to the driver</text>
+
+<!-- BOTTOM BAND -->
+<line x1="55" y1="486" x2="905" y2="486" stroke="#e2e8f0" stroke-width="1"/>
+
+<rect x="55" y="502" width="410" height="84" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="260" y="526" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">The tally</text>
+<text x="260" y="547" text-anchor="middle" font-size="12" fill="#4a5568">4 jobs &#183; 9 stage entries &#183; 44 tasks scheduled</text>
+<text x="260" y="568" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">only 13 tasks ran &#8212; 31 skipped = shuffle output reused</text>
+
+<rect x="495" y="502" width="410" height="84" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="700" y="526" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">The cross-check (matches Course 1 to the trip)</text>
+<text x="700" y="547" text-anchor="middle" font-size="12" fill="#4a5568">Midtown Center 453,825 &#183; UES South 439,138 &#183; JFK 429,745</text>
+<text x="700" y="568" text-anchor="middle" font-size="12" fill="#4a5568">9,554,757 kept of 9,554,778 &#8212; 21 outside the window</text>
+
+<text x="480" y="622" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">AQE changed the packaging, never the boundaries: stages still split exactly where data must move.</text>
+<text x="480" y="644" text-anchor="middle" font-size="12" fill="#4a5568">Count the wide transformations and you have counted the shuffles; stages = shuffles + 1; the first stage runs one task per partition.</text>
+<text x="480" y="666" text-anchor="middle" font-size="12" fill="#718096">The runtime keeps the rest: extra jobs at each boundary, skipped repeats, 200-task defaults coalesced to 1, a sampling pass before a range sort.</text>
+</svg>

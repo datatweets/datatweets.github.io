@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW</text>
+
+  <text x="400" y="58" text-anchor="middle" font-size="10.5" fill="#718096">Each month's frame grows to include everything before it</text>
+
+  <rect x="60" y="76" width="90" height="40" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.2" />
+  <text x="105" y="100" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">Jan '24</text>
+
+  <rect x="60" y="126" width="180" height="40" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.2" />
+  <text x="150" y="150" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">Jan + Feb '24</text>
+
+  <rect x="60" y="176" width="270" height="40" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.2" />
+  <text x="195" y="200" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">Jan + Feb + Mar '24 = $1,262,892.88</text>
+
+  <rect x="60" y="226" width="680" height="40" rx="5" fill="#22543d" stroke="#22543d" stroke-width="1.2" />
+  <text x="400" y="250" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#ffffff">... all 24 months = $9,195,043.62</text>
+
+  <rect x="60" y="286" width="680" height="60" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="400" y="310" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">A running total's final value always equals sum() over everything</text>
+  <text x="400" y="328" text-anchor="middle" font-size="9.5" fill="#2c5282">a built-in sanity check, confirmed here against the course's own grand total</text>
+
+  <defs>
+    <marker id="arrowF" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

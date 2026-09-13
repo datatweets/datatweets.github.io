@@ -1,0 +1,13 @@
+query_id,query,region,plan,expected_doc_id
+Q01,How long can I recover a deleted analytics report?,apac,free,G01
+Q02,How long can I recover a deleted analytics report?,eu,team,E01
+Q03,Which file format does the audit export use?,us,enterprise,U02
+Q04,Which file format does the audit export use?,eu,free,G02
+Q05,When does a guest sharing link expire?,apac,team,A03
+Q06,When does a guest sharing link expire?,us,free,G03
+Q07,How many records can offline sync store?,eu,team,E04
+Q08,How many records can offline sync store?,apac,free,G04
+Q09,Where can I download the invoice tax receipt?,us,enterprise,U05
+Q10,Where can I download the invoice tax receipt?,eu,free,G05
+Q11,When does an inactive sign-in session end?,apac,team,A06
+Q12,When does an inactive sign-in session end?,us,free,G06

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Two producer failure classes, two different places they surface</title>
+  <desc>Class 1: producing to a nonexistent topic. send() itself blocks waiting for metadata that never arrives and raises KafkaTimeoutError directly -- no future is ever returned, so there's nothing for add_errback to attach to; the fix is a try/except wrapped around the send() call itself. Class 2: producing an oversized message. send() succeeds and returns a future immediately, the message is queued and attempted, and only the broker's rejection -- MessageSizeTooLargeError -- surfaces afterward, either through .get() raising or through add_errback firing; flush() itself does not raise and the success callback never fires.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Two Failures, Two Different Places They Surface</text>
+
+  <!-- Class 1 -->
+  <text x="40" y="65" font-size="13" font-weight="700" fill="#742a2a">Class 1 -- nonexistent topic</text>
+
+  <rect x="40" y="80" width="220" height="50" rx="5" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="150" y="102" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">producer.send(...)</text>
+  <text x="150" y="118" text-anchor="middle" font-size="8.5" fill="#718096">waits for topic metadata</text>
+
+  <line x1="260" y1="105" x2="300" y2="105" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowFC)" />
+
+  <rect x="310" y="80" width="230" height="50" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="425" y="100" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#742a2a">KafkaTimeoutError</text>
+  <text x="425" y="117" text-anchor="middle" font-size="8.5" fill="#742a2a">raised directly from send() itself</text>
+
+  <text x="40" y="150" font-size="9.5" fill="#742a2a">No future is ever returned -- there's nothing for add_errback to attach to.</text>
+  <text x="40" y="167" font-size="9.5" fill="#742a2a">Fix: wrap try/except around the send() call itself, not just .get().</text>
+
+  <line x1="40" y1="195" x2="1060" y2="195" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <!-- Class 2 -->
+  <text x="40" y="228" font-size="13" font-weight="700" fill="#22543d">Class 2 -- oversized message</text>
+
+  <rect x="40" y="243" width="220" height="50" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="150" y="263" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#22543d">producer.send(...)</text>
+  <text x="150" y="280" text-anchor="middle" font-size="8.5" fill="#22543d">returns a future immediately</text>
+
+  <line x1="260" y1="268" x2="300" y2="268" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowFC)" />
+
+  <rect x="310" y="243" width="230" height="50" rx="5" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="425" y="263" text-anchor="middle" font-size="10" fill="#2d3748">broker attempts the write</text>
+  <text x="425" y="280" text-anchor="middle" font-size="8.5" fill="#718096">message.max.bytes exceeded</text>
+
+  <line x1="540" y1="268" x2="580" y2="268" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowFC)" />
+
+  <rect x="590" y="243" width="230" height="50" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="705" y="263" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#742a2a">MessageSizeTooLargeError</text>
+  <text x="705" y="280" text-anchor="middle" font-size="8.5" fill="#742a2a">via .get() or add_errback</text>
+
+  <text x="40" y="315" font-size="9.5" fill="#22543d">flush() itself never raises, and the success callback never fires -- the rejection surfaces</text>
+  <text x="40" y="332" font-size="9.5" fill="#22543d">exactly once, through whichever mechanism the calling code uses to wait for a result.</text>
+
+  <line x1="40" y1="352" x2="1060" y2="352" stroke="#e2e8f0" stroke-width="1.2" />
+  <text x="550" y="378" text-anchor="middle" font-size="11" fill="#4a5568">Code that only checks add_errback misses Class 1 entirely -- a nonexistent topic crashes the process instead of failing gracefully.</text>
+
+  <defs>
+    <marker id="arrowFC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

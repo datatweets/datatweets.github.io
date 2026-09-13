@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 668" width="960" height="668" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="668" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Tuning the zone-hour job: shaping physical execution, measured</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">One dashboard, three panels from one expensive report &#183; same correct answer &#183; local[*], 160&#160;MB, every number measured</text>
+
+<!-- LEFT: before/after dashboard time -->
+<text x="30" y="94" font-size="15" font-weight="700" fill="#2b6cb0">DASHBOARD WALL TIME (buckets + revenue + podium)</text>
+<text x="30" y="112" font-size="11.5" font-style="italic" fill="#718096">scale to 5.57&#160;s &#183; shorter is better</text>
+
+<!-- A: no tuning -->
+<text x="250" y="140" text-anchor="end" font-size="11.5" fill="#1a202c">A &#183; no tuning</text>
+<rect x="260" y="128" width="275" height="18" rx="3" fill="#a0aec0"/>
+<text x="543" y="142" font-size="11" font-weight="700" fill="#4a5568">3.33&#160;s &#8212; report recomputed 3&#215; (AQE coalesces each run)</text>
+
+<!-- B: naive cache -->
+<text x="250" y="170" text-anchor="end" font-size="11.5" fill="#1a202c">B &#183; naive cache()</text>
+<rect x="260" y="158" width="460" height="18" rx="3" fill="#fc8181"/>
+<text x="726" y="172" font-size="11" font-weight="700" fill="#c53030">5.57&#160;s &#8212; SLOWER! frozen at 200 tiny partitions</text>
+
+<!-- E: tuned -->
+<text x="250" y="200" text-anchor="end" font-size="11.5" fill="#1a202c">E &#183; cache + 8 partitions</text>
+<rect x="260" y="188" width="38" height="18" rx="3" fill="#276749"/>
+<text x="306" y="202" font-size="11" font-weight="700" fill="#276749">0.46&#160;s &#8212; report built once, stored compact (7&#215; vs A, 12&#215; vs B)</text>
+
+<line x1="30" y1="226" x2="930" y2="226" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- MIDDLE: the coupling insight -->
+<text x="30" y="258" font-size="15" font-weight="700" fill="#c05621">THE TRAP: cache() alone is not free &#8212; it freezes the partition count</text>
+<rect x="30" y="272" width="430" height="150" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="45" y="296" font-size="12" font-weight="700" fill="#c05621">naive: cache() at the default 200</text>
+<text x="45" y="320" font-size="11.5" fill="#4a5568">240,917 rows spread over 200 partitions</text>
+<text x="45" y="340" font-size="11.5" fill="#4a5568">&#8776; 1,200 rows each &#8212; scheduling overhead</text>
+<text x="45" y="360" font-size="11.5" fill="#4a5568">AQE&#8217;s post-shuffle coalesce does NOT</text>
+<text x="45" y="378" font-size="11.5" fill="#4a5568">survive into the InMemoryRelation</text>
+<rect x="45" y="390" width="400" height="22" rx="4" fill="#fff5f5" stroke="#c53030" stroke-width="1.2"/>
+<text x="53" y="405" font-size="11" font-weight="700" fill="#c53030">every panel re-reads 200 tiny partitions &#8594; 5.57&#160;s</text>
+
+<rect x="500" y="272" width="430" height="150" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="515" y="296" font-size="12" font-weight="700" fill="#276749">tuned: set shuffle.partitions = 8 first</text>
+<text x="515" y="320" font-size="11.5" fill="#4a5568">240,917 rows over 8 partitions</text>
+<text x="515" y="340" font-size="11.5" fill="#4a5568">&#8776; 30,000 rows each &#8212; cache is compact</text>
+<text x="515" y="360" font-size="11.5" fill="#4a5568">the report&#8217;s one shuffle runs once,</text>
+<text x="515" y="378" font-size="11.5" fill="#4a5568">then three panels reuse the memory copy</text>
+<rect x="515" y="390" width="400" height="22" rx="4" fill="#ffffff" stroke="#48bb78" stroke-width="1.2"/>
+<text x="523" y="405" font-size="11" font-weight="700" fill="#276749">three panels over 8 partitions &#8594; 0.46&#160;s</text>
+
+<line x1="30" y1="440" x2="930" y2="440" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- BOTTOM: plan stays lean + honest note -->
+<text x="30" y="470" font-size="15" font-weight="700" fill="#276749">WHAT THE TUNED PLAN KEEPS</text>
+<text x="45" y="494" font-size="11.5" fill="#4a5568">HashAggregate (final)</text>
+<rect x="58" y="502" width="500" height="20" rx="4" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.2"/>
+<text x="66" y="516" font-size="10.5" font-weight="700" fill="#2b6cb0">Exchange hashpartitioning(&#8230;, 8) &#8212; the one irreducible group-by shuffle, right-sized</text>
+<text x="45" y="540" font-size="11.5" fill="#4a5568">&#160;&#160;+- HashAggregate (map-side partial_count / partial_sum)</text>
+<rect x="58" y="548" width="500" height="20" rx="4" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2"/>
+<text x="66" y="562" font-size="10.5" font-weight="700" fill="#276749">BroadcastHashJoin &#8212; the 265-row zone dim, no big-side Exchange (still broadcast)</text>
+<text x="45" y="586" font-size="11" font-style="italic" fill="#718096">output stays balanced (&#8776;60k buckets/partition): the key is zone&#160;+&#160;hour, so JFK&#8217;s trips spread across hours &#8212; no straggler.</text>
+
+<rect x="600" y="486" width="330" height="104" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.2"/>
+<text x="615" y="508" font-size="11.5" font-weight="700" fill="#c05621">honest: the knob that did little</text>
+<text x="615" y="530" font-size="11" fill="#4a5568">for a ONE-SHOT report, sizing</text>
+<text x="615" y="547" font-size="11" fill="#4a5568">shuffle.partitions barely moved it</text>
+<text x="615" y="564" font-size="11" fill="#4a5568">(0.60&#8211;0.80&#160;s) &#8212; AQE already</text>
+<text x="615" y="581" font-size="11" fill="#4a5568">coalesces 200&#8594;10. It only bites a cache.</text>
+
+<line x1="30" y1="606" x2="930" y2="606" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30" y="620" width="900" height="36" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="643" text-anchor="middle" font-size="13" fill="#1a202c">Same answer, verified: <tspan font-weight="700">240,917</tspan> buckets &#183; <tspan font-weight="700">9,554,757</tspan> trips &#183; <tspan font-weight="700" fill="#276749">$256,692,373.14</tspan> &#8212; 3.33&#160;s &#8594; 0.46&#160;s, cache + right-sized partitions together.</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="960" height="680" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="680" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Packaging CityFlow's ETL for Kubernetes</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Every prior lesson, assembled into one final manifest</text>
+
+<rect x="60" y="86" width="360" height="96" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="240" y="108" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">ConfigMap cityflow-etl-config</text>
+<text x="240" y="128" text-anchor="middle" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">DATA_URL: .../yellow_tripdata_2024-01.parquet</text>
+<text x="240" y="146" text-anchor="middle" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">WINDOW_START: 2024-01-01</text>
+<text x="240" y="164" text-anchor="middle" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">WINDOW_END: 2024-02-01</text>
+
+<line x1="420" y1="134" x2="530" y2="230" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+<text x="470" y="190" text-anchor="middle" font-size="10" fill="#718096">envFrom</text>
+
+<rect x="540" y="86" width="360" height="96" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="720" y="108" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">initContainer wait-for-db</text>
+<text x="720" y="128" text-anchor="middle" font-size="10" fill="#4a5568">loops pg_isready against cityflow-db-svc</text>
+<text x="720" y="146" text-anchor="middle" font-size="10" fill="#4a5568">before the etl container starts</text>
+<text x="720" y="164" text-anchor="middle" font-size="9.5" fill="#718096">Lesson 1's translation, reused</text>
+
+<line x1="720" y1="182" x2="720" y2="230" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="130" y="234" width="700" height="130" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="480" y="258" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">container: etl (image cityflow-etl-k8s:1.1)</text>
+<text x="480" y="282" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">requests: cpu 250m, memory 128Mi</text>
+<text x="480" y="302" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">limits: cpu 500m, memory 256Mi</text>
+<text x="480" y="326" text-anchor="middle" font-size="10" fill="#718096">real measured headroom above Lesson 2's ~120Mi boundary</text>
+<text x="480" y="348" text-anchor="middle" font-size="10" fill="#718096">not a guess - the actual number this job needs, plus margin</text>
+
+<line x1="480" y1="364" x2="480" y2="394" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="130" y="398" width="700" height="70" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5"/>
+<text x="480" y="422" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">first log line - the job announces its own configuration</text>
+<text x="480" y="446" text-anchor="middle" font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">[cityflow-etl] starting - DATA_URL=... WINDOW=2024-01-01..2024-02-01 DB_HOST=cityflow-db-svc</text>
+
+<line x1="480" y1="468" x2="480" y2="494" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="130" y="498" width="700" height="118" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5"/>
+<text x="480" y="524" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">real result</text>
+<text x="480" y="550" text-anchor="middle" font-size="12" fill="#2d3748">77,530 zone-hour buckets &#8226; 2,964,606 trips kept &#8226; 18 quarantined</text>
+<text x="480" y="576" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">$79,455,941.50 total revenue</text>
+<text x="480" y="600" text-anchor="middle" font-size="10.5" fill="#718096">report written to Postgres: zone_hour_report</text>
+
+<text x="480" y="648" text-anchor="middle" font-size="10.5" fill="#a0aec0">Every field above was introduced and run for real earlier in this module - this manifest only composes them.</text>
+
+<defs>
+<marker id="arrows" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

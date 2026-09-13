@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Detect Unsupported Numbers in RAG Answers with Python</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail showing a RAG claim of 45 seconds compared with cited evidence of 60 seconds. The mismatch is flagged as unsupported.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="32" font-weight="600" letter-spacing="1" fill="#59636e">RAG EVIDENCE CHECK</text>
+    <text x="90" y="292" font-size="78" font-weight="700" fill="#1b1f24">CITED &#x2260;</text>
+    <text x="90" y="388" font-size="78" font-weight="700" fill="#1b1f24">SUPPORTED</text>
+    <rect x="94" y="426" width="430" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="504" font-size="29" font-weight="500" fill="#59636e">CITATIONS &#xB7; UNITS &#xB7; REVIEW</text>
+  </g>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="688" y="120" width="408" height="142" rx="20" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="720" y="162" font-size="22" font-weight="700" letter-spacing="1.5" fill="#59636e">ANSWER CLAIM</text>
+    <text x="720" y="226" font-size="45" font-weight="700" fill="#1b1f24">45 seconds</text>
+
+    <line x1="892" y1="263" x2="892" y2="326" stroke="#0067c0" stroke-width="4" stroke-linecap="round"/>
+    <path d="M882 315 L892 329 L902 315" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="916" y="307" font-size="18" font-weight="600" fill="#0067c0">COMPARE</text>
+
+    <rect x="688" y="340" width="408" height="142" rx="20" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+    <text x="720" y="382" font-size="22" font-weight="700" letter-spacing="1.5" fill="#0067c0">CITED EVIDENCE</text>
+    <text x="720" y="446" font-size="45" font-weight="700" fill="#1b1f24">60 seconds</text>
+
+    <rect x="746" y="520" width="292" height="60" rx="30" fill="#fff2f2" stroke="#c43d3d" stroke-width="2"/>
+    <line x1="776" y1="541" x2="794" y2="559" stroke="#c43d3d" stroke-width="4" stroke-linecap="round"/>
+    <line x1="794" y1="541" x2="776" y2="559" stroke="#c43d3d" stroke-width="4" stroke-linecap="round"/>
+    <text x="816" y="559" font-size="24" font-weight="700" fill="#9f3030">FLAG NO MATCH</text>
+  </g>
+</svg>

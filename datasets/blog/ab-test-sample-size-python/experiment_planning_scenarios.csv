@@ -1,0 +1,6 @@
+scenario,baseline_rate,alternative_rate,absolute_lift,sample_per_group,total_sample
+Detect +1 percentage point,0.18,0.19,0.01,23665,47330
+Detect +2 percentage points,0.18,0.2,0.02,6036,12072
+Detect +3 percentage points,0.18,0.21,0.03,2735,5470
+Detect +4 percentage points,0.18,0.22,0.04,1567,3134
+Detect +5 percentage points,0.18,0.23,0.05,1020,2040

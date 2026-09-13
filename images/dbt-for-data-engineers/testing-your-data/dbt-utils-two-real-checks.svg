@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="360" viewBox="0 0 1050 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>dbt_utils, installed for real, finds 20 exact duplicates and confirms a clean range</title>
+  <desc>packages.yml declares dbt-labs/dbt_utils version 1.4.1, confirmed current on hub.getdbt.com. dbt deps installs it, adding 116 macros to the project, bringing the total from 477 to 593. dbt_utils.unique_combination_of_columns, checking the combination of pickup_time, pickup_zone, fare_amount, and total_amount across all 81,013 trips, finds 20 rows that are exact duplicates on every one of the four columns CityFlow's staging model still has -- a real finding, configured with severity warn since the columns Module 1 dropped might have distinguished them. dbt_utils.accepted_range, checking that every pickup_zone falls between 1 and 265, passes cleanly with zero violations, confirming CityFlow's own trip data never references a zone outside the real 265-zone lookup.</desc>
+  <rect width="1050" height="360" fill="#ffffff" />
+  <text x="525" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">dbt_utils, Installed for Real, Two Genuine Checks</text>
+
+  <rect x="60" y="55" width="930" height="55" rx="8" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.4" />
+  <text x="525" y="78" text-anchor="middle" font-size="10.5" font-weight="700" font-family="Menlo, monospace" fill="#2d3748">packages.yml: dbt-labs/dbt_utils 1.4.1  &#8594;  dbt deps  &#8594;  477 macros becomes 593</text>
+  <text x="525" y="98" text-anchor="middle" font-size="9.5" fill="#718096">confirmed current on hub.getdbt.com, the same version this course's blueprint pinned before Module 1 started</text>
+
+  <rect x="60" y="130" width="440" height="195" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="280" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">unique_combination_of_columns</text>
+  <text x="280" y="175" text-anchor="middle" font-size="9" fill="#822727">pickup_time, pickup_zone, fare_amount, total_amount</text>
+  <rect x="90" y="188" width="380" height="40" rx="6" fill="#822727" />
+  <text x="280" y="212" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#fff5f5">WARN 20 -- 20 exact duplicate rows</text>
+  <text x="280" y="250" text-anchor="middle" font-size="9" fill="#4a5568">All four remaining columns match exactly.</text>
+  <text x="280" y="266" text-anchor="middle" font-size="9" fill="#4a5568">Could be real duplicate trips, or two</text>
+  <text x="280" y="282" text-anchor="middle" font-size="9" fill="#4a5568">different trips coinciding on the four</text>
+  <text x="280" y="298" text-anchor="middle" font-size="9" fill="#4a5568">columns Module 1's loader kept.</text>
+
+  <rect x="550" y="130" width="440" height="195" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="770" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">accepted_range</text>
+  <text x="770" y="175" text-anchor="middle" font-size="9" fill="#22543d">pickup_zone between 1 and 265</text>
+  <rect x="580" y="188" width="380" height="40" rx="6" fill="#22543d" />
+  <text x="770" y="212" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#f0fff4">PASS -- 0 violations</text>
+  <text x="770" y="250" text-anchor="middle" font-size="9" fill="#4a5568">Every one of 81,013 trips references</text>
+  <text x="770" y="266" text-anchor="middle" font-size="9" fill="#4a5568">a zone inside the real 265-zone</text>
+  <text x="770" y="282" text-anchor="middle" font-size="9" fill="#4a5568">lookup this project loaded in Module 3.</text>
+</svg>

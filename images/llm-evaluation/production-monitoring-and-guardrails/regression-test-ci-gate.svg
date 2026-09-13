@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The CI regression gate for Docent: a prompt or model change triggers the eval suite of golden cases and gates against a threshold, then either merges on pass or blocks the build on fail.</title>
+  <rect x="0" y="0" width="860" height="500" fill="#ffffff"/>
+
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">Prompt or model change, gated by a regression suite in CI</text>
+
+  <!-- Step 1: the change -->
+  <rect x="30" y="70" width="180" height="120" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <text x="120" y="98" text-anchor="middle" font-size="14" font-weight="700" fill="#6b46c1">1. A change</text>
+  <text x="120" y="124" text-anchor="middle" font-size="12" fill="#4a5568">edit the prompt</text>
+  <text x="120" y="142" text-anchor="middle" font-size="12" fill="#4a5568">or swap the model</text>
+  <text x="120" y="168" text-anchor="middle" font-size="11.5" fill="#718096">opens a pull request</text>
+
+  <!-- arrow -->
+  <line x1="212" y1="130" x2="258" y2="130" stroke="#a0aec0" stroke-width="2.5"/>
+  <polygon points="258,130 248,125 248,135" fill="#a0aec0"/>
+
+  <!-- Step 2: the eval suite -->
+  <rect x="262" y="60" width="230" height="220" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="377" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">2. Eval suite runs as a test</text>
+  <line x1="282" y1="98" x2="472" y2="98" stroke="#bee3f8" stroke-width="1.5"/>
+  <text x="282" y="122" font-size="12" fill="#4a5568">&#8226; fixed golden cases</text>
+  <text x="282" y="146" font-size="12" fill="#4a5568">&#8226; a metric per case</text>
+  <text x="282" y="170" font-size="12" fill="#4a5568">&#8226; critical cases that</text>
+  <text x="294" y="187" font-size="12" fill="#c53030" font-weight="600">must never fail</text>
+  <!-- threshold pill -->
+  <rect x="282" y="204" width="190" height="58" rx="8" fill="#ffffff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="377" y="226" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">THRESHOLD</text>
+  <text x="377" y="245" text-anchor="middle" font-size="11.5" fill="#4a5568">overall &#8805; 0.85  AND</text>
+  <text x="377" y="258" text-anchor="middle" font-size="11.5" fill="#4a5568">no critical case regresses</text>
+
+  <!-- branch arrows -->
+  <line x1="494" y1="130" x2="560" y2="100" stroke="#48bb78" stroke-width="2.5"/>
+  <polygon points="560,100 549,100 555,109" fill="#48bb78"/>
+  <line x1="494" y1="210" x2="560" y2="360" stroke="#c53030" stroke-width="2.5"/>
+  <polygon points="560,360 550,353 549,364" fill="#c53030"/>
+
+  <!-- Pass path -->
+  <rect x="562" y="66" width="266" height="150" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="695" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">PASS &#8594; merge allowed</text>
+  <line x1="582" y1="104" x2="808" y2="104" stroke="#c6f6d5" stroke-width="1.5"/>
+  <text x="582" y="128" font-size="12" fill="#276749" font-family="monospace">test_case[...] PASSED</text>
+  <text x="582" y="148" font-size="12" fill="#276749" font-family="monospace">test_critical[...] PASSED</text>
+  <text x="582" y="168" font-size="12" fill="#276749" font-family="monospace">test_gate[...] PASSED</text>
+  <text x="582" y="196" font-size="12.5" fill="#4a5568">green build &#8594; the change ships</text>
+
+  <!-- Fail path -->
+  <rect x="562" y="300" width="266" height="170" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+  <text x="695" y="326" text-anchor="middle" font-size="14" font-weight="700" fill="#c53030">FAIL &#8594; build blocked</text>
+  <line x1="582" y1="338" x2="808" y2="338" stroke="#fed7d7" stroke-width="1.5"/>
+  <text x="582" y="362" font-size="12" fill="#c53030" font-family="monospace">test_critical[refusal] FAILED</text>
+  <text x="582" y="382" font-size="12" fill="#c53030" font-family="monospace">test_gate[score&#8805;0.85] FAILED</text>
+  <text x="582" y="410" font-size="12.5" fill="#4a5568">a critical case regressed &#8594;</text>
+  <text x="582" y="428" font-size="12.5" font-weight="700" fill="#c53030">merge is blocked, not merged</text>
+  <text x="582" y="452" font-size="11.5" fill="#718096">fix the change, or roll it back</text>
+
+  <!-- bottom note -->
+  <rect x="30" y="320" width="500" height="150" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="50" y="346" font-size="13" font-weight="700" fill="#c05621">Why this beats "we'll eyeball it"</text>
+  <text x="50" y="372" font-size="12" fill="#4a5568">The gate is automated and enforced on every change &#8212; no human</text>
+  <text x="50" y="390" font-size="12" fill="#4a5568">has to remember to test, and no reviewer can wave a regression</text>
+  <text x="50" y="408" font-size="12" fill="#4a5568">through. Deterministic metrics keep the pass/fail reproducible, so</text>
+  <text x="50" y="426" font-size="12" fill="#4a5568">the same change gives the same verdict every run.</text>
+  <text x="50" y="454" font-size="12" font-weight="600" fill="#276749">Prompts and model choices become code &#8212; tested, not trusted.</text>
+</svg>

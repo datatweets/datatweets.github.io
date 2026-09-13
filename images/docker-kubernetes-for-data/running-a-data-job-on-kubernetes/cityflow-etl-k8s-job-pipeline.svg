@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 760" width="960" height="760" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="760" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Guided Project: CityFlow's ETL on Kubernetes</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Every mechanism this module taught, composed into one real pipeline</text>
+
+<rect x="60" y="82" width="230" height="82" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="175" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2b6cb0">ConfigMap</text>
+<text x="175" y="122" text-anchor="middle" font-size="9.5" fill="#4a5568">cityflow-etl-config</text>
+<text x="175" y="140" text-anchor="middle" font-size="9" fill="#718096">DATA_URL, WINDOW_START,</text>
+<text x="175" y="154" text-anchor="middle" font-size="9" fill="#718096">WINDOW_END</text>
+
+<rect x="365" y="82" width="230" height="82" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="480" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">Deployment + PVC</text>
+<text x="480" y="122" text-anchor="middle" font-size="9.5" fill="#4a5568">cityflow-db (postgres:16-alpine)</text>
+<text x="480" y="140" text-anchor="middle" font-size="9" fill="#718096">readinessProbe: pg_isready</text>
+<text x="480" y="154" text-anchor="middle" font-size="9" fill="#718096">cityflow-db-pvc, 200Mi</text>
+
+<rect x="670" y="82" width="230" height="82" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="785" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">Service</text>
+<text x="785" y="122" text-anchor="middle" font-size="9.5" fill="#4a5568">cityflow-db-svc</text>
+<text x="785" y="140" text-anchor="middle" font-size="9" fill="#718096">ClusterIP, port 5432</text>
+<text x="785" y="154" text-anchor="middle" font-size="9" fill="#718096">selector: app=cityflow-db</text>
+
+<line x1="175" y1="164" x2="175" y2="200" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+<line x1="480" y1="164" x2="785" y2="200" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="785" y1="164" x2="785" y2="200" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+<line x1="480" y1="164" x2="480" y2="200" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="175" y1="200" x2="785" y2="200" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="480" y1="200" x2="480" y2="220" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="230" y="224" width="500" height="70" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="480" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">initContainer wait-for-db</text>
+<text x="480" y="268" text-anchor="middle" font-size="10.5" fill="#4a5568">polls cityflow-db-svc until pg_isready succeeds</text>
+<text x="480" y="284" text-anchor="middle" font-size="9.5" fill="#718096">Postgres already ready - nothing to retry</text>
+
+<line x1="480" y1="294" x2="480" y2="320" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="200" y="324" width="560" height="94" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="480" y="348" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">Job cityflow-etl-job (image cityflow-etl-k8s:1.1)</text>
+<text x="480" y="368" text-anchor="middle" font-size="10.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">requests: cpu 250m, memory 128Mi &#8226; limits: cpu 500m, memory 256Mi</text>
+<text x="480" y="388" text-anchor="middle" font-size="10" fill="#4a5568">fetches the real January 2024 parquet, aggregates, writes to Postgres</text>
+<text x="480" y="406" text-anchor="middle" font-size="9.5" fill="#718096">backoffLimit: 2, restartPolicy: Never</text>
+
+<line x1="480" y1="418" x2="480" y2="444" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="60" y="448" width="840" height="110" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5"/>
+<text x="480" y="474" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">real result</text>
+<text x="480" y="500" text-anchor="middle" font-size="12" fill="#2d3748">77,530 zone-hour buckets &#8226; 2,964,606 trips kept &#8226; 18 quarantined</text>
+<text x="480" y="526" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">$79,455,941.50 total revenue</text>
+<text x="480" y="548" text-anchor="middle" font-size="10.5" fill="#718096">busiest zone-hour: zone 161 at 2024-01-24T18, 726 trips</text>
+
+<line x1="200" y1="562" x2="200" y2="592" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+<line x1="480" y1="562" x2="480" y2="592" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+<line x1="760" y1="562" x2="760" y2="592" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="80" y="596" width="240" height="66" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="200" y="620" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">kubectl logs</text>
+<text x="200" y="640" text-anchor="middle" font-size="9.5" fill="#4a5568">the job's own printed report</text>
+
+<rect x="360" y="596" width="240" height="66" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="620" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">psql query</text>
+<text x="480" y="640" text-anchor="middle" font-size="9.5" fill="#4a5568">direct against zone_hour_report</text>
+
+<rect x="640" y="596" width="240" height="66" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="760" y="620" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">Dashboard screenshot</text>
+<text x="760" y="640" text-anchor="middle" font-size="9.5" fill="#4a5568">Job and Deployment, visually</text>
+
+<line x1="60" y1="682" x2="900" y2="682" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="712" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4a5568">three independent confirmations, none trusting the others, all agreeing</text>
+<text x="480" y="738" text-anchor="middle" font-size="10.5" fill="#a0aec0">Every object and value above was introduced and run for real earlier in this module.</text>
+
+<defs>
+<marker id="arrows" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

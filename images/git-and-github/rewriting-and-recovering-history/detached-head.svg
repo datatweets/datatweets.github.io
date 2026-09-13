@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="360" viewBox="0 0 720 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"><rect width="720" height="360" fill="#ffffff" /><text x="360" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#1a202c">Detached HEAD: a pointer at a commit, not a branch</text>
+<text x="180" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="#718096">Normal: HEAD  ->  branch  ->  commit</text>
+<g font-family="monospace" font-size="11">
+<rect x="120" y="82" width="120" height="30" rx="6" fill="#faf5ff" stroke="#b794f4" stroke-width="1.4" /><text x="180" y="101" text-anchor="middle" fill="#553c9a">HEAD</text>
+<rect x="120" y="134" width="120" height="30" rx="6" fill="#ebf8ff" stroke="#63b3ed" stroke-width="1.4" /><text x="180" y="153" text-anchor="middle" fill="#2c5282">main</text>
+<rect x="60" y="186" width="240" height="30" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.2" /><text x="180" y="205" text-anchor="middle" fill="#2d3748">c1 -- c2 -- c3</text>
+</g>
+<line x1="180" y1="112" x2="180" y2="132" stroke="#a0aec0" stroke-width="1.8" /><polygon points="180 134 175 124 185 124" fill="#a0aec0" />
+<line x1="180" y1="164" x2="180" y2="184" stroke="#a0aec0" stroke-width="1.8" /><polygon points="180 186 175 176 185 176" fill="#a0aec0" />
+<text x="180" y="244" text-anchor="middle" font-size="10.5" fill="#4a5568">A new commit moves main forward, so your</text>
+<text x="180" y="259" text-anchor="middle" font-size="10.5" fill="#4a5568">work always keeps a name you can find.</text>
+<line x1="360" y1="70" x2="360" y2="280" stroke="#e2e8f0" stroke-width="1.5" />
+<text x="540" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="#718096">Detached: HEAD  ->  commit</text>
+<g font-family="monospace" font-size="11">
+<rect x="480" y="82" width="120" height="30" rx="6" fill="#faf5ff" stroke="#b794f4" stroke-width="1.4" /><text x="540" y="101" text-anchor="middle" fill="#553c9a">HEAD</text>
+<rect x="420" y="186" width="240" height="30" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.2" /><text x="540" y="205" text-anchor="middle" fill="#2d3748">c1 -- c2 -- c3</text>
+<rect x="612" y="134" width="78" height="30" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" /><text x="651" y="153" text-anchor="middle" fill="#9b2c2c">commit</text>
+</g>
+<line x1="540" y1="112" x2="540" y2="184" stroke="#a0aec0" stroke-width="1.8" /><polygon points="540 186 535 176 545 176" fill="#a0aec0" />
+<line x1="600" y1="104" x2="640" y2="134" stroke="#fc8181" stroke-width="1.6" stroke-dasharray="4 3" /><polygon points="643 136 632 133 634 125" fill="#fc8181" />
+<text x="540" y="244" text-anchor="middle" font-size="10.5" fill="#4a5568">Commit while detached and it attaches only to</text>
+<text x="540" y="259" text-anchor="middle" font-size="10.5" fill="#4a5568">HEAD. Switch away and it has no name -- it looks lost.</text>
+<rect x="80" y="300" width="560" height="46" rx="8" fill="#f0fff4" stroke="#68d391" stroke-width="1.2" />
+<text x="360" y="317" text-anchor="middle" font-size="10" fill="#22543d">Prevent it (before you leave): <tspan font-family="monospace" font-weight="700">git switch -c experiment</tspan></text>
+<text x="360" y="335" text-anchor="middle" font-size="10" fill="#22543d">Recover it (after you left): <tspan font-family="monospace" font-weight="700">git branch experiment 4f9a2c1</tspan></text>
+</svg>

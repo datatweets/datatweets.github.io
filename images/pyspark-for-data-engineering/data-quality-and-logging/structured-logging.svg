@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 636" width="960" height="636" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="636" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Structured Logging &#8212; what last night&#8217;s run actually did</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">one run id &#183; per-stage counts in and out &#183; a machine-readable summary &#8212; and the Spark cost of measuring it</text>
+
+<text x="32" y="92" font-size="15" font-weight="700" fill="#2b6cb0">THE RUN, STAGE BY STAGE (every count is a logged action)</text>
+
+<rect x="32" y="104" width="212" height="126" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="32" y="104" width="212" height="26" rx="8" fill="#2b6cb0"/>
+<text x="138" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">stage=read</text>
+<text x="138" y="150" text-anchor="middle" font-size="11" fill="#4a5568">three months of Parquet</text>
+<text x="138" y="170" text-anchor="middle" font-size="11" fill="#4a5568">rows_in=&#8212;</text>
+<text x="138" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">rows_out=9,554,778</text>
+<text x="138" y="218" text-anchor="middle" font-size="11" fill="#718096">seconds=0.11 (footers only)</text>
+
+<rect x="266" y="104" width="212" height="126" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<rect x="266" y="104" width="212" height="26" rx="8" fill="#c05621"/>
+<text x="372" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">stage=clean</text>
+<text x="372" y="150" text-anchor="middle" font-size="11" fill="#4a5568">rows_in=9,554,778</text>
+<text x="372" y="172" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">rows_out=9,554,757</text>
+<text x="372" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">quarantined=21</text>
+<text x="372" y="218" text-anchor="middle" font-size="11" fill="#718096">seconds=2.13</text>
+
+<rect x="500" y="104" width="212" height="126" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<rect x="500" y="104" width="212" height="26" rx="8" fill="#2b6cb0"/>
+<text x="606" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">stage=transform</text>
+<text x="606" y="150" text-anchor="middle" font-size="11" fill="#4a5568">rows_in=9,554,757</text>
+<text x="606" y="172" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">rows_out=240,917</text>
+<text x="606" y="194" text-anchor="middle" font-size="11" fill="#4a5568">zone-hour buckets</text>
+<text x="606" y="218" text-anchor="middle" font-size="11" fill="#718096">seconds=4.45</text>
+
+<rect x="734" y="104" width="194" height="126" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<rect x="734" y="104" width="194" height="26" rx="8" fill="#276749"/>
+<text x="831" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">event=run_summary</text>
+<text x="831" y="150" text-anchor="middle" font-size="11" fill="#4a5568">one JSON line</text>
+<text x="831" y="172" text-anchor="middle" font-size="11" fill="#4a5568">trips=9,554,757</text>
+<text x="831" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">$256,692,373.14</text>
+<text x="831" y="218" text-anchor="middle" font-size="11" fill="#718096">status=ok &#183; 6.70&#160;s</text>
+
+<text x="255" y="172" text-anchor="middle" font-size="16" font-weight="700" fill="#a0aec0">&#8594;</text>
+<text x="489" y="172" text-anchor="middle" font-size="16" font-weight="700" fill="#a0aec0">&#8594;</text>
+<text x="723" y="172" text-anchor="middle" font-size="16" font-weight="700" fill="#a0aec0">&#8594;</text>
+
+<text x="32" y="256" font-size="11.5" font-style="italic" fill="#718096">Reconciliation a reviewer can check from the log alone: 9,554,757&#160;+&#160;21&#160;=&#160;9,554,778 &#8212; nothing vanished silently.</text>
+
+<line x1="32" y1="276" x2="928" y2="276" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="32" y="308" font-size="15" font-weight="700" fill="#c05621">PROSE VS STRUCTURED &#8212; the same fact, one of them operable</text>
+
+<rect x="32" y="322" width="896" height="30" rx="4" fill="#fff5f5" stroke="#c53030" stroke-width="1.2"/>
+<text x="46" y="342" font-size="12" fill="#1a202c">print("finished cleaning, looks fine") <tspan fill="#c53030" font-weight="700">&#8212; no run id, no counts, no timestamp, nothing to grep or compare</tspan></text>
+
+<rect x="32" y="360" width="896" height="30" rx="4" fill="#f0fff4" stroke="#276749" stroke-width="1.2"/>
+<text x="46" y="380" font-size="11.5" fill="#1a202c">stage=clean rows_in=9554778 rows_out=9554757 quarantined=21 seconds=2.13 <tspan fill="#276749" font-weight="700">&#8212; greppable, parseable, comparable</tspan></text>
+
+<line x1="32" y1="410" x2="928" y2="410" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="32" y="442" font-size="15" font-weight="700" fill="#2b6cb0">OBSERVABILITY IS NOT FREE &#8212; every count you log is an ACTION</text>
+
+<text x="60" y="482" font-size="12" font-weight="700" fill="#1a202c">no cache</text>
+<rect x="150" y="466" width="620" height="24" rx="4" fill="#fff5f5" stroke="#c53030" stroke-width="1.2"/>
+<text x="164" y="483" font-size="12" fill="#1a202c">5 logged counts &#8594; 5 re-runs of the pipeline &#183; <tspan font-weight="700" fill="#c53030">10.10&#160;s</tspan></text>
+
+<text x="60" y="522" font-size="12" font-weight="700" fill="#1a202c">cached</text>
+<rect x="150" y="506" width="411" height="24" rx="4" fill="#f0fff4" stroke="#276749" stroke-width="1.2"/>
+<text x="164" y="523" font-size="12" fill="#1a202c">same 5 counts, one materialization &#183; <tspan font-weight="700" fill="#276749">6.70&#160;s</tspan></text>
+<text x="580" y="523" font-size="12" font-weight="700" fill="#276749">1.51&#215; faster for the identical log lines</text>
+
+<text x="150" y="552" font-size="11.5" font-style="italic" fill="#718096">The fix is not &#8220;log less&#8221; &#8212; it is cache the frame you count, or accept fewer counts. Both are choices you make on purpose.</text>
+
+<rect x="32" y="568" width="896" height="52" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="590" text-anchor="middle" font-size="12" fill="#4a5568">Log the run id on every line &#183; counts IN and OUT per stage &#183; durations &#183; the business totals &#183; one machine-readable summary at the end</text>
+<text x="480" y="610" text-anchor="middle" font-size="11.5" font-style="italic" fill="#718096">And name your jobs with setJobDescription, so the Spark UI shows the same stage names your log does.</text>
+</svg>

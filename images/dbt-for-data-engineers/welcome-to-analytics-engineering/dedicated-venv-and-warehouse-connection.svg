@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="460" viewBox="0 0 1100 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A dedicated environment, confirmed conflict-free, connected to Postgres</title>
+  <desc>A Postgres 16 container, cityflow-warehouse, runs in Docker via .dbt-local/docker-compose.yml, confirmed healthy by its own pg_isready healthcheck. Installing dbt-core and dbt-postgres alongside faust-streaming, a popular stream-processing library, breaks on faust-streaming's own click version pin, confirmed by a real pip warning and a follow-up pip check. A dedicated .venv-dbt-course environment installs the identical packages cleanly, confirmed conflict-free. dbt init scaffolds a real project at .dbt-local/cityflow_warehouse, and dbt debug confirms a live, working connection to the Postgres container over port 5438.</desc>
+  <rect width="1100" height="460" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Dedicated Environment, Confirmed Conflict-Free</text>
+
+  <!-- demo venv, broken -->
+  <rect x="60" y="55" width="460" height="140" rx="10" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="290" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">.venv-demo-conflict (throwaway)</text>
+  <text x="290" y="102" text-anchor="middle" font-size="9.5" fill="#822727">faust-streaming needs click&lt;8.2</text>
+  <text x="290" y="120" text-anchor="middle" font-size="9.5" fill="#822727">pip install dbt-core pulls click 8.4.2</text>
+  <rect x="90" y="135" width="400" height="42" rx="6" fill="#742a2a" />
+  <text x="290" y="153" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#fed7d7">faust-streaming requires click&lt;8.2,</text>
+  <text x="290" y="167" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#fed7d7">but you have click 8.4.2 -- incompatible</text>
+
+  <!-- dedicated venv, clean -->
+  <rect x="580" y="55" width="460" height="140" rx="10" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="810" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">.venv-dbt-course (dedicated)</text>
+  <text x="810" y="102" text-anchor="middle" font-size="9.5" fill="#22543d">Only this course's own packages</text>
+  <text x="810" y="120" text-anchor="middle" font-size="9.5" fill="#22543d">dbt-core 1.12.2 + dbt-postgres 1.11.0</text>
+  <rect x="610" y="135" width="400" height="42" rx="6" fill="#2c5282" />
+  <text x="810" y="160" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">pip check: No broken requirements found</text>
+
+  <path d="M290,195 L290,225" stroke="#a0aec0" stroke-width="1.6" stroke-dasharray="4,3" fill="none" />
+  <path d="M810,195 L810,225" stroke="#a0aec0" stroke-width="2" marker-end="url(#w1)" />
+
+  <text x="550" y="245" text-anchor="middle" font-size="11.5" fill="#718096">the throwaway environment is deleted, never used again -- every command from here uses the dedicated environment</text>
+
+  <!-- warehouse container -->
+  <rect x="300" y="270" width="500" height="150" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.8" />
+  <text x="550" y="295" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2c5282">cityflow-warehouse (Docker)</text>
+  <text x="550" y="317" text-anchor="middle" font-size="9.5" fill="#2c5282">postgres:16-alpine, localhost:5438</text>
+  <text x="550" y="335" text-anchor="middle" font-size="9.5" fill="#2c5282">healthcheck: pg_isready -&gt; healthy</text>
+  <rect x="330" y="350" width="440" height="55" rx="6" fill="#2c5282" />
+  <text x="550" y="372" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">dbt debug: project OK, git OK,</text>
+  <text x="550" y="388" text-anchor="middle" font-size="9.5" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">Connection test: OK connection ok</text>
+
+  <text x="550" y="440" text-anchor="middle" font-size="10.5" fill="#4a5568">Three checks, in order -- files, dependencies, connection -- not one bundled "it works."</text>
+
+  <defs>
+    <marker id="w1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

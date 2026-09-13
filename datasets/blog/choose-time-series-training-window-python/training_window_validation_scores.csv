@@ -1,0 +1,6 @@
+training_window,validation_mae,forecast_days,first_training_rows,selected
+56 days,3.7431,56,56,True
+112 days,3.8562,56,112,False
+28 days,4.4779,56,28,False
+224 days,5.3841,56,224,False
+expanding,6.1937,56,329,False

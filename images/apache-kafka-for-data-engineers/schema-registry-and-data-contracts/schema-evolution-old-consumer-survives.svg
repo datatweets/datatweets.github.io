@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Six events, one live schema change in the middle, zero breakage</title>
+  <desc>CityFlow's TripEvent schema evolves live. Three events produced under v1, then surge_multiplier is added with a default of 1.0 and confirmed compatible, then three more events produced under v2. An already-running consumer using the original v1 reader schema, never modified or restarted, reads all 6 events successfully with zero errors, never seeing surge_multiplier on any record. A new consumer using the v2 reader schema reads the same 6 events and sees surge_multiplier default-filled to 1.0 on the 3 pre-evolution records and the real value 1.2 on the 3 post-evolution records.</desc>
+  <rect width="1100" height="430" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">TripEvent Evolves Live -- The Old Consumer Never Noticed</text>
+
+  <!-- topic timeline -->
+  <text x="60" y="65" font-size="11" font-weight="700" fill="#4a5568">cityflow-tripevent-schema:</text>
+  <g font-family="Menlo, monospace" font-size="9">
+    <rect x="60" y="75" width="150" height="30" rx="5" fill="#ebf8ff" stroke="#4299e1"/>
+    <text x="135" y="94" text-anchor="middle" fill="#2c5282">3x v1 events</text>
+    <rect x="230" y="75" width="150" height="30" rx="5" fill="#e9d8fd" stroke="#9f7aea"/>
+    <text x="305" y="94" text-anchor="middle" fill="#553c9a">schema evolves</text>
+    <rect x="400" y="75" width="150" height="30" rx="5" fill="#feebc8" stroke="#ed8936"/>
+    <text x="475" y="94" text-anchor="middle" fill="#7b341e">3x v2 events</text>
+  </g>
+
+  <!-- old consumer -->
+  <rect x="40" y="130" width="500" height="130" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="290" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Old Consumer -- v1 reader schema, never touched</text>
+  <text x="290" y="178" text-anchor="middle" font-size="10" fill="#22543d">reads all 6 events, before and after the evolution</text>
+  <rect x="70" y="192" width="440" height="46" rx="6" fill="#22543d" />
+  <text x="290" y="212" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#c6f6d5">6 of 6 read -- zero errors</text>
+  <text x="290" y="230" text-anchor="middle" font-size="9.5" fill="#c6f6d5">surge_multiplier never appears on any record</text>
+
+  <!-- new consumer -->
+  <rect x="560" y="130" width="500" height="130" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="810" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">New Consumer -- v2 reader schema</text>
+  <text x="810" y="178" text-anchor="middle" font-size="10" fill="#7b341e">reads the identical 6 events from the start</text>
+  <rect x="590" y="192" width="440" height="46" rx="6" fill="#7b341e" />
+  <text x="810" y="210" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#feebc8">pre: surge_multiplier = 1.0 (default)</text>
+  <text x="810" y="226" text-anchor="middle" font-size="11" font-weight="700" font-family="Menlo, monospace" fill="#feebc8">post: surge_multiplier = 1.2 (actual)</text>
+
+  <!-- reconciliation -->
+  <rect x="140" y="285" width="820" height="80" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="550" y="312" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">assert len(old_seen) == 6 and len(new_seen) == 6 -- passed</text>
+  <text x="550" y="332" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">assert all pre == 1.0 and all post == 1.2 -- passed</text>
+  <text x="550" y="350" text-anchor="middle" font-size="10" fill="#2c5282">no exception, no crash, no code change to the old consumer at any point</text>
+
+  <text x="550" y="395" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">The exact opposite of Lesson 1's KeyError</text>
+  <text x="550" y="415" text-anchor="middle" font-size="11" fill="#4a5568">A field was added to a live stream, and the consumer that predates it simply never noticed.</text>
+</svg>

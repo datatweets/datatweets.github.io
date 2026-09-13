@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 912" width="960" height="912" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="912" fill="#ffffff"/>
+
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">CityFlow's Out-of-Core Analytics Pipeline</text>
+  <text x="480" y="56" text-anchor="middle" font-size="14" fill="#718096">9,554,778 real NYC yellow-taxi trips (Jan&#8211;Mar 2024) &#183; 160.4&#8201;MB on disk, 1,347&#8201;MB in pandas &#183; one report under a 400&#8201;MB budget</text>
+
+  <!-- ============ BAND 1: THE PIPELINE, EACH STAGE TRACED TO ITS MODULE ============ -->
+  <text x="30" y="90" font-size="15" font-weight="700" fill="#2b6cb0">THE PIPELINE &#8212; every stage is a piece an earlier module left behind</text>
+
+  <!-- Stage 1: Profile (M1) -->
+  <rect x="30" y="104" width="210" height="86" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="42" y="124" font-size="10" font-weight="700" fill="#2b6cb0">M1 &#183; PROFILE &amp; PLAN</text>
+  <text x="42" y="143" font-size="11" font-weight="700" fill="#1a202c">Measure the naive cost</text>
+  <text x="42" y="160" font-size="10.5" fill="#4a5568">50&#8201;MB file &#8594; 8.4&#215; in pandas</text>
+  <text x="42" y="176" font-size="10.5" fill="#c53030">naive 3-mo load: 1,258&#8201;MB &gt; budget</text>
+
+  <line x1="240" y1="147" x2="266" y2="147" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="272,147 262,142 262,152" fill="#a0aec0"/>
+
+  <!-- Stage 2: Stream (M4) -->
+  <rect x="272" y="104" width="210" height="86" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="284" y="124" font-size="10" font-weight="700" fill="#276749">M4 &#183; STREAM INGEST</text>
+  <text x="284" y="143" font-size="11" font-weight="700" fill="#1a202c">iter_batches, never the month</text>
+  <text x="284" y="160" font-size="10.5" fill="#4a5568">1 row group at a time &#8594; aggregate</text>
+  <text x="284" y="176" font-size="10.5" fill="#4a5568">795&#8201;KB back to driver, not 1&#8201;M rows</text>
+
+  <line x1="482" y1="147" x2="508" y2="147" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="514,147 504,142 504,152" fill="#a0aec0"/>
+
+  <!-- Stage 3: Dtype (M2/M3) -->
+  <rect x="514" y="104" width="210" height="86" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="526" y="124" font-size="10" font-weight="700" fill="#276749">M2 / M3 &#183; DTYPE REDUCTION</text>
+  <text x="526" y="143" font-size="11" font-weight="700" fill="#1a202c">Keep 3 columns of 19</text>
+  <text x="526" y="160" font-size="10.5" fill="#4a5568">int32 zone &#183; int64 hour &#183; float amt</text>
+  <text x="526" y="176" font-size="10.5" fill="#4a5568">the projection that makes it fit</text>
+
+  <line x1="724" y1="147" x2="750" y2="147" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="756,147 746,142 746,152" fill="#a0aec0"/>
+
+  <!-- Stage 4: data-quality (the substance) -->
+  <rect x="756" y="104" width="174" height="86" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="768" y="124" font-size="10" font-weight="700" fill="#c05621">DATA QUALITY</text>
+  <text x="768" y="143" font-size="11" font-weight="700" fill="#1a202c">The real substance</text>
+  <text x="768" y="160" font-size="10.5" fill="#4a5568">keep reversals, SUM cancels</text>
+  <text x="768" y="176" font-size="10.5" fill="#4a5568">key on ID, quarantine 21</text>
+
+  <!-- wrap arrow down -->
+  <path d="M 843 190 L 843 210 L 135 210 L 135 230" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="135,236 130,226 140,226" fill="#a0aec0"/>
+
+  <!-- Stage 5: Parallel (M5) -->
+  <rect x="30" y="238" width="210" height="86" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="42" y="258" font-size="10" font-weight="700" fill="#276749">M5 &#183; PARALLEL AGGREGATION</text>
+  <text x="42" y="277" font-size="11" font-weight="700" fill="#1a202c">10 partitions, own-partition reads</text>
+  <text x="42" y="294" font-size="10.5" fill="#4a5568">never pickle a DataFrame</text>
+  <text x="42" y="310" font-size="10.5" fill="#c05621">twist: threads 2.5&#215;, processes 0.4&#215;</text>
+
+  <line x1="240" y1="281" x2="266" y2="281" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="272,281 262,276 262,286" fill="#a0aec0"/>
+
+  <!-- Stage 6: Warehouse (M4) -->
+  <rect x="272" y="238" width="210" height="86" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="284" y="258" font-size="10" font-weight="700" fill="#276749">M4 &#183; SQLITE WAREHOUSE</text>
+  <text x="284" y="277" font-size="11" font-weight="700" fill="#1a202c">Idempotent load</text>
+  <text x="284" y="294" font-size="10.5" fill="#4a5568">240,917 zone&#215;hour rows, 8.2&#8201;MB</text>
+  <text x="284" y="310" font-size="10.5" fill="#4a5568">re-run &#8594; no double-count</text>
+
+  <line x1="482" y1="281" x2="508" y2="281" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="514,281 504,276 504,286" fill="#a0aec0"/>
+
+  <!-- Stage 7: Index (M6/M7) -->
+  <rect x="514" y="238" width="210" height="86" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="526" y="258" font-size="10" font-weight="700" fill="#2b6cb0">M6 / M7 &#183; INDEXED READS</text>
+  <text x="526" y="277" font-size="11" font-weight="700" fill="#1a202c">B-tree on (zone, hour)</text>
+  <text x="526" y="294" font-size="10.5" fill="#4a5568">per-zone read 165&#8201;&#181;s</text>
+  <text x="526" y="310" font-size="10.5" fill="#276749">vs 7,346&#8201;&#181;s full scan (44&#215;)</text>
+
+  <line x1="724" y1="281" x2="750" y2="281" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="756,281 746,276 746,286" fill="#a0aec0"/>
+
+  <!-- Stage 8: Report -->
+  <rect x="756" y="238" width="174" height="86" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="768" y="258" font-size="10" font-weight="700" fill="#2b6cb0">THE REPORT</text>
+  <text x="768" y="277" font-size="11" font-weight="700" fill="#1a202c">Per-zone, per-hour</text>
+  <text x="768" y="294" font-size="10.5" fill="#4a5568">real names, kept separate</text>
+  <text x="768" y="310" font-size="10.5" fill="#4a5568">$256.7&#8201;M over 9.55&#8201;M trips</text>
+
+  <line x1="30" y1="348" x2="930" y2="348" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 2: MEMORY FLAT vs LINEAR ============ -->
+  <text x="30" y="380" font-size="15" font-weight="700" fill="#276749">WHAT OUT-OF-CORE BUYS &#8212; peak memory stays flat as the data grows</text>
+  <text x="30" y="399" font-size="11.5" fill="#718096">Peak resident memory (getrusage), each case in its own spawned interpreter. Lean streaming case measured first.</text>
+
+  <!-- chart area: x from 90 to 620, y baseline 560, top 420; scale 1258MB -> ~130px -->
+  <!-- budget line at 400MB -->
+  <line x1="90" y1="516" x2="620" y2="516" stroke="#c53030" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="626" y="520" font-size="11" font-weight="700" fill="#c53030">400&#8201;MB budget</text>
+
+  <!-- baseline -->
+  <line x1="90" y1="560" x2="620" y2="560" stroke="#cbd5e0" stroke-width="1"/>
+  <text x="60" y="564" text-anchor="end" font-size="10" fill="#718096">0</text>
+  <text x="84" y="446" text-anchor="end" font-size="10" fill="#718096">MB</text>
+
+  <!-- grouped bars for 1,2,3 months: streaming (green) vs naive (red) -->
+  <!-- 1 month group center x=170 -->
+  <rect x="128" y="539" width="34" height="21" fill="#48bb78"/>
+  <text x="145" y="534" text-anchor="middle" font-size="9.5" fill="#276749">200</text>
+  <rect x="170" y="507" width="34" height="53" fill="#fc8181"/>
+  <text x="187" y="502" text-anchor="middle" font-size="9.5" fill="#c53030">505</text>
+  <text x="166" y="576" text-anchor="middle" font-size="11" fill="#4a5568">1 month</text>
+
+  <!-- 2 month group -->
+  <rect x="298" y="535" width="34" height="25" fill="#48bb78"/>
+  <text x="315" y="530" text-anchor="middle" font-size="9.5" fill="#276749">240</text>
+  <rect x="340" y="470" width="34" height="90" fill="#fc8181"/>
+  <text x="357" y="465" text-anchor="middle" font-size="9.5" fill="#c53030">868</text>
+  <text x="336" y="576" text-anchor="middle" font-size="11" fill="#4a5568">2 months</text>
+
+  <!-- 3 month group -->
+  <rect x="468" y="530" width="34" height="30" fill="#48bb78"/>
+  <text x="485" y="525" text-anchor="middle" font-size="9.5" fill="#276749">286</text>
+  <rect x="510" y="430" width="34" height="130" fill="#fc8181"/>
+  <text x="527" y="425" text-anchor="middle" font-size="9.5" fill="#c53030">1,258</text>
+  <text x="506" y="576" text-anchor="middle" font-size="11" fill="#4a5568">3 months</text>
+
+  <!-- legend -->
+  <rect x="660" y="452" width="14" height="14" fill="#48bb78"/>
+  <text x="680" y="464" font-size="11.5" font-weight="700" fill="#276749">streaming pipeline</text>
+  <text x="680" y="480" font-size="10.5" fill="#718096">+86&#8201;MB across 3 months (flat)</text>
+  <rect x="660" y="494" width="14" height="14" fill="#fc8181"/>
+  <text x="680" y="506" font-size="11.5" font-weight="700" fill="#c53030">naive read_parquet</text>
+  <text x="680" y="522" font-size="10.5" fill="#718096">+753&#8201;MB across 3 months (linear)</text>
+  <text x="660" y="548" font-size="10.5" fill="#4a5568">The pipeline's peak is bounded by</text>
+  <text x="660" y="562" font-size="10.5" fill="#4a5568">one batch + distinct keys, not rows.</text>
+
+  <line x1="30" y1="600" x2="930" y2="600" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 3: THE DATA-QUALITY TRAPS ============ -->
+  <text x="30" y="632" font-size="15" font-weight="700" fill="#c05621">THE TRAPS THAT MAKE A FAST PIPELINE WRONG &#8212; every number is real, checked per month</text>
+
+  <!-- Trap 1: reversals -->
+  <rect x="30" y="648" width="290" height="118" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="42" y="668" font-size="11.5" font-weight="700" fill="#c05621">Reversals are not duplicates</text>
+  <text x="42" y="687" font-size="10.5" fill="#4a5568">January: 31,109 repeated business keys.</text>
+  <text x="42" y="703" font-size="10.5" fill="#4a5568">30,676 cancel in total_amount &#8212; voided</text>
+  <text x="42" y="719" font-size="10.5" fill="#4a5568">charges, not copies. Genuine duplicates:</text>
+  <text x="42" y="735" font-size="10.5" fill="#276749">Jan 0 &#183; Feb 2 &#183; Mar 0 (check each month).</text>
+  <text x="42" y="754" font-size="10.5" font-weight="700" fill="#c53030">SUM lets them cancel; do NOT dedup the key.</text>
+
+  <!-- Trap 2: dedup swing -->
+  <rect x="335" y="648" width="290" height="118" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="347" y="668" font-size="11.5" font-weight="700" fill="#c05621">drop_duplicates() corrupts revenue</text>
+  <text x="347" y="687" font-size="10.5" fill="#4a5568">Deduping the key breaks the cancellation.</text>
+  <text x="347" y="703" font-size="10.5" fill="#4a5568">January swing, by an arbitrary keep= flag:</text>
+  <text x="347" y="722" font-size="11" font-weight="700" fill="#c53030">keep=first &#8722;$787,612</text>
+  <text x="347" y="739" font-size="11" font-weight="700" fill="#276749">keep=last &#160;+$784,614</text>
+  <text x="347" y="757" font-size="10.5" fill="#4a5568">Same data, &#177;$0.8&#8201;M decided by a default.</text>
+
+  <!-- Trap 3: zone names + timestamps -->
+  <rect x="640" y="648" width="290" height="118" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="652" y="668" font-size="11.5" font-weight="700" fill="#c05621">Names collide, timestamps lie</text>
+  <text x="652" y="687" font-size="10.5" fill="#4a5568">Two distinct zones are both named</text>
+  <text x="652" y="703" font-size="10.5" fill="#4a5568">&#8220;Corona&#8221; (LocationID 56: 899, 57: 35).</text>
+  <text x="652" y="719" font-size="10.5" fill="#4a5568">Key on the ID, join the name last.</text>
+  <text x="652" y="738" font-size="10.5" fill="#4a5568">Stray stamps differ per month: Jan 18,</text>
+  <text x="652" y="754" font-size="10.5" fill="#4a5568">Feb 15, Mar 23 &#8212; one dated 2002-12-31.</text>
+
+  <line x1="30" y1="792" x2="930" y2="792" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 4: CORRECTNESS ============ -->
+  <text x="30" y="824" font-size="15" font-weight="700" fill="#2b6cb0">THE ONE CHECK THAT MATTERS &#8212; a fast wrong answer is worthless</text>
+  <rect x="30" y="838" width="900" height="44" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="48" y="865" font-size="12.5" fill="#1a202c">The streaming, parallel, indexed pipeline and a dumb full-load baseline agree <tspan font-weight="700" fill="#276749">exactly</tspan>: both report <tspan font-weight="700">240,917</tspan> zone&#215;hour buckets, <tspan font-weight="700">9,554,757</tspan> trips, <tspan font-weight="700">$256,692,373.14</tspan>.</text>
+
+  <text x="480" y="902" text-anchor="middle" font-size="10.5" fill="#a0aec0">Measured on a 10-core macOS machine, pandas 3.0.3 / pyarrow 25.0.0. Timings and peak memory vary by run; the flat-vs-linear shape, the identical answers, and the dedup swing do not.</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">pl.concat() -- Vertical and Horizontal</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">Two ways to combine real Thistlewood frames that already line up</text>
+
+  <text x="180" y="66" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">Vertical -- how="vertical"</text>
+
+  <rect x="50" y="76" width="260" height="42" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="180" y="94" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0">orders_2024</text>
+  <text x="180" y="110" text-anchor="middle" font-size="9" font-family="monospace" fill="#1a202c">3,008 real rows</text>
+
+  <rect x="50" y="126" width="260" height="42" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="180" y="144" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0">orders_2025</text>
+  <text x="180" y="160" text-anchor="middle" font-size="9" font-family="monospace" fill="#1a202c">2,992 real rows</text>
+
+  <line x1="180" y1="168" x2="180" y2="194" stroke="#a0aec0" stroke-width="1.4" />
+
+  <rect x="30" y="194" width="300" height="52" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="180" y="213" text-anchor="middle" font-size="9.5" font-weight="700" font-family="monospace" fill="#276749">pl.concat(..., how="vertical")</text>
+  <text x="180" y="232" text-anchor="middle" font-size="10" font-family="monospace" fill="#1a202c">6,000 real rows -- matches orders.csv</text>
+
+  <text x="515" y="66" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">Horizontal -- how="horizontal_extend"</text>
+
+  <rect x="380" y="76" width="130" height="92" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="445" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">identity_cols</text>
+  <text x="445" y="116" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">4 real cols</text>
+  <text x="445" y="132" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">180 rows</text>
+
+  <text x="518" y="128" text-anchor="middle" font-size="14" font-weight="700" fill="#4a5568">+</text>
+
+  <rect x="520" y="76" width="130" height="92" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="585" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">location_cols</text>
+  <text x="585" y="116" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">4 real cols</text>
+  <text x="585" y="132" text-anchor="middle" font-size="8.5" font-family="monospace" fill="#1a202c">180 rows</text>
+
+  <line x1="515" y1="168" x2="515" y2="194" stroke="#a0aec0" stroke-width="1.4" />
+
+  <rect x="365" y="194" width="300" height="52" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="515" y="213" text-anchor="middle" font-size="9" font-weight="700" font-family="monospace" fill="#276749">pl.concat(..., how="horizontal_extend")</text>
+  <text x="515" y="232" text-anchor="middle" font-size="10" font-family="monospace" fill="#1a202c">180 rows x 8 cols -- matches exactly</text>
+
+  <rect x="40" y="264" width="640" height="66" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="286" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">Vertical concat is strict</text>
+  <text x="360" y="306" text-anchor="middle" font-size="9.5" fill="#742a2a">Renaming one real column raises a real ShapeError -- no partial merge allowed.</text>
+
+  <rect x="40" y="344" width="640" height="98" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="366" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">Horizontal concat trusts row position only, not a key</text>
+  <text x="360" y="386" text-anchor="middle" font-size="9.5" fill="#7b341e">identity_cols (180 real rows) + short_location (5 real rows) still returns 180 rows.</text>
+  <text x="360" y="404" text-anchor="middle" font-size="9.5" fill="#7b341e">175 real rows get silently null-padded in city/state -- no real error, no real warning.</text>
+</svg>

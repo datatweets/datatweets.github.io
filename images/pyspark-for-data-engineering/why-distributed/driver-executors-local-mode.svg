@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="640" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Spark&#8217;s cast in local mode: one JVM plays every part</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">local[*] on a 10-core laptop &#8212; pyspark 4.2.0, real NYC taxi quarter (9,554,778 trips)</text>
+
+<!-- LEFT: THE CAST -->
+<text x="240" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#1a202c">THE CAST</text>
+
+<rect x="50" y="104" width="380" height="92" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="240" y="127" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">DRIVER &#8212; your Python process</text>
+<text x="240" y="147" text-anchor="middle" font-size="11" fill="#4a5568">holds the SparkSession &#183; builds the plan &#183; Catalyst optimizes it</text>
+<text x="240" y="164" text-anchor="middle" font-size="11" fill="#4a5568">cuts the plan into stages &#183; schedules tasks &#183; collects results</text>
+<text x="240" y="184" text-anchor="middle" font-size="10" fill="#718096">appName &#8220;cityflow&#8221; &#183; serves the Spark UI on port 4040</text>
+
+<line x1="200" y1="196" x2="200" y2="238" stroke="#2b6cb0" stroke-width="1.5"/>
+<polygon points="195,236 205,236 200,246" fill="#2b6cb0"/>
+<text x="192" y="222" text-anchor="end" font-size="10" fill="#2b6cb0">tasks</text>
+<line x1="280" y1="246" x2="280" y2="204" stroke="#276749" stroke-width="1.5"/>
+<polygon points="275,206 285,206 280,196" fill="#276749"/>
+<text x="288" y="222" font-size="10" fill="#276749">results</text>
+
+<rect x="50" y="246" width="380" height="136" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="240" y="269" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">EXECUTOR &#8212; a JVM process running tasks</text>
+<text x="240" y="286" text-anchor="middle" font-size="11" fill="#4a5568">holds data partitions &#183; one task slot per core</text>
+<rect x="137" y="296" width="30" height="30" rx="4" fill="#48bb78" stroke="#276749"/>
+<rect x="181" y="296" width="30" height="30" rx="4" fill="#48bb78" stroke="#276749"/>
+<rect x="225" y="296" width="30" height="30" rx="4" fill="#48bb78" stroke="#276749"/>
+<rect x="269" y="296" width="30" height="30" rx="4" fill="#48bb78" stroke="#276749"/>
+<rect x="313" y="296" width="30" height="30" rx="4" fill="#48bb78" stroke="#276749"/>
+<rect x="137" y="332" width="30" height="30" rx="4" fill="#48bb78" stroke="#276749"/>
+<rect x="181" y="332" width="30" height="30" rx="4" fill="#48bb78" stroke="#276749"/>
+<rect x="225" y="332" width="30" height="30" rx="4" fill="#48bb78" stroke="#276749"/>
+<rect x="269" y="332" width="30" height="30" rx="4" fill="#48bb78" stroke="#276749"/>
+<rect x="313" y="332" width="30" height="30" rx="4" fill="#48bb78" stroke="#276749"/>
+<text x="240" y="376" text-anchor="middle" font-size="10" fill="#718096">10 task slots &#8212; local[*] resolved to defaultParallelism = 10</text>
+
+<rect x="50" y="396" width="380" height="56" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="240" y="418" text-anchor="middle" font-size="12" font-weight="700" fill="#718096">CLUSTER MANAGER &#8212; assigns machines</text>
+<text x="240" y="437" text-anchor="middle" font-size="11" fill="#718096">local mode: nothing to assign &#8212; driver and executor share one JVM</text>
+
+<!-- RIGHT: THE HIERARCHY -->
+<text x="710" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="#1a202c">THE WORK HIERARCHY &#8212; one real job, measured</text>
+
+<rect x="510" y="104" width="400" height="46" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="710" y="123" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">APPLICATION &#8220;cityflow&#8221;</text>
+<text x="710" y="141" text-anchor="middle" font-size="11" fill="#4a5568">one .collect() &#8212; top pickup zones over 2,964,624 January trips</text>
+
+<rect x="510" y="162" width="400" height="78" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="526" y="182" font-size="12" font-weight="700" fill="#2b6cb0">JOB 3</text>
+<text x="710" y="200" text-anchor="middle" font-size="11" fill="#4a5568">scan stage &#8212; 10 tasks = one per partition (partial counts)</text>
+<rect x="594" y="208" width="16" height="16" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="618" y="208" width="16" height="16" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="642" y="208" width="16" height="16" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="666" y="208" width="16" height="16" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="690" y="208" width="16" height="16" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="714" y="208" width="16" height="16" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="738" y="208" width="16" height="16" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="762" y="208" width="16" height="16" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="786" y="208" width="16" height="16" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+<rect x="810" y="208" width="16" height="16" rx="3" fill="#4299e1" stroke="#2b6cb0"/>
+
+<line x1="510" y1="258" x2="910" y2="258" stroke="#c05621" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="710" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#c05621">shuffle &#8212; rows regroup by zone: the stage boundary</text>
+
+<rect x="510" y="272" width="400" height="132" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="526" y="292" font-size="12" font-weight="700" fill="#276749">JOB 4 &#8212; adaptive execution split one action into two jobs</text>
+<rect x="526" y="302" width="368" height="32" rx="6" fill="#f7fafc" stroke="#cbd5e0"/>
+<text x="710" y="322" text-anchor="middle" font-size="11" fill="#718096">stage skipped &#8212; 10 tasks scheduled, 0 ran (shuffle output reused)</text>
+<rect x="530" y="346" width="16" height="16" rx="3" fill="#48bb78" stroke="#276749"/>
+<text x="556" y="359" font-size="11" fill="#4a5568">final stage &#8212; 1 task (AQE coalesced the default 200 &#8594; 1)</text>
+<text x="710" y="388" text-anchor="middle" font-size="11" fill="#4a5568">&#8594; 3 rows to the driver: zones 132 &#183; 161 &#183; 237 = 145,240 &#183; 143,471 &#183; 142,708</text>
+
+<text x="710" y="428" text-anchor="middle" font-size="10" fill="#718096">read live from sc.statusTracker() &#8212; the same bookkeeping the Spark UI shows</text>
+
+<!-- BOTTOM: MEASURED -->
+<line x1="50" y1="460" x2="910" y2="460" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="484" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Same job, one string changed &#8212; median of 5 runs over all 9,554,778 rows</text>
+
+<rect x="60" y="496" width="340" height="76" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="230" y="519" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">local[*] &#8212; 10 cores</text>
+<text x="230" y="538" text-anchor="middle" font-size="11" fill="#4a5568">quarter read as 10 partitions</text>
+<text x="230" y="561" text-anchor="middle" font-size="16" font-weight="700" fill="#1a202c">0.34 s</text>
+
+<text x="480" y="520" text-anchor="middle" font-size="12" font-weight="600" fill="#4a5568">5&#215; fewer cores</text>
+<text x="480" y="540" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">only 1.6&#215; slower</text>
+<text x="480" y="558" text-anchor="middle" font-size="10" fill="#718096">fixed plan/schedule costs don&#8217;t parallelize</text>
+
+<rect x="560" y="496" width="340" height="76" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="730" y="519" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">local[2] &#8212; 2 cores</text>
+<text x="730" y="538" text-anchor="middle" font-size="11" fill="#4a5568">same files re-planned as 3 partitions</text>
+<text x="730" y="561" text-anchor="middle" font-size="16" font-weight="700" fill="#1a202c">0.56 s</text>
+
+<text x="480" y="600" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Same optimizer, same plans, same engine as a thousand-node cluster &#8212; only the master URL changes.</text>
+<text x="480" y="620" text-anchor="middle" font-size="12" fill="#4a5568">The one cost local mode can&#8217;t show: its shuffle moves through memory &#8212; on a cluster that hop crosses a network (Module 5 measures it).</text>
+</svg>

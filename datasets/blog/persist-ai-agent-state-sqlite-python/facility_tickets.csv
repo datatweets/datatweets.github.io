@@ -1,0 +1,7 @@
+ticket_id,area,issue,outage_minutes,safety_impact,expected_priority,runbook_code
+T101,packing,label printer pauses between jobs,8,no,normal,PRINT-02
+T102,training room,wall display has no sound,25,no,normal,AV-04
+T103,receiving,barcode scanner misses faded labels,12,no,normal,SCAN-03
+T104,cold storage,temperature sensor stopped reporting,18,yes,urgent,TEMP-01
+T105,dispatch,route board refresh is delayed,47,no,urgent,BOARD-05
+T106,office,shared scanner reports low toner,0,no,normal,SCAN-07

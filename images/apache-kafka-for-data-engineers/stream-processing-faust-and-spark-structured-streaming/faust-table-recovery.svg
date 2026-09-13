@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="410" viewBox="0 0 1100 410" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>99.44% recovered from a real kill -- against 0% for the plain dict this exact scenario broke</title>
+  <desc>A Faust table aggregating revenue by zone across 15,000 real trips. Run 1 processes the full topic and its live total, $388,422.49, exactly matches the ground truth computed independently in plain Python. The worker is killed with SIGKILL. Run 2 starts a fresh process with zero new messages to consume -- Kafka's offsets are already at the end -- and the table recovers $386,244.66 from its own changelog topic on startup, 99.44% of the true total, compared to the plain consumer loop from Lesson 1 which recovered exactly 0%.</desc>
+  <rect width="1100" height="410" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Real SIGKILL, and What Actually Comes Back</text>
+
+  <!-- Run 1 -->
+  <rect x="60" y="55" width="440" height="130" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="280" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">RUN 1 -- table processes 15,000 trips</text>
+  <rect x="90" y="95" width="380" height="46" rx="6" fill="#22543d" />
+  <text x="280" y="123" text-anchor="middle" font-size="16" font-weight="700" font-family="Menlo, monospace" fill="#c6f6d5">$388,422.49</text>
+  <text x="280" y="160" text-anchor="middle" font-size="10" fill="#22543d">exact match to ground truth -- then SIGKILL</text>
+
+  <!-- Run 2 -->
+  <rect x="600" y="55" width="440" height="130" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="820" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#7b341e">RUN 2 -- fresh process, 0 new messages</text>
+  <rect x="630" y="95" width="380" height="46" rx="6" fill="#7b341e" />
+  <text x="820" y="123" text-anchor="middle" font-size="16" font-weight="700" font-family="Menlo, monospace" fill="#feebc8">$386,244.66</text>
+  <text x="820" y="160" text-anchor="middle" font-size="10" fill="#7b341e">recovered from the changelog on startup alone</text>
+
+  <!-- comparison bar -->
+  <rect x="150" y="215" width="800" height="110" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="550" y="240" text-anchor="middle" font-size="13" font-weight="700" fill="#2c5282">99.44% recovered -- vs 0.00% for Lesson 1's plain dict</text>
+
+  <rect x="180" y="255" width="740" height="24" rx="4" fill="#e2e8f0" />
+  <rect x="180" y="255" width="736" height="24" rx="4" fill="#48bb78" />
+  <text x="550" y="272" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">99.44% recovered</text>
+
+  <text x="550" y="305" text-anchor="middle" font-size="10.5" fill="#2c5282">the missing 0.56% is one update whose changelog write hadn't landed when SIGKILL arrived --</text>
+  <text x="550" y="320" text-anchor="middle" font-size="10" fill="#2c5282">durability for completed writes, not atomicity with the in-memory update</text>
+
+  <text x="550" y="365" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">This is the exact gap Lesson 1 proved exists -- now measured, closed, and explained</text>
+</svg>

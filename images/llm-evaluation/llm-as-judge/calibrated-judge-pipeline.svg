@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The calibrated-judge pipeline for Docent: a rubric feeds a judge function that reasons before it votes, verdicts are calibrated against human gold labels to get agreement 0.90 and Cohen's kappa 0.80, and only then is Docent's 100 percent quality score reported with its calibration caveat attached.</title>
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+
+  <text x="40" y="44" font-size="23" font-weight="700" fill="#1a202c">A Calibrated Judge for Docent</text>
+  <text x="40" y="70" font-size="14" fill="#718096">A quality score is never reported without the agreement number that says how far to trust it</text>
+
+  <!-- Stage 1: rubric -->
+  <rect x="40" y="110" width="180" height="120" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <text x="130" y="138" font-size="15" font-weight="700" fill="#6b46c1" text-anchor="middle">1. Rubric</text>
+  <text x="130" y="164" font-size="12.5" fill="#4a5568" text-anchor="middle">Define "correct":</text>
+  <text x="130" y="184" font-size="12.5" fill="#4a5568" text-anchor="middle">matches reference,</text>
+  <text x="130" y="204" font-size="12.5" fill="#4a5568" text-anchor="middle">refusal is right for</text>
+  <text x="130" y="221" font-size="12.5" fill="#4a5568" text-anchor="middle">out-of-scope</text>
+
+  <!-- Stage 2: judge -->
+  <rect x="270" y="110" width="180" height="120" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="360" y="138" font-size="15" font-weight="700" fill="#2b6cb0" text-anchor="middle">2. Judge</text>
+  <text x="360" y="164" font-size="12.5" fill="#4a5568" text-anchor="middle">claude-haiku-4-5</text>
+  <text x="360" y="184" font-size="12.5" fill="#4a5568" text-anchor="middle">reasoning &#8594; verdict</text>
+  <text x="360" y="204" font-size="12.5" fill="#4a5568" text-anchor="middle">JSON out, validated</text>
+  <text x="360" y="221" font-size="11.5" fill="#718096" text-anchor="middle" font-style="italic">bias controls applied</text>
+
+  <!-- Stage 3: calibrate -->
+  <rect x="500" y="110" width="180" height="120" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <text x="590" y="138" font-size="15" font-weight="700" fill="#c05621" text-anchor="middle">3. Calibrate</text>
+  <text x="590" y="164" font-size="12.5" fill="#4a5568" text-anchor="middle">vs human labels</text>
+  <text x="590" y="188" font-size="13.5" fill="#276749" text-anchor="middle" font-weight="700">agreement 0.90</text>
+  <text x="590" y="210" font-size="13.5" fill="#276749" text-anchor="middle" font-weight="700">kappa 0.80</text>
+
+  <!-- Stage 4: report -->
+  <rect x="730" y="110" width="110" height="120" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="785" y="138" font-size="15" font-weight="700" fill="#276749" text-anchor="middle">4. Report</text>
+  <text x="785" y="164" font-size="12.5" fill="#4a5568" text-anchor="middle">score with</text>
+  <text x="785" y="182" font-size="12.5" fill="#4a5568" text-anchor="middle">caveat</text>
+  <text x="785" y="208" font-size="12.5" fill="#4a5568" text-anchor="middle">attached</text>
+
+  <!-- arrows -->
+  <g stroke="#a0aec0" stroke-width="2.5" fill="#a0aec0">
+    <line x1="220" y1="170" x2="264" y2="170"/>
+    <polygon points="264,164 274,170 264,176"/>
+    <line x1="450" y1="170" x2="494" y2="170"/>
+    <polygon points="494,164 504,170 494,176"/>
+    <line x1="680" y1="170" x2="724" y2="170"/>
+    <polygon points="724,164 734,170 724,176"/>
+  </g>
+
+  <!-- gate check under calibrate -->
+  <text x="590" y="258" font-size="12" fill="#718096" text-anchor="middle">gate: agreement &#8805; 0.85 ?</text>
+  <line x1="590" y1="230" x2="590" y2="248" stroke="#a0aec0" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <!-- caveat banner -->
+  <rect x="40" y="330" width="800" height="86" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="60" y="362" font-size="15" font-weight="700" fill="#1a202c">The one sentence you are allowed to publish:</text>
+  <text x="60" y="390" font-size="15" fill="#2b6cb0" font-weight="700">"Docent scores 100% correct &#8212; by a judge that agrees with humans 90% of the time (kappa 0.80)."</text>
+
+  <!-- disagreement inspection -->
+  <rect x="40" y="440" width="800" height="90" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+  <text x="60" y="470" font-size="14" font-weight="700" fill="#c53030">Inspect the 1 disagreement, don't just average it away</text>
+  <text x="60" y="494" font-size="13" fill="#4a5568">Q: "grace period before a deleted database is purged?" &#8212; candidate "About a day."</text>
+  <text x="60" y="515" font-size="13" fill="#4a5568">Human: incorrect (too vague). Judge: correct ("about a day &#8776; 24 hours"). The judge is more lenient on precision.</text>
+</svg>

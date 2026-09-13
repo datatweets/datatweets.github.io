@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Two compiled outputs, one real swap -- both confirmed against Postgres</title>
+  <desc>hello_cityflow.sql, a plain SELECT statement with three UNION ALL rows and no Jinja, compiles two different ways. target/compiled/hello_cityflow.sql holds the bare model body, identical to the source since there is no Jinja to expand. target/run/hello_cityflow.sql holds the full DDL Postgres actually executed: CREATE VIEW hello_cityflow__dbt_tmp AS (...), building into a temporarily-named object first. information_schema.tables confirms only hello_cityflow exists afterward, no leftover __dbt_tmp, proving the swap into the real name completed. A plain psycopg2 connection, independent of dbt, queries the three rows back and confirms they match the model's own SELECT statement exactly.</desc>
+  <rect width="1100" height="480" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Model, Two Compiled Outputs, One Real Swap</text>
+
+  <rect x="60" y="55" width="220" height="70" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="170" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">hello_cityflow.sql</text>
+  <text x="170" y="98" text-anchor="middle" font-size="8.5" fill="#22543d">bare SELECT, no Jinja</text>
+  <text x="170" y="112" text-anchor="middle" font-size="8.5" fill="#22543d">the source file</text>
+
+  <path d="M280,90 L330,90" stroke="#a0aec0" stroke-width="2" marker-end="url(#m1)" />
+  <text x="305" y="80" text-anchor="middle" font-size="8" fill="#4a5568">dbt run</text>
+
+  <!-- compiled -->
+  <rect x="330" y="55" width="330" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="495" y="76" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">target/compiled/hello_cityflow.sql</text>
+  <text x="495" y="94" text-anchor="middle" font-size="8.5" fill="#2c5282">model body only -- identical to source</text>
+  <text x="495" y="110" text-anchor="middle" font-size="8.5" fill="#2c5282">(no Jinja here to expand)</text>
+
+  <!-- run -->
+  <rect x="330" y="145" width="330" height="90" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.6" />
+  <text x="495" y="168" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7b341e">target/run/hello_cityflow.sql</text>
+  <text x="495" y="188" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#7b341e">CREATE VIEW hello_cityflow__dbt_tmp</text>
+  <text x="495" y="202" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#7b341e">AS ( ...model body... );</text>
+  <text x="495" y="220" text-anchor="middle" font-size="8.5" fill="#975a16">the exact DDL Postgres executed</text>
+
+  <path d="M660,190 L710,190" stroke="#a0aec0" stroke-width="2" marker-end="url(#m1)" />
+
+  <rect x="710" y="145" width="330" height="90" rx="8" fill="#2c5282" />
+  <text x="875" y="170" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ebf8ff">Atomic swap</text>
+  <text x="875" y="190" text-anchor="middle" font-size="8.5" fill="#bee3f8">hello_cityflow__dbt_tmp</text>
+  <text x="875" y="204" text-anchor="middle" font-size="9" fill="#ebf8ff">-&gt; renamed to hello_cityflow</text>
+  <text x="875" y="220" text-anchor="middle" font-size="8" fill="#bee3f8">a failed build never leaves a broken object</text>
+
+  <path d="M875,235 L875,270" stroke="#a0aec0" stroke-width="2" marker-end="url(#m1)" />
+
+  <rect x="640" y="280" width="470" height="90" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.8" />
+  <text x="875" y="305" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">Confirmed independently</text>
+  <text x="875" y="325" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#22543d">information_schema.tables -&gt; only hello_cityflow</text>
+  <text x="875" y="341" text-anchor="middle" font-size="8.5" fill="#22543d">no leftover __dbt_tmp -- swap confirmed complete</text>
+  <text x="875" y="357" text-anchor="middle" font-size="8.5" fill="#22543d">psycopg2 query -&gt; 3 rows match exactly</text>
+
+  <text x="550" y="420" text-anchor="middle" font-size="11" fill="#4a5568">"Compiled SQL" and "executed SQL" are two different files -- both checked directly, neither assumed.</text>
+
+  <defs>
+    <marker id="m1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

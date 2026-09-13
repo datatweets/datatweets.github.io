@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Coverage report shown as eight buckets, one per Meridian doc page. Seven buckets are filled green with a case count of one or more. The auth bucket is empty and outlined in red with a count of zero, flagged as a coverage gap.</title>
+  <rect x="0" y="0" width="800" height="300" fill="#ffffff"/>
+
+  <text x="30" y="38" font-size="21" font-weight="700" fill="#1a202c">A coverage report is eight buckets, counted</text>
+  <text x="30" y="60" font-size="13" fill="#718096">One bucket per Meridian doc page; a question that cites that page fills its bucket</text>
+
+  <!-- 8 buckets, evenly spaced -->
+  <!-- bucket width 78, gap 12, start x=30, 8 buckets -->
+  <g font-size="12" text-anchor="middle">
+    <!-- auth: EMPTY, red outline -->
+    <rect x="30" y="110" width="78" height="90" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="2.5"/>
+    <text x="69" y="160" font-size="22" font-weight="700" fill="#c53030">0</text>
+    <text x="69" y="220" fill="#4a5568" font-weight="600">auth</text>
+
+    <!-- ratelimits: 2 -->
+    <rect x="120" y="90" width="78" height="110" rx="10" fill="#f0fff4" stroke="#9ae6b4" stroke-width="2"/>
+    <text x="159" y="150" font-size="22" font-weight="700" fill="#276749">2</text>
+    <text x="159" y="220" fill="#4a5568" font-weight="600">ratelimits</text>
+
+    <!-- plans: 2 -->
+    <rect x="210" y="90" width="78" height="110" rx="10" fill="#f0fff4" stroke="#9ae6b4" stroke-width="2"/>
+    <text x="249" y="150" font-size="22" font-weight="700" fill="#276749">2</text>
+    <text x="249" y="220" fill="#4a5568" font-weight="600">plans</text>
+
+    <!-- regions: 1 -->
+    <rect x="300" y="130" width="78" height="70" rx="10" fill="#f0fff4" stroke="#9ae6b4" stroke-width="2"/>
+    <text x="339" y="170" font-size="22" font-weight="700" fill="#276749">1</text>
+    <text x="339" y="220" fill="#4a5568" font-weight="600">regions</text>
+
+    <!-- errors: 1 -->
+    <rect x="390" y="130" width="78" height="70" rx="10" fill="#f0fff4" stroke="#9ae6b4" stroke-width="2"/>
+    <text x="429" y="170" font-size="22" font-weight="700" fill="#276749">1</text>
+    <text x="429" y="220" fill="#4a5568" font-weight="600">errors</text>
+
+    <!-- backups: 2 -->
+    <rect x="480" y="90" width="78" height="110" rx="10" fill="#f0fff4" stroke="#9ae6b4" stroke-width="2"/>
+    <text x="519" y="150" font-size="22" font-weight="700" fill="#276749">2</text>
+    <text x="519" y="220" fill="#4a5568" font-weight="600">backups</text>
+
+    <!-- sdks: 1 -->
+    <rect x="570" y="130" width="78" height="70" rx="10" fill="#f0fff4" stroke="#9ae6b4" stroke-width="2"/>
+    <text x="609" y="170" font-size="22" font-weight="700" fill="#276749">1</text>
+    <text x="609" y="220" fill="#4a5568" font-weight="600">sdks</text>
+
+    <!-- deletion: 1 -->
+    <rect x="660" y="130" width="78" height="70" rx="10" fill="#f0fff4" stroke="#9ae6b4" stroke-width="2"/>
+    <text x="699" y="170" font-size="22" font-weight="700" fill="#276749">1</text>
+    <text x="699" y="220" fill="#4a5568" font-weight="600">deletion</text>
+  </g>
+
+  <!-- baseline -->
+  <line x1="20" y1="200" x2="748" y2="200" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- callout to auth -->
+  <text x="69" y="252" font-size="13" font-weight="700" fill="#c53030" text-anchor="middle">a coverage gap:</text>
+  <text x="69" y="269" font-size="13" font-weight="700" fill="#c53030" text-anchor="middle">no question tests auth</text>
+  <path d="M 69 202 L 69 234" stroke="#c53030" stroke-width="2"/>
+  <path d="M 65 228 L 69 234 L 73 228 Z" fill="#c53030"/>
+</svg>

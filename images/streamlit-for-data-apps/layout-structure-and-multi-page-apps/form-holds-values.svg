@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="390" viewBox="0 0 1050 390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>st.form Holds Values Until Submit</title>
+<desc>Two panels. Left, no form: setting text_input to Kenya and number_input to 1000000 makes the line Current values Kenya 1000000 appear immediately, with no submit step. Right, with st.form: the identical widget values are set, but the line Applied Kenya 1000000 does not appear at all until form_submit_button is actually clicked -- confirmed with AppTest by checking the markdown elements before and after the click.</desc>
+<rect width="1050" height="390" fill="#ffffff" />
+<text x="525" y="34" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">st.form Holds Values Until Submit</text>
+<rect x="30" y="60" width="483" height="210" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+<text x="271" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">No form</text>
+<text x="271" y="110" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">text_input.input(&quot;Kenya&quot;)</text>
+<text x="271" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">number_input.set_value(1e6)</text>
+<text x="271" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">.run()</text>
+<text x="271" y="176" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568"></text>
+<text x="271" y="198" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">Immediately shows:</text>
+<text x="271" y="220" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">&quot;Current values: Kenya</text>
+<text x="271" y="242" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">1000000&quot;</text>
+<path d="M517,165 L533,165" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr)" />
+<rect x="537" y="60" width="483" height="210" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+<text x="778" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">With st.form(...)</text>
+<text x="778" y="110" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">same two widgets set</text>
+<text x="778" y="132" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">inside the form, .run()</text>
+<text x="778" y="154" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568"></text>
+<text x="778" y="176" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">Shows nothing new until</text>
+<text x="778" y="198" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">form_submit_button</text>
+<text x="778" y="220" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">is clicked</text>
+<rect x="30" y="286" width="990" height="88" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="525" y="310" text-anchor="middle" font-size="10.5" fill="#7b341e">Confirmed with AppTest: values set inside a form do not reach the rest of the script until the real Submit</text>
+<text x="525" y="330" text-anchor="middle" font-size="10.5" fill="#7b341e">button fires -- checked by looking for the dependent markdown line, not just by trusting the widget values.</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

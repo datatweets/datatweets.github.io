@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Predict multiple targets with scikit-learn in Python</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail showing one seven-feature sensor row entering a random forest and producing two labeled outputs: temperature and humidity.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="32" font-weight="600" letter-spacing="1" fill="#59636e">MULTI-OUTPUT REGRESSION</text>
+    <text x="90" y="274" font-size="68" font-weight="700" fill="#1b1f24">ONE ROW</text>
+    <text x="90" y="368" font-size="68" font-weight="700" fill="#1b1f24">TWO TARGETS</text>
+    <rect x="94" y="405" width="348" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="483" font-size="28" font-weight="500" fill="#59636e">SCIKIT-LEARN · SHAPES · METRICS</text>
+  </g>
+
+  <g transform="translate(625 115) scale(0.88)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="0" y="120" width="130" height="178" rx="18" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+    <text x="65" y="154" text-anchor="middle" font-size="19" font-weight="700" fill="#59636e">INPUT X</text>
+    <text x="65" y="180" text-anchor="middle" font-size="16" fill="#59636e">ONE SENSOR ROW</text>
+    <g fill="#e3f0fa" stroke="#0067c0" stroke-width="2">
+      <rect x="20" y="202" width="38" height="28" rx="6"/>
+      <rect x="70" y="202" width="38" height="28" rx="6"/>
+      <rect x="20" y="241" width="38" height="28" rx="6"/>
+      <rect x="70" y="241" width="38" height="28" rx="6"/>
+    </g>
+    <text x="65" y="288" text-anchor="middle" font-size="15" font-weight="600" fill="#59636e">7 FEATURES</text>
+
+    <path d="M142 209 H190" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round"/>
+    <path d="M180 199 L192 209 L180 219" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="205" y="88" width="164" height="242" rx="22" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+    <text x="287" y="124" text-anchor="middle" font-size="18" font-weight="700" fill="#1b1f24">RANDOM FOREST</text>
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <g transform="translate(235 156)" stroke="#0067c0" stroke-width="4" fill="none">
+        <path d="M25 100 V70 M25 77 L5 55 M25 77 L47 50 M5 55 L5 33 M47 50 L47 25"/>
+        <circle cx="5" cy="28" r="10" fill="#e3f0fa"/>
+        <circle cx="47" cy="20" r="10" fill="#e3f0fa"/>
+      </g>
+      <g transform="translate(300 151)" stroke="#59636e" stroke-width="4" fill="none">
+        <path d="M25 105 V72 M25 79 L4 58 M25 79 L49 54 M4 58 L4 35 M49 54 L49 28"/>
+        <circle cx="4" cy="30" r="10" fill="#ffffff"/>
+        <circle cx="49" cy="23" r="10" fill="#ffffff"/>
+      </g>
+    </g>
+    <text x="287" y="303" text-anchor="middle" font-size="15" font-weight="600" fill="#59636e">SHARED TREES</text>
+
+    <path d="M381 209 H413 M413 209 V140 H438 M413 209 V278 H438" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M428 130 L440 140 L428 150 M428 268 L440 278 L428 288" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="451" y="92" width="150" height="96" rx="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <text x="526" y="128" text-anchor="middle" font-size="17" font-weight="600" fill="#59636e">TARGET 1</text>
+    <text x="526" y="158" text-anchor="middle" font-size="22" font-weight="700" fill="#1b1f24">TEMP (°C)</text>
+
+    <rect x="451" y="230" width="150" height="96" rx="18" fill="#f4f1ff" stroke="#5b3cc4" stroke-width="2"/>
+    <text x="526" y="266" text-anchor="middle" font-size="17" font-weight="600" fill="#59636e">TARGET 2</text>
+    <text x="526" y="296" text-anchor="middle" font-size="20" font-weight="700" fill="#1b1f24">HUMIDITY (%)</text>
+  </g>
+</svg>

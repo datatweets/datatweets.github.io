@@ -1,0 +1,3 @@
+method,max_aligned_weight_difference,max_aligned_context_difference,mean_context_l2_distance
+without_position,0.0,1.1102230246251565e-16,1.3597399555105182e-16
+with_sinusoidal_position,0.3407448370113415,1.3555816049593585,0.11840767964433481

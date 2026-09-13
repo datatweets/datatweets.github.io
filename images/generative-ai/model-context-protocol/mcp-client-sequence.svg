@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="260" viewBox="0 0 800 260" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+ <rect width="800" height="260" fill="#ffffff" />
+ <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The MCP client sequence: launch, handshake, discover, call</text>
+
+ <rect x="20" y="90" width="170" height="82" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+ <text x="105" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">stdio_client(...)</text>
+ <text x="105" y="136" text-anchor="middle" font-size="9" fill="#3182ce">spawn the server</text>
+ <text x="105" y="149" text-anchor="middle" font-size="9" fill="#3182ce">as a subprocess</text>
+
+ <line x1="190" y1="131" x2="212" y2="131" stroke="#a0aec0" stroke-width="2" />
+ <polygon points="212 131 202 126 202 136" fill="#a0aec0" />
+
+ <rect x="214" y="90" width="170" height="82" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+ <text x="299" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="#6b46c1">session.initialize()</text>
+ <text x="299" y="136" text-anchor="middle" font-size="9" fill="#805ad5">the handshake:</text>
+ <text x="299" y="149" text-anchor="middle" font-size="9" fill="#805ad5">exchange capabilities</text>
+
+ <line x1="384" y1="131" x2="406" y2="131" stroke="#a0aec0" stroke-width="2" />
+ <polygon points="406 131 396 126 396 136" fill="#a0aec0" />
+
+ <rect x="408" y="90" width="170" height="82" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+ <text x="493" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">session.list_tools()</text>
+ <text x="493" y="136" text-anchor="middle" font-size="9" fill="#9c4221">discovery: ask what</text>
+ <text x="493" y="149" text-anchor="middle" font-size="9" fill="#9c4221">the server offers</text>
+
+ <line x1="578" y1="131" x2="600" y2="131" stroke="#a0aec0" stroke-width="2" />
+ <polygon points="600 131 590 126 590 136" fill="#a0aec0" />
+
+ <rect x="602" y="90" width="170" height="82" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+ <text x="687" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">session.call_tool(...)</text>
+ <text x="687" y="136" text-anchor="middle" font-size="9" fill="#2f855a">run one tool,</text>
+ <text x="687" y="149" text-anchor="middle" font-size="9" fill="#2f855a">read the result</text>
+
+ <text x="400" y="204" text-anchor="middle" font-size="10.5" fill="#4a5568">Discovery can't happen before the handshake — the server won't answer protocol requests until <tspan font-weight="700">initialize()</tspan> completes.</text>
+ <text x="400" y="230" text-anchor="middle" font-size="10.5" fill="#718096">Every MCP-aware host runs this same four-step sequence to turn a server it has never seen into tools it can use.</text>
+</svg>

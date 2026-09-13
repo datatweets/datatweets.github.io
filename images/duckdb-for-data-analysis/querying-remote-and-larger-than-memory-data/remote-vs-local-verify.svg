@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="360" viewBox="0 0 800 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="360" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Same Question, Two Sources</text>
+
+  <rect x="60" y="56" width="300" height="60" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="210" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">Remote: CloudFront URL</text>
+  <text x="210" y="98" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#2c5282">read_parquet('https://...')</text>
+
+  <rect x="440" y="56" width="300" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="590" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">Local: repo-root copy</text>
+  <text x="590" y="98" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#9c4221">read_parquet('yellow_...parquet')</text>
+
+  <line x1="210" y1="116" x2="330" y2="156" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowV)" />
+  <line x1="590" y1="116" x2="470" y2="156" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#arrowV)" />
+
+  <rect x="250" y="156" width="300" height="52" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="400" y="178" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">GROUP BY pickup_hour</text>
+  <text x="400" y="196" text-anchor="middle" font-size="9" fill="#718096">identical query, both sources</text>
+
+  <line x1="400" y1="208" x2="400" y2="240" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowV)" />
+
+  <rect x="220" y="240" width="360" height="60" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="400" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">both: hour 18, 212,788 trips</text>
+  <text x="400" y="284" text-anchor="middle" font-size="9.5" fill="#276749">exact match -- verified, not assumed</text>
+
+  <rect x="90" y="320" width="620" height="30" rx="6" fill="none" />
+  <text x="400" y="340" text-anchor="middle" font-size="9.5" fill="#a0aec0">A remote query's answer is only as trustworthy as it's been checked</text>
+
+  <defs>
+    <marker id="arrowV" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

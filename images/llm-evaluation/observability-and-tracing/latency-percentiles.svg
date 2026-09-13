@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Latency distribution of six Docent requests with mean, p50, and p95 marked</title>
+  <desc id="desc">A horizontal latency axis from 0 to 3.5 seconds shows six real Docent request latencies as blue dots clustered between 0.93 and 1.51 seconds, with two slower requests at 2.28 and 3.27 seconds forming a right tail. A gray dashed line marks the mean at 1.70 seconds, a green line marks the p50 (median) at 1.39 seconds sitting inside the fast cluster, and an orange line marks the p95 at 3.02 seconds out in the slow tail. A caption notes the mean sits left of the slow requests while p95 captures the tail users actually feel.</desc>
+  <rect x="0" y="0" width="760" height="440" fill="#ffffff"/>
+
+  <text x="30" y="40" font-size="20" font-weight="700" fill="#1a202c">Per-request latency: the mean hides the slow tail</text>
+  <text x="30" y="64" font-size="13" fill="#718096">Six real Docent requests (claude-haiku-4-5). Percentiles, not the mean, are what SLAs target.</text>
+
+  <!-- axis -->
+  <line x1="90" y1="290" x2="690" y2="290" stroke="#a0aec0" stroke-width="2"/>
+  <!-- ticks -->
+  <g font-size="12" fill="#718096" text-anchor="middle">
+    <line x1="90"  y1="290" x2="90"  y2="296" stroke="#a0aec0" stroke-width="2"/><text x="90"  y="314">0.0</text>
+    <line x1="176" y1="290" x2="176" y2="296" stroke="#a0aec0" stroke-width="2"/><text x="176" y="314">0.5</text>
+    <line x1="261" y1="290" x2="261" y2="296" stroke="#a0aec0" stroke-width="2"/><text x="261" y="314">1.0</text>
+    <line x1="347" y1="290" x2="347" y2="296" stroke="#a0aec0" stroke-width="2"/><text x="347" y="314">1.5</text>
+    <line x1="433" y1="290" x2="433" y2="296" stroke="#a0aec0" stroke-width="2"/><text x="433" y="314">2.0</text>
+    <line x1="519" y1="290" x2="519" y2="296" stroke="#a0aec0" stroke-width="2"/><text x="519" y="314">2.5</text>
+    <line x1="604" y1="290" x2="604" y2="296" stroke="#a0aec0" stroke-width="2"/><text x="604" y="314">3.0</text>
+    <line x1="690" y1="290" x2="690" y2="296" stroke="#a0aec0" stroke-width="2"/><text x="690" y="314">3.5</text>
+  </g>
+  <text x="690" y="336" font-size="12" fill="#4a5568" text-anchor="end">latency (seconds)</text>
+
+  <!-- fast cluster band -->
+  <rect x="240" y="238" width="120" height="26" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="300" y="216" font-size="11" fill="#2b6cb0" text-anchor="middle">most requests are fast</text>
+
+  <!-- p50 marker (green) -->
+  <line x1="329" y1="120" x2="329" y2="290" stroke="#48bb78" stroke-width="2"/>
+  <text x="329" y="112" font-size="12" font-weight="700" fill="#276749" text-anchor="middle">p50 = 1.393s</text>
+
+  <!-- mean marker (gray dashed) -->
+  <line x1="382" y1="140" x2="382" y2="290" stroke="#4a5568" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="382" y="132" font-size="12" font-weight="700" fill="#4a5568" text-anchor="middle">mean = 1.702s</text>
+
+  <!-- p95 marker (orange) -->
+  <line x1="608" y1="120" x2="608" y2="290" stroke="#ed8936" stroke-width="2"/>
+  <text x="608" y="112" font-size="12" font-weight="700" fill="#c05621" text-anchor="middle">p95 = 3.021s</text>
+
+  <!-- data dots -->
+  <g>
+    <circle cx="250" cy="251" r="8" fill="#4299e1" stroke="#2b6cb0" stroke-width="1.5"/>
+    <circle cx="252" cy="251" r="8" fill="#4299e1" stroke="#2b6cb0" stroke-width="1.5"/>
+    <circle cx="308" cy="251" r="8" fill="#4299e1" stroke="#2b6cb0" stroke-width="1.5"/>
+    <circle cx="349" cy="251" r="8" fill="#4299e1" stroke="#2b6cb0" stroke-width="1.5"/>
+    <circle cx="481" cy="251" r="8" fill="#9f7aea" stroke="#6b46c1" stroke-width="1.5"/>
+    <circle cx="650" cy="251" r="8" fill="#fc8181" stroke="#c53030" stroke-width="1.5"/>
+  </g>
+  <text x="481" y="278" font-size="11" fill="#6b46c1" text-anchor="middle">2.280s</text>
+  <text x="650" y="278" font-size="11" fill="#c53030" text-anchor="middle">3.268s (slowest)</text>
+
+  <!-- legend -->
+  <g font-size="12" fill="#4a5568">
+    <circle cx="100" cy="382" r="7" fill="#4299e1" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="114" y="386">fast requests</text>
+    <circle cx="228" cy="382" r="7" fill="#9f7aea" stroke="#6b46c1" stroke-width="1.5"/>
+    <text x="242" y="386">mid</text>
+    <circle cx="300" cy="382" r="7" fill="#fc8181" stroke="#c53030" stroke-width="1.5"/>
+    <text x="314" y="386">tail request</text>
+  </g>
+  <text x="30" y="418" font-size="12.5" fill="#718096">The p95 line sits far right, in the tail — the slow experience an average sweeps under the rug.</text>
+</svg>

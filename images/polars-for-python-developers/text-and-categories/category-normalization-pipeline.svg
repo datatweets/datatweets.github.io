@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="440" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Normalizing category -- One Real Pipeline</text>
+  <text x="360" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">strip_chars() then to_titlecase(), verified three independent ways</text>
+
+  <rect x="30" y="74" width="150" height="80" rx="10" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="105" y="98" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c53030">22 distinct</text>
+  <text x="105" y="114" text-anchor="middle" font-size="9" fill="#742a2a">"KITCHEN", "Bath ",</text>
+  <text x="105" y="128" text-anchor="middle" font-size="9" fill="#742a2a">"decor", "Storage "...</text>
+
+  <line x1="180" y1="114" x2="216" y2="114" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#n0)" />
+
+  <rect x="220" y="74" width="140" height="80" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="290" y="100" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">strip_chars()</text>
+  <text x="290" y="120" text-anchor="middle" font-size="9" fill="#2d3748">fixes 4 trailing-</text>
+  <text x="290" y="134" text-anchor="middle" font-size="9" fill="#2d3748">whitespace rows</text>
+
+  <line x1="360" y1="114" x2="396" y2="114" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#n1)" />
+
+  <rect x="400" y="74" width="140" height="80" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="470" y="100" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b46c1">to_titlecase()</text>
+  <text x="470" y="120" text-anchor="middle" font-size="9" fill="#2d3748">fixes all casing:</text>
+  <text x="470" y="134" text-anchor="middle" font-size="9" fill="#2d3748">upper/lower -&gt; Title</text>
+
+  <line x1="540" y1="114" x2="576" y2="114" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#n2)" />
+
+  <rect x="580" y="74" width="110" height="80" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="635" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">8 real</text>
+  <text x="635" y="120" text-anchor="middle" font-size="9" fill="#2d3748">canonical</text>
+  <text x="635" y="134" text-anchor="middle" font-size="9" fill="#2d3748">categories</text>
+
+  <defs>
+    <marker id="n0" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="n1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="n2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <line x1="360" y1="154" x2="360" y2="180" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#n3)" />
+  <defs>
+    <marker id="n3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <text x="360" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">Three independent proofs</text>
+
+  <rect x="40" y="220" width="200" height="90" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="140" y="244" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1a202c">Set equality</text>
+  <text x="140" y="264" text-anchor="middle" font-size="9" fill="#4a5568">normalized categories ==</text>
+  <text x="140" y="278" text-anchor="middle" font-size="9" fill="#4a5568">canonical categories</text>
+  <text x="140" y="296" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">True</text>
+
+  <rect x="260" y="220" width="200" height="90" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="360" y="244" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1a202c">Regex shape check</text>
+  <text x="360" y="264" text-anchor="middle" font-size="9" font-family="monospace" fill="#4a5568">^[A-Z][a-z]+$</text>
+  <text x="360" y="280" text-anchor="middle" font-size="9" fill="#4a5568">61 of 61 rows pass</text>
+  <text x="360" y="296" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">0 failures</text>
+
+  <rect x="480" y="220" width="200" height="90" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="580" y="244" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1a202c">Per-row join</text>
+  <text x="580" y="264" text-anchor="middle" font-size="9" fill="#4a5568">vs. canonical category</text>
+  <text x="580" y="278" text-anchor="middle" font-size="9" fill="#4a5568">by product_id, all 61 rows</text>
+  <text x="580" y="296" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">0 mismatches</text>
+
+  <rect x="140" y="330" width="440" height="60" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="354" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">One real, honest gap remains: product_name</text>
+  <text x="360" y="372" text-anchor="middle" font-size="9.5" fill="#742a2a">P017's duplicate row -- a row-level fix, deferred to Lesson 5</text>
+
+  <text x="360" y="418" text-anchor="middle" font-size="10.5" fill="#718096">category is proven correct on every row; row count (still 61) is a separate, later problem.</text>
+</svg>

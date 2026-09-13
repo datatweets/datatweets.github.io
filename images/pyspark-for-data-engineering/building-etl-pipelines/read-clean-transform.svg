@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">The ETL body as three tested functions</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Jan&#8211;Mar 2024 yellow taxi &#8212; read &#8594; clean &#8594; transform, each stage one function, all numbers measured in Spark 4.2.0</text>
+<line x1="40" y1="78" x2="920" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- STAGE 1: READ -->
+<rect x="40" y="98" width="255" height="150" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="167" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">1 &#183; READ</text>
+<text x="167" y="140" text-anchor="middle" font-size="11" fill="#4a5568">read_trips(files, schema)</text>
+<line x1="60" y1="150" x2="275" y2="150" stroke="#bee3f8" stroke-width="1"/>
+<text x="167" y="170" text-anchor="middle" font-size="10.5" fill="#4a5568">3 Parquet files, explicit schema</text>
+<text x="167" y="186" text-anchor="middle" font-size="10.5" fill="#718096">no inference &#8212; the schema is a contract</text>
+<rect x="60" y="196" width="215" height="36" rx="6" fill="#ffffff" stroke="#90cdf4" stroke-width="1.5"/>
+<text x="167" y="220" text-anchor="middle" font-size="17" font-weight="700" fill="#2b6cb0">9,554,778 raw rows</text>
+<text x="167" y="244" text-anchor="middle" font-size="10" fill="#718096">19 columns &#183; 10 partitions &#183; judges nothing</text>
+
+<!-- arrow 1 -->
+<text x="315" y="178" text-anchor="middle" font-size="26" font-weight="700" fill="#a0aec0">&#8594;</text>
+
+<!-- STAGE 2: CLEAN -->
+<rect x="352" y="98" width="256" height="470" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="480" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">2 &#183; CLEAN</text>
+<text x="480" y="140" text-anchor="middle" font-size="11" fill="#4a5568">clean_trips(df) &#8212; restraint, not deletion</text>
+<line x1="372" y1="150" x2="588" y2="150" stroke="#c6f6d5" stroke-width="1"/>
+
+<!-- step a: window -->
+<rect x="368" y="160" width="224" height="66" rx="6" fill="#ffffff" stroke="#9ae6b4" stroke-width="1.5"/>
+<text x="380" y="179" font-size="11" font-weight="700" fill="#276749">a &#183; window &#8212; the only delete</text>
+<text x="380" y="196" font-size="10" fill="#718096">2024-01-01 &#8804; pickup &lt; 2024-04-01</text>
+<text x="380" y="213" font-size="10.5" fill="#4a5568">21 strays quarantined &#8594;</text>
+<text x="582" y="213" text-anchor="end" font-size="11" font-weight="700" fill="#276749">9,554,757</text>
+
+<!-- step b: reversals -->
+<rect x="368" y="232" width="224" height="94" rx="6" fill="#ffffff" stroke="#9ae6b4" stroke-width="1.5"/>
+<text x="380" y="251" font-size="11" font-weight="700" fill="#276749">b &#183; preserve 115,894 reversals</text>
+<text x="380" y="268" font-size="10" fill="#718096">measured, not assumed:</text>
+<text x="380" y="285" font-size="10.5" fill="#276749">KEEP &#8594; $256,692,373.14</text>
+<text x="380" y="301" font-size="10.5" fill="#c53030">DROP &#8594; $259,679,181.90</text>
+<text x="380" y="318" font-size="10.5" font-weight="700" fill="#c53030">= &#43;$2,986,808.76 phantom</text>
+
+<!-- step c: flag distance -->
+<rect x="368" y="332" width="224" height="88" rx="6" fill="#ffffff" stroke="#9ae6b4" stroke-width="1.5"/>
+<text x="380" y="351" font-size="11" font-weight="700" fill="#276749">c &#183; flag dirty trip_distance</text>
+<text x="380" y="368" font-size="10" fill="#718096">max 312,722.3 mi &#8212; when/otherwise, keep row</text>
+<text x="380" y="386" font-size="10.5" fill="#4a5568">ok 9,338,741 &#183; zero 215,764</text>
+<text x="380" y="403" font-size="10.5" fill="#c05621">suspect 252</text>
+<text x="582" y="403" text-anchor="end" font-size="10" fill="#718096">none deleted</text>
+
+<!-- step d: fill nulls -->
+<rect x="368" y="426" width="224" height="60" rx="6" fill="#ffffff" stroke="#9ae6b4" stroke-width="1.5"/>
+<text x="380" y="445" font-size="11" font-weight="700" fill="#276749">d &#183; fill 751,962 co-located nulls</text>
+<text x="380" y="462" font-size="10" fill="#718096">5 columns, same rows &#8212; na.fill not na.drop</text>
+<text x="380" y="479" font-size="10.5" fill="#4a5568">complete trips, lean metadata</text>
+
+<text x="480" y="512" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">count drops only by the 21 strays</text>
+<rect x="368" y="524" width="224" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+<text x="480" y="546" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">9,554,757 clean trips</text>
+
+<!-- arrow 2 -->
+<text x="628" y="178" text-anchor="middle" font-size="26" font-weight="700" fill="#a0aec0">&#8594;</text>
+
+<!-- STAGE 3: TRANSFORM -->
+<rect x="665" y="98" width="255" height="150" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="792" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">3 &#183; TRANSFORM</text>
+<text x="792" y="140" text-anchor="middle" font-size="11" fill="#4a5568">transform_to_report(df, zones)</text>
+<line x1="685" y1="150" x2="900" y2="150" stroke="#feebc8" stroke-width="1"/>
+<text x="792" y="170" text-anchor="middle" font-size="10.5" fill="#4a5568">date_trunc hour &#183; broadcast 265 zones</text>
+<text x="792" y="186" text-anchor="middle" font-size="10.5" fill="#718096">key on LocationID &#8212; two Coronas stay apart</text>
+<rect x="685" y="196" width="215" height="36" rx="6" fill="#ffffff" stroke="#f6ad55" stroke-width="1.5"/>
+<text x="792" y="220" text-anchor="middle" font-size="17" font-weight="700" fill="#c05621">240,917 buckets</text>
+<text x="792" y="244" text-anchor="middle" font-size="10" fill="#718096">one row per zone &#215; pickup-hour</text>
+
+<!-- cross-verify panel -->
+<rect x="665" y="272" width="255" height="296" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="1.5"/>
+<text x="792" y="296" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">Composed &#8212; cross-verified</text>
+<text x="792" y="313" text-anchor="middle" font-size="10.5" fill="#718096">against Course 1, to the cent</text>
+<line x1="685" y1="323" x2="900" y2="323" stroke="#e2e8f0" stroke-width="1"/>
+<text x="685" y="345" font-size="11" fill="#4a5568">buckets</text>
+<text x="900" y="345" text-anchor="end" font-size="12" font-weight="700" fill="#1a202c">240,917</text>
+<text x="685" y="368" font-size="11" fill="#4a5568">trips</text>
+<text x="900" y="368" text-anchor="end" font-size="12" font-weight="700" fill="#276749">9,554,757</text>
+<text x="685" y="391" font-size="11" fill="#4a5568">revenue</text>
+<text x="900" y="391" text-anchor="end" font-size="12" font-weight="700" fill="#276749">$256,692,373.14</text>
+<line x1="685" y1="405" x2="900" y2="405" stroke="#e2e8f0" stroke-width="1"/>
+<text x="792" y="424" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">busiest zones (trips)</text>
+<text x="685" y="444" font-size="10.5" fill="#4a5568">161 Midtown Center</text>
+<text x="900" y="444" text-anchor="end" font-size="10.5" font-weight="700" fill="#1a202c">453,825</text>
+<text x="685" y="464" font-size="10.5" fill="#4a5568">237 Upper East Side S</text>
+<text x="900" y="464" text-anchor="end" font-size="10.5" font-weight="700" fill="#1a202c">439,138</text>
+<text x="685" y="484" font-size="10.5" fill="#4a5568">132 JFK Airport</text>
+<text x="900" y="484" text-anchor="end" font-size="10.5" font-weight="700" fill="#1a202c">429,745</text>
+<rect x="685" y="498" width="215" height="58" rx="6" fill="#ffffff" stroke="#cbd5e0" stroke-width="1"/>
+<text x="792" y="518" text-anchor="middle" font-size="10.5" font-weight="700" fill="#4a5568">clean_trips is pure (df in, df out)</text>
+<text x="792" y="534" text-anchor="middle" font-size="10" fill="#718096">so a 4-row hand-built frame unit-tests it:</text>
+<text x="792" y="550" text-anchor="middle" font-size="10" fill="#718096">stray drops, reversal pair cancels to $40.00</text>
+
+<line x1="40" y1="590" x2="920" y2="590" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="616" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">Three functions, one responsibility each &#8212; so every stage is inspectable and clean_trips is testable.</text>
+<text x="480" y="640" text-anchor="middle" font-size="12" fill="#4a5568">The same work as one 40-line chain, but cut where a test can reach: a bug hiding in a chain becomes a one-line failing assert.</text>
+<text x="480" y="664" text-anchor="middle" font-size="12" fill="#4a5568">Cleaning drops only the 21 strays; reversals kept, distances flagged, nulls filled &#8212; and the totals match Course 1 to the cent.</text>
+<text x="480" y="687" text-anchor="middle" font-size="11" fill="#718096">Asserting the reversal pair sums to $40.00 fails the instant anyone adds filter(total_amount &#8805; 0) &#8212; catching the $2.99M bug in a test.</text>
+</svg>

@@ -1,0 +1,61 @@
+product_id,product_name,category,subcategory,unit_price,cost,supplier
+P001,Powder-Coated Hand Mixer,Kitchen,Small Appliances,378.87,283.6,Fieldstone Imports
+P002,Slate Gray Spatula Set,Kitchen,Utensils,181.52,111.09,Larkspur & Co.
+P003,Brushed Copper Coffee Maker,Kitchen,Small Appliances,215.44,134.13,Larkspur & Co.
+P004,Rustic Oak Baking Sheet,Kitchen,Bakeware,27.73,17.61,Granite Hollow Co.
+P005,Modern Saucepan,Kitchen,Cookware,267.21,180.1,Larkspur & Co.
+P006,Matte Black Skillet,Kitchen,Cookware,380.87,264.95,Millhouse Trading
+P007,Carrara Marble Ladle,Kitchen,Utensils,345.2,210.13,Copper Kettle Works
+P008,Sage Green Whisk,Kitchen,Utensils,157.6,114.52,Fieldstone Imports
+P009,Slate Gray Shower Curtain,Bath,Shower Curtains,384.59,259.87,Driftwood & Vine
+P010,Solid Brass Curtain Liner,Bath,Shower Curtains,383.82,249.9,Amberwood Supply
+P011,Natural Linen Memory Foam Mat,Bath,Bath Mats,54.4,35.89,Fieldstone Imports
+P012,Charcoal Bath Tray,Bath,Accessories,86.46,56.27,Amberwood Supply
+P013,Matte Black Shower Curtain,Bath,Shower Curtains,417.94,278.86,Cedar & Stone Supply
+P014,Classic Shower Curtain,Bath,Shower Curtains,11.23,7.21,Amberwood Supply
+P015,Slate Gray Washcloth Set,Bath,Towels,441.96,306.3,Amberwood Supply
+P016,Powder-Coated Toothbrush Holder,Bath,Accessories,407.27,288.39,Driftwood & Vine
+P017,Charcoal Quilt,Bedding,Comforters,391.13,241.37,Driftwood & Vine
+P018,Natural Linen Body Pillow,Bedding,Pillows,252.47,176.25,Larkspur & Co.
+P019,Classic Quilt,Bedding,Comforters,135.4,96.14,Meadowbrook Home Goods
+P020,Charcoal Fleece Blanket,Bedding,Blankets,62.75,38.04,Northfield Manufacturing
+P021,Powder-Coated Body Pillow,Bedding,Pillows,443.61,297.11,Larkspur & Co.
+P022,Rustic Oak Quilt,Bedding,Comforters,358.81,219.85,Northfield Manufacturing
+P023,Slate Gray Fitted Sheet,Bedding,Sheets,416.72,301.45,Driftwood & Vine
+P024,Woven Cotton Sheet Set,Bedding,Sheets,29.52,18.2,Northfield Manufacturing
+P025,Navy Fairy Lights,Lighting,String Lights,349.98,255.42,Copper Kettle Works
+P026,Walnut Chandelier,Lighting,Pendant Lights,29.64,18.83,Driftwood & Vine
+P027,Rustic Oak Desk Lamp,Lighting,Table Lamps,9.99,6.77,Granite Hollow Co.
+P028,Slate Gray Arc Lamp,Lighting,Floor Lamps,185.4,136.15,Cedar & Stone Supply
+P029,Matte Black Chandelier,Lighting,Pendant Lights,384.93,251.05,Millhouse Trading
+P030,Reclaimed Wood Fairy Lights,Lighting,String Lights,268.92,177.36,Harborview Goods
+P031,Slate Gray Table Lamp,Lighting,Table Lamps,90.92,55.71,Granite Hollow Co.
+P032,Carrara Marble Pendant Light,Lighting,Pendant Lights,364.88,273.59,Copper Kettle Works
+P033,Navy Closet Organizer,Storage,Closet Organizers,68.48,46.99,Northfield Manufacturing
+P034,Hand-Glazed Laundry Basket,Storage,Baskets,271.08,178.6,Copper Kettle Works
+P035,Rustic Oak Corner Shelf,Storage,Shelving,67.39,44.13,Larkspur & Co.
+P036,Walnut Storage Basket,Storage,Baskets,15.81,10.56,Millhouse Trading
+P037,Hand-Glazed Stackable Bin,Storage,Bins,193.81,144.17,Northfield Manufacturing
+P038,Slate Gray Stackable Bin,Storage,Bins,133.77,98.26,Fieldstone Imports
+P039,Ivory Shelf Unit,Storage,Shelving,409.81,278.44,Harborview Goods
+P040,Rustic Oak Glass Vase,Decor,Vases,296.82,191.42,Amberwood Supply
+P041,Matte Black Ceramic Vase,Decor,Vases,76.71,56.09,Harborview Goods
+P042,Woven Cotton Wall Art Print,Decor,Wall Art,358.05,256.93,Fieldstone Imports
+P043,Hand-Glazed Wall Mirror,Decor,Mirrors,447.66,313.89,Larkspur & Co.
+P044,Terracotta Scented Candle,Decor,Candles,356.11,223.56,Granite Hollow Co.
+P045,Solid Brass Canvas Print,Decor,Wall Art,296.59,220.46,Brightleaf Home Co.
+P046,Reclaimed Wood Glass Vase,Decor,Vases,23.84,17.74,Larkspur & Co.
+P047,Matte Black Bookshelf,Furniture,Bookshelves,116.76,71.2,Cedar & Stone Supply
+P048,Matte Black Entry Bench,Furniture,Benches,146.16,88.81,Fieldstone Imports
+P049,Charcoal Entry Bench,Furniture,Benches,34.75,24.49,Northfield Manufacturing
+P050,Powder-Coated Side Table,Furniture,Side Tables,182.2,120.71,Harborview Goods
+P051,Matte Black Accent Chair,Furniture,Chairs,389.34,233.68,Brightleaf Home Co.
+P052,Matte Black Dining Chair,Furniture,Chairs,155.23,103.18,Larkspur & Co.
+P053,Bamboo Ladder Shelf,Furniture,Bookshelves,123.07,79.8,Granite Hollow Co.
+P054,Reclaimed Wood Garden Tool Set,Outdoor,Garden Tools,310.0,196.61,Larkspur & Co.
+P055,Rustic Oak Garden Tool Set,Outdoor,Garden Tools,29.47,19.72,Meadowbrook Home Goods
+P056,Modern Doormat,Outdoor,Outdoor Rugs,28.94,17.96,Brightleaf Home Co.
+P057,Woven Cotton Hanging Planter,Outdoor,Planters,91.24,55.17,Cedar & Stone Supply
+P058,Sage Green Planter Pot,Outdoor,Planters,114.8,78.68,Amberwood Supply
+P059,Terracotta Hanging Planter,Outdoor,Planters,10.1,7.35,Granite Hollow Co.
+P060,Bamboo Pruning Shears,Outdoor,Garden Tools,349.64,254.65,Brightleaf Home Co.

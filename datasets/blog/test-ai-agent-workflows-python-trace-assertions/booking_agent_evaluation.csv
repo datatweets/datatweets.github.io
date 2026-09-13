@@ -1,0 +1,13 @@
+case_id,sequence_ok,arguments_ok,tools_succeeded,single_reservation,final_state_ok,passes_all,diagnosis
+B01,True,True,True,True,True,True,pass
+B02,False,True,True,True,True,False,wrong_sequence
+B03,True,False,True,True,True,False,wrong_arguments
+B04,True,True,False,True,False,False,tool_error
+B05,True,True,True,True,False,False,wrong_final_state
+B06,False,True,True,False,True,False,duplicate_write
+B07,True,True,True,True,True,True,pass
+B08,True,False,True,True,True,False,wrong_arguments
+B09,False,True,True,True,False,False,wrong_sequence
+B10,True,True,True,True,True,True,pass
+B11,True,True,True,True,True,True,pass
+B12,True,True,True,True,True,True,pass

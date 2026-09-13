@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="420" viewBox="0 0 1060 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The same correction, keyed two different ways</title>
+  <desc>Before and after comparison. Before: five distinct trips -- trip_ids 214908 through 214912 -- sharing the identical pickup_time and pickup_zone, each with its own distinct fare. One correction lands for trip 214908 only. After, with the wrong composite key: all five rows now read trip_id 214908, fare $14.30 -- four unrelated trips' own identities silently overwritten, reported by dbt as a successful MERGE 5, no error at all. After, with the correct trip_id key: only trip 214908 changed to its corrected fare; the other four trips remain byte-for-byte exactly as they were.</desc>
+  <rect width="1060" height="420" fill="#ffffff" />
+  <text x="530" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Same Correction, Keyed Two Different Ways</text>
+
+  <rect x="30" y="55" width="1000" height="80" rx="8" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.4" />
+  <text x="530" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3748">Before: 5 real, distinct trips sharing one pickup_time + pickup_zone</text>
+  <text x="530" y="98" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#4a5568">214908: -10.7   214909: -5.1   214910: 5.1   214911: 8.6   214912: 10.7</text>
+  <text x="530" y="118" text-anchor="middle" font-size="9" fill="#4a5568">One correction lands: trip 214908's fare adjusted by +$25, to $14.30</text>
+
+  <rect x="30" y="150" width="480" height="230" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="270" y="175" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">unique_key = [pickup_time, pickup_zone]</text>
+  <text x="270" y="195" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#822727">dbt run: OK -- MERGE 5 -- no error</text>
+  <rect x="55" y="210" width="430" height="140" rx="6" fill="#822727" />
+  <text x="270" y="235" text-anchor="middle" font-size="10" font-weight="700" fill="#fff5f5">ALL 5 rows now read:</text>
+  <text x="270" y="260" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#fff5f5">trip_id 214908, fare $14.30</text>
+  <text x="270" y="285" text-anchor="middle" font-size="9" fill="#fff5f5">4 unrelated trips -- 214909, 214910,</text>
+  <text x="270" y="300" text-anchor="middle" font-size="9" fill="#fff5f5">214911, 214912 -- silently overwritten</text>
+  <text x="270" y="325" text-anchor="middle" font-size="8.5" fill="#fff5f5">their own identities and fares gone</text>
+
+  <rect x="550" y="150" width="480" height="230" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="790" y="175" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">unique_key = trip_id</text>
+  <text x="790" y="195" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">dbt run: OK -- correct, targeted update</text>
+  <rect x="575" y="210" width="430" height="140" rx="6" fill="#22543d" />
+  <text x="790" y="230" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">214908: $14.30 (corrected)</text>
+  <text x="790" y="250" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">214909: -5.1 (untouched)</text>
+  <text x="790" y="268" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">214910: 5.1 (untouched)</text>
+  <text x="790" y="286" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">214911: 8.6 (untouched)</text>
+  <text x="790" y="304" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#f0fff4">214912: 10.7 (untouched)</text>
+  <text x="790" y="330" text-anchor="middle" font-size="8.5" fill="#f0fff4">byte-for-byte identical to before</text>
+
+  <text x="530" y="405" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">One line changed -- which column unique_key pointed at -- between corruption and correctness.</text>
+</svg>

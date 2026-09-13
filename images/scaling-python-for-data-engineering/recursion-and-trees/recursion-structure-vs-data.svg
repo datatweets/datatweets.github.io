@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Recurse on the structure&#8217;s depth, never on the data&#8217;s length</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">CityFlow&#8217;s zone tree, built from the real 265-row NYC TLC zone dimension over all 2,964,624 January 2024 pickups</text>
+
+<text x="40" y="92" font-size="13" font-weight="700" fill="#4a5568">THE ZONE HIERARCHY IS A TREE &#8212; 282 nodes, 265 leaves, depth 4</text>
+<line x1="40" y1="100" x2="920" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- level labels -->
+<text x="40" y="133" font-size="11" font-weight="700" fill="#718096">level 1</text>
+<text x="40" y="147" font-size="10" fill="#a0aec0">root &#183; 1 node</text>
+<text x="40" y="219" font-size="11" font-weight="700" fill="#718096">level 2</text>
+<text x="40" y="233" font-size="10" fill="#a0aec0">borough &#183; 7</text>
+<text x="40" y="305" font-size="11" font-weight="700" fill="#718096">level 3</text>
+<text x="40" y="319" font-size="10" fill="#a0aec0">service zone &#183; 9</text>
+<text x="40" y="391" font-size="11" font-weight="700" fill="#718096">level 4</text>
+<text x="40" y="405" font-size="10" fill="#a0aec0">zone &#183; 265 leaves</text>
+
+<!-- edges: root -> boroughs -->
+<line x1="550" y1="154" x2="290" y2="196" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="550" y1="154" x2="570" y2="196" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="550" y1="154" x2="850" y2="196" stroke="#a0aec0" stroke-width="1.5"/>
+<!-- edges: boroughs -> service zones -->
+<line x1="290" y1="240" x2="225" y2="282" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="290" y1="240" x2="370" y2="282" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="570" y1="240" x2="500" y2="282" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="570" y1="240" x2="690" y2="282" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="850" y1="240" x2="850" y2="278" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="3,3"/>
+<!-- edges: service zones -> zones -->
+<line x1="225" y1="326" x2="225" y2="368" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="370" y1="326" x2="370" y2="368" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="500" y1="326" x2="500" y2="368" stroke="#a0aec0" stroke-width="1.5"/>
+<line x1="690" y1="326" x2="650" y2="368" stroke="#276749" stroke-width="1.5"/>
+<line x1="690" y1="326" x2="790" y2="368" stroke="#276749" stroke-width="1.5"/>
+
+<!-- LEVEL 1: root -->
+<rect x="450" y="110" width="200" height="44" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="550" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">New York City</text>
+<text x="550" y="146" text-anchor="middle" font-size="11" fill="#4a5568">2,964,624 trips</text>
+
+<!-- LEVEL 2: boroughs -->
+<rect x="200" y="196" width="180" height="44" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1"/>
+<text x="290" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">Manhattan</text>
+<text x="290" y="232" text-anchor="middle" font-size="11" fill="#4a5568">2,646,948</text>
+
+<rect x="490" y="196" width="160" height="44" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1"/>
+<text x="570" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">Queens</text>
+<text x="570" y="232" text-anchor="middle" font-size="11" fill="#4a5568">273,128</text>
+
+<rect x="760" y="196" width="180" height="44" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="850" y="216" text-anchor="middle" font-size="12" font-weight="700" fill="#718096">5 more boroughs</text>
+<text x="850" y="232" text-anchor="middle" font-size="11" fill="#718096">44,548</text>
+
+<!-- LEVEL 3: service zones -->
+<rect x="165" y="282" width="120" height="44" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1"/>
+<text x="225" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Yellow Zone</text>
+<text x="225" y="318" text-anchor="middle" font-size="10" fill="#4a5568">2,591,698</text>
+
+<rect x="315" y="282" width="110" height="44" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1"/>
+<text x="370" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Boro Zone</text>
+<text x="370" y="318" text-anchor="middle" font-size="10" fill="#4a5568">55,250</text>
+
+<rect x="445" y="282" width="110" height="44" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1"/>
+<text x="500" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Boro Zone</text>
+<text x="500" y="318" text-anchor="middle" font-size="10" fill="#4a5568">38,355</text>
+
+<rect x="635" y="282" width="110" height="44" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1"/>
+<text x="690" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Airports</text>
+<text x="690" y="318" text-anchor="middle" font-size="10" fill="#4a5568">234,773</text>
+
+<text x="850" y="310" text-anchor="middle" font-size="16" fill="#a0aec0">&#183;&#183;&#183;</text>
+
+<!-- LEVEL 4: leaves -->
+<rect x="175" y="368" width="100" height="44" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1"/>
+<text x="225" y="388" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">55 zones</text>
+<text x="225" y="404" text-anchor="middle" font-size="10" fill="#718096">leaf nodes</text>
+
+<rect x="320" y="368" width="100" height="44" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1"/>
+<text x="370" y="388" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">14 zones</text>
+<text x="370" y="404" text-anchor="middle" font-size="10" fill="#718096">leaf nodes</text>
+
+<rect x="450" y="368" width="100" height="44" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1"/>
+<text x="500" y="388" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">67 zones</text>
+<text x="500" y="404" text-anchor="middle" font-size="10" fill="#718096">leaf nodes</text>
+
+<rect x="592" y="368" width="116" height="44" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="650" y="388" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">JFK Airport</text>
+<text x="650" y="404" text-anchor="middle" font-size="10" fill="#4a5568">145,240</text>
+
+<rect x="727" y="368" width="126" height="44" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="790" y="388" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">LaGuardia</text>
+<text x="790" y="404" text-anchor="middle" font-size="10" fill="#4a5568">89,533</text>
+
+<text x="480" y="436" text-anchor="middle" font-size="11" fill="#718096">Every node is one of exactly two things &#8212; a leaf holding trips (base case) or a parent holding children (recursive case). That is the whole function.</text>
+
+<line x1="40" y1="452" x2="920" y2="452" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- PANEL B -->
+<text x="40" y="480" font-size="13" font-weight="700" fill="#4a5568">HOW DEEP DOES THE RECURSION GO? &#8212; log scale, measured on the same 2,964,624 rows</text>
+
+<!-- limit line -->
+<line x1="570" y1="492" x2="570" y2="634" stroke="#c53030" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="576" y="504" font-size="10" font-weight="700" fill="#c53030">sys.getrecursionlimit() = 1000</text>
+
+<!-- Row A: per-row -->
+<text x="44" y="521" font-size="12" font-weight="700" fill="#1a202c">per-row recursion</text>
+<text x="44" y="536" font-size="10" fill="#718096">recurse on DATA length</text>
+<rect x="300" y="508" width="582" height="26" rx="6" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+<text x="310" y="525" font-size="11" font-weight="700" fill="#c53030">2,964,624 frames needed</text>
+<text x="872" y="525" text-anchor="end" font-size="11" font-weight="700" fill="#c53030">RecursionError at 999</text>
+
+<!-- Row B: merge sort -->
+<text x="44" y="567" font-size="12" font-weight="700" fill="#1a202c">merge_sort</text>
+<text x="44" y="582" font-size="10" fill="#718096">halve each time &#8212; log&#8322;(n)</text>
+<rect x="300" y="554" width="121" height="26" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="310" y="571" font-size="11" font-weight="700" fill="#2b6cb0">22</text>
+<text x="431" y="571" font-size="11" fill="#2b6cb0">safe &#8212; 45&#215; under the limit</text>
+
+<!-- Row C: tree walk -->
+<text x="44" y="613" font-size="12" font-weight="700" fill="#1a202c">zone tree walk</text>
+<text x="44" y="628" font-size="10" fill="#718096">recurse on STRUCTURE depth</text>
+<rect x="300" y="600" width="54" height="26" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="310" y="617" font-size="11" font-weight="700" fill="#276749">4</text>
+<text x="364" y="617" font-size="11" fill="#276749">safe &#8212; and it stays 4 whether the month has 3M rows or 3B</text>
+
+<text x="40" y="660" font-size="11" fill="#4a5568">Measured, same machine: the recursive tree walk costs <tspan font-weight="700">1.03&#215;</tspan> the explicit-stack loop &#8212; recursion is ~free here and far clearer. Per-row recursion costs <tspan font-weight="700">6.83&#215;</tspan> a plain loop (85.9&#160;&#181;s vs 12.6&#160;&#181;s over 900 tips) <tspan font-style="italic">and</tspan> cannot finish.</text>
+<text x="40" y="678" font-size="11" fill="#718096">Divide-and-conquer is where recursion buys complexity, not constants: at 16,000 tips merge_sort ran 30.4&#160;ms vs insertion_sort&#8217;s 4,893.6&#160;ms &#8212; 161&#215;, and the gap widens with n. Exact times vary by run; depth does not.</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="380" viewBox="0 0 1100 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The CityFlow trip-event replay producer, start to finish</title>
+  <desc>A six-stage pipeline: read the real January 2024 parquet file; filter out 18 rows with pickup timestamps outside actual January 2024; sort by pickup time and compute real inter-arrival gaps, scaled 15x with a 1-second cap; produce each row to cityflow-trip-events keyed by pickup zone, with acks=all and both producer failure classes handled; the messages land on the topic; then a separate consumer reads every message back and verifies the count, the zone-to-partition consistency, and an independently recomputed revenue total. The measured result: 150 trip events produced in 19.0 seconds, 150 consumed back, 48 distinct zones, zero split across partitions, $4,931.86 in revenue confirmed independently.</desc>
+  <rect width="1100" height="380" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">From a Parquet File to a Verified Kafka Replay</text>
+
+  <rect x="20" y="55" width="165" height="70" rx="6" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="102" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#2d3748">Read parquet</text>
+  <text x="102" y="99" text-anchor="middle" font-size="8.5" fill="#718096">Jan 2024 trip rows</text>
+  <text x="102" y="112" text-anchor="middle" font-size="8.5" fill="#718096">~3M rows</text>
+
+  <rect x="200" y="55" width="165" height="70" rx="6" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="282" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#742a2a">Filter</text>
+  <text x="282" y="95" text-anchor="middle" font-size="8.5" fill="#742a2a">drop 18 rows outside</text>
+  <text x="282" y="108" text-anchor="middle" font-size="8.5" fill="#742a2a">actual January 2024</text>
+
+  <rect x="380" y="55" width="165" height="70" rx="6" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="462" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#7b341e">Sort + pace</text>
+  <text x="462" y="95" text-anchor="middle" font-size="8.5" fill="#7b341e">150 trips, gaps scaled</text>
+  <text x="462" y="108" text-anchor="middle" font-size="8.5" fill="#7b341e">15x, capped at 1s</text>
+
+  <rect x="560" y="55" width="180" height="70" rx="6" fill="#bee3f8" stroke="#4299e1" stroke-width="1.4" />
+  <text x="650" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#2c5282">Produce</text>
+  <text x="650" y="95" text-anchor="middle" font-size="8.5" fill="#2c5282">keyed by zone, acks='all'</text>
+  <text x="650" y="108" text-anchor="middle" font-size="8.5" fill="#2c5282">both failure classes handled</text>
+
+  <rect x="760" y="55" width="150" height="70" rx="6" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="835" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#553c9a">cityflow-trip-events</text>
+  <text x="835" y="99" text-anchor="middle" font-size="8.5" fill="#553c9a">6 partitions, RF 3</text>
+
+  <rect x="930" y="55" width="150" height="70" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="1005" y="78" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">Consume + verify</text>
+  <text x="1005" y="95" text-anchor="middle" font-size="8.5" fill="#22543d">count, zones,</text>
+  <text x="1005" y="108" text-anchor="middle" font-size="8.5" fill="#22543d">revenue total</text>
+
+  <line x1="185" y1="90" x2="197" y2="90" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowRP)" />
+  <line x1="365" y1="90" x2="377" y2="90" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowRP)" />
+  <line x1="545" y1="90" x2="557" y2="90" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowRP)" />
+  <line x1="740" y1="90" x2="757" y2="90" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowRP)" />
+  <line x1="910" y1="90" x2="927" y2="90" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowRP)" />
+
+  <defs>
+    <marker id="arrowRP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <line x1="40" y1="150" x2="1060" y2="150" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <text x="40" y="182" font-size="13" font-weight="700" fill="#2d3748">The measured, verified result</text>
+
+  <rect x="40" y="197" width="230" height="65" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="155" y="222" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">150 -&gt; 150</text>
+  <text x="155" y="242" text-anchor="middle" font-size="9" fill="#718096">produced and consumed back</text>
+
+  <rect x="290" y="197" width="230" height="65" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="405" y="222" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">48 zones, 0 split</text>
+  <text x="405" y="242" text-anchor="middle" font-size="9" fill="#718096">every zone stayed on one partition</text>
+
+  <rect x="540" y="197" width="230" height="65" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="655" y="222" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">$4,931.86</text>
+  <text x="655" y="242" text-anchor="middle" font-size="9" fill="#718096">recomputed from Kafka, not the source</text>
+
+  <rect x="790" y="197" width="270" height="65" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="925" y="222" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">0 errors</text>
+  <text x="925" y="242" text-anchor="middle" font-size="9" fill="#718096">both failure-handling paths ran, neither fired</text>
+
+  <text x="550" y="300" text-anchor="middle" font-size="11" fill="#4a5568">Every lesson in this module feeds into this one pipeline -- sync/async (L1), keys (L2), acks/batching (L3), error handling (L4).</text>
+</svg>

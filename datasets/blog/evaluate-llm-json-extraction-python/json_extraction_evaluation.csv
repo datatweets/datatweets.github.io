@@ -1,0 +1,21 @@
+case_id,parse_ok,schema_ok,exact_record,intent_correct,delivery_window_correct,parcel_count_correct,needs_signature_correct,error
+D001,True,True,True,True,True,True,True,
+D002,True,True,True,True,True,True,True,
+D003,True,True,True,True,True,True,True,
+D004,True,True,True,True,True,True,True,
+D005,True,True,True,True,True,True,True,
+D006,True,True,True,True,True,True,True,
+D007,True,True,True,True,True,True,True,
+D008,True,True,True,True,True,True,True,
+D009,True,True,True,True,True,True,True,
+D010,True,True,True,True,True,True,True,
+D011,True,True,False,False,True,True,True,one or more values differ from the reference
+D012,True,True,False,True,False,True,True,one or more values differ from the reference
+D013,True,True,False,True,True,False,True,one or more values differ from the reference
+D014,True,True,False,True,True,True,False,one or more values differ from the reference
+D015,True,True,False,False,False,True,True,one or more values differ from the reference
+D016,True,False,False,False,False,False,False,missing keys: needs_signature
+D017,True,False,False,False,False,False,False,unexpected keys: confidence
+D018,True,False,False,False,False,False,False,parcel_count must be an integer from 1 through 5
+D019,True,False,False,False,False,False,False,top level is not an object
+D020,False,False,False,False,False,False,False,invalid JSON at character 98

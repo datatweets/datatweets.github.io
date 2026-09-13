@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Decision guide for choosing between a deterministic metric and an LLM judge. A central question asks whether the output can be checked by a fixed rule such as an exact ID, valid JSON, or a numeric match. If yes, use a deterministic metric like exact match, token F1, or a schema check, because it is cheap, exact, and reproducible. If the answer is open-ended, paraphrased, or judgement-heavy, use an LLM-as-judge that grades meaning against a reference or rubric. A contrast strip at the bottom shows two real Docent items where token F1 was misled but the judge got them right: a correct paraphrase scored F1 0.15 yet the judge said correct, and a fluent wrong answer scored F1 0.80 yet the judge said incorrect.</title>
+  <rect x="0" y="0" width="840" height="560" fill="#ffffff"/>
+
+  <text x="40" y="40" font-size="22" font-weight="700" fill="#1a202c">Deterministic metric or LLM judge?</text>
+  <text x="40" y="65" font-size="15" fill="#4a5568">Pick the cheapest tool that can actually tell right from wrong</text>
+
+  <!-- central question -->
+  <rect x="250" y="90" width="340" height="66" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="420" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#2b6cb0">Can a fixed rule check the answer?</text>
+  <text x="420" y="140" text-anchor="middle" font-size="13" fill="#4a5568">exact ID &#183; valid JSON &#183; number match</text>
+
+  <!-- branch lines -->
+  <line x1="420" y1="156" x2="420" y2="180" stroke="#a0aec0" stroke-width="2"/>
+  <line x1="200" y1="180" x2="640" y2="180" stroke="#a0aec0" stroke-width="2"/>
+  <line x1="200" y1="180" x2="200" y2="212" stroke="#48bb78" stroke-width="2"/>
+  <line x1="640" y1="180" x2="640" y2="212" stroke="#9f7aea" stroke-width="2"/>
+  <text x="270" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">YES</text>
+  <text x="560" y="174" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">NO &#8212; open-ended / paraphrased</text>
+
+  <!-- YES box: deterministic -->
+  <rect x="60" y="212" width="280" height="128" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="200" y="240" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">Deterministic metric</text>
+  <text x="200" y="264" text-anchor="middle" font-size="13" fill="#4a5568">exact match &#183; token F1 &#183; schema check</text>
+  <text x="200" y="290" text-anchor="middle" font-size="12.5" fill="#276749">&#10003; cheap &#8212; no model call</text>
+  <text x="200" y="310" text-anchor="middle" font-size="12.5" fill="#276749">&#10003; exact on facts it can see</text>
+  <text x="200" y="330" text-anchor="middle" font-size="12.5" fill="#276749">&#10003; reproducible every run</text>
+
+  <!-- NO box: judge -->
+  <rect x="500" y="212" width="280" height="128" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="2"/>
+  <text x="640" y="240" text-anchor="middle" font-size="15" font-weight="700" fill="#6b46c1">LLM-as-judge</text>
+  <text x="640" y="264" text-anchor="middle" font-size="13" fill="#4a5568">a model grades against reference / rubric</text>
+  <text x="640" y="290" text-anchor="middle" font-size="12.5" fill="#6b46c1">&#10003; handles meaning &amp; paraphrase</text>
+  <text x="640" y="310" text-anchor="middle" font-size="12.5" fill="#6b46c1">&#10003; scales cheaper than humans</text>
+  <text x="640" y="330" text-anchor="middle" font-size="12.5" fill="#c05621">&#8226; must be calibrated (biased, varies)</text>
+
+  <!-- contrast strip -->
+  <text x="40" y="392" font-size="15" font-weight="700" fill="#1a202c">Two real Docent items where token F1 was misled</text>
+  <text x="40" y="413" font-size="13" fill="#4a5568">Same items scored by F1 (Module 3) and judged by claude-haiku-4-5</text>
+
+  <!-- item 1: paraphrase -->
+  <rect x="60" y="428" width="330" height="102" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="76" y="452" font-size="13" font-weight="700" fill="#1a202c">Correct paraphrase</text>
+  <text x="76" y="474" font-size="12.5" fill="#4a5568">&#8220;location is permanent &#8230; dump and reload&#8221;</text>
+  <rect x="76" y="486" width="120" height="30" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="136" y="506" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">F1 = 0.15 &#8595;</text>
+  <rect x="208" y="486" width="166" height="30" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="291" y="506" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">judge: correct &#10003;</text>
+
+  <!-- item 2: fluent wrong -->
+  <rect x="450" y="428" width="330" height="102" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="466" y="452" font-size="13" font-weight="700" fill="#1a202c">Fluent wrong answer</text>
+  <text x="466" y="474" font-size="12.5" fill="#4a5568">&#8220;region is NOT fixed &#8230; no need to export&#8221;</text>
+  <rect x="466" y="486" width="120" height="30" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="526" y="506" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">F1 = 0.80 &#8593;</text>
+  <rect x="598" y="486" width="166" height="30" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="681" y="506" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">judge: incorrect &#10007;</text>
+</svg>

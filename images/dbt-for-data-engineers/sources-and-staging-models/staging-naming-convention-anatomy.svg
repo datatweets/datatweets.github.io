@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>dbt Labs' current staging model naming convention, broken into its three parts</title>
+  <desc>The current documented convention is stg underscore source double-underscore entity. stg is a fixed prefix marking any model in the staging layer, applied consistently across a project so every staging model sorts together. The source segment, cityflow in CityFlow's own case, names the source system a table comes from -- the same name declared in sources.yml, decoupled from whatever the underlying schema happens to be called. The double underscore is a deliberate visual separator between the source segment and the entity segment, chosen specifically so a source name and an entity name can each contain single underscores of their own without becoming ambiguous. The entity segment, trips, names the specific table, plural, matching the source table's own plural row-per-record shape. Stitched together: stg_cityflow__trips.</desc>
+  <rect width="1000" height="330" fill="#ffffff" />
+  <text x="500" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Staging-Model Naming Convention, Broken Apart</text>
+
+  <rect x="90" y="70" width="90" height="55" rx="8" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.4" />
+  <text x="135" y="103" text-anchor="middle" font-size="16" font-weight="700" font-family="Menlo, monospace" fill="#2d3748">stg</text>
+
+  <text x="200" y="103" text-anchor="middle" font-size="18" font-weight="700" fill="#a0aec0">_</text>
+
+  <rect x="220" y="70" width="180" height="55" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="310" y="103" text-anchor="middle" font-size="16" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">cityflow</text>
+
+  <text x="420" y="103" text-anchor="middle" font-size="18" font-weight="700" fill="#a0aec0">__</text>
+
+  <rect x="450" y="70" width="140" height="55" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="520" y="103" text-anchor="middle" font-size="16" font-weight="700" font-family="Menlo, monospace" fill="#22543d">trips</text>
+
+  <text x="500" y="150" text-anchor="middle" font-size="13" font-weight="700" font-family="Menlo, monospace" fill="#2d3748">= stg_cityflow__trips</text>
+
+  <!-- callouts -->
+  <line x1="135" y1="125" x2="135" y2="180" stroke="#a0aec0" stroke-width="1.2" stroke-dasharray="3,2" />
+  <text x="135" y="196" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2d3748">fixed prefix</text>
+  <text x="135" y="212" text-anchor="middle" font-size="9" fill="#718096">every staging model,</text>
+  <text x="135" y="226" text-anchor="middle" font-size="9" fill="#718096">no exceptions</text>
+
+  <line x1="310" y1="125" x2="310" y2="180" stroke="#4299e1" stroke-width="1.2" stroke-dasharray="3,2" />
+  <text x="310" y="196" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2c5282">source system</text>
+  <text x="310" y="212" text-anchor="middle" font-size="9" fill="#4a5568">the sources.yml name: --</text>
+  <text x="310" y="226" text-anchor="middle" font-size="9" fill="#4a5568">not the schema, decoupled</text>
+
+  <line x1="520" y1="125" x2="520" y2="180" stroke="#48bb78" stroke-width="1.2" stroke-dasharray="3,2" />
+  <text x="520" y="196" text-anchor="middle" font-size="9.5" font-weight="700" fill="#22543d">entity, plural</text>
+  <text x="520" y="212" text-anchor="middle" font-size="9" fill="#4a5568">one staging model per</text>
+  <text x="520" y="226" text-anchor="middle" font-size="9" fill="#4a5568">source table, one to one</text>
+
+  <rect x="60" y="255" width="880" height="55" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="500" y="278" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7b341e">Allowed inside the model itself: renaming, casting, basic computed columns, categorizing.</text>
+  <text x="500" y="296" text-anchor="middle" font-size="10.5" font-weight="700" fill="#822727">Not allowed: joins, aggregations -- those belong to the intermediate and mart layers instead.</text>
+</svg>

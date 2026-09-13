@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Calculate Paired Effect Size in Python with Bootstrap</title>
+  <desc id="desc">A tutorial thumbnail showing matched before-and-after measurements becoming paired differences, Cohen's dz, and a bootstrap confidence interval.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1.2" fill="#59636e">BEFORE / AFTER DATA</text>
+    <text x="90" y="286" font-size="82" font-weight="700" fill="#1b1f24">PAIR, THEN</text>
+    <text x="90" y="382" font-size="82" font-weight="700" fill="#1b1f24">MEASURE</text>
+    <rect x="96" y="422" width="360" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="504" font-size="29" font-weight="500" fill="#59636e">RAW CHANGE &#183; COHEN'S dz &#183; BCa INTERVAL</text>
+  </g>
+
+  <g transform="translate(690 120)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="0" y="22" font-size="22" font-weight="600" fill="#59636e">BEFORE</text>
+    <text x="150" y="22" font-size="22" font-weight="600" fill="#59636e">AFTER</text>
+
+    <line x1="28" y1="78" x2="178" y2="112" stroke="#0067c0" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="28" cy="78" r="10" fill="#ffffff" stroke="#0067c0" stroke-width="4"/>
+    <circle cx="178" cy="112" r="10" fill="#e3f0fa" stroke="#0067c0" stroke-width="4"/>
+
+    <line x1="28" y1="148" x2="178" y2="178" stroke="#0067c0" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="28" cy="148" r="10" fill="#ffffff" stroke="#0067c0" stroke-width="4"/>
+    <circle cx="178" cy="178" r="10" fill="#e3f0fa" stroke="#0067c0" stroke-width="4"/>
+
+    <line x1="28" y1="218" x2="178" y2="194" stroke="#c95a32" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="28" cy="218" r="10" fill="#ffffff" stroke="#c95a32" stroke-width="4"/>
+    <circle cx="178" cy="194" r="10" fill="#fdeede" stroke="#c95a32" stroke-width="4"/>
+
+    <line x1="28" y1="288" x2="178" y2="334" stroke="#0067c0" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="28" cy="288" r="10" fill="#ffffff" stroke="#0067c0" stroke-width="4"/>
+    <circle cx="178" cy="334" r="10" fill="#e3f0fa" stroke="#0067c0" stroke-width="4"/>
+
+    <path d="M220 190 H264" fill="none" stroke="#9aa3ad" stroke-width="4" stroke-linecap="round"/>
+    <path d="M254 180 L266 190 L254 200" fill="none" stroke="#9aa3ad" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="284" y="92" width="160" height="118" rx="18" fill="#f7f8fa" stroke="#e3e6ea" stroke-width="2"/>
+    <text x="364" y="130" text-anchor="middle" font-size="21" font-weight="600" fill="#59636e">MEAN &#916;</text>
+    <line x1="318" y1="145" x2="410" y2="145" stroke="#0067c0" stroke-width="3"/>
+    <text x="364" y="179" text-anchor="middle" font-size="21" font-weight="600" fill="#59636e">SD(&#916;)</text>
+    <text x="364" y="238" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">COHEN'S dz</text>
+
+    <text x="364" y="300" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">BOOTSTRAP INTERVAL</text>
+    <line x1="292" y1="346" x2="436" y2="346" stroke="#c7ccd2" stroke-width="8" stroke-linecap="round"/>
+    <line x1="318" y1="346" x2="414" y2="346" stroke="#8bbbe2" stroke-width="18" stroke-linecap="round"/>
+    <line x1="366" y1="328" x2="366" y2="364" stroke="#0067c0" stroke-width="5"/>
+    <circle cx="366" cy="346" r="7" fill="#ffffff" stroke="#0067c0" stroke-width="4"/>
+  </g>
+</svg>

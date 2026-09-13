@@ -1,0 +1,13 @@
+case_id,claim_id,claim,support_chunk_ids
+Q01,C01,Registration closes 48 hours before the start.,W01
+Q02,C01,Four days is early enough for a full account credit.,W02
+Q03,C01,Requests should be sent five calendar days early.,W03
+Q04,C01,Entry is allowed up to 15 minutes late.,W06
+Q04,C02,Reception can replay the safety briefing at any time.,
+Q05,C01,The link is sent 24 hours before the start.,W07
+Q07,C01,Parking is free all day.,
+Q08,C01,Every session must be completed.,W04
+Q08,C02,The certificate arrives within three working days.,W04
+Q09,C01,A group can contain up to six participants.,W08
+Q09,C02,Each participant needs a separate email address.,W08
+Q10,C01,Equipment can be returned within ten calendar days.,

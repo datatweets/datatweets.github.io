@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One Expression, Two Real Tables</text>
+
+  <rect x="230" y="50" width="260" height="56" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="360" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">pl.col("unit_price") * 1.10</text>
+  <text x="360" y="93" text-anchor="middle" font-size="9.5" fill="#2d3748">a real pl.Expr -- describes, doesn't compute</text>
+
+  <line x1="290" y1="106" x2="150" y2="150" stroke="#4299e1" stroke-width="1.4" marker-end="url(#a1)" />
+  <line x1="430" y1="106" x2="570" y2="150" stroke="#4299e1" stroke-width="1.4" marker-end="url(#a2)" />
+  <defs>
+    <marker id="a1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4299e1"/></marker>
+    <marker id="a2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#4299e1"/></marker>
+  </defs>
+
+  <rect x="50" y="156" width="240" height="120" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="170" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">thistlewood_products.csv</text>
+  <text x="170" y="200" text-anchor="middle" font-size="9.5" fill="#4a5568">60 rows -- one per product</text>
+  <text x="170" y="218" text-anchor="middle" font-size="9.5" fill="#4a5568">.select(expr.alias("price_x_1_1"))</text>
+  <rect x="80" y="228" width="180" height="34" rx="6" fill="#ebf8ff" />
+  <text x="170" y="242" text-anchor="middle" font-size="9.5" fill="#2b6cb0" font-weight="600">378.87 -&gt; 416.757</text>
+  <text x="170" y="256" text-anchor="middle" font-size="9.5" fill="#2b6cb0" font-weight="600">181.52 -&gt; 199.672</text>
+
+  <rect x="430" y="156" width="240" height="120" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="550" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">thistlewood_orders_flat.csv</text>
+  <text x="550" y="200" text-anchor="middle" font-size="9.5" fill="#4a5568">1,749 rows -- one per order line</text>
+  <text x="550" y="218" text-anchor="middle" font-size="9.5" fill="#4a5568">.select(expr.alias("price_x_1_1"))</text>
+  <rect x="460" y="228" width="180" height="34" rx="6" fill="#ebf8ff" />
+  <text x="550" y="242" text-anchor="middle" font-size="9.5" fill="#2b6cb0" font-weight="600">271.08 -&gt; 298.188</text>
+  <text x="550" y="256" text-anchor="middle" font-size="9.5" fill="#2b6cb0" font-weight="600">193.81 -&gt; 213.191</text>
+
+  <rect x="120" y="300" width="480" height="90" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="326" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">The same expr object, never redefined</text>
+  <text x="360" y="348" text-anchor="middle" font-size="9.5" fill="#2d3748">Different row counts, different grains, different other columns --</text>
+  <text x="360" y="366" text-anchor="middle" font-size="9.5" fill="#2d3748">both work, because the expression only names a column, never a table.</text>
+
+  <text x="360" y="408" text-anchor="middle" font-size="10.5" fill="#718096">An expression describes a transformation; it only resolves against real data inside select, with_columns, or filter.</text>
+</svg>

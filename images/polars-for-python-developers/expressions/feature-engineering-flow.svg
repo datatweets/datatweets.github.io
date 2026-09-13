@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="440" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Four Named, Reusable Feature Expressions</text>
+
+  <rect x="40" y="52" width="310" height="80" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="195" y="76" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a202c">thistlewood_products.csv</text>
+  <text x="195" y="94" text-anchor="middle" font-size="9.5" fill="#4a5568">60 rows -- unit_price, cost</text>
+  <text x="195" y="112" text-anchor="middle" font-size="9.5" fill="#4a5568">real, unmodified catalog</text>
+
+  <rect x="370" y="52" width="310" height="80" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="525" y="76" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a202c">thistlewood_orders_flat.csv</text>
+  <text x="525" y="94" text-anchor="middle" font-size="9.5" fill="#4a5568">1,749 rows -- quantity, total</text>
+  <text x="525" y="112" text-anchor="middle" font-size="9.5" fill="#4a5568">real, unmodified order lines</text>
+
+  <line x1="195" y1="132" x2="195" y2="156" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#f1)" />
+  <line x1="525" y1="132" x2="525" y2="156" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#f2)" />
+  <defs>
+    <marker id="f1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="f2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <rect x="40" y="162" width="150" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="115" y="184" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">margin_expr</text>
+  <text x="115" y="202" text-anchor="middle" font-size="8.5" fill="#2d3748">unit_price - cost</text>
+  <text x="115" y="216" text-anchor="middle" font-size="8.5" fill="#2d3748">avg $ per product</text>
+
+  <rect x="200" y="162" width="150" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="275" y="184" text-anchor="middle" font-size="9.5" font-weight="700" fill="#2b6cb0">margin_pct_expr</text>
+  <text x="275" y="202" text-anchor="middle" font-size="8.5" fill="#2d3748">margin / unit_price</text>
+  <text x="275" y="216" text-anchor="middle" font-size="8.5" fill="#2d3748">avg 32.86%</text>
+
+  <rect x="370" y="162" width="150" height="70" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="445" y="184" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">order_size_expr</text>
+  <text x="445" y="202" text-anchor="middle" font-size="8.5" fill="#2d3748">quantile(.33 / .66)</text>
+  <text x="445" y="216" text-anchor="middle" font-size="8.5" fill="#2d3748">$267.54 / $788.00</text>
+
+  <rect x="530" y="162" width="150" height="70" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="605" y="184" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">high_value_expr</text>
+  <text x="605" y="202" text-anchor="middle" font-size="8.5" fill="#2d3748">quantile(.75)</text>
+  <text x="605" y="216" text-anchor="middle" font-size="8.5" fill="#2d3748">cutoff $1,074.15</text>
+
+  <line x1="360" y1="232" x2="360" y2="256" stroke="#a0aec0" stroke-width="1.4" marker-end="url(#f3)" />
+  <defs>
+    <marker id="f3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <rect x="80" y="262" width="560" height="90" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="360" y="288" text-anchor="middle" font-size="11.5" font-weight="700" fill="#553c9a">Real verification output</text>
+  <text x="360" y="310" text-anchor="middle" font-size="9.5" fill="#2d3748">order_size: 575 small / 579 medium / 595 large (of 1,749 real lines)</text>
+  <text x="360" y="328" text-anchor="middle" font-size="9.5" fill="#2d3748">high_value_line: 441 of 1,749 real lines flagged (25.2%)</text>
+
+  <text x="360" y="392" text-anchor="middle" font-size="10.5" fill="#718096">Each expression is defined once, as a named variable, before it ever runs --</text>
+  <text x="360" y="410" text-anchor="middle" font-size="10.5" fill="#718096">the same portability Lesson 1 demonstrated, now put to practical, reusable use.</text>
+</svg>

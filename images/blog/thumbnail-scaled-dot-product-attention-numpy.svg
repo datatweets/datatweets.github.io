@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Scaled dot-product attention in NumPy</title>
+  <desc id="desc">DATATWEETS tutorial thumbnail. Match Then Mix appears beside a diagram where query and key vectors produce attention weights that mix value vectors into context.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="144" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">ATTENTION IN NUMPY</text>
+    <text x="90" y="266" font-size="82" font-weight="700" fill="#1b1f24">Match</text>
+    <text x="90" y="360" font-size="82" font-weight="700" fill="#1b1f24">then mix</text>
+    <rect x="96" y="394" width="360" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="470" font-size="27" font-weight="500" fill="#59636e">SCORES · MASKS · CONTEXT</text>
+    <g transform="translate(645 117)">
+      <text x="36" y="24" font-size="24" font-weight="700" fill="#1b1f24">MATCH</text>
+      <rect x="0" y="50" width="120" height="94" rx="14" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <text x="60" y="87" text-anchor="middle" font-size="22" font-weight="700" fill="#0067c0">QUERY</text>
+      <text x="60" y="119" text-anchor="middle" font-size="19" fill="#59636e">Q</text>
+      <text x="147" y="108" text-anchor="middle" font-size="30" font-weight="600" fill="#59636e">×</text>
+      <rect x="174" y="50" width="120" height="94" rx="14" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+      <text x="234" y="87" text-anchor="middle" font-size="22" font-weight="700" fill="#1b1f24">KEY</text>
+      <text x="234" y="119" text-anchor="middle" font-size="19" fill="#59636e">Kᵀ</text>
+      <text x="332" y="108" text-anchor="middle" font-size="32" font-weight="700" fill="#0067c0">→</text>
+      <rect x="365" y="50" width="120" height="94" rx="14" fill="#fdeede" stroke="#d98534" stroke-width="2"/>
+      <text x="425" y="87" text-anchor="middle" font-size="20" font-weight="700" fill="#1b1f24">WEIGHTS</text>
+      <text x="425" y="119" text-anchor="middle" font-size="18" fill="#59636e">softmax</text>
+      <text x="425" y="199" text-anchor="middle" font-size="34" font-weight="700" fill="#0067c0">↓</text>
+      <text x="36" y="238" font-size="24" font-weight="700" fill="#1b1f24">MIX</text>
+      <rect x="0" y="260" width="120" height="94" rx="14" fill="#fdeede" stroke="#d98534" stroke-width="2"/>
+      <text x="60" y="297" text-anchor="middle" font-size="20" font-weight="700" fill="#1b1f24">WEIGHTS</text>
+      <text x="60" y="329" text-anchor="middle" font-size="18" fill="#59636e">sum = 1</text>
+      <text x="147" y="318" text-anchor="middle" font-size="30" font-weight="600" fill="#59636e">×</text>
+      <rect x="174" y="260" width="120" height="94" rx="14" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+      <text x="234" y="297" text-anchor="middle" font-size="22" font-weight="700" fill="#1b1f24">VALUE</text>
+      <text x="234" y="329" text-anchor="middle" font-size="19" fill="#59636e">V</text>
+      <text x="332" y="318" text-anchor="middle" font-size="32" font-weight="700" fill="#0067c0">→</text>
+      <rect x="365" y="260" width="120" height="94" rx="14" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+      <text x="425" y="297" text-anchor="middle" font-size="20" font-weight="700" fill="#0067c0">CONTEXT</text>
+      <text x="425" y="329" text-anchor="middle" font-size="18" fill="#59636e">weighted mix</text>
+    </g>
+  </g>
+</svg>

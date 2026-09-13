@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 540" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-label="Horizontal bar chart of deep memory used by each of the ten columns in the 200,000-row NYC taxi sample. The two timestamp string columns each use 5.4 megabytes (22.9 percent of the total), while the eight numeric columns each use 1.6 megabytes (6.8 percent). Together the two string columns account for almost half of the 22.5 megabyte total.">
+  <rect x="0" y="0" width="780" height="540" fill="#ffffff"/>
+  <text x="40" y="42" font-size="21" font-weight="700" fill="#1a202c">Where the memory goes: per-column deep bytes</text>
+  <text x="40" y="66" font-size="14" fill="#4a5568">200,000-row NYC taxi sample &#8226; measured with df.memory_usage(deep=True) &#8226; 22.5 MB total</text>
+
+  <!-- baseline axis -->
+  <line x1="215" y1="96" x2="215" y2="466" stroke="#a0aec0" stroke-width="1"/>
+
+  <!-- Row 1: pickup (string) -->
+  <text x="205" y="112" font-size="12.5" text-anchor="end" fill="#1a202c" font-family="monospace">tpep_pickup_datetime</text>
+  <rect x="215" y="100" width="480" height="24" rx="3" fill="#ed8936"/>
+  <text x="705" y="117" font-size="12.5" fill="#c05621" font-weight="700">5.4 MB &#183; 22.9%</text>
+  <text x="223" y="117" font-size="11.5" fill="#ffffff" font-family="monospace">str</text>
+
+  <!-- Row 2: dropoff (string) -->
+  <text x="205" y="148" font-size="12.5" text-anchor="end" fill="#1a202c" font-family="monospace">tpep_dropoff_datetime</text>
+  <rect x="215" y="136" width="480" height="24" rx="3" fill="#ed8936"/>
+  <text x="705" y="153" font-size="12.5" fill="#c05621" font-weight="700">5.4 MB &#183; 22.9%</text>
+  <text x="223" y="153" font-size="11.5" fill="#ffffff" font-family="monospace">str</text>
+
+  <!-- Row 3: passenger_count -->
+  <text x="205" y="184" font-size="12.5" text-anchor="end" fill="#1a202c" font-family="monospace">passenger_count</text>
+  <rect x="215" y="172" width="142" height="24" rx="3" fill="#4299e1"/>
+  <text x="367" y="189" font-size="12.5" fill="#2b6cb0">1.6 MB &#183; 6.8%</text>
+  <text x="223" y="189" font-size="11.5" fill="#ffffff" font-family="monospace">f64</text>
+
+  <!-- Row 4: trip_distance -->
+  <text x="205" y="220" font-size="12.5" text-anchor="end" fill="#1a202c" font-family="monospace">trip_distance</text>
+  <rect x="215" y="208" width="142" height="24" rx="3" fill="#4299e1"/>
+  <text x="367" y="225" font-size="12.5" fill="#2b6cb0">1.6 MB &#183; 6.8%</text>
+  <text x="223" y="225" font-size="11.5" fill="#ffffff" font-family="monospace">f64</text>
+
+  <!-- Row 5: PULocationID -->
+  <text x="205" y="256" font-size="12.5" text-anchor="end" fill="#1a202c" font-family="monospace">PULocationID</text>
+  <rect x="215" y="244" width="142" height="24" rx="3" fill="#4299e1"/>
+  <text x="367" y="261" font-size="12.5" fill="#2b6cb0">1.6 MB &#183; 6.8%</text>
+  <text x="223" y="261" font-size="11.5" fill="#ffffff" font-family="monospace">i64</text>
+
+  <!-- Row 6: DOLocationID -->
+  <text x="205" y="292" font-size="12.5" text-anchor="end" fill="#1a202c" font-family="monospace">DOLocationID</text>
+  <rect x="215" y="280" width="142" height="24" rx="3" fill="#4299e1"/>
+  <text x="367" y="297" font-size="12.5" fill="#2b6cb0">1.6 MB &#183; 6.8%</text>
+  <text x="223" y="297" font-size="11.5" fill="#ffffff" font-family="monospace">i64</text>
+
+  <!-- Row 7: payment_type -->
+  <text x="205" y="328" font-size="12.5" text-anchor="end" fill="#1a202c" font-family="monospace">payment_type</text>
+  <rect x="215" y="316" width="142" height="24" rx="3" fill="#4299e1"/>
+  <text x="367" y="333" font-size="12.5" fill="#2b6cb0">1.6 MB &#183; 6.8%</text>
+  <text x="223" y="333" font-size="11.5" fill="#ffffff" font-family="monospace">i64</text>
+
+  <!-- Row 8: fare_amount -->
+  <text x="205" y="364" font-size="12.5" text-anchor="end" fill="#1a202c" font-family="monospace">fare_amount</text>
+  <rect x="215" y="352" width="142" height="24" rx="3" fill="#4299e1"/>
+  <text x="367" y="369" font-size="12.5" fill="#2b6cb0">1.6 MB &#183; 6.8%</text>
+  <text x="223" y="369" font-size="11.5" fill="#ffffff" font-family="monospace">f64</text>
+
+  <!-- Row 9: tip_amount -->
+  <text x="205" y="400" font-size="12.5" text-anchor="end" fill="#1a202c" font-family="monospace">tip_amount</text>
+  <rect x="215" y="388" width="142" height="24" rx="3" fill="#4299e1"/>
+  <text x="367" y="405" font-size="12.5" fill="#2b6cb0">1.6 MB &#183; 6.8%</text>
+  <text x="223" y="405" font-size="11.5" fill="#ffffff" font-family="monospace">f64</text>
+
+  <!-- Row 10: total_amount -->
+  <text x="205" y="436" font-size="12.5" text-anchor="end" fill="#1a202c" font-family="monospace">total_amount</text>
+  <rect x="215" y="424" width="142" height="24" rx="3" fill="#4299e1"/>
+  <text x="367" y="441" font-size="12.5" fill="#2b6cb0">1.6 MB &#183; 6.8%</text>
+  <text x="223" y="441" font-size="11.5" fill="#ffffff" font-family="monospace">f64</text>
+
+  <!-- legend -->
+  <rect x="215" y="486" width="16" height="16" rx="3" fill="#ed8936"/>
+  <text x="238" y="499" font-size="13" fill="#4a5568">Text / timestamp columns (heaviest)</text>
+  <rect x="470" y="486" width="16" height="16" rx="3" fill="#4299e1"/>
+  <text x="493" y="499" font-size="13" fill="#4a5568">Fixed-width numeric columns (8 bytes each)</text>
+</svg>

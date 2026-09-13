@@ -1,0 +1,33 @@
+finding_id,candidate_id,agent,facet,finding,source_id,source_accessible,evidence_relation
+F01,S01,technical,accuracy,Reviewed accuracy detail for S01,DOC-101,True,direct
+F02,S01,reviewer,accuracy,Reviewed accuracy detail for S01,DOC-102,True,direct
+F03,S01,technical,calibration,Reviewed calibration detail for S01,DOC-103,True,direct
+F04,S01,technical,operating_range,Reviewed operating range detail for S01,DOC-104,True,direct
+F05,S01,integration,data_export,Reviewed data export detail for S01,DOC-105,True,direct
+F06,S01,reviewer,data_export,Reviewed data export detail for S01,DOC-106,True,direct
+F07,S01,operations,maintenance,Reviewed maintenance detail for S01,DOC-107,True,direct
+F08,S02,technical,accuracy,Reviewed accuracy detail for S02,DOC-201,True,direct
+F09,S02,reviewer,calibration,Reviewed calibration detail for S02,DOC-202,False,direct
+F10,S02,technical,operating_range,Reviewed operating range detail for S02,DOC-203,True,direct
+F11,S02,integration,data_export,Reviewed data export detail for S02,DOC-204,True,direct
+F12,S02,operations,maintenance,Reviewed maintenance detail for S02,DOC-205,True,direct
+F13,S03,technical,accuracy,Reviewed accuracy detail for S03,DOC-301,True,direct
+F14,S03,technical,calibration,Reviewed calibration detail for S03,DOC-302,True,direct
+F15,S03,technical,operating_range,Reviewed operating range detail for S03,DOC-303,True,direct
+F16,S03,reviewer,operating_range,Reviewed operating range detail for S03,DOC-304,True,direct
+F17,S03,integration,data_export,Reviewed data export detail for S03,DOC-305,True,direct
+F18,S04,technical,accuracy,Reviewed accuracy detail for S04,DOC-401,True,direct
+F19,S04,technical,calibration,Reviewed calibration detail for S04,DOC-402,True,direct
+F20,S04,reviewer,operating_range,Reviewed operating range detail for S04,DOC-403,True,background
+F21,S04,operations,maintenance,Reviewed maintenance detail for S04,DOC-404,True,direct
+F22,S05,technical,accuracy,Reviewed accuracy detail for S05,DOC-501,True,direct
+F23,S05,technical,calibration,Reviewed calibration detail for S05,DOC-502,True,direct
+F24,S05,technical,operating_range,Reviewed operating range detail for S05,DOC-503,True,direct
+F25,S05,operations,maintenance,Reviewed maintenance detail for S05,DOC-504,True,direct
+F26,S05,reviewer,maintenance,Reviewed maintenance detail for S05,DOC-505,True,direct
+F27,S06,technical,accuracy,Reviewed accuracy detail for S06,DOC-601,True,direct
+F28,S06,reviewer,calibration,Reviewed calibration detail for S06,,True,direct
+F29,S06,technical,operating_range,Reviewed operating range detail for S06,DOC-603,True,direct
+F30,S06,integration,data_export,Reviewed data export detail for S06,DOC-604,True,direct
+F31,S06,operations,maintenance,Reviewed maintenance detail for S06,DOC-605,True,direct
+F32,S06,integration,mobile_app,Reviewed mobile app detail for S06,DOC-606,True,direct

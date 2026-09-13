@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="860" height="500" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1a202c">Two ways to give a worker its data</text>
+  <text x="430" y="58" text-anchor="middle" font-size="14" fill="#4a5568">Same 1,048,576&#8211;row partition, same anomaly scan &#8212; measured on 6 NYC&#8211;taxi row groups</text>
+  <line x1="430" y1="80" x2="430" y2="470" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="4,5"/>
+  <text x="215" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="#c53030">Pass the DataFrame</text>
+  <rect x="55" y="122" width="150" height="78" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+  <text x="130" y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">Parent process</text>
+  <text x="130" y="168" text-anchor="middle" font-size="12" fill="#4a5568">reads the partition,</text>
+  <text x="130" y="184" text-anchor="middle" font-size="12" fill="#4a5568">then pickles the frame</text>
+  <defs>
+    <marker id="fatred" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L9,5 L0,10 Z" fill="#c53030"/></marker>
+    <marker id="thingreen" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0,0 L9,5 L0,10 Z" fill="#276749"/></marker>
+  </defs>
+  <rect x="80" y="222" width="150" height="34" rx="6" fill="#fc8181"/>
+  <line x1="130" y1="200" x2="130" y2="222" stroke="#c53030" stroke-width="16" marker-end="url(#fatred)"/>
+  <text x="245" y="243" font-size="13" font-weight="700" fill="#c53030">141 MB pickled</text>
+  <text x="245" y="259" font-size="11" fill="#718096">across the process boundary</text>
+  <rect x="55" y="278" width="150" height="70" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+  <text x="130" y="303" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">Worker process</text>
+  <text x="130" y="323" text-anchor="middle" font-size="12" fill="#4a5568">unpickles 141 MB,</text>
+  <text x="130" y="339" text-anchor="middle" font-size="12" fill="#4a5568">then scans</text>
+  <rect x="45" y="382" width="340" height="72" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+  <text x="215" y="410" text-anchor="middle" font-size="26" font-weight="700" fill="#c53030">4.1 s &#8212; 3.1&#215;</text>
+  <text x="215" y="435" text-anchor="middle" font-size="13" fill="#4a5568">pickling 141 MB per partition drags the win down</text>
+  <text x="645" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="#276749">Pass the (path, index)</text>
+  <rect x="570" y="122" width="150" height="78" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="645" y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">Parent process</text>
+  <text x="645" y="168" text-anchor="middle" font-size="12" fill="#4a5568">sends a tiny tuple:</text>
+  <text x="645" y="184" text-anchor="middle" font-size="12" fill="#4a5568">("...2024-01.parquet", 0)</text>
+  <rect x="631" y="222" width="28" height="34" rx="6" fill="#48bb78"/>
+  <line x1="645" y1="200" x2="645" y2="222" stroke="#276749" stroke-width="3" marker-end="url(#thingreen)"/>
+  <text x="675" y="243" font-size="13" font-weight="700" fill="#276749">50 bytes</text>
+  <text x="675" y="259" font-size="11" fill="#718096">the worker reads locally</text>
+  <rect x="570" y="278" width="150" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+  <text x="645" y="303" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">Worker process</text>
+  <text x="645" y="323" text-anchor="middle" font-size="12" fill="#4a5568">reads its own row group,</text>
+  <text x="645" y="339" text-anchor="middle" font-size="12" fill="#4a5568">then scans</text>
+  <rect x="475" y="382" width="340" height="72" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+  <text x="645" y="410" text-anchor="middle" font-size="26" font-weight="700" fill="#276749">2.8 s &#8212; 4.6&#215;</text>
+  <text x="645" y="435" text-anchor="middle" font-size="13" fill="#4a5568">the full parallel win, kept</text>
+  <text x="430" y="486" text-anchor="middle" font-size="14" font-style="italic" fill="#6b46c1">Move code to the data, not data to the code.</text>
+</svg>

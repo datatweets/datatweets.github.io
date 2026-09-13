@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Get Structured JSON from the OpenAI API in Python</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail. On the left, the words Text to Typed Data introduce structured outputs. On the right, a free-form maintenance note passes through a Pydantic schema and becomes a typed record with an urgency enum and a Boolean service-impact field.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="92" y="148" font-size="32" font-weight="600" letter-spacing="1.2" fill="#59636e">STRUCTURED OUTPUTS</text>
+    <text x="90" y="270" font-size="82" font-weight="700" fill="#1b1f24">TEXT TO</text>
+    <text x="90" y="360" font-size="82" font-weight="700" fill="#1b1f24">TYPED DATA</text>
+    <rect x="94" y="392" width="390" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="464" font-size="28" font-weight="500" fill="#59636e">PYDANTIC · JSON · VALIDATION</text>
+
+    <g transform="translate(650 110)">
+      <rect x="0" y="0" width="440" height="118" rx="18" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="24" y="34" font-size="18" font-weight="700" letter-spacing="1" fill="#59636e">FREE-FORM NOTE</text>
+      <text x="24" y="70" font-size="20" font-weight="500" fill="#1b1f24">“R002: Water is leaking.</text>
+      <text x="24" y="98" font-size="20" font-weight="500" fill="#1b1f24">The archive room is closed.”</text>
+
+      <line x1="220" y1="118" x2="220" y2="154" stroke="#0067c0" stroke-width="3"/>
+      <path d="M211 146 L220 157 L229 146" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <rect x="0" y="166" width="194" height="260" rx="18" fill="#ffffff" stroke="#0067c0" stroke-width="2.5"/>
+      <text x="22" y="202" font-size="18" font-weight="700" letter-spacing="1" fill="#0067c0">PYDANTIC SCHEMA</text>
+      <text x="22" y="244" font-size="19" font-weight="600" fill="#1b1f24">report_id</text>
+      <text x="172" y="244" text-anchor="end" font-size="17" fill="#59636e">str</text>
+      <line x1="22" y1="258" x2="172" y2="258" stroke="#e3e6ea"/>
+      <text x="22" y="290" font-size="19" font-weight="600" fill="#1b1f24">issue_area</text>
+      <text x="172" y="290" text-anchor="end" font-size="17" fill="#59636e">enum</text>
+      <line x1="22" y1="304" x2="172" y2="304" stroke="#e3e6ea"/>
+      <text x="22" y="336" font-size="19" font-weight="600" fill="#1b1f24">urgency</text>
+      <text x="172" y="336" text-anchor="end" font-size="17" fill="#59636e">enum</text>
+      <line x1="22" y1="350" x2="172" y2="350" stroke="#e3e6ea"/>
+      <text x="22" y="382" font-size="15" font-weight="600" fill="#1b1f24">blocks_service</text>
+      <text x="172" y="382" text-anchor="end" font-size="17" fill="#59636e">bool</text>
+
+      <line x1="194" y1="296" x2="230" y2="296" stroke="#0067c0" stroke-width="3"/>
+      <path d="M222 287 L233 296 L222 305" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <rect x="246" y="166" width="194" height="260" rx="18" fill="#f4f9fd" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="268" y="202" font-size="18" font-weight="700" letter-spacing="1" fill="#59636e">TYPED RECORD</text>
+      <text x="268" y="244" font-size="17" font-weight="600" fill="#59636e">report_id</text>
+      <text x="418" y="244" text-anchor="end" font-size="18" font-weight="700" fill="#1b1f24">R002</text>
+      <line x1="268" y1="258" x2="418" y2="258" stroke="#d8e5ef"/>
+      <text x="268" y="290" font-size="17" font-weight="600" fill="#59636e">issue_area</text>
+      <text x="418" y="290" text-anchor="end" font-size="18" font-weight="700" fill="#1b1f24">water</text>
+      <line x1="268" y1="304" x2="418" y2="304" stroke="#d8e5ef"/>
+      <text x="268" y="336" font-size="17" font-weight="600" fill="#59636e">urgency</text>
+      <rect x="366" y="314" width="52" height="30" rx="15" fill="#0067c0"/>
+      <text x="392" y="335" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">high</text>
+      <line x1="268" y1="350" x2="418" y2="350" stroke="#d8e5ef"/>
+      <text x="268" y="382" font-size="15" font-weight="600" fill="#59636e">blocks_service</text>
+      <text x="418" y="382" text-anchor="end" font-size="18" font-weight="700" fill="#0067c0">true</text>
+    </g>
+  </g>
+</svg>

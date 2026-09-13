@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="360" viewBox="0 0 1100 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Five real poll() calls: the first joins the group, the rest fetch records</title>
+  <desc>A timeline of five poll() calls made right after subscribe(). Poll 0 returns an empty dict and consumer.assignment() is still an empty set -- this call spent its time joining the consumer group. Poll 1 shows assignment() now listing all three partitions and returns 2 records. Poll 2 returns 3 more records, for a total of 5. Polls 3 and 4 return empty because there is nothing left to read. A callout explains that subscribe() only records intent -- the actual group join happens lazily inside the first poll() call.</desc>
+  <rect width="1100" height="360" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Five poll() Calls, Right After subscribe()</text>
+
+  <rect x="30" y="60" width="195" height="90" rx="6" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="127" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#742a2a">poll #0</text>
+  <text x="127" y="102" text-anchor="middle" font-size="8.5" fill="#742a2a">assignment() = set()</text>
+  <text x="127" y="116" text-anchor="middle" font-size="8.5" fill="#742a2a">0 records</text>
+  <text x="127" y="134" text-anchor="middle" font-size="8.5" font-weight="700" fill="#742a2a">spent joining the group</text>
+
+  <rect x="245" y="60" width="195" height="90" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="342" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">poll #1</text>
+  <text x="342" y="102" text-anchor="middle" font-size="8.5" fill="#22543d">assignment() = 3 partitions</text>
+  <text x="342" y="116" text-anchor="middle" font-size="8.5" fill="#22543d">2 records</text>
+  <text x="342" y="134" text-anchor="middle" font-size="8.5" font-weight="700" fill="#22543d">now actually fetching</text>
+
+  <rect x="460" y="60" width="195" height="90" rx="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="557" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">poll #2</text>
+  <text x="557" y="102" text-anchor="middle" font-size="8.5" fill="#22543d">assignment() = 3 partitions</text>
+  <text x="557" y="116" text-anchor="middle" font-size="8.5" fill="#22543d">3 records</text>
+  <text x="557" y="134" text-anchor="middle" font-size="8.5" fill="#22543d">5 total so far</text>
+
+  <rect x="675" y="60" width="195" height="90" rx="6" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="772" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">poll #3</text>
+  <text x="772" y="102" text-anchor="middle" font-size="8.5" fill="#718096">assignment() = 3 partitions</text>
+  <text x="772" y="116" text-anchor="middle" font-size="8.5" fill="#718096">0 records</text>
+  <text x="772" y="134" text-anchor="middle" font-size="8.5" fill="#718096">nothing left to read</text>
+
+  <rect x="890" y="60" width="180" height="90" rx="6" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="980" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">poll #4</text>
+  <text x="980" y="102" text-anchor="middle" font-size="8.5" fill="#718096">assignment() = 3 partitions</text>
+  <text x="980" y="116" text-anchor="middle" font-size="8.5" fill="#718096">0 records</text>
+  <text x="980" y="134" text-anchor="middle" font-size="8.5" fill="#718096">nothing left to read</text>
+
+  <line x1="225" y1="105" x2="240" y2="105" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowPL)" />
+  <line x1="440" y1="105" x2="455" y2="105" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowPL)" />
+  <line x1="655" y1="105" x2="670" y2="105" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowPL)" />
+  <line x1="870" y1="105" x2="885" y2="105" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowPL)" />
+
+  <defs>
+    <marker id="arrowPL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <line x1="40" y1="185" x2="1060" y2="185" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <rect x="40" y="205" width="1020" height="120" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="60" y="230" font-size="12" font-weight="700" fill="#2c5282">subscribe() only records intent -- it never reaches the broker on its own</text>
+  <text x="60" y="252" font-size="10" fill="#2c5282">consumer.subscribe([TOPIC]) just tells the client "I want this topic." No group-join request is sent yet, and</text>
+  <text x="60" y="270" font-size="10" fill="#2c5282">consumer.assignment() stays an empty set. The actual join -- finding the group coordinator, getting partitions</text>
+  <text x="60" y="288" font-size="10" fill="#2c5282">assigned -- happens lazily, inside whichever call to poll() happens to come first. That's why the very first poll()</text>
+  <text x="60" y="306" font-size="10" fill="#2c5282">after subscribing always returns empty, no matter how many messages are already waiting on the topic.</text>
+</svg>

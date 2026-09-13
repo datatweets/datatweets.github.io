@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>A destructive-read queue versus an append-only log</title>
+  <desc>Top: a queue with three messages. Billing reads all three and the queue becomes empty; analytics then reads the same queue and gets zero messages. Bottom: an append-only log with the same three messages. Billing reads from offset 0 and sees all three; analytics independently reads from offset 0 and also sees all three, because reading never deletes anything.</desc>
+  <rect width="1100" height="440" fill="#ffffff" />
+  <text x="550" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Queue Empties. A Log Doesn't.</text>
+
+  <!-- QUEUE section -->
+  <text x="40" y="70" font-size="13" font-weight="700" fill="#742a2a">Queue (destructive read)</text>
+
+  <rect x="40" y="82" width="90" height="40" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.3" />
+  <text x="85" y="106" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#742a2a">trip-1001</text>
+  <rect x="140" y="82" width="90" height="40" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.3" />
+  <text x="185" y="106" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#742a2a">trip-1002</text>
+  <rect x="240" y="82" width="90" height="40" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.3" />
+  <text x="285" y="106" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#742a2a">trip-1003</text>
+
+  <line x1="380" y1="102" x2="440" y2="102" stroke="#a0aec0" stroke-width="1.6" />
+  <text x="410" y="94" text-anchor="middle" font-size="9" fill="#4a5568">billing</text>
+  <text x="410" y="122" text-anchor="middle" font-size="9" fill="#4a5568">reads all 3</text>
+
+  <rect x="450" y="82" width="150" height="40" rx="5" fill="#f0f2f5" stroke="#a0aec0" stroke-width="1.3" stroke-dasharray="4 3" />
+  <text x="525" y="106" text-anchor="middle" font-size="10" fill="#718096">queue now empty</text>
+
+  <line x1="450" y1="160" x2="450" y2="180" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowQL)" />
+  <text x="600" y="150" text-anchor="middle" font-size="9" fill="#742a2a">analytics reads the same queue next --&gt;</text>
+
+  <rect x="450" y="182" width="220" height="40" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="560" y="206" text-anchor="middle" font-size="10.5" font-weight="700" fill="#742a2a">analytics sees: [ ] -- nothing</text>
+
+  <defs>
+    <marker id="arrowQL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <line x1="40" y1="250" x2="1060" y2="250" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <!-- LOG section -->
+  <text x="40" y="282" font-size="13" font-weight="700" fill="#22543d">Append-only log (non-destructive read, per-reader offset)</text>
+
+  <rect x="40" y="294" width="90" height="40" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="85" y="312" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">offset 0</text>
+  <text x="85" y="326" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">trip-1001</text>
+
+  <rect x="140" y="294" width="90" height="40" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="185" y="312" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">offset 1</text>
+  <text x="185" y="326" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">trip-1002</text>
+
+  <rect x="240" y="294" width="90" height="40" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="285" y="312" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">offset 2</text>
+  <text x="285" y="326" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">trip-1003</text>
+
+  <rect x="340" y="294" width="90" height="40" rx="5" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" stroke-dasharray="4 3" />
+  <text x="385" y="318" text-anchor="middle" font-size="9.5" fill="#2c5282">still growing</text>
+
+  <line x1="440" y1="314" x2="480" y2="314" stroke="#a0aec0" stroke-width="1.6" />
+
+  <rect x="490" y="270" width="260" height="34" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="620" y="292" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">billing reads from offset 0: all 3</text>
+
+  <rect x="490" y="316" width="260" height="34" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="620" y="338" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22543d">analytics reads from offset 0: all 3</text>
+
+  <text x="900" y="292" font-size="10" fill="#4a5568">each reader keeps</text>
+  <text x="900" y="306" font-size="10" fill="#4a5568">its own offset --</text>
+  <text x="900" y="320" font-size="10" fill="#4a5568">the log itself never</text>
+  <text x="900" y="334" font-size="10" fill="#4a5568">tracks "what's read"</text>
+
+  <line x1="40" y1="380" x2="1060" y2="380" stroke="#e2e8f0" stroke-width="1.2" />
+  <text x="550" y="408" text-anchor="middle" font-size="12" fill="#4a5568">A Kafka partition is this append-only log, persisted to disk and replicated across brokers.</text>
+</svg>

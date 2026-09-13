@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="560" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">One Line Changed: FROM python:3.13-slim</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Same Dockerfile, same script, same trips.csv &#8212; only the base image tag differs</text>
+
+<text x="240" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#4a5568">BASE IMAGE ALONE</text>
+<rect x="60" y="106" width="360" height="40" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="80" y="131" font-size="12" font-weight="700" fill="#c53030">python:3.13</text>
+<text x="400" y="131" text-anchor="end" font-size="13" font-weight="700" fill="#c53030">1.12 GB</text>
+
+<rect x="60" y="156" width="46" height="40" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="112" y="176" font-size="12" font-weight="700" fill="#276749">python:3.13-slim</text>
+<text x="400" y="181" text-anchor="end" font-size="13" font-weight="700" fill="#276749">143 MB</text>
+
+<text x="240" y="222" text-anchor="middle" font-size="12" fill="#4a5568">the slim variant is 7.8x smaller before a single</text>
+<text x="240" y="238" text-anchor="middle" font-size="12" fill="#4a5568">line of CityFlow's own code is even added</text>
+
+<line x1="480" y1="80" x2="480" y2="330" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+
+<text x="720" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#4a5568">CITYFLOW-ZONE-SNAPSHOT IMAGE</text>
+<rect x="540" y="106" width="360" height="40" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="560" y="131" font-size="12" font-weight="700" fill="#c53030">:full</text>
+<text x="880" y="131" text-anchor="end" font-size="13" font-weight="700" fill="#c53030">1.29 GB</text>
+
+<rect x="540" y="156" width="85" height="40" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="560" y="176" font-size="12" font-weight="700" fill="#276749">:slim</text>
+<text x="880" y="181" font-size="13" font-weight="700" fill="#276749" text-anchor="end">305 MB</text>
+
+<text x="720" y="222" text-anchor="middle" font-size="12" fill="#4a5568">985 MB saved &#8212; 4.2x smaller, and the</text>
+<text x="720" y="238" text-anchor="middle" font-size="12" fill="#4a5568">two images print byte-identical reports</text>
+
+<line x1="40" y1="270" x2="920" y2="270" stroke="#e2e8f0" stroke-width="1"/>
+
+<rect x="40" y="290" width="420" height="130" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="60" y="314" font-size="12" font-weight="700" fill="#2d3748">Both report, real, identical:</text>
+<text x="60" y="336" font-size="12" fill="#4a5568">trips: 7  &#8226;  avg fare: $24.82</text>
+<text x="60" y="356" font-size="12" fill="#4a5568">avg distance: 4.50 mi</text>
+<text x="60" y="376" font-size="12" fill="#4a5568">total revenue: $261.06</text>
+<text x="60" y="396" font-size="12" fill="#4a5568">highest fare: zone 132 &#8594; 50, $70.00</text>
+
+<rect x="500" y="290" width="420" height="130" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="520" y="314" font-size="12" font-weight="700" fill="#2d3748">Why python:3.13 is bigger</text>
+<text x="520" y="336" font-size="12" fill="#4a5568">the full image ships a complete Debian</text>
+<text x="520" y="354" font-size="12" fill="#4a5568">desktop-adjacent toolchain (compilers,</text>
+<text x="520" y="372" font-size="12" fill="#4a5568">build headers, extra libraries) that a</text>
+<text x="520" y="390" font-size="12" fill="#4a5568">running data job never touches</text>
+
+<text x="480" y="460" text-anchor="middle" font-size="12" fill="#718096">python:3.13-slim keeps the Debian base and the Python interpreter, and drops the build toolchain &#8212;</text>
+<text x="480" y="480" text-anchor="middle" font-size="12" fill="#718096">exactly what a job that only imports pandas at runtime doesn't need. Lesson 2 covers the case where you DO need a compiler.</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Five properties of a trustworthy golden set</title>
+  <desc id="desc">A diagram with five stacked property cards for a golden evaluation set. Representative: matches the distribution of questions users actually ask. Labeled: every example carries a reference answer or a clear pass criterion. Diverse: covers categories, phrasings, and difficulty. Hard cases and negatives: includes out-of-scope, adversarial, and ambiguous questions. Held-out: a portion you never tune against. Below, a coverage strip shows a golden set exercising 7 of Meridian's 8 documentation pages, with the auth page left uncovered and one out-of-scope refusal probe.</desc>
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+
+  <text x="40" y="46" font-size="24" font-weight="700" fill="#1a202c">What makes an eval dataset trustworthy</text>
+  <text x="40" y="72" font-size="15" fill="#4a5568">Five properties a Docent golden set must have before you trust a score built on it</text>
+
+  <!-- Property cards -->
+  <!-- 1 Representative -->
+  <g>
+    <rect x="40" y="96" width="800" height="58" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+    <circle cx="72" cy="125" r="15" fill="#4299e1"/>
+    <text x="72" y="130" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+    <text x="102" y="120" font-size="16" font-weight="700" fill="#2b6cb0">Representative</text>
+    <text x="102" y="141" font-size="13.5" fill="#4a5568">Matches the distribution of questions your users actually ask &#8212; not just the ones you find easy to write.</text>
+  </g>
+  <!-- 2 Labeled -->
+  <g>
+    <rect x="40" y="162" width="800" height="58" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <circle cx="72" cy="191" r="15" fill="#48bb78"/>
+    <text x="72" y="196" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+    <text x="102" y="186" font-size="16" font-weight="700" fill="#276749">Labeled</text>
+    <text x="102" y="207" font-size="13.5" fill="#4a5568">Every example carries a reference answer or a clear pass criterion, so grading is a check, not an opinion.</text>
+  </g>
+  <!-- 3 Diverse -->
+  <g>
+    <rect x="40" y="228" width="800" height="58" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5"/>
+    <circle cx="72" cy="257" r="15" fill="#9f7aea"/>
+    <text x="72" y="262" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+    <text x="102" y="252" font-size="16" font-weight="700" fill="#6b46c1">Diverse</text>
+    <text x="102" y="273" font-size="13.5" fill="#4a5568">Covers categories, phrasings, and difficulty &#8212; the same fact asked three ways, easy and hard alike.</text>
+  </g>
+  <!-- 4 Hard cases and negatives -->
+  <g>
+    <rect x="40" y="294" width="800" height="58" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+    <circle cx="72" cy="323" r="15" fill="#fc8181"/>
+    <text x="72" y="328" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+    <text x="102" y="318" font-size="16" font-weight="700" fill="#c53030">Hard cases &#38; negatives</text>
+    <text x="102" y="339" font-size="13.5" fill="#4a5568">Includes out-of-scope, adversarial, and ambiguous questions where the right answer is &#8220;I don't know.&#8221;</text>
+  </g>
+  <!-- 5 Held-out -->
+  <g>
+    <rect x="40" y="360" width="800" height="58" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <circle cx="72" cy="389" r="15" fill="#ed8936"/>
+    <text x="72" y="394" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+    <text x="102" y="384" font-size="16" font-weight="700" fill="#c05621">Held-out</text>
+    <text x="102" y="405" font-size="13.5" fill="#4a5568">A portion you never tune against, kept in reserve so a good score means generalization, not memorization.</text>
+  </g>
+
+  <!-- Coverage strip -->
+  <text x="40" y="452" font-size="15" font-weight="700" fill="#1a202c">Coverage of Meridian's 8 doc pages by the golden set</text>
+
+  <!-- 8 doc page tiles: 7 covered (green), auth uncovered (gray) -->
+  <g font-size="12.5" text-anchor="middle">
+    <!-- auth: uncovered -->
+    <rect x="40" y="466" width="92" height="40" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="86" y="484" font-weight="700" fill="#718096">auth</text>
+    <text x="86" y="499" font-size="10.5" fill="#a0aec0">uncovered</text>
+    <!-- covered -->
+    <rect x="140" y="466" width="92" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="186" y="484" font-weight="700" fill="#276749">ratelimits</text>
+    <text x="186" y="499" font-size="10.5" fill="#48bb78">2 q</text>
+    <rect x="240" y="466" width="92" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="286" y="484" font-weight="700" fill="#276749">plans</text>
+    <text x="286" y="499" font-size="10.5" fill="#48bb78">2 q</text>
+    <rect x="340" y="466" width="92" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="386" y="484" font-weight="700" fill="#276749">regions</text>
+    <text x="386" y="499" font-size="10.5" fill="#48bb78">1 q</text>
+    <rect x="440" y="466" width="92" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="486" y="484" font-weight="700" fill="#276749">backups</text>
+    <text x="486" y="499" font-size="10.5" fill="#48bb78">2 q</text>
+    <rect x="540" y="466" width="92" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="586" y="484" font-weight="700" fill="#276749">sdks</text>
+    <text x="586" y="499" font-size="10.5" fill="#48bb78">1 q</text>
+    <rect x="640" y="466" width="92" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="686" y="484" font-weight="700" fill="#276749">errors</text>
+    <text x="686" y="499" font-size="10.5" fill="#48bb78">1 q</text>
+    <rect x="740" y="466" width="92" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+    <text x="786" y="484" font-weight="700" fill="#276749">deletion</text>
+    <text x="786" y="499" font-size="10.5" fill="#48bb78">1 q</text>
+  </g>
+
+  <!-- out-of-scope probe -->
+  <rect x="40" y="518" width="380" height="30" rx="6" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5"/>
+  <text x="56" y="538" font-size="12.5" fill="#6b46c1">+ 1 out-of-scope probe (MongoDB) &#8594; correct answer is a refusal</text>
+  <text x="440" y="538" font-size="12.5" fill="#c53030" font-weight="700">Gap: auth page has 0 questions &#8594; add one</text>
+</svg>

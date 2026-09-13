@@ -1,0 +1,8 @@
+test_name,contract_layer,expected_behavior,observed_result,passed
+health contract,Startup,health body and model version,passed,True
+valid prediction contract,Response,typed probability response,passed,True
+same request is repeatable,Behavior,"same request, same response",passed,True
+reminder moves probability up,Behavior,documented feature direction,passed,True
+missing feature is rejected,Request,missing field returns HTTP 422,passed,True
+unknown field is rejected,Request,unknown field returns HTTP 422,passed,True
+openapi keeps required fields,Documentation,OpenAPI lists required fields,passed,True

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="620" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Deployments &amp; ReplicaSets: Reconciling Desired State</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">kubectl create deployment nginx-deploy --image=nginx:alpine, watched live</text>
+
+<text x="240" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#2d3748">Self-healing: kill a pod</text>
+
+<rect x="60" y="110" width="360" height="86" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="240" y="132" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">desired: 1 replica</text>
+<text x="240" y="152" text-anchor="middle" font-size="11" fill="#4a5568">pod nginx-deploy-7f557c4594-ksxxc</text>
+<text x="240" y="170" text-anchor="middle" font-size="11" fill="#4a5568">Running, age 2s</text>
+<text x="240" y="186" text-anchor="middle" font-size="10" fill="#718096">kubectl delete pod ksxxc &#8594;</text>
+
+<line x1="240" y1="196" x2="240" y2="226" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="60" y="230" width="360" height="86" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="240" y="252" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">ReplicaSet notices the gap</text>
+<text x="240" y="272" text-anchor="middle" font-size="11" fill="#4a5568">observed: 0 of 1 desired</text>
+<text x="240" y="290" text-anchor="middle" font-size="11" fill="#4a5568">controller creates a replacement</text>
+<text x="240" y="306" text-anchor="middle" font-size="10" fill="#718096">no human ran this command</text>
+
+<line x1="240" y1="316" x2="240" y2="346" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="60" y="350" width="360" height="86" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="240" y="372" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">back to 1 of 1</text>
+<text x="240" y="392" text-anchor="middle" font-size="11" fill="#4a5568">pod nginx-deploy-7f557c4594-l9rtd</text>
+<text x="240" y="410" text-anchor="middle" font-size="11" fill="#4a5568">Running, age 1s &#8212; measured seconds later</text>
+<text x="240" y="426" text-anchor="middle" font-size="10" fill="#718096">a new pod name, same desired count</text>
+
+<line x1="480" y1="94" x2="480" y2="436" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="720" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#2d3748">Scaling: one command, three pods</text>
+
+<rect x="540" y="110" width="360" height="72" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="720" y="134" text-anchor="middle" font-size="11.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#2b6cb0">kubectl scale deployment nginx-deploy \</text>
+<text x="720" y="152" text-anchor="middle" font-size="11.5" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#2b6cb0">--replicas=3</text>
+<text x="720" y="170" text-anchor="middle" font-size="10" fill="#718096">deployment.apps/nginx-deploy scaled</text>
+
+<line x1="720" y1="182" x2="720" y2="210" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="540" y="214" width="112" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="596" y="240" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">l9rtd</text>
+<text x="596" y="258" text-anchor="middle" font-size="9.5" fill="#4a5568">Running</text>
+<text x="596" y="272" text-anchor="middle" font-size="9" fill="#718096">age 16s</text>
+
+<rect x="664" y="214" width="112" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="720" y="240" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">cv76g</text>
+<text x="720" y="258" text-anchor="middle" font-size="9.5" fill="#4a5568">Running</text>
+<text x="720" y="272" text-anchor="middle" font-size="9" fill="#718096">age 3s (new)</text>
+
+<rect x="788" y="214" width="112" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="844" y="240" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">lfr8z</text>
+<text x="844" y="258" text-anchor="middle" font-size="9.5" fill="#4a5568">Running</text>
+<text x="844" y="272" text-anchor="middle" font-size="9" fill="#718096">age 3s (new)</text>
+
+<rect x="540" y="300" width="360" height="70" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="720" y="322" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">deployment.apps/nginx-deploy</text>
+<text x="720" y="340" text-anchor="middle" font-size="11" fill="#4a5568">READY 3/3 &#8226; UP-TO-DATE 3 &#8226; AVAILABLE 3</text>
+<text x="720" y="356" text-anchor="middle" font-size="10" fill="#718096">one ReplicaSet, three real pods, same node</text>
+
+<line x1="60" y1="454" x2="900" y2="454" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="480" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">the same idea, twice</text>
+<text x="480" y="504" text-anchor="middle" font-size="12" fill="#4a5568">A Deployment states a desired count. A ReplicaSet's whole job is making the</text>
+<text x="480" y="524" text-anchor="middle" font-size="12" fill="#4a5568">observed count match it &#8212; whether the gap came from a pod dying or from you asking for more.</text>
+<text x="480" y="552" text-anchor="middle" font-size="11.5" fill="#718096">This is the self-healing and scaling that Compose's restart: policy (Module 4) cannot do on its own:</text>
+<text x="480" y="572" text-anchor="middle" font-size="11.5" fill="#718096">restart: policy restarts a container that already exists. A ReplicaSet creates a brand-new one.</text>
+<text x="480" y="600" text-anchor="middle" font-size="10.5" fill="#a0aec0">All pod names, ages, and timings above are from real kubectl output captured for this lesson.</text>
+
+<defs>
+<marker id="arrows" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 880" width="960" height="880" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="880" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Order buys the range query &#8212; 2,440 trips in 5.18&#160;&#181;s instead of 0.192&#160;s</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Pickups between 08:00 and 09:00 on 2024&#8211;01&#8211;15, from the real January 2024 yellow-taxi month (2,964,624 rows), one 10-core machine</text>
+
+<text x="40" y="88" font-size="13" font-weight="700" fill="#4a5568">THE SAME 7 REAL PICKUP INSTANTS, TWO INSERT ORDERS &#8212; the BST rule is identical, the shape is not</text>
+<line x1="40" y1="98" x2="920" y2="98" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="255" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">inserted in file order (jumbled)</text>
+<text x="705" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">inserted already sorted &#8212; what taxi data does</text>
+
+<!-- balanced tree edges -->
+<line x1="255" y1="155" x2="155" y2="187" stroke="#4a5568" stroke-width="1.5"/>
+<line x1="255" y1="155" x2="355" y2="187" stroke="#4a5568" stroke-width="1.5"/>
+<line x1="155" y1="205" x2="100" y2="237" stroke="#4a5568" stroke-width="1.5"/>
+<line x1="155" y1="205" x2="205" y2="237" stroke="#4a5568" stroke-width="1.5"/>
+<line x1="355" y1="205" x2="305" y2="237" stroke="#4a5568" stroke-width="1.5"/>
+<line x1="355" y1="205" x2="410" y2="237" stroke="#4a5568" stroke-width="1.5"/>
+
+<rect x="224" y="133" width="62" height="22" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="255" y="148" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0">08:25:52</text>
+<rect x="124" y="187" width="62" height="22" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="155" y="202" text-anchor="middle" font-size="10" fill="#2b6cb0">08:10:45</text>
+<rect x="324" y="187" width="62" height="22" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="355" y="202" text-anchor="middle" font-size="10" font-weight="600" fill="#276749">08:47:19</text>
+<rect x="69" y="237" width="62" height="22" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="100" y="252" text-anchor="middle" font-size="10" fill="#2b6cb0">08:07:11</text>
+<rect x="174" y="237" width="62" height="22" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="205" y="252" text-anchor="middle" font-size="10" fill="#2b6cb0">08:18:33</text>
+<rect x="274" y="237" width="62" height="22" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="305" y="252" text-anchor="middle" font-size="10" fill="#2b6cb0">08:34:27</text>
+<rect x="379" y="237" width="62" height="22" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<text x="410" y="252" text-anchor="middle" font-size="10" fill="#2b6cb0">08:57:36</text>
+
+<text x="255" y="285" text-anchor="middle" font-size="11" fill="#276749">search(08:47:19): go right, hit &#8212; 2 comparisons</text>
+<text x="255" y="302" text-anchor="middle" font-size="11" fill="#718096">every step throws away half the tree &#8212; depth grows like log n</text>
+
+<!-- degenerate chain -->
+<line x1="561" y1="155" x2="601" y2="169" stroke="#c53030" stroke-width="1.5"/>
+<line x1="601" y1="187" x2="641" y2="201" stroke="#c53030" stroke-width="1.5"/>
+<line x1="641" y1="219" x2="681" y2="233" stroke="#c53030" stroke-width="1.5"/>
+<line x1="681" y1="251" x2="721" y2="265" stroke="#c53030" stroke-width="1.5"/>
+<line x1="721" y1="283" x2="761" y2="297" stroke="#c53030" stroke-width="1.5"/>
+<line x1="761" y1="315" x2="801" y2="329" stroke="#c53030" stroke-width="1.5"/>
+
+<rect x="530" y="133" width="62" height="22" rx="6" fill="#fffaf0" stroke="#c53030" stroke-width="1.5"/>
+<text x="561" y="148" text-anchor="middle" font-size="10" font-weight="600" fill="#c53030">08:07:11</text>
+<rect x="570" y="165" width="62" height="22" rx="6" fill="#fffaf0" stroke="#c53030" stroke-width="1"/>
+<text x="601" y="180" text-anchor="middle" font-size="10" fill="#c53030">08:10:45</text>
+<rect x="610" y="197" width="62" height="22" rx="6" fill="#fffaf0" stroke="#c53030" stroke-width="1"/>
+<text x="641" y="212" text-anchor="middle" font-size="10" fill="#c53030">08:18:33</text>
+<rect x="650" y="229" width="62" height="22" rx="6" fill="#fffaf0" stroke="#c53030" stroke-width="1"/>
+<text x="681" y="244" text-anchor="middle" font-size="10" fill="#c53030">08:25:52</text>
+<rect x="690" y="261" width="62" height="22" rx="6" fill="#fffaf0" stroke="#c53030" stroke-width="1"/>
+<text x="721" y="276" text-anchor="middle" font-size="10" fill="#c53030">08:34:27</text>
+<rect x="730" y="293" width="62" height="22" rx="6" fill="#fffaf0" stroke="#c53030" stroke-width="1"/>
+<text x="761" y="308" text-anchor="middle" font-size="10" fill="#c53030">08:47:19</text>
+<rect x="770" y="325" width="62" height="22" rx="6" fill="#fed7d7" stroke="#c53030" stroke-width="1.5"/>
+<text x="801" y="340" text-anchor="middle" font-size="10" font-weight="600" fill="#c53030">08:57:36</text>
+
+<text x="705" y="368" text-anchor="middle" font-size="11" fill="#c53030">search(08:57:36): right, right, right&#8230; &#8212; 7 comparisons</text>
+<text x="705" y="385" text-anchor="middle" font-size="11" fill="#718096">nothing ever goes left, so the &#8220;tree&#8221; is a linked list &#8212; depth = n</text>
+
+<!-- measured boxes -->
+<rect x="40" y="402" width="430" height="76" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="58" y="424" font-size="12" font-weight="700" fill="#276749">Measured on 20,000 real instants, shuffled</text>
+<text x="58" y="445" font-size="11" fill="#4a5568">built in 0.03&#160;s &#183; measured depth 33 (log&#8322; 20,000 &#8776; 14.3)</text>
+<text x="58" y="464" font-size="11" fill="#718096">recursive insert never got close to Python&#8217;s 1,000-frame limit</text>
+
+<rect x="490" y="402" width="430" height="76" rx="8" fill="#fffaf0" stroke="#c53030" stroke-width="1.5"/>
+<text x="508" y="424" font-size="12" font-weight="700" fill="#c53030">Measured on the SAME 20,000, in sorted order</text>
+<text x="508" y="445" font-size="11" fill="#4a5568">built in 8.82&#160;s (329&#215; slower) &#183; measured depth 20,000 (606&#215; deeper)</text>
+<text x="508" y="464" font-size="11" fill="#c53030">recursive insert died with RecursionError after 998 rows</text>
+
+<line x1="40" y1="500" x2="920" y2="500" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- range query -->
+<text x="40" y="524" font-size="13" font-weight="700" fill="#4a5568">THE RANGE QUERY ON A SORTED ARRAY &#8212; two probes bracket the window, the answer is a contiguous slice</text>
+
+<text x="200" y="552" text-anchor="middle" font-size="11" font-weight="600" fill="#2b6cb0">bisect_left(08:00:00) &#8594; 1,294,179</text>
+<line x1="200" y1="558" x2="424" y2="578" stroke="#2b6cb0" stroke-width="1"/>
+<text x="620" y="552" text-anchor="middle" font-size="11" font-weight="600" fill="#2b6cb0">bisect_left(09:00:00) &#8594; 1,296,619</text>
+<line x1="620" y1="558" x2="431" y2="578" stroke="#2b6cb0" stroke-width="1"/>
+
+<rect x="60" y="578" width="840" height="30" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1"/>
+<rect x="424" y="574" width="7" height="38" rx="2" fill="#276749" stroke="#276749" stroke-width="1"/>
+<text x="240" y="598" text-anchor="middle" font-size="10" fill="#718096">positions 0 &#8230; 1,294,178 &#8212; never touched</text>
+<text x="670" y="598" text-anchor="middle" font-size="10" fill="#718096">positions 1,296,619 &#8230; 2,964,623 &#8212; never touched</text>
+<text x="480" y="628" text-anchor="middle" font-size="11" fill="#718096">the whole month, sorted: 2,964,624 pickup instants &#183; the 08:00&#8211;09:00 window is the green sliver, 0.08% of the array</text>
+
+<rect x="270" y="644" width="420" height="34" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="480" y="666" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">slice[1294179:1296619] &#8594; 2,440 trips, mean fare $17.53</text>
+
+<line x1="40" y1="700" x2="920" y2="700" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- cards -->
+<rect x="40" y="716" width="280" height="96" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="58" y="737" font-size="11" font-weight="700" fill="#4a5568">ONE SEARCH &#183; 100,000 real instants</text>
+<text x="58" y="758" font-size="11" fill="#c53030">linear scan&#160;&#160;&#160;1425.066&#160;&#181;s</text>
+<text x="58" y="777" font-size="11" fill="#2b6cb0">node BST&#160;&#160;&#160;&#160;&#160;&#160;&#160;3.093&#160;&#181;s&#160;&#160;&#160;461&#215;</text>
+<text x="58" y="796" font-size="11" font-weight="700" fill="#276749">bisect&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0.633&#160;&#181;s&#160;&#160;2,253&#215;</text>
+
+<rect x="340" y="716" width="280" height="96" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="358" y="737" font-size="11" font-weight="700" fill="#4a5568">MEMORY &#183; the same 100,000 keys</text>
+<text x="358" y="758" font-size="11" fill="#c53030">node BST&#160;&#160;&#160;&#160;12.80&#160;MB (128 B/key)</text>
+<text x="358" y="777" font-size="11" font-weight="700" fill="#276749">sorted list&#160;&#160;0.80&#160;MB (8 B/key)</text>
+<text x="358" y="796" font-size="11" fill="#718096">100,000 scattered objects vs one block</text>
+
+<rect x="640" y="716" width="280" height="96" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="658" y="737" font-size="11" font-weight="700" fill="#4a5568">RANGE &#183; 2,964,624 rows</text>
+<text x="658" y="758" font-size="11" fill="#c53030">full Python scan&#160;&#160;&#160;0.192&#160;s</text>
+<text x="658" y="777" font-size="11" font-weight="700" fill="#276749">bisect bracket&#160;&#160;&#160;&#160;&#160;5.18&#160;&#181;s</text>
+<text x="658" y="796" font-size="11" fill="#276749">36,986&#215; &#183; identical 2,440 trips</text>
+
+<!-- honest note -->
+<rect x="40" y="828" width="880" height="40" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+<text x="58" y="846" font-size="11" fill="#4a5568">The price: the array must be sorted first &#8212; <tspan font-weight="700">sorted() over 2,964,624 real instants costs 0.52&#160;s</tspan>, so the index pays for itself after 2.7 queries against a Python scan (139.5 against a NumPy one).</text>
+<text x="58" y="862" font-size="11" fill="#718096">Exact seconds vary by machine and run; the ratios and the tree shapes are the point. Real databases ship B-trees &#8212; fat, shallow, cache-friendly &#8212; not the textbook BST on the left.</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="440" viewBox="0 0 800 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="440" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Two Ways to Ask for the Same Transformation</text>
+
+  <!-- Left column: row-by-row Python -->
+  <text x="200" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">Row-by-Row Python</text>
+
+  <rect x="90" y="80" width="220" height="34" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="200" y="102" text-anchor="middle" font-size="10.5" fill="#9c4221">for row in products.iterrows():</text>
+
+  <line x1="200" y1="114" x2="200" y2="132" stroke="#ed8936" stroke-width="1.8" />
+  <polygon points="200 132 195 122 205 122" fill="#ed8936" />
+  <rect x="110" y="134" width="180" height="30" rx="7" fill="#fff5eb" stroke="#f6ad55" stroke-width="1.3" />
+  <text x="200" y="153" text-anchor="middle" font-size="10" fill="#9c4221">check row 1, compute, store</text>
+
+  <line x1="200" y1="164" x2="200" y2="182" stroke="#ed8936" stroke-width="1.8" />
+  <polygon points="200 182 195 172 205 172" fill="#ed8936" />
+  <rect x="110" y="184" width="180" height="30" rx="7" fill="#fff5eb" stroke="#f6ad55" stroke-width="1.3" />
+  <text x="200" y="203" text-anchor="middle" font-size="10" fill="#9c4221">check row 2, compute, store</text>
+
+  <line x1="200" y1="214" x2="200" y2="232" stroke="#ed8936" stroke-width="1.8" />
+  <polygon points="200 232 195 222 205 222" fill="#ed8936" />
+  <rect x="110" y="234" width="180" height="30" rx="7" fill="#fff5eb" stroke="#f6ad55" stroke-width="1.3" />
+  <text x="200" y="253" text-anchor="middle" font-size="10" fill="#9c4221">check row 3, compute, store</text>
+
+  <text x="200" y="278" text-anchor="middle" font-size="14" fill="#c05621">&#8942;</text>
+
+  <rect x="110" y="286" width="180" height="30" rx="7" fill="#fff5eb" stroke="#f6ad55" stroke-width="1.3" />
+  <text x="200" y="305" text-anchor="middle" font-size="10" fill="#9c4221">check row N, compute, store</text>
+
+  <rect x="60" y="330" width="280" height="46" rx="8" fill="#fdf2f2" stroke="#fc8181" stroke-width="1.4" />
+  <text x="200" y="349" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c53030">Python's interpreter overhead</text>
+  <text x="200" y="363" text-anchor="middle" font-size="9.5" fill="#c53030">is paid again for every single row</text>
+
+  <!-- Divider -->
+  <line x1="400" y1="55" x2="400" y2="390" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4" />
+
+  <!-- Right column: Polars expressions -->
+  <text x="600" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">Polars Expressions</text>
+
+  <rect x="470" y="80" width="260" height="42" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="600" y="98" text-anchor="middle" font-size="10" fill="#2b6cb0">products.filter(pl.col("category")</text>
+  <text x="600" y="112" text-anchor="middle" font-size="10" fill="#2b6cb0">== "Kitchen").with_columns(...)</text>
+
+  <line x1="600" y1="122" x2="600" y2="140" stroke="#4299e1" stroke-width="1.8" />
+  <polygon points="600 140 595 130 605 130" fill="#4299e1" />
+
+  <rect x="490" y="142" width="220" height="40" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="600" y="160" text-anchor="middle" font-size="10.5" font-weight="700" fill="#6b46c1">Query plan</text>
+  <text x="600" y="174" text-anchor="middle" font-size="9" fill="#805ad5">Polars decides the fastest order</text>
+
+  <line x1="600" y1="182" x2="600" y2="200" stroke="#9f7aea" stroke-width="1.8" />
+  <polygon points="600 200 595 190 605 190" fill="#9f7aea" />
+
+  <rect x="470" y="202" width="260" height="56" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="600" y="222" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">One pass, whole columns at once</text>
+  <text x="600" y="238" text-anchor="middle" font-size="9" fill="#2f855a">executed in compiled Rust, spread</text>
+  <text x="600" y="251" text-anchor="middle" font-size="9" fill="#2f855a">across every CPU core available</text>
+
+  <rect x="460" y="330" width="280" height="46" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="600" y="349" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">You describe what you want;</text>
+  <text x="600" y="363" text-anchor="middle" font-size="9.5" fill="#276749">Polars decides how to run it fast</text>
+
+  <text x="400" y="410" text-anchor="middle" font-size="10.5" fill="#718096">Same task, two mental models: step through rows yourself, or hand Polars an expression and let it plan the execution.</text>
+</svg>

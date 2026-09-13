@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="960" height="660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="660" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">CronJobs: Five Real, Successive Runs</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">cityflow-heartbeat, schedule */1 * * * * (every minute), watched for real</text>
+
+<text x="80" y="90" text-anchor="start" font-size="12" font-weight="700" fill="#2d3748">timeline</text>
+<line x1="80" y1="100" x2="880" y2="100" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<circle cx="140" cy="100" r="5" fill="#276749"/>
+<rect x="80" y="116" width="120" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="140" y="136" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">29744495</text>
+<text x="140" y="152" text-anchor="middle" font-size="9" fill="#4a5568">t+8s</text>
+<text x="140" y="166" text-anchor="middle" font-size="9" fill="#4a5568">Complete</text>
+<text x="140" y="180" text-anchor="middle" font-size="8.5" fill="#718096">21:37:00Z</text>
+
+<circle cx="300" cy="100" r="5" fill="#276749"/>
+<rect x="240" y="116" width="120" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="300" y="136" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">29744496</text>
+<text x="300" y="152" text-anchor="middle" font-size="9" fill="#4a5568">+1 min</text>
+<text x="300" y="166" text-anchor="middle" font-size="9" fill="#4a5568">Complete</text>
+<text x="300" y="180" text-anchor="middle" font-size="8.5" fill="#718096">21:37:00Z heartbeat</text>
+
+<circle cx="480" cy="100" r="5" fill="#dd6b20"/>
+<rect x="420" y="116" width="120" height="70" rx="8" fill="#fffaf0" stroke="#dd6b20" stroke-width="1.5"/>
+<text x="480" y="136" text-anchor="middle" font-size="10.5" font-weight="700" fill="#dd6b20">29744497</text>
+<text x="480" y="152" text-anchor="middle" font-size="9" fill="#4a5568">caught Running</text>
+<text x="480" y="166" text-anchor="middle" font-size="9" fill="#4a5568">0/1, age 1s</text>
+<text x="480" y="180" text-anchor="middle" font-size="8.5" fill="#718096">then Complete</text>
+
+<circle cx="640" cy="100" r="5" fill="#276749"/>
+<rect x="580" y="116" width="120" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="640" y="136" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">29744498</text>
+<text x="640" y="152" text-anchor="middle" font-size="9" fill="#4a5568">+1 min</text>
+<text x="640" y="166" text-anchor="middle" font-size="9" fill="#4a5568">Complete</text>
+<text x="640" y="180" text-anchor="middle" font-size="8.5" fill="#718096">21:38:00Z heartbeat</text>
+
+<circle cx="800" cy="100" r="5" fill="#276749"/>
+<rect x="740" y="116" width="120" height="70" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="800" y="136" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">29744499</text>
+<text x="800" y="152" text-anchor="middle" font-size="9" fill="#4a5568">+1 min</text>
+<text x="800" y="166" text-anchor="middle" font-size="9" fill="#4a5568">Complete</text>
+<text x="800" y="180" text-anchor="middle" font-size="8.5" fill="#718096">21:39:00Z heartbeat</text>
+
+<text x="480" y="216" text-anchor="middle" font-size="10.5" fill="#718096">trailing number = a Unix-minute index; it climbs by exactly 1 every time the schedule fires</text>
+
+<line x1="60" y1="238" x2="900" y2="238" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="266" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">successfulJobsHistoryLimit: 3 - pruning in action</text>
+
+<text x="200" y="296" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">after run 4 (29744498) completes:</text>
+<rect x="80" y="308" width="100" height="40" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="130" y="332" text-anchor="middle" font-size="9.5" fill="#c53030">29744495 deleted</text>
+<rect x="190" y="308" width="100" height="40" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="240" y="332" text-anchor="middle" font-size="9.5" fill="#276749">29744496</text>
+<rect x="300" y="308" width="100" height="40" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="350" y="332" text-anchor="middle" font-size="9.5" fill="#276749">29744497</text>
+<rect x="410" y="308" width="100" height="40" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="460" y="332" text-anchor="middle" font-size="9.5" fill="#276749">29744498</text>
+
+<text x="720" y="296" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">after run 5 (29744499) completes:</text>
+<rect x="600" y="308" width="100" height="40" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="650" y="332" text-anchor="middle" font-size="9.5" fill="#c53030">29744496 deleted</text>
+<rect x="710" y="308" width="100" height="40" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="760" y="332" text-anchor="middle" font-size="9.5" fill="#276749">29744497</text>
+<rect x="820" y="308" width="100" height="40" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="870" y="332" text-anchor="middle" font-size="9.5" fill="#276749">29744499</text>
+
+<text x="480" y="374" text-anchor="middle" font-size="11.5" fill="#4a5568">Exactly 3 completed Jobs at every point - the oldest is pruned automatically each time</text>
+<text x="480" y="394" text-anchor="middle" font-size="11.5" fill="#4a5568">a new run would push the count past the history limit. failedJobsHistoryLimit does the same for failures.</text>
+
+<line x1="60" y1="416" x2="900" y2="416" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="444" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">cascading delete</text>
+<rect x="280" y="458" width="400" height="60" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="480" y="480" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">kubectl delete cronjob cityflow-heartbeat</text>
+<text x="480" y="500" text-anchor="middle" font-size="10.5" fill="#4a5568">removes the CronJob and every Job (and pod) it ever created</text>
+
+<text x="480" y="548" text-anchor="middle" font-size="11.5" fill="#4a5568">CronJob owns Jobs, which own pods - deleting the top of that chain deletes all of it,</text>
+<text x="480" y="568" text-anchor="middle" font-size="11.5" fill="#4a5568">the same ownership pattern a Deployment's ReplicaSet already showed in Module 5.</text>
+<text x="480" y="600" text-anchor="middle" font-size="10.5" fill="#a0aec0">All Job names, timestamps, and statuses above are from real kubectl output captured for this lesson.</text>
+
+<defs>
+<marker id="arrows" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

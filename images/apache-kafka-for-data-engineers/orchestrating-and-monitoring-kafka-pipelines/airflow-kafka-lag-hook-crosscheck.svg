@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Two independent paths to the same number: lag=12</title>
+  <desc>An Airflow DAG task calls CityFlowKafkaLagHook.get_group_lag(), which reads a bootstrap-servers string from the cityflow_kafka Airflow Connection and calls the plain, Airflow-free compute_group_lag() function. That function subtracts each partition's committed offset from its log-end offset, the same math Kafka's own kafka-consumer-groups.sh performs. Both paths report the identical total lag of 12 for the cityflow-orchestration-monitor consumer group, cross-checked directly against each other.</desc>
+  <rect width="1100" height="440" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Two Independent Paths, One Cross-Checked Number</text>
+
+  <!-- Left path: Airflow -->
+  <rect x="40" y="60" width="480" height="230" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="280" y="85" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2c5282">Path 1 -- Airflow DAG Task</text>
+
+  <rect x="65" y="100" width="200" height="42" rx="6" fill="#ffffff" stroke="#4299e1" />
+  <text x="165" y="125" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2c5282">check_orchestration_lag()</text>
+
+  <path d="M165,142 L165,160" stroke="#a0aec0" stroke-width="2" marker-end="url(#a11)" />
+
+  <rect x="65" y="160" width="200" height="42" rx="6" fill="#ffffff" stroke="#4299e1" />
+  <text x="165" y="185" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#2c5282">CityFlowKafkaLagHook</text>
+
+  <path d="M165,202 L165,220" stroke="#a0aec0" stroke-width="2" marker-end="url(#a11)" />
+
+  <rect x="65" y="220" width="200" height="42" rx="6" fill="#c6f6d5" stroke="#48bb78" />
+  <text x="165" y="242" text-anchor="middle" font-size="9" fill="#22543d">cityflow_kafka Connection</text>
+  <text x="165" y="255" text-anchor="middle" font-size="8" font-family="Menlo, monospace" fill="#22543d">kafka1:29092,...</text>
+
+  <path d="M280,100 L280,262" stroke="#a0aec0" stroke-width="1.4" stroke-dasharray="3,3" fill="none" />
+  <rect x="285" y="150" width="215" height="70" rx="6" fill="#e9d8fd" stroke="#9f7aea" />
+  <text x="392" y="172" text-anchor="middle" font-size="9.5" font-weight="700" fill="#553c9a">compute_group_lag()</text>
+  <text x="392" y="188" text-anchor="middle" font-size="8.5" fill="#553c9a">log_end - committed</text>
+  <text x="392" y="202" text-anchor="middle" font-size="8.5" fill="#553c9a">per partition</text>
+
+  <!-- Right path: kafka-consumer-groups.sh -->
+  <rect x="580" y="60" width="480" height="230" rx="10" fill="#feebc8" stroke="#ed8936" stroke-width="1.6" />
+  <text x="820" y="85" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7b341e">Path 2 -- Kafka's Own CLI</text>
+
+  <rect x="610" y="130" width="420" height="60" rx="6" fill="#ffffff" stroke="#ed8936" />
+  <text x="820" y="152" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#7b341e">kafka-consumer-groups.sh --describe</text>
+  <text x="820" y="168" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#7b341e">--group cityflow-orchestration-monitor</text>
+
+  <path d="M820,190 L820,215" stroke="#a0aec0" stroke-width="2" marker-end="url(#a11)" />
+
+  <text x="820" y="235" text-anchor="middle" font-size="9" fill="#7b341e">identical subtraction, Kafka's own reference tool</text>
+
+  <!-- Result banner -->
+  <rect x="290" y="325" width="520" height="70" rx="8" fill="#2c5282" />
+  <text x="550" y="352" text-anchor="middle" font-size="14" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">total_lag = 12  (both paths, exactly)</text>
+  <text x="550" y="372" text-anchor="middle" font-size="10" fill="#bee3f8">partition 2: log_end=20, committed=8, lag=12 -- identical breakdown too</text>
+
+  <path d="M280,290 L400,325" stroke="#a0aec0" stroke-width="1.6" fill="none" marker-end="url(#a11)" />
+  <path d="M820,290 L700,325" stroke="#a0aec0" stroke-width="1.6" fill="none" marker-end="url(#a11)" />
+
+  <defs>
+    <marker id="a11" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <text x="550" y="420" text-anchor="middle" font-size="10.5" fill="#718096">Run through airflow dags test -- Airflow's real scheduler, not a mocked task.</text>
+</svg>

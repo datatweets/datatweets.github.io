@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="840" height="460" fill="#ffffff"/>
+
+  <text x="420" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#1a202c">An RNN squeezes a whole sequence into one fixed-size hidden state</text>
+  <text x="420" y="56" text-anchor="middle" font-size="13" fill="#718096">Each step must wait for the one before it, and the signal from early tokens fades left to right</text>
+
+  <!-- fading signal band from x_0 across the chain -->
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fc8181" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#fc8181" stop-opacity="0.05"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#4a5568"/>
+    </marker>
+    <marker id="arrgray" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/>
+    </marker>
+  </defs>
+
+  <path d="M92,132 C 260,96 520,96 700,150" fill="none" stroke="url(#fade)" stroke-width="10" stroke-linecap="round"/>
+  <text x="250" y="100" font-size="12" font-style="italic" fill="#c53030">signal from x&#8320; fades &#8594;</text>
+
+  <!-- RNN cells row (y ~ 200) -->
+  <!-- cell centers at x = 92, 244, 396, 548, 700 -->
+  <g>
+    <!-- horizontal recurrent arrows between cells -->
+    <line x1="140" y1="205" x2="196" y2="205" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arr)"/>
+    <line x1="292" y1="205" x2="348" y2="205" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arr)"/>
+    <line x1="444" y1="205" x2="500" y2="205" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arr)"/>
+    <line x1="596" y1="205" x2="652" y2="205" stroke="#4a5568" stroke-width="2.5" marker-end="url(#arr)"/>
+    <text x="168" y="196" text-anchor="middle" font-size="12" fill="#4a5568">h&#8320;</text>
+    <text x="320" y="196" text-anchor="middle" font-size="12" fill="#4a5568">h&#8321;</text>
+    <text x="472" y="196" text-anchor="middle" font-size="12" fill="#4a5568">h&#8322;</text>
+    <text x="624" y="196" text-anchor="middle" font-size="12" fill="#4a5568">h&#8323;</text>
+  </g>
+
+  <!-- the five cells -->
+  <g font-size="15" font-weight="700" fill="#c05621" text-anchor="middle">
+    <rect x="60" y="178" width="64" height="54" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+    <text x="92" y="211">tanh</text>
+    <rect x="212" y="178" width="64" height="54" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+    <text x="244" y="211">tanh</text>
+    <rect x="364" y="178" width="64" height="54" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+    <text x="396" y="211">tanh</text>
+    <rect x="516" y="178" width="64" height="54" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+    <text x="548" y="211">tanh</text>
+    <rect x="668" y="178" width="64" height="54" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="2"/>
+    <text x="700" y="211">tanh</text>
+  </g>
+
+  <!-- input tokens row (y ~ 330) feeding up into cells -->
+  <g font-size="14" font-weight="700" fill="#2b6cb0" text-anchor="middle">
+    <rect x="66" y="322" width="52" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="92" y="350">x&#8320;</text>
+    <rect x="218" y="322" width="52" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="244" y="350">x&#8321;</text>
+    <rect x="370" y="322" width="52" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="396" y="350">x&#8322;</text>
+    <rect x="522" y="322" width="52" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="548" y="350">x&#8323;</text>
+    <rect x="674" y="322" width="52" height="44" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="700" y="350">x&#8324;</text>
+  </g>
+  <g stroke="#a0aec0" stroke-width="2" marker-end="url(#arrgray)">
+    <line x1="92" y1="322" x2="92" y2="238"/>
+    <line x1="244" y1="322" x2="244" y2="238"/>
+    <line x1="396" y1="322" x2="396" y2="238"/>
+    <line x1="548" y1="322" x2="548" y2="238"/>
+    <line x1="700" y1="322" x2="700" y2="238"/>
+  </g>
+  <text x="420" y="392" text-anchor="middle" font-size="12" fill="#718096">one input token per step &#183; step t cannot start until step t&#8722;1 finishes</text>
+
+  <!-- final hidden vector, one fixed-size box -->
+  <line x1="732" y1="205" x2="770" y2="205" stroke="#276749" stroke-width="2.5" marker-end="url(#arr)"/>
+  <rect x="770" y="150" width="52" height="110" rx="7" fill="#f0fff4" stroke="#48bb78" stroke-width="2.5"/>
+  <g font-size="10" fill="#276749" text-anchor="middle">
+    <rect x="782" y="160" width="28" height="13" fill="#48bb78" opacity="0.85"/>
+    <rect x="782" y="177" width="28" height="13" fill="#48bb78" opacity="0.7"/>
+    <rect x="782" y="194" width="28" height="13" fill="#48bb78" opacity="0.55"/>
+    <rect x="782" y="211" width="28" height="13" fill="#48bb78" opacity="0.4"/>
+    <rect x="782" y="228" width="28" height="13" fill="#48bb78" opacity="0.25"/>
+  </g>
+  <text x="796" y="278" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">h (size H)</text>
+  <text x="796" y="296" text-anchor="middle" font-size="10.5" fill="#276749">one fixed vector,</text>
+  <text x="796" y="310" text-anchor="middle" font-size="10.5" fill="#276749">any sequence length</text>
+
+  <!-- bottleneck caption -->
+  <text x="420" y="436" text-anchor="middle" font-size="12.5" fill="#4a5568">Everything the model remembers about x&#8320; &#8230; x&#8324; must fit inside that single hidden vector &#8212; the memory bottleneck.</text>
+</svg>

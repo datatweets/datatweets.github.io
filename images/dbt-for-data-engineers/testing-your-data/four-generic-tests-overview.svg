@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="330" viewBox="0 0 1100 330" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>dbt's four built-in generic tests, each checking a different kind of claim</title>
+  <desc>Four panels, one per built-in generic test. unique: zone_id in stg_cityflow__zones must never repeat -- confirmed PASS across 265 rows. not_null: pickup_time and pickup_zone in stg_cityflow__trips must never be blank -- confirmed PASS across 81,013 rows. accepted_values: borough in stg_cityflow__zones must be one of seven listed values -- confirmed PASS, with a caption noting it does not by itself catch a NULL. relationships: pickup_zone in stg_cityflow__trips must exist as a zone_id in stg_cityflow__zones -- confirmed PASS, a real foreign-key-style check across two models.</desc>
+  <rect width="1100" height="330" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Four Tests, Four Different Claims</text>
+
+  <rect x="30" y="55" width="255" height="245" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="157" y="80" text-anchor="middle" font-size="12.5" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">unique</text>
+  <text x="157" y="100" text-anchor="middle" font-size="9" fill="#2c5282">zone_id, stg_cityflow__zones</text>
+  <text x="157" y="120" text-anchor="middle" font-size="9" fill="#4a5568">no value repeats</text>
+  <rect x="50" y="135" width="215" height="34" rx="6" fill="#2c5282" />
+  <text x="157" y="157" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#ebf8ff">PASS -- 265 rows</text>
+  <text x="157" y="190" text-anchor="middle" font-size="8.5" fill="#4a5568">A staging model's own</text>
+  <text x="157" y="204" text-anchor="middle" font-size="8.5" fill="#4a5568">natural key, checked directly.</text>
+
+  <rect x="300" y="55" width="255" height="245" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="427" y="80" text-anchor="middle" font-size="12.5" font-weight="700" font-family="Menlo, monospace" fill="#22543d">not_null</text>
+  <text x="427" y="100" text-anchor="middle" font-size="9" fill="#22543d">pickup_time, pickup_zone</text>
+  <text x="427" y="120" text-anchor="middle" font-size="9" fill="#4a5568">never blank</text>
+  <rect x="320" y="135" width="215" height="34" rx="6" fill="#22543d" />
+  <text x="427" y="157" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#f0fff4">PASS -- 81,013 rows</text>
+  <text x="427" y="190" text-anchor="middle" font-size="8.5" fill="#4a5568">The simplest test, and one</text>
+  <text x="427" y="204" text-anchor="middle" font-size="8.5" fill="#4a5568">of the most load-bearing.</text>
+
+  <rect x="570" y="55" width="255" height="245" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="697" y="80" text-anchor="middle" font-size="12.5" font-weight="700" font-family="Menlo, monospace" fill="#7b341e">accepted_values</text>
+  <text x="697" y="100" text-anchor="middle" font-size="9" fill="#7b341e">borough, stg_cityflow__zones</text>
+  <text x="697" y="120" text-anchor="middle" font-size="9" fill="#4a5568">one of 7 listed values</text>
+  <rect x="590" y="135" width="215" height="34" rx="6" fill="#7b341e" />
+  <text x="697" y="157" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#fffaf0">PASS -- but reread this</text>
+  <text x="697" y="190" text-anchor="middle" font-size="8.5" font-weight="700" fill="#c53030">Does not by itself catch a</text>
+  <text x="697" y="204" text-anchor="middle" font-size="8.5" font-weight="700" fill="#c53030">NULL -- the next section shows why.</text>
+
+  <rect x="840" y="55" width="230" height="245" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="955" y="80" text-anchor="middle" font-size="12.5" font-weight="700" font-family="Menlo, monospace" fill="#553c9a">relationships</text>
+  <text x="955" y="100" text-anchor="middle" font-size="9" fill="#553c9a">pickup_zone &#8594; zone_id</text>
+  <text x="955" y="120" text-anchor="middle" font-size="9" fill="#4a5568">across two models</text>
+  <rect x="860" y="135" width="190" height="34" rx="6" fill="#553c9a" />
+  <text x="955" y="157" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#faf5ff">PASS -- 0 orphans</text>
+  <text x="955" y="190" text-anchor="middle" font-size="8.5" fill="#4a5568">A real foreign-key check,</text>
+  <text x="955" y="204" text-anchor="middle" font-size="8.5" fill="#4a5568">spanning both staging models.</text>
+
+  <text x="550" y="322" text-anchor="middle" font-size="10.5" fill="#718096">Every result on this page came from dbt test run against CityFlow's own real staging models -- nothing simulated.</text>
+</svg>

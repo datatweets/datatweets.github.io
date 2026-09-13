@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="360" viewBox="0 0 1050 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Three Jinja delimiters, three different compile-time outcomes</title>
+  <desc>Left, source: a dbt model file containing three Jinja delimiter pairs. Double curly braces around ref of stg_cityflow__trips, an expression. Percent curly braces around set min_fare equals 2.5, a statement. Hash curly braces around an explanatory comment. Middle, the dbt Jinja compiler processes the file before any query reaches a warehouse. Right, compiled SQL: the expression became a literal fully-qualified table name, the statement produced no output at all, and the comment was removed entirely rather than surviving as a SQL comment would. A caption states this was confirmed directly against dbt compile's own output, not assumed from convention.</desc>
+  <rect width="1050" height="360" fill="#ffffff" />
+  <text x="525" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Three Delimiters, Three Compile-Time Outcomes</text>
+
+  <rect x="30" y="60" width="290" height="180" rx="8" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.4" />
+  <text x="175" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3748">Source: the .sql model file</text>
+  <rect x="45" y="95" width="260" height="30" rx="4" fill="#ebf8ff" stroke="#4299e1" />
+  <text x="175" y="114" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#2c5282">{{ ref('stg_cityflow__trips') }}</text>
+  <rect x="45" y="133" width="260" height="30" rx="4" fill="#faf5ff" stroke="#9f7aea" />
+  <text x="175" y="152" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#553c9a">{% set min_fare = 2.5 %}</text>
+  <rect x="45" y="171" width="260" height="30" rx="4" fill="#fffaf0" stroke="#ed8936" />
+  <text x="175" y="190" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#7b341e">{# explains the query #}</text>
+  <text x="175" y="222" text-anchor="middle" font-size="9" fill="#4a5568">3 delimiter pairs, 1 file</text>
+
+  <path d="M325,150 L370,150" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#jp1)" />
+
+  <rect x="375" y="90" width="180" height="120" rx="8" fill="#f7fafc" stroke="#718096" stroke-width="1.6" />
+  <text x="465" y="120" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">dbt's Jinja</text>
+  <text x="465" y="138" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">compiler</text>
+  <text x="465" y="165" text-anchor="middle" font-size="8.5" fill="#4a5568">runs before any query</text>
+  <text x="465" y="180" text-anchor="middle" font-size="8.5" fill="#4a5568">reaches a warehouse</text>
+
+  <path d="M560,150 L605,150" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#jp1)" />
+
+  <rect x="610" y="60" width="410" height="180" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="815" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">Compiled SQL (what actually runs)</text>
+  <rect x="625" y="95" width="380" height="30" rx="4" fill="#22543d" />
+  <text x="815" y="114" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#f0fff4">"cityflow_warehouse"."public"."stg_cityflow__trips"</text>
+  <rect x="625" y="133" width="380" height="30" rx="4" fill="#22543d" />
+  <text x="815" y="152" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#f0fff4">(nothing -- {% %} never outputs)</text>
+  <rect x="625" y="171" width="380" height="30" rx="4" fill="#22543d" />
+  <text x="815" y="190" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#f0fff4">(removed entirely -- not even a SQL comment)</text>
+
+  <rect x="130" y="270" width="790" height="65" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="525" y="295" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7b341e">{{ }} outputs a value. {% %} outputs nothing, only sets state. {# #} is removed entirely.</text>
+  <text x="525" y="315" text-anchor="middle" font-size="10.5" fill="#7b341e">Confirmed directly against dbt compile's own output, not assumed from convention.</text>
+
+  <defs>
+    <marker id="jp1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

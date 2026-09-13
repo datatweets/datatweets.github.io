@@ -1,0 +1,15 @@
+{
+  "last_step": 29,
+  "open_flags": [
+    {
+      "container_id": "COLD-023",
+      "issue_code": "SEAL_REVIEW"
+    }
+  ],
+  "totals": {
+    "cleared": 18,
+    "flagged": 6,
+    "inspected": 24,
+    "resolved": 5
+  }
+}

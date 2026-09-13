@@ -1,0 +1,11 @@
+case_id,question,expected_chunk_ids,required_points,candidate_answer,cited_chunk_ids,should_abstain,candidate_abstains
+Q01,When does registration close for a workshop?,W01,48 hours,Registration closes 48 hours before the workshop starts.,W01,False,False
+Q02,What credit do I get if I cancel four days before?,W02,full account credit,A cancellation four days before the start receives a full account credit.,W02,False,False
+Q03,"How early should I request accessibility support, and when will someone reply?",W03,five calendar days|two working days,Send the request at least five calendar days before the workshop.,W03,False,False
+Q04,Can I enter 10 minutes late?,W06,15 minutes,Yes. Entry is allowed up to 15 minutes late. Reception can replay the safety briefing at any time.,W06,False,False
+Q05,When will my online workshop link arrive?,W07,24 hours,The link is emailed 24 hours before the start.,W01,False,False
+Q06,Does the centre provide lunch?,,,I cannot answer this from the provided workshop policies.,,True,True
+Q07,Is parking free?,,,Parking is free all day.,W08,True,False
+Q08,I attended all sessions. When will my certificate arrive?,W04,every session|three working days,"After you complete every session, the certificate arrives by email within three working days.",W04,False,False
+Q09,"How many people can join a group booking, and does each person need an email?",W08,six participants|separate email address,"A group can include up to six participants, and each person needs a separate email address.",W08,False,False
+Q10,When must I return loaned equipment?,W05,seven calendar days,Return loaned equipment within ten calendar days after the workshop.,W05,False,False

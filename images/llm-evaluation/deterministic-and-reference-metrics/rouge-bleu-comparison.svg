@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Bar chart comparing ROUGE-L F-measure and BLEU for three candidate answers to the same Meridian region question. Answer A, a correct full-sentence answer, scores ROUGE-L 0.735 and BLEU 0.299. Answer B, a correct paraphrase using different words, scores ROUGE-L 0.170 and BLEU 0.020. Answer C, a factually wrong answer that inserts the word not but reuses almost every word of the reference, scores the highest of all: ROUGE-L 0.826 and BLEU 0.582. The chart highlights that the wrong answer beats both correct answers because n-gram overlap rewards shared words, not correctness.</title>
+  <rect x="0" y="0" width="840" height="500" fill="#ffffff"/>
+
+  <text x="40" y="42" font-size="22" font-weight="700" fill="#1a202c">High n-gram overlap does not mean correct</text>
+  <text x="40" y="68" font-size="15" fill="#4a5568">Three answers to the same question &#8212; scored by ROUGE-L F and BLEU against one reference</text>
+
+  <!-- highlight band behind the wrong answer -->
+  <rect x="590" y="100" width="180" height="300" fill="#fff5f5"/>
+
+  <!-- y axis gridlines 0 .. 1 -->
+  <g font-size="12" fill="#718096">
+    <line x1="120" y1="100" x2="770" y2="100" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="112" y="105" text-anchor="end">1.0</text>
+    <line x1="120" y1="175" x2="770" y2="175" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="112" y="180" text-anchor="end">0.75</text>
+    <line x1="120" y1="250" x2="770" y2="250" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="112" y="255" text-anchor="end">0.5</text>
+    <line x1="120" y1="325" x2="770" y2="325" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="112" y="330" text-anchor="end">0.25</text>
+  </g>
+  <line x1="120" y1="400" x2="770" y2="400" stroke="#4a5568" stroke-width="2"/>
+
+  <!-- Group A: cx 235, correct -->
+  <rect x="180" y="179.5" width="50" height="220.5" fill="#4299e1"/>
+  <text x="205" y="170" text-anchor="middle" font-size="13" font-weight="600" fill="#2b6cb0">0.735</text>
+  <rect x="240" y="310.3" width="50" height="89.7" fill="#9f7aea"/>
+  <text x="265" y="301" text-anchor="middle" font-size="13" font-weight="600" fill="#6b46c1">0.299</text>
+  <text x="235" y="422" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">A</text>
+  <text x="235" y="442" text-anchor="middle" font-size="12" fill="#276749">correct answer</text>
+  <text x="235" y="459" text-anchor="middle" font-size="12" fill="#48bb78">&#10003; right</text>
+
+  <!-- Group B: cx 455, correct paraphrase -->
+  <rect x="400" y="349" width="50" height="51" fill="#4299e1"/>
+  <text x="425" y="340" text-anchor="middle" font-size="13" font-weight="600" fill="#2b6cb0">0.170</text>
+  <rect x="460" y="394" width="50" height="6" fill="#9f7aea"/>
+  <text x="485" y="385" text-anchor="middle" font-size="13" font-weight="600" fill="#6b46c1">0.020</text>
+  <text x="455" y="422" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">B</text>
+  <text x="455" y="442" text-anchor="middle" font-size="12" fill="#276749">correct paraphrase</text>
+  <text x="455" y="459" text-anchor="middle" font-size="12" fill="#48bb78">&#10003; right</text>
+
+  <!-- Group C: cx 680, WRONG but overlapping -->
+  <rect x="625" y="152.2" width="50" height="247.8" fill="#4299e1"/>
+  <text x="650" y="143" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">0.826</text>
+  <rect x="685" y="225.4" width="50" height="174.6" fill="#9f7aea"/>
+  <text x="710" y="216" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">0.582</text>
+  <text x="680" y="422" text-anchor="middle" font-size="14" font-weight="700" fill="#c53030">C</text>
+  <text x="680" y="442" text-anchor="middle" font-size="12" fill="#c05621">wrong answer</text>
+  <text x="680" y="459" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">&#10007; incorrect</text>
+
+  <!-- callout arrow to C -->
+  <text x="680" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">highest scores</text>
+
+  <!-- legend -->
+  <g font-size="13" fill="#4a5568">
+    <rect x="180" y="482" width="16" height="12" fill="#4299e1"/>
+    <text x="202" y="492">ROUGE-L F</text>
+    <rect x="300" y="482" width="16" height="12" fill="#9f7aea"/>
+    <text x="322" y="492">BLEU</text>
+  </g>
+</svg>

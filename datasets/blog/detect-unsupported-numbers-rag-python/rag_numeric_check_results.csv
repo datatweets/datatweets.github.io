@@ -1,0 +1,17 @@
+claim_id,claim_text,cited_doc_id,retrieved_doc_ids,expected_status,status,reason
+C01,Use a 15-second interval during normal collection.,S01,S01|S02,supported,supported,matched cited evidence: time_seconds=15
+C02,Use a 45-second interval during normal collection.,S01,S01|S02,unsupported_quantity,unsupported_quantity,not in cited evidence: time_seconds=45
+C03,"When the battery is low, log every 1 minute.",S01,S01|S03,supported,supported,matched cited evidence: time_seconds=60
+C04,Set the reference flow to 1.5 L/min.,S02,S02|S06,supported,supported,matched cited evidence: flow_l_per_min=1.5
+C05,Set the reference flow to 2 L/min.,S02,S02|S06,unsupported_quantity,unsupported_quantity,not in cited evidence: flow_l_per_min=2
+C06,A probe may stay in its transport case for 6 hours.,S03,S03|S05,supported,supported,matched cited evidence: time_seconds=21600
+C07,Archive upload bundles after 30 days.,S04,S03|S05,citation_not_retrieved,citation_not_retrieved,S04 was not supplied in retrieved_doc_ids
+C08,Stop collection at 40 degrees Celsius.,S99,S06|S07,unknown_citation,unknown_citation,S99 is not in the handbook
+C09,Replace the inlet filter every 4 weeks.,,S05|S07,missing_citation,missing_citation,claim has no citation
+C10,Clean the probe connector with a dry cloth.,S07,S07|S08,needs_review_no_quantity,needs_review_no_quantity,no supported number-unit or YYYY-MM-DD pattern was found
+C11,An upload bundle may be 300 MB.,S04,S04|S05,unsupported_quantity,unsupported_quantity,not in cited evidence: size_mb=300
+C12,Replace the inlet filter every 28 days.,S05,S05|S07,supported,supported,matched cited evidence: time_seconds=2419200
+C13,Stop collection at 40 degrees Celsius.,S06,S06|S03,supported,supported,matched cited evidence: temperature_c=40
+C14,Stop collection at 30 degrees Celsius.,S06,S06|S03,unsupported_quantity,unsupported_quantity,not in cited evidence: temperature_c=30
+C15,Install the maintenance firmware by 2026-09-30.,S08,S08|S07,supported,supported,matched cited evidence: date=2026-09-30
+C16,Install the maintenance firmware by 2026-10-31.,S08,S08|S07,unsupported_quantity,unsupported_quantity,not in cited evidence: date=2026-10-31

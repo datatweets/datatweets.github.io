@@ -1,0 +1,14 @@
+case_id,label,attempts,total_wait_s,final_status,matches_expected
+R01,first attempt succeeds,1,0.0,succeeded,True
+R02,timeout then success,2,0.56,succeeded,True
+R03,rate limit then success,2,2.0,succeeded,True
+R04,service recovers,3,1.69,succeeded,True
+R05,bad gateway then success,2,0.54,succeeded,True
+R06,request timeout then success,2,0.56,succeeded,True
+R07,invalid request,1,0.0,permanent_error,True
+R08,missing credentials,1,0.0,permanent_error,True
+R09,dock does not exist,1,0.0,permanent_error,True
+R10,service stays unavailable,4,4.13,attempt_limit,True
+R11,server delay exceeds budget,1,0.0,wait_budget,True
+R12,write has unknown outcome,1,0.0,unsafe_retry,True
+R13,idempotent write recovers,2,0.53,succeeded,True

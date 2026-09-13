@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Real replication, measured at 0.339s, plus two real gotchas</title>
+  <desc>MirrorMaker 2 replicates cityflow-mirror-demo from the primary 3-broker cluster to primary.cityflow-mirror-demo on the genuinely separate single-broker kafka-dr cluster, verified byte-for-byte for 25 messages with a measured single-message replication lag of 0.339 seconds. Two real gotchas surface: a config-sync warning that persists even with full exception logging enabled, confirmed not to be a simple replication-factor mismatch by testing the identical change directly and having it succeed; and a consumer group created after MirrorMaker 2 starts, whose offsets take 24.3 seconds to be checkpointed with refresh.groups.interval.seconds set to 5, versus a default of 600 seconds (10 minutes) if left unset.</desc>
+  <rect width="1100" height="480" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">MirrorMaker 2: Measured Replication, Two Real Gotchas</text>
+
+  <!-- clusters -->
+  <rect x="40" y="55" width="280" height="90" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="180" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">Primary Cluster</text>
+  <text x="180" y="98" text-anchor="middle" font-size="9" fill="#2c5282">3 brokers, cluster_id=4L6g...</text>
+  <text x="180" y="115" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#2c5282">cityflow-mirror-demo</text>
+  <text x="180" y="130" text-anchor="middle" font-size="8.5" fill="#2c5282">25 messages produced</text>
+
+  <path d="M320,100 L420,100" stroke="#48bb78" stroke-width="2.5" marker-end="url(#a14)" />
+  <text x="370" y="90" text-anchor="middle" font-size="9" font-weight="700" fill="#22543d">MirrorMaker 2</text>
+  <text x="370" y="115" text-anchor="middle" font-size="8.5" fill="#22543d">0.339s lag</text>
+
+  <rect x="420" y="55" width="280" height="90" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="560" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">DR Cluster (kafka-dr)</text>
+  <text x="560" y="98" text-anchor="middle" font-size="9" fill="#22543d">1 broker, cluster_id=d6_3...</text>
+  <text x="560" y="115" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#22543d">primary.cityflow-mirror-demo</text>
+  <text x="560" y="130" text-anchor="middle" font-size="8.5" fill="#22543d">25 messages, byte-for-byte identical</text>
+
+  <rect x="740" y="55" width="320" height="90" rx="8" fill="#2c5282" />
+  <text x="900" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#ebf8ff">Verified, Not Assumed</text>
+  <text x="900" y="100" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#bee3f8">source == mirrored (sorted)</text>
+  <text x="900" y="118" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#bee3f8">byte-for-byte identical: True</text>
+  <text x="900" y="133" text-anchor="middle" font-size="8.5" fill="#bee3f8">count AND content compared</text>
+
+  <!-- two gotchas -->
+  <text x="550" y="180" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2d3748">Two Real Gotchas, Confirmed by Direct Testing</text>
+
+  <rect x="60" y="200" width="480" height="150" rx="8" fill="#fed7d7" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="300" y="225" text-anchor="middle" font-size="11" font-weight="700" fill="#822727">Gotcha 1: The Silent Warning</text>
+  <text x="300" y="248" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#822727">WARN Could not alter configuration...</text>
+  <text x="300" y="268" text-anchor="middle" font-size="9" fill="#822727">Same change via kafka-configs.sh: SUCCEEDS</text>
+  <text x="300" y="285" text-anchor="middle" font-size="9" fill="#822727">%ex{full} added to log pattern: NO extra output</text>
+  <text x="300" y="305" text-anchor="middle" font-size="9" fill="#822727">Root cause NOT diagnosable from MM2's own logs --</text>
+  <text x="300" y="322" text-anchor="middle" font-size="9" fill="#822727">confirmed empirically, not guessed.</text>
+
+  <rect x="560" y="200" width="480" height="150" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="800" y="225" text-anchor="middle" font-size="11" font-weight="700" fill="#7b341e">Gotcha 2: The 10-Minute Default</text>
+  <text x="800" y="248" text-anchor="middle" font-size="9" fill="#7b341e">refresh.groups.interval.seconds = 5 (this lesson)</text>
+  <text x="800" y="266" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#7b341e">checkpoints appeared after 24.3s</text>
+  <text x="800" y="288" text-anchor="middle" font-size="10" font-weight="700" fill="#7b341e">real default = 600s (10 min) if unset</text>
+  <text x="800" y="308" text-anchor="middle" font-size="9" fill="#7b341e">a group created AFTER MM2 starts won't</text>
+  <text x="800" y="325" text-anchor="middle" font-size="9" fill="#7b341e">be checkpointed for up to 10 minutes.</text>
+
+  <rect x="230" y="380" width="640" height="60" rx="6" fill="#f7fafc" stroke="#cbd5e0" />
+  <text x="550" y="405" text-anchor="middle" font-size="10.5" fill="#4a5568">Both gotchas surfaced only because this lesson tested directly --</text>
+  <text x="550" y="423" text-anchor="middle" font-size="10.5" fill="#4a5568">not assumed, not guessed from documentation alone.</text>
+
+  <defs>
+    <marker id="a14" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#48bb78" />
+    </marker>
+  </defs>
+</svg>

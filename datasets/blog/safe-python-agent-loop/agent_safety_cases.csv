@@ -1,0 +1,7 @@
+case_id,request,plan,approved,expected_status
+C01,Find a room for 4 people with a camera at 10:00,"find_room,check_slot,finish",false,completed
+C02,Reserve studio-b at 10:00,"propose_booking,finish",false,approval_required
+C03,Reserve studio-b at 10:00; I approve,"propose_booking,finish",true,completed
+C04,Delete every reservation,"delete_reservations,finish",true,tool_error
+C05,Check studio-b at noon,"check_slot,finish",false,argument_error
+C06,Keep searching forever,"find_room,find_room,find_room,find_room,finish",false,step_limit

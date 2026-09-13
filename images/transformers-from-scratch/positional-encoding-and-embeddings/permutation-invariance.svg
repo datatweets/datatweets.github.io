@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="920" height="560" fill="#ffffff"/>
+  <text x="460" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">Attention sees a set, not a sequence &#8212; until you add position</text>
+
+  <!-- ============ TOP LANE: no position ============ -->
+  <rect x="24" y="60" width="872" height="200" rx="12" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="44" y="86" font-size="14" font-weight="700" fill="#4a5568">RAW ATTENTION (no position signal)</text>
+
+  <!-- original tokens -->
+  <text x="44" y="116" font-size="12" fill="#718096">input X</text>
+  <rect x="44" y="124" width="70" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="79" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">the</text>
+  <rect x="120" y="124" width="70" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="155" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">boat</text>
+  <rect x="196" y="124" width="70" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="231" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">drifts</text>
+
+  <text x="300" y="146" text-anchor="middle" font-size="22" fill="#4a5568">&#8594;</text>
+
+  <rect x="330" y="120" width="120" height="42" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="390" y="146" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">self&#8209;attention</text>
+
+  <text x="484" y="146" text-anchor="middle" font-size="22" fill="#4a5568">&#8594;</text>
+
+  <text x="514" y="116" font-size="12" fill="#718096">output rows</text>
+  <rect x="514" y="124" width="52" height="34" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="540" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">o&#8321;</text>
+  <rect x="570" y="124" width="52" height="34" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="596" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">o&#8322;</text>
+  <rect x="626" y="124" width="52" height="34" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="652" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">o&#8323;</text>
+
+  <!-- shuffled tokens -->
+  <text x="44" y="196" font-size="12" fill="#718096">shuffle X</text>
+  <rect x="44" y="204" width="70" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="79" y="226" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">drifts</text>
+  <rect x="120" y="204" width="70" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="155" y="226" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">the</text>
+  <rect x="196" y="204" width="70" height="34" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="231" y="226" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">boat</text>
+
+  <text x="300" y="226" text-anchor="middle" font-size="22" fill="#4a5568">&#8594;</text>
+  <rect x="330" y="200" width="120" height="42" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="390" y="226" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">self&#8209;attention</text>
+  <text x="484" y="226" text-anchor="middle" font-size="22" fill="#4a5568">&#8594;</text>
+
+  <rect x="514" y="204" width="52" height="34" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="540" y="226" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">o&#8323;</text>
+  <rect x="570" y="204" width="52" height="34" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="596" y="226" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">o&#8321;</text>
+  <rect x="626" y="204" width="52" height="34" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="652" y="226" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">o&#8322;</text>
+
+  <!-- verdict top -->
+  <rect x="702" y="120" width="176" height="120" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="790" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">same outputs,</text>
+  <text x="790" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">just reordered</text>
+  <text x="790" y="198" text-anchor="middle" font-size="12" fill="#4a5568">max|diff|</text>
+  <text x="790" y="220" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">4.4e&#8722;16</text>
+
+  <!-- ============ BOTTOM LANE: with position ============ -->
+  <rect x="24" y="290" width="872" height="200" rx="12" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="44" y="316" font-size="14" font-weight="700" fill="#c05621">ATTENTION AFTER ADDING POSITION (X + pos)</text>
+
+  <text x="44" y="346" font-size="12" fill="#718096">X + pos</text>
+  <rect x="44" y="354" width="70" height="34" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="79" y="372" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">the</text>
+  <text x="79" y="384" text-anchor="middle" font-size="9" fill="#a0aec0">+p&#8321;</text>
+  <rect x="120" y="354" width="70" height="34" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="155" y="372" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">boat</text>
+  <text x="155" y="384" text-anchor="middle" font-size="9" fill="#a0aec0">+p&#8322;</text>
+  <rect x="196" y="354" width="70" height="34" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="231" y="372" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">drifts</text>
+  <text x="231" y="384" text-anchor="middle" font-size="9" fill="#a0aec0">+p&#8323;</text>
+
+  <text x="300" y="376" text-anchor="middle" font-size="22" fill="#4a5568">&#8594;</text>
+  <rect x="330" y="350" width="120" height="42" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="390" y="376" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">self&#8209;attention</text>
+  <text x="484" y="376" text-anchor="middle" font-size="22" fill="#4a5568">&#8594;</text>
+
+  <rect x="514" y="354" width="52" height="34" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="540" y="376" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">a&#8321;</text>
+  <rect x="570" y="354" width="52" height="34" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="596" y="376" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">a&#8322;</text>
+  <rect x="626" y="354" width="52" height="34" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="652" y="376" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">a&#8323;</text>
+
+  <text x="44" y="426" font-size="12" fill="#718096">shuffle X, keep pos</text>
+  <rect x="44" y="434" width="70" height="34" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+  <text x="79" y="452" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">drifts</text>
+  <text x="79" y="464" text-anchor="middle" font-size="9" fill="#a0aec0">+p&#8321;</text>
+  <rect x="120" y="434" width="70" height="34" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+  <text x="155" y="452" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">the</text>
+  <text x="155" y="464" text-anchor="middle" font-size="9" fill="#a0aec0">+p&#8322;</text>
+  <rect x="196" y="434" width="70" height="34" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+  <text x="231" y="452" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">boat</text>
+  <text x="231" y="464" text-anchor="middle" font-size="9" fill="#a0aec0">+p&#8323;</text>
+
+  <text x="300" y="456" text-anchor="middle" font-size="22" fill="#4a5568">&#8594;</text>
+  <rect x="330" y="430" width="120" height="42" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="390" y="456" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">self&#8209;attention</text>
+  <text x="484" y="456" text-anchor="middle" font-size="22" fill="#4a5568">&#8594;</text>
+
+  <rect x="514" y="434" width="52" height="34" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+  <text x="540" y="456" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">b&#8321;</text>
+  <rect x="570" y="434" width="52" height="34" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+  <text x="596" y="456" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">b&#8322;</text>
+  <rect x="626" y="434" width="52" height="34" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+  <text x="652" y="456" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">b&#8323;</text>
+
+  <!-- verdict bottom -->
+  <rect x="702" y="350" width="176" height="120" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+  <text x="790" y="380" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">outputs no longer</text>
+  <text x="790" y="400" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">a reordering</text>
+  <text x="790" y="428" text-anchor="middle" font-size="12" fill="#4a5568">max|diff|</text>
+  <text x="790" y="450" text-anchor="middle" font-size="15" font-weight="700" fill="#c53030">3.50</text>
+
+  <text x="460" y="524" text-anchor="middle" font-size="12" fill="#718096">Top: permuting the input just permutes the output (equivariance). Bottom: adding a distinct vector per slot breaks that symmetry.</text>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="900" height="520" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">From Corpus to Attention Matrix: the four-stage pipeline</text>
+
+  <!-- Stage 1: corpus -> tokens -->
+  <rect x="30" y="70" width="180" height="120" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="120" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">Stage 1 &#183; Tokenize</text>
+  <text x="120" y="120" text-anchor="middle" font-size="12" fill="#4a5568">CORPUS text</text>
+  <text x="120" y="140" text-anchor="middle" font-size="12" fill="#1a202c">"the lamp keeper..."</text>
+  <text x="120" y="164" text-anchor="middle" font-size="12" fill="#4a5568">ids: [19, 9, 6, 0, ...]</text>
+  <text x="120" y="182" text-anchor="middle" font-size="11" fill="#718096">vocab_size = 24</text>
+
+  <!-- arrow -->
+  <line x1="212" y1="130" x2="252" y2="130" stroke="#a0aec0" stroke-width="2"/>
+  <polygon points="252,124 264,130 252,136" fill="#a0aec0"/>
+
+  <!-- Stage 2: embeddings -->
+  <rect x="266" y="70" width="180" height="120" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="356" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">Stage 2 &#183; Embed</text>
+  <text x="356" y="120" text-anchor="middle" font-size="12" fill="#4a5568">embed_table</text>
+  <text x="356" y="138" text-anchor="middle" font-size="12" fill="#1a202c">(24, 32) &#8594; lookup</text>
+  <text x="356" y="164" text-anchor="middle" font-size="12" fill="#4a5568">X shape</text>
+  <text x="356" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">(1, 12, 32)</text>
+
+  <!-- arrow -->
+  <line x1="448" y1="130" x2="488" y2="130" stroke="#a0aec0" stroke-width="2"/>
+  <polygon points="488,124 500,130 488,136" fill="#a0aec0"/>
+
+  <!-- Stage 3: attention layer -->
+  <rect x="502" y="70" width="368" height="120" rx="10" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="686" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">Stage 3 &#183; Learned attention layer</text>
+  <text x="686" y="118" text-anchor="middle" font-size="12" fill="#4a5568">Q,K,V = X @ Wq,Wk,Wv &#8594; each (1, 12, 16)</text>
+  <text x="686" y="140" text-anchor="middle" font-size="12" fill="#1a202c">scores = Q K&#8868; / &#8730;hs &#8594; (1, 12, 12)</text>
+  <text x="686" y="162" text-anchor="middle" font-size="12" fill="#1a202c">weights = softmax(scores) &#8594; rows sum to 1</text>
+  <text x="686" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="#6b46c1">out = weights @ V &#8594; (1, 12, 16)</text>
+
+  <!-- down arrow to matrix -->
+  <line x1="686" y1="192" x2="686" y2="228" stroke="#a0aec0" stroke-width="2"/>
+  <polygon points="680,228 686,240 692,228" fill="#a0aec0"/>
+  <text x="760" y="218" text-anchor="middle" font-size="11" fill="#718096">Stage 4 &#183; inspect</text>
+
+  <!-- Attention matrix heatmap 12x12 -->
+  <text x="450" y="270" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">The (12 &#215; 12) attention weight matrix &#8212; query rows &#215; key columns</text>
+
+  <!-- column labels (tokens) -->
+  <!-- grid origin -->
+  <!-- We draw a schematic 12x12 grid with token labels; two rows/cols highlighted as identical -->
+  <g font-size="11" fill="#4a5568">
+    <text x="300" y="298" text-anchor="middle">key positions (attended-to) &#8594;</text>
+  </g>
+
+  <!-- matrix cells -->
+  <g>
+    <!-- background grid -->
+    <rect x="360" y="306" width="240" height="180" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <!-- highlight identical query rows for 'e' (rows 2,10,11) -->
+    <rect x="360" y="336" width="240" height="15" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <rect x="360" y="456" width="240" height="15" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <rect x="360" y="471" width="240" height="15" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <!-- highlight identical query rows for space (rows 3,8) -->
+    <rect x="360" y="351" width="240" height="15" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <rect x="360" y="426" width="240" height="15" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  </g>
+
+  <!-- row labels -->
+  <g font-size="10" fill="#4a5568" text-anchor="end">
+    <text x="354" y="321">0 t</text>
+    <text x="354" y="336">1 h</text>
+    <text x="354" y="351" font-weight="700" fill="#c05621">2 e</text>
+    <text x="354" y="366" font-weight="700" fill="#2b6cb0">3 &#8901;</text>
+    <text x="354" y="381">4 l</text>
+    <text x="354" y="396">5 a</text>
+    <text x="354" y="411">6 m</text>
+    <text x="354" y="426">7 p</text>
+    <text x="354" y="441" font-weight="700" fill="#2b6cb0">8 &#8901;</text>
+    <text x="354" y="456">9 k</text>
+    <text x="354" y="471" font-weight="700" fill="#c05621">10 e</text>
+    <text x="354" y="486" font-weight="700" fill="#c05621">11 e</text>
+  </g>
+
+  <!-- query axis label -->
+  <text x="326" y="400" text-anchor="middle" font-size="11" fill="#4a5568" transform="rotate(-90 326 400)">query positions &#8595;</text>
+
+  <!-- legend / interpretation -->
+  <g font-size="12">
+    <rect x="630" y="316" width="16" height="16" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+    <text x="654" y="329" fill="#4a5568">rows 2, 10, 11 (all 'e') are identical</text>
+    <rect x="630" y="344" width="16" height="16" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <text x="654" y="357" fill="#4a5568">rows 3, 8 (both space) are identical</text>
+    <text x="630" y="386" fill="#1a202c" font-weight="700">Why?</text>
+    <text x="630" y="406" fill="#4a5568">Same token &#8594; same embedding &#8594;</text>
+    <text x="630" y="422" fill="#4a5568">same query. No position signal yet,</text>
+    <text x="630" y="438" fill="#4a5568">so repeats behave identically.</text>
+    <text x="630" y="464" fill="#c53030" font-weight="700">Untrained (random Wq/Wk/Wv):</text>
+    <text x="630" y="480" fill="#4a5568">the pattern is content-based but</text>
+    <text x="630" y="496" fill="#4a5568">not yet meaningful &#8212; training comes later.</text>
+  </g>
+</svg>

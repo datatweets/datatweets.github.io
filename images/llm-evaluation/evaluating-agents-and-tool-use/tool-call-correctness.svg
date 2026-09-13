@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="tccTitle tccDesc">
+  <title id="tccTitle">Tool-call correctness: three gates and expected-versus-actual scoring</title>
+  <desc id="tccDesc">Left panel is a checklist of three gates applied to each recorded tool call: gate one right tool called search_docs, gate two arguments schema-valid non-empty query, gate three query quality shares a keyword with the question. Three example trajectories are scored: a good trajectory passes all three gates; an answered-from-memory trajectory fails gate one because it never called search_docs; an empty-query trajectory passes gate one but fails gates two and three. Right panel shows tool-selection scored against the expected set as a confusion count of true positives six, true negative one, false positive one, false negative one, giving tool-call accuracy 0.778, precision 0.857, recall 0.857, argument-validity rate 0.857 and query-quality rate 0.571 across seven recorded calls.</desc>
+  <rect x="0" y="0" width="920" height="560" fill="#ffffff"/>
+
+  <text x="30" y="40" font-size="22" font-weight="700" fill="#1a202c">Evaluating the tool calls, not the final answer</text>
+  <text x="30" y="64" font-size="14" fill="#4a5568">Every recorded tool call passes through three deterministic gates</text>
+
+  <!-- Left panel: the three gates as columns -->
+  <rect x="30" y="86" width="520" height="360" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- gate headers -->
+  <rect x="46" y="104" width="150" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="121" y="126" font-size="12.5" font-weight="700" fill="#2b6cb0" text-anchor="middle">1. Right tool?</text>
+  <text x="121" y="142" font-size="10.5" fill="#2b6cb0" text-anchor="middle">called search_docs</text>
+
+  <rect x="204" y="104" width="150" height="46" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.5"/>
+  <text x="279" y="126" font-size="12.5" font-weight="700" fill="#6b46c1" text-anchor="middle">2. Valid args?</text>
+  <text x="279" y="142" font-size="10.5" fill="#6b46c1" text-anchor="middle">non-empty string</text>
+
+  <rect x="362" y="104" width="150" height="46" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+  <text x="437" y="126" font-size="12.5" font-weight="700" fill="#c05621" text-anchor="middle">3. Good query?</text>
+  <text x="437" y="142" font-size="10.5" fill="#c05621" text-anchor="middle">shares a keyword</text>
+
+  <!-- Row 1: good trajectory -->
+  <text x="46" y="184" font-size="12.5" font-weight="600" fill="#276749">query: "rate limit HTTP status code"</text>
+  <g>
+    <circle cx="121" cy="204" r="15" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+    <path d="M114 204 l5 6 l10 -12" fill="none" stroke="#276749" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="279" cy="204" r="15" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+    <path d="M272 204 l5 6 l10 -12" fill="none" stroke="#276749" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="437" cy="204" r="15" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+    <path d="M430 204 l5 6 l10 -12" fill="none" stroke="#276749" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="46" y="230" font-size="11" fill="#276749">&#10003; passes all three gates &#8594; correct tool call</text>
+
+  <line x1="46" y1="248" x2="512" y2="248" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 2: answered from memory -->
+  <text x="46" y="278" font-size="12.5" font-weight="600" fill="#c53030">answered from memory: (no tool call)</text>
+  <g>
+    <circle cx="121" cy="298" r="15" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+    <path d="M115 292 l12 12 M127 292 l-12 12" fill="none" stroke="#c53030" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="279" cy="298" r="15" fill="#f7fafc" stroke="#a0aec0" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="279" y="303" font-size="14" fill="#718096" text-anchor="middle">&#8211;</text>
+    <circle cx="437" cy="298" r="15" fill="#f7fafc" stroke="#a0aec0" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="437" y="303" font-size="14" fill="#718096" text-anchor="middle">&#8211;</text>
+  </g>
+  <text x="46" y="324" font-size="11" fill="#c53030">&#10007; gate 1 fails &#8594; tool-selection failure (a missed call)</text>
+
+  <line x1="46" y1="342" x2="512" y2="342" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 3: empty query -->
+  <text x="46" y="372" font-size="12.5" font-weight="600" fill="#c53030">query: "" (empty)</text>
+  <g>
+    <circle cx="121" cy="392" r="15" fill="#f0fff4" stroke="#48bb78" stroke-width="2"/>
+    <path d="M114 392 l5 6 l10 -12" fill="none" stroke="#276749" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="279" cy="392" r="15" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+    <path d="M273 386 l12 12 M285 386 l-12 12" fill="none" stroke="#c53030" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="437" cy="392" r="15" fill="#fff5f5" stroke="#fc8181" stroke-width="2"/>
+    <path d="M431 386 l12 12 M443 386 l-12 12" fill="none" stroke="#c53030" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <text x="46" y="418" font-size="11" fill="#c53030">&#10007; called the tool, but the argument is invalid and useless</text>
+
+  <!-- Right panel: expected vs actual + metrics -->
+  <rect x="570" y="86" width="320" height="360" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="586" y="112" font-size="14" font-weight="700" fill="#1a202c">Tool selection vs the expected set</text>
+  <text x="586" y="132" font-size="11.5" fill="#4a5568">Should this task have called search_docs?</text>
+
+  <!-- confusion 2x2 -->
+  <rect x="640" y="150" width="90" height="52" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="685" y="172" font-size="12" font-weight="700" fill="#276749" text-anchor="middle">TP = 6</text>
+  <text x="685" y="190" font-size="9.5" fill="#276749" text-anchor="middle">should &amp; did</text>
+
+  <rect x="740" y="150" width="90" height="52" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="785" y="172" font-size="12" font-weight="700" fill="#c53030" text-anchor="middle">FP = 1</text>
+  <text x="785" y="190" font-size="9.5" fill="#c53030" text-anchor="middle">shouldn't, did</text>
+
+  <rect x="640" y="208" width="90" height="52" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="685" y="230" font-size="12" font-weight="700" fill="#c53030" text-anchor="middle">FN = 1</text>
+  <text x="685" y="248" font-size="9.5" fill="#c53030" text-anchor="middle">should, missed</text>
+
+  <rect x="740" y="208" width="90" height="52" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+  <text x="785" y="230" font-size="12" font-weight="700" fill="#2b6cb0" text-anchor="middle">TN = 1</text>
+  <text x="785" y="248" font-size="9.5" fill="#2b6cb0" text-anchor="middle">shouldn't, didn't</text>
+
+  <line x1="586" y1="280" x2="874" y2="280" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="586" y="304" font-size="12.5" fill="#4a5568">tool-call accuracy</text>
+  <text x="874" y="304" font-size="13" font-weight="700" fill="#2b6cb0" text-anchor="end">0.778</text>
+  <text x="586" y="330" font-size="12.5" fill="#4a5568">precision</text>
+  <text x="874" y="330" font-size="13" font-weight="700" fill="#6b46c1" text-anchor="end">0.857</text>
+  <text x="586" y="356" font-size="12.5" fill="#4a5568">recall</text>
+  <text x="874" y="356" font-size="13" font-weight="700" fill="#6b46c1" text-anchor="end">0.857</text>
+  <text x="586" y="382" font-size="12.5" fill="#4a5568">argument-validity rate</text>
+  <text x="874" y="382" font-size="13" font-weight="700" fill="#276749" text-anchor="end">0.857</text>
+  <text x="586" y="408" font-size="12.5" fill="#4a5568">query-quality rate</text>
+  <text x="874" y="408" font-size="13" font-weight="700" fill="#c05621" text-anchor="end">0.571</text>
+  <text x="586" y="432" font-size="10.5" fill="#718096">over 9 tasks / 7 recorded search_docs calls</text>
+
+  <text x="30" y="478" font-size="12" fill="#4a5568">A call can be schema-valid yet useless: gate 2 asks "does it parse?", gate 3 asks "is it actually a good query?"</text>
+  <text x="30" y="500" font-size="12" fill="#c53030" font-weight="600">The costliest failure is the silent one &#8212; answering from memory with no tool call at all (a false negative).</text>
+</svg>

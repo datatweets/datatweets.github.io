@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Find Similar Support Tickets with Sentence Embeddings</title>
+  <desc id="desc">A DataTweets tutorial thumbnail. A new support ticket becomes a normalized vector, which is compared with archived ticket vectors. A strong match is suggested, while a weak match goes to review.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="145" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">SENTENCE EMBEDDINGS</text>
+    <text x="90" y="274" font-size="82" font-weight="700" fill="#1b1f24">MATCH BY</text>
+    <text x="90" y="366" font-size="82" font-weight="700" fill="#1b1f24">MEANING</text>
+    <rect x="94" y="401" width="350" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="477" font-size="29" font-weight="500" fill="#59636e">ENCODE &#183; SCORE &#183; REVIEW</text>
+  </g>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="650" y="108" width="202" height="92" rx="16" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+    <text x="674" y="139" font-size="17" font-weight="700" letter-spacing="0.8" fill="#59636e">NEW TICKET</text>
+    <rect x="674" y="158" width="132" height="7" rx="3.5" fill="#c7ccd2"/>
+    <rect x="674" y="175" width="98" height="7" rx="3.5" fill="#d9dee5"/>
+
+    <path d="M751 200 V235" fill="none" stroke="#0067c0" stroke-width="3"/>
+    <path d="M744 227 L751 237 L758 227" fill="none" stroke="#0067c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="650" y="244" width="202" height="88" rx="16" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+    <text x="674" y="274" font-size="17" font-weight="700" letter-spacing="0.8" fill="#0067c0">NORMALIZED VECTOR</text>
+    <g transform="translate(674 292)">
+      <rect x="0" y="0" width="22" height="18" rx="4" fill="#0067c0"/>
+      <rect x="30" y="0" width="22" height="18" rx="4" fill="#8ec5ee"/>
+      <rect x="60" y="0" width="22" height="18" rx="4" fill="#0067c0"/>
+      <rect x="90" y="0" width="22" height="18" rx="4" fill="#b9d9f2"/>
+      <rect x="120" y="0" width="22" height="18" rx="4" fill="#0067c0"/>
+      <rect x="150" y="0" width="22" height="18" rx="4" fill="#8ec5ee"/>
+    </g>
+
+    <path d="M751 332 V350 M751 350 H930 V384 M751 350 H930 V499" fill="none" stroke="#c7ccd2" stroke-width="2.5"/>
+    <path d="M923 376 L930 386 L937 376 M923 491 L930 501 L937 491" fill="none" stroke="#c7ccd2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="650" y="374" width="330" height="92" rx="16" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+    <circle cx="681" cy="405" r="12" fill="#0067c0"/>
+    <path d="M675 405 L680 410 L688 400" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="706" y="411" font-size="21" font-weight="700" fill="#1b1f24">RELATED ISSUE</text>
+    <text x="675" y="445" font-size="17" font-weight="600" fill="#0067c0">ABOVE THRESHOLD &#8594; SUGGEST</text>
+
+    <rect x="650" y="489" width="330" height="92" rx="16" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+    <circle cx="681" cy="520" r="12" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+    <text x="706" y="526" font-size="21" font-weight="700" fill="#1b1f24">WEAK MATCH</text>
+    <text x="675" y="560" font-size="17" font-weight="600" fill="#59636e">BELOW THRESHOLD &#8594; REVIEW</text>
+
+    <text x="1000" y="426" font-size="17" font-weight="700" fill="#0067c0">HIGH</text>
+    <text x="1000" y="541" font-size="17" font-weight="700" fill="#59636e">LOW</text>
+  </g>
+</svg>

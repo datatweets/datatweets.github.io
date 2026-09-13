@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="360" viewBox="0 0 1100 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Same zone, two encodings, two different partitions -- with no error anywhere</title>
+  <desc>Zone 132 (JFK Airport) encoded two different ways. str(132).encode() produces the three ASCII-digit bytes b"132", which hashes to partition 3. struct.pack(">I", 132) produces four completely different bytes representing the same integer, which hashes to partition 1. Both encodings are individually valid and deterministic -- sending str(132).encode() a second time lands on partition 3 again -- but the two encodings never agree with each other, and Kafka raises no error to flag the mismatch, because its partitioner only sees bytes, never the logical meaning behind them.</desc>
+  <rect width="1100" height="360" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Partitioner Hashes Bytes -- Not What They Mean</text>
+
+  <text x="40" y="65" font-size="13" font-weight="700" fill="#2d3748">Zone 132 (JFK Airport) -- two encodings of "the same" key</text>
+
+  <!-- str path -->
+  <rect x="40" y="85" width="200" height="50" rx="5" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="140" y="108" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">str(132).encode()</text>
+  <text x="140" y="124" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#718096">b"132" -- 3 bytes</text>
+
+  <line x1="240" y1="110" x2="280" y2="110" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKE)" />
+
+  <rect x="290" y="85" width="150" height="50" rx="5" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="365" y="115" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2c5282">murmur2(key)</text>
+
+  <line x1="440" y1="110" x2="480" y2="110" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKE)" />
+
+  <rect x="490" y="85" width="160" height="50" rx="5" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="570" y="115" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#22543d">partition 3</text>
+
+  <!-- struct path -->
+  <rect x="40" y="165" width="200" height="50" rx="5" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.3" />
+  <text x="140" y="188" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">struct.pack(">I", 132)</text>
+  <text x="140" y="204" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#718096">4 completely different bytes</text>
+
+  <line x1="240" y1="190" x2="280" y2="190" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKE)" />
+
+  <rect x="290" y="165" width="150" height="50" rx="5" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="365" y="195" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2c5282">murmur2(key)</text>
+
+  <line x1="440" y1="190" x2="480" y2="190" stroke="#a0aec0" stroke-width="1.6" marker-end="url(#arrowKE)" />
+
+  <rect x="490" y="165" width="160" height="50" rx="5" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="570" y="195" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#742a2a">partition 1</text>
+
+  <text x="690" y="103" font-size="10.5" fill="#4a5568">Same real zone.</text>
+  <text x="690" y="120" font-size="10.5" fill="#4a5568">Different bytes in --</text>
+  <text x="690" y="183" font-size="10.5" fill="#4a5568">different partition out.</text>
+  <text x="690" y="200" font-size="10.5" fill="#4a5568">No exception, no warning.</text>
+
+  <line x1="40" y1="240" x2="1060" y2="240" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <rect x="40" y="255" width="1020" height="80" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="60" y="280" font-size="11.5" font-weight="700" fill="#7b341e">The fix: one key_serializer, set once, used everywhere</text>
+  <text x="60" y="300" font-size="10" fill="#7b341e">If CityFlow's trip-event producer used str(zone).encode() everywhere and a second service encoded the same zone differently,</text>
+  <text x="60" y="317" font-size="10" fill="#7b341e">a consumer reading "partition 3 for zone 132" would silently miss every event the second service produced -- landing on partition 1 instead.</text>
+
+  <defs>
+    <marker id="arrowKE" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

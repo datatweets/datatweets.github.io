@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" width="960" height="720" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="720" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Guided Project: CityFlow's Batch Fare Report</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">ConfigMap-driven Job, real taxi data, output surviving on a PersistentVolumeClaim</text>
+
+<rect x="60" y="82" width="220" height="82" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="170" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#276749">ConfigMap</text>
+<text x="170" y="122" text-anchor="middle" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">DATA_URL, FARE_THRESHOLD:50</text>
+<text x="170" y="138" text-anchor="middle" font-size="10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">OUTPUT_PATH:/output/report.json</text>
+<text x="170" y="154" text-anchor="middle" font-size="9.5" fill="#718096">cityflow-batch-config</text>
+
+<line x1="280" y1="123" x2="320" y2="123" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+<text x="300" y="112" text-anchor="middle" font-size="9" fill="#718096">envFrom</text>
+
+<rect x="324" y="82" width="260" height="82" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="454" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2b6cb0">Job: cityflow-batch-job</text>
+<text x="454" y="122" text-anchor="middle" font-size="10" fill="#4a5568">image cityflow-batch-report:1.0</text>
+<text x="454" y="138" text-anchor="middle" font-size="10" fill="#4a5568">downloads &amp; aggregates real trips</text>
+<text x="454" y="154" text-anchor="middle" font-size="9.5" fill="#718096">backoffLimit: 2</text>
+
+<line x1="584" y1="123" x2="624" y2="123" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+<text x="604" y="112" text-anchor="middle" font-size="9" fill="#718096">GET</text>
+
+<rect x="628" y="82" width="270" height="82" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="763" y="104" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">yellow_tripdata_sample.csv</text>
+<text x="763" y="122" text-anchor="middle" font-size="10" fill="#4a5568">datatweets.com/datasets/nyc-taxi/</text>
+<text x="763" y="138" text-anchor="middle" font-size="10" fill="#4a5568">real 200,000-trip NYC taxi sample</text>
+<text x="763" y="154" text-anchor="middle" font-size="9.5" fill="#718096">browser-like User-Agent required (Cloudflare)</text>
+
+<line x1="454" y1="164" x2="454" y2="196" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="140" y="200" width="628" height="90" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="454" y="224" text-anchor="middle" font-size="12.5" font-weight="700" fill="#276749">report.json - the real result</text>
+<text x="454" y="246" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">trip_count: 200000  &#8226;  total_revenue: 5343779.62</text>
+<text x="454" y="264" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a5568">high_fare_trip_count: 12675  &#8226;  avg_trip_distance: 3.582</text>
+<text x="454" y="280" text-anchor="middle" font-size="9.5" fill="#718096">total_revenue matches Module 4's own measurement of this identical sample, to the cent</text>
+
+<line x1="454" y1="290" x2="454" y2="322" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="264" y="326" width="380" height="60" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="454" y="350" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2b6cb0">PersistentVolumeClaim</text>
+<text x="454" y="370" text-anchor="middle" font-size="10.5" fill="#4a5568">cityflow-batch-output-pvc, mounted at /output</text>
+
+<line x1="60" y1="410" x2="900" y2="410" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="438" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">the real test: delete the Job, keep the report</text>
+
+<rect x="140" y="452" width="300" height="66" rx="10" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="290" y="474" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">kubectl delete job cityflow-batch-job</text>
+<text x="290" y="494" text-anchor="middle" font-size="10.5" fill="#4a5568">pod gone; PVC stays Bound</text>
+<text x="290" y="510" text-anchor="middle" font-size="9.5" fill="#718096">0 pods left in the namespace</text>
+
+<line x1="440" y1="485" x2="480" y2="485" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrows)"/>
+
+<rect x="484" y="452" width="330" height="66" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="649" y="474" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">report-reader pod (new, readOnly)</text>
+<text x="649" y="494" text-anchor="middle" font-size="10.5" fill="#4a5568">same PVC &#8594; identical report.json read back</text>
+<text x="649" y="510" text-anchor="middle" font-size="9.5" fill="#718096">byte-for-byte the same result</text>
+
+<line x1="60" y1="540" x2="900" y2="540" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="568" text-anchor="middle" font-size="13" font-weight="700" fill="#2d3748">confirmed twice, and torn down completely</text>
+<text x="480" y="596" text-anchor="middle" font-size="11.5" fill="#4a5568">Dashboard Jobs view: cityflow-batch-job, Complete, 0/1 active &#8226; Dashboard PVC view: cityflow-batch-output-pvc, Bound, 100Mi</text>
+<text x="480" y="622" text-anchor="middle" font-size="11.5" fill="#4a5568">kubectl delete namespace cityflow removes the ConfigMap, PVC (and its PersistentVolume), Job, and both pods in one command.</text>
+
+<text x="480" y="662" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2d3748">every Module 6 mechanism, on one real batch task:</text>
+<text x="480" y="684" text-anchor="middle" font-size="11" fill="#4a5568">ConfigMap for parameters &#8226; Job for run-to-completion &#8226; PersistentVolumeClaim for durable output</text>
+<text x="480" y="706" text-anchor="middle" font-size="10.5" fill="#a0aec0">All numbers, statuses, and names above are from real kubectl output captured for this lesson.</text>
+
+<defs>
+<marker id="arrows" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

@@ -1,0 +1,13 @@
+query_id,query,expected_document_id,query_type
+Q01,Which fields form the idempotency key?,KB-106,exact term
+Q02,Will saved measurements upload after internet access returns?,KB-102,paraphrase
+Q03,How do I stop an alarm toggling near its limit?,KB-112,paraphrase
+Q04,Which clock standard appears in downloaded readings?,KB-104,paraphrase
+Q05,Is a read-only user allowed to recalibrate a sensor?,KB-108,paraphrase
+Q06,When does recovery end for an erased site?,KB-110,paraphrase
+Q07,What is PL-18 on the probe label?,KB-101,exact identifier
+Q08,Why is the hub indicator solid yellow?,KB-109,paraphrase
+Q09,Can I return to the earlier software after a failed device update?,KB-111,paraphrase
+Q10,How often are measurements taken in battery-saving mode?,KB-103,paraphrase
+Q11,How many measurements fit on a gateway while it is offline?,KB-102,mixed
+Q12,How frequently should a soil probe be checked against a reference?,KB-107,paraphrase

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Different delivery sources using one Python behavior contract</title>
+  <desc id="desc">CSV, memory, and combined delivery source classes point to a DeliverySource contract requiring a label and load method. One delay summary function depends only on that contract and produces the same report shape.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0067c0"/>
+    </marker>
+    <style>
+      .heading { font: 700 28px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .label { font: 650 23px Jost, system-ui, sans-serif; fill: #1b1f24; }
+      .detail { font: 19px Jost, system-ui, sans-serif; fill: #59636e; }
+      .box { stroke-width: 3; rx: 18; }
+      .flow { fill: none; stroke: #0067c0; stroke-width: 4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="620" fill="#f7f8fa"/>
+  <rect x="24" y="20" width="1152" height="576" rx="24" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <text x="60" y="62" class="heading">Concrete objects can differ; required behavior stays small.</text>
+  <rect x="55" y="115" width="275" height="110" class="box" fill="#ffffff" stroke="#c7ccd2"/>
+  <text x="82" y="158" class="label">CSV source</text><text x="82" y="193" class="detail">reads and converts rows</text>
+  <rect x="55" y="255" width="275" height="110" class="box" fill="#ffffff" stroke="#c7ccd2"/>
+  <text x="82" y="298" class="label">Memory source</text><text x="82" y="333" class="detail">copies ready objects</text>
+  <rect x="55" y="395" width="275" height="110" class="box" fill="#ffffff" stroke="#c7ccd2"/>
+  <text x="82" y="438" class="label">Combined source</text><text x="82" y="473" class="detail">joins other sources</text>
+  <path d="M330 170 C410 170 415 260 485 260" class="flow"/>
+  <path d="M330 310 L485 310" class="flow"/>
+  <path d="M330 450 C410 450 415 360 485 360" class="flow"/>
+  <rect x="500" y="205" width="290" height="215" class="box" fill="#e8f2fb" stroke="#0067c0"/>
+  <text x="530" y="254" class="label">DeliverySource</text>
+  <text x="530" y="300" class="detail">label: str</text>
+  <text x="530" y="339" class="detail">load() &#8594; list[Delivery]</text>
+  <text x="530" y="385" class="detail">Protocol = shared shape</text>
+  <path d="M790 312 L895 312" class="flow"/>
+  <rect x="910" y="235" width="235" height="155" class="box" fill="#ffffff" stroke="#59636e"/>
+  <text x="938" y="284" class="label">delay_summary()</text>
+  <text x="938" y="327" class="detail">one function</text>
+  <text x="938" y="360" class="detail">one output shape</text>
+  <text x="500" y="520" class="detail">No source class inherits from the protocol.</text>
+  <text x="500" y="554" class="detail">Matching the required attributes is enough for static structural typing.</text>
+</svg>

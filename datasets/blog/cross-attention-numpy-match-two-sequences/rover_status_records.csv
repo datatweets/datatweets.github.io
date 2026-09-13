@@ -1,0 +1,6 @@
+record,k_energy,k_route,k_link,v_risk,v_readiness
+battery low,2.2,0.2,0.0,0.95,0.15
+route clear,0.1,2.2,0.1,0.1,0.95
+radio weak,0.0,0.2,2.2,0.8,0.35
+dock ready,1.5,0.6,0.1,0.15,1.0
+<pad>,0.0,0.0,0.0,0.0,0.0

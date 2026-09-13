@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="640" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Kind: A Kubernetes Cluster Inside One Docker Container</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">docker ps sees one container. crictl ps, run inside it, sees the whole cluster.</text>
+
+<rect x="300" y="82" width="360" height="70" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="104" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#2b6cb0">docker ps</text>
+<text x="480" y="124" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2b6cb0">datatweets-docker-k8s-control-plane</text>
+<text x="480" y="140" text-anchor="middle" font-size="10.5" fill="#4a5568">kindest/node:v1.32.2 &#8226; Up 18 hours</text>
+
+<line x1="480" y1="152" x2="480" y2="184" stroke="#2b6cb0" stroke-width="1.5" marker-end="url(#arrowk)"/>
+<text x="600" y="172" text-anchor="middle" font-size="10.5" fill="#2b6cb0">one container, from the host's point of view</text>
+
+<rect x="60" y="188" width="840" height="380" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="480" y="214" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">inside that one container: containerd runs the entire control plane</text>
+<text x="480" y="232" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#718096">docker exec datatweets-docker-k8s-control-plane crictl ps</text>
+
+<!-- row 1: control plane -->
+<g font-size="11" font-weight="700">
+<rect x="90" y="256" width="150" height="56" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="165" y="278" text-anchor="middle" fill="#c53030">etcd</text>
+<text x="165" y="294" text-anchor="middle" font-size="9.5" font-weight="400" fill="#718096">cluster state store</text>
+
+<rect x="256" y="256" width="150" height="56" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="331" y="278" text-anchor="middle" fill="#c53030">kube-apiserver</text>
+<text x="331" y="294" text-anchor="middle" font-size="9.5" font-weight="400" fill="#718096">the "kubectl" you talk to</text>
+
+<rect x="422" y="256" width="150" height="56" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="497" y="278" text-anchor="middle" fill="#c53030">kube-scheduler</text>
+<text x="497" y="294" text-anchor="middle" font-size="9.5" font-weight="400" fill="#718096">decides where pods run</text>
+
+<rect x="588" y="256" width="150" height="56" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="663" y="272" text-anchor="middle" fill="#c53030">kube-controller-</text>
+<text x="663" y="286" text-anchor="middle" fill="#c53030">manager</text>
+<text x="663" y="300" text-anchor="middle" font-size="9.5" font-weight="400" fill="#718096">reconciles desired state</text>
+
+<rect x="754" y="256" width="146" height="56" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="827" y="278" text-anchor="middle" fill="#c53030">kube-proxy</text>
+<text x="827" y="294" text-anchor="middle" font-size="9.5" font-weight="400" fill="#718096">routes Service traffic</text>
+</g>
+
+<!-- row 2: cluster services -->
+<g font-size="11" font-weight="700">
+<rect x="90" y="330" width="150" height="56" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="165" y="352" text-anchor="middle" fill="#276749">coredns &#215;2</text>
+<text x="165" y="368" text-anchor="middle" font-size="9.5" font-weight="400" fill="#718096">cluster DNS (2 replicas)</text>
+
+<rect x="256" y="330" width="150" height="56" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="331" y="352" text-anchor="middle" fill="#276749">kindnet-cni</text>
+<text x="331" y="368" text-anchor="middle" font-size="9.5" font-weight="400" fill="#718096">pod networking</text>
+
+<rect x="422" y="330" width="150" height="56" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="497" y="348" text-anchor="middle" fill="#276749">local-path-</text>
+<text x="497" y="362" text-anchor="middle" fill="#276749">provisioner</text>
+<text x="497" y="378" text-anchor="middle" font-size="9.5" font-weight="400" fill="#718096">storage backend</text>
+
+<rect x="588" y="330" width="150" height="56" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="663" y="352" text-anchor="middle" fill="#2b6cb0">kubernetes-</text>
+<text x="663" y="366" text-anchor="middle" fill="#2b6cb0">dashboard</text>
+<text x="663" y="380" text-anchor="middle" font-size="9.5" font-weight="400" fill="#718096">the web UI, Lesson 4</text>
+
+<rect x="754" y="330" width="146" height="56" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="827" y="348" text-anchor="middle" fill="#2b6cb0">dashboard-</text>
+<text x="827" y="362" text-anchor="middle" fill="#2b6cb0">metrics-scraper</text>
+<text x="827" y="378" text-anchor="middle" font-size="9.5" font-weight="400" fill="#718096">feeds the dashboard</text>
+</g>
+
+<text x="480" y="424" text-anchor="middle" font-size="12" fill="#4a5568">11 real, running containers &#8212; one Docker container deep, all with real container IDs</text>
+
+<line x1="80" y1="444" x2="920" y2="444" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="480" y="470" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">why this beats Compose for more than one machine</text>
+<rect x="80" y="484" width="400" height="72" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="100" y="506" font-size="11.5" font-weight="700" fill="#2d3748">Compose (Module 4)</text>
+<text x="100" y="524" font-size="10.5" fill="#4a5568">one host, restart: policy only</text>
+<text x="100" y="540" font-size="10.5" fill="#4a5568">no scheduling across machines</text>
+
+<rect x="500" y="484" width="380" height="72" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1"/>
+<text x="520" y="506" font-size="11.5" font-weight="700" fill="#2d3748">Kubernetes (this module)</text>
+<text x="520" y="524" font-size="10.5" fill="#4a5568">a control plane that schedules pods</text>
+<text x="520" y="540" font-size="10.5" fill="#4a5568">across any number of real nodes</text>
+
+<text x="480" y="588" text-anchor="middle" font-size="11.5" fill="#718096">Kind fits the whole control plane into one node so you can learn the real API on one laptop.</text>
+<text x="480" y="606" text-anchor="middle" font-size="11.5" fill="#718096">A production cluster runs these same pieces spread across many real machines.</text>
+
+<defs>
+<marker id="arrowk" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+<path d="M0,0 L6,3 L0,6 Z" fill="#2b6cb0"/>
+</marker>
+</defs>
+</svg>

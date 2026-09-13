@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Multiple Aggregations in One .agg() Call</text>
+  <text x="360" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">One real query, five named aggregations, per Thistlewood category</text>
+
+  <rect x="260" y="66" width="200" height="40" rx="8" fill="#edf2f7" stroke="#4a5568" stroke-width="1.4" />
+  <text x="360" y="91" text-anchor="middle" font-size="11" font-family="monospace" fill="#1a202c">group_by("category")</text>
+
+  <line x1="300" y1="106" x2="96" y2="134" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="330" y1="106" x2="228" y2="134" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="360" y1="106" x2="360" y2="134" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="390" y1="106" x2="492" y2="134" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="420" y1="106" x2="624" y2="134" stroke="#a0aec0" stroke-width="1.2" />
+
+  <rect x="35" y="134" width="122" height="46" rx="7" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="96" y="153" text-anchor="middle" font-size="9" font-weight="700" fill="#2b6cb0">total_revenue</text>
+  <text x="96" y="169" text-anchor="middle" font-size="9" font-family="monospace" fill="#1a202c">.sum()</text>
+
+  <rect x="167" y="134" width="122" height="46" rx="7" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.3" />
+  <text x="228" y="153" text-anchor="middle" font-size="9" font-weight="700" fill="#6b46c1">avg_line_value</text>
+  <text x="228" y="169" text-anchor="middle" font-size="9" font-family="monospace" fill="#1a202c">.mean()</text>
+
+  <rect x="299" y="134" width="122" height="46" rx="7" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="360" y="153" text-anchor="middle" font-size="9" font-weight="700" fill="#9c4221">n_line_items</text>
+  <text x="360" y="169" text-anchor="middle" font-size="9" font-family="monospace" fill="#1a202c">pl.len()</text>
+
+  <rect x="431" y="134" width="122" height="46" rx="7" fill="#fff5f5" stroke="#fc8181" stroke-width="1.3" />
+  <text x="492" y="153" text-anchor="middle" font-size="9" font-weight="700" fill="#c53030">min_line_value</text>
+  <text x="492" y="169" text-anchor="middle" font-size="9" font-family="monospace" fill="#1a202c">.min()</text>
+
+  <rect x="563" y="134" width="122" height="46" rx="7" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3" />
+  <text x="624" y="153" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">max_line_value</text>
+  <text x="624" y="169" text-anchor="middle" font-size="9" font-family="monospace" fill="#1a202c">.max()</text>
+
+  <line x1="96" y1="180" x2="360" y2="220" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="228" y1="180" x2="360" y2="220" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="360" y1="180" x2="360" y2="220" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="492" y1="180" x2="360" y2="220" stroke="#a0aec0" stroke-width="1.2" />
+  <line x1="624" y1="180" x2="360" y2="220" stroke="#a0aec0" stroke-width="1.2" />
+
+  <rect x="90" y="220" width="540" height="118" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="1.4" />
+  <text x="360" y="244" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1a202c">One real row, one coherent profile -- category "Furniture"</text>
+  <text x="360" y="266" text-anchor="middle" font-size="10" font-family="monospace" fill="#2d3748">total_revenue: $822,980.04    n_line_items: 1,699</text>
+  <text x="360" y="286" text-anchor="middle" font-size="10" font-family="monospace" fill="#2d3748">avg_line_value: $484.39 (lowest of any real category)</text>
+  <text x="360" y="306" text-anchor="middle" font-size="10" font-family="monospace" fill="#2d3748">min_line_value: $26.06        max_line_value: $1,946.70</text>
+  <text x="360" y="326" text-anchor="middle" font-size="9" fill="#4a5568">All five values computed together, one pass over the real data</text>
+
+  <rect x="130" y="356" width="460" height="64" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="378" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">Verified against real, independently-known totals</text>
+  <text x="360" y="397" text-anchor="middle" font-size="9.5" fill="#2d3748">total_revenue sums to $9,195,043.62 across 8 categories -- the</text>
+  <text x="360" y="413" text-anchor="middle" font-size="9.5" fill="#2d3748">same real grand total this module established in Lesson 1.</text>
+</svg>

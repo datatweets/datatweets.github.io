@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="780" height="470" fill="#ffffff"/>
+  <text x="390" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#1a202c">The Position-Wise Feed-Forward Network</text>
+  <text x="390" y="56" text-anchor="middle" font-size="13" fill="#4a5568">FFN(x) = ReLU(x W1 + b1) W2 + b2 &#8212; expand to 4C, then project back to C</text>
+
+  <!-- input column C -->
+  <rect x="70" y="120" width="46" height="150" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="93" y="110" text-anchor="middle" font-size="13" font-weight="600" fill="#2b6cb0">x</text>
+  <text x="93" y="290" text-anchor="middle" font-size="12" fill="#4a5568">C = 8</text>
+
+  <!-- W1 arrow -->
+  <line x1="120" y1="195" x2="235" y2="195" stroke="#4a5568" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="177" y="182" text-anchor="middle" font-size="12" font-weight="600" fill="#4a5568">x W1 + b1</text>
+  <text x="177" y="212" text-anchor="middle" font-size="11" fill="#718096">W1: (C, 4C)</text>
+
+  <!-- hidden pre-activation column 4C -->
+  <rect x="240" y="85" width="46" height="300" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="263" y="75" text-anchor="middle" font-size="13" font-weight="600" fill="#c05621">hidden</text>
+  <text x="263" y="405" text-anchor="middle" font-size="12" fill="#4a5568">4C = 32</text>
+
+  <!-- ReLU arrow -->
+  <line x1="290" y1="235" x2="400" y2="235" stroke="#4a5568" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="345" y="222" text-anchor="middle" font-size="12" font-weight="600" fill="#276749">ReLU</text>
+  <text x="345" y="252" text-anchor="middle" font-size="11" fill="#718096">max(0, &#183;)</text>
+
+  <!-- activated hidden column 4C -->
+  <rect x="405" y="85" width="46" height="300" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="428" y="75" text-anchor="middle" font-size="13" font-weight="600" fill="#276749">act</text>
+  <text x="428" y="405" text-anchor="middle" font-size="12" fill="#4a5568">4C = 32</text>
+
+  <!-- W2 arrow -->
+  <line x1="455" y1="235" x2="570" y2="235" stroke="#4a5568" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="512" y="222" text-anchor="middle" font-size="12" font-weight="600" fill="#4a5568">h W2 + b2</text>
+  <text x="512" y="252" text-anchor="middle" font-size="11" fill="#718096">W2: (4C, C)</text>
+
+  <!-- output column C -->
+  <rect x="575" y="160" width="46" height="150" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="598" y="150" text-anchor="middle" font-size="13" font-weight="600" fill="#6b46c1">out</text>
+  <text x="598" y="330" text-anchor="middle" font-size="12" fill="#4a5568">C = 8</text>
+
+  <!-- per-position note -->
+  <rect x="640" y="120" width="120" height="230" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+  <text x="700" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">applied per</text>
+  <text x="700" y="167" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">position</text>
+  <rect x="656" y="182" width="88" height="20" rx="4" fill="#ebf8ff" stroke="#4299e1"/>
+  <text x="700" y="196" text-anchor="middle" font-size="11" fill="#2b6cb0">t = 0</text>
+  <rect x="656" y="208" width="88" height="20" rx="4" fill="#ebf8ff" stroke="#4299e1"/>
+  <text x="700" y="222" text-anchor="middle" font-size="11" fill="#2b6cb0">t = 1</text>
+  <rect x="656" y="234" width="88" height="20" rx="4" fill="#ebf8ff" stroke="#4299e1"/>
+  <text x="700" y="248" text-anchor="middle" font-size="11" fill="#2b6cb0">t = 2</text>
+  <text x="700" y="278" text-anchor="middle" font-size="11" fill="#4a5568">same W1, b1,</text>
+  <text x="700" y="294" text-anchor="middle" font-size="11" fill="#4a5568">W2, b2 reused</text>
+  <text x="700" y="310" text-anchor="middle" font-size="11" fill="#4a5568">on every row of</text>
+  <text x="700" y="326" text-anchor="middle" font-size="11" fill="#4a5568">the (B, T, C)</text>
+  <text x="700" y="342" text-anchor="middle" font-size="11" fill="#4a5568">tensor</text>
+
+  <text x="345" y="448" text-anchor="middle" font-size="12" fill="#718096">Attention mixes positions; the feed-forward network mixes features within each position.</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#4a5568"/>
+    </marker>
+  </defs>
+</svg>

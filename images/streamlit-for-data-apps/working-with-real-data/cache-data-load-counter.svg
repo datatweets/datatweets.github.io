@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="414" viewBox="0 0 1000 414" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<title>With and Without st.cache_data</title>
+<desc>Two stacked timelines across three reruns. Top timeline, no caching: load_data runs on rerun 1, 2, and 3, the real load counter climbing 1, 2, 3. Bottom timeline, with at cache_data: load_data genuinely runs only on rerun 1, the counter reads 1, 1, 1 across all three reruns, since reruns 2 and 3 return the cached result without calling the function body again.</desc>
+<rect width="1000" height="414" fill="#ffffff" />
+<text x="500" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">With and Without st.cache_data</text>
+<rect x="60" y="60" width="880" height="44" rx="7" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5" />
+<text x="500" y="86" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">No caching: rerun 1 -&gt; load_data() runs -&gt; count = 1</text>
+<path d="M500,107 L500,123" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="126" width="880" height="44" rx="7" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5" />
+<text x="500" y="152" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">No caching: rerun 2 -&gt; load_data() runs again -&gt; count = 2</text>
+<path d="M500,173 L500,189" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="192" width="880" height="44" rx="7" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5" />
+<text x="500" y="218" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">No caching: rerun 3 -&gt; load_data() runs again -&gt; count = 3</text>
+<path d="M500,239 L500,255" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#arr2)" />
+<rect x="60" y="258" width="880" height="44" rx="7" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5" />
+<text x="500" y="284" text-anchor="middle" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fill="#2d3748">@st.cache_data: reruns 2 and 3 skip the function body -&gt; count stays 1</text>
+<rect x="40" y="326" width="920" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+<text x="500" y="350" text-anchor="middle" font-size="10.5" fill="#7b341e">Without caching, the loader genuinely runs on every rerun. With it, the function body itself only</text>
+<text x="500" y="370" text-anchor="middle" font-size="10.5" fill="#7b341e">ever runs once.</text>
+<defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a0aec0"/></marker></defs>
+</svg>

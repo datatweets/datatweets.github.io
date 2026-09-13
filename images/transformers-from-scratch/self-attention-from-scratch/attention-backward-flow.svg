@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="920" height="470" fill="#ffffff"/>
+
+  <text x="460" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#1a202c">Scaled Dot-Product Attention: Forward Values and Backward Gradients</text>
+  <text x="460" y="56" text-anchor="middle" font-size="13" fill="#718096">B=2, T=4, C=8, hs=8 &#183; softmax over the last axis</text>
+
+  <!-- lane labels -->
+  <text x="24" y="118" font-size="12" font-weight="700" fill="#2b6cb0">FORWARD</text>
+  <text x="24" y="138" font-size="11" fill="#718096">values flow &#8594;</text>
+  <text x="24" y="330" font-size="12" font-weight="700" fill="#c05621">BACKWARD</text>
+  <text x="24" y="350" font-size="11" fill="#718096">gradients flow &#8592;</text>
+
+  <!-- ===== FORWARD ROW (blue) ===== -->
+  <!-- X -->
+  <rect x="110" y="92" width="120" height="58" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="170" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#2b6cb0">X</text>
+  <text x="170" y="137" text-anchor="middle" font-size="11" fill="#4a5568">(B, T, C)</text>
+
+  <!-- Q K V -->
+  <rect x="280" y="92" width="130" height="58" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="345" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">Q, K, V</text>
+  <text x="345" y="131" text-anchor="middle" font-size="10.5" fill="#4a5568">X@Wq, X@Wk, X@Wv</text>
+  <text x="345" y="145" text-anchor="middle" font-size="10.5" fill="#4a5568">(B, T, hs)</text>
+
+  <!-- S -->
+  <rect x="460" y="92" width="120" height="58" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="520" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">S</text>
+  <text x="520" y="130" text-anchor="middle" font-size="10.5" fill="#4a5568">Q K^T / &#8730;hs</text>
+  <text x="520" y="144" text-anchor="middle" font-size="10.5" fill="#4a5568">(B, T, T)</text>
+
+  <!-- A -->
+  <rect x="630" y="92" width="120" height="58" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="690" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">A</text>
+  <text x="690" y="130" text-anchor="middle" font-size="10.5" fill="#4a5568">softmax(S)</text>
+  <text x="690" y="144" text-anchor="middle" font-size="10.5" fill="#4a5568">(B, T, T)</text>
+
+  <!-- out -->
+  <rect x="790" y="92" width="110" height="58" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="845" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">out</text>
+  <text x="845" y="130" text-anchor="middle" font-size="10.5" fill="#4a5568">A @ V</text>
+  <text x="845" y="144" text-anchor="middle" font-size="10.5" fill="#4a5568">(B, T, hs)</text>
+
+  <!-- forward arrows (right) -->
+  <g stroke="#4299e1" stroke-width="2.5" fill="#4299e1">
+    <line x1="230" y1="121" x2="272" y2="121"/><polygon points="272,116 282,121 272,126"/>
+    <line x1="410" y1="121" x2="452" y2="121"/><polygon points="452,116 462,121 452,126"/>
+    <line x1="580" y1="121" x2="622" y2="121"/><polygon points="622,116 632,121 622,126"/>
+    <line x1="750" y1="121" x2="782" y2="121"/><polygon points="782,116 792,121 782,126"/>
+  </g>
+
+  <!-- loss node -->
+  <rect x="790" y="196" width="110" height="30" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="845" y="216" text-anchor="middle" font-size="11.5" font-weight="700" fill="#6b46c1">L = sum(out &#183; G)</text>
+  <g stroke="#9f7aea" stroke-width="2" fill="#9f7aea">
+    <line x1="845" y1="150" x2="845" y2="194"/><polygon points="840,194 845,204 850,194"/>
+  </g>
+
+  <!-- ===== BACKWARD ROW (orange) ===== -->
+  <!-- dX -->
+  <rect x="110" y="300" width="120" height="70" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="170" y="322" text-anchor="middle" font-size="14" font-weight="700" fill="#c05621">dX</text>
+  <text x="170" y="340" text-anchor="middle" font-size="9.5" fill="#4a5568">dQ@Wq^T + dK@Wk^T</text>
+  <text x="170" y="353" text-anchor="middle" font-size="9.5" fill="#4a5568">+ dV@Wv^T</text>
+  <text x="170" y="366" text-anchor="middle" font-size="10" fill="#718096">(B, T, C)</text>
+
+  <!-- dQ dK dV / dWq dWk dWv -->
+  <rect x="280" y="300" width="130" height="70" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="345" y="320" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c05621">dQ, dK, dV</text>
+  <text x="345" y="336" text-anchor="middle" font-size="9.5" fill="#4a5568">dWq = &#8721;_B X^T @ dQ</text>
+  <text x="345" y="349" text-anchor="middle" font-size="9.5" fill="#4a5568">dWk, dWv likewise</text>
+  <text x="345" y="364" text-anchor="middle" font-size="10" fill="#718096">dW* : (C, hs)</text>
+
+  <!-- dS -->
+  <rect x="460" y="300" width="120" height="70" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+  <text x="520" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">dS</text>
+  <text x="520" y="337" text-anchor="middle" font-size="9.5" fill="#4a5568">A &#8857; (dA &#8722; &#8721; dA&#183;A)</text>
+  <text x="520" y="350" text-anchor="middle" font-size="9.5" fill="#4a5568">then &#247; &#8730;hs</text>
+  <text x="520" y="364" text-anchor="middle" font-size="10" fill="#718096">(B, T, T)</text>
+
+  <!-- dA dV -->
+  <rect x="630" y="300" width="120" height="70" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="690" y="320" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">dA, dV</text>
+  <text x="690" y="337" text-anchor="middle" font-size="9.5" fill="#4a5568">dA = dout @ V^T</text>
+  <text x="690" y="350" text-anchor="middle" font-size="9.5" fill="#4a5568">dV = A^T @ dout</text>
+  <text x="690" y="364" text-anchor="middle" font-size="10" fill="#718096">(B, T, T) / (B, T, hs)</text>
+
+  <!-- dout -->
+  <rect x="790" y="300" width="110" height="70" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="845" y="326" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">dout = G</text>
+  <text x="845" y="344" text-anchor="middle" font-size="9.5" fill="#4a5568">dL/dout</text>
+  <text x="845" y="360" text-anchor="middle" font-size="10" fill="#718096">(B, T, hs)</text>
+
+  <!-- backward arrows (left) -->
+  <g stroke="#ed8936" stroke-width="2.5" fill="#ed8936">
+    <line x1="790" y1="335" x2="758" y2="335"/><polygon points="758,330 748,335 758,340"/>
+    <line x1="630" y1="335" x2="588" y2="335"/><polygon points="588,330 578,335 588,340"/>
+    <line x1="460" y1="335" x2="418" y2="335"/><polygon points="418,330 408,335 418,340"/>
+    <line x1="280" y1="335" x2="238" y2="335"/><polygon points="238,330 248,335 238,340"/>
+  </g>
+
+  <!-- dout comes from L -->
+  <g stroke="#9f7aea" stroke-width="2" fill="#9f7aea">
+    <line x1="845" y1="228" x2="845" y2="296"/><polygon points="840,296 845,306 850,296"/>
+  </g>
+
+  <!-- vertical cache-reuse hints (dashed, forward value feeds backward) -->
+  <g stroke="#a0aec0" stroke-width="1.3" stroke-dasharray="4 4">
+    <line x1="170" y1="150" x2="170" y2="298"/>
+    <line x1="345" y1="150" x2="345" y2="298"/>
+    <line x1="520" y1="150" x2="520" y2="298"/>
+    <line x1="690" y1="150" x2="690" y2="298"/>
+  </g>
+  <text x="360" y="245" font-size="10.5" fill="#718096" font-style="italic">dashed lines: cached forward values (A, K, Q, V, X) feed the backward pass</text>
+</svg>

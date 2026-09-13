@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="360" viewBox="0 0 1050 360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>is_airport: a computed flag that belongs at the mart layer, not staging</title>
+  <desc>stg_cityflow__zones stays rename-only, per Module 3's own convention -- zone_id, zone_name, borough, service_zone, nothing computed. zones, the mart, adds one computed column: is_airport, true when zone_name contains the word airport or service_zone is Airports or EWR. The two-condition logic is necessary because Newark Airport's own service_zone is EWR, not Airports, unlike JFK and LaGuardia -- a single condition would have missed it. Confirmed against the real 265-zone lookup: exactly 3 zones flagged true -- Newark Airport, JFK Airport, and LaGuardia Airport -- and 262 false.</desc>
+  <rect width="1050" height="360" fill="#ffffff" />
+  <text x="525" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Computed Flag Belongs at the Mart Layer</text>
+
+  <rect x="40" y="55" width="460" height="130" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="270" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">stg_cityflow__zones (staging)</text>
+  <rect x="65" y="93" width="410" height="70" rx="6" fill="#2c5282" />
+  <text x="270" y="113" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#ebf8ff">zone_id, zone_name, borough, service_zone</text>
+  <text x="270" y="133" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#ebf8ff">rename only -- nothing computed,</text>
+  <text x="270" y="149" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#ebf8ff">Module 3's own rule held to exactly</text>
+
+  <path d="M500,120 L550,120" stroke="#a0aec0" stroke-width="2.5" fill="none" marker-end="url(#ia1)" />
+
+  <rect x="555" y="55" width="460" height="130" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="785" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">zones (mart)</text>
+  <rect x="580" y="93" width="410" height="70" rx="6" fill="#22543d" />
+  <text x="785" y="112" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#f0fff4">is_airport = zone_name ilike '%airport%'</text>
+  <text x="785" y="128" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#f0fff4">or service_zone in ('Airports', 'EWR')</text>
+  <text x="785" y="148" text-anchor="middle" font-size="8.5" font-family="Menlo, monospace" fill="#c6f6d5">a real business computation, not a rename</text>
+
+  <rect x="130" y="205" width="790" height="130" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="525" y="230" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7b341e">Why two conditions, not one</text>
+  <text x="525" y="255" text-anchor="middle" font-size="10" fill="#7b341e">service_zone alone would have missed Newark Airport --</text>
+  <text x="525" y="273" text-anchor="middle" font-size="10" fill="#7b341e">its own service_zone is "EWR", not "Airports" like JFK and LaGuardia.</text>
+  <rect x="250" y="285" width="550" height="35" rx="6" fill="#7b341e" />
+  <text x="525" y="308" text-anchor="middle" font-size="10" font-weight="700" font-family="Menlo, monospace" fill="#fffaf0">confirmed: 3 zones true (JFK, LaGuardia, Newark), 262 false</text>
+
+  <defs>
+    <marker id="ia1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

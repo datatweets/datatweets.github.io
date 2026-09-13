@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="440" viewBox="0 0 800 440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="440" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Three Questions, Three Genuinely Different Checks</text>
+
+  <!-- Row 1 -->
+  <rect x="40" y="55" width="280" height="66" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="180" y="76" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">Q1: revenue by category</text>
+  <text x="180" y="92" text-anchor="middle" font-size="9" fill="#2c5282">GROUP BY p.category</text>
+  <text x="180" y="106" text-anchor="middle" font-size="9" fill="#2c5282">Bath leads: $1,548,346.03</text>
+
+  <text x="345" y="92" text-anchor="middle" font-size="14" fill="#a0aec0">vs.</text>
+
+  <rect x="380" y="55" width="280" height="66" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3" />
+  <text x="520" y="76" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">GROUP BY c.state instead</text>
+  <text x="520" y="92" text-anchor="middle" font-size="9" fill="#276749">Different dimension, same rows</text>
+  <text x="520" y="106" text-anchor="middle" font-size="9" fill="#276749">Both sum to $9,195,043.62</text>
+
+  <!-- Row 2 -->
+  <rect x="40" y="140" width="280" height="66" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="180" y="161" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">Q2: return rate by channel</text>
+  <text x="180" y="177" text-anchor="middle" font-size="9" fill="#2c5282">LEFT JOIN + count(DISTINCT)</text>
+  <text x="180" y="191" text-anchor="middle" font-size="9" fill="#2c5282">phone 46, store 111, web 293</text>
+
+  <text x="345" y="177" text-anchor="middle" font-size="14" fill="#a0aec0">vs.</text>
+
+  <rect x="380" y="140" width="280" height="66" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3" />
+  <text x="520" y="161" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">EXISTS instead</text>
+  <text x="520" y="177" text-anchor="middle" font-size="9" fill="#276749">Correlated per-row check, no JOIN</text>
+  <text x="520" y="191" text-anchor="middle" font-size="9" fill="#276749">Same: 46, 111, 293</text>
+
+  <!-- Row 3 -->
+  <rect x="40" y="225" width="280" height="66" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="180" y="246" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">Q3: avg revenue by segment</text>
+  <text x="180" y="262" text-anchor="middle" font-size="9" fill="#2c5282">avg(revenue) over a per-customer CTE</text>
+  <text x="180" y="276" text-anchor="middle" font-size="9" fill="#2c5282">retail $51,576.98 &gt; wholesale $47,876.42</text>
+
+  <text x="345" y="262" text-anchor="middle" font-size="14" fill="#a0aec0">vs.</text>
+
+  <rect x="380" y="225" width="280" height="66" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3" />
+  <text x="520" y="246" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749">Direct ratio instead</text>
+  <text x="520" y="262" text-anchor="middle" font-size="9" fill="#276749">sum(revenue) / count(DISTINCT customer)</text>
+  <text x="520" y="276" text-anchor="middle" font-size="9" fill="#276749">Same two numbers</text>
+
+  <rect x="90" y="315" width="620" height="105" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
+  <text x="400" y="342" text-anchor="middle" font-size="10.5" font-weight="700" fill="#4a5568">Each right-hand check differs mechanically from the left, not just cosmetically --</text>
+  <text x="400" y="360" text-anchor="middle" font-size="10.5" fill="#4a5568">a different grouping dimension, a different join-vs-EXISTS mechanism, a different</text>
+  <text x="400" y="378" text-anchor="middle" font-size="10.5" fill="#4a5568">averaging formula -- so a bug specific to one mechanism is unlikely to also</text>
+  <text x="400" y="396" text-anchor="middle" font-size="10.5" fill="#4a5568">appear in the other, unlike two near-identical query shapes.</text>
+
+</svg>

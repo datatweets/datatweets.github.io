@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="860" height="620" fill="#ffffff"/>
+  <text x="430" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">The Pre-Norm Transformer Block</text>
+  <text x="430" y="56" text-anchor="middle" font-size="13" fill="#4a5568">LayerNorm applied inside each residual, before the sublayer &#8212; shape is preserved end to end</text>
+
+  <!-- ===================== LEFT: one block internals ===================== -->
+  <!-- residual skip lines (drawn first so boxes sit on top) -->
+  <path d="M 130 120 L 70 120 L 70 300 L 155 300" fill="none" stroke="#a0aec0" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <path d="M 130 350 L 95 350 L 95 520 L 155 520" fill="none" stroke="#a0aec0" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <text x="52" y="215" text-anchor="middle" font-size="11" fill="#718096" transform="rotate(-90 52 215)">residual (skip)</text>
+  <text x="77" y="440" text-anchor="middle" font-size="11" fill="#718096" transform="rotate(-90 77 440)">residual (skip)</text>
+
+  <!-- x input -->
+  <rect x="130" y="88" width="220" height="40" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="240" y="112" text-anchor="middle" font-size="14" font-weight="600" fill="#2b6cb0">input  x   (1, 6, 64)</text>
+
+  <!-- arrow x -> LN1 -->
+  <line x1="240" y1="128" x2="240" y2="152" stroke="#4a5568" stroke-width="2"/>
+  <polygon points="240,158 235,148 245,148" fill="#4a5568"/>
+
+  <!-- LN1 -->
+  <rect x="155" y="158" width="170" height="40" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="240" y="183" text-anchor="middle" font-size="14" font-weight="600" fill="#6b46c1">LayerNorm 1</text>
+
+  <line x1="240" y1="198" x2="240" y2="222" stroke="#4a5568" stroke-width="2"/>
+  <polygon points="240,228 235,218 245,218" fill="#4a5568"/>
+
+  <!-- MHA -->
+  <rect x="155" y="228" width="170" height="46" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="240" y="249" text-anchor="middle" font-size="13" font-weight="600" fill="#276749">Multi-Head Attention</text>
+  <text x="240" y="266" text-anchor="middle" font-size="11" fill="#48bb78">4 heads &#183; hs = 16</text>
+
+  <!-- add 1 -->
+  <circle cx="240" cy="300" r="17" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="240" y="306" text-anchor="middle" font-size="18" font-weight="700" fill="#c05621">+</text>
+  <line x1="240" y1="274" x2="240" y2="283" stroke="#4a5568" stroke-width="2"/>
+  <text x="332" y="304" font-size="12" fill="#c05621">x = x + MHA(LN1(x))</text>
+
+  <!-- arrow add1 -> LN2 -->
+  <line x1="240" y1="317" x2="240" y2="342" stroke="#4a5568" stroke-width="2"/>
+  <polygon points="240,348 235,338 245,338" fill="#4a5568"/>
+
+  <!-- LN2 -->
+  <rect x="155" y="348" width="170" height="40" rx="8" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="240" y="373" text-anchor="middle" font-size="14" font-weight="600" fill="#6b46c1">LayerNorm 2</text>
+
+  <line x1="240" y1="388" x2="240" y2="412" stroke="#4a5568" stroke-width="2"/>
+  <polygon points="240,418 235,408 245,408" fill="#4a5568"/>
+
+  <!-- FFN -->
+  <rect x="155" y="418" width="170" height="46" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="2"/>
+  <text x="240" y="439" text-anchor="middle" font-size="13" font-weight="600" fill="#c53030">Feed-Forward</text>
+  <text x="240" y="456" text-anchor="middle" font-size="11" fill="#fc8181">64 &#8594; 256 &#8594; 64</text>
+
+  <!-- add 2 -->
+  <circle cx="240" cy="520" r="17" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="240" y="526" text-anchor="middle" font-size="18" font-weight="700" fill="#c05621">+</text>
+  <line x1="240" y1="464" x2="240" y2="503" stroke="#4a5568" stroke-width="2"/>
+  <text x="332" y="524" font-size="12" fill="#c05621">x = x + FFN(LN2(x))</text>
+
+  <!-- output -->
+  <line x1="240" y1="537" x2="240" y2="560" stroke="#4a5568" stroke-width="2"/>
+  <polygon points="240,566 235,556 245,556" fill="#4a5568"/>
+  <rect x="130" y="566" width="220" height="40" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="240" y="590" text-anchor="middle" font-size="14" font-weight="600" fill="#2b6cb0">output   (1, 6, 64)</text>
+
+  <!-- ===================== RIGHT: stacking ===================== -->
+  <text x="650" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#1a202c">Same shape in and out</text>
+  <text x="650" y="116" text-anchor="middle" font-size="12" fill="#4a5568">so blocks stack directly</text>
+
+  <rect x="560" y="140" width="180" height="46" rx="8" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+  <text x="650" y="163" text-anchor="middle" font-size="13" font-weight="600" fill="#1a202c">Transformer Block 1</text>
+  <text x="650" y="179" text-anchor="middle" font-size="11" fill="#718096">(1, 6, 64) &#8594; (1, 6, 64)</text>
+
+  <line x1="650" y1="186" x2="650" y2="214" stroke="#4a5568" stroke-width="2"/>
+  <polygon points="650,220 645,210 655,210" fill="#4a5568"/>
+
+  <rect x="560" y="220" width="180" height="46" rx="8" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+  <text x="650" y="243" text-anchor="middle" font-size="13" font-weight="600" fill="#1a202c">Transformer Block 2</text>
+  <text x="650" y="259" text-anchor="middle" font-size="11" fill="#718096">(1, 6, 64) &#8594; (1, 6, 64)</text>
+
+  <line x1="650" y1="266" x2="650" y2="294" stroke="#4a5568" stroke-width="2"/>
+  <polygon points="650,300 645,290 655,290" fill="#4a5568"/>
+
+  <text x="650" y="322" text-anchor="middle" font-size="20" font-weight="700" fill="#a0aec0">&#8942;</text>
+
+  <line x1="650" y1="330" x2="650" y2="358" stroke="#4a5568" stroke-width="2"/>
+  <polygon points="650,364 645,354 655,354" fill="#4a5568"/>
+
+  <rect x="560" y="364" width="180" height="46" rx="8" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+  <text x="650" y="387" text-anchor="middle" font-size="13" font-weight="600" fill="#1a202c">Transformer Block N</text>
+  <text x="650" y="403" text-anchor="middle" font-size="11" fill="#718096">(1, 6, 64) &#8594; (1, 6, 64)</text>
+
+  <rect x="556" y="450" width="188" height="118" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="650" y="474" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">Why it stacks</text>
+  <text x="570" y="496" font-size="11.5" fill="#2b6cb0">Every sublayer is wrapped</text>
+  <text x="570" y="513" font-size="11.5" fill="#2b6cb0">in a residual add, so the</text>
+  <text x="570" y="530" font-size="11.5" fill="#2b6cb0">output width (C = 64) never</text>
+  <text x="570" y="547" font-size="11.5" fill="#2b6cb0">changes. Block N's input is</text>
+  <text x="570" y="564" font-size="11.5" fill="#2b6cb0">just Block N-1's output.</text>
+</svg>

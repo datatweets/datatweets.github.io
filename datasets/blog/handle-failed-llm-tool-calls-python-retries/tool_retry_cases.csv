@@ -1,0 +1,14 @@
+case_id,label,tool_name,retry_safe,scripted_outcomes,expected_status
+R01,first attempt succeeds,get_dock_status,True,ok,succeeded
+R02,timeout then success,get_dock_status,True,timeout -> ok,succeeded
+R03,rate limit then success,get_dock_status,True,http_429@2.0 -> ok,succeeded
+R04,service recovers,get_dock_status,True,http_503 -> http_503 -> ok,succeeded
+R05,bad gateway then success,get_dock_status,True,http_502 -> ok,succeeded
+R06,request timeout then success,get_dock_status,True,http_408 -> ok,succeeded
+R07,invalid request,get_dock_status,True,http_400,permanent_error
+R08,missing credentials,get_dock_status,True,http_401,permanent_error
+R09,dock does not exist,get_dock_status,True,http_404,permanent_error
+R10,service stays unavailable,get_dock_status,True,http_503 -> http_503 -> http_503 -> http_503,attempt_limit
+R11,server delay exceeds budget,get_dock_status,True,http_429@12.0 -> ok,wait_budget
+R12,write has unknown outcome,hold_bicycle,False,timeout -> ok,unsafe_retry
+R13,idempotent write recovers,hold_bicycle,True,timeout -> ok,succeeded

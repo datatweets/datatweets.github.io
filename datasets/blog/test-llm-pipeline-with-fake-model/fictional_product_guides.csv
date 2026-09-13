@@ -1,0 +1,5 @@
+guide_id,topic,text
+G01,password,Reset a portal password from Profile > Security. The reset link expires after 20 minutes.
+G02,invoice,Download a monthly invoice from Billing > Documents. New invoices appear on the second day of each month.
+G03,export,Export a project table from Data > Export. CSV and JSON formats are available.
+G04,member,Invite a project member from Settings > Members. Only project administrators can send invitations.

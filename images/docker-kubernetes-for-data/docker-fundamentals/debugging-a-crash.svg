@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="560" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Diagnosing a Crashed Container, One Tool at a Time</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">cityflow-enrich hits pickup zone 264 (the TLC's real "Unknown" sentinel) and crashes with a KeyError</text>
+
+<!-- step 1: docker ps -a -->
+<rect x="40" y="88" width="200" height="94" rx="8" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.5"/>
+<text x="140" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#4a5568">1. docker ps -a</text>
+<text x="140" y="132" text-anchor="middle" font-size="11" fill="#4a5568">STATUS: Exited (1)</text>
+<text x="140" y="150" text-anchor="middle" font-size="10" fill="#718096">tells you it died and</text>
+<text x="140" y="164" text-anchor="middle" font-size="10" fill="#718096">that the exit code isn't 0</text>
+
+<line x1="240" y1="135" x2="280" y2="135" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowD)"/>
+
+<!-- step 2: docker logs -->
+<rect x="280" y="88" width="220" height="94" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="390" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">2. docker logs cityflow-enrich</text>
+<text x="390" y="132" text-anchor="middle" font-size="10" fill="#4a5568">trips 1-3 print fine, then:</text>
+<text x="390" y="150" text-anchor="middle" font-size="10" font-family="Menlo, Consolas, monospace" fill="#742a2a">KeyError: '264'</text>
+<text x="390" y="168" text-anchor="middle" font-size="10" fill="#718096">the real traceback, line and all</text>
+
+<line x1="500" y1="135" x2="540" y2="135" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowD)"/>
+
+<!-- step 3: docker exec -->
+<rect x="540" y="88" width="200" height="94" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="640" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">3. docker exec (while alive)</text>
+<text x="640" y="132" text-anchor="middle" font-size="10" fill="#4a5568">ls /app confirms</text>
+<text x="640" y="150" text-anchor="middle" font-size="10" fill="#4a5568">zones.json is really there</text>
+<text x="640" y="168" text-anchor="middle" font-size="10" fill="#718096">rules out a missing-file bug</text>
+
+<line x1="740" y1="135" x2="780" y2="135" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowD)"/>
+
+<!-- step 4: docker inspect -->
+<rect x="780" y="88" width="140" height="94" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="850" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">4. docker inspect</text>
+<text x="850" y="132" text-anchor="middle" font-size="10" fill="#4a5568">.State.ExitCode</text>
+<text x="850" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">= 1</text>
+<text x="850" y="168" text-anchor="middle" font-size="10" fill="#718096">confirms, programmatically</text>
+
+<line x1="40" y1="220" x2="920" y2="220" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- root cause box -->
+<rect x="40" y="240" width="880" height="80" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="60" y="264" font-size="12" font-weight="700" fill="#2d3748">Root cause: zones[zone_id] assumes every incoming zone ID is a known key.</text>
+<text x="60" y="284" font-size="12" fill="#4a5568">Real CityFlow trips disagree &#8212; LocationID 264 is the TLC's real "Unknown" sentinel, and it genuinely appears in the data.</text>
+<text x="60" y="304" font-size="12" fill="#4a5568">Fix: zones.get(zone_id, "Unknown") &#8212; a default instead of a crash.</text>
+
+<!-- before / after -->
+<rect x="40" y="340" width="420" height="90" rx="8" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="250" y="364" text-anchor="middle" font-size="12" font-weight="700" fill="#c53030">Before the fix</text>
+<text x="250" y="386" text-anchor="middle" font-size="11" fill="#4a5568">trip 4 crashes the whole process</text>
+<text x="250" y="404" text-anchor="middle" font-size="11" fill="#4a5568">trip 5 never even runs &#8212; exit code 1</text>
+
+<rect x="500" y="340" width="420" height="90" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="710" y="364" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">After the fix</text>
+<text x="710" y="386" text-anchor="middle" font-size="11" fill="#4a5568">all 5 trips enriched, trip 4 &#8594; "Unknown"</text>
+<text x="710" y="404" text-anchor="middle" font-size="11" fill="#4a5568">"all trips enriched" &#8212; exit code 0</text>
+
+<text x="480" y="470" text-anchor="middle" font-size="12" fill="#718096">Each tool answers a narrower question than the last: is it dead, why did it die, what does its filesystem actually contain, and</text>
+<text x="480" y="490" text-anchor="middle" font-size="12" fill="#718096">what exit code did it record &#8212; together they turn "it crashed" into a specific, fixable line of code.</text>
+
+<defs>
+<marker id="arrowD" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

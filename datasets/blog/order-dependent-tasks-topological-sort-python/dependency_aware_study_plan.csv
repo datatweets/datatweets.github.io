@@ -1,0 +1,13 @@
+week,position,stage,skill_id,skill,hours,start_hour,end_hour,prerequisite_ids
+1,1,1,PY01,Values and types,2,0,2,
+1,2,2,PY02,Lists and dictionaries,3,2,5,PY01
+2,3,2,PY03,Conditions and loops,3,0,3,PY01
+2,4,3,PY04,Functions,3,3,6,PY02|PY03
+3,5,4,PY05,Read CSV files,2,0,2,PY04
+3,6,5,DA01,pandas DataFrames,4,2,6,PY05
+4,7,6,DA02,Clean missing values,3,0,3,DA01
+4,8,6,DA03,Group and summarize,3,3,6,DA01
+5,9,6,DV01,Matplotlib basics,3,0,3,DA01
+5,10,7,DA04,Validate an analysis,2,3,5,DA02|DA03
+6,11,7,DV02,Explain a chart,2,0,2,DA03|DV01
+6,12,8,PR01,Reproducible mini-project,4,2,6,DA04|DV02

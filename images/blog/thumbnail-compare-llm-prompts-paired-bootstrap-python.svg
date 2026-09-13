@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Compare LLM prompts with a paired bootstrap in Python</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail showing the same evaluation cases paired across Prompt A and Prompt B, followed by a bootstrap confidence interval for the accuracy difference.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">SAME CASES · TWO PROMPTS</text>
+    <text x="90" y="286" font-size="76" font-weight="700" fill="#1b1f24">Pair. Resample.</text>
+    <text x="90" y="365" font-size="76" font-weight="700" fill="#1b1f24">Compare.</text>
+    <rect x="96" y="396" width="420" height="12" rx="6" fill="#0067c0"/>
+    <text x="96" y="474" font-size="30" font-weight="500" fill="#59636e">accuracy · uncertainty · regressions</text>
+  </g>
+  <g transform="translate(700 128)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="28" y="28" font-size="24" font-weight="600" fill="#59636e">CASES</text>
+    <text x="174" y="28" font-size="24" font-weight="600" fill="#59636e">A</text>
+    <text x="268" y="28" font-size="24" font-weight="600" fill="#59636e">B</text>
+    <g stroke="#c7ccd2" stroke-width="3">
+      <line x1="98" y1="78" x2="160" y2="78"/><line x1="202" y1="78" x2="254" y2="78"/>
+      <line x1="98" y1="142" x2="160" y2="142"/><line x1="202" y1="142" x2="254" y2="142"/>
+      <line x1="98" y1="206" x2="160" y2="206"/><line x1="202" y1="206" x2="254" y2="206"/>
+    </g>
+    <g font-size="21" font-weight="600" text-anchor="middle">
+      <rect x="14" y="53" width="84" height="50" rx="12" fill="#f7f8fa" stroke="#c7ccd2"/><text x="56" y="86" fill="#59636e">M014</text>
+      <rect x="14" y="117" width="84" height="50" rx="12" fill="#f7f8fa" stroke="#c7ccd2"/><text x="56" y="150" fill="#59636e">M061</text>
+      <rect x="14" y="181" width="84" height="50" rx="12" fill="#f7f8fa" stroke="#c7ccd2"/><text x="56" y="214" fill="#59636e">M103</text>
+      <rect x="160" y="57" width="42" height="42" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/><text x="181" y="86" fill="#0067c0">✓</text>
+      <rect x="254" y="57" width="42" height="42" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/><text x="275" y="86" fill="#0067c0">✓</text>
+      <rect x="160" y="121" width="42" height="42" rx="12" fill="#ffffff" stroke="#59636e" stroke-width="3"/><text x="181" y="149" fill="#59636e">×</text>
+      <rect x="254" y="121" width="42" height="42" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/><text x="275" y="150" fill="#0067c0">✓</text>
+      <rect x="160" y="185" width="42" height="42" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/><text x="181" y="214" fill="#0067c0">✓</text>
+      <rect x="254" y="185" width="42" height="42" rx="12" fill="#ffffff" stroke="#59636e" stroke-width="3"/><text x="275" y="213" fill="#59636e">×</text>
+    </g>
+    <line x1="145" y1="272" x2="278" y2="272" stroke="#0067c0" stroke-width="4"/>
+    <line x1="266" y1="260" x2="278" y2="272" stroke="#0067c0" stroke-width="4"/>
+    <line x1="266" y1="284" x2="278" y2="272" stroke="#0067c0" stroke-width="4"/>
+    <text x="14" y="338" font-size="22" font-weight="600" fill="#59636e">B − A DIFFERENCE</text>
+    <line x1="28" y1="400" x2="360" y2="400" stroke="#c7ccd2" stroke-width="4"/>
+    <line x1="86" y1="378" x2="86" y2="422" stroke="#59636e" stroke-width="3" stroke-dasharray="6 5"/>
+    <line x1="138" y1="388" x2="304" y2="388" stroke="#0067c0" stroke-width="14" stroke-linecap="round" opacity="0.22"/>
+    <line x1="138" y1="374" x2="138" y2="414" stroke="#0067c0" stroke-width="4"/>
+    <line x1="304" y1="374" x2="304" y2="414" stroke="#0067c0" stroke-width="4"/>
+    <rect x="208" y="387" width="26" height="26" rx="8" fill="#0067c0"/>
+    <text x="75" y="452" font-size="20" fill="#59636e">0</text>
+    <text x="179" y="452" font-size="20" font-weight="600" fill="#0067c0">95% interval</text>
+  </g>
+</svg>

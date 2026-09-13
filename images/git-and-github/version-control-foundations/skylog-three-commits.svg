@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect width="640" height="320" fill="#ffffff" />
+<text x="320" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The SkyLog history you just built: three focused commits</text>
+
+<line x1="70" y1="150" x2="570" y2="150" stroke="#cbd5e0" stroke-width="2" />
+<polygon points="578 150 568 145 568 155" fill="#cbd5e0" /><text x="585" y="154" font-size="11" fill="#a0aec0">time</text>
+
+<g>
+<circle cx="140" cy="150" r="13" fill="#4299e1" stroke="#2b6cb0" stroke-width="2" />
+<text x="140" y="186" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0" font-family="monospace">57d9883</text>
+<text x="140" y="202" text-anchor="middle" font-size="9.5" fill="#718096">Add project README</text>
+<rect x="104" y="72" width="72" height="46" rx="4" fill="#ebf4ff" stroke="#90cdf4" />
+<text x="140" y="93" text-anchor="middle" font-size="8.5" fill="#3182ce">README.md</text>
+<text x="140" y="107" text-anchor="middle" font-size="8" fill="#a0c4e8">(root-commit)</text>
+<line x1="140" y1="118" x2="140" y2="137" stroke="#cbd5e0" stroke-width="1.3" stroke-dasharray="3 3" />
+</g>
+
+<g>
+<circle cx="320" cy="150" r="13" fill="#4299e1" stroke="#2b6cb0" stroke-width="2" />
+<text x="320" y="186" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0" font-family="monospace">bb57806</text>
+<text x="320" y="202" text-anchor="middle" font-size="9.5" fill="#718096">Add SkyLog script + usage</text>
+<rect x="278" y="66" width="84" height="52" rx="4" fill="#ebf4ff" stroke="#90cdf4" />
+<text x="320" y="84" text-anchor="middle" font-size="8.5" fill="#3182ce">README.md</text>
+<text x="320" y="97" text-anchor="middle" font-size="8.5" fill="#3182ce">skylog.py</text>
+<text x="320" y="110" text-anchor="middle" font-size="8" fill="#a0c4e8">2 files changed</text>
+<line x1="320" y1="118" x2="320" y2="137" stroke="#cbd5e0" stroke-width="1.3" stroke-dasharray="3 3" />
+</g>
+
+<g>
+<circle cx="500" cy="150" r="13" fill="#48bb78" stroke="#276749" stroke-width="2" />
+<text x="500" y="186" text-anchor="middle" font-size="10.5" font-weight="700" fill="#276749" font-family="monospace">573e746</text>
+<text x="500" y="202" text-anchor="middle" font-size="9.5" fill="#718096">Log first two observations</text>
+<rect x="452" y="60" width="96" height="58" rx="4" fill="#f0fff4" stroke="#9ae6b4" />
+<text x="500" y="78" text-anchor="middle" font-size="8.5" fill="#2f855a">README.md</text>
+<text x="500" y="91" text-anchor="middle" font-size="8.5" fill="#2f855a">skylog.py</text>
+<text x="500" y="104" text-anchor="middle" font-size="8.5" fill="#2f855a">observations.md</text>
+<line x1="500" y1="118" x2="500" y2="137" stroke="#cbd5e0" stroke-width="1.3" stroke-dasharray="3 3" />
+</g>
+
+<text x="320" y="240" text-anchor="middle" font-size="10.5" fill="#a0aec0">git log --oneline shows these newest-first: 573e746, bb57806, 57d9883</text>
+<text x="320" y="266" text-anchor="middle" font-size="11" fill="#718096">Each commit adds one focused piece — a README, then the script, then real logged data — and builds on the one before it.</text>
+</svg>

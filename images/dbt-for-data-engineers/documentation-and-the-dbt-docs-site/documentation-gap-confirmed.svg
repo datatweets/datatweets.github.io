@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="380" viewBox="0 0 1060 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>21 models, confirmed undocumented -- the first two, documented for real</title>
+  <desc>A before-and-after diagram. Before: 21 models across this project, 5 yml files, only 1, the sources file, with any description field, confirmed by a direct grep against every yml file rather than assumed. After: stg_cityflow__zones.yml and stg_cityflow__trips.yml, Module 3's own original staging pair, given model-level and column-level descriptions, including the two placeholder findings Module 3 already made -- zone 264's literal Unknown string and zone 265's true NULL. A verification panel confirms the descriptions land in manifest.json exactly as written, read directly from the JSON file dbt docs serve itself renders.</desc>
+  <rect width="1060" height="380" fill="#ffffff" />
+  <text x="530" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">21 Models, Confirmed Undocumented</text>
+
+  <rect x="30" y="55" width="460" height="120" rx="8" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.6" />
+  <text x="260" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#822727">Before -- confirmed by direct grep, not assumed</text>
+  <text x="260" y="110" text-anchor="middle" font-size="16" font-weight="700" font-family="Menlo, monospace" fill="#822727">21 models</text>
+  <text x="260" y="132" text-anchor="middle" font-size="14" font-weight="700" font-family="Menlo, monospace" fill="#822727">1 of 5 yml files documented</text>
+  <text x="260" y="152" text-anchor="middle" font-size="9" fill="#822727">(the sources file only -- zero models)</text>
+
+  <rect x="570" y="55" width="460" height="120" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="800" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">After -- Module 3's own staging pair</text>
+  <text x="800" y="105" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">stg_cityflow__zones.yml</text>
+  <text x="800" y="122" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">stg_cityflow__trips.yml</text>
+  <text x="800" y="145" text-anchor="middle" font-size="9" fill="#22543d">model + column descriptions,</text>
+  <text x="800" y="160" text-anchor="middle" font-size="9" fill="#22543d">including zone 264 &amp; 265's real findings</text>
+
+  <rect x="130" y="200" width="800" height="130" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="530" y="225" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">Verified in manifest.json, not just the yml file</text>
+  <rect x="160" y="240" width="740" height="70" rx="6" fill="#2c5282" />
+  <text x="530" y="262" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#ebf8ff">manifest["nodes"]["...stg_cityflow__zones"]["description"]</text>
+  <text x="530" y="280" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#ebf8ff">-&gt; "A rename-only pass over the NYC TLC's own..."</text>
+  <text x="530" y="298" text-anchor="middle" font-size="8.5" fill="#ebf8ff">read directly from the file dbt docs serve itself renders</text>
+
+  <text x="530" y="355" text-anchor="middle" font-size="10" font-weight="700" fill="#2d3748">A clean dbt docs generate exit proves the YAML parsed -- reading the JSON is the actual proof.</text>
+</svg>

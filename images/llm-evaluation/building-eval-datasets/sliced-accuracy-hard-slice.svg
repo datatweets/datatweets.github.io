@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Bar chart of Docent's evaluation accuracy sliced by difficulty. The overall average is 81.8 percent, drawn as a dashed reference line. Easy is 100 percent (5 cases) and medium is 100 percent (3 cases), both green and above the line. Hard is only 33.3 percent (3 cases), a short red bar far below the dashed overall line. The takeaway: the 82 percent average hides a failing hard slice.</title>
+  <rect x="0" y="0" width="800" height="470" fill="#ffffff"/>
+
+  <text x="30" y="38" font-size="21" font-weight="700" fill="#1a202c">An 82% average hides a 33% hard slice</text>
+  <text x="30" y="60" font-size="13" fill="#718096">Docent golden-set accuracy, sliced by difficulty (illustrative prior eval run, n = 11)</text>
+
+  <!-- gridlines and y-axis labels: 0..100% mapped to y 360..90 (extra top margin clears the subtitle) -->
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="90" y1="90"  x2="720" y2="90"/>
+    <line x1="90" y1="157.5" x2="720" y2="157.5"/>
+    <line x1="90" y1="225" x2="720" y2="225"/>
+    <line x1="90" y1="292.5" x2="720" y2="292.5"/>
+    <line x1="90" y1="360" x2="720" y2="360"/>
+  </g>
+  <g font-size="12" fill="#a0aec0" text-anchor="end">
+    <text x="80" y="94">100%</text>
+    <text x="80" y="161.5">75%</text>
+    <text x="80" y="229">50%</text>
+    <text x="80" y="296.5">25%</text>
+    <text x="80" y="364">0%</text>
+  </g>
+
+  <!-- dashed overall reference line at 81.8% -> y=139.1 -->
+  <line x1="90" y1="139.1" x2="720" y2="139.1" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="726" y="134.3" font-size="12" font-weight="700" fill="#2b6cb0">overall</text>
+  <text x="726" y="149.3" font-size="12" font-weight="700" fill="#2b6cb0">81.8%</text>
+
+  <!-- bars -->
+  <!-- Overall 81.8% : top 139.1 height 220.9 -->
+  <rect x="120" y="139.1" width="90" height="220.9" fill="#4299e1"/>
+  <text x="165" y="131.3" font-size="14" font-weight="700" fill="#2b6cb0" text-anchor="middle">81.8%</text>
+  <text x="165" y="382" font-size="13" fill="#4a5568" text-anchor="middle">Overall</text>
+  <text x="165" y="399" font-size="11" fill="#a0aec0" text-anchor="middle">n=11</text>
+
+  <!-- Easy 100% : top 90 height 270 -->
+  <rect x="270" y="90" width="90" height="270" fill="#48bb78"/>
+  <text x="315" y="82" font-size="14" font-weight="700" fill="#276749" text-anchor="middle">100%</text>
+  <text x="315" y="382" font-size="13" fill="#4a5568" text-anchor="middle">Easy</text>
+  <text x="315" y="399" font-size="11" fill="#a0aec0" text-anchor="middle">n=5</text>
+
+  <!-- Medium 100% : top 90 height 270 -->
+  <rect x="420" y="90" width="90" height="270" fill="#48bb78"/>
+  <text x="465" y="82" font-size="14" font-weight="700" fill="#276749" text-anchor="middle">100%</text>
+  <text x="465" y="382" font-size="13" fill="#4a5568" text-anchor="middle">Medium</text>
+  <text x="465" y="399" font-size="11" fill="#a0aec0" text-anchor="middle">n=3</text>
+
+  <!-- Hard 33.3% : top 270.1 height 89.9 -->
+  <rect x="570" y="270.1" width="90" height="89.9" fill="#fc8181"/>
+  <text x="615" y="262.7" font-size="14" font-weight="700" fill="#c53030" text-anchor="middle">33.3%</text>
+  <text x="615" y="382" font-size="13" fill="#4a5568" text-anchor="middle">Hard</text>
+  <text x="615" y="399" font-size="11" fill="#a0aec0" text-anchor="middle">n=3</text>
+
+  <!-- callout arrow to hard bar -->
+  <text x="615" y="430" font-size="12.5" font-weight="700" fill="#c53030" text-anchor="middle">the slice the average hid</text>
+  <path d="M 615 405 L 615 418" stroke="#c53030" stroke-width="2"/>
+  <path d="M 611 412 L 615 418 L 619 412 Z" fill="#c53030"/>
+
+  <!-- axis line -->
+  <line x1="90" y1="360" x2="720" y2="360" stroke="#4a5568" stroke-width="1.5"/>
+</svg>

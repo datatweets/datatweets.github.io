@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Three Python policies for combining unequal-length iterables</title>
+  <desc id="desc">Six sample identifiers and five readings enter three paths. Default zip returns five pairs and silently drops the last identifier. Strict zip reaches the mismatch and raises ValueError. Zip longest returns six pairs and fills the missing reading with a marker.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#315b7d"/>
+    </marker>
+    <style>
+      .heading { font: 700 30px Jost, system-ui, sans-serif; fill: #17212b; }
+      .label { font: 700 23px Jost, system-ui, sans-serif; fill: #17212b; }
+      .detail { font: 19px Jost, system-ui, sans-serif; fill: #4e5d6b; }
+      .mono { font: 18px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #17212b; }
+      .flow { fill: none; stroke: #315b7d; stroke-width: 4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="640" fill="#f4f7f9"/>
+  <rect x="28" y="24" width="1144" height="592" rx="24" fill="#ffffff" stroke="#d7dee5" stroke-width="2"/>
+  <text x="62" y="72" class="heading">Unequal inputs require an explicit policy</text>
+
+  <rect x="60" y="118" width="290" height="165" rx="18" fill="#edf4fa" stroke="#8aa9c1" stroke-width="2"/>
+  <text x="88" y="158" class="label">Parallel inputs</text>
+  <text x="88" y="201" class="mono">sample_ids: 6</text>
+  <text x="88" y="238" class="mono">readings:   5</text>
+  <text x="88" y="269" class="detail">WQ-106 has no reading</text>
+
+  <path d="M350 172 C415 172 418 153 470 153" class="flow"/>
+  <path d="M350 201 L470 320" class="flow"/>
+  <path d="M350 232 C415 232 418 487 470 487" class="flow"/>
+
+  <rect x="485" y="96" width="645" height="126" rx="18" fill="#fff4e5" stroke="#df9a3a" stroke-width="2"/>
+  <text x="515" y="136" class="label">zip(...)</text>
+  <text x="515" y="173" class="detail">Returns 5 pairs, then stops at the shorter input.</text>
+  <text x="515" y="202" class="mono">WQ-106 is silently absent</text>
+
+  <rect x="485" y="257" width="645" height="126" rx="18" fill="#fdeced" stroke="#c8515b" stroke-width="2"/>
+  <text x="515" y="297" class="label">zip(..., strict=True)</text>
+  <text x="515" y="334" class="detail">Produces pairs lazily, then raises at the mismatch.</text>
+  <text x="515" y="363" class="mono">ValueError: lengths differ</text>
+
+  <rect x="485" y="418" width="645" height="126" rx="18" fill="#eaf6ef" stroke="#4d9870" stroke-width="2"/>
+  <text x="515" y="458" class="label">zip_longest(..., fillvalue=None)</text>
+  <text x="515" y="495" class="detail">Returns 6 pairs and preserves the unmatched position.</text>
+  <text x="515" y="524" class="mono">(WQ-106, None)</text>
+
+  <text x="62" y="582" class="detail">Choose shortest, reject, or pad based on what a missing value means.</text>
+</svg>

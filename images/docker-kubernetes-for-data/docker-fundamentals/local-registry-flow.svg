@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="480" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Pushing and Pulling Through a Registry</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Docker Hub is the public registry you've already been pulling from &#8212; this lesson's hands-on push uses a local one instead</text>
+
+<!-- your machine -->
+<rect x="40" y="100" width="230" height="130" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+<text x="155" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">Your machine</text>
+<text x="155" y="150" text-anchor="middle" font-size="11" fill="#4a5568">docker build</text>
+<text x="155" y="168" text-anchor="middle" font-size="11" fill="#4a5568">cityflow-fare-estimator:1.0</text>
+<text x="155" y="192" text-anchor="middle" font-size="11" fill="#4a5568">docker tag</text>
+<text x="155" y="210" text-anchor="middle" font-size="10" fill="#718096">localhost:5000/cityflow-fare-estimator:1.0</text>
+
+<line x1="270" y1="140" x2="360" y2="140" stroke="#276749" stroke-width="2" marker-end="url(#arrowR)"/>
+<text x="315" y="130" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">docker push</text>
+
+<!-- local registry -->
+<rect x="360" y="100" width="240" height="130" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+<text x="480" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">local-registry container</text>
+<text x="480" y="150" text-anchor="middle" font-size="11" fill="#4a5568">image: registry:2</text>
+<text x="480" y="168" text-anchor="middle" font-size="11" fill="#4a5568">-p 5000:5000</text>
+<text x="480" y="192" text-anchor="middle" font-size="10" fill="#718096">a real HTTP API on localhost:5000</text>
+<text x="480" y="208" text-anchor="middle" font-size="10" fill="#718096">GET /v2/_catalog, /v2/&lt;repo&gt;/tags/list</text>
+
+<line x1="600" y1="180" x2="690" y2="180" stroke="#c05621" stroke-width="2" marker-end="url(#arrowR)"/>
+<text x="645" y="170" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">docker pull</text>
+
+<!-- another machine -->
+<rect x="690" y="100" width="230" height="130" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+<text x="805" y="128" text-anchor="middle" font-size="13" font-weight="700" fill="#c05621">"another machine"</text>
+<text x="805" y="150" text-anchor="middle" font-size="11" fill="#4a5568">(this same host, local image</text>
+<text x="805" y="166" text-anchor="middle" font-size="11" fill="#4a5568">removed first to prove it)</text>
+<text x="805" y="190" text-anchor="middle" font-size="11" fill="#4a5568">docker run &#8594; identical output</text>
+
+<line x1="155" y1="230" x2="155" y2="280" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="3,3"/>
+<line x1="805" y1="230" x2="805" y2="280" stroke="#a0aec0" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+<rect x="40" y="280" width="880" height="60" rx="8" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="306" text-anchor="middle" font-size="12" fill="#4a5568">A registry is just a server that stores images by repository and tag, and serves them over HTTP.</text>
+<text x="480" y="326" text-anchor="middle" font-size="12" fill="#4a5568">Docker Hub is the default public one; localhost:5000 here is a private one you're running yourself, entirely on your own machine.</text>
+
+<text x="480" y="378" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">docker.io/library/nginx, docker.io/library/postgres &#8212; every pull so far in this course came from Docker Hub</text>
+<text x="480" y="400" text-anchor="middle" font-size="12" fill="#718096">This lesson's push/pull stays 100% local &#8212; nothing is published to a real public Docker Hub account.</text>
+
+<defs>
+<marker id="arrowR" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L0,6 L9,3 z" fill="#a0aec0"/>
+</marker>
+</defs>
+</svg>

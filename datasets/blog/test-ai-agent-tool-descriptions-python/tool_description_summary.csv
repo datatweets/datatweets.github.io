@@ -1,0 +1,3 @@
+variant,clear_cases,top_1_accuracy,recall_at_3,mean_reciprocal_rank
+vague,36,0.6389,0.9444,0.7817
+specific,36,0.8333,0.9722,0.897

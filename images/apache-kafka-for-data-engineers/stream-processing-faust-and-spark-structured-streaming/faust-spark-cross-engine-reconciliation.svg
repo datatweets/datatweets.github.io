@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Two engines, one real dataset, zero disagreement -- to the cent, zone by zone</title>
+  <desc>The identical 15,000-trip real subset aggregated independently by a Faust table and a Spark Structured Streaming query. Both land on $443,145.04, matching a plain Python sum computed as ground truth. A zone-by-zone comparison across all 36 zones the subset touches shows zero mismatches between Faust's and Spark's results. Separately, Spark reads CityFlow's entire real 9,554,757-trip topic and reconciles to 240,917 zone-hour buckets and $256,692,373.14, the exact figures the PySpark course's own batch capstone already published.</desc>
+  <rect width="1100" height="430" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Two Engines, One Dataset, Zero Disagreement</text>
+
+  <!-- shared source -->
+  <rect x="380" y="50" width="340" height="60" rx="8" fill="#e9d8fd" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="550" y="75" text-anchor="middle" font-size="12" font-weight="700" fill="#553c9a">15,000 identical real trips</text>
+  <text x="550" y="95" text-anchor="middle" font-size="9.5" fill="#553c9a">ground truth (plain Python): $443,145.04</text>
+
+  <path d="M480,110 L280,150" stroke="#a0aec0" stroke-width="2" marker-end="url(#a7)" />
+  <path d="M620,110 L820,150" stroke="#a0aec0" stroke-width="2" marker-end="url(#a7)" />
+  <defs>
+    <marker id="a7" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+
+  <!-- Faust -->
+  <rect x="60" y="155" width="440" height="90" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="280" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">Faust table</text>
+  <text x="280" y="205" text-anchor="middle" font-size="16" font-weight="700" font-family="Menlo, monospace" fill="#22543d">$443,145.04</text>
+  <text x="280" y="228" text-anchor="middle" font-size="9.5" fill="#22543d">per-message, Python async</text>
+
+  <!-- Spark -->
+  <rect x="600" y="155" width="440" height="90" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="820" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">Spark Structured Streaming</text>
+  <text x="820" y="205" text-anchor="middle" font-size="16" font-weight="700" font-family="Menlo, monospace" fill="#2c5282">$443,145.04</text>
+  <text x="820" y="228" text-anchor="middle" font-size="9.5" fill="#2c5282">columnar micro-batches, JVM</text>
+
+  <!-- Zone-by-zone -->
+  <rect x="150" y="270" width="800" height="70" rx="8" fill="#feebc8" stroke="#ed8936" stroke-width="1.4" />
+  <text x="550" y="298" text-anchor="middle" font-size="13" font-weight="700" fill="#7b341e">36 zones compared individually -- 0 mismatches</text>
+  <text x="550" y="320" text-anchor="middle" font-size="10.5" fill="#7b341e">not just a matching total -- every single zone's revenue agrees to the cent</text>
+
+  <!-- Full corpus -->
+  <rect x="150" y="355" width="800" height="55" rx="8" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="550" y="378" text-anchor="middle" font-size="11.5" font-weight="700" fill="#742a2a">Full corpus (Spark): 240,917 buckets, 9,554,757 trips, $256,692,373.14</text>
+  <text x="550" y="396" text-anchor="middle" font-size="10" fill="#742a2a">the exact figures the PySpark course's own capstone already published</text>
+</svg>

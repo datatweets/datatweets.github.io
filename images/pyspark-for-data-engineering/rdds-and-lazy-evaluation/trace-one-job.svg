@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 726" width="960" height="726" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="726" fill="#ffffff"/>
+
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Trace One Job End to End &#8212; Plan &#8594; Prediction &#8594; Reality</text>
+  <text x="480" y="56" text-anchor="middle" font-size="14" fill="#718096">per-zone quarter aggregation &#183; 9,554,757 trips, $256,692,373.14 &#183; Spark 4.2.0, local[*], AQE on &#183; predictions written BEFORE running</text>
+
+  <!-- ============ BAND 1: THE PLAN ============ -->
+  <text x="30" y="90" font-size="15" font-weight="700" fill="#2b6cb0">THE PLAN &#8212; explain() before running: AdaptiveSparkPlan isFinalPlan=false</text>
+
+  <rect x="30" y="104" width="164" height="92" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="40" y="123" font-size="10" font-weight="700" fill="#2b6cb0">FileScan parquet</text>
+  <text x="40" y="140" font-size="10.5" fill="#4a5568">3 of 19 columns read</text>
+  <text x="40" y="156" font-size="10.5" fill="#4a5568">window filters pushed</text>
+  <text x="40" y="172" font-size="10.5" fill="#4a5568">into the scan</text>
+  <text x="40" y="188" font-size="10.5" font-weight="700" fill="#1a202c">plans 10 partitions</text>
+
+  <line x1="194" y1="150" x2="208" y2="150" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="214,150 204,145 204,155" fill="#a0aec0"/>
+
+  <rect x="214" y="104" width="164" height="92" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="224" y="123" font-size="10" font-weight="700" fill="#2b6cb0">Filter + Project</text>
+  <text x="224" y="140" font-size="10.5" fill="#4a5568">narrow &#8212; no data</text>
+  <text x="224" y="156" font-size="10.5" fill="#4a5568">movement; fuses into</text>
+  <text x="224" y="172" font-size="10.5" fill="#4a5568">the scan's stage</text>
+
+  <line x1="378" y1="150" x2="392" y2="150" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="398,150 388,145 388,155" fill="#a0aec0"/>
+
+  <rect x="398" y="104" width="164" height="92" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="408" y="123" font-size="10" font-weight="700" fill="#2b6cb0">HashAggregate (partial)</text>
+  <text x="408" y="140" font-size="10.5" fill="#4a5568">partial_count, partial_sum</text>
+  <text x="408" y="156" font-size="10.5" fill="#4a5568">per-partition zone</text>
+  <text x="408" y="172" font-size="10.5" fill="#4a5568">subtotals &#8212; only these</text>
+  <text x="408" y="188" font-size="10.5" fill="#4a5568">cross the shuffle</text>
+
+  <line x1="562" y1="150" x2="576" y2="150" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="582,150 572,145 572,155" fill="#a0aec0"/>
+
+  <rect x="582" y="104" width="164" height="92" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="592" y="123" font-size="10" font-weight="700" fill="#c05621">Exchange</text>
+  <text x="592" y="140" font-size="10.5" fill="#4a5568">hashpartitioning(</text>
+  <text x="592" y="156" font-size="10.5" fill="#4a5568">PULocationID, 200)</text>
+  <text x="592" y="172" font-size="10.5" font-weight="700" fill="#c05621">the one shuffle =</text>
+  <text x="592" y="188" font-size="10.5" font-weight="700" fill="#c05621">the stage boundary</text>
+
+  <line x1="746" y1="150" x2="760" y2="150" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="766,150 756,145 756,155" fill="#a0aec0"/>
+
+  <rect x="766" y="104" width="164" height="92" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="776" y="123" font-size="10" font-weight="700" fill="#2b6cb0">HashAggregate (final)</text>
+  <text x="776" y="140" font-size="10.5" fill="#4a5568">count, sum per zone</text>
+  <text x="776" y="156" font-size="10.5" fill="#4a5568">&#8594; collect()</text>
+  <text x="776" y="172" font-size="10.5" font-weight="700" fill="#1a202c">262 zone rows out</text>
+  <text x="776" y="188" font-size="10.5" fill="#4a5568">of 9,554,757 kept in</text>
+
+  <line x1="30" y1="218" x2="930" y2="218" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 2: THE PREDICTION ============ -->
+  <text x="30" y="248" font-size="15" font-weight="700" fill="#276749">THE PREDICTION &#8212; committed before the action ran</text>
+
+  <rect x="30" y="262" width="300" height="106" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="42" y="282" font-size="10" font-weight="700" fill="#276749">JOB A &#8212; MATERIALIZE THE SHUFFLE</text>
+  <text x="42" y="301" font-size="11" font-weight="700" fill="#1a202c">1 stage: scan &#8594; filter &#8594; partial agg (fused)</text>
+  <text x="42" y="318" font-size="10.5" fill="#4a5568">10 tasks &#8212; one per scan partition</text>
+  <text x="42" y="334" font-size="10.5" fill="#4a5568">each writes its zone subtotals</text>
+  <text x="42" y="350" font-size="10.5" fill="#4a5568">as shuffle output</text>
+
+  <line x1="330" y1="315" x2="352" y2="315" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="358,315 348,310 348,320" fill="#a0aec0"/>
+
+  <rect x="358" y="262" width="300" height="106" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="370" y="282" font-size="10" font-weight="700" fill="#276749">JOB B &#8212; FINISH</text>
+  <text x="370" y="301" font-size="11" font-weight="700" fill="#1a202c">map stage re-listed &#8594; SKIPPED (0 run)</text>
+  <text x="370" y="318" font-size="10.5" fill="#4a5568">+ final stage: AQE coalesces the tiny</text>
+  <text x="370" y="334" font-size="10.5" fill="#4a5568">shuffle 200 &#8594; 1 partition</text>
+  <text x="370" y="350" font-size="10.5" font-weight="700" fill="#1a202c">1 task finishes the query</text>
+
+  <rect x="686" y="262" width="244" height="106" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="698" y="282" font-size="10" font-weight="700" fill="#2b6cb0">PREDICTED TOTALS</text>
+  <text x="698" y="301" font-size="11" font-weight="700" fill="#1a202c">2 jobs</text>
+  <text x="698" y="318" font-size="11" font-weight="700" fill="#1a202c">21 tasks scheduled, 11 run</text>
+  <text x="698" y="335" font-size="11" font-weight="700" fill="#1a202c">wall time 2&#8211;4 s</text>
+  <text x="698" y="353" font-size="10.5" fill="#4a5568">(10 + 10 skipped + 1 = 21)</text>
+
+  <line x1="30" y1="390" x2="930" y2="390" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 3: WHAT ACTUALLY RAN ============ -->
+  <text x="30" y="420" font-size="15" font-weight="700" fill="#c05621">WHAT ACTUALLY RAN &#8212; statusTracker() after one collect()</text>
+
+  <text x="42" y="446" font-size="11" font-weight="700" fill="#718096">stage</text>
+  <text x="330" y="446" text-anchor="end" font-size="11" font-weight="700" fill="#718096">scheduled / ran</text>
+  <text x="360" y="446" font-size="11" font-weight="700" fill="#718096">what happened</text>
+  <line x1="30" y1="454" x2="640" y2="454" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="42" y="474" font-size="11.5" fill="#1a202c">job 1 &#183; stage 1</text>
+  <text x="330" y="474" text-anchor="end" font-size="11.5" font-weight="700" fill="#276749">10 / 10</text>
+  <text x="360" y="474" font-size="11.5" fill="#4a5568">the fused map stage ran on all 10 partitions</text>
+
+  <text x="42" y="497" font-size="11.5" fill="#1a202c">job 2 &#183; stage 2</text>
+  <text x="330" y="497" text-anchor="end" font-size="11.5" font-weight="700" fill="#c05621">10 / 0</text>
+  <text x="360" y="497" font-size="11.5" fill="#4a5568">SKIPPED &#8212; shuffle output already on disk, reused</text>
+
+  <text x="42" y="520" font-size="11.5" fill="#1a202c">job 2 &#183; stage 3</text>
+  <text x="330" y="520" text-anchor="end" font-size="11.5" font-weight="700" fill="#276749">1 / 1</text>
+  <text x="360" y="520" font-size="11.5" fill="#4a5568">AQEShuffleRead coalesced 200 &#8594; 1, one finisher</text>
+
+  <line x1="30" y1="534" x2="640" y2="534" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="42" y="554" font-size="11.5" font-weight="700" fill="#1a202c">totals: 2 jobs &#183; 21 scheduled &#183; 11 ran &#8212; in 1.96 s (this run)</text>
+
+  <rect x="668" y="432" width="262" height="132" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="680" y="452" font-size="10" font-weight="700" fill="#276749">THE RECKONING</text>
+  <text x="680" y="471" font-size="11" fill="#1a202c">jobs 2 &#8594; 2</text>
+  <text x="918" y="471" text-anchor="end" font-size="11" font-weight="700" fill="#276749">HELD</text>
+  <text x="680" y="489" font-size="11" fill="#1a202c">map / final tasks 10 / 1</text>
+  <text x="918" y="489" text-anchor="end" font-size="11" font-weight="700" fill="#276749">HELD</text>
+  <text x="680" y="507" font-size="11" fill="#1a202c">scheduled / run 21 / 11</text>
+  <text x="918" y="507" text-anchor="end" font-size="11" font-weight="700" fill="#276749">HELD</text>
+  <text x="680" y="525" font-size="11" fill="#1a202c">wall time 2&#8211;4 s &#8594; 7.97 s cold,</text>
+  <text x="918" y="525" text-anchor="end" font-size="11" font-weight="700" fill="#c53030">MISSED</text>
+  <text x="680" y="541" font-size="11" fill="#1a202c">1.96 s warm &#8212; missed both ways:</text>
+  <text x="680" y="557" font-size="10.5" font-weight="700" fill="#c53030">the page cache owns the clock, not Spark</text>
+
+  <line x1="30" y1="584" x2="930" y2="584" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 4: THE ANSWER ============ -->
+  <rect x="30" y="600" width="900" height="72" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="48" y="624" font-size="12" font-weight="700" fill="#276749">THE ANSWER, VERIFIED AGAINST COURSE 1 GROUND TRUTH</text>
+  <text x="48" y="646" font-size="12.5" font-weight="700" fill="#1a202c">262 zones &#183; 9,554,757 trips kept &#183; $256,692,373.14 to the cent &#183; Midtown Center leads with 453,825</text>
+  <text x="48" y="663" font-size="10.5" fill="#4a5568">raw float 256692373.13999116 here vs 256692373.14026505 in Module 1 &#8212; different addition order, same cents: two decompositions agreeing beats either alone</text>
+
+  <text x="480" y="706" text-anchor="middle" font-size="10.5" fill="#a0aec0">Measured on a 10-core macOS machine, Spark 4.2.0 in local[*], AQE on. The structure &#8212; 2 jobs, 21 scheduled, 11 run &#8212; is deterministic; the wall time (7.97 s / 1.96 s / 0.73 s across three runs) is not.</text>
+</svg>

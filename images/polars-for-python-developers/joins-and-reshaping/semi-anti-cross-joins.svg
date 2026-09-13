@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Semi, Anti, and Cross Joins</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">180 real customers, split by whether they've ever returned an item</text>
+
+  <rect x="60" y="60" width="472" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <rect x="532" y="60" width="128" height="40" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="296" y="85" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">158 real customers with a return</text>
+  <text x="596" y="85" text-anchor="middle" font-size="9" font-weight="700" fill="#c53030">22 with none</text>
+
+  <rect x="60" y="118" width="280" height="76" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="200" y="140" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">semi -- had_return</text>
+  <text x="200" y="160" text-anchor="middle" font-size="13" font-family="monospace" fill="#1a202c">158 real rows</text>
+  <text x="200" y="178" text-anchor="middle" font-size="8" fill="#276749">no columns added from returns</text>
+
+  <rect x="380" y="118" width="280" height="76" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="520" y="140" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">anti -- never_returned</text>
+  <text x="520" y="160" text-anchor="middle" font-size="13" font-family="monospace" fill="#1a202c">22 real rows</text>
+  <text x="520" y="178" text-anchor="middle" font-size="8" fill="#c53030">no columns added from returns</text>
+
+  <rect x="210" y="208" width="300" height="38" rx="8" fill="#f7fafc" stroke="#4a5568" stroke-width="1.3" />
+  <text x="360" y="232" text-anchor="middle" font-size="10" font-family="monospace" fill="#1a202c">158 + 22 = 180 real customers</text>
+
+  <line x1="360" y1="246" x2="360" y2="266" stroke="#a0aec0" stroke-width="1.4" />
+
+  <text x="360" y="284" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">cross -- no key, every row paired with every row</text>
+
+  <rect x="130" y="296" width="180" height="50" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="220" y="325" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">8 real categories</text>
+
+  <text x="330" y="330" text-anchor="middle" font-size="16" font-weight="700" fill="#4a5568">&#215;</text>
+
+  <rect x="350" y="296" width="180" height="50" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="440" y="325" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2b6cb0">3 real channels</text>
+
+  <line x1="275" y1="346" x2="275" y2="368" stroke="#a0aec0" stroke-width="1.4" />
+  <line x1="275" y1="368" x2="360" y2="368" stroke="#a0aec0" stroke-width="1.4" />
+  <line x1="360" y1="368" x2="360" y2="384" stroke="#a0aec0" stroke-width="1.4" />
+
+  <rect x="210" y="384" width="300" height="52" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="404" text-anchor="middle" font-size="10" font-weight="700" font-family="monospace" fill="#276749">categories.join(channels, how="cross")</text>
+  <text x="360" y="422" text-anchor="middle" font-size="10" font-family="monospace" fill="#1a202c">24 real rows (8 x 3)</text>
+</svg>

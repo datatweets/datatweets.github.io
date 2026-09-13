@@ -1,0 +1,9 @@
+case_id,scenario,tool_name,service,state,message,requester,reviewer,decision,decision_delay_minutes,change_before_execute,repeat_execution,expected_status
+A01,approved exact action,publish_status_update,api,investigating,We are checking elevated API response times.,operator-17,reviewer-08,approve,2,False,False,executed
+A02,reviewer denies action,publish_status_update,dashboard,monitoring,Dashboard recovery is being monitored.,operator-17,reviewer-08,deny,1,False,False,denied
+A03,decision arrives after expiry,publish_status_update,data-downloads,investigating,Some data downloads are taking longer than normal.,operator-21,reviewer-08,approve,11,False,False,expired
+A04,arguments change after approval,publish_status_update,api,monitoring,API response times have returned to normal.,operator-21,reviewer-11,approve,2,True,False,action_changed
+A05,requester tries self-approval,publish_status_update,dashboard,resolved,Dashboard access has returned to normal.,operator-17,operator-17,approve,1,False,False,self_approval_blocked
+A06,execution before decision,publish_status_update,api,investigating,We are investigating intermittent API errors.,operator-17,,,0,False,False,approval_required
+A07,second execution is blocked,publish_status_update,data-downloads,resolved,Data downloads are operating normally again.,operator-21,reviewer-11,approve,1,False,True,already_executed
+A08,unknown tool is rejected,close_incident,api,resolved,The API incident can now be closed.,operator-17,reviewer-08,approve,1,False,False,unknown_tool

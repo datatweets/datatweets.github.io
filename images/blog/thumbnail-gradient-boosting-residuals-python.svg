@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">How Gradient Boosting Corrects Prediction Errors in Python</title>
+  <desc id="desc">A gradient boosting tutorial thumbnail. A baseline prediction passes through three small correction trees while residual error bars become shorter at each step.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1.2" fill="#59636e">LEARN FROM WHAT REMAINS</text>
+    <text x="92" y="270" font-size="82" font-weight="700" fill="#1b1f24">Correct</text>
+    <text x="92" y="356" font-size="82" font-weight="700" fill="#1b1f24">the errors</text>
+    <rect x="98" y="390" width="430" height="12" rx="6" fill="#0067c0"/>
+    <text x="98" y="474" font-size="31" font-weight="500" fill="#59636e">residuals &#183; small trees &#183; validation</text>
+  </g>
+  <g transform="translate(655 126)" font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="0" y="22" font-size="19" font-weight="600" letter-spacing="1" fill="#59636e">PREDICTION + CORRECTIONS</text>
+    <line x1="34" y1="242" x2="443" y2="242" stroke="#c7ccd2" stroke-width="3"/>
+    <line x1="433" y1="234" x2="447" y2="242" stroke="#c7ccd2" stroke-width="3" stroke-linecap="round"/>
+    <line x1="447" y1="242" x2="433" y2="250" stroke="#c7ccd2" stroke-width="3" stroke-linecap="round"/>
+    <g fill="#ffffff" stroke="#59636e" stroke-width="3">
+      <rect x="62" y="164" width="70" height="39" rx="8"/>
+      <rect x="187" y="164" width="70" height="39" rx="8"/>
+      <rect x="312" y="164" width="70" height="39" rx="8"/>
+    </g>
+    <g stroke="#59636e" stroke-width="3" stroke-linecap="round">
+      <line x1="97" y1="203" x2="97" y2="228"/><line x1="82" y1="228" x2="112" y2="228"/>
+      <line x1="222" y1="203" x2="222" y2="228"/><line x1="207" y1="228" x2="237" y2="228"/>
+      <line x1="347" y1="203" x2="347" y2="228"/><line x1="332" y1="228" x2="362" y2="228"/>
+    </g>
+    <rect x="16" y="224" width="36" height="36" rx="8" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+    <g fill="#0067c0">
+      <rect x="90" y="235" width="14" height="14" rx="3"/><rect x="215" y="235" width="14" height="14" rx="3"/><rect x="340" y="235" width="14" height="14" rx="3"/>
+    </g>
+    <g font-size="17" font-weight="600" fill="#59636e" text-anchor="middle">
+      <text x="34" y="286">BASELINE</text><text x="97" y="139">TREE 1</text><text x="222" y="139">TREE 2</text><text x="347" y="139">TREE 3</text>
+    </g>
+    <text x="0" y="345" font-size="18" font-weight="600" fill="#59636e">RESIDUAL ERROR</text>
+    <g>
+      <rect x="0" y="370" width="110" height="20" rx="10" fill="#d9e9f6"/><rect x="0" y="370" width="110" height="20" rx="10" fill="#0067c0" opacity="0.82"/>
+      <rect x="126" y="370" width="110" height="20" rx="10" fill="#d9e9f6"/><rect x="126" y="370" width="78" height="20" rx="10" fill="#0067c0" opacity="0.72"/>
+      <rect x="252" y="370" width="110" height="20" rx="10" fill="#d9e9f6"/><rect x="252" y="370" width="50" height="20" rx="10" fill="#0067c0" opacity="0.62"/>
+      <rect x="378" y="370" width="78" height="20" rx="10" fill="#d9e9f6"/><rect x="378" y="370" width="25" height="20" rx="10" fill="#0067c0" opacity="0.52"/>
+    </g>
+    <g font-size="16" fill="#59636e" text-anchor="middle">
+      <text x="55" y="421">start</text><text x="181" y="421">round 1</text><text x="307" y="421">round 2</text><text x="417" y="421">round 3</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+erDiagram
+    ZONES {
+        integer zone_id
+        string zone_name
+        string borough
+        boolean is_airport
+    }
+    TRIPS {
+        timestamp pickup_time
+        integer pickup_zone
+        string pickup_zone_name
+        numeric fare_amount
+        numeric total_amount
+    }
+    ZONES ||--o{ TRIPS : describes

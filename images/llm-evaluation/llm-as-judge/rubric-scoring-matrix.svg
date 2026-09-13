@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="figtitle figdesc">
+  <title id="figtitle">A rubric-scoring matrix for grading Docent answers</title>
+  <desc id="figdesc">A table with three criterion rows (Correctness, Groundedness, Helpfulness) and three score-level columns (1, 2, 3). Each cell spells out what that score means for that criterion, so a judge maps an answer to an explicit level instead of guessing a bare number. Below the table, a flow shows the judge reading question, answer, and reference, then emitting one JSON object with a rationale written before three integer scores, which are aggregated into a per-criterion report.</desc>
+  <rect x="0" y="0" width="920" height="560" fill="#ffffff"/>
+
+  <text x="30" y="40" font-size="22" font-weight="700" fill="#1a202c">Docent answer rubric: each score level is defined, not guessed</text>
+
+  <!-- Column headers -->
+  <rect x="30" y="64" width="200" height="44" fill="#f7fafc" stroke="#e2e8f0"/>
+  <text x="130" y="92" font-size="14" font-weight="700" fill="#4a5568" text-anchor="middle">Criterion</text>
+  <rect x="230" y="64" width="220" height="44" fill="#fff5f5" stroke="#e2e8f0"/>
+  <text x="340" y="92" font-size="14" font-weight="700" fill="#c53030" text-anchor="middle">Score 1 &#8212; weak</text>
+  <rect x="450" y="64" width="220" height="44" fill="#fffaf0" stroke="#e2e8f0"/>
+  <text x="560" y="92" font-size="14" font-weight="700" fill="#c05621" text-anchor="middle">Score 2 &#8212; partial</text>
+  <rect x="670" y="64" width="220" height="44" fill="#f0fff4" stroke="#e2e8f0"/>
+  <text x="780" y="92" font-size="14" font-weight="700" fill="#276749" text-anchor="middle">Score 3 &#8212; strong</text>
+
+  <!-- Row 1: Correctness -->
+  <rect x="30" y="108" width="200" height="88" fill="#ebf8ff" stroke="#e2e8f0"/>
+  <text x="46" y="150" font-size="15" font-weight="700" fill="#2b6cb0">Correctness</text>
+  <text x="46" y="170" font-size="11" fill="#718096">matches the docs?</text>
+  <rect x="230" y="108" width="220" height="88" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="242" y="132" font-size="12" fill="#4a5568">Contradicts the</text>
+  <text x="242" y="150" font-size="12" fill="#4a5568">reference or is</text>
+  <text x="242" y="168" font-size="12" fill="#4a5568">factually wrong.</text>
+  <rect x="450" y="108" width="220" height="88" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="462" y="132" font-size="12" fill="#4a5568">Some detail wrong,</text>
+  <text x="462" y="150" font-size="12" fill="#4a5568">missing, or</text>
+  <text x="462" y="168" font-size="12" fill="#4a5568">imprecise.</text>
+  <rect x="670" y="108" width="220" height="88" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="682" y="132" font-size="12" fill="#4a5568">Fully matches the</text>
+  <text x="682" y="150" font-size="12" fill="#4a5568">reference; no</text>
+  <text x="682" y="168" font-size="12" fill="#4a5568">factual errors.</text>
+
+  <!-- Row 2: Groundedness -->
+  <rect x="30" y="196" width="200" height="88" fill="#ebf8ff" stroke="#e2e8f0"/>
+  <text x="46" y="238" font-size="15" font-weight="700" fill="#2b6cb0">Groundedness</text>
+  <text x="46" y="258" font-size="11" fill="#718096">supported by context?</text>
+  <rect x="230" y="196" width="220" height="88" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="242" y="220" font-size="12" fill="#4a5568">Claims not in the</text>
+  <text x="242" y="238" font-size="12" fill="#4a5568">context; invents</text>
+  <text x="242" y="256" font-size="12" fill="#4a5568">facts.</text>
+  <rect x="450" y="196" width="220" height="88" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="462" y="220" font-size="12" fill="#4a5568">Mostly grounded but</text>
+  <text x="462" y="238" font-size="12" fill="#4a5568">one unsupported</text>
+  <text x="462" y="256" font-size="12" fill="#4a5568">detail.</text>
+  <rect x="670" y="196" width="220" height="88" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="682" y="220" font-size="12" fill="#4a5568">Every claim is</text>
+  <text x="682" y="238" font-size="12" fill="#4a5568">supported by the</text>
+  <text x="682" y="256" font-size="12" fill="#4a5568">context.</text>
+
+  <!-- Row 3: Helpfulness -->
+  <rect x="30" y="284" width="200" height="88" fill="#ebf8ff" stroke="#e2e8f0"/>
+  <text x="46" y="326" font-size="15" font-weight="700" fill="#2b6cb0">Helpfulness</text>
+  <text x="46" y="346" font-size="11" fill="#718096">complete and clear?</text>
+  <rect x="230" y="284" width="220" height="88" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="242" y="308" font-size="12" fill="#4a5568">Does not address</text>
+  <text x="242" y="326" font-size="12" fill="#4a5568">the question or is</text>
+  <text x="242" y="344" font-size="12" fill="#4a5568">unusable.</text>
+  <rect x="450" y="284" width="220" height="88" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="462" y="308" font-size="12" fill="#4a5568">Addresses it but is</text>
+  <text x="462" y="326" font-size="12" fill="#4a5568">incomplete or</text>
+  <text x="462" y="344" font-size="12" fill="#4a5568">padded.</text>
+  <rect x="670" y="284" width="220" height="88" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="682" y="308" font-size="12" fill="#4a5568">Directly and fully</text>
+  <text x="682" y="326" font-size="12" fill="#4a5568">answers; concise</text>
+  <text x="682" y="344" font-size="12" fill="#4a5568">and clear.</text>
+
+  <!-- Flow row -->
+  <rect x="30" y="410" width="250" height="110" rx="8" fill="#faf5ff" stroke="#9f7aea"/>
+  <text x="155" y="436" font-size="13" font-weight="700" fill="#6b46c1" text-anchor="middle">Judge input</text>
+  <text x="155" y="462" font-size="12" fill="#4a5568" text-anchor="middle">question + answer</text>
+  <text x="155" y="482" font-size="12" fill="#4a5568" text-anchor="middle">+ reference/context</text>
+  <text x="155" y="502" font-size="12" fill="#4a5568" text-anchor="middle">+ this rubric</text>
+
+  <path d="M280 465 L330 465" stroke="#a0aec0" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="335" y="410" width="270" height="110" rx="8" fill="#fffaf0" stroke="#ed8936"/>
+  <text x="470" y="436" font-size="13" font-weight="700" fill="#c05621" text-anchor="middle">One JSON object</text>
+  <text x="352" y="462" font-size="12" fill="#4a5568">rationale FIRST (reasoning),</text>
+  <text x="352" y="482" font-size="12" fill="#4a5568">then correctness / groundedness</text>
+  <text x="352" y="502" font-size="12" fill="#4a5568">/ helpfulness as integers 1&#8211;3</text>
+
+  <path d="M605 465 L655 465" stroke="#a0aec0" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="660" y="410" width="230" height="110" rx="8" fill="#f0fff4" stroke="#48bb78"/>
+  <text x="775" y="436" font-size="13" font-weight="700" fill="#276749" text-anchor="middle">Parse, validate, report</text>
+  <text x="677" y="462" font-size="12" fill="#4a5568">per-criterion scores show</text>
+  <text x="677" y="482" font-size="12" fill="#4a5568">WHICH dimension is weak,</text>
+  <text x="677" y="502" font-size="12" fill="#4a5568">plus an aggregate average</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#a0aec0"/>
+    </marker>
+  </defs>
+</svg>

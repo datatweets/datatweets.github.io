@@ -1,0 +1,23 @@
+erDiagram
+    RAW_TRIPS {
+        timestamp pickup_time
+        integer pickup_zone
+        numeric total_amount
+    }
+    STG_CITYFLOW__TRIPS {
+        timestamp pickup_time
+        integer pickup_zone
+        numeric tip_and_fees
+    }
+    RAW_ZONES {
+        integer location_id
+        string borough
+        string zone
+    }
+    STG_CITYFLOW__ZONES {
+        integer zone_id
+        string borough
+        string zone_name
+    }
+    RAW_TRIPS ||--|| STG_CITYFLOW__TRIPS : source
+    RAW_ZONES ||--|| STG_CITYFLOW__ZONES : source

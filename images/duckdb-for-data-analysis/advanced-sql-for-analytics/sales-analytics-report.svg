@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="420" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A Four-Part Sales Analytics Report</text>
+
+  <rect x="30" y="52" width="180" height="70" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="120" y="74" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">Part 1</text>
+  <text x="120" y="92" text-anchor="middle" font-size="9.5" fill="#22543d">Monthly + running total</text>
+  <text x="120" y="108" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#276749">$9,195,043.62</text>
+
+  <rect x="230" y="52" width="180" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="320" y="74" text-anchor="middle" font-size="10" font-weight="700" fill="#2c5282">Part 2</text>
+  <text x="320" y="92" text-anchor="middle" font-size="9.5" fill="#2c5282">Top 3 per category</text>
+  <text x="320" y="108" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#2c5282">24 rows (ROW_NUMBER)</text>
+
+  <rect x="430" y="52" width="170" height="70" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.3" />
+  <text x="515" y="74" text-anchor="middle" font-size="10" font-weight="700" fill="#9c4221">Part 3</text>
+  <text x="515" y="92" text-anchor="middle" font-size="9.5" fill="#9c4221">Category x quarter</text>
+  <text x="515" y="108" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#9c4221">8 rows (PIVOT)</text>
+
+  <rect x="620" y="52" width="150" height="70" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.3" />
+  <text x="695" y="74" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">Part 4</text>
+  <text x="695" y="92" text-anchor="middle" font-size="9.5" fill="#22543d">By weekday</text>
+  <text x="695" y="108" text-anchor="middle" font-size="9" font-family="Menlo, monospace" fill="#276749">$9,195,043.62</text>
+
+  <line x1="120" y1="122" x2="350" y2="170" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowS)" />
+  <line x1="695" y1="122" x2="450" y2="170" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#arrowS)" />
+
+  <rect x="150" y="170" width="500" height="70" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="400" y="196" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">Parts 1 and 4: two structurally unrelated queries</text>
+  <text x="400" y="216" text-anchor="middle" font-size="10" fill="#276749">a window function's running total vs. a plain GROUP BY -- both land on $9,195,043.62</text>
+
+  <line x1="400" y1="240" x2="400" y2="272" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowS)" />
+
+  <rect x="200" y="272" width="400" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="400" y="300" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">agreement is a real correctness signal</text>
+
+  <rect x="90" y="342" width="620" height="56" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3" />
+  <text x="400" y="366" text-anchor="middle" font-size="10" fill="#2d3748">All 4 parts written to JSON, verified on read-back:</text>
+  <text x="400" y="384" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#2d3748">24, 24, 8, 7 rows -- matching every part's own count</text>
+
+  <defs>
+    <marker id="arrowS" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0" />
+    </marker>
+  </defs>
+</svg>

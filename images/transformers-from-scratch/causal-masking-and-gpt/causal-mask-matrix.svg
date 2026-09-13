@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="900" height="560" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#1a202c">The Causal Mask: blocking the future before softmax</text>
+
+  <!-- ===================== LEFT: plain self-attention ===================== -->
+  <text x="205" y="72" text-anchor="middle" font-size="16" font-weight="700" fill="#2b6cb0">Plain self-attention</text>
+  <text x="205" y="92" text-anchor="middle" font-size="12" fill="#4a5568">every position attends to EVERY position</text>
+
+  <!-- column header -->
+  <text x="205" y="120" text-anchor="middle" font-size="11" fill="#718096">key position j &#8594;</text>
+  <!-- row header -->
+  <text x="60" y="250" text-anchor="middle" font-size="11" fill="#718096" transform="rotate(-90 60 250)">query position i &#8594;</text>
+
+  <!-- 5x5 grid: all cells attended -->
+  <!-- cells: x=95+col*48, y=135+row*48, size 44 -->
+  <!-- row 0 -->
+  <rect x="95" y="135" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="143" y="135" width="44" height="44" fill="#fed7d7" stroke="#fc8181"/>
+  <rect x="191" y="135" width="44" height="44" fill="#fed7d7" stroke="#fc8181"/>
+  <rect x="239" y="135" width="44" height="44" fill="#fed7d7" stroke="#fc8181"/>
+  <rect x="287" y="135" width="44" height="44" fill="#fed7d7" stroke="#fc8181"/>
+  <!-- row 1 -->
+  <rect x="95" y="183" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="143" y="183" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="191" y="183" width="44" height="44" fill="#fed7d7" stroke="#fc8181"/>
+  <rect x="239" y="183" width="44" height="44" fill="#fed7d7" stroke="#fc8181"/>
+  <rect x="287" y="183" width="44" height="44" fill="#fed7d7" stroke="#fc8181"/>
+  <!-- row 2 -->
+  <rect x="95" y="231" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="143" y="231" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="191" y="231" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="239" y="231" width="44" height="44" fill="#fed7d7" stroke="#fc8181"/>
+  <rect x="287" y="231" width="44" height="44" fill="#fed7d7" stroke="#fc8181"/>
+  <!-- row 3 -->
+  <rect x="95" y="279" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="143" y="279" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="191" y="279" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="239" y="279" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="287" y="279" width="44" height="44" fill="#fed7d7" stroke="#fc8181"/>
+  <!-- row 4 -->
+  <rect x="95" y="327" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="143" y="327" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="191" y="327" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="239" y="327" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+  <rect x="287" y="327" width="44" height="44" fill="#bee3f8" stroke="#4299e1"/>
+
+  <text x="205" y="405" text-anchor="middle" font-size="12" fill="#c53030" font-weight="600">red cells (j &gt; i) = looking at the FUTURE = cheating</text>
+
+  <!-- ===================== middle arrow ===================== -->
+  <line x1="360" y1="253" x2="452" y2="253" stroke="#4a5568" stroke-width="2.5"/>
+  <polygon points="452,253 442,247 442,259" fill="#4a5568"/>
+  <text x="406" y="228" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1a202c">apply mask</text>
+  <text x="406" y="278" text-anchor="middle" font-size="12" fill="#6b46c1">S[j&gt;i] = &#8722;1e9</text>
+  <text x="406" y="296" text-anchor="middle" font-size="12" fill="#6b46c1">before softmax</text>
+
+  <!-- ===================== RIGHT: causal (masked) ===================== -->
+  <text x="695" y="72" text-anchor="middle" font-size="16" font-weight="700" fill="#276749">Causal (masked) attention</text>
+  <text x="695" y="92" text-anchor="middle" font-size="12" fill="#4a5568">position i attends only to positions &#8804; i</text>
+
+  <text x="695" y="120" text-anchor="middle" font-size="11" fill="#718096">key position j &#8594;</text>
+  <text x="550" y="250" text-anchor="middle" font-size="11" fill="#718096" transform="rotate(-90 550 250)">query position i &#8594;</text>
+
+  <!-- grid x base = 585 -->
+  <!-- row 0: only col 0 -->
+  <rect x="585" y="135" width="44" height="44" fill="#9ae6b4" stroke="#48bb78"/>
+  <text x="607" y="163" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">1.0</text>
+  <rect x="633" y="135" width="44" height="44" fill="#edf2f7" stroke="#cbd5e0"/>
+  <rect x="681" y="135" width="44" height="44" fill="#edf2f7" stroke="#cbd5e0"/>
+  <rect x="729" y="135" width="44" height="44" fill="#edf2f7" stroke="#cbd5e0"/>
+  <rect x="777" y="135" width="44" height="44" fill="#edf2f7" stroke="#cbd5e0"/>
+  <!-- row 1 -->
+  <rect x="585" y="183" width="44" height="44" fill="#c6f6d5" stroke="#48bb78"/>
+  <rect x="633" y="183" width="44" height="44" fill="#9ae6b4" stroke="#48bb78"/>
+  <rect x="681" y="183" width="44" height="44" fill="#edf2f7" stroke="#cbd5e0"/>
+  <rect x="729" y="183" width="44" height="44" fill="#edf2f7" stroke="#cbd5e0"/>
+  <rect x="777" y="183" width="44" height="44" fill="#edf2f7" stroke="#cbd5e0"/>
+  <!-- row 2 -->
+  <rect x="585" y="231" width="44" height="44" fill="#c6f6d5" stroke="#48bb78"/>
+  <rect x="633" y="231" width="44" height="44" fill="#c6f6d5" stroke="#48bb78"/>
+  <rect x="681" y="231" width="44" height="44" fill="#9ae6b4" stroke="#48bb78"/>
+  <rect x="729" y="231" width="44" height="44" fill="#edf2f7" stroke="#cbd5e0"/>
+  <rect x="777" y="231" width="44" height="44" fill="#edf2f7" stroke="#cbd5e0"/>
+  <!-- row 3 -->
+  <rect x="585" y="279" width="44" height="44" fill="#c6f6d5" stroke="#48bb78"/>
+  <rect x="633" y="279" width="44" height="44" fill="#c6f6d5" stroke="#48bb78"/>
+  <rect x="681" y="279" width="44" height="44" fill="#c6f6d5" stroke="#48bb78"/>
+  <rect x="729" y="279" width="44" height="44" fill="#9ae6b4" stroke="#48bb78"/>
+  <rect x="777" y="279" width="44" height="44" fill="#edf2f7" stroke="#cbd5e0"/>
+  <!-- row 4 -->
+  <rect x="585" y="327" width="44" height="44" fill="#c6f6d5" stroke="#48bb78"/>
+  <rect x="633" y="327" width="44" height="44" fill="#c6f6d5" stroke="#48bb78"/>
+  <rect x="681" y="327" width="44" height="44" fill="#c6f6d5" stroke="#48bb78"/>
+  <rect x="729" y="327" width="44" height="44" fill="#c6f6d5" stroke="#48bb78"/>
+  <rect x="777" y="327" width="44" height="44" fill="#9ae6b4" stroke="#48bb78"/>
+
+  <!-- infinity labels on masked cells (upper triangle) -->
+  <text x="655" y="161" text-anchor="middle" font-size="12" fill="#a0aec0">0</text>
+  <text x="703" y="161" text-anchor="middle" font-size="12" fill="#a0aec0">0</text>
+  <text x="751" y="161" text-anchor="middle" font-size="12" fill="#a0aec0">0</text>
+  <text x="799" y="161" text-anchor="middle" font-size="12" fill="#a0aec0">0</text>
+  <text x="703" y="209" text-anchor="middle" font-size="12" fill="#a0aec0">0</text>
+  <text x="751" y="209" text-anchor="middle" font-size="12" fill="#a0aec0">0</text>
+  <text x="799" y="209" text-anchor="middle" font-size="12" fill="#a0aec0">0</text>
+  <text x="751" y="257" text-anchor="middle" font-size="12" fill="#a0aec0">0</text>
+  <text x="799" y="257" text-anchor="middle" font-size="12" fill="#a0aec0">0</text>
+  <text x="799" y="305" text-anchor="middle" font-size="12" fill="#a0aec0">0</text>
+
+  <text x="695" y="405" text-anchor="middle" font-size="12" fill="#276749" font-weight="600">lower-triangular: gray cells = softmax(&#8722;1e9) &#8776; 0</text>
+
+  <!-- bottom explanatory band -->
+  <rect x="95" y="440" width="726" height="86" rx="8" fill="#faf5ff" stroke="#9f7aea"/>
+  <text x="112" y="466" font-size="13" font-weight="700" fill="#6b46c1">Forward:</text>
+  <text x="185" y="466" font-size="12.5" fill="#4a5568">mask = np.triu(np.ones((T,T), bool), k=1); S = np.where(mask, &#8722;1e9, S); A = softmax(S)</text>
+  <text x="112" y="492" font-size="13" font-weight="700" fill="#6b46c1">Backward:</text>
+  <text x="195" y="492" font-size="12.5" fill="#4a5568">re-apply the mask &#8212; dS = np.where(mask, 0, dS) &#8212; so future cells receive zero gradient.</text>
+  <text x="112" y="514" font-size="12" fill="#718096">Each row of the masked matrix still sums to 1: the surviving weights are re-normalized by softmax over the visible past.</text>
+</svg>

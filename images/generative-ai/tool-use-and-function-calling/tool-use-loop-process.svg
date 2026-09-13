@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="330" viewBox="0 0 800 330" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect width="800" height="330" fill="#ffffff" />
+<text x="400" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The tool-use loop: one round, repeated</text>
+
+<rect x="300" y="46" width="200" height="54" rx="8" fill="#ebf4ff" stroke="#4299e1" stroke-width="1.7" />
+<text x="400" y="68" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">1. Call the model</text>
+<text x="400" y="84" text-anchor="middle" font-size="9" fill="#3182ce">messages + tool definitions</text>
+
+<line x1="400" y1="100" x2="400" y2="124" stroke="#a0aec0" stroke-width="1.6" />
+<polygon points="400 128 395 118 405 118" fill="#a0aec0" />
+
+<rect x="270" y="128" width="260" height="46" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+<text x="400" y="156" text-anchor="middle" font-size="11" font-weight="700" fill="#2d3748">2. Check stop_reason</text>
+
+<path d="M400 174 L400 192 L145 192 L145 214" fill="none" stroke="#a0aec0" stroke-width="1.6" />
+<polygon points="145 218 140 208 150 208" fill="#a0aec0" />
+<text x="270" y="188" text-anchor="middle" font-size="9.5" font-weight="700" fill="#dd6b20">tool_use</text>
+
+<path d="M400 174 L400 192 L655 192 L655 214" fill="none" stroke="#a0aec0" stroke-width="1.6" />
+<polygon points="655 218 650 208 660 208" fill="#a0aec0" />
+<text x="540" y="188" text-anchor="middle" font-size="9.5" font-weight="700" fill="#38a169">end_turn</text>
+
+<rect x="30" y="218" width="230" height="60" rx="8" fill="#fffaf0" stroke="#dd6b20" stroke-width="1.7" />
+<text x="145" y="242" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c05621">3. Run every requested</text>
+<text x="145" y="258" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c05621">tool this round</text>
+
+<line x1="260" y1="248" x2="284" y2="248" stroke="#a0aec0" stroke-width="1.6" />
+<polygon points="288 248 279 243.5 279 252.5" fill="#a0aec0" />
+
+<rect x="290" y="218" width="240" height="60" rx="8" fill="#fffaf0" stroke="#dd6b20" stroke-width="1.7" />
+<text x="410" y="242" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c05621">4. Send ALL tool_results</text>
+<text x="410" y="258" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c05621">back in one user turn</text>
+
+<rect x="560" y="218" width="210" height="60" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.7" />
+<text x="665" y="242" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2f855a">Return the final</text>
+<text x="665" y="258" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2f855a">answer text</text>
+
+<path d="M530 248 L760 248 L760 73 L504 73" fill="none" stroke="#a0aec0" stroke-width="1.6" stroke-dasharray="5,3" />
+<polygon points="500 73 510 68 510 78" fill="#a0aec0" />
+<text x="760" y="160" text-anchor="middle" font-size="9.5" fill="#718096" transform="rotate(90 760 160)">repeat while tool_use</text>
+
+<text x="400" y="312" text-anchor="middle" font-size="9.5" fill="#a0aec0">Steps 1&#8211;4 repeat as many rounds as the model needs, then stop at end_turn.</text>
+</svg>

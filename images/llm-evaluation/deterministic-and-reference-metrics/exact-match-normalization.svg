@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="emTitle emDesc">
+  <title id="emTitle">Normalization pipeline and its effect on exact-match score</title>
+  <desc id="emDesc">Top: a five-stage normalization pipeline turns the raw prediction "The missing, or invalid API key." into "missing or invalid api key" by lowercasing, removing punctuation, dropping articles, and collapsing whitespace, so it matches the normalized reference. Bottom: two bars comparing exact match over eight prediction and reference pairs. Raw exact match is 2 of 8, or 0.25. Normalized exact match is 7 of 8, or 0.875.</desc>
+
+  <rect x="0" y="0" width="760" height="480" fill="#ffffff"/>
+
+  <!-- ===== Title ===== -->
+  <text x="30" y="40" font-size="20" font-weight="700" fill="#1a202c">Normalization makes exact match fair</text>
+  <text x="30" y="62" font-size="13" fill="#718096">Same fact, different formatting &#8594; one comparison that agrees</text>
+
+  <!-- ===== Pipeline ===== -->
+  <text x="30" y="98" font-size="13" font-weight="600" fill="#4a5568">The SQuAD-style pipeline, stage by stage</text>
+
+  <!-- raw pill -->
+  <rect x="30" y="112" width="196" height="46" rx="8" fill="#fff5f5" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="128" y="132" font-size="11" fill="#c53030" text-anchor="middle" font-weight="600">raw prediction</text>
+  <text x="128" y="149" font-size="11" fill="#4a5568" text-anchor="middle" font-family="monospace">"The missing, or invalid API key."</text>
+
+  <!-- stage chips -->
+  <g font-size="11" fill="#2b6cb0" text-anchor="middle">
+    <rect x="248" y="112" width="86" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+    <text x="291" y="131" font-weight="600">lowercase</text>
+    <text x="291" y="148" font-family="monospace" fill="#4a5568">"the ..."</text>
+
+    <rect x="356" y="112" width="96" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+    <text x="404" y="131" font-weight="600">strip punct</text>
+    <text x="404" y="148" font-family="monospace" fill="#4a5568">no . ,</text>
+
+    <rect x="474" y="112" width="104" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+    <text x="526" y="131" font-weight="600">drop articles</text>
+    <text x="526" y="148" font-family="monospace" fill="#4a5568">a / an / the</text>
+
+    <rect x="600" y="112" width="130" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+    <text x="665" y="131" font-weight="600">collapse spaces</text>
+    <text x="665" y="148" font-family="monospace" fill="#4a5568">one space</text>
+  </g>
+
+  <!-- arrows between chips -->
+  <g fill="#a0aec0" font-size="14">
+    <text x="237" y="140" text-anchor="middle">&#8594;</text>
+    <text x="345" y="140" text-anchor="middle">&#8594;</text>
+    <text x="463" y="140" text-anchor="middle">&#8594;</text>
+    <text x="589" y="140" text-anchor="middle">&#8594;</text>
+  </g>
+
+  <!-- normalized result row -->
+  <rect x="30" y="178" width="330" height="42" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="45" y="198" font-size="11" fill="#276749" font-weight="600">normalized prediction</text>
+  <text x="45" y="214" font-size="11" fill="#4a5568" font-family="monospace">"missing or invalid api key"</text>
+
+  <rect x="372" y="178" width="330" height="42" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+  <text x="387" y="198" font-size="11" fill="#276749" font-weight="600">normalized reference</text>
+  <text x="387" y="214" font-size="11" fill="#4a5568" font-family="monospace">"missing or invalid api key"</text>
+
+  <text x="366" y="205" font-size="16" fill="#276749" text-anchor="middle" font-weight="700">=</text>
+
+  <!-- ===== Divider ===== -->
+  <line x1="30" y1="248" x2="730" y2="248" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ===== Bars ===== -->
+  <text x="30" y="278" font-size="13" font-weight="600" fill="#4a5568">Aggregate exact match over 8 prediction / reference pairs</text>
+
+  <!-- axis baseline -->
+  <line x1="180" y1="308" x2="180" y2="430" stroke="#a0aec0" stroke-width="1.5"/>
+
+  <!-- scale ticks 0 and 1.0 -->
+  <text x="170" y="312" font-size="10" fill="#718096" text-anchor="end">1.0</text>
+  <text x="170" y="434" font-size="10" fill="#718096" text-anchor="end">0.0</text>
+  <line x1="176" y1="308" x2="180" y2="308" stroke="#a0aec0" stroke-width="1.5"/>
+
+  <!-- raw bar: 0.25 of 120px height = 30px -->
+  <text x="60" y="360" font-size="13" fill="#4a5568">raw EM</text>
+  <rect x="190" y="400" width="200" height="30" rx="4" fill="#fc8181"/>
+  <text x="400" y="420" font-size="13" fill="#c53030" font-weight="700">2 / 8 = 0.250</text>
+
+  <!-- normalized bar: 0.875 of 120px = 105px -->
+  <text x="42" y="370" font-size="13" fill="#4a5568">normalized</text>
+  <text x="52" y="386" font-size="13" fill="#4a5568">EM</text>
+  <rect x="410" y="325" width="200" height="105" rx="4" fill="#48bb78"/>
+  <text x="620" y="360" font-size="13" fill="#276749" font-weight="700">7 / 8 = 0.875</text>
+
+  <!-- note: one pair stays wrong -->
+  <text x="30" y="462" font-size="11" fill="#718096">The one pair that still scores 0 is a genuinely wrong answer ("All paid plans" vs "Only the Scale plan") &#8212; normalization cannot rescue a wrong fact.</text>
+</svg>

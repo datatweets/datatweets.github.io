@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="380" viewBox="0 0 1060 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>44% of possible zone-hours actually happened</title>
+  <desc>A grid representing 265 zones down the side and 24 hours across the top, 6,360 total possible zone-hour cells. A shaded region covering 44% of the grid represents 2,814 zone-hours that had at least one real trip. The remaining 56%, unshaded, represents 3,546 zone-hours that dbt_utils.date_spine crossed with the zones dimension revealed as genuinely empty -- combinations no group by query could ever surface, since a group by only reports on rows that already exist. A caption states this coverage report answers a question no earlier module asked: not what happened, but what didn't.</desc>
+  <rect width="1060" height="380" fill="#ffffff" />
+  <text x="530" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">A date_spine Crossed With Every Zone Reveals What Never Happened</text>
+
+  <text x="200" y="60" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2d3748">265 zones x 24 hours = 6,360 possible zone-hours</text>
+  <g>
+    <!-- grid: 40 cols x 15 rows visual approximation of the 265x24 grid, shaded region ~44% -->
+    <rect x="60" y="75" width="280" height="200" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1" />
+    <rect x="60" y="75" width="280" height="88" fill="#48bb78" fill-opacity="0.75" />
+    <text x="200" y="115" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">2,814 filled</text>
+    <text x="200" y="132" text-anchor="middle" font-size="9" fill="#ffffff">(44%) -- at least 1 real trip</text>
+    <rect x="60" y="163" width="280" height="112" fill="#fed7d7" fill-opacity="0.75" />
+    <text x="200" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#822727">3,546 empty</text>
+    <text x="200" y="227" text-anchor="middle" font-size="9" fill="#822727">(56%) -- zero trips, ever</text>
+    <text x="200" y="244" text-anchor="middle" font-size="8.5" fill="#822727">never visible to any group by</text>
+  </g>
+
+  <rect x="420" y="75" width="600" height="200" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="720" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">Why a group by alone can't see this</text>
+  <text x="440" y="130" font-size="9.5" fill="#2c5282">1. int_trips_summed_to_hour groups only the rows that exist</text>
+  <text x="440" y="152" font-size="9.5" fill="#2c5282">   -- 2,814 zone-hours, one per real trip group</text>
+  <text x="440" y="180" font-size="9.5" fill="#2c5282">2. dbt_utils.date_spine generates all 24 real hours</text>
+  <text x="440" y="202" font-size="9.5" fill="#2c5282">   independent of whether any trip happened in them</text>
+  <text x="440" y="230" font-size="9.5" fill="#2c5282">3. Crossed against all 265 zones, then left-joined</text>
+  <text x="440" y="252" font-size="9.5" fill="#2c5282">   against real trip data -- 3,546 rows come back with</text>
+  <text x="440" y="270" font-size="9.5" font-weight="700" fill="#2c5282">   trip_count = 0, not absent from the result at all</text>
+
+  <rect x="130" y="300" width="800" height="55" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="530" y="325" text-anchor="middle" font-size="10.5" font-weight="700" fill="#7b341e">A coverage report answers a question no earlier module asked:</text>
+  <text x="530" y="343" text-anchor="middle" font-size="10.5" fill="#7b341e">not what happened, but what didn't.</text>
+
+</svg>

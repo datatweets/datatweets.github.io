@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="400" viewBox="0 0 1060 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The identical query, two different moments, two different correct answers</title>
+  <desc>A diagram showing the as-of query pattern applied to zones_snapshot: dbt_valid_from less than or equal to as_of, and dbt_valid_to greater than as_of or dbt_valid_to is null. Applied at a moment inside zone 33's own recorded Brooklyn window, the query returns Brooklyn. Applied at the current moment, the identical query returns Queens. A separate panel shows zones itself, queried for zone 33, only ever able to answer Queens, since it has no dbt_valid_from or dbt_valid_to columns at all to express any other moment. A summary panel confirms 265 zones show exactly one currently-valid row each, and exactly one zone, 33, has more than one version recorded in its own real history.</desc>
+  <rect width="1060" height="400" fill="#ffffff" />
+  <text x="530" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">The Identical Query, Two Moments, Two Correct Answers</text>
+  <text x="530" y="50" text-anchor="middle" font-size="10" font-family="Menlo, monospace" fill="#4a5568">dbt_valid_from &lt;= :as_of AND (dbt_valid_to &gt; :as_of OR dbt_valid_to IS NULL)</text>
+
+  <rect x="30" y="70" width="460" height="140" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="260" y="93" text-anchor="middle" font-size="11" font-weight="700" fill="#2c5282">:as_of = a moment inside zone 33's Brooklyn window</text>
+  <rect x="55" y="105" width="410" height="50" rx="6" fill="#2c5282" />
+  <text x="260" y="127" text-anchor="middle" font-size="11" font-weight="700" fill="#ebf8ff">zones_snapshot -&gt; Brooklyn</text>
+  <text x="260" y="145" text-anchor="middle" font-size="8.5" fill="#ebf8ff">correctly matches the closed-out row</text>
+  <text x="260" y="185" text-anchor="middle" font-size="9" fill="#2c5282">zones itself: no dbt_valid_from/to columns --</text>
+  <text x="260" y="200" text-anchor="middle" font-size="9" fill="#2c5282">this question can't even be asked of it</text>
+
+  <rect x="570" y="70" width="460" height="140" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="800" y="93" text-anchor="middle" font-size="11" font-weight="700" fill="#22543d">:as_of = right now</text>
+  <rect x="595" y="105" width="410" height="50" rx="6" fill="#22543d" />
+  <text x="800" y="127" text-anchor="middle" font-size="11" font-weight="700" fill="#f0fff4">zones_snapshot -&gt; Queens</text>
+  <text x="800" y="145" text-anchor="middle" font-size="8.5" fill="#f0fff4">correctly matches the currently-open row</text>
+  <text x="800" y="185" text-anchor="middle" font-size="9" fill="#22543d">zones itself: also Queens --</text>
+  <text x="800" y="200" text-anchor="middle" font-size="9" fill="#22543d">the only moment it has ever been able to answer</text>
+
+  <rect x="130" y="235" width="800" height="115" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.6" />
+  <text x="530" y="260" text-anchor="middle" font-size="11" font-weight="700" fill="#553c9a">Extended across all 265 zones at once</text>
+  <text x="530" y="288" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#553c9a">265 zones -- exactly 1 currently-valid row each</text>
+  <text x="530" y="312" text-anchor="middle" font-size="12" font-weight="700" font-family="Menlo, monospace" fill="#553c9a">1 zone (33) -- 2 recorded versions, its own real history</text>
+  <text x="530" y="335" text-anchor="middle" font-size="9" fill="#553c9a">every other zone: unchanged, single unbroken row</text>
+
+  <text x="530" y="378" text-anchor="middle" font-size="10" font-weight="700" fill="#2d3748">Not a contradiction -- the one correct answer for each of two genuinely different moments.</text>
+</svg>

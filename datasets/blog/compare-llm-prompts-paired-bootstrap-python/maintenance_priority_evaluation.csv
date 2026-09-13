@@ -1,0 +1,121 @@
+case_id,difficulty,equipment,note,expected_priority,prompt_a_prediction,prompt_b_prediction
+M001,easy,air handler,"At the north room, the air handler has a faint new vibration. The required action is stated clearly.",monitor,monitor,monitor
+M002,easy,water pump,"At the north room, the water pump has repeated warning lights. The required action is stated clearly.",schedule,schedule,schedule
+M003,easy,battery cabinet,"At the north room, the battery cabinet has smoke near the housing. The required action is stated clearly.",urgent,urgent,urgent
+M004,easy,lift motor,"At the north room, the lift motor has a small temperature rise. The required action is stated clearly.",monitor,monitor,monitor
+M005,easy,cooling fan,"At the north room, the cooling fan has reduced flow for two shifts. The required action is stated clearly.",schedule,schedule,schedule
+M006,easy,air handler,"At the level two, the air handler has a strong burning smell. The required action is stated clearly.",urgent,urgent,urgent
+M007,easy,water pump,"At the level two, the water pump has an occasional soft click. The required action is stated clearly.",monitor,monitor,monitor
+M008,easy,battery cabinet,"At the level two, the battery cabinet has a growing vibration. The required action is stated clearly.",schedule,schedule,schedule
+M009,easy,lift motor,"At the level two, the lift motor has a safety guard has broken. The required action is stated clearly.",urgent,urgent,urgent
+M010,easy,cooling fan,"At the level two, the cooling fan has a faint new vibration. The required action is stated clearly.",monitor,monitor,monitor
+M011,easy,air handler,"At the storage area, the air handler has repeated warning lights. The required action is stated clearly.",schedule,schedule,schedule
+M012,easy,water pump,"At the storage area, the water pump has smoke near the housing. The required action is stated clearly.",urgent,urgent,urgent
+M013,easy,battery cabinet,"At the storage area, the battery cabinet has a small temperature rise. The required action is stated clearly.",monitor,monitor,monitor
+M014,easy,lift motor,"At the storage area, the lift motor has reduced flow for two shifts. The required action is stated clearly.",schedule,schedule,schedule
+M015,easy,cooling fan,"At the storage area, the cooling fan has a strong burning smell. The required action is stated clearly.",urgent,urgent,urgent
+M016,easy,air handler,"At the east corridor, the air handler has an occasional soft click. The required action is stated clearly.",monitor,monitor,monitor
+M017,easy,water pump,"At the east corridor, the water pump has a growing vibration. The required action is stated clearly.",schedule,schedule,schedule
+M018,easy,battery cabinet,"At the east corridor, the battery cabinet has a safety guard has broken. The required action is stated clearly.",urgent,urgent,urgent
+M019,easy,lift motor,"At the east corridor, the lift motor has a faint new vibration. The required action is stated clearly.",monitor,monitor,monitor
+M020,easy,cooling fan,"At the east corridor, the cooling fan has repeated warning lights. The required action is stated clearly.",schedule,schedule,schedule
+M021,easy,air handler,"At the service bay, the air handler has smoke near the housing. The required action is stated clearly.",urgent,urgent,urgent
+M022,easy,water pump,"At the service bay, the water pump has a small temperature rise. The required action is stated clearly.",monitor,monitor,monitor
+M023,easy,battery cabinet,"At the service bay, the battery cabinet has reduced flow for two shifts. The required action is stated clearly.",schedule,schedule,schedule
+M024,easy,lift motor,"At the service bay, the lift motor has a strong burning smell. The required action is stated clearly.",urgent,urgent,urgent
+M025,easy,cooling fan,"At the service bay, the cooling fan has an occasional soft click. The required action is stated clearly.",monitor,monitor,monitor
+M026,easy,air handler,"At the north room, the air handler has a growing vibration. The required action is stated clearly.",schedule,schedule,schedule
+M027,easy,water pump,"At the north room, the water pump has a safety guard has broken. The required action is stated clearly.",urgent,urgent,urgent
+M028,easy,battery cabinet,"At the north room, the battery cabinet has a faint new vibration. The required action is stated clearly.",monitor,monitor,monitor
+M029,easy,lift motor,"At the north room, the lift motor has repeated warning lights. The required action is stated clearly.",schedule,schedule,schedule
+M030,easy,cooling fan,"At the north room, the cooling fan has smoke near the housing. The required action is stated clearly.",urgent,urgent,urgent
+M031,easy,air handler,"At the level two, the air handler has a small temperature rise. The required action is stated clearly.",monitor,monitor,monitor
+M032,easy,water pump,"At the level two, the water pump has reduced flow for two shifts. The required action is stated clearly.",schedule,schedule,schedule
+M033,easy,battery cabinet,"At the level two, the battery cabinet has a strong burning smell. The required action is stated clearly.",urgent,urgent,urgent
+M034,easy,lift motor,"At the level two, the lift motor has an occasional soft click. The required action is stated clearly.",monitor,monitor,monitor
+M035,easy,cooling fan,"At the level two, the cooling fan has a growing vibration. The required action is stated clearly.",schedule,schedule,monitor
+M036,easy,air handler,"At the storage area, the air handler has a safety guard has broken. The required action is stated clearly.",urgent,urgent,monitor
+M037,easy,water pump,"At the storage area, the water pump has a faint new vibration. The required action is stated clearly.",monitor,schedule,monitor
+M038,easy,battery cabinet,"At the storage area, the battery cabinet has repeated warning lights. The required action is stated clearly.",schedule,monitor,schedule
+M039,easy,lift motor,"At the storage area, the lift motor has smoke near the housing. The required action is stated clearly.",urgent,monitor,urgent
+M040,easy,cooling fan,"At the storage area, the cooling fan has a small temperature rise. The required action is stated clearly.",monitor,urgent,monitor
+M041,medium,air handler,"At the north room, the air handler has repeated warning lights. The note also mentions an older unrelated warning.",schedule,schedule,schedule
+M042,medium,water pump,"At the north room, the water pump has smoke near the housing. The note also mentions an older unrelated warning.",urgent,urgent,urgent
+M043,medium,battery cabinet,"At the north room, the battery cabinet has a faint new vibration. The note also mentions an older unrelated warning.",monitor,monitor,monitor
+M044,medium,lift motor,"At the north room, the lift motor has reduced flow for two shifts. The note also mentions an older unrelated warning.",schedule,schedule,schedule
+M045,medium,cooling fan,"At the north room, the cooling fan has a strong burning smell. The note also mentions an older unrelated warning.",urgent,urgent,urgent
+M046,medium,air handler,"At the level two, the air handler has a small temperature rise. The note also mentions an older unrelated warning.",monitor,monitor,monitor
+M047,medium,water pump,"At the level two, the water pump has a growing vibration. The note also mentions an older unrelated warning.",schedule,schedule,schedule
+M048,medium,battery cabinet,"At the level two, the battery cabinet has a safety guard has broken. The note also mentions an older unrelated warning.",urgent,urgent,urgent
+M049,medium,lift motor,"At the level two, the lift motor has an occasional soft click. The note also mentions an older unrelated warning.",monitor,monitor,monitor
+M050,medium,cooling fan,"At the level two, the cooling fan has repeated warning lights. The note also mentions an older unrelated warning.",schedule,schedule,schedule
+M051,medium,air handler,"At the storage area, the air handler has smoke near the housing. The note also mentions an older unrelated warning.",urgent,urgent,urgent
+M052,medium,water pump,"At the storage area, the water pump has a faint new vibration. The note also mentions an older unrelated warning.",monitor,monitor,monitor
+M053,medium,battery cabinet,"At the storage area, the battery cabinet has reduced flow for two shifts. The note also mentions an older unrelated warning.",schedule,schedule,schedule
+M054,medium,lift motor,"At the storage area, the lift motor has a strong burning smell. The note also mentions an older unrelated warning.",urgent,urgent,urgent
+M055,medium,cooling fan,"At the storage area, the cooling fan has a small temperature rise. The note also mentions an older unrelated warning.",monitor,monitor,monitor
+M056,medium,air handler,"At the east corridor, the air handler has a growing vibration. The note also mentions an older unrelated warning.",schedule,schedule,schedule
+M057,medium,water pump,"At the east corridor, the water pump has a safety guard has broken. The note also mentions an older unrelated warning.",urgent,urgent,urgent
+M058,medium,battery cabinet,"At the east corridor, the battery cabinet has an occasional soft click. The note also mentions an older unrelated warning.",monitor,monitor,monitor
+M059,medium,lift motor,"At the east corridor, the lift motor has repeated warning lights. The note also mentions an older unrelated warning.",schedule,schedule,schedule
+M060,medium,cooling fan,"At the east corridor, the cooling fan has smoke near the housing. The note also mentions an older unrelated warning.",urgent,urgent,urgent
+M061,medium,air handler,"At the service bay, the air handler has a faint new vibration. The note also mentions an older unrelated warning.",monitor,monitor,monitor
+M062,medium,water pump,"At the service bay, the water pump has reduced flow for two shifts. The note also mentions an older unrelated warning.",schedule,schedule,schedule
+M063,medium,battery cabinet,"At the service bay, the battery cabinet has a strong burning smell. The note also mentions an older unrelated warning.",urgent,urgent,urgent
+M064,medium,lift motor,"At the service bay, the lift motor has a small temperature rise. The note also mentions an older unrelated warning.",monitor,monitor,monitor
+M065,medium,cooling fan,"At the service bay, the cooling fan has a growing vibration. The note also mentions an older unrelated warning.",schedule,schedule,schedule
+M066,medium,air handler,"At the north room, the air handler has a safety guard has broken. The note also mentions an older unrelated warning.",urgent,urgent,urgent
+M067,medium,water pump,"At the north room, the water pump has an occasional soft click. The note also mentions an older unrelated warning.",monitor,monitor,monitor
+M068,medium,battery cabinet,"At the north room, the battery cabinet has repeated warning lights. The note also mentions an older unrelated warning.",schedule,schedule,urgent
+M069,medium,lift motor,"At the north room, the lift motor has smoke near the housing. The note also mentions an older unrelated warning.",urgent,urgent,schedule
+M070,medium,cooling fan,"At the north room, the cooling fan has a faint new vibration. The note also mentions an older unrelated warning.",monitor,monitor,schedule
+M071,medium,air handler,"At the level two, the air handler has reduced flow for two shifts. The note also mentions an older unrelated warning.",schedule,urgent,schedule
+M072,medium,water pump,"At the level two, the water pump has a strong burning smell. The note also mentions an older unrelated warning.",urgent,schedule,urgent
+M073,medium,battery cabinet,"At the level two, the battery cabinet has a small temperature rise. The note also mentions an older unrelated warning.",monitor,schedule,monitor
+M074,medium,lift motor,"At the level two, the lift motor has a growing vibration. The note also mentions an older unrelated warning.",schedule,monitor,schedule
+M075,medium,cooling fan,"At the level two, the cooling fan has a safety guard has broken. The note also mentions an older unrelated warning.",urgent,monitor,urgent
+M076,medium,air handler,"At the storage area, the air handler has an occasional soft click. The note also mentions an older unrelated warning.",monitor,urgent,monitor
+M077,medium,water pump,"At the storage area, the water pump has repeated warning lights. The note also mentions an older unrelated warning.",schedule,urgent,schedule
+M078,medium,battery cabinet,"At the storage area, the battery cabinet has smoke near the housing. The note also mentions an older unrelated warning.",urgent,schedule,monitor
+M079,medium,lift motor,"At the storage area, the lift motor has a faint new vibration. The note also mentions an older unrelated warning.",monitor,schedule,urgent
+M080,medium,cooling fan,"At the storage area, the cooling fan has reduced flow for two shifts. The note also mentions an older unrelated warning.",schedule,monitor,urgent
+M081,hard,air handler,"At the north room, the air handler has smoke near the housing. The wording is brief and includes two observations.",urgent,urgent,urgent
+M082,hard,water pump,"At the north room, the water pump has a faint new vibration. The wording is brief and includes two observations.",monitor,monitor,monitor
+M083,hard,battery cabinet,"At the north room, the battery cabinet has repeated warning lights. The wording is brief and includes two observations.",schedule,schedule,schedule
+M084,hard,lift motor,"At the north room, the lift motor has a strong burning smell. The wording is brief and includes two observations.",urgent,urgent,urgent
+M085,hard,cooling fan,"At the north room, the cooling fan has a small temperature rise. The wording is brief and includes two observations.",monitor,monitor,monitor
+M086,hard,air handler,"At the level two, the air handler has reduced flow for two shifts. The wording is brief and includes two observations.",schedule,schedule,schedule
+M087,hard,water pump,"At the level two, the water pump has a safety guard has broken. The wording is brief and includes two observations.",urgent,urgent,urgent
+M088,hard,battery cabinet,"At the level two, the battery cabinet has an occasional soft click. The wording is brief and includes two observations.",monitor,monitor,monitor
+M089,hard,lift motor,"At the level two, the lift motor has a growing vibration. The wording is brief and includes two observations.",schedule,schedule,schedule
+M090,hard,cooling fan,"At the level two, the cooling fan has smoke near the housing. The wording is brief and includes two observations.",urgent,urgent,urgent
+M091,hard,air handler,"At the storage area, the air handler has a faint new vibration. The wording is brief and includes two observations.",monitor,monitor,monitor
+M092,hard,water pump,"At the storage area, the water pump has repeated warning lights. The wording is brief and includes two observations.",schedule,schedule,schedule
+M093,hard,battery cabinet,"At the storage area, the battery cabinet has a strong burning smell. The wording is brief and includes two observations.",urgent,urgent,urgent
+M094,hard,lift motor,"At the storage area, the lift motor has a small temperature rise. The wording is brief and includes two observations.",monitor,monitor,monitor
+M095,hard,cooling fan,"At the storage area, the cooling fan has reduced flow for two shifts. The wording is brief and includes two observations.",schedule,schedule,schedule
+M096,hard,air handler,"At the east corridor, the air handler has a safety guard has broken. The wording is brief and includes two observations.",urgent,urgent,urgent
+M097,hard,water pump,"At the east corridor, the water pump has an occasional soft click. The wording is brief and includes two observations.",monitor,monitor,monitor
+M098,hard,battery cabinet,"At the east corridor, the battery cabinet has a growing vibration. The wording is brief and includes two observations.",schedule,schedule,urgent
+M099,hard,lift motor,"At the east corridor, the lift motor has smoke near the housing. The wording is brief and includes two observations.",urgent,urgent,schedule
+M100,hard,cooling fan,"At the east corridor, the cooling fan has a faint new vibration. The wording is brief and includes two observations.",monitor,monitor,schedule
+M101,hard,air handler,"At the service bay, the air handler has repeated warning lights. The wording is brief and includes two observations.",schedule,urgent,schedule
+M102,hard,water pump,"At the service bay, the water pump has a strong burning smell. The wording is brief and includes two observations.",urgent,schedule,urgent
+M103,hard,battery cabinet,"At the service bay, the battery cabinet has a small temperature rise. The wording is brief and includes two observations.",monitor,schedule,monitor
+M104,hard,lift motor,"At the service bay, the lift motor has reduced flow for two shifts. The wording is brief and includes two observations.",schedule,monitor,schedule
+M105,hard,cooling fan,"At the service bay, the cooling fan has a safety guard has broken. The wording is brief and includes two observations.",urgent,monitor,urgent
+M106,hard,air handler,"At the north room, the air handler has an occasional soft click. The wording is brief and includes two observations.",monitor,urgent,monitor
+M107,hard,water pump,"At the north room, the water pump has a growing vibration. The wording is brief and includes two observations.",schedule,urgent,schedule
+M108,hard,battery cabinet,"At the north room, the battery cabinet has smoke near the housing. The wording is brief and includes two observations.",urgent,schedule,urgent
+M109,hard,lift motor,"At the north room, the lift motor has a faint new vibration. The wording is brief and includes two observations.",monitor,schedule,monitor
+M110,hard,cooling fan,"At the north room, the cooling fan has repeated warning lights. The wording is brief and includes two observations.",schedule,monitor,urgent
+M111,hard,air handler,"At the level two, the air handler has a strong burning smell. The wording is brief and includes two observations.",urgent,monitor,schedule
+M112,hard,water pump,"At the level two, the water pump has a small temperature rise. The wording is brief and includes two observations.",monitor,urgent,schedule
+M113,hard,battery cabinet,"At the level two, the battery cabinet has reduced flow for two shifts. The wording is brief and includes two observations.",schedule,urgent,monitor
+M114,hard,lift motor,"At the level two, the lift motor has a safety guard has broken. The wording is brief and includes two observations.",urgent,schedule,monitor
+M115,hard,cooling fan,"At the level two, the cooling fan has an occasional soft click. The wording is brief and includes two observations.",monitor,schedule,urgent
+M116,hard,air handler,"At the storage area, the air handler has a growing vibration. The wording is brief and includes two observations.",schedule,monitor,urgent
+M117,hard,water pump,"At the storage area, the water pump has smoke near the housing. The wording is brief and includes two observations.",urgent,monitor,schedule
+M118,hard,battery cabinet,"At the storage area, the battery cabinet has a faint new vibration. The wording is brief and includes two observations.",monitor,urgent,schedule
+M119,hard,lift motor,"At the storage area, the lift motor has repeated warning lights. The wording is brief and includes two observations.",schedule,urgent,monitor
+M120,hard,cooling fan,"At the storage area, the cooling fan has a strong burning smell. The wording is brief and includes two observations.",urgent,schedule,monitor

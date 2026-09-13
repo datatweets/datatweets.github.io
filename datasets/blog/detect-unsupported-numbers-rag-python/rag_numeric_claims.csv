@@ -1,0 +1,17 @@
+claim_id,claim_text,cited_doc_id,retrieved_doc_ids,expected_status
+C01,Use a 15-second interval during normal collection.,S01,S01|S02,supported
+C02,Use a 45-second interval during normal collection.,S01,S01|S02,unsupported_quantity
+C03,"When the battery is low, log every 1 minute.",S01,S01|S03,supported
+C04,Set the reference flow to 1.5 L/min.,S02,S02|S06,supported
+C05,Set the reference flow to 2 L/min.,S02,S02|S06,unsupported_quantity
+C06,A probe may stay in its transport case for 6 hours.,S03,S03|S05,supported
+C07,Archive upload bundles after 30 days.,S04,S03|S05,citation_not_retrieved
+C08,Stop collection at 40 degrees Celsius.,S99,S06|S07,unknown_citation
+C09,Replace the inlet filter every 4 weeks.,,S05|S07,missing_citation
+C10,Clean the probe connector with a dry cloth.,S07,S07|S08,needs_review_no_quantity
+C11,An upload bundle may be 300 MB.,S04,S04|S05,unsupported_quantity
+C12,Replace the inlet filter every 28 days.,S05,S05|S07,supported
+C13,Stop collection at 40 degrees Celsius.,S06,S06|S03,supported
+C14,Stop collection at 30 degrees Celsius.,S06,S06|S03,unsupported_quantity
+C15,Install the maintenance firmware by 2026-09-30.,S08,S08|S07,supported
+C16,Install the maintenance firmware by 2026-10-31.,S08,S08|S07,unsupported_quantity

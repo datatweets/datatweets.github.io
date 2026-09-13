@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>398 sends, zero errors, across a real broker kill and recovery</title>
+  <desc>A timeline of a continuous producer sending with acks=all. Before kill: 55 messages sent, 0 errors. Kafka2 stopped mid-stream. 5 seconds after kill: 206 sent, 0 errors, while Isr shrank from 3 to 2 on every partition kafka2 touched and leadership moved for the two partitions it led. Kafka2 restarted. 10 seconds after restart: 398 sent, 0 errors, with Isr fully recovered but leadership still on the brokers that inherited it during the outage. A final manual PREFERRED leader election restores the original leadership.</desc>
+  <rect width="1100" height="400" fill="#ffffff" />
+  <text x="550" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">398 Sends, Zero Errors, Through a Real Kill and Recovery</text>
+
+  <line x1="60" y1="90" x2="1040" y2="90" stroke="#a0aec0" stroke-width="2" />
+
+  <circle cx="140" cy="90" r="6" fill="#48bb78" />
+  <text x="140" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">t=3s</text>
+  <text x="140" y="115" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">sent=55</text>
+  <text x="140" y="129" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">errors=0</text>
+
+  <circle cx="360" cy="90" r="7" fill="#fc8181" />
+  <text x="360" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="#742a2a">docker stop kafka2</text>
+
+  <circle cx="580" cy="90" r="6" fill="#fed7d7" stroke="#fc8181" stroke-width="1.6" />
+  <text x="580" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="#742a2a">t=8s (5s into outage)</text>
+  <text x="580" y="115" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#742a2a">sent=206  errors=0</text>
+  <text x="580" y="135" text-anchor="middle" font-size="8.5" fill="#742a2a">Isr: 3 -&gt; 2 on affected partitions</text>
+  <text x="580" y="149" text-anchor="middle" font-size="8.5" fill="#742a2a">leadership moved for 2 partitions</text>
+
+  <circle cx="780" cy="90" r="7" fill="#48bb78" />
+  <text x="780" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">docker start kafka2</text>
+
+  <circle cx="960" cy="90" r="6" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.6" />
+  <text x="960" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="#22543d">t=18s (10s after restart)</text>
+  <text x="960" y="115" text-anchor="middle" font-size="9.5" font-family="Menlo, monospace" fill="#22543d">FINAL sent=398  errors=0</text>
+  <text x="960" y="135" text-anchor="middle" font-size="8.5" fill="#22543d">Isr fully recovered</text>
+  <text x="960" y="149" text-anchor="middle" font-size="8.5" fill="#22543d">leadership still on the temporary broker</text>
+
+  <line x1="40" y1="180" x2="1060" y2="180" stroke="#e2e8f0" stroke-width="1.2" />
+
+  <rect x="200" y="200" width="700" height="80" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="550" y="228" text-anchor="middle" font-size="12" font-weight="700" fill="#2c5282">kafka-leader-election.sh --election-type PREFERRED --all-topic-partitions</text>
+  <text x="550" y="250" text-anchor="middle" font-size="10" fill="#2c5282">Partitions 0 and 3 move back to broker 2 -- the preferred replica, restored on demand</text>
+  <text x="550" y="266" text-anchor="middle" font-size="9" fill="#2c5282">(auto.leader.rebalance.enable=true would do this too, eventually, every 300s by default)</text>
+
+  <text x="550" y="320" text-anchor="middle" font-size="12" font-weight="700" fill="#2d3748">min.insync.replicas=2 on a 3-broker cluster: losing exactly 1 broker is survivable, invisibly</text>
+  <text x="550" y="348" text-anchor="middle" font-size="11" fill="#4a5568">Every mechanism from Lessons 1-3 fired live during this test -- registration, ISR shrink, leader election, ISR recovery --</text>
+  <text x="550" y="368" text-anchor="middle" font-size="11" fill="#4a5568">and the producer's own retry logic absorbed all of it without a single error ever reaching application code.</text>
+</svg>

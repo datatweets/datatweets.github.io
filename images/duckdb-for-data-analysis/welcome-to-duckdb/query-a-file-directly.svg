@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">One File, One Query, Two Front Doors</text>
+
+  <!-- file -->
+  <rect x="330" y="55" width="140" height="60" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.6" />
+  <text x="400" y="80" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">thistlewood_orders</text>
+  <text x="400" y="94" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9c4221">_flat.csv</text>
+  <text x="400" y="130" text-anchor="middle" font-size="9" fill="#a0aec0">1,749 rows on disk -- no CREATE TABLE, no load step</text>
+
+  <line x1="400" y1="115" x2="400" y2="150" stroke="#a0aec0" stroke-width="1.8" />
+  <polygon points="400 150 395 140 405 140" fill="#a0aec0" />
+
+  <!-- query box -->
+  <rect x="230" y="155" width="340" height="70" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.6" />
+  <text x="400" y="180" text-anchor="middle" font-size="9.5" fill="#2b6cb0">SELECT ... FROM 'thistlewood_orders_flat.csv'</text>
+  <text x="400" y="196" text-anchor="middle" font-size="9.5" fill="#2b6cb0">WHERE category = 'Bath'</text>
+  <text x="400" y="212" text-anchor="middle" font-size="9.5" fill="#2b6cb0">ORDER BY total DESC LIMIT 5</text>
+
+  <line x1="330" y1="225" x2="230" y2="270" stroke="#a0aec0" stroke-width="1.6" />
+  <line x1="470" y1="225" x2="570" y2="270" stroke="#a0aec0" stroke-width="1.6" />
+
+  <!-- CLI result -->
+  <rect x="80" y="275" width="280" height="80" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="220" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">DuckDB CLI</text>
+  <text x="220" y="320" text-anchor="middle" font-size="9" fill="#2f855a">terminal table, 5 rows</text>
+  <text x="220" y="336" text-anchor="middle" font-size="9" fill="#2f855a">Slate Gray Washcloth Set x5</text>
+
+  <!-- Python result -->
+  <rect x="440" y="275" width="280" height="80" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="580" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">Python API</text>
+  <text x="580" y="320" text-anchor="middle" font-size="9" fill="#2f855a">pandas DataFrame, 5 rows</text>
+  <text x="580" y="336" text-anchor="middle" font-size="9" fill="#2f855a">Slate Gray Washcloth Set x5</text>
+</svg>

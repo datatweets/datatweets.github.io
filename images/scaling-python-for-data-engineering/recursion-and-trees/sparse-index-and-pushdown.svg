@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 930" width="960" height="930" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="930" fill="#ffffff"/>
+
+  <text x="480" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">An index is ordered keys + locations &#8212; and it only pays if the data is clustered</text>
+  <text x="480" y="54" text-anchor="middle" font-size="14" fill="#718096">Real NYC TLC yellow-taxi data &#183; 200,000-trip CSV (14,603,964 B) and January 2024 parquet (2,964,624 trips, 3 row groups)</text>
+
+  <!-- ================= PANEL 1: the mechanism ================= -->
+  <line x1="60" y1="72" x2="900" y2="72" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="94" font-size="14" font-weight="700" fill="#1a202c">1 &#183; The mechanism: record where each row starts, then seek straight to it</text>
+  <text x="60" y="112" font-size="12" fill="#718096">dense index over the sorted CSV &#183; 200,000 entries built in one pass, 149.7&#160;ms &#183; rows are variable width (row 0 is 73 B, row 1 is 74 B), so offsets must be recorded, not computed</text>
+
+  <!-- index table -->
+  <rect x="60" y="126" width="300" height="152" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4"/>
+  <text x="72" y="145" font-size="11.5" font-weight="700" fill="#2b6cb0">the index: key &#8594; byte offset</text>
+  <g font-size="10.5" fill="#2b6cb0">
+    <text x="72" y="165">2023-12-31 23:56:46</text><text x="230" y="165">&#8594;</text><text x="348" y="165" text-anchor="end">148</text>
+    <text x="72" y="182">2023-12-31 23:58:35</text><text x="230" y="182">&#8594;</text><text x="348" y="182" text-anchor="end">221</text>
+    <text x="72" y="199">2024-01-01 00:00:17</text><text x="230" y="199">&#8594;</text><text x="348" y="199" text-anchor="end">295</text>
+    <text x="72" y="216">2024-01-01 00:01:39</text><text x="230" y="216">&#8594;</text><text x="348" y="216" text-anchor="end">369</text>
+    <text x="72" y="233" fill="#718096">&#183; &#183; &#183;</text>
+  </g>
+  <rect x="66" y="242" width="288" height="28" rx="5" fill="#ffffff" stroke="#276749" stroke-width="1.4"/>
+  <text x="72" y="260" font-size="10.5" font-weight="700" fill="#276749">2024-01-24 18:21:22</text>
+  <text x="230" y="260" font-size="10.5" font-weight="700" fill="#276749">&#8594;</text>
+  <text x="348" y="260" font-size="10.5" font-weight="700" fill="#276749" text-anchor="end">10,952,736</text>
+  <text x="66" y="288" font-size="10" fill="#718096">row 150,000 &#8212; the entry we look up below</text>
+
+  <!-- arrow from index row to file strip -->
+  <path d="M 356 256 C 400 256 400 214 424 214" fill="none" stroke="#276749" stroke-width="1.8"/>
+  <polygon points="424,214 415,210 415,218" fill="#276749"/>
+  <text x="392" y="240" font-size="10" font-weight="700" fill="#276749">seek()</text>
+
+  <!-- file byte strip -->
+  <text x="430" y="150" font-size="11.5" font-weight="700" fill="#1a202c">yellow_tripdata_sample.csv &#8212; one flat run of 14,603,964 bytes</text>
+  <rect x="430" y="196" width="470" height="36" rx="5" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.2"/>
+  <!-- skipped region -->
+  <rect x="430" y="196" width="352.5" height="36" rx="0" fill="#fffaf0"/>
+  <rect x="430" y="196" width="470" height="36" rx="5" fill="none" stroke="#a0aec0" stroke-width="1.2"/>
+  <text x="606" y="219" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c05621">10.9 MB never read &#8212; the scan reads all of it</text>
+  <!-- seek target -->
+  <line x1="782.5" y1="188" x2="782.5" y2="240" stroke="#276749" stroke-width="2"/>
+  <circle cx="782.5" cy="214" r="5" fill="#276749"/>
+  <text x="782.5" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">byte 10,952,736</text>
+  <text x="430" y="248" font-size="10" fill="#718096">byte 0</text>
+  <text x="900" y="248" text-anchor="end" font-size="10" fill="#718096">byte 14,603,964</text>
+
+  <rect x="430" y="258" width="470" height="34" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.3"/>
+  <text x="444" y="272" font-size="10.5" font-weight="700" fill="#276749">seek + read one row: 1.62&#160;&#181;s &#183; scan to the same row: 9.54&#160;ms &#183; 5,870&#215; faster</text>
+  <text x="444" y="286" font-size="10" fill="#276749">identical bytes returned &#8212; the index changes the work done, never the answer</text>
+
+  <!-- ================= PANEL 2: dense vs sparse ================= -->
+  <line x1="60" y1="312" x2="900" y2="312" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="334" font-size="14" font-weight="700" fill="#1a202c">2 &#183; A dense index costs more than the data. A sparse one keeps one key per block.</text>
+  <text x="60" y="352" font-size="12" fill="#718096">the honest scaling trade &#8212; an index that does not fit is not an optimization</text>
+
+  <!-- dense warning -->
+  <rect x="60" y="364" width="400" height="46" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.3"/>
+  <text x="72" y="382" font-size="11" font-weight="700" fill="#c53030">dense index (one entry per row): 20,848,112 B = 104.2 B/row</text>
+  <text x="72" y="400" font-size="11" fill="#c53030">that is 143% of the 14,603,964 B file it indexes &#8212; bigger than the data.</text>
+
+  <!-- sparse tree -->
+  <rect x="150" y="428" width="220" height="38" rx="7" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="260" y="445" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">sparse index &#183; 200 entries</text>
+  <text x="260" y="459" text-anchor="middle" font-size="10" fill="#2b6cb0">20,912 B &#183; 0.143% of the file &#183; held in RAM</text>
+
+  <text x="466" y="450" font-size="10" fill="#718096">bisect the 200 keys,</text>
+  <text x="466" y="462" font-size="10" fill="#718096">then seek to one block</text>
+
+  <!-- edges -->
+  <line x1="200" y1="466" x2="110" y2="512" stroke="#a0aec0" stroke-width="1.2"/>
+  <line x1="235" y1="466" x2="200" y2="512" stroke="#a0aec0" stroke-width="1.2"/>
+  <line x1="260" y1="466" x2="290" y2="512" stroke="#276749" stroke-width="2"/>
+  <line x1="288" y1="466" x2="380" y2="512" stroke="#a0aec0" stroke-width="1.2"/>
+  <line x1="322" y1="466" x2="440" y2="512" stroke="#a0aec0" stroke-width="1.2"/>
+
+  <!-- block nodes -->
+  <rect x="70" y="512" width="80" height="42" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2"/>
+  <text x="110" y="529" text-anchor="middle" font-size="9.5" fill="#718096">block 0</text>
+  <text x="110" y="543" text-anchor="middle" font-size="9" fill="#a0aec0">1,000 rows</text>
+
+  <rect x="160" y="512" width="80" height="42" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2"/>
+  <text x="200" y="529" text-anchor="middle" font-size="9.5" fill="#718096">block 1</text>
+  <text x="200" y="543" text-anchor="middle" font-size="9" fill="#a0aec0">1,000 rows</text>
+
+  <rect x="250" y="512" width="80" height="42" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.8"/>
+  <text x="290" y="529" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">block k</text>
+  <text x="290" y="543" text-anchor="middle" font-size="9" fill="#276749">scan 657 rows</text>
+
+  <rect x="340" y="512" width="80" height="42" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2"/>
+  <text x="380" y="529" text-anchor="middle" font-size="9.5" fill="#718096">block k+1</text>
+  <text x="380" y="543" text-anchor="middle" font-size="9" fill="#a0aec0">1,000 rows</text>
+
+  <rect x="430" y="512" width="80" height="42" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2"/>
+  <text x="470" y="529" text-anchor="middle" font-size="9.5" fill="#718096">&#183; &#183; &#183;</text>
+  <text x="470" y="543" text-anchor="middle" font-size="9" fill="#a0aec0">200 blocks</text>
+
+  <text x="70" y="576" font-size="10.5" fill="#276749" font-weight="700">[08:00, 09:00) &#8594; 168 trips &#183; read 657 of 200,000 lines (0.33%) &#183; 0.16&#160;ms vs 38.89&#160;ms &#183; 250&#215; faster &#183; identical answer</text>
+
+  <!-- stride table -->
+  <rect x="530" y="364" width="370" height="196" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="544" y="384" font-size="11.5" font-weight="700" fill="#1a202c">stride is the dial: index size vs how much you scan</text>
+  <g font-size="10" fill="#718096">
+    <text x="544" y="404" font-weight="700">stride</text>
+    <text x="646" y="404" text-anchor="end" font-weight="700">entries</text>
+    <text x="770" y="404" text-anchor="end" font-weight="700">index bytes</text>
+    <text x="884" y="404" text-anchor="end" font-weight="700">% of file</text>
+  </g>
+  <line x1="544" y1="412" x2="884" y2="412" stroke="#e2e8f0" stroke-width="1"/>
+  <g font-size="10.5">
+    <text x="544" y="432" fill="#c53030" font-weight="700">1 (dense)</text>
+    <text x="646" y="432" text-anchor="end" fill="#c53030">200,000</text>
+    <text x="770" y="432" text-anchor="end" fill="#c53030">20,848,112</text>
+    <text x="884" y="432" text-anchor="end" fill="#c53030" font-weight="700">142.757%</text>
+
+    <text x="544" y="454" fill="#4a5568">10</text>
+    <text x="646" y="454" text-anchor="end" fill="#4a5568">20,000</text>
+    <text x="770" y="454" text-anchor="end" fill="#4a5568">2,080,112</text>
+    <text x="884" y="454" text-anchor="end" fill="#4a5568">14.243%</text>
+
+    <text x="544" y="476" fill="#4a5568">100</text>
+    <text x="646" y="476" text-anchor="end" fill="#4a5568">2,000</text>
+    <text x="770" y="476" text-anchor="end" fill="#4a5568">208,112</text>
+    <text x="884" y="476" text-anchor="end" fill="#4a5568">1.425%</text>
+  </g>
+  <rect x="538" y="484" width="352" height="24" rx="4" fill="#f0fff4"/>
+  <g font-size="10.5">
+    <text x="544" y="501" fill="#276749" font-weight="700">1,000</text>
+    <text x="646" y="501" text-anchor="end" fill="#276749" font-weight="700">200</text>
+    <text x="770" y="501" text-anchor="end" fill="#276749" font-weight="700">20,912</text>
+    <text x="884" y="501" text-anchor="end" fill="#276749" font-weight="700">0.143%</text>
+
+    <text x="544" y="524" fill="#4a5568">10,000</text>
+    <text x="646" y="524" text-anchor="end" fill="#4a5568">20</text>
+    <text x="770" y="524" text-anchor="end" fill="#4a5568">2,192</text>
+    <text x="884" y="524" text-anchor="end" fill="#4a5568">0.015%</text>
+  </g>
+  <text x="544" y="548" font-size="10" fill="#718096" font-style="italic">997&#215; smaller than dense, and it still answers the same question.</text>
+
+  <!-- ================= PANEL 3: parquet ================= -->
+  <line x1="60" y1="596" x2="900" y2="596" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="60" y="618" font-size="14" font-weight="700" fill="#1a202c">3 &#183; Parquet&#8217;s row-group min/max IS a sparse index &#8212; clustering decides whether it can skip</text>
+  <text x="60" y="636" font-size="12" fill="#718096">query: trips picked up in [2024-01-15 08:00, 09:00) &#8212; the true answer is 2,440 trips &#183; row_group_size = 1,000,000</text>
+
+  <!-- row 1: real file -->
+  <text x="60" y="666" font-size="11" font-weight="700" fill="#1a202c">real TLC file</text>
+  <text x="60" y="680" font-size="9.5" fill="#718096">parquet-cpp-arrow 14.0.2</text>
+  <text x="60" y="693" font-size="9.5" fill="#c53030" font-weight="700">is_stats_set = False</text>
+  <g>
+    <rect x="200" y="654" width="215" height="46" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3"/>
+    <text x="307" y="672" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0">rg0 &#183; 1,048,576 rows</text>
+    <text x="307" y="689" text-anchor="middle" font-size="9.5" fill="#2b6cb0">statistics = None &#8212; must read</text>
+
+    <rect x="425" y="654" width="215" height="46" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3"/>
+    <text x="532" y="672" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0">rg1 &#183; 1,048,576 rows</text>
+    <text x="532" y="689" text-anchor="middle" font-size="9.5" fill="#2b6cb0">statistics = None &#8212; must read</text>
+
+    <rect x="650" y="654" width="215" height="46" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3"/>
+    <text x="757" y="672" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0">rg2 &#183; 867,472 rows</text>
+    <text x="757" y="689" text-anchor="middle" font-size="9.5" fill="#2b6cb0">statistics = None &#8212; must read</text>
+  </g>
+  <text x="880" y="672" font-size="12" font-weight="700" fill="#c53030">100.0%</text>
+  <text x="880" y="688" font-size="9" fill="#718096">read</text>
+
+  <!-- row 2: unsorted -->
+  <text x="60" y="732" font-size="11" font-weight="700" fill="#1a202c">ours: stats ON,</text>
+  <text x="60" y="746" font-size="11" font-weight="700" fill="#1a202c">unsorted</text>
+  <text x="60" y="760" font-size="9.5" fill="#c05621">18 bad rows wreck min</text>
+  <g>
+    <rect x="200" y="720" width="215" height="46" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3"/>
+    <text x="307" y="737" text-anchor="middle" font-size="9.5" fill="#718096">min 2002-12-31 22:59:39</text>
+    <text x="307" y="751" text-anchor="middle" font-size="9.5" fill="#718096">max 2024-01-12 23:23:29</text>
+    <text x="307" y="763" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">SKIPPED &#8212; max &lt; 01-15</text>
+
+    <rect x="425" y="720" width="215" height="46" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+    <text x="532" y="737" text-anchor="middle" font-size="9.5" fill="#c05621">min 2009-01-01 23:30:39</text>
+    <text x="532" y="751" text-anchor="middle" font-size="9.5" fill="#c05621">max 2024-01-23 16:04:43</text>
+    <text x="532" y="763" text-anchor="middle" font-size="9" font-weight="700" fill="#c05621">READ &#8212; range contains 01-15</text>
+
+    <rect x="650" y="720" width="215" height="46" rx="6" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+    <text x="757" y="737" text-anchor="middle" font-size="9.5" fill="#c05621">min 2009-01-01 00:24:09</text>
+    <text x="757" y="751" text-anchor="middle" font-size="9.5" fill="#c05621">max 2024-02-01 00:01:15</text>
+    <text x="757" y="763" text-anchor="middle" font-size="9" font-weight="700" fill="#c05621">READ &#8212; range contains 01-15</text>
+  </g>
+  <text x="880" y="738" font-size="12" font-weight="700" fill="#c05621">66.3%</text>
+  <text x="880" y="754" font-size="9" fill="#718096">read</text>
+
+  <!-- row 3: sorted -->
+  <text x="60" y="798" font-size="11" font-weight="700" fill="#1a202c">ours: stats ON,</text>
+  <text x="60" y="812" font-size="11" font-weight="700" fill="#276749">SORTED by pickup</text>
+  <text x="60" y="826" font-size="9.5" fill="#276749">sort cost: 263&#160;ms</text>
+  <g>
+    <rect x="200" y="786" width="215" height="46" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3"/>
+    <text x="307" y="803" text-anchor="middle" font-size="9.5" fill="#718096">min 2002-12-31 22:59:39</text>
+    <text x="307" y="817" text-anchor="middle" font-size="9.5" fill="#718096">max 2024-01-12 09:27:35</text>
+    <text x="307" y="829" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">SKIPPED &#8212; max &lt; 01-15</text>
+
+    <rect x="425" y="786" width="215" height="46" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+    <text x="532" y="803" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">min 2024-01-12 09:27:36</text>
+    <text x="532" y="817" text-anchor="middle" font-size="9.5" font-weight="700" fill="#276749">max 2024-01-22 13:25:09</text>
+    <text x="532" y="829" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">READ &#8212; the only one that can hold 01-15</text>
+
+    <rect x="650" y="786" width="215" height="46" rx="6" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.3"/>
+    <text x="757" y="803" text-anchor="middle" font-size="9.5" fill="#718096">min 2024-01-22 13:25:11</text>
+    <text x="757" y="817" text-anchor="middle" font-size="9.5" fill="#718096">max 2024-02-01 00:01:15</text>
+    <text x="757" y="829" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">SKIPPED &#8212; min &gt; 01-15</text>
+  </g>
+  <text x="880" y="804" font-size="12" font-weight="700" fill="#276749">33.7%</text>
+  <text x="880" y="820" font-size="9" fill="#718096">read</text>
+
+  <!-- bottom rule -->
+  <rect x="60" y="848" width="840" height="66" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.3"/>
+  <text x="74" y="868" font-size="11.5" font-weight="700" fill="#c05621">The rule: an index is ordered keys + locations. It wins only when it is small enough to keep, and only when physical order tracks the key.</text>
+  <text x="74" y="885" font-size="10.5" fill="#c05621">Sorting is what turned 66.3% into 33.7% &#8212; and with 3 row groups, 33.7% is the floor. Shrinking row_group_size to 10,000 reads 0.34% for 146.8&#160;KB of metadata: the same stride dial as panel 2.</text>
+  <text x="74" y="902" font-size="10.5" font-weight="700" fill="#c53030">Honest caveat: the filtered read moved memory 1,215&#215; (84.5&#160;MB &#8594; 0.070&#160;MB) but time only 1.2&#215;. At this size pushdown buys memory, not speed.</text>
+</svg>

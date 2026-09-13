@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Build a Multi-Task Model with Two Heads in PyTorch</title>
+  <desc id="desc">A PyTorch multi-task learning diagram. Eight input features enter shared layers, which branch into a regression head that returns one value and a classification head that returns one logit.</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#0067c0"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="32" font-weight="600" letter-spacing="1.2" fill="#59636e">PYTORCH MULTI-TASK LEARNING</text>
+    <text x="90" y="280" font-size="78" font-weight="700" fill="#1b1f24">SHARED TRUNK</text>
+    <text x="90" y="372" font-size="78" font-weight="700" fill="#1b1f24">TWO HEADS</text>
+    <rect x="94" y="414" width="360" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="493" font-size="29" font-weight="500" fill="#59636e">REGRESSION &#183; CLASSIFICATION</text>
+  </g>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <rect x="690" y="276" width="110" height="120" rx="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+    <text x="745" y="326" text-anchor="middle" font-size="32" font-weight="700" fill="#1b1f24">8</text>
+    <text x="745" y="357" text-anchor="middle" font-size="18" font-weight="600" fill="#59636e">FEATURES</text>
+
+    <line x1="804" y1="336" x2="844" y2="336" stroke="#0067c0" stroke-width="4" marker-end="url(#arrowhead)"/>
+
+    <rect x="856" y="226" width="140" height="220" rx="22" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+    <text x="926" y="310" text-anchor="middle" font-size="20" font-weight="600" fill="#59636e">SHARED</text>
+    <text x="926" y="346" text-anchor="middle" font-size="25" font-weight="700" fill="#1b1f24">LAYERS</text>
+    <circle cx="892" cy="390" r="8" fill="#0067c0"/>
+    <circle cx="926" cy="390" r="8" fill="#0067c0"/>
+    <circle cx="960" cy="390" r="8" fill="#0067c0"/>
+
+    <path d="M 1000 302 C 1020 302, 1014 227, 1034 227" fill="none" stroke="#0067c0" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <path d="M 1000 370 C 1020 370, 1014 447, 1034 447" fill="none" stroke="#0067c0" stroke-width="4" marker-end="url(#arrowhead)"/>
+
+    <rect x="1046" y="166" width="82" height="122" rx="18" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+    <text x="1087" y="211" text-anchor="middle" font-size="17" font-weight="600" fill="#59636e">COUNT</text>
+    <text x="1087" y="247" text-anchor="middle" font-size="18" font-weight="700" fill="#1b1f24">1 VALUE</text>
+
+    <rect x="1046" y="386" width="82" height="122" rx="18" fill="#f7f8fa" stroke="#0067c0" stroke-width="3"/>
+    <text x="1087" y="431" text-anchor="middle" font-size="17" font-weight="600" fill="#59636e">CLASS</text>
+    <text x="1087" y="467" text-anchor="middle" font-size="18" font-weight="700" fill="#1b1f24">1 LOGIT</text>
+
+    <text x="745" y="432" text-anchor="middle" font-size="17" font-weight="600" fill="#59636e">INPUT</text>
+    <text x="926" y="483" text-anchor="middle" font-size="17" font-weight="600" fill="#59636e">TRUNK</text>
+  </g>
+</svg>

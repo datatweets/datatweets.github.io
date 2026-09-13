@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 774" width="960" height="774" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="774" fill="#ffffff"/>
+
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">The Quarter in Spark &#8212; CityFlow's First Spark Artifact</text>
+  <text x="480" y="56" text-anchor="middle" font-size="14" fill="#718096">9,554,778 real NYC yellow-taxi trips (Jan&#8211;Mar 2024) &#183; 160.4&#8201;MB, 3 parquet files, one read &#183; Spark 4.2.0, local[*] &#183; every number cross-checked against Course&#160;1</text>
+
+  <!-- ============ BAND 1: THE JOB ============ -->
+  <text x="30" y="90" font-size="15" font-weight="700" fill="#2b6cb0">THE JOB &#8212; cityflow_quarter_report.py: six functions, a main(), one printed page</text>
+
+  <!-- Row 1 -->
+  <rect x="30" y="104" width="290" height="88" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="42" y="124" font-size="10" font-weight="700" fill="#2b6cb0">1 &#183; ONE READ, THREE MONTHS</text>
+  <text x="42" y="143" font-size="11" font-weight="700" fill="#1a202c">spark.read.parquet(jan, feb, mar)</text>
+  <text x="42" y="160" font-size="10.5" fill="#4a5568">160.4&#8201;MB &#183; 19 columns, unified schema</text>
+  <text x="42" y="176" font-size="10.5" fill="#4a5568">returned in 1.91&#8201;s &#8212; footers only, no rows</text>
+
+  <line x1="320" y1="148" x2="346" y2="148" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="352,148 342,143 342,153" fill="#a0aec0"/>
+
+  <rect x="352" y="104" width="290" height="88" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="364" y="124" font-size="10" font-weight="700" fill="#276749">2 &#183; TAG + COUNT PER MONTH</text>
+  <text x="364" y="143" font-size="11" font-weight="700" fill="#1a202c">input_file_name() &#8594; source_month</text>
+  <text x="364" y="160" font-size="10.5" fill="#4a5568">Jan 2,964,624 &#183; Feb 3,007,526 &#183; Mar 3,582,628</text>
+  <text x="364" y="176" font-size="10.5" fill="#276749">quarter 9,554,778 &#8212; 4 of 4 match Course&#160;1</text>
+
+  <line x1="642" y1="148" x2="668" y2="148" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="674,148 664,143 664,153" fill="#a0aec0"/>
+
+  <rect x="674" y="104" width="256" height="88" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="686" y="124" font-size="10" font-weight="700" fill="#c05621">3 &#183; DIRT SCAN &#8212; COUNT, DON'T DROP</text>
+  <text x="686" y="143" font-size="11" font-weight="700" fill="#1a202c">stray pickups 18 / 15 / 23</text>
+  <text x="686" y="160" font-size="10.5" fill="#4a5568">earliest stamp 2002-12-31 22:17:10</text>
+  <text x="686" y="176" font-size="10.5" fill="#4a5568">reversals 115,895 rows, &#8722;$2.99&#8201;M &#8212; kept</text>
+
+  <!-- wrap arrow down -->
+  <path d="M 802 192 L 802 212 L 175 212 L 175 232" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="175,238 170,228 180,228" fill="#a0aec0"/>
+
+  <!-- Row 2 -->
+  <rect x="30" y="240" width="290" height="88" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="42" y="260" font-size="10" font-weight="700" fill="#276749">4 &#183; WINDOW + ZONE NAMES</text>
+  <text x="42" y="279" font-size="11" font-weight="700" fill="#1a202c">2024-01-01 &#8804; pickup &#60; 2024-04-01</text>
+  <text x="42" y="296" font-size="10.5" fill="#4a5568">keeps 9,554,757 &#183; quarantines 21</text>
+  <text x="42" y="312" font-size="10.5" fill="#4a5568">names joined on LocationID, never on Zone</text>
+
+  <line x1="320" y1="284" x2="346" y2="284" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="352,284 342,279 342,289" fill="#a0aec0"/>
+
+  <rect x="352" y="240" width="290" height="88" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="364" y="260" font-size="10" font-weight="700" fill="#2b6cb0">5 &#183; BUSIEST ZONES + REVENUE</text>
+  <text x="364" y="279" font-size="11" font-weight="700" fill="#1a202c">Midtown Center leads: 453,825 trips</text>
+  <text x="364" y="296" font-size="10.5" fill="#4a5568">UES South &#183; JFK &#183; UES North &#183; Midtown East</text>
+  <text x="364" y="312" font-size="10.5" fill="#276749">SUM(total_amount) = $256,692,373.14</text>
+
+  <line x1="642" y1="284" x2="668" y2="284" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="674,284 664,279 664,289" fill="#a0aec0"/>
+
+  <rect x="674" y="240" width="256" height="88" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="686" y="260" font-size="10" font-weight="700" fill="#2b6cb0">6 &#183; THE REPORT</text>
+  <text x="686" y="279" font-size="11" font-weight="700" fill="#1a202c">One printed page, then spark.stop()</text>
+  <text x="686" y="296" font-size="10.5" fill="#276749">12 of 12 cross-checks passed [OK]</text>
+  <text x="686" y="312" font-size="10.5" fill="#4a5568">re-runnable: same input, same page</text>
+
+  <line x1="30" y1="352" x2="930" y2="352" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 2: THE CROSS-CHECK ============ -->
+  <text x="30" y="384" font-size="15" font-weight="700" fill="#276749">THE CROSS-CHECK &#8212; same data, new engine, identical answers</text>
+
+  <text x="42" y="410" font-size="11" font-weight="700" fill="#718096">metric</text>
+  <text x="470" y="410" text-anchor="end" font-size="11" font-weight="700" fill="#718096">this job (Spark 4.2.0)</text>
+  <text x="760" y="410" text-anchor="end" font-size="11" font-weight="700" fill="#718096">Course 1 ground truth</text>
+  <text x="870" y="410" text-anchor="end" font-size="11" font-weight="700" fill="#718096">match</text>
+  <line x1="30" y1="418" x2="930" y2="418" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="42" y="437" font-size="11.5" fill="#1a202c">rows in the quarter (Jan / Feb / Mar)</text>
+  <text x="470" y="437" text-anchor="end" font-size="11.5" fill="#1a202c">2,964,624 / 3,007,526 / 3,582,628</text>
+  <text x="760" y="437" text-anchor="end" font-size="11.5" fill="#4a5568">2,964,624 / 3,007,526 / 3,582,628</text>
+  <text x="870" y="437" text-anchor="end" font-size="11.5" font-weight="700" fill="#276749">OK</text>
+
+  <text x="42" y="459" font-size="11.5" fill="#1a202c">stray pickup timestamps per file</text>
+  <text x="470" y="459" text-anchor="end" font-size="11.5" fill="#1a202c">18 / 15 / 23</text>
+  <text x="760" y="459" text-anchor="end" font-size="11.5" fill="#4a5568">18 / 15 / 23</text>
+  <text x="870" y="459" text-anchor="end" font-size="11.5" font-weight="700" fill="#276749">OK</text>
+
+  <text x="42" y="481" font-size="11.5" fill="#1a202c">quarter window keeps / quarantines</text>
+  <text x="470" y="481" text-anchor="end" font-size="11.5" fill="#1a202c">9,554,757 / 21</text>
+  <text x="760" y="481" text-anchor="end" font-size="11.5" fill="#4a5568">9,554,757 / 21</text>
+  <text x="870" y="481" text-anchor="end" font-size="11.5" font-weight="700" fill="#276749">OK</text>
+
+  <text x="42" y="503" font-size="11.5" fill="#1a202c">busiest pickup zone</text>
+  <text x="470" y="503" text-anchor="end" font-size="11.5" fill="#1a202c">Midtown Center, 453,825 trips</text>
+  <text x="760" y="503" text-anchor="end" font-size="11.5" fill="#4a5568">Midtown Center, 453,825 trips</text>
+  <text x="870" y="503" text-anchor="end" font-size="11.5" font-weight="700" fill="#276749">OK</text>
+
+  <text x="42" y="525" font-size="11.5" fill="#1a202c">total revenue in the window</text>
+  <text x="470" y="525" text-anchor="end" font-size="11.5" font-weight="700" fill="#1a202c">$256,692,373.14</text>
+  <text x="760" y="525" text-anchor="end" font-size="11.5" fill="#4a5568">$256,692,373.14</text>
+  <text x="870" y="525" text-anchor="end" font-size="11.5" font-weight="700" fill="#276749">to the cent</text>
+
+  <line x1="30" y1="546" x2="930" y2="546" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 3: THE DIRT ============ -->
+  <text x="30" y="578" font-size="15" font-weight="700" fill="#c05621">WHY COUNT INSTEAD OF CLEAN &#8212; the dirt is signal, and dropping it changes answers</text>
+
+  <rect x="30" y="594" width="290" height="120" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="42" y="614" font-size="11.5" font-weight="700" fill="#c05621">56 strays, but only 21 leave</text>
+  <text x="42" y="633" font-size="10.5" fill="#4a5568">35 of the 56 are month-boundary spill &#8212;</text>
+  <text x="42" y="649" font-size="10.5" fill="#4a5568">real trips filed in a neighbour's parquet.</text>
+  <text x="42" y="665" font-size="10.5" fill="#4a5568">Only 21 fall outside the whole quarter,</text>
+  <text x="42" y="681" font-size="10.5" fill="#4a5568">incl. a 2002 stamp in the March file.</text>
+  <text x="42" y="700" font-size="10.5" font-weight="700" fill="#c53030">Per-file bounds and quarter bounds differ.</text>
+
+  <rect x="335" y="594" width="290" height="120" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="347" y="614" font-size="11.5" font-weight="700" fill="#c05621">Reversals are revenue, negated</text>
+  <text x="347" y="633" font-size="10.5" fill="#4a5568">115,895 rows (1.21%) with total &#60; 0,</text>
+  <text x="347" y="649" font-size="10.5" fill="#4a5568">summing to &#8722;$2,986,819.26. They cancel</text>
+  <text x="347" y="665" font-size="10.5" fill="#4a5568">their originals inside SUM; drop them and</text>
+  <text x="347" y="681" font-size="10.5" fill="#4a5568">the quarter inflates by ~$3.0&#8201;M.</text>
+  <text x="347" y="700" font-size="10.5" font-weight="700" fill="#c53030">COUNT the dirt; never silently drop it.</text>
+
+  <rect x="640" y="594" width="290" height="120" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="652" y="614" font-size="11.5" font-weight="700" fill="#c05621">Zone names are not keys</text>
+  <text x="652" y="633" font-size="10.5" fill="#4a5568">Two zones are both named &#8220;Corona&#8221;</text>
+  <text x="652" y="649" font-size="10.5" fill="#4a5568">(LocationID 56: 899 trips, 57: 35), and one</text>
+  <text x="652" y="665" font-size="10.5" fill="#4a5568">name covers three IDs (Governor's/Ellis/</text>
+  <text x="652" y="681" font-size="10.5" fill="#4a5568">Liberty Island).</text>
+  <text x="652" y="700" font-size="10.5" font-weight="700" fill="#c53030">Aggregate on LocationID; join names last.</text>
+
+  <text x="480" y="754" text-anchor="middle" font-size="10.5" fill="#a0aec0">Measured on a 10-core macOS machine, Spark 4.2.0 in local[*]. Timings vary by run; the row counts, the stray and reversal tallies, the zone ranking, and the $256,692,373.14 do not.</text>
+</svg>

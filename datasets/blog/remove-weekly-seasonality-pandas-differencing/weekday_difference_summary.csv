@@ -1,0 +1,8 @@
+weekday,original_mean_kwh,difference_mean_kwh,original_deviation_kwh,difference_deviation_kwh
+Monday,239.45,1.396,30.99,-0.135
+Tuesday,236.821,1.391,28.361,-0.14
+Wednesday,227.737,1.513,19.277,-0.018
+Thursday,223.838,1.6,15.377,0.069
+Friday,216.808,1.4,8.348,-0.131
+Saturday,161.162,1.739,-47.298,0.208
+Sunday,153.404,1.678,-55.056,0.147

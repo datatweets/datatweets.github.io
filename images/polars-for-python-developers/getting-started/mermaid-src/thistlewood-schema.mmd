@@ -1,0 +1,52 @@
+erDiagram
+    CUSTOMERS ||--o{ ORDERS : places
+    ORDERS ||--|{ ORDER_ITEMS : contains
+    ORDERS ||--o{ RETURNS : generates
+    ORDER_ITEMS }o--|| PRODUCTS : stocks
+    RETURNS }o--|| PRODUCTS : flagged
+    PROMOTIONS }o--|| PRODUCTS : discounts
+
+    CUSTOMERS {
+        string customer_id PK
+        string first_name
+        string last_name
+        string city
+        string state
+        string segment
+    }
+    ORDERS {
+        string order_id PK
+        date order_date
+        string customer_id FK
+        string channel
+        string status
+    }
+    ORDER_ITEMS {
+        string order_item_id PK
+        string order_id FK
+        string product_id FK
+        int quantity
+        float unit_price_at_sale
+    }
+    PRODUCTS {
+        string product_id PK
+        string product_name
+        string category
+        string subcategory
+        float unit_price
+        float cost
+    }
+    RETURNS {
+        string return_id PK
+        string order_id FK
+        string product_id FK
+        date return_date
+        string reason
+    }
+    PROMOTIONS {
+        string promo_code PK
+        string category
+        float discount_pct
+        date start_date
+        date end_date
+    }

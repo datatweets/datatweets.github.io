@@ -1,0 +1,4 @@
+method,hit_at_1,hit_at_3,eligible_result_rate,candidate_coverage
+unfiltered,0.166667,0.333333,0.111111,0.111111
+post_filter,0.333333,0.333333,1.000000,0.111111
+pre_filter,1.000000,1.000000,1.000000,1.000000

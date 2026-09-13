@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>The instrumented Docent pipeline: one request produces a trace, a structured log record, and aggregated metrics.</title>
+  <rect x="0" y="0" width="940" height="560" fill="#ffffff"/>
+  <text x="470" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">Instrumented Docent: one request, three artifacts</text>
+  <text x="470" y="56" text-anchor="middle" font-size="13" fill="#718096">structured logging + traces/spans + cost/latency/token accounting, assembled into one layer</text>
+
+  <!-- request -->
+  <rect x="30" y="120" width="150" height="70" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="105" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="#2b6cb0">question</text>
+  <text x="105" y="171" text-anchor="middle" font-size="11" fill="#4a5568">golden Q&amp;A</text>
+
+  <!-- instrumented_docent box with two spans -->
+  <rect x="230" y="90" width="230" height="230" rx="12" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+  <text x="345" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">instrumented_docent()</text>
+  <text x="345" y="134" text-anchor="middle" font-size="11" fill="#718096">Tracer wraps each stage in a Span</text>
+
+  <rect x="256" y="152" width="178" height="66" rx="9" fill="#f0fff4" stroke="#276749" stroke-width="2"/>
+  <text x="345" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">span: retrieve</text>
+  <text x="345" y="196" text-anchor="middle" font-size="11" fill="#4a5568">keyword overlap &#8594; doc_ids</text>
+  <text x="345" y="210" text-anchor="middle" font-size="11" fill="#a0aec0">~0.1 ms</text>
+
+  <rect x="256" y="230" width="178" height="72" rx="9" fill="#faf5ff" stroke="#6b46c1" stroke-width="2"/>
+  <text x="345" y="254" text-anchor="middle" font-size="13" font-weight="700" fill="#6b46c1">span: generate</text>
+  <text x="345" y="274" text-anchor="middle" font-size="11" fill="#4a5568">claude-haiku-4-5 call</text>
+  <text x="345" y="288" text-anchor="middle" font-size="11" fill="#a0aec0">tokens + latency dominate here</text>
+
+  <!-- arrows -->
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/>
+    </marker>
+  </defs>
+  <line x1="180" y1="155" x2="228" y2="155" stroke="#a0aec0" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="462" y1="150" x2="560" y2="150" stroke="#a0aec0" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="462" y1="205" x2="560" y2="270" stroke="#a0aec0" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="462" y1="255" x2="560" y2="395" stroke="#a0aec0" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- artifact 1: trace -->
+  <rect x="565" y="86" width="345" height="118" rx="10" fill="#ffffff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="582" y="110" font-size="13" font-weight="700" fill="#2b6cb0">1 &#183; trace (spans with durations)</text>
+  <rect x="582" y="122" width="200" height="14" rx="3" fill="#48bb78"/>
+  <text x="790" y="133" font-size="10" fill="#4a5568">generate 1295.8 ms</text>
+  <rect x="582" y="142" width="6" height="14" rx="3" fill="#9f7aea"/>
+  <text x="596" y="153" font-size="10" fill="#4a5568">retrieve 0.1 ms</text>
+  <text x="582" y="176" font-size="10.5" fill="#718096">trace_id a36bd094fdab &#183; attrs: input_tokens=219,</text>
+  <text x="582" y="191" font-size="10.5" fill="#718096">output_tokens=18, model=claude-haiku-4-5</text>
+
+  <!-- artifact 2: log record -->
+  <rect x="565" y="216" width="345" height="118" rx="10" fill="#ffffff" stroke="#276749" stroke-width="2"/>
+  <text x="582" y="240" font-size="13" font-weight="700" fill="#276749">2 &#183; structured log record (per request)</text>
+  <text x="582" y="262" font-size="10.5" fill="#4a5568">{ trace_id, model, question, status: "ok",</text>
+  <text x="582" y="279" font-size="10.5" fill="#4a5568">&#160; input_tokens: 219, output_tokens: 18,</text>
+  <text x="582" y="296" font-size="10.5" fill="#4a5568">&#160; total_tokens: 237, latency_ms: 1295.9,</text>
+  <text x="582" y="313" font-size="10.5" fill="#4a5568">&#160; cost_usd: 0.0002472 }</text>
+
+  <!-- artifact 3: dashboard -->
+  <rect x="565" y="346" width="345" height="188" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="582" y="370" font-size="13" font-weight="700" fill="#c05621">3 &#183; mini dashboard (aggregated over batch)</text>
+  <line x1="582" y1="380" x2="893" y2="380" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="582" y="400" font-size="11.5" fill="#4a5568">requests</text><text x="893" y="400" text-anchor="end" font-size="11.5" font-weight="700" fill="#1a202c">8</text>
+  <text x="582" y="420" font-size="11.5" fill="#4a5568">error rate</text><text x="893" y="420" text-anchor="end" font-size="11.5" font-weight="700" fill="#c53030">0.125</text>
+  <text x="582" y="440" font-size="11.5" fill="#4a5568">total / mean tokens</text><text x="893" y="440" text-anchor="end" font-size="11.5" font-weight="700" fill="#1a202c">1628 / 232.6</text>
+  <text x="582" y="460" font-size="11.5" fill="#4a5568">total cost (illustrative)</text><text x="893" y="460" text-anchor="end" font-size="11.5" font-weight="700" fill="#1a202c">$0.001747</text>
+  <text x="582" y="480" font-size="11.5" fill="#4a5568">mean latency</text><text x="893" y="480" text-anchor="end" font-size="11.5" font-weight="700" fill="#1a202c">978.8 ms</text>
+  <text x="582" y="500" font-size="11.5" fill="#4a5568">p50 / p95 latency</text><text x="893" y="500" text-anchor="end" font-size="11.5" font-weight="700" fill="#c05621">969.7 / 1295.9 ms</text>
+  <text x="582" y="522" font-size="10.5" fill="#a0aec0">the average hides the slow tail; p95 exposes it</text>
+
+  <text x="345" y="352" text-anchor="middle" font-size="10.5" fill="#a0aec0">the key is never logged; code reads it from the environment</text>
+</svg>

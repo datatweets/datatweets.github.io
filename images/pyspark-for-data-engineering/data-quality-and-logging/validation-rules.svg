@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 812" width="960" height="812" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="812" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Four families of validation rule &#8212; and what they found</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Jan&#8211;Mar 2024 yellow taxi, 9,554,778 rows &#8212; 18 executable assertions run as one suite in Spark 4.2.0</text>
+<line x1="40" y1="78" x2="920" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- FAMILY 1: VOLUME -->
+<rect x="40" y="96" width="430" height="118" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="58" y="120" font-size="13" font-weight="700" fill="#2b6cb0">1 &#183; VOLUME &#8212; did we get roughly the rows we expect?</text>
+<text x="58" y="139" font-size="10.5" fill="#718096">a tolerance band, not an exact count: 3,000,000 &#177;25% &#8594; 2,250,000 to 3,750,000</text>
+<line x1="58" y1="148" x2="452" y2="148" stroke="#bee3f8" stroke-width="1"/>
+<text x="58" y="167" font-size="10.5" fill="#4a5568">Jan 2,964,624</text>
+<text x="180" y="167" font-size="10.5" fill="#4a5568">Feb 3,007,526</text>
+<text x="302" y="167" font-size="10.5" fill="#4a5568">Mar 3,582,628</text>
+<text x="452" y="167" text-anchor="end" font-size="10.5" font-weight="700" fill="#276749">3 PASS</text>
+<rect x="58" y="177" width="394" height="26" rx="5" fill="#ffffff" stroke="#fc8181" stroke-width="1.5"/>
+<text x="70" y="195" font-size="10.5" fill="#c53030">truncated export &#8212; a real 300,000-row slice of Feb</text>
+<text x="440" y="195" text-anchor="end" font-size="10.5" font-weight="700" fill="#c53030">FIRED</text>
+
+<!-- FAMILY 2: RANGE -->
+<rect x="40" y="226" width="430" height="160" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="58" y="250" font-size="13" font-weight="700" fill="#276749">2 &#183; RANGE / DOMAIN &#8212; is each value physically plausible?</text>
+<text x="58" y="269" font-size="10.5" fill="#718096">one agg pass over the cached frame computes every extreme at once</text>
+<line x1="58" y1="278" x2="452" y2="278" stroke="#c6f6d5" stroke-width="1"/>
+<text x="58" y="297" font-size="10.5" fill="#4a5568">trip_distance min 0.0 mi &#8212; expected 0 to 200</text>
+<text x="452" y="297" text-anchor="end" font-size="10.5" font-weight="700" fill="#276749">PASS</text>
+<text x="58" y="317" font-size="10.5" fill="#c53030">trip_distance max 312,722.3 mi &#8212; a broken odometer</text>
+<text x="452" y="317" text-anchor="end" font-size="10.5" font-weight="700" fill="#c53030">FIRED</text>
+<text x="58" y="337" font-size="10.5" fill="#4a5568">total_amount &#8722;1,000.0 to 9,792.0 &#8212; expected &#8722;1,000 to 10,000</text>
+<text x="452" y="337" text-anchor="end" font-size="10.5" font-weight="700" fill="#276749">PASS</text>
+<text x="58" y="357" font-size="10.5" fill="#c53030">21 pickups outside the quarter window (2002-12-31 22:17:10)</text>
+<text x="452" y="357" text-anchor="end" font-size="10.5" font-weight="700" fill="#c53030">FIRED</text>
+<text x="58" y="377" font-size="10" fill="#718096">only 170 of 9.5M rows exceed 200 mi &#8212; 0.0018% of the quarter</text>
+
+<!-- FAMILY 3: REFERENTIAL -->
+<rect x="40" y="398" width="430" height="150" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="58" y="422" font-size="13" font-weight="700" fill="#c05621">3 &#183; REFERENTIAL &#8212; does every key resolve against the dimension?</text>
+<text x="58" y="441" font-size="10.5" fill="#718096">left_anti join of 9,554,778 trips against the 265-row zone lookup</text>
+<line x1="58" y1="450" x2="452" y2="450" stroke="#feebc8" stroke-width="1"/>
+<text x="58" y="470" font-size="10.5" fill="#4a5568">orphan PULocationID values &#8212; expected 0</text>
+<text x="452" y="470" text-anchor="end" font-size="10.5" font-weight="700" fill="#276749">0 &#183; PASS</text>
+<rect x="58" y="482" width="394" height="52" rx="5" fill="#ffffff" stroke="#f6ad55" stroke-width="1.5"/>
+<text x="70" y="500" font-size="10.5" font-weight="700" fill="#c05621">but referential-valid &#8800; meaningful</text>
+<text x="70" y="516" font-size="10" fill="#718096">264 &#8220;Unknown&#8221; and 265 &#8220;Outside of NYC&#8221; RESOLVE, yet name no zone</text>
+<text x="70" y="530" font-size="10.5" fill="#c53030">36,760 trips (0.38%) sit on a junk code &#8212; a passing rule hiding a problem</text>
+
+<!-- FAMILY 4: NULLABILITY -->
+<rect x="40" y="560" width="430" height="140" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="1.5"/>
+<text x="58" y="584" font-size="13" font-weight="700" fill="#1a202c">4 &#183; NULLABILITY / UNIQUENESS</text>
+<text x="58" y="603" font-size="10.5" fill="#718096">columns that must never be null; rows that must never repeat</text>
+<line x1="58" y1="612" x2="452" y2="612" stroke="#e2e8f0" stroke-width="1"/>
+<text x="58" y="631" font-size="10.5" fill="#c53030">751,962 nulls in each of 5 columns &#8212; and in the SAME 751,962 rows</text>
+<text x="452" y="631" text-anchor="end" font-size="10.5" font-weight="700" fill="#c53030">FIRED &#215;5</text>
+<text x="58" y="649" font-size="10" fill="#718096">co-located, so this is lean metadata on real trips &#8212; warn, do not delete</text>
+<text x="58" y="671" font-size="10.5" fill="#4a5568">full-row duplicates &#8212; Jan 0 &#183; Mar 0</text>
+<text x="452" y="671" text-anchor="end" font-size="10.5" font-weight="700" fill="#276749">PASS</text>
+<text x="58" y="689" font-size="10.5" fill="#c53030">Feb: 1 excess row &#8212; one pair of identical trips</text>
+<text x="452" y="689" text-anchor="end" font-size="10.5" font-weight="700" fill="#c53030">FIRED</text>
+
+<!-- SUITE RESULTS PANEL -->
+<rect x="490" y="96" width="430" height="604" rx="10" fill="#ffffff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="705" y="121" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">The suite, run over the real quarter</text>
+<text x="705" y="139" text-anchor="middle" font-size="10.5" fill="#718096">each rule &#8594; (name, passed, observed, expected, severity)</text>
+<line x1="508" y1="150" x2="902" y2="150" stroke="#e2e8f0" stroke-width="1"/>
+<text x="508" y="168" font-size="10" font-weight="700" fill="#718096">RULE</text>
+<text x="790" y="168" text-anchor="end" font-size="10" font-weight="700" fill="#718096">OBSERVED</text>
+<text x="902" y="168" text-anchor="end" font-size="10" font-weight="700" fill="#718096">RESULT</text>
+
+<text x="508" y="189" font-size="10" fill="#4a5568">volume_2024-01</text><text x="790" y="189" text-anchor="end" font-size="10" fill="#1a202c">2,964,624 rows</text><text x="902" y="189" text-anchor="end" font-size="10" font-weight="700" fill="#276749">PASS</text>
+<text x="508" y="208" font-size="10" fill="#4a5568">volume_2024-02</text><text x="790" y="208" text-anchor="end" font-size="10" fill="#1a202c">3,007,526 rows</text><text x="902" y="208" text-anchor="end" font-size="10" font-weight="700" fill="#276749">PASS</text>
+<text x="508" y="227" font-size="10" fill="#4a5568">volume_2024-03</text><text x="790" y="227" text-anchor="end" font-size="10" fill="#1a202c">3,582,628 rows</text><text x="902" y="227" text-anchor="end" font-size="10" font-weight="700" fill="#276749">PASS</text>
+<text x="508" y="246" font-size="10" fill="#4a5568">distance_min</text><text x="790" y="246" text-anchor="end" font-size="10" fill="#1a202c">0.0 mi</text><text x="902" y="246" text-anchor="end" font-size="10" font-weight="700" fill="#276749">PASS</text>
+<rect x="504" y="252" width="402" height="20" rx="4" fill="#fff5f5"/>
+<text x="508" y="266" font-size="10" font-weight="700" fill="#c53030">distance_max</text><text x="790" y="266" text-anchor="end" font-size="10" font-weight="700" fill="#c53030">312,722.3 mi</text><text x="902" y="266" text-anchor="end" font-size="10" font-weight="700" fill="#c53030">FIRED</text>
+<text x="508" y="285" font-size="10" fill="#4a5568">amount_min</text><text x="790" y="285" text-anchor="end" font-size="10" fill="#1a202c">&#8722;1,000.0</text><text x="902" y="285" text-anchor="end" font-size="10" font-weight="700" fill="#276749">PASS</text>
+<text x="508" y="304" font-size="10" fill="#4a5568">amount_max</text><text x="790" y="304" text-anchor="end" font-size="10" fill="#1a202c">9,792.0</text><text x="902" y="304" text-anchor="end" font-size="10" font-weight="700" fill="#276749">PASS</text>
+<rect x="504" y="310" width="402" height="20" rx="4" fill="#fff5f5"/>
+<text x="508" y="324" font-size="10" font-weight="700" fill="#c53030">pickup_in_window</text><text x="790" y="324" text-anchor="end" font-size="10" font-weight="700" fill="#c53030">21 rows</text><text x="902" y="324" text-anchor="end" font-size="10" font-weight="700" fill="#c53030">FIRED</text>
+<text x="508" y="343" font-size="10" fill="#4a5568">zone_referential</text><text x="790" y="343" text-anchor="end" font-size="10" fill="#1a202c">0 rows</text><text x="902" y="343" text-anchor="end" font-size="10" font-weight="700" fill="#276749">PASS</text>
+<rect x="504" y="349" width="402" height="20" rx="4" fill="#fffaf0"/>
+<text x="508" y="363" font-size="10" font-weight="700" fill="#c05621">zone_meaningful</text><text x="790" y="363" text-anchor="end" font-size="10" font-weight="700" fill="#c05621">36,760 rows</text><text x="902" y="363" text-anchor="end" font-size="10" font-weight="700" fill="#c05621">FIRED</text>
+<text x="508" y="382" font-size="10" fill="#4a5568">not_null_passenger_count</text><text x="790" y="382" text-anchor="end" font-size="10" fill="#c53030">751,962 rows</text><text x="902" y="382" text-anchor="end" font-size="10" font-weight="700" fill="#c53030">FIRED</text>
+<text x="508" y="401" font-size="10" fill="#4a5568">not_null_RatecodeID</text><text x="790" y="401" text-anchor="end" font-size="10" fill="#c53030">751,962 rows</text><text x="902" y="401" text-anchor="end" font-size="10" font-weight="700" fill="#c53030">FIRED</text>
+<text x="508" y="420" font-size="10" fill="#4a5568">not_null_store_and_fwd_flag</text><text x="790" y="420" text-anchor="end" font-size="10" fill="#c53030">751,962 rows</text><text x="902" y="420" text-anchor="end" font-size="10" font-weight="700" fill="#c53030">FIRED</text>
+<text x="508" y="439" font-size="10" fill="#4a5568">not_null_congestion_surcharge</text><text x="790" y="439" text-anchor="end" font-size="10" fill="#c53030">751,962 rows</text><text x="902" y="439" text-anchor="end" font-size="10" font-weight="700" fill="#c53030">FIRED</text>
+<text x="508" y="458" font-size="10" fill="#4a5568">not_null_Airport_fee</text><text x="790" y="458" text-anchor="end" font-size="10" fill="#c53030">751,962 rows</text><text x="902" y="458" text-anchor="end" font-size="10" font-weight="700" fill="#c53030">FIRED</text>
+<text x="508" y="477" font-size="10" fill="#4a5568">no_duplicate_rows_2024-01</text><text x="790" y="477" text-anchor="end" font-size="10" fill="#1a202c">0 rows</text><text x="902" y="477" text-anchor="end" font-size="10" font-weight="700" fill="#276749">PASS</text>
+<text x="508" y="496" font-size="10" fill="#4a5568">no_duplicate_rows_2024-02</text><text x="790" y="496" text-anchor="end" font-size="10" fill="#c53030">1 row</text><text x="902" y="496" text-anchor="end" font-size="10" font-weight="700" fill="#c53030">FIRED</text>
+<text x="508" y="515" font-size="10" fill="#4a5568">no_duplicate_rows_2024-03</text><text x="790" y="515" text-anchor="end" font-size="10" fill="#1a202c">0 rows</text><text x="902" y="515" text-anchor="end" font-size="10" font-weight="700" fill="#276749">PASS</text>
+
+<line x1="508" y1="528" x2="902" y2="528" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="508" y="540" width="394" height="40" rx="6" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1.5"/>
+<text x="705" y="566" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">18 rules &#183; 9 passed &#183; 9 fired &#183; 2 critical</text>
+<text x="705" y="600" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">Calibration is the real work</text>
+<text x="508" y="620" font-size="10" fill="#718096">a 200-mile ceiling flags 170 rows (0.0018%) &#8212; informative</text>
+<text x="508" y="637" font-size="10" fill="#718096">a 400,000-mile ceiling passes 312,722.3 mi &#8212; decorative</text>
+<text x="508" y="654" font-size="10" fill="#718096">a 50-mile ceiling flags 1,263 &#8212; mostly real airport runs, noisy</text>
+<rect x="508" y="662" width="394" height="30" rx="5" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1"/>
+<text x="705" y="681" text-anchor="middle" font-size="10.5" font-weight="700" fill="#4a5568">a threshold no data can cross is not a rule, it is a comment</text>
+
+<line x1="40" y1="722" x2="920" y2="722" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="748" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">A rule that never fires is either perfect data or a rule written wrong.</text>
+<text x="480" y="771" text-anchor="middle" font-size="12" fill="#4a5568">Half this suite fired on data that a pipeline processes without complaint &#8212; the defects were always there; the rules made them visible.</text>
+<text x="480" y="794" text-anchor="middle" font-size="11" fill="#718096">Every rule count is a Spark ACTION, so the 9-column check frame is cached once and 18 assertions reuse it instead of re-reading 160&#160;MB each time.</text>
+</svg>

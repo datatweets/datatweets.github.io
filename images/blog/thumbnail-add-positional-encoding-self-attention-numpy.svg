@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Add Positional Encoding to Self-Attention in NumPy</title>
+  <desc id="desc">DataTweets tutorial thumbnail showing three token vectors combined row by row with different sine-and-cosine position vectors before self-attention.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#0067c0"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" fill="#59636e">POSITIONAL ENCODING</text>
+    <text x="90" y="288" font-size="88" font-weight="700" fill="#1b1f24">ORDER</text>
+    <text x="90" y="390" font-size="88" font-weight="700" fill="#1b1f24">AS SIGNAL</text>
+    <rect x="98" y="424" width="330" height="12" rx="6" fill="#0067c0"/>
+    <text x="96" y="494" font-size="28" font-weight="500" fill="#59636e">NUMPY &#183; SINE + COSINE &#183; ATTENTION</text>
+
+    <g transform="translate(674 118)">
+      <text x="26" y="20" font-size="23" font-weight="600" fill="#59636e">TOKEN</text>
+      <text x="172" y="20" font-size="23" font-weight="600" fill="#59636e">POSITION</text>
+      <text x="338" y="20" font-size="23" font-weight="600" fill="#59636e">INPUT</text>
+
+      <g transform="translate(0 54)">
+        <text x="-20" y="35" font-size="18" font-weight="600" fill="#59636e">0</text>
+        <rect x="0" y="0" width="112" height="58" rx="12" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+        <text x="56" y="37" text-anchor="middle" font-size="25" font-weight="600" fill="#1b1f24">scan</text>
+        <text x="128" y="38" text-anchor="middle" font-size="30" font-weight="500" fill="#59636e">+</text>
+        <rect x="150" y="0" width="126" height="58" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <path d="M164 37 C176 14, 188 14, 200 37 S224 60, 236 37 S260 14, 272 37" fill="none" stroke="#0067c0" stroke-width="3"/>
+        <text x="213" y="22" text-anchor="middle" font-size="17" font-weight="700" fill="#1b1f24">PE[0]</text>
+        <line x1="294" y1="29" x2="326" y2="29" stroke="#0067c0" stroke-width="3" marker-end="url(#arrow)"/>
+        <rect x="344" y="0" width="116" height="58" rx="12" fill="#f7f8fa" stroke="#0067c0" stroke-width="2"/>
+        <text x="402" y="37" text-anchor="middle" font-size="22" font-weight="600" fill="#1b1f24">x0 + PE0</text>
+      </g>
+
+      <g transform="translate(0 158)">
+        <text x="-20" y="35" font-size="18" font-weight="600" fill="#59636e">1</text>
+        <rect x="0" y="0" width="112" height="58" rx="12" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+        <text x="56" y="37" text-anchor="middle" font-size="25" font-weight="600" fill="#1b1f24">label</text>
+        <text x="128" y="38" text-anchor="middle" font-size="30" font-weight="500" fill="#59636e">+</text>
+        <rect x="150" y="0" width="126" height="58" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <path d="M164 42 C176 18, 188 18, 200 42 S224 50, 236 28 S260 18, 272 42" fill="none" stroke="#0067c0" stroke-width="3"/>
+        <text x="213" y="22" text-anchor="middle" font-size="17" font-weight="700" fill="#1b1f24">PE[1]</text>
+        <line x1="294" y1="29" x2="326" y2="29" stroke="#0067c0" stroke-width="3" marker-end="url(#arrow)"/>
+        <rect x="344" y="0" width="116" height="58" rx="12" fill="#f7f8fa" stroke="#0067c0" stroke-width="2"/>
+        <text x="402" y="37" text-anchor="middle" font-size="22" font-weight="600" fill="#1b1f24">x1 + PE1</text>
+      </g>
+
+      <g transform="translate(0 262)">
+        <text x="-20" y="35" font-size="18" font-weight="600" fill="#59636e">2</text>
+        <rect x="0" y="0" width="112" height="58" rx="12" fill="#ffffff" stroke="#59636e" stroke-width="2"/>
+        <text x="56" y="37" text-anchor="middle" font-size="25" font-weight="600" fill="#1b1f24">then</text>
+        <text x="128" y="38" text-anchor="middle" font-size="30" font-weight="500" fill="#59636e">+</text>
+        <rect x="150" y="0" width="126" height="58" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="2"/>
+        <path d="M164 47 C176 25, 188 25, 200 47 S224 43, 236 23 S260 25, 272 47" fill="none" stroke="#0067c0" stroke-width="3"/>
+        <text x="213" y="22" text-anchor="middle" font-size="17" font-weight="700" fill="#1b1f24">PE[2]</text>
+        <line x1="294" y1="29" x2="326" y2="29" stroke="#0067c0" stroke-width="3" marker-end="url(#arrow)"/>
+        <rect x="344" y="0" width="116" height="58" rx="12" fill="#f7f8fa" stroke="#0067c0" stroke-width="2"/>
+        <text x="402" y="37" text-anchor="middle" font-size="22" font-weight="600" fill="#1b1f24">x2 + PE2</text>
+      </g>
+
+      <rect x="0" y="356" width="460" height="62" rx="14" fill="#e3f0fa"/>
+      <text x="230" y="382" text-anchor="middle" font-size="20" font-weight="600" fill="#59636e">ADD BEFORE SELF-ATTENTION</text>
+      <text x="230" y="407" text-anchor="middle" font-size="18" font-weight="500" fill="#1b1f24">token vector &#183; row position &#183; combined input</text>
+    </g>
+  </g>
+</svg>

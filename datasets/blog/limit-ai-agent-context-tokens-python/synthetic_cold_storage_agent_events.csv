@@ -1,0 +1,30 @@
+step,event_type,container_id,zone,temperature_c,missing_readings,seal_state,issue_code,note
+1,inspect_container,COLD-001,north,3.8,0,intact,,inspection recorded from the synthetic monitoring table
+2,inspect_container,COLD-002,east,4.5,0,intact,,inspection recorded from the synthetic monitoring table
+3,inspect_container,COLD-003,south,3.7,0,intact,,inspection recorded from the synthetic monitoring table
+4,inspect_container,COLD-004,west,6.8,0,intact,TEMP_HIGH,inspection recorded from the synthetic monitoring table
+5,inspect_container,COLD-005,north,3.6,0,intact,,inspection recorded from the synthetic monitoring table
+6,inspect_container,COLD-006,east,4.3,0,intact,,inspection recorded from the synthetic monitoring table
+7,resolve_flag,COLD-004,,,,,TEMP_HIGH,calibrated probe confirmed 3.9 C
+8,inspect_container,COLD-007,south,3.5,8,intact,SENSOR_GAP,inspection recorded from the synthetic monitoring table
+9,inspect_container,COLD-008,west,4.2,0,intact,,inspection recorded from the synthetic monitoring table
+10,inspect_container,COLD-009,north,3.4,0,intact,,inspection recorded from the synthetic monitoring table
+11,inspect_container,COLD-010,east,4.1,0,intact,,inspection recorded from the synthetic monitoring table
+12,inspect_container,COLD-011,south,3.3,0,review,SEAL_REVIEW,inspection recorded from the synthetic monitoring table
+13,inspect_container,COLD-012,west,4.0,0,intact,,inspection recorded from the synthetic monitoring table
+14,resolve_flag,COLD-007,,,,,SENSOR_GAP,backup logger filled the missing interval
+15,inspect_container,COLD-013,north,3.2,0,intact,,inspection recorded from the synthetic monitoring table
+16,inspect_container,COLD-014,east,3.9,0,intact,,inspection recorded from the synthetic monitoring table
+17,inspect_container,COLD-015,south,-0.7,0,intact,TEMP_LOW,inspection recorded from the synthetic monitoring table
+18,inspect_container,COLD-016,west,3.8,0,intact,,inspection recorded from the synthetic monitoring table
+19,inspect_container,COLD-017,north,4.5,0,intact,,inspection recorded from the synthetic monitoring table
+20,inspect_container,COLD-018,east,3.7,0,intact,,inspection recorded from the synthetic monitoring table
+21,resolve_flag,COLD-011,,,,,SEAL_REVIEW,manual seal check found no damage
+22,inspect_container,COLD-019,south,4.4,8,intact,SENSOR_GAP,inspection recorded from the synthetic monitoring table
+23,inspect_container,COLD-020,west,3.6,0,intact,,inspection recorded from the synthetic monitoring table
+24,inspect_container,COLD-021,north,4.3,0,intact,,inspection recorded from the synthetic monitoring table
+25,resolve_flag,COLD-015,,,,,TEMP_LOW,second probe confirmed 3.2 C
+26,inspect_container,COLD-022,east,3.5,0,intact,,inspection recorded from the synthetic monitoring table
+27,inspect_container,COLD-023,south,4.2,0,review,SEAL_REVIEW,inspection recorded from the synthetic monitoring table
+28,inspect_container,COLD-024,west,3.4,0,intact,,inspection recorded from the synthetic monitoring table
+29,resolve_flag,COLD-019,,,,,SENSOR_GAP,gateway replay restored all readings

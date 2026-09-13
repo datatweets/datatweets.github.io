@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="800" height="380" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Same 6,000 Rows, Two Formats, One Measured Size</text>
+
+  <text x="200" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="#742a2a">thistlewood_orders.csv</text>
+  <rect x="90" y="80" width="220" height="180" fill="#fed7d7" stroke="#fc8181" stroke-width="1.4" />
+  <text x="200" y="176" text-anchor="middle" font-size="15" font-weight="700" fill="#742a2a">231,879</text>
+  <text x="200" y="196" text-anchor="middle" font-size="11" fill="#742a2a">bytes</text>
+  <text x="200" y="278" text-anchor="middle" font-size="10" fill="#a0aec0">row-oriented, plain text, no compression</text>
+
+  <text x="600" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="#22543d">thistlewood_orders_duckdb_export.parquet</text>
+  <rect x="490" y="224" width="220" height="36" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.4" />
+  <text x="600" y="247" text-anchor="middle" font-size="13" font-weight="700" fill="#22543d">46,585 bytes</text>
+  <text x="600" y="278" text-anchor="middle" font-size="10" fill="#a0aec0">column-oriented, compressed</text>
+
+  <line x1="330" y1="170" x2="470" y2="170" stroke="#a0aec0" stroke-width="1.3" stroke-dasharray="4,3" />
+  <text x="400" y="160" text-anchor="middle" font-size="10.5" font-weight="700" fill="#4a5568">4.98x smaller</text>
+
+  <rect x="90" y="300" width="620" height="60" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="400" y="324" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2c5282">Both formats verified to produce identical results</text>
+  <text x="400" y="342" text-anchor="middle" font-size="10.5" fill="#2c5282">6,000 rows, identical schema, $9,195,043.62 revenue total either way</text>
+</svg>

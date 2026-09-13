@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="500" viewBox="0 0 720 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="500" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Query Plans: Pruning, Pushdown, and a Real Bug</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">Two plans against thistlewood_lake/, read directly from .explain()</text>
+
+  <rect x="24" y="66" width="330" height="110" rx="10" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.2" />
+  <text x="36" y="86" font-size="9.5" font-weight="700" fill="#4a5568">Unfiltered scan</text>
+  <text x="36" y="104" font-size="8.5" font-family="monospace" fill="#1a202c">Parquet SCAN [... 23 other sources]</text>
+  <text x="36" y="120" font-size="8.5" font-family="monospace" fill="#1a202c">PROJECT 2/9 COLUMNS</text>
+  <text x="36" y="144" font-size="9" fill="#4a5568">all 24 partition files touched</text>
+  <text x="36" y="160" font-size="9" fill="#4a5568">no pruning possible -- no filter</text>
+
+  <rect x="366" y="66" width="330" height="110" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.2" />
+  <text x="378" y="86" font-size="9.5" font-weight="700" fill="#276749">Filtered: year=2024, month&lt;=3, web</text>
+  <text x="378" y="104" font-size="8.5" font-family="monospace" fill="#1a202c">Parquet SCAN [... 2 other sources]</text>
+  <text x="378" y="120" font-size="8.5" font-family="monospace" fill="#1a202c">PROJECT 5/9 COLUMNS</text>
+  <text x="378" y="136" font-size="8.5" font-family="monospace" fill="#1a202c">SELECTION: channel=="web" &amp; ...</text>
+  <text x="378" y="158" font-size="9" fill="#276749">only 3 of 24 files touched (pruning)</text>
+
+  <rect x="40" y="196" width="640" height="60" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="360" y="218" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">Verified: 532 rows, $866,475.78 -- matches the naive equivalent exactly</text>
+  <text x="360" y="238" text-anchor="middle" font-size="9" fill="#4a5568">Pruning + predicate pushdown + projection pushdown, all visible in one plan</text>
+
+  <rect x="40" y="272" width="640" height="120" rx="10" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <text x="360" y="294" text-anchor="middle" font-size="11" font-weight="700" fill="#c53030">A real, verified bug: group_by on partition columns, default collect()</text>
+  <text x="360" y="314" text-anchor="middle" font-size="9" font-family="monospace" fill="#742a2a">lake.group_by(["year","month","channel"]).agg(...).collect()</text>
+  <text x="360" y="332" text-anchor="middle" font-size="9.5" fill="#c53030">864 rows, $110,340,523.44 -- should be 72 rows, $9,195,043.62 (12x too high)</text>
+  <text x="360" y="352" text-anchor="middle" font-size="8.5" fill="#742a2a">.explain() shows a UNION of 24 near-duplicate per-file plans -- the pre_partition_hive optimization</text>
+  <text x="360" y="368" text-anchor="middle" font-size="8.5" fill="#742a2a">caught only by checking the result against this course's own $9,195,043.62 grand total</text>
+
+  <rect x="40" y="404" width="640" height="60" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="426" text-anchor="middle" font-size="10" font-family="monospace" fill="#276749">collect(optimizations=QueryOptFlags(pre_partition_hive=False))</text>
+  <text x="360" y="446" text-anchor="middle" font-size="9.5" fill="#22543d">Fixed: 72 rows, $9,195,043.62 -- reconciled exactly</text>
+</svg>

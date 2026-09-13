@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Accept Different Object Types in One Python Function</title>
+  <desc id="desc">DataTweets tutorial thumbnail showing CSV, memory, and combined objects converging on a DeliverySource protocol before entering one delay summary function.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0067c0"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="145" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">PYTHON PROTOCOLS</text>
+    <text x="90" y="267" font-size="82" font-weight="700" fill="#1b1f24">MANY TYPES</text>
+    <text x="90" y="370" font-size="82" font-weight="700" fill="#1b1f24">ONE FUNCTION</text>
+    <rect x="94" y="409" width="380" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="485" font-size="30" font-weight="500" fill="#59636e">PROTOCOL &#183; SHARED BEHAVIOR</text>
+
+    <g transform="translate(680 116)">
+      <g font-size="20" font-weight="600" text-anchor="middle">
+        <rect x="0" y="10" width="126" height="64" rx="14" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+        <text x="63" y="50" fill="#1b1f24">CSV</text>
+        <rect x="142" y="10" width="126" height="64" rx="14" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+        <text x="205" y="50" fill="#1b1f24">MEMORY</text>
+        <rect x="284" y="10" width="126" height="64" rx="14" fill="#f7f8fa" stroke="#c7ccd2" stroke-width="2"/>
+        <text x="347" y="50" fill="#1b1f24">COMBINED</text>
+      </g>
+
+      <g fill="none" stroke="#c7ccd2" stroke-width="3">
+        <path d="M63 74 V116 H205 V150"/>
+        <path d="M205 74 V150"/>
+        <path d="M347 74 V116 H205"/>
+      </g>
+
+      <rect x="60" y="150" width="290" height="118" rx="20" fill="#e8f2fb" stroke="#0067c0" stroke-width="3"/>
+      <text x="205" y="194" font-size="25" font-weight="700" text-anchor="middle" fill="#1b1f24">DeliverySource</text>
+      <text x="205" y="231" font-size="19" font-weight="500" text-anchor="middle" fill="#59636e">label &#183; load()</text>
+
+      <path d="M205 268 V325" fill="none" stroke="#0067c0" stroke-width="4" marker-end="url(#arrow)"/>
+
+      <rect x="60" y="338" width="290" height="102" rx="20" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+      <text x="205" y="382" font-size="23" font-weight="700" text-anchor="middle" fill="#1b1f24">delay_summary()</text>
+      <text x="205" y="416" font-size="18" font-weight="500" text-anchor="middle" fill="#59636e">same code &#8594; same shape</text>
+    </g>
+  </g>
+</svg>

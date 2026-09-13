@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="640" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Optimizing a slow query, one plan-diagnosed fix at a time</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Zone-hour report, January &#183; cumulative wall time &#183; each fix read from the plan, then measured</text>
+
+<!-- LEFT: staircase of timings -->
+<text x="30" y="92" font-size="15" font-weight="700" fill="#2b6cb0">EACH FIX, MEASURED (seconds, January)</text>
+<!-- scale: 117.24s -> 470px from x=250; log-ish but keep linear w/ a break note -->
+<!-- baseline -->
+<text x="240" y="122" text-anchor="end" font-size="11.5" fill="#1a202c">0 baseline</text>
+<rect x="250" y="110" width="470" height="18" rx="3" fill="#fc8181"/>
+<text x="726" y="124" font-size="11" font-weight="700" fill="#c53030">117.24&#160;s &#183; udf + wide + SortMergeJoin</text>
+<!-- +date_trunc -->
+<text x="240" y="152" text-anchor="end" font-size="11.5" fill="#1a202c">1 + built-in date_trunc</text>
+<rect x="250" y="140" width="12" height="18" rx="3" fill="#48bb78"/>
+<text x="270" y="154" font-size="11" font-weight="700" fill="#276749">1.13&#160;s &#8212; kills the UDF (100&#215; drop)</text>
+<!-- +prune -->
+<text x="240" y="182" text-anchor="end" font-size="11.5" fill="#1a202c">2 + prune columns</text>
+<rect x="250" y="170" width="11" height="18" rx="3" fill="#48bb78"/>
+<text x="269" y="184" font-size="11" fill="#4a5568">1.02&#160;s</text>
+<!-- +early -->
+<text x="240" y="212" text-anchor="end" font-size="11.5" fill="#1a202c">3 + filter early</text>
+<rect x="250" y="200" width="12" height="18" rx="3" fill="#a0aec0"/>
+<text x="270" y="214" font-size="11" fill="#c05621">1.11&#160;s &#8212; no change (Catalyst already pushed it)</text>
+<!-- +broadcast -->
+<text x="240" y="242" text-anchor="end" font-size="11.5" fill="#1a202c">4 + broadcast join</text>
+<rect x="250" y="230" width="6" height="18" rx="3" fill="#276749"/>
+<text x="264" y="244" font-size="11" font-weight="700" fill="#276749">0.54&#160;s &#8212; SortMergeJoin &#8594; BroadcastHashJoin (2&#215;)</text>
+
+<line x1="30" y1="268" x2="930" y2="268" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- plan sketches -->
+<text x="30" y="300" font-size="15" font-weight="700" fill="#276749">WHAT THE PLAN SHOWED</text>
+
+<rect x="30" y="314" width="430" height="196" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="45" y="336" font-size="12" font-weight="700" fill="#c05621">slow &#183; two circled problems</text>
+<text x="45" y="360" font-size="11" fill="#4a5568">HashAggregate (final)</text>
+<text x="45" y="378" font-size="11" fill="#4a5568">+- SortMergeJoin</text>
+<rect x="58" y="386" width="384" height="20" rx="4" fill="#fff5f5" stroke="#c53030" stroke-width="1.2"/>
+<text x="66" y="400" font-size="10.5" font-weight="700" fill="#c53030">Sort + Exchange &#215;2 (both sides shuffled)</text>
+<text x="45" y="426" font-size="11" fill="#4a5568">&#160;&#160;&#160;+- Project [pythonUDF0 AS hr]</text>
+<rect x="58" y="434" width="384" height="20" rx="4" fill="#fff5f5" stroke="#c53030" stroke-width="1.2"/>
+<text x="66" y="448" font-size="10.5" font-weight="700" fill="#c53030">BatchEvalPython [&lt;lambda&gt;] &#8212; the UDF, 99% of cost</text>
+<text x="45" y="476" font-size="11" fill="#4a5568">&#160;&#160;&#160;&#160;&#160;+- FileScan (filter already pushed)</text>
+<text x="45" y="498" font-size="10.5" font-style="italic" fill="#718096">the late filter needed no fixing</text>
+
+<rect x="500" y="314" width="430" height="196" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="515" y="336" font-size="12" font-weight="700" fill="#276749">fast &#183; both fixed</text>
+<text x="515" y="360" font-size="11" fill="#4a5568">HashAggregate (final)</text>
+<text x="515" y="378" font-size="11" fill="#4a5568">+- Exchange (group-by shuffle: irreducible)</text>
+<text x="515" y="398" font-size="11" fill="#4a5568">&#160;&#160;&#160;+- BroadcastHashJoin</text>
+<rect x="528" y="406" width="388" height="20" rx="4" fill="#ffffff" stroke="#48bb78" stroke-width="1.2"/>
+<text x="536" y="420" font-size="10.5" font-weight="700" fill="#276749">BroadcastExchange (265-row table only)</text>
+<text x="515" y="446" font-size="11" fill="#4a5568">&#160;&#160;&#160;+- Project [date_trunc(hour, &#8230;) AS hr]</text>
+<rect x="528" y="454" width="388" height="20" rx="4" fill="#ffffff" stroke="#48bb78" stroke-width="1.2"/>
+<text x="536" y="468" font-size="10.5" font-weight="700" fill="#276749">native date_trunc, fused into codegen</text>
+<text x="515" y="498" font-size="10.5" font-style="italic" fill="#718096">no BatchEvalPython, no SortMergeJoin</text>
+
+<line x1="30" y1="530" x2="930" y2="530" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30" y="546" width="900" height="72" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="480" y="576" text-anchor="middle" font-size="13.5" fill="#1a202c">Same answer, verified: <tspan font-weight="700">240,917</tspan> buckets &#183; <tspan font-weight="700">9,554,757</tspan> trips &#183; <tspan font-weight="700" fill="#276749">$256,692,373.14</tspan> &#8212; row-identical to the slow query, matching Course 1 to the cent.</text>
+<text x="480" y="600" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2b6cb0">110&#160;s &#8594; 0.70&#160;s = 157&#215; faster, every fix diagnosed from the plan.</text>
+</svg>

@@ -1,0 +1,53 @@
+{
+  "complete_export": {
+    "sample_ids": [
+      "WQ-101",
+      "WQ-102",
+      "WQ-103",
+      "WQ-104",
+      "WQ-105",
+      "WQ-106"
+    ],
+    "nitrate_mg_l": [
+      2.8,
+      4.1,
+      3.6,
+      7.2,
+      5.0,
+      4.4
+    ]
+  },
+  "truncated_export": {
+    "sample_ids": [
+      "WQ-101",
+      "WQ-102",
+      "WQ-103",
+      "WQ-104",
+      "WQ-105",
+      "WQ-106"
+    ],
+    "nitrate_mg_l": [
+      2.8,
+      4.1,
+      3.6,
+      7.2,
+      5.0
+    ]
+  },
+  "optional_notes_export": {
+    "sample_ids": [
+      "WQ-101",
+      "WQ-102",
+      "WQ-103",
+      "WQ-104",
+      "WQ-105",
+      "WQ-106"
+    ],
+    "notes": [
+      "clear",
+      "clear",
+      "retest requested",
+      "clear"
+    ]
+  }
+}

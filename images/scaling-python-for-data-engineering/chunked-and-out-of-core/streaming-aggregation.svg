@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <text x="440" y="38" text-anchor="middle" font-size="21" font-weight="700" fill="#1a202c">Streaming a mean: partial (sum, count) pairs combine into one answer</text>
+  <text x="440" y="62" text-anchor="middle" font-size="14" fill="#4a5568">Each 50,000-row chunk emits a partial sum and count; a combiner adds them; one final divide gives the mean.</text>
+
+  <!-- Chunk cards -->
+  <g>
+    <!-- Chunk 1 -->
+    <rect x="40" y="96" width="215" height="76" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="56" y="122" font-size="14" font-weight="700" fill="#2b6cb0">Chunk 1 &#183; 50,000 rows</text>
+    <text x="56" y="145" font-size="13" fill="#1a202c">sum = 903,981.89</text>
+    <text x="56" y="163" font-size="13" fill="#1a202c">count = 50,000</text>
+
+    <!-- Chunk 2 -->
+    <rect x="40" y="184" width="215" height="76" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="56" y="210" font-size="14" font-weight="700" fill="#2b6cb0">Chunk 2 &#183; 50,000 rows</text>
+    <text x="56" y="233" font-size="13" fill="#1a202c">sum = 904,904.49</text>
+    <text x="56" y="251" font-size="13" fill="#1a202c">count = 50,000</text>
+
+    <!-- Chunk 3 -->
+    <rect x="40" y="272" width="215" height="76" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="56" y="298" font-size="14" font-weight="700" fill="#2b6cb0">Chunk 3 &#183; 50,000 rows</text>
+    <text x="56" y="321" font-size="13" fill="#1a202c">sum = 904,096.14</text>
+    <text x="56" y="339" font-size="13" fill="#1a202c">count = 50,000</text>
+
+    <text x="147" y="378" text-anchor="middle" font-size="20" font-weight="700" fill="#a0aec0">&#8942;</text>
+    <text x="147" y="400" text-anchor="middle" font-size="13" fill="#718096">chunk 4 &#8230; only one chunk in RAM at a time</text>
+  </g>
+
+  <!-- Arrows to combiner -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#4a5568"/>
+    </marker>
+  </defs>
+  <path d="M255,134 L352,196" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M255,222 L352,222" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M255,310 L352,248" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Combiner box -->
+  <rect x="360" y="160" width="210" height="130" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="2.5"/>
+  <text x="465" y="188" text-anchor="middle" font-size="15" font-weight="700" fill="#276749">Combiner</text>
+  <text x="465" y="210" text-anchor="middle" font-size="13" fill="#276749">running_sum += chunk.sum()</text>
+  <text x="465" y="228" text-anchor="middle" font-size="13" fill="#276749">running_n  += chunk.count()</text>
+  <line x1="378" y1="242" x2="552" y2="242" stroke="#48bb78" stroke-width="1"/>
+  <text x="465" y="262" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">&#931;sum = 3,621,819.17</text>
+  <text x="465" y="280" text-anchor="middle" font-size="13" font-weight="700" fill="#1a202c">&#931;count = 200,000</text>
+
+  <!-- Arrow to result -->
+  <path d="M570,225 L622,225" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Result box -->
+  <rect x="630" y="176" width="220" height="98" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="2.5"/>
+  <text x="740" y="204" text-anchor="middle" font-size="15" font-weight="700" fill="#6b46c1">Final answer</text>
+  <text x="740" y="232" text-anchor="middle" font-size="14" fill="#1a202c">mean = &#931;sum &#247; &#931;count</text>
+  <text x="740" y="258" text-anchor="middle" font-size="20" font-weight="700" fill="#6b46c1">= 18.11</text>
+
+  <!-- Memory note -->
+  <text x="440" y="440" text-anchor="middle" font-size="13" fill="#4a5568">Peak memory holds one chunk, not the column &#8212; the same pattern computes count, sum, min and max out-of-core.</text>
+</svg>

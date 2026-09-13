@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="500" viewBox="0 0 720 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="500" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">flatten_orders() -- A Real Nest-Then-Flatten Round Trip</text>
+
+  <rect x="220" y="48" width="280" height="50" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="360" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">thistlewood_orders_nested.json</text>
+  <text x="360" y="86" text-anchor="middle" font-size="9" fill="#4a5568">792 orders, line_items: List(Struct)</text>
+
+  <line x1="360" y1="98" x2="360" y2="120" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#f0)" />
+
+  <rect x="180" y="124" width="360" height="46" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.3" />
+  <text x="360" y="152" text-anchor="middle" font-size="10.5" font-family="monospace" fill="#2b6cb0">.explode("line_items")  -&gt; 1,892 rows</text>
+
+  <line x1="360" y1="170" x2="360" y2="192" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#f1)" />
+
+  <rect x="180" y="196" width="360" height="46" rx="8" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.3" />
+  <text x="360" y="224" text-anchor="middle" font-size="10.5" font-family="monospace" fill="#6b46c1">.unnest("line_items")  -&gt; 8 plain columns</text>
+
+  <line x1="360" y1="242" x2="360" y2="264" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#f2)" />
+
+  <defs>
+    <marker id="f0" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="f1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="f2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <rect x="140" y="268" width="440" height="50" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.4" />
+  <text x="360" y="290" text-anchor="middle" font-size="11" font-weight="700" fill="#1a202c">flat_from_nested</text>
+  <text x="360" y="306" text-anchor="middle" font-size="9" fill="#4a5568">1,892 rows, one per real line item</text>
+
+  <line x1="360" y1="318" x2="360" y2="340" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#f3)" />
+  <defs>
+    <marker id="f3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <rect x="90" y="344" width="540" height="140" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.6" />
+  <text x="360" y="368" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">Verified against real thistlewood_order_items.csv</text>
+  <text x="360" y="392" text-anchor="middle" font-size="10" font-family="monospace" fill="#2d3748">row count:      1,892  =  1,892</text>
+  <text x="360" y="410" text-anchor="middle" font-size="10" font-family="monospace" fill="#2d3748">total quantity: 5,754  =  5,754</text>
+  <text x="360" y="428" text-anchor="middle" font-size="10" font-family="monospace" fill="#2d3748">total revenue:  $1,262,892.88  =  $1,262,892.88</text>
+  <text x="360" y="450" text-anchor="middle" font-size="10" font-family="monospace" fill="#276749">full table equals real source, every row: True</text>
+  <text x="360" y="470" text-anchor="middle" font-size="9" fill="#4a5568">nest (this module's generator) then flatten (this lesson) recovers the exact original data</text>
+</svg>

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 726" width="960" height="726" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="726" fill="#ffffff"/>
+
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">The Zone-Hour Report, Rebuilt in Spark</text>
+  <text x="480" y="56" text-anchor="middle" font-size="14" fill="#718096">9,554,778 real NYC yellow-taxi trips (Jan&#8211;Mar 2024) &#183; the Spark DataFrame API &#183; cross-verified to the digit and the cent against Course&#160;1</text>
+
+  <!-- ============ BAND 1: THE PIPELINE ============ -->
+  <text x="30" y="90" font-size="15" font-weight="700" fill="#2b6cb0">THE PIPELINE &#8212; read &#8594; filter &#8594; derive &#8594; group &#8594; join, the whole module in one chain</text>
+
+  <!-- Stage 1: read (blue) -->
+  <rect x="31" y="104" width="158" height="96" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="43" y="124" font-size="10" font-weight="700" fill="#2b6cb0">1 &#183; READ 3 MONTHS</text>
+  <text x="43" y="143" font-size="10.5" font-weight="700" fill="#1a202c">spark.read.parquet</text>
+  <text x="43" y="159" font-size="10.5" fill="#4a5568">one multi-path read</text>
+  <text x="43" y="181" font-size="12" font-weight="700" fill="#2b6cb0">9,554,778 rows</text>
+
+  <line x1="189" y1="152" x2="209" y2="152" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="215,152 205,147 205,157" fill="#a0aec0"/>
+
+  <!-- Stage 2: window filter (orange = the substance) -->
+  <rect x="216" y="104" width="158" height="96" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="228" y="124" font-size="10" font-weight="700" fill="#c05621">2 &#183; WINDOW FILTER</text>
+  <text x="228" y="143" font-size="10.5" font-weight="700" fill="#1a202c">keep the reversals</text>
+  <text x="228" y="159" font-size="10" fill="#4a5568">2024-01-01 &#8804; t &lt; 04-01</text>
+  <text x="228" y="174" font-size="10.5" fill="#276749">keep 9,554,757 &#183; drop 21</text>
+  <text x="228" y="190" font-size="10.5" fill="#c05621">115,894 reversals stay</text>
+
+  <line x1="374" y1="152" x2="394" y2="152" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="400,152 390,147 390,157" fill="#a0aec0"/>
+
+  <!-- Stage 3: derive hour (green) -->
+  <rect x="401" y="104" width="158" height="96" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="413" y="124" font-size="10" font-weight="700" fill="#276749">3 &#183; DERIVE HOUR</text>
+  <text x="413" y="143" font-size="10.5" font-weight="700" fill="#1a202c">date_trunc(hour, ts)</text>
+  <text x="413" y="159" font-size="10.5" fill="#4a5568">floor to the calendar hour</text>
+  <text x="413" y="181" font-size="10.5" fill="#4a5568">each hour a bucket key</text>
+
+  <line x1="559" y1="152" x2="579" y2="152" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="585,152 575,147 575,157" fill="#a0aec0"/>
+
+  <!-- Stage 4: groupBy (green) -->
+  <rect x="586" y="104" width="158" height="96" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="598" y="124" font-size="10" font-weight="700" fill="#276749">4 &#183; GROUPBY(zone, hour)</text>
+  <text x="598" y="143" font-size="10.5" font-weight="700" fill="#1a202c">count &#183; sum(total_amount)</text>
+  <text x="598" y="159" font-size="10.5" fill="#4a5568">trips and revenue per bucket</text>
+  <text x="598" y="181" font-size="12" font-weight="700" fill="#276749">240,917 buckets</text>
+
+  <line x1="744" y1="152" x2="764" y2="152" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="770,152 760,147 760,157" fill="#a0aec0"/>
+
+  <!-- Stage 5: broadcast join (blue) -->
+  <rect x="771" y="104" width="158" height="96" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="783" y="124" font-size="10" font-weight="700" fill="#2b6cb0">5 &#183; BROADCAST JOIN</text>
+  <text x="783" y="143" font-size="10.5" font-weight="700" fill="#1a202c">names on LocationID</text>
+  <text x="783" y="159" font-size="10.5" fill="#4a5568">265-row dim &#183; carry Zone</text>
+  <text x="783" y="181" font-size="10.5" fill="#276749">BroadcastHashJoin, no shuffle</text>
+
+  <line x1="30" y1="224" x2="930" y2="224" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 2: THE CROSS-CHECK ============ -->
+  <text x="30" y="254" font-size="15" font-weight="700" fill="#276749">THE CROSS-CHECK &#8212; every headline matches Course 1's pandas capstone to the digit</text>
+
+  <rect x="30" y="268" width="900" height="176" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1"/>
+  <!-- header -->
+  <text x="48" y="292" font-size="11" font-weight="700" fill="#718096">metric</text>
+  <text x="500" y="292" text-anchor="end" font-size="11" font-weight="700" fill="#718096">Spark 4.2.0</text>
+  <text x="740" y="292" text-anchor="end" font-size="11" font-weight="700" fill="#718096">Course 1</text>
+  <text x="890" y="292" text-anchor="end" font-size="11" font-weight="700" fill="#718096">check</text>
+  <line x1="48" y1="300" x2="890" y2="300" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="48" y="322" font-size="12" fill="#1a202c">(zone, hour) buckets</text>
+  <text x="500" y="322" text-anchor="end" font-size="12" font-weight="700" fill="#1a202c">240,917</text>
+  <text x="740" y="322" text-anchor="end" font-size="12" fill="#4a5568">240,917</text>
+  <text x="890" y="322" text-anchor="end" font-size="12" font-weight="700" fill="#276749">match</text>
+
+  <text x="48" y="346" font-size="12" fill="#1a202c">trips kept in the window</text>
+  <text x="500" y="346" text-anchor="end" font-size="12" font-weight="700" fill="#1a202c">9,554,757</text>
+  <text x="740" y="346" text-anchor="end" font-size="12" fill="#4a5568">9,554,757</text>
+  <text x="890" y="346" text-anchor="end" font-size="12" font-weight="700" fill="#276749">match</text>
+
+  <text x="48" y="370" font-size="12" fill="#1a202c">quarantined (outside quarter)</text>
+  <text x="500" y="370" text-anchor="end" font-size="12" font-weight="700" fill="#1a202c">21</text>
+  <text x="740" y="370" text-anchor="end" font-size="12" fill="#4a5568">21</text>
+  <text x="890" y="370" text-anchor="end" font-size="12" font-weight="700" fill="#276749">match</text>
+
+  <text x="48" y="394" font-size="12" fill="#1a202c">total revenue</text>
+  <text x="500" y="394" text-anchor="end" font-size="12" font-weight="700" fill="#1a202c">$256,692,373.14</text>
+  <text x="740" y="394" text-anchor="end" font-size="12" fill="#4a5568">$256,692,373.14</text>
+  <text x="890" y="394" text-anchor="end" font-size="12" font-weight="700" fill="#276749">to the cent</text>
+
+  <text x="48" y="418" font-size="12" fill="#1a202c">busiest zone &#8212; Midtown Center</text>
+  <text x="500" y="418" text-anchor="end" font-size="12" font-weight="700" fill="#1a202c">453,825</text>
+  <text x="740" y="418" text-anchor="end" font-size="12" fill="#4a5568">453,825</text>
+  <text x="890" y="418" text-anchor="end" font-size="12" font-weight="700" fill="#276749">match</text>
+
+  <text x="48" y="438" font-size="10.5" fill="#718096">Raw float64 sum 256692373.13999972 differs from Course 1's serial total in the 9th decimal &#8212; summation order changed, not the answer. Two Coronas kept separate: ID 56 = 899, 57 = 35.</text>
+
+  <line x1="30" y1="470" x2="930" y2="470" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ============ BAND 3: SPARK vs COURSE 1 ============ -->
+  <text x="30" y="500" font-size="15" font-weight="700" fill="#c05621">SPARK vs COURSE 1's PANDAS PIPELINE &#8212; same answer, two shapes of code</text>
+
+  <!-- Spark box -->
+  <rect x="30" y="514" width="440" height="132" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="46" y="536" font-size="12.5" font-weight="700" fill="#2b6cb0">Spark &#8212; declarative</text>
+  <text x="46" y="558" font-size="11" fill="#4a5568">You describe the report: read &#183; where &#183; groupBy &#183; join.</text>
+  <text x="46" y="576" font-size="11" fill="#4a5568">Catalyst plans the how &#8212; the shuffle Exchange, the</text>
+  <text x="46" y="594" font-size="11" fill="#4a5568">map-side partial_count, the BroadcastHashJoin, and</text>
+  <text x="46" y="612" font-size="11" fill="#4a5568">3-of-19 column pruning &#8212; none of it hand-written.</text>
+  <text x="46" y="634" font-size="11" font-weight="700" fill="#276749">Same code scales past one machine, unchanged.</text>
+
+  <!-- Course 1 box -->
+  <rect x="490" y="514" width="440" height="132" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="506" y="536" font-size="12.5" font-weight="700" fill="#276749">Course 1 &#8212; explicit</text>
+  <text x="506" y="558" font-size="11" fill="#4a5568">You orchestrate the machine: chunk the row groups,</text>
+  <text x="506" y="576" font-size="11" fill="#4a5568">pick a worker count, a multiprocessing.Pool reads</text>
+  <text x="506" y="594" font-size="11" fill="#4a5568">its own partition, a manual reduce sums the parts,</text>
+  <text x="506" y="612" font-size="11" fill="#4a5568">a SQLite warehouse holds the result &#8212; under 400 MB.</text>
+  <text x="506" y="634" font-size="11" font-weight="700" fill="#c05621">Faster here (~0.6 s), but capped at one machine.</text>
+
+  <text x="30" y="672" font-size="11" fill="#718096">Module 1's honest finding: at 160&#160;MB, Spark is <tspan font-weight="700">not</tspan> faster than streaming pandas &#8212; it pays a multi-second fixed startup it can't amortize. Spark's win is scale + declarativeness, not speed on data that fits.</text>
+
+  <text x="480" y="710" text-anchor="middle" font-size="10.5" fill="#a0aec0">Measured on a 10-core macOS machine, Spark 4.2.0 in local mode. Timings vary by run; the bucket count, the podium, and the revenue do not.</text>
+</svg>

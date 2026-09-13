@@ -1,0 +1,9 @@
+case_id,case,expected_status,actual_status,passed
+T01,valid summary,accepted,accepted,True
+T02,unknown tool,unknown_tool,unknown_tool,True
+T03,missing end date,missing_argument,missing_argument,True
+T04,extra SQL field,extra_argument,extra_argument,True
+T05,injection-shaped center,unknown_center,unknown_center,True
+T06,invalid date,invalid_date,invalid_date,True
+T07,reversed dates,reversed_range,reversed_range,True
+T08,range over 31 days,range_too_large,range_too_large,True

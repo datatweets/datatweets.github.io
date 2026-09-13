@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="420" fill="#ffffff" />
+  <text x="360" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Flag Before You Correct</text>
+  <text x="360" y="50" text-anchor="middle" font-size="10.5" fill="#4a5568">5 rows: 3 negative quantity, 2 negative unit_price</text>
+
+  <rect x="60" y="72" width="240" height="72" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="180" y="96" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">O00141  quantity = -13</text>
+  <text x="180" y="116" text-anchor="middle" font-size="9.5" fill="#2d3748">a real sign-flip data-entry error</text>
+
+  <rect x="420" y="72" width="240" height="72" rx="10" fill="#fff5f5" stroke="#e53e3e" stroke-width="1.4" />
+  <text x="540" y="96" text-anchor="middle" font-size="11.5" font-weight="700" fill="#c53030">O02119  unit_price = -264.52</text>
+  <text x="540" y="116" text-anchor="middle" font-size="9.5" fill="#2d3748">same pattern, different column</text>
+
+  <line x1="180" y1="144" x2="360" y2="180" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#f1)" />
+  <line x1="540" y1="144" x2="360" y2="180" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#f2)" />
+  <defs>
+    <marker id="f1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+    <marker id="f2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <rect x="210" y="184" width="300" height="66" rx="10" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="360" y="208" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2b6cb0">Step 1: flag</text>
+  <text x="360" y="226" text-anchor="middle" font-size="9.5" fill="#2d3748">was_negative_quantity, was_negative_price</text>
+  <text x="360" y="242" text-anchor="middle" font-size="9.5" fill="#2d3748">recorded from the original signed values</text>
+
+  <line x1="360" y1="250" x2="360" y2="276" stroke="#a0aec0" stroke-width="1.3" marker-end="url(#f3)" />
+  <defs>
+    <marker id="f3" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a0aec0"/></marker>
+  </defs>
+
+  <rect x="210" y="280" width="300" height="66" rx="10" fill="#faf5ff" stroke="#9f7aea" stroke-width="1.4" />
+  <text x="360" y="304" text-anchor="middle" font-size="11.5" font-weight="700" fill="#6b46c1">Step 2: correct</text>
+  <text x="360" y="322" text-anchor="middle" font-size="9.5" fill="#2d3748">.abs() on quantity and unit_price</text>
+  <text x="360" y="338" text-anchor="middle" font-size="9.5" fill="#2d3748">justified because the flag is auditable</text>
+
+  <rect x="150" y="360" width="420" height="46" rx="10" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="360" y="388" text-anchor="middle" font-size="10.5" font-weight="600" fill="#276749">All 5 corrected values verified against an independent real rollup -- exact match</text>
+
+</svg>

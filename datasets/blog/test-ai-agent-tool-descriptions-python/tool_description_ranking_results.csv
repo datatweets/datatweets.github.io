@@ -1,0 +1,85 @@
+case_id,request,case_type,expected_tool,variant,top_1,top_2,top_3,top_1_score,top_2_score,score_gap,expected_rank
+C01,What time is reservation R-104?,clear,room_booking_lookup,vague,room_booking_create,room_booking_lookup,room_booking_cancel,0.3387,0.1249,0.2139,2.0
+C02,Who booked room Cedar tomorrow?,clear,room_booking_lookup,vague,room_booking_lookup,room_booking_cancel,room_booking_create,0.3498,0.3432,0.0066,1.0
+C03,Show the details for booking B-77.,clear,room_booking_lookup,vague,room_booking_lookup,room_booking_cancel,maintenance_job_create,0.2316,0.2272,0.0044,1.0
+C04,Reserve room Birch for 45 minutes at 10:00.,clear,room_booking_create,vague,room_booking_create,room_booking_lookup,room_booking_cancel,0.3544,0.2114,0.1429,1.0
+C05,I need to book a meeting space next Tuesday.,clear,room_booking_create,vague,room_booking_lookup,room_booking_cancel,room_booking_create,0.2066,0.2027,0.0039,3.0
+C06,Schedule a new room reservation for the design review.,clear,room_booking_create,vague,room_booking_lookup,room_booking_cancel,room_booking_create,0.4405,0.4322,0.0083,3.0
+C07,Release booking B-77.,clear,room_booking_cancel,vague,room_booking_lookup,room_booking_cancel,room_booking_create,0.3498,0.3432,0.0066,2.0
+C08,Cancel tomorrow's room reservation.,clear,room_booking_cancel,vague,room_booking_cancel,room_booking_lookup,room_booking_create,0.5057,0.3506,0.1552,1.0
+C09,Make room Cedar available by removing reservation R-104.,clear,room_booking_cancel,vague,room_booking_lookup,room_booking_cancel,room_booking_create,0.3934,0.386,0.0074,2.0
+C10,Is pass P-18 still active?,clear,access_pass_status,vague,access_pass_status,access_pass_request,visitor_invitation_create,0.4261,0.2645,0.1616,1.0
+C11,Check the status of my building badge.,clear,access_pass_status,vague,access_pass_status,building_notice_list,building_notice_publish,0.1954,0.1831,0.0123,1.0
+C12,Has employee E-42's access expired?,clear,access_pass_status,vague,access_pass_status,access_pass_request,visitor_invitation_create,0.3437,0.2645,0.0793,1.0
+C13,Grant employee E-42 access to the lab.,clear,access_pass_request,vague,access_pass_status,access_pass_request,visitor_invitation_create,0.3437,0.2645,0.0793,2.0
+C14,Remove warehouse door access for P-18.,clear,access_pass_request,vague,access_pass_request,access_pass_status,visitor_invitation_create,0.3103,0.224,0.0863,1.0
+C15,Request a new building pass for the intern.,clear,access_pass_request,vague,access_pass_request,access_pass_status,building_notice_list,0.2757,0.2466,0.0291,1.0
+C16,Who is assigned to repair job M-19?,clear,maintenance_job_lookup,vague,maintenance_job_lookup,maintenance_job_create,visitor_invitation_create,0.436,0.3337,0.1023,1.0
+C17,Check progress on work order M-44.,clear,maintenance_job_lookup,vague,visitor_invitation_create,equipment_fault_report,equipment_manual_search,0.0,0.0,0.0,7.0
+C18,Has maintenance ticket M-08 been completed?,clear,maintenance_job_lookup,vague,maintenance_job_lookup,maintenance_job_create,visitor_invitation_create,0.3518,0.3337,0.0181,1.0
+C19,Report a leaking tap on floor 3.,clear,maintenance_job_create,vague,equipment_fault_report,visitor_invitation_create,equipment_manual_search,0.2234,0.0,0.2234,6.0
+C20,Open a repair job for a broken window.,clear,maintenance_job_create,vague,maintenance_job_lookup,maintenance_job_create,visitor_invitation_create,0.436,0.3337,0.1023,2.0
+C21,The lift display is blank; create a maintenance ticket.,clear,maintenance_job_create,vague,maintenance_job_create,maintenance_job_lookup,visitor_invitation_create,0.3654,0.2637,0.1017,1.0
+C22,Are there any lift closure notices today?,clear,building_notice_list,vague,building_notice_list,building_notice_publish,visitor_invitation_create,0.2423,0.2062,0.036,1.0
+C23,Show current building announcements.,clear,building_notice_list,vague,building_notice_list,building_notice_publish,maintenance_job_lookup,0.3919,0.3336,0.0583,1.0
+C24,What safety notices are active?,clear,building_notice_list,vague,building_notice_list,building_notice_publish,visitor_invitation_create,0.2423,0.2062,0.036,1.0
+C25,Publish a notice about Friday's water shutdown.,clear,building_notice_publish,vague,building_notice_publish,building_notice_list,visitor_invitation_create,0.3166,0.1579,0.1587,1.0
+C26,Send a building-wide announcement about the fire drill.,clear,building_notice_publish,vague,building_notice_list,building_notice_publish,maintenance_job_lookup,0.3253,0.2769,0.0484,2.0
+C27,Post a new closure message for occupants.,clear,building_notice_publish,vague,building_notice_publish,visitor_invitation_create,equipment_fault_report,0.2401,0.0,0.2401,1.0
+C28,Find the reset instructions for the air sensor.,clear,equipment_manual_search,vague,visitor_invitation_create,equipment_fault_report,equipment_manual_search,0.0,0.0,0.0,3.0
+C29,How do I calibrate this thermostat?,clear,equipment_manual_search,vague,visitor_invitation_create,equipment_fault_report,equipment_manual_search,0.0,0.0,0.0,3.0
+C30,Search the equipment guide for error E12.,clear,equipment_manual_search,vague,equipment_manual_search,equipment_fault_report,visitor_invitation_create,0.4477,0.2116,0.2361,1.0
+C31,Report asset AHU-09 as making a grinding noise.,clear,equipment_fault_report,vague,equipment_fault_report,visitor_invitation_create,equipment_manual_search,0.3159,0.0,0.3159,1.0
+C32,This pump is unsafe; open a fault record.,clear,equipment_fault_report,vague,equipment_fault_report,visitor_invitation_create,equipment_manual_search,0.2234,0.0,0.2234,1.0
+C33,Log a broken temperature sensor.,clear,equipment_fault_report,vague,visitor_invitation_create,equipment_fault_report,equipment_manual_search,0.0,0.0,0.0,2.0
+C34,Register Ana as my guest for Monday.,clear,visitor_invitation_create,vague,visitor_invitation_create,equipment_fault_report,equipment_manual_search,0.0,0.0,0.0,1.0
+C35,Create a reception invitation for visitor Chen.,clear,visitor_invitation_create,vague,visitor_invitation_create,maintenance_job_create,room_booking_create,0.5271,0.0823,0.4448,1.0
+C36,Tell reception that Omar is expected tomorrow.,clear,visitor_invitation_create,vague,visitor_invitation_create,equipment_fault_report,equipment_manual_search,0.0,0.0,0.0,1.0
+A01,Deal with room Cedar tomorrow.,ambiguous,needs_clarification,vague,room_booking_lookup,room_booking_cancel,room_booking_create,0.3498,0.3432,0.0066,
+A02,Handle badge P-18.,ambiguous,needs_clarification,vague,building_notice_list,room_booking_lookup,room_booking_cancel,0.0982,0.0948,0.0034,
+A03,Maintenance job M-44 needs attention.,ambiguous,needs_clarification,vague,maintenance_job_lookup,maintenance_job_create,visitor_invitation_create,0.658,0.5781,0.0799,
+A04,There is a message about the lift.,ambiguous,needs_clarification,vague,building_notice_publish,visitor_invitation_create,equipment_fault_report,0.2401,0.0,0.2401,
+A05,I need help with sensor AHU-09.,ambiguous,needs_clarification,vague,equipment_fault_report,equipment_manual_search,visitor_invitation_create,0.1918,0.1836,0.0082,
+A06,Can Sam enter the building tomorrow?,ambiguous,needs_clarification,vague,building_notice_list,building_notice_publish,maintenance_job_lookup,0.3253,0.2769,0.0484,
+C01,What time is reservation R-104?,clear,room_booking_lookup,specific,room_booking_lookup,room_booking_cancel,room_booking_create,0.2836,0.2101,0.0736,1.0
+C02,Who booked room Cedar tomorrow?,clear,room_booking_lookup,specific,room_booking_cancel,room_booking_lookup,room_booking_create,0.2511,0.2369,0.0142,2.0
+C03,Show the details for booking B-77.,clear,room_booking_lookup,specific,room_booking_cancel,room_booking_lookup,room_booking_create,0.2798,0.264,0.0158,2.0
+C04,Reserve room Birch for 45 minutes at 10:00.,clear,room_booking_create,specific,room_booking_create,room_booking_cancel,room_booking_lookup,0.2998,0.1089,0.1909,1.0
+C05,I need to book a meeting space next Tuesday.,clear,room_booking_create,specific,room_booking_create,room_booking_cancel,room_booking_lookup,0.2292,0.1197,0.1095,1.0
+C06,Schedule a new room reservation for the design review.,clear,room_booking_create,specific,room_booking_cancel,room_booking_lookup,room_booking_create,0.3076,0.2903,0.0173,3.0
+C07,Release booking B-77.,clear,room_booking_cancel,specific,room_booking_cancel,room_booking_lookup,room_booking_create,0.3091,0.1596,0.1495,1.0
+C08,Cancel tomorrow's room reservation.,clear,room_booking_cancel,specific,room_booking_cancel,room_booking_lookup,room_booking_create,0.4617,0.2672,0.1945,1.0
+C09,Make room Cedar available by removing reservation R-104.,clear,room_booking_cancel,specific,room_booking_cancel,room_booking_lookup,room_booking_create,0.3793,0.2808,0.0985,1.0
+C10,Is pass P-18 still active?,clear,access_pass_status,specific,access_pass_status,access_pass_request,visitor_invitation_create,0.3651,0.0513,0.3138,1.0
+C11,Check the status of my building badge.,clear,access_pass_status,specific,access_pass_status,building_notice_publish,building_notice_list,0.1803,0.0945,0.0858,1.0
+C12,Has employee E-42's access expired?,clear,access_pass_status,specific,access_pass_status,access_pass_request,visitor_invitation_create,0.237,0.1918,0.0452,1.0
+C13,Grant employee E-42 access to the lab.,clear,access_pass_request,specific,access_pass_request,access_pass_status,visitor_invitation_create,0.3095,0.144,0.1655,1.0
+C14,Remove warehouse door access for P-18.,clear,access_pass_request,specific,access_pass_request,access_pass_status,visitor_invitation_create,0.3061,0.2029,0.1033,1.0
+C15,Request a new building pass for the intern.,clear,access_pass_request,specific,building_notice_publish,access_pass_request,access_pass_status,0.2063,0.1973,0.0091,2.0
+C16,Who is assigned to repair job M-19?,clear,maintenance_job_lookup,specific,maintenance_job_lookup,maintenance_job_create,visitor_invitation_create,0.3128,0.2038,0.109,1.0
+C17,Check progress on work order M-44.,clear,maintenance_job_lookup,specific,access_pass_status,visitor_invitation_create,equipment_fault_report,0.1539,0.0,0.1539,8.0
+C18,Has maintenance ticket M-08 been completed?,clear,maintenance_job_lookup,specific,maintenance_job_lookup,maintenance_job_create,visitor_invitation_create,0.2777,0.1947,0.083,1.0
+C19,Report a leaking tap on floor 3.,clear,maintenance_job_create,specific,maintenance_job_create,equipment_fault_report,visitor_invitation_create,0.1765,0.1221,0.0544,1.0
+C20,Open a repair job for a broken window.,clear,maintenance_job_create,specific,maintenance_job_create,maintenance_job_lookup,equipment_fault_report,0.3764,0.1299,0.2465,1.0
+C21,The lift display is blank; create a maintenance ticket.,clear,maintenance_job_create,specific,maintenance_job_create,maintenance_job_lookup,visitor_invitation_create,0.2132,0.2081,0.0051,1.0
+C22,Are there any lift closure notices today?,clear,building_notice_list,specific,building_notice_list,visitor_invitation_create,equipment_fault_report,0.378,0.0,0.378,1.0
+C23,Show current building announcements.,clear,building_notice_list,specific,building_notice_list,building_notice_publish,maintenance_job_lookup,0.3528,0.0945,0.2583,1.0
+C24,What safety notices are active?,clear,building_notice_list,specific,building_notice_list,access_pass_status,equipment_fault_report,0.2957,0.093,0.2027,1.0
+C25,Publish a notice about Friday's water shutdown.,clear,building_notice_publish,specific,building_notice_publish,building_notice_list,visitor_invitation_create,0.3658,0.0965,0.2693,1.0
+C26,Send a building-wide announcement about the fire drill.,clear,building_notice_publish,specific,building_notice_publish,building_notice_list,maintenance_job_create,0.3075,0.0728,0.2348,1.0
+C27,Post a new closure message for occupants.,clear,building_notice_publish,specific,building_notice_publish,building_notice_list,maintenance_job_create,0.3322,0.0912,0.241,1.0
+C28,Find the reset instructions for the air sensor.,clear,equipment_manual_search,specific,equipment_manual_search,visitor_invitation_create,equipment_fault_report,0.1943,0.0,0.1943,1.0
+C29,How do I calibrate this thermostat?,clear,equipment_manual_search,specific,visitor_invitation_create,equipment_fault_report,equipment_manual_search,0.0,0.0,0.0,3.0
+C30,Search the equipment guide for error E12.,clear,equipment_manual_search,specific,equipment_manual_search,equipment_fault_report,visitor_invitation_create,0.3122,0.1206,0.1916,1.0
+C31,Report asset AHU-09 as making a grinding noise.,clear,equipment_fault_report,specific,equipment_fault_report,maintenance_job_create,visitor_invitation_create,0.3072,0.0597,0.2475,1.0
+C32,This pump is unsafe; open a fault record.,clear,equipment_fault_report,specific,equipment_fault_report,maintenance_job_create,visitor_invitation_create,0.3039,0.0934,0.2105,1.0
+C33,Log a broken temperature sensor.,clear,equipment_fault_report,specific,equipment_fault_report,maintenance_job_create,visitor_invitation_create,0.1875,0.115,0.0725,1.0
+C34,Register Ana as my guest for Monday.,clear,visitor_invitation_create,specific,visitor_invitation_create,equipment_fault_report,equipment_manual_search,0.2834,0.0,0.2834,1.0
+C35,Create a reception invitation for visitor Chen.,clear,visitor_invitation_create,specific,visitor_invitation_create,maintenance_job_create,room_booking_create,0.4141,0.0408,0.3734,1.0
+C36,Tell reception that Omar is expected tomorrow.,clear,visitor_invitation_create,specific,visitor_invitation_create,equipment_fault_report,equipment_manual_search,0.2834,0.0,0.2834,1.0
+A01,Deal with room Cedar tomorrow.,ambiguous,needs_clarification,specific,room_booking_cancel,room_booking_lookup,room_booking_create,0.2511,0.2369,0.0142,
+A02,Handle badge P-18.,ambiguous,needs_clarification,specific,access_pass_status,visitor_invitation_create,equipment_fault_report,0.1539,0.0,0.1539,
+A03,Maintenance job M-44 needs attention.,ambiguous,needs_clarification,specific,maintenance_job_lookup,maintenance_job_create,visitor_invitation_create,0.5201,0.3373,0.1828,
+A04,There is a message about the lift.,ambiguous,needs_clarification,specific,building_notice_publish,visitor_invitation_create,equipment_fault_report,0.2439,0.0,0.2439,
+A05,I need help with sensor AHU-09.,ambiguous,needs_clarification,specific,visitor_invitation_create,equipment_fault_report,equipment_manual_search,0.0,0.0,0.0,
+A06,Can Sam enter the building tomorrow?,ambiguous,needs_clarification,specific,building_notice_publish,building_notice_list,maintenance_job_create,0.2059,0.1989,0.007,

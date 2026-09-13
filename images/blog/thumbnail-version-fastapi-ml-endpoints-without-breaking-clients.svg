@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+  <title id="title">How to Version FastAPI ML Endpoints Without Breaking Clients</title>
+  <desc id="desc">A FastAPI thumbnail showing one shared prediction core branching to a stable three-field version 1 response and a richer six-field version 2 response.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="145" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">API CONTRACTS</text>
+    <text x="90" y="267" font-size="82" font-weight="700" fill="#1b1f24">STABLE V1</text>
+    <text x="90" y="365" font-size="82" font-weight="700" fill="#1b1f24">SAFE V2</text>
+    <rect x="94" y="405" width="430" height="12" rx="6" fill="#0067c0"/>
+    <text x="94" y="482" font-size="29" font-weight="500" fill="#59636e">FASTAPI &#183; OPENAPI &#183; TESTS</text>
+
+    <g transform="translate(638 98)">
+      <rect x="92" y="0" width="300" height="100" rx="18" fill="#eaf3fb" stroke="#0067c0" stroke-width="3"/>
+      <text x="242" y="41" text-anchor="middle" font-size="23" font-weight="700" fill="#1b1f24">SHARED PREDICTION</text>
+      <text x="242" y="72" text-anchor="middle" font-size="19" font-weight="500" fill="#59636e">ONE MODEL &#183; ONE THRESHOLD</text>
+
+      <path d="M242 100 V148 M242 148 H105 V179 M242 148 H379 V179" fill="none" stroke="#aab2bb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M96 169 L105 182 L114 169" fill="none" stroke="#aab2bb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M370 169 L379 182 L388 169" fill="none" stroke="#aab2bb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <rect x="0" y="184" width="210" height="228" rx="20" fill="#ffffff" stroke="#0067c0" stroke-width="3"/>
+      <rect x="274" y="184" width="210" height="228" rx="20" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+      <rect x="0" y="184" width="210" height="58" rx="20" fill="#0067c0"/>
+      <path d="M0 222 H210 V242 H0 Z" fill="#0067c0"/>
+      <rect x="274" y="184" width="210" height="58" rx="20" fill="#59636e"/>
+      <path d="M274 222 H484 V242 H274 Z" fill="#59636e"/>
+
+      <text x="105" y="223" text-anchor="middle" font-size="30" font-weight="700" fill="#ffffff">/v1</text>
+      <text x="379" y="223" text-anchor="middle" font-size="30" font-weight="700" fill="#ffffff">/v2</text>
+      <text x="105" y="284" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">STABLE</text>
+      <text x="105" y="321" text-anchor="middle" font-size="20" font-weight="500" fill="#59636e">3 FIELDS</text>
+      <text x="105" y="367" text-anchor="middle" font-size="18" font-weight="600" fill="#0067c0">UNCHANGED</text>
+
+      <text x="379" y="284" text-anchor="middle" font-size="24" font-weight="700" fill="#1b1f24">RICHER</text>
+      <text x="379" y="321" text-anchor="middle" font-size="20" font-weight="500" fill="#59636e">6 FIELDS</text>
+      <text x="379" y="367" text-anchor="middle" font-size="18" font-weight="600" fill="#0067c0">NEW PATH</text>
+
+      <circle cx="105" cy="448" r="21" fill="#eaf3fb" stroke="#0067c0" stroke-width="3"/>
+      <path d="M95 448 L102 455 L116 439" fill="none" stroke="#0067c0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="138" y="456" font-size="20" font-weight="600" fill="#59636e">CLIENT SAFE</text>
+    </g>
+  </g>
+</svg>

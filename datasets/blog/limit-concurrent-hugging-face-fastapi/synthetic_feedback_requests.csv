@@ -1,0 +1,14 @@
+request_id,text,test_group,mock_behavior,mock_delay_ms
+B01,The repair instructions were clear and easy to follow.,burst,success,90
+B02,The collection point was closed during the listed hours.,burst,success,90
+B03,A volunteer explained each safety check carefully.,burst,success,90
+B04,I waited a long time before anyone answered my message.,burst,success,90
+B05,The booking page worked well on my phone.,burst,success,90
+B06,The replacement part did not match the item description.,burst,success,90
+B07,The reminder arrived before my appointment.,burst,success,90
+B08,The status page never showed that my request was delayed.,burst,success,90
+E01,The confirmation email gave me the information I needed.,error_paths,success,12
+E02,Please simulate a slow upstream response for this test.,error_paths,timeout,12
+E03,Please simulate an upstream rate limit for this test.,error_paths,rate_limit,12
+E04,Please simulate an unavailable upstream service for this test.,error_paths,server_error,12
+E05,Please simulate an invalid provider response for this test.,error_paths,bad_payload,12

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 612" width="960" height="612" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="612" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">Why <tspan font-style="italic">groupBy</tspan> scales: pre-aggregate on the map side, shuffle the partials</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Per-zone revenue over the windowed NYC taxi quarter &#8212; 9,554,757 trips, Jan&#8211;Mar 2024, pyspark 4.2.0, local[*] on 10 cores</text>
+
+<text x="40" y="92" font-size="13" font-weight="700" fill="#4a5568">ONE groupBy, TWO aggregation passes &#8212; the shuffle only ever sees the partials</text>
+<line x1="40" y1="102" x2="920" y2="102" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- Box 1: scan + filter -->
+<rect x="40" y="120" width="192" height="104" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="136" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">1 &#183; Scan + Filter</text>
+<text x="136" y="172" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">9,554,757 trips</text>
+<text x="136" y="192" text-anchor="middle" font-size="11" fill="#718096">read across</text>
+<text x="136" y="208" text-anchor="middle" font-size="11" fill="#718096">10 partitions</text>
+
+<text x="244" y="177" text-anchor="middle" font-size="20" fill="#4a5568">&#8594;</text>
+
+<!-- Box 2: map-side partial -->
+<rect x="266" y="120" width="196" height="104" rx="8" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+<text x="364" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">2 &#183; Map-side partial</text>
+<text x="364" y="170" text-anchor="middle" font-size="11" fill="#4a5568">partial_sum &#183; partial_count</text>
+<text x="364" y="192" text-anchor="middle" font-size="11" fill="#718096">each partition collapses</text>
+<text x="364" y="208" text-anchor="middle" font-size="11" fill="#718096">to &#8804; 262 rows</text>
+
+<!-- Exchange arrow -->
+<text x="521" y="162" text-anchor="middle" font-size="10" font-weight="700" fill="#c05621">Exchange</text>
+<text x="521" y="175" text-anchor="middle" font-size="10" fill="#c05621">hashpartition</text>
+<text x="521" y="196" text-anchor="middle" font-size="20" fill="#4a5568">&#8594;</text>
+
+<!-- Box 3: reduce-side final -->
+<rect x="580" y="120" width="180" height="104" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="670" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#276749">3 &#183; Reduce-side final</text>
+<text x="670" y="170" text-anchor="middle" font-size="11" fill="#4a5568">sum &#183; count</text>
+<text x="670" y="192" text-anchor="middle" font-size="14" font-weight="700" fill="#1a202c">262 zones</text>
+<text x="670" y="210" text-anchor="middle" font-size="11" fill="#718096">one row per zone</text>
+
+<text x="772" y="177" text-anchor="middle" font-size="20" fill="#4a5568">&#8594;</text>
+
+<!-- Box 4: orderBy -->
+<rect x="794" y="120" width="126" height="104" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="857" y="146" text-anchor="middle" font-size="12" font-weight="700" fill="#c05621">4 &#183; orderBy</text>
+<text x="857" y="164" text-anchor="middle" font-size="11" fill="#4a5568">desc(trips)</text>
+<text x="857" y="188" text-anchor="middle" font-size="12" font-weight="700" fill="#1a202c">the podium</text>
+<text x="857" y="208" text-anchor="middle" font-size="10" fill="#718096">ranked below</text>
+
+<!-- annotation band -->
+<rect x="40" y="240" width="880" height="52" rx="8" fill="#fffaf0" stroke="#ed8936" stroke-width="1.5"/>
+<text x="60" y="264" font-size="12" font-weight="700" fill="#c05621">The shuffle carries roughly 2,620 partial rows &#8212; not 9,554,757.</text>
+<text x="60" y="283" font-size="11" fill="#4a5568">Map-side <tspan font-weight="700">partial_sum</tspan>/<tspan font-weight="700">partial_count</tspan> combine each of the 10 partitions first (&#8804;&#160;262 zones each), so only the partials cross the network. That pre-aggregation is why one <tspan font-style="italic">groupBy</tspan> scales from millions of rows to billions.</text>
+
+<text x="40" y="322" font-size="13" font-weight="700" fill="#4a5568">THE REAL PODIUM &#8212; one groupBy(&#8220;PULocationID&#8221;).agg(&#8230;) over the windowed quarter, joined to zone names by ID</text>
+<line x1="40" y1="332" x2="920" y2="332" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- table header -->
+<text x="60"  y="356" font-size="12" font-weight="700" fill="#718096">Zone</text>
+<text x="470" y="356" text-anchor="end" font-size="12" font-weight="700" fill="#718096">trips</text>
+<text x="650" y="356" text-anchor="end" font-size="12" font-weight="700" fill="#718096">revenue</text>
+<text x="800" y="356" text-anchor="end" font-size="12" font-weight="700" fill="#718096">avg fare</text>
+<text x="920" y="356" text-anchor="end" font-size="12" font-weight="700" fill="#718096">avg mi</text>
+
+<!-- rows -->
+<text x="60"  y="382" font-size="13" font-weight="700" fill="#1a202c">Midtown Center</text>
+<text x="185" y="382" font-size="11" fill="#718096">Manhattan</text>
+<text x="470" y="382" text-anchor="end" font-size="13" fill="#1a202c">453,825</text>
+<text x="650" y="382" text-anchor="end" font-size="13" fill="#276749">$10.81M</text>
+<text x="800" y="382" text-anchor="end" font-size="13" fill="#1a202c">$15.55</text>
+<text x="920" y="382" text-anchor="end" font-size="13" fill="#1a202c">2.53</text>
+
+<text x="60"  y="408" font-size="13" font-weight="700" fill="#1a202c">Upper East Side South</text>
+<text x="245" y="408" font-size="11" fill="#718096">Manhattan</text>
+<text x="470" y="408" text-anchor="end" font-size="13" fill="#1a202c">439,138</text>
+<text x="650" y="408" text-anchor="end" font-size="13" fill="#276749">$8.69M</text>
+<text x="800" y="408" text-anchor="end" font-size="13" fill="#1a202c">$12.49</text>
+<text x="920" y="408" text-anchor="end" font-size="13" fill="#1a202c">1.85</text>
+
+<text x="60"  y="434" font-size="13" font-weight="700" fill="#1a202c">JFK Airport</text>
+<text x="150" y="434" font-size="11" fill="#718096">Queens</text>
+<text x="470" y="434" text-anchor="end" font-size="13" fill="#1a202c">429,745</text>
+<text x="650" y="434" text-anchor="end" font-size="13" font-weight="700" fill="#276749">$33.14M</text>
+<text x="800" y="434" text-anchor="end" font-size="13" font-weight="700" fill="#c05621">$59.67</text>
+<text x="920" y="434" text-anchor="end" font-size="13" fill="#1a202c">15.59</text>
+
+<text x="60"  y="460" font-size="13" font-weight="700" fill="#1a202c">Upper East Side North</text>
+<text x="245" y="460" font-size="11" fill="#718096">Manhattan</text>
+<text x="470" y="460" text-anchor="end" font-size="13" fill="#1a202c">416,508</text>
+<text x="650" y="460" text-anchor="end" font-size="13" fill="#276749">$8.48M</text>
+<text x="800" y="460" text-anchor="end" font-size="13" fill="#1a202c">$13.05</text>
+<text x="920" y="460" text-anchor="end" font-size="13" fill="#1a202c">2.43</text>
+
+<text x="60"  y="486" font-size="13" font-weight="700" fill="#1a202c">Midtown East</text>
+<text x="165" y="486" font-size="11" fill="#718096">Manhattan</text>
+<text x="470" y="486" text-anchor="end" font-size="13" fill="#1a202c">336,460</text>
+<text x="650" y="486" text-anchor="end" font-size="13" fill="#276749">$7.83M</text>
+<text x="800" y="486" text-anchor="end" font-size="13" fill="#1a202c">$15.14</text>
+<text x="920" y="486" text-anchor="end" font-size="13" fill="#1a202c">2.56</text>
+
+<line x1="40" y1="504" x2="920" y2="504" stroke="#e2e8f0" stroke-width="1"/>
+
+<!-- footer cross-check -->
+<rect x="40" y="520" width="880" height="72" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="60" y="544" font-size="12" font-weight="700" fill="#276749">Cross-check: the global df.agg(sum(total_amount)) over every bucket = $256,692,373.14 &#8212; matching Course&#160;1 to the cent.</text>
+<text x="60" y="565" font-size="11" fill="#4a5568">JFK&#8217;s $59.67 average fare (flat airport rate) towers over Midtown&#8217;s $15.55; each zone&#8217;s distinct active hours sum across all 262 zones to <tspan font-weight="700">240,917</tspan> zone-hour buckets.</text>
+<text x="60" y="584" font-size="11" fill="#718096">Same answer as Course 1&#8217;s pandas capstone; the engine is the only thing that changed. Exact seconds vary by machine &#8212; the shape of the shuffle is the point.</text>
+</svg>

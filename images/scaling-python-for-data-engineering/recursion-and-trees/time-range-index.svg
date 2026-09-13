@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 790" width="960" height="790" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="960" height="790" fill="#ffffff"/>
+
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">A Time-Range Index: Sort Once, Then Two Probes and a Bounded Read</text>
+  <text x="480" y="56" text-anchor="middle" font-size="14" fill="#718096">2,964,624 January 2024 yellow-taxi trips &#183; 10-core macOS &#183; 0.730&#8201;ms per 1-hour window vs 33.01&#8201;ms for a full scan</text>
+
+  <!-- ================= BUILD ROW ================= -->
+  <text x="30" y="92" font-size="15" font-weight="700" fill="#c05621">BUILD &#8212; paid once, 0.93&#8201;s</text>
+  <text x="212" y="92" font-size="11" fill="#718096">the price of order</text>
+
+  <rect x="30" y="104" width="150" height="76" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="105" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">delivered file</text>
+  <text x="105" y="144" text-anchor="middle" font-size="10" fill="#4a5568">2,964,624 rows &#183; 3 row groups</text>
+  <text x="105" y="160" text-anchor="middle" font-size="10" fill="#c53030">NOT sorted: 43.5% of pairs</text>
+  <text x="105" y="173" text-anchor="middle" font-size="10" fill="#c53030">go backwards in time</text>
+
+  <line x1="180" y1="142" x2="208" y2="142" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="214,142 204,137 204,147" fill="#a0aec0"/>
+
+  <rect x="216" y="104" width="150" height="76" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="291" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">quarantine the junk</text>
+  <text x="291" y="144" text-anchor="middle" font-size="10" fill="#4a5568">domain = [Jan 1, Feb 1)</text>
+  <text x="291" y="160" text-anchor="middle" font-size="10" fill="#4a5568">18 rows out of range</text>
+  <text x="291" y="173" text-anchor="middle" font-size="10" fill="#718096">oldest: 2002-12-31 22:59</text>
+
+  <line x1="366" y1="142" x2="394" y2="142" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="400,142 390,137 390,147" fill="#a0aec0"/>
+
+  <rect x="402" y="104" width="150" height="76" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="477" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">sort by pickup time</text>
+  <text x="477" y="144" text-anchor="middle" font-size="10" fill="#4a5568">in-memory sort_by: 0.93&#8201;s</text>
+  <text x="477" y="160" text-anchor="middle" font-size="10" fill="#718096">external merge: 13.97&#8201;s</text>
+  <text x="477" y="173" text-anchor="middle" font-size="10" fill="#276749">byte-identical output</text>
+
+  <line x1="552" y1="142" x2="580" y2="142" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="586,142 576,137 576,147" fill="#a0aec0"/>
+
+  <rect x="588" y="104" width="150" height="76" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+  <text x="663" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#c05621">write 46 blocks</text>
+  <text x="663" y="144" text-anchor="middle" font-size="10" fill="#4a5568">65,536 rows each &#183; 51.2&#8201;MB</text>
+  <text x="663" y="160" text-anchor="middle" font-size="10" fill="#4a5568">2,964,606 rows kept</text>
+  <text x="663" y="173" text-anchor="middle" font-size="10" fill="#718096">block spans ~17.7&#8201;h median</text>
+
+  <line x1="738" y1="142" x2="766" y2="142" stroke="#a0aec0" stroke-width="1.5"/>
+  <polygon points="772,142 762,137 762,147" fill="#a0aec0"/>
+
+  <rect x="774" y="104" width="156" height="76" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="852" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">the index</text>
+  <text x="852" y="144" text-anchor="middle" font-size="10" fill="#4a5568">46 (min key, first row) pairs</text>
+  <text x="852" y="163" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">4.3&#8201;KB in memory</text>
+  <text x="852" y="176" text-anchor="middle" font-size="10" fill="#718096">1.11&#8201;MB of data per entry</text>
+
+  <line x1="30" y1="202" x2="930" y2="202" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ================= QUERY ROW ================= -->
+  <text x="30" y="230" font-size="15" font-weight="700" fill="#2b6cb0">QUERY &#8212; &#8220;trips between 08:00 and 09:00 on January 15&#8221;</text>
+  <text x="30" y="248" font-size="11" fill="#718096">two O(log n) probes into the sorted keys, then read only the bracket</text>
+
+  <!-- probe boxes -->
+  <rect x="30" y="262" width="196" height="60" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="44" y="282" font-size="11" font-weight="700" fill="#2b6cb0">bisect_right(keys, lo) &#8722; 1</text>
+  <text x="44" y="299" font-size="10" fill="#4a5568">lo = 2024-01-15 08:00:00</text>
+  <text x="44" y="314" font-size="11" font-weight="700" fill="#1a202c">&#8594; block 19</text>
+
+  <rect x="240" y="262" width="196" height="60" rx="6" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="1.5"/>
+  <text x="254" y="282" font-size="11" font-weight="700" fill="#2b6cb0">bisect_left(keys, hi)</text>
+  <text x="254" y="299" font-size="10" fill="#4a5568">hi = 2024-01-15 09:00:00</text>
+  <text x="254" y="314" font-size="11" font-weight="700" fill="#1a202c">&#8594; block 20</text>
+
+  <rect x="450" y="262" width="230" height="60" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+  <text x="464" y="282" font-size="11" font-weight="700" fill="#276749">bracket = range(19, 20)</text>
+  <text x="464" y="299" font-size="10" fill="#4a5568">1 of 46 blocks &#183; 65,536 rows</text>
+  <text x="464" y="314" font-size="11" font-weight="700" fill="#276749">2.2% of the file touched</text>
+
+  <rect x="694" y="262" width="236" height="60" rx="6" fill="#faf5ff" stroke="#6b46c1" stroke-width="1.5"/>
+  <text x="708" y="282" font-size="11" font-weight="700" fill="#6b46c1">filter the block&#8217;s edges</text>
+  <text x="708" y="299" font-size="10" fill="#4a5568">65,536 rows &#8594; the real matches</text>
+  <text x="708" y="316" font-size="13" font-weight="700" fill="#6b46c1">2,440 trips</text>
+
+  <!-- sorted key array -->
+  <text x="30" y="356" font-size="11" font-weight="700" fill="#4a5568">the sorted keys &#8212; one entry per block, ascending</text>
+
+  <!-- probe arrows -->
+  <line x1="415" y1="368" x2="415" y2="392" stroke="#2b6cb0" stroke-width="1.5"/>
+  <polygon points="415,398 410,388 420,388" fill="#2b6cb0"/>
+  <text x="415" y="364" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0">lo probe</text>
+
+  <line x1="445" y1="368" x2="445" y2="392" stroke="#2b6cb0" stroke-width="1.5"/>
+  <polygon points="445,398 440,388 450,388" fill="#2b6cb0"/>
+  <text x="452" y="364" text-anchor="start" font-size="10" font-weight="700" fill="#2b6cb0">hi probe</text>
+
+  <g fill="#ebf8ff" stroke="#90cdf4" stroke-width="1">
+    <rect x="130" y="400" width="14" height="28" rx="2"/>
+    <rect x="145" y="400" width="14" height="28" rx="2"/>
+    <rect x="160" y="400" width="14" height="28" rx="2"/>
+    <rect x="175" y="400" width="14" height="28" rx="2"/>
+    <rect x="190" y="400" width="14" height="28" rx="2"/>
+    <rect x="205" y="400" width="14" height="28" rx="2"/>
+    <rect x="220" y="400" width="14" height="28" rx="2"/>
+    <rect x="235" y="400" width="14" height="28" rx="2"/>
+    <rect x="250" y="400" width="14" height="28" rx="2"/>
+    <rect x="265" y="400" width="14" height="28" rx="2"/>
+    <rect x="280" y="400" width="14" height="28" rx="2"/>
+    <rect x="295" y="400" width="14" height="28" rx="2"/>
+    <rect x="310" y="400" width="14" height="28" rx="2"/>
+    <rect x="325" y="400" width="14" height="28" rx="2"/>
+    <rect x="340" y="400" width="14" height="28" rx="2"/>
+    <rect x="355" y="400" width="14" height="28" rx="2"/>
+    <rect x="370" y="400" width="14" height="28" rx="2"/>
+    <rect x="385" y="400" width="14" height="28" rx="2"/>
+    <rect x="400" y="400" width="14" height="28" rx="2"/>
+    <rect x="430" y="400" width="14" height="28" rx="2"/>
+    <rect x="445" y="400" width="14" height="28" rx="2"/>
+    <rect x="460" y="400" width="14" height="28" rx="2"/>
+    <rect x="475" y="400" width="14" height="28" rx="2"/>
+    <rect x="490" y="400" width="14" height="28" rx="2"/>
+    <rect x="505" y="400" width="14" height="28" rx="2"/>
+    <rect x="520" y="400" width="14" height="28" rx="2"/>
+    <rect x="535" y="400" width="14" height="28" rx="2"/>
+    <rect x="550" y="400" width="14" height="28" rx="2"/>
+    <rect x="565" y="400" width="14" height="28" rx="2"/>
+    <rect x="580" y="400" width="14" height="28" rx="2"/>
+    <rect x="595" y="400" width="14" height="28" rx="2"/>
+    <rect x="610" y="400" width="14" height="28" rx="2"/>
+    <rect x="625" y="400" width="14" height="28" rx="2"/>
+    <rect x="640" y="400" width="14" height="28" rx="2"/>
+    <rect x="655" y="400" width="14" height="28" rx="2"/>
+    <rect x="670" y="400" width="14" height="28" rx="2"/>
+    <rect x="685" y="400" width="14" height="28" rx="2"/>
+    <rect x="700" y="400" width="14" height="28" rx="2"/>
+    <rect x="715" y="400" width="14" height="28" rx="2"/>
+    <rect x="730" y="400" width="14" height="28" rx="2"/>
+    <rect x="745" y="400" width="14" height="28" rx="2"/>
+    <rect x="760" y="400" width="14" height="28" rx="2"/>
+    <rect x="775" y="400" width="14" height="28" rx="2"/>
+    <rect x="790" y="400" width="14" height="28" rx="2"/>
+    <rect x="805" y="400" width="14" height="28" rx="2"/>
+  </g>
+  <!-- the selected block -->
+  <rect x="415" y="398" width="14" height="32" rx="2" fill="#48bb78" stroke="#276749" stroke-width="1.5"/>
+
+  <text x="130" y="446" font-size="9" fill="#718096">block 0</text>
+  <text x="130" y="457" font-size="9" fill="#718096">Jan 1 00:00</text>
+  <text x="422" y="446" text-anchor="middle" font-size="9" font-weight="700" fill="#276749">block 19</text>
+  <text x="422" y="457" text-anchor="middle" font-size="9" fill="#276749">Jan 14 15:50 &#8594; Jan 15 12:30</text>
+  <text x="819" y="446" text-anchor="end" font-size="9" fill="#718096">block 45</text>
+  <text x="819" y="457" text-anchor="end" font-size="9" fill="#718096">Jan 31 20:56</text>
+
+  <text x="838" y="418" font-size="10" fill="#718096">46 keys total</text>
+
+  <line x1="30" y1="480" x2="930" y2="480" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ================= WHY THE SORT MATTERS ================= -->
+  <text x="30" y="508" font-size="15" font-weight="700" fill="#1a202c">Why the sort is the whole project &#8212; blocks a min/max index must read for one 1-hour window</text>
+  <text x="30" y="526" font-size="11" fill="#718096">an index only helps when physical order correlates with the key &#183; the delivered file correlates 0.9075, which is not enough</text>
+
+  <text x="278" y="556" text-anchor="end" font-size="11" fill="#c53030">delivered order, 3 row groups</text>
+  <rect x="284" y="544" width="560" height="16" rx="3" fill="#fc8181"/>
+  <text x="852" y="557" font-size="11" font-weight="700" fill="#c53030">2 of 3</text>
+  <text x="290" y="557" font-size="10" fill="#ffffff">each row group spans 5,501&#8211;7,683 days &#8212; nothing can be skipped (and the file has no statistics at all)</text>
+
+  <text x="278" y="584" text-anchor="end" font-size="11" fill="#c05621">re-chunked to 46 blocks, unsorted</text>
+  <rect x="284" y="572" width="122" height="16" rx="3" fill="#ed8936"/>
+  <text x="414" y="585" font-size="11" font-weight="700" fill="#c05621">3 of 46</text>
+  <text x="470" y="585" font-size="10" fill="#c05621">but block 39 holds 0 matching rows &#8212; 3 blocks are junk-poisoned and read on EVERY query</text>
+
+  <text x="278" y="612" text-anchor="end" font-size="11" fill="#276749">sorted + clustered (this project)</text>
+  <rect x="284" y="600" width="41" height="16" rx="3" fill="#48bb78"/>
+  <text x="333" y="613" font-size="11" font-weight="700" fill="#276749">1 of 46</text>
+  <text x="390" y="613" font-size="10" fill="#276749">the window&#8217;s 2,440 rows are contiguous &#8212; one seek, one bounded read</text>
+
+  <line x1="30" y1="638" x2="930" y2="638" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ================= MEASUREMENT ================= -->
+  <text x="30" y="664" font-size="15" font-weight="700" fill="#1a202c">What it bought &#8212; one 1-hour window, identical rows both ways</text>
+
+  <rect x="30" y="676" width="212" height="82" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1"/>
+  <text x="136" y="696" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">time per query</text>
+  <text x="136" y="717" text-anchor="middle" font-size="10" fill="#c53030">full scan &#183; 33.01&#8201;ms</text>
+  <text x="136" y="734" text-anchor="middle" font-size="10" fill="#276749">index &#183; 0.730&#8201;ms</text>
+  <text x="136" y="752" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">45.2&#215; faster</text>
+
+  <rect x="252" y="676" width="212" height="82" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1"/>
+  <text x="358" y="696" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">peak memory (getrusage)</text>
+  <text x="358" y="717" text-anchor="middle" font-size="10" fill="#c53030">pandas scan &#183; 1,008&#8201;MB</text>
+  <text x="358" y="734" text-anchor="middle" font-size="10" fill="#276749">index &#183; 109&#8201;MB</text>
+  <text x="358" y="752" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">48&#8201;MB over the floor</text>
+
+  <rect x="474" y="676" width="212" height="82" rx="8" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1"/>
+  <text x="580" y="696" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5568">crossover</text>
+  <text x="580" y="717" text-anchor="middle" font-size="10" fill="#4a5568">build 934&#8201;ms &#247; saving 32.28&#8201;ms</text>
+  <text x="580" y="738" text-anchor="middle" font-size="16" font-weight="700" fill="#2b6cb0">28.9 queries</text>
+  <text x="580" y="753" text-anchor="middle" font-size="10" fill="#718096">before the sort pays for itself</text>
+
+  <rect x="696" y="676" width="234" height="82" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1"/>
+  <text x="813" y="696" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">correctness</text>
+  <text x="813" y="716" text-anchor="middle" font-size="10" fill="#4a5568">6 windows &#183; index vs full scan</text>
+  <text x="813" y="736" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">identical rows, every time</text>
+  <text x="813" y="752" text-anchor="middle" font-size="10" fill="#718096">a fast wrong answer is worthless</text>
+
+  <text x="480" y="782" text-anchor="middle" font-size="11" font-style="italic" fill="#718096">Timings vary by run and machine; the deterministic figures are the 2.2% of rows read, the 4.3&#8201;KB index, and the identical results.</text>
+</svg>

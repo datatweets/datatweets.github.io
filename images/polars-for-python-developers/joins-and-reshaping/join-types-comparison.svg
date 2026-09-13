@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect width="720" height="460" fill="#ffffff" />
+  <text x="360" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a202c">Inner, Left, Right, and Full Joins -- orders x returns</text>
+  <text x="360" y="46" text-anchor="middle" font-size="10.5" fill="#4a5568">6,000 real orders, on order_id, against 450 real returns</text>
+
+  <text x="360" y="68" text-anchor="middle" font-size="10" fill="#4a5568">the real 6,000 orders, split by whether a return matches</text>
+
+  <rect x="60" y="76" width="555" height="44" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.4" />
+  <rect x="615" y="76" width="45" height="44" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="337" y="102" text-anchor="middle" font-size="9.5" font-weight="700" fill="#c53030">5,550 real orders with no return</text>
+  <text x="637" y="94" text-anchor="middle" font-size="7.5" font-weight="700" fill="#276749">450</text>
+  <text x="637" y="104" text-anchor="middle" font-size="7" fill="#276749">matched</text>
+
+  <text x="360" y="146" text-anchor="middle" font-size="10" fill="#4a5568">the same real join, run four ways</text>
+
+  <rect x="45" y="156" width="150" height="86" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="120" y="178" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">inner</text>
+  <text x="120" y="198" text-anchor="middle" font-size="12" font-family="monospace" fill="#1a202c">450 rows</text>
+  <text x="120" y="218" text-anchor="middle" font-size="8" fill="#276749">matched rows only</text>
+  <text x="120" y="232" text-anchor="middle" font-size="8" fill="#276749">450 real returns</text>
+
+  <rect x="205" y="156" width="150" height="86" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="280" y="178" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">left</text>
+  <text x="280" y="198" text-anchor="middle" font-size="12" font-family="monospace" fill="#1a202c">6,000 rows</text>
+  <text x="280" y="218" text-anchor="middle" font-size="8" fill="#2b6cb0">every real order kept</text>
+  <text x="280" y="232" text-anchor="middle" font-size="8" fill="#2b6cb0">5,550 null returns</text>
+
+  <rect x="365" y="156" width="150" height="86" rx="8" fill="#f0fff4" stroke="#48bb78" stroke-width="1.4" />
+  <text x="440" y="178" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">right</text>
+  <text x="440" y="198" text-anchor="middle" font-size="12" font-family="monospace" fill="#1a202c">450 rows</text>
+  <text x="440" y="218" text-anchor="middle" font-size="8" fill="#276749">every real return kept</text>
+  <text x="440" y="232" text-anchor="middle" font-size="8" fill="#276749">== inner here</text>
+
+  <rect x="525" y="156" width="150" height="86" rx="8" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.4" />
+  <text x="600" y="178" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">full</text>
+  <text x="600" y="198" text-anchor="middle" font-size="12" font-family="monospace" fill="#1a202c">6,000 rows</text>
+  <text x="600" y="218" text-anchor="middle" font-size="8" fill="#2b6cb0">every real row, both sides</text>
+  <text x="600" y="232" text-anchor="middle" font-size="8" fill="#2b6cb0">== left here</text>
+
+  <rect x="40" y="266" width="640" height="100" rx="10" fill="#f7fafc" stroke="#4a5568" stroke-width="1.3" />
+  <text x="360" y="290" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1a202c">Why right == inner and full == left, specifically here</text>
+  <text x="360" y="314" text-anchor="middle" font-size="9.5" fill="#2d3748">Every real return's order_id genuinely exists in orders -- returns' keys are a real</text>
+  <text x="360" y="332" text-anchor="middle" font-size="9.5" fill="#2d3748">subset of orders' keys. That's a fact this real data happens to have, not a rule --</text>
+  <text x="360" y="350" text-anchor="middle" font-size="9.5" fill="#2d3748">an orphaned real return would make right and full grow past inner and left.</text>
+
+  <rect x="90" y="386" width="540" height="54" rx="10" fill="#fffaf0" stroke="#ed8936" stroke-width="1.4" />
+  <text x="360" y="408" text-anchor="middle" font-size="9.5" font-weight="700" fill="#9c4221">orders x customers (Lesson 2, first section)</text>
+  <text x="360" y="424" text-anchor="middle" font-size="9" fill="#7b341e">has zero real mismatch at all -- all four join types return the same 6,000 rows.</text>
+</svg>

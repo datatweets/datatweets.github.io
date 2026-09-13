@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Evaluate Local LLM Tool Routing with Python</title>
+  <desc id="desc">A DATATWEETS tutorial thumbnail. A labeled request passes through a local model router toward three possible tools or a highlighted no-tool abstention path, illustrating routing evaluation before execution.</desc>
+  <rect width="1200" height="675" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="591" rx="28" fill="#ffffff" stroke="#e3e6ea" stroke-width="2"/>
+  <g font-family="Jost, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="94" y="150" font-size="34" font-weight="600" letter-spacing="1" fill="#59636e">LOCAL LLM EVALUATION</text>
+    <text x="90" y="275" font-size="82" font-weight="700" fill="#1b1f24">TEST THE</text>
+    <text x="90" y="365" font-size="82" font-weight="700" fill="#1b1f24">ROUTE</text>
+    <rect x="96" y="400" width="405" height="12" rx="6" fill="#0067c0"/>
+    <text x="96" y="475" font-size="29" font-weight="500" fill="#59636e">LABELS · ABSTENTION · METRICS</text>
+
+    <g transform="translate(560 130)">
+      <rect x="0" y="142" width="145" height="72" rx="14" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+      <text x="72.5" y="172" text-anchor="middle" font-size="20" font-weight="600" fill="#1b1f24">LABELED</text>
+      <text x="72.5" y="198" text-anchor="middle" font-size="20" font-weight="600" fill="#1b1f24">REQUEST</text>
+
+      <rect x="145" y="176" width="48" height="4" rx="2" fill="#0067c0"/>
+
+      <rect x="198" y="127" width="142" height="102" rx="18" fill="#ffffff" stroke="#59636e" stroke-width="3"/>
+      <text x="269" y="168" text-anchor="middle" font-size="21" font-weight="700" fill="#1b1f24">LOCAL</text>
+      <text x="269" y="196" text-anchor="middle" font-size="21" font-weight="700" fill="#1b1f24">ROUTER</text>
+
+      <rect x="340" y="40" width="50" height="3" fill="#c7ccd2"/>
+      <rect x="387" y="40" width="3" height="140" fill="#c7ccd2"/>
+      <rect x="390" y="40" width="42" height="3" fill="#c7ccd2"/>
+      <rect x="340" y="130" width="92" height="3" fill="#c7ccd2"/>
+      <rect x="340" y="178" width="50" height="3" fill="#c7ccd2"/>
+      <rect x="387" y="178" width="3" height="46" fill="#c7ccd2"/>
+      <rect x="390" y="221" width="42" height="3" fill="#c7ccd2"/>
+      <rect x="340" y="178" width="54" height="4" fill="#0067c0"/>
+      <rect x="390" y="178" width="4" height="136" fill="#0067c0"/>
+      <rect x="394" y="310" width="38" height="4" fill="#0067c0"/>
+
+      <rect x="432" y="12" width="155" height="60" rx="12" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="509.5" y="50" text-anchor="middle" font-size="19" font-weight="600" fill="#59636e">DELIVERY</text>
+      <rect x="432" y="102" width="155" height="60" rx="12" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="509.5" y="140" text-anchor="middle" font-size="19" font-weight="600" fill="#59636e">ADDRESS</text>
+      <rect x="432" y="192" width="155" height="60" rx="12" fill="#ffffff" stroke="#c7ccd2" stroke-width="2"/>
+      <text x="509.5" y="230" text-anchor="middle" font-size="19" font-weight="600" fill="#59636e">BILLING</text>
+      <rect x="432" y="282" width="155" height="60" rx="12" fill="#e3f0fa" stroke="#0067c0" stroke-width="3"/>
+      <text x="509.5" y="320" text-anchor="middle" font-size="19" font-weight="700" fill="#0067c0">NO TOOL</text>
+
+      <text x="294" y="387" text-anchor="middle" font-size="20" font-weight="600" fill="#59636e">COMPARE EXPECTED ↔ PREDICTED</text>
+    </g>
+  </g>
+</svg>

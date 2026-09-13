@@ -1,0 +1,18 @@
+{"case_id": "C01", "output": {"decision": "ask_clarification", "tool_name": "none", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C01."}}
+{"case_id": "C02", "output": {"decision": "ask_clarification", "tool_name": "search_catalog", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C02."}}
+{"case_id": "C03", "output": {"decision": "use_tool", "tool_name": "search_catalog", "arguments": {}, "missing_fields": []}}
+{"case_id": "C04", "output": {"decision": "use_tool", "tool_name": "search_catalog", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C04."}}
+{"case_id": "C05", "output": {"decision": "use_tool", "tool_name": "check_availability", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C05."}}
+{"case_id": "C06", "output": {"decision": "use_tool", "tool_name": "check_availability", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C06."}}
+{"case_id": "C07", "output": {"decision": "ask_clarification", "tool_name": "none", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C07."}}
+{"case_id": "C08", "output": {"decision": "ask_clarification", "tool_name": "none", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C08.", "unexpected": true}}
+{"case_id": "C09", "output": {"decision": "final_response", "tool_name": "prepare_request", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C09."}}
+{"case_id": "C10", "output": {"decision": "use_tool", "tool_name": "prepare_request", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C10."}}
+{"case_id": "C11", "output": {"decision": "request_approval", "tool_name": "none", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C11."}}
+{"case_id": "C12", "output": {"decision": "request_approval", "tool_name": "none", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C12."}}
+{"case_id": "C13", "output": {"decision": "refuse", "tool_name": "none", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C13."}}
+{"case_id": "C14", "output": {"decision": "use_tool", "tool_name": "prepare_request", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C14."}}
+{"case_id": "C15", "output": {"decision": "report_error", "tool_name": "none", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C15."}}
+{"case_id": "C16", "output": {"decision": "retry_forever", "tool_name": "none", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C16."}}
+{"case_id": "C17", "output": {"decision": "final_response", "tool_name": "none", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C17."}}
+{"case_id": "C18", "output": {"decision": "final_response", "tool_name": "none", "arguments": {}, "missing_fields": [], "message": "Controlled response fixture for C18."}}

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="960" height="660" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+<rect x="0" y="0" width="960" height="660" fill="#ffffff"/>
+<text x="480" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#1a202c">One task, three ways: distance-tiering 2,964,624 January taxi trips</text>
+<text x="480" y="58" text-anchor="middle" font-size="14" fill="#718096">Median wall time on cached data &#183; built-in vs SQL vs Python UDF &#183; exact seconds vary by run, the ordering does not</text>
+
+<text x="30" y="92" font-size="15" font-weight="700" fill="#2b6cb0">WHAT IT COSTS &#8212; the same logic, seven-fold apart</text>
+<line x1="210" y1="110" x2="210" y2="210" stroke="#e2e8f0" stroke-width="1"/>
+<text x="200" y="130" text-anchor="end" font-size="12" font-weight="600" fill="#1a202c">built-in F.when</text>
+<rect x="210" y="118" width="93" height="18" rx="3" fill="#48bb78"/>
+<text x="311" y="132" font-size="11" font-weight="700" fill="#276749">0.128&#160;s &#183; 1.0&#215;</text>
+<text x="200" y="160" text-anchor="end" font-size="12" font-weight="600" fill="#1a202c">SQL CASE</text>
+<rect x="210" y="148" width="79" height="18" rx="3" fill="#4299e1"/>
+<text x="297" y="162" font-size="11" font-weight="700" fill="#2b6cb0">0.109&#160;s &#183; 0.9&#215; (same engine)</text>
+<text x="200" y="190" text-anchor="end" font-size="12" font-weight="600" fill="#1a202c">Python UDF</text>
+<rect x="210" y="178" width="660" height="18" rx="3" fill="#fc8181"/>
+<text x="862" y="192" text-anchor="end" font-size="11" font-weight="700" fill="#ffffff">0.906&#160;s &#183; 7.1&#215;</text>
+
+<line x1="30" y1="232" x2="930" y2="232" stroke="#e2e8f0" stroke-width="1"/>
+<text x="30" y="264" font-size="15" font-weight="700" fill="#276749">WHY &#8212; the plan shows the black box</text>
+
+<rect x="30" y="278" width="430" height="150" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="45" y="300" font-size="12" font-weight="700" fill="#276749">built-in &#183; fused into codegen</text>
+<rect x="55" y="312" width="380" height="26" rx="4" fill="#ffffff" stroke="#48bb78" stroke-width="1"/>
+<text x="65" y="329" font-size="11.5" fill="#276749">*(1) Project [CASE WHEN &#8230; END]</text>
+<text x="65" y="356" font-size="11" fill="#4a5568">+- InMemoryTableScan</text>
+<text x="65" y="376" font-size="11" fill="#4a5568">&#160;&#160;&#160;+- *(1) ColumnarToRow &#8594; FileScan</text>
+<text x="45" y="410" font-size="11" font-weight="700" fill="#276749">the tier logic IS the generated JVM code</text>
+
+<rect x="500" y="278" width="430" height="150" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="515" y="300" font-size="12" font-weight="700" fill="#c05621">Python UDF &#183; opaque node</text>
+<text x="525" y="329" font-size="11.5" fill="#4a5568">*(1) Project [pythonUDF0 AS x]</text>
+<rect x="525" y="338" width="360" height="26" rx="4" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="535" y="355" font-size="11.5" font-weight="700" fill="#c53030">+- BatchEvalPython [pyf(&#8230;)]</text>
+<text x="874" y="355" text-anchor="end" font-size="10" fill="#c53030">no *(N)</text>
+<text x="525" y="382" font-size="11" fill="#4a5568">&#160;&#160;&#160;+- InMemoryTableScan &#8594; FileScan</text>
+<text x="515" y="410" font-size="11" font-weight="700" fill="#c05621">Catalyst plans AROUND it &#8212; can't see inside</text>
+
+<line x1="30" y1="452" x2="930" y2="452" stroke="#e2e8f0" stroke-width="1"/>
+<text x="30" y="484" font-size="15" font-weight="700" fill="#2b6cb0">THE PROOF &#8212; a filter pushes through the built-in, stalls above the UDF</text>
+
+<rect x="30" y="498" width="430" height="120" rx="8" fill="#f0fff4" stroke="#276749" stroke-width="1.5"/>
+<text x="45" y="520" font-size="12" font-weight="700" fill="#276749">filter(trip_distance &#8805; 10) &#183; built-in</text>
+<text x="45" y="544" font-size="11" fill="#4a5568">Filter fuses, then reaches the scan:</text>
+<rect x="45" y="554" width="400" height="26" rx="4" fill="#ffffff" stroke="#48bb78" stroke-width="1"/>
+<text x="55" y="571" font-size="10" fill="#276749">PushedFilters: [GreaterThanOrEqual(trip_distance,10.0)]</text>
+<text x="45" y="602" font-size="11.5" font-weight="700" fill="#276749">&#10003; pushed into the file scan</text>
+
+<rect x="500" y="498" width="430" height="120" rx="8" fill="#fffaf0" stroke="#c05621" stroke-width="1.5"/>
+<text x="515" y="520" font-size="12" font-weight="700" fill="#c05621">filter(tier == "long") &#183; via UDF</text>
+<text x="515" y="544" font-size="11" fill="#4a5568">Filter sits above the black box:</text>
+<rect x="515" y="554" width="400" height="26" rx="4" fill="#fff5f5" stroke="#c53030" stroke-width="1.5"/>
+<text x="525" y="571" font-size="11" font-weight="700" fill="#c53030">PushedFilters: [ ] &#183; BatchEvalPython &#215;2</text>
+<text x="515" y="602" font-size="11.5" font-weight="700" fill="#c53030">&#10007; nothing pushed, UDF evaluated twice</text>
+
+<text x="480" y="646" text-anchor="middle" font-size="11.5" fill="#4a5568">A UDF is opaque to Catalyst &#8212; no pushdown, no pruning, no codegen. Reach for built-in F.* first; go to Python only when you must.</text>
+</svg>

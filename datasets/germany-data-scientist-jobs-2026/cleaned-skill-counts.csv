@@ -1,0 +1,21 @@
+skill,role_profiles,share_percent,cleaned_sample_size
+Python,77,87.5,88
+machine learning,54,61.4,88
+SQL,44,50.0,88
+cloud,37,42.0,88
+statistics,27,30.7,88
+Large language models,26,29.5,88
+AWS,24,27.3,88
+PyTorch,18,20.5,88
+pandas,16,18.2,88
+Azure,12,13.6,88
+Google Cloud,12,13.6,88
+NumPy,11,12.5,88
+RAG,11,12.5,88
+Power BI,11,12.5,88
+Tableau,10,11.4,88
+Docker,10,11.4,88
+TensorFlow,9,10.2,88
+Apache Airflow,9,10.2,88
+AI agents,7,8.0,88
+PostgreSQL,6,6.8,88

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="0" y="0" width="900" height="500" fill="#ffffff" />
+
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1a202c">The trip-metrics pipeline</text>
+  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#4a5568">200,000 real NYC taxi trips &#8212; raw columns to vectorized metrics to one insight</text>
+
+  <!-- Panel 1: raw columns -->
+  <rect x="30" y="86" width="250" height="250" rx="10" fill="#ebf8ff" stroke="#2b6cb0" stroke-width="2" />
+  <text x="155" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#2b6cb0">1. Raw columns (arrays)</text>
+  <text x="50" y="140" font-size="12.5" fill="#1a202c">pickup &#8212; datetime64</text>
+  <text x="50" y="162" font-size="12.5" fill="#1a202c">dropoff &#8212; datetime64</text>
+  <text x="50" y="184" font-size="12.5" fill="#1a202c">distance &#8212; float32</text>
+  <text x="50" y="206" font-size="12.5" fill="#1a202c">fare &#8212; float32</text>
+  <text x="50" y="228" font-size="12.5" fill="#1a202c">tip &#8212; float32</text>
+  <text x="50" y="250" font-size="12.5" fill="#1a202c">total &#8212; float32</text>
+  <rect x="50" y="268" width="210" height="52" rx="6" fill="#ffffff" stroke="#a0aec0" stroke-width="1" />
+  <text x="155" y="290" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2b6cb0">safe dtypes = 6.10 MB</text>
+  <text x="155" y="308" text-anchor="middle" font-size="11.5" fill="#4a5568">six columns, contiguous</text>
+
+  <!-- Arrow 1 -->
+  <line x1="286" y1="211" x2="322" y2="211" stroke="#4a5568" stroke-width="2.5" />
+  <polygon points="322,204 336,211 322,218" fill="#4a5568" />
+
+  <!-- Panel 2: vectorized metrics -->
+  <rect x="340" y="86" width="250" height="250" rx="10" fill="#faf5ff" stroke="#6b46c1" stroke-width="2" />
+  <text x="465" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#6b46c1">2. Vectorized metrics</text>
+  <text x="360" y="142" font-size="12.5" fill="#1a202c">trip_duration_minutes</text>
+  <text x="360" y="164" font-size="12.5" fill="#1a202c">avg_speed_mph</text>
+  <text x="360" y="186" font-size="12.5" fill="#1a202c">fare_per_mile</text>
+  <text x="360" y="208" font-size="12.5" fill="#1a202c">tip_rate</text>
+  <rect x="360" y="226" width="210" height="94" rx="6" fill="#ffffff" stroke="#a0aec0" stroke-width="1" />
+  <text x="465" y="248" text-anchor="middle" font-size="12" fill="#4a5568">one array op each, no loop</text>
+  <text x="465" y="270" text-anchor="middle" font-size="12" fill="#c05621">safe_divide guards</text>
+  <text x="465" y="288" text-anchor="middle" font-size="11.5" fill="#4a5568">3,980 zero-distance and</text>
+  <text x="465" y="304" text-anchor="middle" font-size="11.5" fill="#4a5568">52 bad-duration trips &#8594; NaN</text>
+
+  <!-- Arrow 2 -->
+  <line x1="596" y1="211" x2="632" y2="211" stroke="#4a5568" stroke-width="2.5" />
+  <polygon points="632,204 646,211 632,218" fill="#4a5568" />
+
+  <!-- Panel 3: insight -->
+  <rect x="650" y="86" width="220" height="250" rx="10" fill="#f0fff4" stroke="#276749" stroke-width="2" />
+  <text x="760" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#276749">3. One insight</text>
+  <text x="760" y="150" text-anchor="middle" font-size="26" font-weight="700" fill="#276749">9.57</text>
+  <text x="760" y="170" text-anchor="middle" font-size="12" fill="#4a5568">median mph (NYC traffic)</text>
+  <text x="760" y="206" text-anchor="middle" font-size="20" font-weight="700" fill="#276749">$7.16</text>
+  <text x="760" y="224" text-anchor="middle" font-size="12" fill="#4a5568">median fare per mile</text>
+  <text x="760" y="262" text-anchor="middle" font-size="20" font-weight="700" fill="#c53030">60 trips</text>
+  <text x="760" y="280" text-anchor="middle" font-size="12" fill="#4a5568">flagged &#62; 100 mph</text>
+  <text x="760" y="300" text-anchor="middle" font-size="11.5" fill="#4a5568">as data-quality issues</text>
+
+  <!-- Speedup banner -->
+  <rect x="30" y="366" width="840" height="104" rx="10" fill="#fffaf0" stroke="#c05621" stroke-width="2" />
+  <text x="450" y="396" text-anchor="middle" font-size="15" font-weight="700" fill="#c05621">Same metrics, two ways &#8212; measured on the sample</text>
+  <rect x="70" y="410" width="360" height="44" rx="6" fill="#fff5f5" stroke="#c53030" stroke-width="1.5" />
+  <text x="250" y="430" text-anchor="middle" font-size="13" fill="#c53030">Python loop over 200,000 rows</text>
+  <text x="250" y="447" text-anchor="middle" font-size="13" font-weight="700" fill="#c53030">~763 ms</text>
+  <rect x="470" y="410" width="360" height="44" rx="6" fill="#f0fff4" stroke="#276749" stroke-width="1.5" />
+  <text x="650" y="430" text-anchor="middle" font-size="13" fill="#276749">Vectorized NumPy</text>
+  <text x="650" y="447" text-anchor="middle" font-size="13" font-weight="700" fill="#276749">~1.4 ms &#183; ~530x faster &#183; identical results</text>
+</svg>
