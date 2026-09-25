@@ -70,7 +70,7 @@ Browse all courses</a></nav></div><nav class="docs-toc d-none d-xl-block col-xl-
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>numpy</span> <span class=k>as</span> <span class=nn>np</span>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>pandas</span> <span class=k>as</span> <span class=nn>pd</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>CSV</span> <span class=o>=</span> <span class=s2>&#34;yellow_tripdata_sample.csv&#34;</span>   <span class=c1># local copy of the sample above</span>
+</span></span><span class=line><span class=cl><span class=n>CSV</span> <span class=o>=</span> <span class=s2>&#34;https://datatweets.com/datasets/nyc-taxi/yellow_tripdata_sample.csv&#34;</span>
 </span></span><span class=line><span class=cl><span class=n>trips</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>read_csv</span><span class=p>(</span><span class=n>CSV</span><span class=p>,</span> <span class=n>parse_dates</span><span class=o>=</span><span class=p>[</span><span class=s2>&#34;tpep_pickup_datetime&#34;</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>                                      <span class=s2>&#34;tpep_dropoff_datetime&#34;</span><span class=p>])</span>
 </span></span><span class=line><span class=cl>
